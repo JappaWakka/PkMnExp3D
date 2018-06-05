@@ -7,10 +7,10 @@
     Public Shared Volume As Single = 1.0F
     Public Shared Muted As Boolean = False
 
-    Private Declare Function GetAudioOutputDevices Lib "winmm.dll" Alias "waveOutGetNumDevs" () As Integer
-    Private Shared Function HasOutputDeviceAvailable() As Boolean
-        Return GetAudioOutputDevices() > 0
-    End Function
+    'Private Declare Function GetAudioOutputDevices Lib "winmm.dll" Alias "waveOutGetNumDevs" () As Integer
+    'Private Shared Function HasOutputDeviceAvailable() As Boolean
+    '   Return GetAudioOutputDevices() > 0
+    'End Function
 
     Public Shared Sub Clear()
         _sounds.Clear()
@@ -49,9 +49,9 @@
 
             If sound IsNot Nothing Then
 
-                If HasOutputDeviceAvailable() Then
+                'If HasOutputDeviceAvailable() Then
 
-                    Logger.Debug("SoundEffect [" & soundFile & "]")
+                Logger.Debug("SoundEffect [" & soundFile & "]")
 
                     sound.Play(volume, pitch, pan)
 
@@ -59,11 +59,11 @@
                         MusicManager.PauseForSound(sound)
                     End If
 
-                Else
-
-                    Logger.Log(Logger.LogTypes.ErrorMessage, "Failed to play sound: no audio device available.")
-
-                End If
+                'Else
+                '
+                'Logger.Log(Logger.LogTypes.ErrorMessage, "Failed to play sound: no audio device available.")
+                '
+                'End If
 
             End If
 
