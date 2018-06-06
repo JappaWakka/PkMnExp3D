@@ -222,7 +222,7 @@ item_detail_screen_give_item,Gi
 ---
 Apricorn Screen:
 apricorn_screen_apricorns,Apricorns
-apricorn_screen_producing,Jeg produserer Pokéballene for øyeblikket.~Kom tilbake senere.
+apricorn_screen_producing,Jeg produserer Pokéballer for øyeblikket.~Kom tilbake senere.
 apricorn_screen_backadvice,TRYKK E FOR Å GÅ TILBAKE
 apricorn_screen_choose_apricorns,Vennligst velg Apricorn jeg skal ta for å produsere Pokéballer.
 apricorn_screen_ok,OK
