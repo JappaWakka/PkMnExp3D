@@ -261,6 +261,12 @@
             Screen.Level.Entities.Add(OppPokemonModel)
 
             Dim ownSkin As String = Core.Player.Skin
+            If SavedOverworld.Level.Biking = True Then
+                ownSkin = Core.Player.TempBikeSkin
+            End If
+            If SavedOverworld.Level.Fishing = True Then
+                ownSkin = Core.Player.TempFishSkin
+            End If
             If SavedOverworld.Level.Surfing = True Then
                 ownSkin = Core.Player.TempSurfSkin
             End If
@@ -407,6 +413,12 @@
             If SavedOverworld.Level.Riding = True Then
                 ownSkin = Core.Player.TempRideSkin
             End If
+            If SavedOverworld.Level.Biking = True Then
+                ownSkin = Core.Player.TempBikeSkin
+            End If
+            If SavedOverworld.Level.Fishing = True Then
+                ownSkin = Core.Player.TempFishSkin
+            End If
 
             OwnTrainerNPC = CType(Entity.GetNewEntity("NPC", New Vector3(10, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", True, New Vector3(1), 0, "", "", New Vector3(0), {ownSkin, 3, "Player", 2, False, "Still", New List(Of Rectangle)}), NPC)
             Screen.Level.Entities.Add(OwnTrainerNPC)
@@ -549,6 +561,12 @@
             If SavedOverworld.Level.Riding = True Then
                 ownSkin = Core.Player.TempRideSkin
             End If
+            If SavedOverworld.Level.Fishing = True Then
+                ownSkin = Core.Player.TempFishSkin
+            End If
+            If SavedOverworld.Level.Biking = True Then
+                ownSkin = Core.Player.TempBikeSkin
+            End If
 
             OwnTrainerNPC = CType(Entity.GetNewEntity("NPC", New Vector3(10, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", True, New Vector3(1), 0, "", "", New Vector3(0), {ownSkin, 3, "Player", 2, False, "Still", New List(Of Rectangle)}), NPC)
             Screen.Level.Entities.Add(OwnTrainerNPC)
@@ -667,6 +685,12 @@
             If SavedOverworld.Level.Riding = True Then
                 ownSkin = Core.Player.TempRideSkin
             End If
+            If SavedOverworld.Level.Fishing = True Then
+                ownSkin = Core.Player.TempFishSkin
+            End If
+            If SavedOverworld.Level.Biking = True Then
+                ownSkin = Core.Player.TempBikeSkin
+            End If
 
             OwnTrainerNPC = CType(Entity.GetNewEntity("NPC", New Vector3(10, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", True, New Vector3(1), 0, "", "", New Vector3(0), {ownSkin, 3, "Player", 2, False, "Still", New List(Of Rectangle)}), NPC)
             Screen.Level.Entities.Add(OwnTrainerNPC)
@@ -746,7 +770,7 @@
                     End Select
                 End If
 
-                If File.Exists(GameController.GamePath & "\Content\Data\maps\battle\" & levelfile) = False And File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.MapPath & "battle\" & levelfile) = False Then
+                If File.Exists(GameController.GamePath & "\Content\Data\System\BattleMaps\" & levelfile) = False And File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "\Data\System\BattleMaps\" & levelfile) = False Then
                     Select Case Me.defaultMapType
                         Case 0
                             levelfile = cRegion & "0.dat"
@@ -779,7 +803,7 @@
                 End If
             End If
 
-            If File.Exists(GameController.GamePath & "\Content\Data\maps\battle\" & levelfile) = False And File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.MapPath & "battle\" & levelfile) = False Then
+            If File.Exists(GameController.GamePath & "\Content\Data\System\BattleMaps\" & levelfile) = False And File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "\Data\System\BattleMaps\" & levelfile) = False Then
                 Select Case Me.defaultMapType
                     Case 0
                         levelfile = "battle0.dat"

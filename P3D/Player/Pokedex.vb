@@ -145,7 +145,7 @@
     Public Shared Sub Load()
         Core.Player.Pokedexes.Clear()
 
-        Dim path As String = GameModeManager.GetContentFilePath("Data\pokedex.dat")
+        Dim path As String = GameModeManager.GetContentFilePath("Data\System\pokedex.dat")
         Security.FileValidation.CheckFileValid(path, False, "Pokedex.vb")
 
         Dim lines() As String = System.IO.File.ReadAllLines(path)

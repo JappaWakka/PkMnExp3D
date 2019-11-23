@@ -550,11 +550,11 @@ Public Class GameMode
     ''' </summary>
     Public Shared Function GetKolbenGameMode() As GameMode
         Dim SkinColors As List(Of Color) = {New Color(248, 176, 32), New Color(248, 216, 88), New Color(56, 88, 200), New Color(216, 96, 112), New Color(56, 88, 152), New Color(239, 90, 156)}.ToList()
-        Dim SkinFiles As List(Of String) = {"Ethan", "Lyra", "Nate", "Rosa", "Hilbert", "Hilda"}.ToList()
-        Dim SkinNames As List(Of String) = {"Ethan", "Lyra", "Nate", "Rosa", "Hilbert", "Hilda"}.ToList()
+        Dim SkinFiles As List(Of String) = {"Gold_GBA", "Gold_GBC", "Crystal_DS"}.ToList()
+        Dim SkinNames As List(Of String) = {"Ethan (GBA)", "Ethan (GBC)", "Lyra (NDS)"}.ToList()
 
         Dim gameMode As New GameMode("Pokemon 3D", "The normal game mode.", GameController.GAMEVERSION, "Kolben Games", "\Content\Data\maps\", "\Content\Data\Scripts\", "\Content\Data\maps\poke\", "\Content\Pokemon\Data\", "\Content\", "\Content\Localization\", New List(Of GameRule),
-                                     "newgame\intro0.dat", New Vector3(1.0F, 0.1F, 3.0F), MathHelper.PiOver2, "Your Room", "", New Color(59, 123, 165), "0", "welcome", SkinColors, SkinFiles, SkinNames)
+                                     "NewGame.dat", New Vector3(1.0F, 0.1F, 3.0F), MathHelper.PiOver2, "Your Room", "", New Color(59, 123, 165), "0", "welcome", SkinColors, SkinFiles, SkinNames)
 
         Dim gameRules As New List(Of GameRule)
         gameRules.Add(New GameRule("MaxLevel", "100"))
@@ -603,7 +603,7 @@ Public Class GameMode
             "StartDialogue|" & Me._startDialogue & Environment.NewLine &
             "StartColor|" & Me._startColor.R & "," & Me._startColor.G & "," & Me._startColor.B & Environment.NewLine &
             "PokemonAppear|" & Me._pokemonAppear & Environment.NewLine &
-            "IntroMusic|" & Me._introMusic & Environment.NewLine
+            "IntroMusic|" & Me._startbattleMusic & Environment.NewLine
 
         Dim SkinColorsString As String = "SkinColors|"
         Dim iSC As Integer = 0
@@ -664,9 +664,9 @@ Public Class GameMode
 #Region "Paths"
 
     Public Const DefaultContentPath As String = "\Content\"
-    Public Const DefaultMapPath As String = "\Content\Data\maps\"
+    Public Const DefaultMapPath As String = "\Content\Data\Maps\"
     Public Const DefaultScriptPath As String = "\Content\Data\Scripts\"
-    Public Const DefaultPokeFilePath As String = "\Content\Data\maps\poke\"
+    Public Const DefaultPokeFilePath As String = "\Content\Data\System\WildEncounters\"
     Public Const DefaultPokemonDataPath As String = "\Content\Pokemon\Data\"
     Public Const DefaultLocalizationsPath As String = "\Content\Localization\"
 

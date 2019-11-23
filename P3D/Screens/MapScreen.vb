@@ -541,6 +541,10 @@
             Screen.Level.Surfing = False
             Screen.Level.OverworldPokemon.Visible = False
         End If
+        If Screen.Level.Biking = True Then
+            skinName = Core.Player.TempBikeSkin
+            Screen.Level.Biking = False
+        End If
         If Screen.Level.Riding = True Then
             skinName = Core.Player.TempRideSkin
             Screen.Level.Riding = False

@@ -50,7 +50,11 @@
             If Screen.Level.Riding = True Then
                 _charTexture = TextureManager.GetTexture("Textures\NPC\" & Core.Player.TempRideSkin)
             Else
-                _charTexture = Screen.Level.OwnPlayer.Texture
+                If Screen.Level.Biking = True Then
+                    _charTexture = TextureManager.GetTexture("Textures\NPC\" & Core.Player.TempBikeSkin)
+                Else
+                    _charTexture = Screen.Level.OwnPlayer.Texture
+                End If
             End If
         End If
 

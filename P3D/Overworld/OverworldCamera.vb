@@ -410,7 +410,7 @@ Public Class OverworldCamera
         If CurrentScreen.Identification = Screen.Identifications.OverworldScreen AndAlso CType(CurrentScreen, OverworldScreen).ActionScript.IsReady = False Then
             Speed = 0.04F
         Else
-            If Screen.Level.Riding = True Then
+            If Screen.Level.Riding = True Or Screen.Level.Biking = True Then
                 Speed = 0.08F
             Else
                 If Core.Player.IsRunning() = True Then
@@ -825,7 +825,10 @@ Public Class OverworldCamera
                 End If
             Next
         End If
-
+        If GameModeManager.ContentFileExists(Core.Player.Skin & "_Bike") = False And Screen.Level.Biking = True Then
+            Screen.Level.OwnPlayer.SetTexture(Core.Player.TempBikeSkin, True)
+            Core.Player.Skin = Core.Player.TempBikeSkin
+        End If
         If cannotWalk = False And setSurfFalse = True Then
             If Screen.Level.Surfing = True Then
                 Screen.Level.Surfing = False

@@ -896,8 +896,10 @@ Namespace GameJolt
                 "DaycareSteps|0" & Environment.NewLine &
                 "GameMode|Kolben" & Environment.NewLine &
                 "PokeFiles|" & Environment.NewLine &
-                "VisitedMaps|yourroom.dat" & Environment.NewLine &
+                "VisitedMaps|johto\cities\newbark\yourhousef2.dat" & Environment.NewLine &
                 "TempSurfSkin|Hilbert" & Environment.NewLine &
+                "TempBikeSkin|Hilbert" & Environment.NewLine &
+                "TempFishSkin|Hilbert" & Environment.NewLine &
                 "Surfing|0" & Environment.NewLine &
                 "ShowModels|1" & Environment.NewLine &
                 "GTSStars|4" & Environment.NewLine &

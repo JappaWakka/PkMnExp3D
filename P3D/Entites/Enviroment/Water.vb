@@ -11,7 +11,7 @@
     Public Overrides Sub Initialize()
         MyBase.Initialize()
 
-        WaterAnimation = New Animation(TextureManager.GetTexture("Textures\Routes"), 1, 3, 16, 16, 9, 15, 0)
+        WaterAnimation = New Animation(TextureManager.GetTexture("Textures\Backdrops\Water"), 1, 3, 64, 64, 9, 0, 0)
 
         CreateWaterTextureTemp()
     End Sub
@@ -123,7 +123,7 @@
                             Next
                         End If
 
-                        If Screen.Level.Riding = True Then
+                        If Screen.Level.Riding = True Or Screen.Level.Biking = True Then
                             canSurf = False
                         End If
 
@@ -227,16 +227,22 @@
 
             With Screen.Level.OwnPlayer
                 Core.Player.TempSurfSkin = .SkinName
-
                 Dim pokemonNumber As Integer = Core.Player.Pokemons(Core.Player.SurfPokemon).Number
-                Dim SkinName As String = "[POKEMON|N]" & pokemonNumber & PokemonForms.GetOverworldAddition(Core.Player.Pokemons(Core.Player.SurfPokemon))
-                If Core.Player.Pokemons(Core.Player.SurfPokemon).IsShiny = True Then
-                    SkinName = "[POKEMON|S]" & pokemonNumber & PokemonForms.GetOverworldAddition(Core.Player.Pokemons(Core.Player.SurfPokemon))
+                Dim SkinName_Human As String = "[SKIN]"
+                If GameModeManager.ContentFileExists(Core.Player.Skin & "_Surf") = True Then
+                    SkinName_Human = Core.Player.Skin & "_Surf"
                 End If
 
-                .SetTexture(SkinName, False)
+                Dim SkinName_Pokemon As String = "[POKEMON|N]" & pokemonNumber & PokemonForms.GetOverworldAddition(Core.Player.Pokemons(Core.Player.SurfPokemon))
+                If Core.Player.Pokemons(Core.Player.SurfPokemon).IsShiny = True Then
+                    SkinName_Pokemon = "[POKEMON|S]" & pokemonNumber & PokemonForms.GetOverworldAddition(Core.Player.Pokemons(Core.Player.SurfPokemon))
+                End If
 
-                .UpdateEntity()
+                If GameModeManager.ContentFileExists(Core.Player.Skin & "_Surf") = False Then
+                    .SetTexture(SkinName_Pokemon, False)
+                Else
+                    .SetTexture(SkinName_Human, False)
+                End If
 
                 SoundManager.PlayPokemonCry(pokemonNumber)
 

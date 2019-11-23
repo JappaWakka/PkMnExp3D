@@ -17,7 +17,7 @@ Namespace Items.Wings
             If CanUseWing(p.EVHP, p) = True Then
                 p.EVHP += 1
 
-                SoundManager.PlaySound("single_heal", False)
+                SoundManager.PlaySound("heal_single", False)
                 Screen.TextBox.Show("Raised " & p.GetDisplayName() & "'s~HP.", {}, False, False)
                 PlayerStatistics.Track("[254]Wings used", 1)
 

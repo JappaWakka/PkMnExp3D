@@ -2,10 +2,10 @@
 
     Inherits Entity
 
-    Public Shared ReadOnly AllowedSkins() As String = {"Ethan", "Lyra", "Nate", "Rosa", "Hilbert", "Hilda", "GoldRetro"}
+    Public Shared ReadOnly AllowedSkins() As String = {"Gold_GBA", "Gold_GBC", "Crystal_GBA", "Crystal_GBC"}
 
     Public Texture As Texture2D
-    Public SkinName As String = "Hilbert"
+    Public SkinName As String = "Gold_GBA"
 
     Public HasPokemonTexture As Boolean = False
 
@@ -34,7 +34,7 @@
         Me.SkinName = TextureID
         HasPokemonTexture = False
 
-        Dim texturePath As String = "Textures\NPC\"
+        Dim texturePath As String = "Textures\NPC\PlayerSkins\"
         Dim isPokemon As Boolean = False
         If TextureID.StartsWith("[POKEMON|N]") Or TextureID.StartsWith("[Pokémon|N]") Then
             TextureID = TextureID.Remove(0, 11)

@@ -4,7 +4,7 @@
     '1. If has a status condition, return that
     '1.1 If a Pokémon has low HP, return reaction (40%)
     '2. If the Pokémon holds a pickup item, give that (if friendship is high enough, else say 50% that it doesn't want to give item, 50% proceed)
-    '3. Return Special Location Text (found in Content\Data\interactions.dat) (60%)
+    '3. Return Special Location Text (found in Content\Data\System\interactions.dat) (60%)
     '4. Friendship based/random text
 
     'Friendship levels:
@@ -694,7 +694,7 @@
     Public Shared Sub Load()
         SpecialReactionList.Clear()
 
-        Dim path As String = GameModeManager.GetContentFilePath("Data\interactions.dat")
+        Dim path As String = GameModeManager.GetContentFilePath("Data\System\interactions.dat")
         Security.FileValidation.CheckFileValid(path, False, "PokemonInteractions.vb")
 
         Dim data() As String = System.IO.File.ReadAllLines(path)
@@ -881,7 +881,7 @@
         'Checks if the first Pokémon in the party is following the player:
         If Screen.Level.ShowOverworldPokemon = True And CBool(GameModeManager.GetGameRuleValue("ShowFollowPokemon", "1")) = True Then
             'Checks if the player has a Pokémon:
-            If Core.Player.Pokemons.Count > 0 And Screen.Level.Surfing = False And Screen.Level.Riding = False And Screen.Level.ShowOverworldPokemon = True And Not Core.Player.GetWalkPokemon() Is Nothing Then
+            If Core.Player.Pokemons.Count > 0 And Screen.Level.Surfing = False And Screen.Level.Riding = False And Screen.Level.Biking = False And Screen.Level.ShowOverworldPokemon = True And Not Core.Player.GetWalkPokemon() Is Nothing Then
                 If Core.Player.GetWalkPokemon().Status = Pokemon.StatusProblems.None Then
                     'If the player switched the Pokémon, reset the item ID.
                     If PickupIndividualValue <> Core.Player.GetWalkPokemon().IndividualValue Then

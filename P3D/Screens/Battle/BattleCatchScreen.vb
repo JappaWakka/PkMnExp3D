@@ -120,7 +120,7 @@
 
             If Me._playIntroSound = False Then
                 Me._playIntroSound = True
-                SoundManager.PlaySound("Battle\throw")
+                SoundManager.PlaySound("Battle\Pokeball\throw")
             End If
 
             UpdateAnimations()
@@ -132,7 +132,7 @@
                     If Me.Animations.Count = 0 Then
                         Select Case Me.AnimationIndex
                             Case 0
-                                SoundManager.PlaySound("PokeballOpen")
+                                SoundManager.PlaySound("Battle\Pokeball\open")
                                 InBall = True
                                 AnimationIndex = 1
                                 AnimationStarted = False
@@ -143,10 +143,10 @@
                                 SetupAnimation()
                             Case 2, 3, 4, 5
                                 If StayInBall() = True Then
-                                    SoundManager.PlaySound("Battle\ballshake")
+                                    SoundManager.PlaySound("Battle\Pokeball\shake")
                                     AnimationIndex += 1
                                 Else
-                                    SoundManager.PlaySound("PokeballOpen")
+                                    SoundManager.PlaySound("Battle\Pokeball\open")
                                     AnimationIndex = 21
                                     InBall = False
                                 End If
@@ -209,6 +209,7 @@
 
     Private Sub CatchPokemon()
         p.ResetTemp()
+        SoundManager.PlaySound("Battle\Pokeball\catch")
         Dim s As String = "Gotcha!~" & p.GetName() & " was caught!"
 
         If Core.Player.HasPokedex = True Then

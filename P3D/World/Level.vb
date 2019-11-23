@@ -23,6 +23,8 @@ Public Class Level
     ' Level states:
     Private _isSurfing As Boolean = False
     Private _isRiding As Boolean = False
+    Private _isBiking As Boolean = False
+    Private _isFishing As Boolean = False
     Private _usedStrength As Boolean = False
     Private _isDark As Boolean = False
     Private _walkedSteps As Integer = 0
@@ -119,6 +121,30 @@ Public Class Level
         End Get
         Set(value As Boolean)
             Me._isRiding = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Indicates whether the player is Riding a Bike.
+    ''' </summary>
+    Public Property Biking() As Boolean
+        Get
+            Return Me._isBiking
+        End Get
+        Set(value As Boolean)
+            Me._isBiking = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Indicates whether the player is Riding a Bike.
+    ''' </summary>
+    Public Property Fishing() As Boolean
+        Get
+            Return Me._isFishing
+        End Get
+        Set(value As Boolean)
+            Me._isFishing = value
         End Set
     End Property
 
@@ -976,6 +1002,12 @@ Public Class Level
                 OwnPlayer.SetTexture(Core.Player.TempRideSkin, True)
                 Core.Player.Skin = Core.Player.TempRideSkin
             End If
+            ' Set Bike skin, if needed:
+            If Biking = True And CanBike() = False Then
+                Biking = False
+                OwnPlayer.SetTexture(Core.Player.TempBikeSkin, True)
+                Core.Player.Skin = Core.Player.TempBikeSkin
+            End If
 
             ' If any turns after the warp are defined, apply them:
             Screen.Camera.InstantTurn(WarpData.WarpRotations)
@@ -1003,7 +1035,7 @@ Public Class Level
             World.Initialize(Screen.Level.EnvironmentType, Screen.Level.WeatherType)
 
             ' If this map is on the restplaces list, set the player's last restplace to this map:
-            Dim restplaces As List(Of String) = System.IO.File.ReadAllLines(GameModeManager.GetMapPath("restplaces.dat")).ToList()
+            Dim restplaces As List(Of String) = System.IO.File.ReadAllLines(GameController.GamePath & "\" & GameModeManager.ActiveGameMode.ContentPath & "\Data\System\restplaces.dat").ToList()
 
             For Each line As String In restplaces
                 Dim place As String = line.GetSplit(0, "|")
@@ -1122,6 +1154,20 @@ Public Class Level
             End Select
         End If
         If Screen.Level.CanDig = False And Screen.Level.CanFly = False Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
+    ''' <summary>
+    ''' Determines whether the player can use ride a Bike on this map.
+    ''' </summary>
+    Public Function CanBike() As Boolean
+        If GameController.IS_DEBUG_ACTIVE = True Or Core.Player.SandBoxMode = True Then 'Always true for Sandboxmode and Debug mode.
+            Return True
+        End If
+        If Screen.Level.CanBike = False Then
             Return False
         Else
             Return True

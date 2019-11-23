@@ -91,7 +91,7 @@ Public Class CreditsScreen
                 CameraLevels.Add(New CameraLevel("routes\route34.dat", New Vector3(10, 2, 3), New Vector3(10, 2, 40), 0.04F, 0.0F, -0.3F))
                 CameraLevels.Add(New CameraLevel("route31.dat", New Vector3(29, 2, 10), New Vector3(0, 2, 10), 0.04F, MathHelper.Pi * 1.5F, -0.3F))
                 CameraLevels.Add(New CameraLevel("routes\route43.dat", New Vector3(10, 2, 3), New Vector3(10, 2, 30), 0.04F, 0.0F, -0.3F))
-                CameraLevels.Add(New CameraLevel("barktown.dat", New Vector3(20, 1.5, 14), New Vector3(20, 1.5, 28), 0.04F, 0.0F, -0.1F))
+                CameraLevels.Add(New CameraLevel("johto\cities\newbark\main.dat", New Vector3(20, 1.5, 14), New Vector3(20, 1.5, 28), 0.04F, 0.0F, -0.1F))
             Case "kanto"
 
         End Select

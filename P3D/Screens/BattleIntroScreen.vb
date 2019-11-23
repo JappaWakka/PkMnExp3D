@@ -22,16 +22,16 @@
     Public MusicLoop As String = ""
 
     Public Sub New(ByVal OldScreen As Screen, ByVal NewScreen As Screen, ByVal IntroType As Integer)
-        Dim musicLoop As String = Screen.Level.CurrentRegion.Split(CChar(","))(0) & "_wild_intro"
+        Dim musicLoop As String = Screen.Level.CurrentRegion.Split(CChar(","))(0) & "_wild_startbattle"
 
         If BattleSystem.BattleScreen.RoamingBattle = True Then
             If BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop <> "" Then
-                musicLoop = BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop & "_intro"
+                musicLoop = BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop & "_startbattle"
             End If
         End If
 
         If MusicManager.SongExists(musicLoop) = False Then
-            musicLoop = "johto_wild_intro"
+            musicLoop = "johto_wild_startbattle"
         End If
         musicLoop = musicLoop
 
@@ -40,15 +40,15 @@
 
     Public Sub New(ByVal OldScreen As Screen, ByVal NewScreen As Screen, ByVal IntroType As Integer, ByVal MusicLoop As String)
         If MusicLoop = "" Then
-            MusicLoop = Screen.Level.CurrentRegion.Split(CChar(","))(0) & "_wild_intro"
+            MusicLoop = Screen.Level.CurrentRegion.Split(CChar(","))(0) & "_wild_startbattle"
             If MusicManager.SongExists(MusicLoop) = False Then
                 If BattleSystem.BattleScreen.RoamingBattle = True Then
                     If BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop <> "" Then
-                        MusicLoop = BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop & "_intro"
+                        MusicLoop = BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop & "_startbattle"
                     End If
                 End If
                 If MusicManager.SongExists(MusicLoop) = False Then
-                    MusicLoop = "johto_wild_intro"
+                    MusicLoop = "johto_wild_startbattle"
                 End If
             End If
             MusicLoop = MusicLoop

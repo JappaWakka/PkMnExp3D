@@ -48,13 +48,13 @@
                 End If
             Else
                 If Controls.Accept(True, True) = True Then
-                    SoundManager.PlaySound("pokemon_heal")
+                    SoundManager.PlaySound("heal_party")
 
                     If FromBattle = True Then
                         Core.Player.HealParty()
                         ChangeScreen()
 
-                        ChangeFromSurfRideTexture()
+                        ChangeFromTempTexture()
 
                         Screen.Level.Load(Core.Player.LastRestPlace)
                         Screen.Level.OverworldPokemon.Visible = False
@@ -69,7 +69,7 @@
                     Else
                         Core.Player.HealParty()
 
-                        ChangeFromSurfRideTexture()
+                        ChangeFromTempTexture()
 
                         Screen.Level.Load(Core.Player.LastRestPlace)
                         Screen.Level.OverworldPokemon.Visible = False
@@ -146,7 +146,7 @@
         PlayerStatistics.Track("Blackouts", 1)
     End Sub
 
-    Private Sub ChangeFromSurfRideTexture()
+    Private Sub ChangeFromTempTexture()
         If Screen.Level.Riding = True Then
             Screen.Level.Riding = False
             Screen.Level.OwnPlayer.SetTexture(Core.Player.TempRideSkin, True)
@@ -156,6 +156,16 @@
             Screen.Level.Surfing = False
             Screen.Level.OwnPlayer.SetTexture(Core.Player.TempSurfSkin, True)
             Core.Player.Skin = Core.Player.TempSurfSkin
+        End If
+        If Screen.Level.Biking = True Then
+            Screen.Level.Biking = False
+            Screen.Level.OwnPlayer.SetTexture(Core.Player.TempBikeSkin, True)
+            Core.Player.Skin = Core.Player.TempBikeSkin
+        End If
+        If Screen.Level.Fishing = True Then
+            Screen.Level.Fishing = False
+            Screen.Level.OwnPlayer.SetTexture(Core.Player.TempFishSkin, True)
+            Core.Player.Skin = Core.Player.TempFishSkin
         End If
         Screen.Level.OverworldPokemon.warped = True
         Screen.Level.OverworldPokemon.Visible = False

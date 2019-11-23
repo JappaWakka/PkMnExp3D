@@ -975,36 +975,52 @@ Public Class PartyScreen
                 MusicManager.Play(Level.MusicLoop)
             End If
         Else
-            If Screen.Level.Surfing = False And Screen.Camera.IsMoving() = False And Screen.Camera.Turning = False And Level.CanRide() = True Then
+            If Screen.Level.Biking = True Then
+                Screen.Level.Biking = False
+                Screen.Level.OwnPlayer.SetTexture(Core.Player.TempBikeSkin, True)
+                Core.Player.Skin = Core.Player.TempBikeSkin
+
                 ChooseBox.Showing = False
                 Core.SetScreen(Me.PreScreen)
                 If Core.CurrentScreen.Identification = Identifications.MenuScreen Then
                     Core.SetScreen(Core.CurrentScreen.PreScreen)
                 End If
 
-                Screen.Level.Riding = True
-                Core.Player.TempRideSkin = Core.Player.Skin
-
-                Dim skin As String = "[POKEMON|"
-                If PokemonList(_index).IsShiny = True Then
-                    skin &= "S]"
-                Else
-                    skin &= "N]"
-                End If
-                skin &= PokemonList(_index).Number & PokemonForms.GetOverworldAddition(PokemonList(_index))
-
-                Screen.Level.OwnPlayer.SetTexture(skin, False)
-
-                SoundManager.PlayPokemonCry(PokemonList(_index).Number)
-
-                TextBox.Show(PokemonList(_index).GetDisplayName() & " used~Ride!", {}, True, False)
-                PlayerStatistics.Track("Ride used", 1)
-
                 If Screen.Level.IsRadioOn = False OrElse GameJolt.PokegearScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = False Then
-                    MusicManager.Play("ride", True)
+                    MusicManager.Play(Level.MusicLoop)
                 End If
             Else
-                TextBox.Show("You cannot Ride here!", {}, True, False)
+                If Screen.Level.Surfing = False And Screen.Camera.IsMoving() = False And Screen.Camera.Turning = False And Level.CanRide() = True Then
+                    ChooseBox.Showing = False
+                    Core.SetScreen(Me.PreScreen)
+                    If Core.CurrentScreen.Identification = Identifications.MenuScreen Then
+                        Core.SetScreen(Core.CurrentScreen.PreScreen)
+                    End If
+
+                    Screen.Level.Riding = True
+                    Core.Player.TempRideSkin = Core.Player.Skin
+
+                    Dim skin As String = "[POKEMON|"
+                    If PokemonList(_index).IsShiny = True Then
+                        skin &= "S]"
+                    Else
+                        skin &= "N]"
+                    End If
+                    skin &= PokemonList(_index).Number & PokemonForms.GetOverworldAddition(PokemonList(_index))
+
+                    Screen.Level.OwnPlayer.SetTexture(skin, False)
+
+                    SoundManager.PlayPokemonCry(PokemonList(_index).Number)
+
+                    TextBox.Show(PokemonList(_index).GetDisplayName() & " used~Ride!", {}, True, False)
+                    PlayerStatistics.Track("Ride used", 1)
+
+                    If Screen.Level.IsRadioOn = False OrElse GameJolt.PokegearScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = False Then
+                        MusicManager.Play("ride", True)
+                    End If
+                Else
+                    TextBox.Show("You cannot Ride here!", {}, True, False)
+                End If
             End If
         End If
     End Sub

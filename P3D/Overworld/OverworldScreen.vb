@@ -104,6 +104,8 @@ Public Class OverworldScreen
     Public Overrides Function GetScreenStatus() As String
         Dim s As String = "IsSurfing=" & Level.Surfing.ToString() & Environment.NewLine &
             "IsRiding=" & Level.Riding.ToString() & Environment.NewLine &
+            "IsBiking=" & Level.Biking.ToString() & Environment.NewLine &
+            "IsFishing=" & Level.Fishing.ToString() & Environment.NewLine &
             "LevelFile=" & Level.LevelFile & Environment.NewLine &
             "UsedStrength=" & Level.UsedStrength.ToString() & Environment.NewLine &
             "EntityCount=" & Level.Entities.Count
@@ -133,7 +135,7 @@ Public Class OverworldScreen
         If Level.Surfing = True Then
             MusicManager.Play("surf", True) 'Play "surf" when player is surfing.
         Else
-            If Level.Riding = True Then
+            If Level.Riding = True Or Level.Biking = True Then
                 MusicManager.Play("ride", True) 'Play "ride" when player is riding.
             Else
                 MusicManager.Play(Level.MusicLoop, True) 'Play default MusicLoop.
@@ -422,7 +424,7 @@ Public Class OverworldScreen
             If Screen.Level.Surfing = True Then
                 theme = "surf"
             End If
-            If Screen.Level.Riding = True Then
+            If Screen.Level.Riding = True Or Screen.Level.Biking = True Then
                 theme = "ride"
             End If
 

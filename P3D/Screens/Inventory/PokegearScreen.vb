@@ -112,7 +112,7 @@
             menuIndex = MenuScreens.TradeRequest
             Me.TradeRequestNetworkID = CInt(Data(0))
             Me.TradeRequestGameJoltID = CStr(Data(1))
-            SoundManager.PlaySound("single_heal", False)
+            SoundManager.PlaySound("heal_single", False)
             TradeRequestData = -1
         End Sub
 
@@ -122,7 +122,7 @@
             menuIndex = MenuScreens.BattleRequest
             Me.BattleRequestNetworkID = CInt(Data(0))
             Me.BattleRequestGameJoltID = CStr(Data(1))
-            SoundManager.PlaySound("single_heal", False)
+            SoundManager.PlaySound("heal_single", False)
             BattleRequestData = -1
         End Sub
 
@@ -1878,7 +1878,7 @@
         Private Sub InitializeRadio()
             Me.InitializedRadio = True
 
-            Dim radioData() As String = System.IO.File.ReadAllLines(GameModeManager.GetContentFilePath("Data\channels.dat"))
+            Dim radioData() As String = System.IO.File.ReadAllLines(GameModeManager.GetContentFilePath("Data\System\channels.dat"))
             For Each line As String In radioData
                 If line.StartsWith("{") = True And line.EndsWith("}") = True Then
                     line = line.Remove(line.Length - 1, 1).Remove(0, 1)
@@ -1897,7 +1897,7 @@
         Public Shared Function StationCanPlay(ByVal station As RadioStation) As Boolean
             Dim stations As New List(Of RadioStation)
 
-            Dim file As String = GameModeManager.GetContentFilePath("Data\channels.dat")
+            Dim file As String = GameModeManager.GetContentFilePath("Data\System\channels.dat")
             Security.FileValidation.CheckFileValid(file, False, "PokegearScreen.vb")
 
             Dim radioData() As String = System.IO.File.ReadAllLines(file)

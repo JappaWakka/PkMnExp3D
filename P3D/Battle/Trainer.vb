@@ -416,7 +416,7 @@ Public Class Trainer
                 middle = "rocket"
         End Select
 
-        Return Region & "_" & middle & "_intro"
+        Return Region & "_" & middle & "_startbattle"
     End Function
 
     Public Function GetDefeatMusic() As String

@@ -147,10 +147,11 @@
             Core.Player.startSurfing = False
             Core.Player.startThirdPerson = False
             Core.Player.startRiding = False
+            Core.Player.startBiking = False
             Core.Player.startRotation = CSng(MathHelper.Pi * (rot / 2))
 
             Core.Player.BerryData = CreateBerryData()
-            Core.Player.AddVisitedMap("yourroom.dat")
+            Core.Player.AddVisitedMap("johto\cities\newbark\yourhousef2.dat")
             Core.Player.SaveCreated = GameController.GAMEDEVELOPMENTSTAGE & " " & GameController.GAMEVERSION
             Core.Player.RivalName = "???"
 

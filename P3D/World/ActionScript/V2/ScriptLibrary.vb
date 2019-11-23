@@ -207,6 +207,7 @@ Namespace ScriptVersion2
             r(New ScriptCommand("level", "levelfile", "str", "Returns the mapfile of the currently loaded map.", ",", True))
             r(New ScriptCommand("level", "filename", "str", "Returns only the name of the current map file, without path and extension.", ",", True))
             r(New ScriptCommand("level", "riding", "bool", "Returns if the player is Riding a Pokémon right now.", ",", True))
+            r(New ScriptCommand("level", "biking", "bool", "Returns if the player is riding a Bicycle right now.", ",", True))
             r(New ScriptCommand("level", "surfing", "bool", "Returns if the player is Suring on a Pokémon right now.", ",", True))
         End Sub
 

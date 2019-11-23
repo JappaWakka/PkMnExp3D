@@ -419,7 +419,7 @@ Namespace Servers
 
         Private ReadOnly Property GetPokemonVisible() As String
             Get
-                If Screen.Level.OverworldPokemon.Visible = True And Screen.Level.Surfing = False And Screen.Level.Riding = False And P3D.Player.Temp.IsInBattle = False Then
+                If Screen.Level.OverworldPokemon.Visible = True And Screen.Level.Surfing = False And Screen.Level.Riding = False And Screen.Level.Biking = False And P3D.Player.Temp.IsInBattle = False Then
                     Return "1"
                 End If
                 Return "0"

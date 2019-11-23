@@ -6,7 +6,7 @@
     Public Class GameModeAttackLoader
 
         'The default relative path to load moves from (Content folder).
-        Const PATH As String = "Data\Moves\"
+        Const PATH As String = "Data\System\Moves\"
 
         'List of loaded moves.
         Shared LoadedMoves As New List(Of Attack)

@@ -363,7 +363,9 @@
     Public BattleStyle As Integer = 1
     Public ShowModelsInBattle As Boolean = True
     Public TempSurfSkin As String = "Hilbert"
-    Public TempRideSkin As String = ""
+    Public TempFishSkin As String = "Hilbert"
+    Public TempBikeSkin As String = "Hilbert"
+    Public TempRideSkin As String = "Hil"
     Public Statistics As String = ""
 
     'Secure fields:
@@ -377,15 +379,15 @@
     Private _coins As Integer = 0
     Private _hasPokedex As Boolean = False
     Private _hasPokegear As Boolean = False
-    Private _lastRestPlace As String = "yourroom.dat"
+    Private _lastRestPlace As String = "johto\cities\newbark\yourhousef2.dat"
     Private _lastRestPlacePosition As String = "1,0.1,3"
-    Private _lastSavePlace As String = "yourroom.dat"
+    Private _lastSavePlace As String = "johto\cities\newbark\yourhousef2.dat"
     Private _lastSavePlacePosition As String = "1,0.1,3"
     Private _repelSteps As Integer = 0
     Private _saveCreated As String = "Pre 0.21"
     Private _daycareSteps As Integer = 0
     Private _gameMode As String = "Kolben"
-    Private _skin As String = "Hilbert"
+    Private _skin As String = ""
     Private _visitedMaps As String = ""
     Private _GTSStars As Integer = 8
     Private _sandBoxMode As Boolean = False
@@ -408,11 +410,12 @@
     Public startPosition As Vector3 = New Vector3(14, 0.1, 10)
     Public startRotation As Single = 0
     Public startFreeCameraMode As Boolean = False
-    Public startMap As String = "barktown.dat"
+    Public startMap As String = "johto\cities\newbark\main.dat"
     Public startFOV As Single = 45.0F
     Public startRotationSpeed As Integer = 12
     Public startThirdPerson As Boolean = False
     Public startSurfing As Boolean = False
+    Public startBiking As Boolean = False
     Public startRiding As Boolean = False
 
     Public filePrefix As String = "nilllzz"
@@ -439,7 +442,7 @@
         Public Shared LastPosition As Vector3
         Public Shared IsInBattle As Boolean = False
         Public Shared BeforeBattlePosition As Vector3 = New Vector3(0)
-        Public Shared BeforeBattleLevelFile As String = "yourroom.dat"
+        Public Shared BeforeBattleLevelFile As String = "johto\cities\newbark\yourhousef2.dat"
         Public Shared BeforeBattleFacing As Integer = 0
         Public Shared PokedexModeIndex As Integer = 0
         Public Shared PokedexHabitatIndex As Integer = 0
@@ -729,6 +732,7 @@
 
         If Not Screen.Level Is Nothing Then
             Screen.Level.Riding = False
+            Screen.Level.Biking = False
         End If
 
         For Each Line As String In Data
@@ -852,8 +856,14 @@
                         VisitedMaps = Value
                     Case "tempsurfskin"
                         TempSurfSkin = Value
+                    Case "tempbikeskin"
+                        TempBikeSkin = Value
+                    Case "tempfishskin"
+                        TempFishSkin = Value
                     Case "surfing"
                         startSurfing = CBool(Value)
+                    Case "biking"
+                        startBiking = CBool(Value)
                     Case "bp"
                         BP = CInt(Value)
                     Case "gtsstars"
@@ -871,6 +881,18 @@
                 Logger.Log(Logger.LogTypes.Warning, "Player.vb: The line """ & Line & """ is either empty or does not conform the player.dat file rules.")
             End If
         Next
+
+        If IsGameJoltSave = True And startBiking = False Then
+            Skin = GameJolt.Emblem.GetPlayerSpriteFile(GameJolt.Emblem.GetPlayerLevel(GameJoltSave.Points), GameJoltSave.GameJoltID, GameJoltSave.Gender)
+            Select Case GameJoltSave.Gender
+                Case "0"
+                    Male = True
+                Case "1"
+                    Male = False
+                Case Else
+                    Male = True
+            End Select
+        End If
 
         If IsGameJoltSave = True And startSurfing = False Then
             Skin = GameJolt.Emblem.GetPlayerSpriteFile(GameJolt.Emblem.GetPlayerLevel(GameJoltSave.Points), GameJoltSave.GameJoltID, GameJoltSave.Gender)
@@ -1281,6 +1303,9 @@
         If Screen.Level.Riding = True Then
             skin = TempRideSkin
         End If
+        If Screen.Level.Biking = True Then
+            skin = TempBikeSkin
+        End If
 
         Dim Data As String = "Name|" & Name & Environment.NewLine &
             "Position|" & c.Position.X.ToString().Replace(GameController.DecSeparator, ".") & "," & c.Position.Y.ToString.Replace(GameController.DecSeparator, ".") & "," & c.Position.Z.ToString().Replace(GameController.DecSeparator, ".") & Environment.NewLine &
@@ -1316,6 +1341,8 @@
             "PokeFiles|" & PokeFilesString & Environment.NewLine &
             "VisitedMaps|" & VisitedMaps & Environment.NewLine &
             "TempSurfSkin|" & TempSurfSkin & Environment.NewLine &
+            "TempFishSkin|" & TempFishSkin & Environment.NewLine &
+            "TempBikeSkin|" & TempFishSkin & Environment.NewLine &
             "Surfing|" & Screen.Level.Surfing.ToNumberString() & Environment.NewLine &
             "BP|" & BP & Environment.NewLine &
             "ShowModels|" & ShowModelsInBattle.ToNumberString() & Environment.NewLine &
@@ -1992,7 +2019,7 @@
 
     Public Function IsRunning() As Boolean
         If KeyBoardHandler.KeyDown(Keys.LeftShift) = True Or ControllerHandler.ButtonDown(Buttons.B) = True Then
-            If Screen.Level.Riding = False And Screen.Level.Surfing = False And Inventory.HasRunningShoes = True Then
+            If Screen.Level.Riding = False And Screen.Level.Biking = False And Screen.Level.Surfing = False And Inventory.HasRunningShoes = True Then
                 Return True
             End If
         End If
@@ -2031,9 +2058,9 @@
             HasPokegear = False
             ShowBattleAnimations = 2
             BoxAmount = 10
-            LastRestPlace = "yourroom.dat"
+            LastRestPlace = "johto\cities\newbark\yourhousef2.dat"
             LastRestPlacePosition = "1,0.1,3"
-            LastSavePlace = "yourroom.dat"
+            LastSavePlace = "johto\cities\newbark\yourhousef2.dat"
             LastSavePlacePosition = "1,0.1,3"
             DiagonalMovement = False
             RepelSteps = 0
@@ -2046,18 +2073,21 @@
             GameMode = "Kolben"
             VisitedMaps = ""
             TempSurfSkin = "Hilbert"
-            TempRideSkin = ""
+            TempFishSkin = "Hilbert"
+            TempBikeSkin = "Hilbert"
+            TempRideSkin = "Hilbert"
             GTSStars = 8
             SandBoxMode = False
             Statistics = ""
             startPosition = New Vector3(14, 0.1, 10)
             startRotation = 0
             startFreeCameraMode = False
-            startMap = "barktown.dat"
+            startMap = "johto\cities\newbark\main.dat"
             startFOV = 45.0F
             startRotationSpeed = 12
             startThirdPerson = False
             startSurfing = False
+            startBiking = False
             startRiding = False
             Skin = "Hilbert"
 

@@ -12,17 +12,17 @@ Public Class GameController
     ''' <summary>
     ''' The current version of the game.
     ''' </summary>
-    Public Const GAMEVERSION As String = "0.57"
+    Public Const GAMEVERSION As String = "0.1.3"
 
     ''' <summary>
     ''' The number of released iterations of the game.
     ''' </summary>
-    Public Const RELEASEVERSION As String = "98"
+    Public Const RELEASEVERSION As String = "3"
 
     ''' <summary>
     ''' The development stage the game is in.
     ''' </summary>
-    Public Const GAMEDEVELOPMENTSTAGE As String = "Indev"
+    Public Const GAMEDEVELOPMENTSTAGE As String = "Unofficial Indev"
 
     ''' <summary>
     ''' The name of the game.
@@ -32,7 +32,7 @@ Public Class GameController
     ''' <summary>
     ''' The name of the developer that appears on the title screen.
     ''' </summary>
-    Public Const DEVELOPER_NAME As String = "P3D Team"
+    Public Const DEVELOPER_NAME As String = "P3D Team & JappaWakka"
 
     ''' <summary>
     ''' If the Debug Mode is active.

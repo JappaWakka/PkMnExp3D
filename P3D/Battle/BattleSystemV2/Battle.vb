@@ -6,7 +6,6 @@
         Public Shared Fled As Boolean = False
         Public Shared Caught As Boolean = False
 
-
         Public IsAfterFaint As Boolean = False
         Public WildHasEscaped As Boolean = False
 #Region "StartRound"
@@ -2693,7 +2692,7 @@
                                 If Not p.Item Is Nothing Then
                                     If p.Item.Name.ToLower() = "rawst" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True AndAlso BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                                         If RemoveHeldItem(own, own, BattleScreen, "", "berry:rawst") = True Then
-                                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("single_heal", False))
+                                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
                                             CureStatusProblem(own, own, BattleScreen, "The Rawst Berry cured the burn of " & p.GetDisplayName() & "!", "berry:rawst")
                                         End If
                                     End If
@@ -2702,7 +2701,7 @@
                                 If Not p.Item Is Nothing Then
                                     If p.Item.Name.ToLower() = "lum" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True AndAlso BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                                         If RemoveHeldItem(own, own, BattleScreen, "", "berry:lum") = True Then
-                                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("single_heal", False))
+                                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
                                             CureStatusProblem(own, own, BattleScreen, "The Lum Berry cured the burn of " & p.GetDisplayName() & "!", "berry:lum")
                                         End If
                                     End If
@@ -2805,7 +2804,7 @@
                             If Not p.Item Is Nothing Then
                                 If p.Item.Name.ToLower() = "aspear" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True And BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                                     If RemoveHeldItem(own, own, BattleScreen, "", "berry:aspear") = True Then
-                                        BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("single_heal", False))
+                                        BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
                                         CureStatusProblem(own, own, BattleScreen, "The Aspear Berry thraw out " & p.GetDisplayName() & "!", "berry:aspear")
                                     End If
                                 End If
@@ -2814,7 +2813,7 @@
                             If Not p.Item Is Nothing Then
                                 If p.Item.Name.ToLower() = "lum" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True And BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                                     If RemoveHeldItem(own, own, BattleScreen, "", "berry:lum") = True Then
-                                        BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("single_heal", False))
+                                        BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
                                         CureStatusProblem(own, own, BattleScreen, "The Lum Berry thraw out " & p.GetDisplayName() & "!", "berry:lum")
                                     End If
                                 End If
@@ -2908,7 +2907,7 @@
                             If Not p.Item Is Nothing Then
                                 If p.Item.Name.ToLower() = "cheri" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True And BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                                     If RemoveHeldItem(own, own, BattleScreen, "", "berry:cheri") = True Then
-                                        BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("single_heal", False))
+                                        BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
                                         CureStatusProblem(own, own, BattleScreen, "The Cheri Berry cured the paralysis of " & p.GetDisplayName() & "!", "berry:cheri")
                                     End If
                                 End If
@@ -2917,7 +2916,7 @@
                             If Not p.Item Is Nothing Then
                                 If p.Item.Name.ToLower() = "lum" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True And BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                                     If RemoveHeldItem(own, own, BattleScreen, "", "berry:lum") = True Then
-                                        BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("single_heal", False))
+                                        BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
                                         CureStatusProblem(own, own, BattleScreen, "The Lum Berry cured the paralyzis of " & p.GetDisplayName() & "!", "berry:lum")
                                     End If
                                 End If
@@ -3048,7 +3047,7 @@
                                         If Not p.Item Is Nothing Then
                                             If p.Item.Name.ToLower() = "chesto" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True AndAlso BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                                                 If RemoveHeldItem(own, own, BattleScreen, "", "berry:chesto") = True Then
-                                                    BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("single_heal", False))
+                                                    BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
                                                     CureStatusProblem(own, own, BattleScreen, "The Chesto Berry woke up " & p.GetDisplayName() & "!", "berry:chesto")
                                                 End If
                                             End If
@@ -3057,7 +3056,7 @@
                                         If Not p.Item Is Nothing Then
                                             If p.Item.Name.ToLower() = "lum" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True AndAlso BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                                                 If RemoveHeldItem(own, own, BattleScreen, "", "berry:lum") = True Then
-                                                    BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("single_heal", False))
+                                                    BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
                                                     CureStatusProblem(own, own, BattleScreen, "The Lum Berry woke up " & p.GetDisplayName() & "!", "berry:lum")
                                                 End If
                                             End If
@@ -3168,7 +3167,7 @@
                                 If Not p.Item Is Nothing Then
                                     If p.Item.Name.ToLower() = "pecha" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True AndAlso BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                                         If RemoveHeldItem(own, own, BattleScreen, "", "berry:pecha") = True Then
-                                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("single_heal", False))
+                                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
                                             CureStatusProblem(own, own, BattleScreen, "The Pecha Berry cured the poison of " & p.GetDisplayName() & "!", "berry:pecha")
                                         End If
                                     End If
@@ -3177,7 +3176,7 @@
                                 If Not p.Item Is Nothing Then
                                     If p.Item.Name.ToLower() = "lum" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True AndAlso BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                                         If RemoveHeldItem(own, own, BattleScreen, "", "berry:lum") = True Then
-                                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("single_heal", False))
+                                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
                                             CureStatusProblem(own, own, BattleScreen, "The Lum Berry cured the poison of " & p.GetDisplayName() & "!", "berry:lum")
                                         End If
                                     End If
@@ -3249,7 +3248,7 @@
                     If p.Item.Name.ToLower() = "persim" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True AndAlso BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                         If RemoveHeldItem(own, own, BattleScreen, "", "berry:persim") = True Then
                             Me.ChangeCameraAngel(1, own, BattleScreen)
-                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("single_heal", False))
+                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
                             BattleScreen.BattleQuery.Add(New TextQueryObject("The Persim Berry cured the confusion of " & p.GetDisplayName() & "!"))
                             If own = True Then
                                 BattleScreen.FieldEffects.OwnConfusionTurns = 0
@@ -3261,7 +3260,7 @@
                     ElseIf p.Item.Name.ToLower() = "lum" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True AndAlso BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                         If RemoveHeldItem(own, own, BattleScreen, "", "berry:lum") = True Then
                             Me.ChangeCameraAngel(1, own, BattleScreen)
-                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("single_heal", False))
+                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
                             BattleScreen.BattleQuery.Add(New TextQueryObject("The Lum Berry cured the confusion of " & p.GetDisplayName() & "!"))
                             If own = True Then
                                 BattleScreen.FieldEffects.OwnConfusionTurns = 0
@@ -4048,7 +4047,7 @@
 
             Dim berry As Items.Berry = CType(BerryItem, Items.Berry)
 
-            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("single_heal", False))
+            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
             Select Case BerryItem.Name.ToLower()
                 Case "oran"
                     GainHP(10, own, from, BattleScreen, "The Oran Berry filled up " & p.GetDisplayName() & "'s HP!", "berry:oran")

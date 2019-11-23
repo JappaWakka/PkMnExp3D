@@ -24,7 +24,11 @@ Public MustInherit Class Item
     ''' </summary>
     Public Overridable ReadOnly Property Name As String
         Get
-            Return GetAttribute().Name
+            If Localization.TokenExists("item_name_" & GetAttribute().Id) = True Then
+                Return Localization.GetString("item_name_" & GetAttribute().Id)
+            Else
+                Return GetAttribute().Name
+            End If
         End Get
     End Property
 

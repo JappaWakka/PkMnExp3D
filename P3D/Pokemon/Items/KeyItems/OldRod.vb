@@ -13,7 +13,18 @@ Namespace Items.KeyItems
         End Sub
 
         Public Overrides Sub Use()
-            If IsInfrontOfWater() = True And Screen.Level.Surfing = False And Screen.Level.Riding = False Then
+
+            If IsInfrontOfWater() = True And Screen.Level.Surfing = False And Screen.Level.Riding = False And Screen.Level.Biking = False Then
+                If GameModeManager.ContentFileExists(Core.Player.Skin & "_Fish") = True Then
+                    With Screen.Level.OwnPlayer
+                        Core.Player.TempFishSkin = .SkinName
+
+                        Dim SkinName_Fish As String = "[SKIN]"
+                        SkinName_Fish = Core.Player.Skin & "_Fish"
+
+                        .SetTexture(SkinName_Fish, False)
+                    End With
+                End If
                 Dim s As String = "version=2"
 
                 While Core.CurrentScreen.Identification <> Screen.Identifications.OverworldScreen
@@ -79,10 +90,14 @@ Namespace Items.KeyItems
                         "@player.hiderod" & Environment.NewLine &
                         ":end"
                 End If
-
+                If GameModeManager.ContentFileExists(Core.Player.Skin & "_Fish") = True Then
+                    With Screen.Level.OwnPlayer
+                        .SetTexture(Core.Player.TempFishSkin, False)
+                    End With
+                End If
                 CType(Core.CurrentScreen, OverworldScreen).ActionScript.StartScript(s, 2)
-            Else
-                Screen.TextBox.Show("Now is not the time~to use that.", {}, True, True)
+                Else
+                    Screen.TextBox.Show("Now is not the time~to use that.", {}, True, True)
             End If
         End Sub
 

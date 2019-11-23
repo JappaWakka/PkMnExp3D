@@ -26,9 +26,7 @@
         Me.CanGoFullscreen = False
 
         Me._pokemonLogoTexture = Content.Load(Of Texture2D)("GUI\Logos\Pokemon_Small")
-        Me._3DLogoTexture = Content.Load(Of Texture2D)("GUI\Logos\3D")
 
-        Me._3Dposition = -(Me._3DLogoTexture.Height * 2)
         Me._pokemonLogoOffset = CInt(Core.windowSize.Height / 2 - Me._pokemonLogoTexture.Height)
     End Sub
 
@@ -50,7 +48,7 @@
             Me._pokemonRevealStage += 8
             If Me._pokemonRevealStage >= textureWidth Then
                 Me._pokemonRevealStage = textureWidth
-                Me._introStage = IntroStages.P3DMoveIn
+                Me._startbattleStage = IntroStages.P3DMoveIn
             End If
         End If
     End Sub
@@ -70,7 +68,7 @@
     Public Overrides Sub Draw()
         Core.SpriteBatch.DrawRectangle(Core.windowSize, Color.Black)
 
-        Select Case _introStage
+        Select Case _startbattleStage
             Case IntroStages.RevealPokemon
                 Me.DrawRevealPokemon()
             Case IntroStages.P3DMoveIn
