@@ -541,6 +541,368 @@ item_category_KeyItems,Key Items
 item_category_BattleItems,Battle Items
 item_category_Mail,Mail
 ---
+Item names:
+
+Balls:
+item_name_1,Master Ball
+item_name_2,Ultra Ball
+item_name_3,Premier Ball
+item_name_4,Great Ball
+item_name_5,Poké Ball
+item_name_45,Cherish Ball
+item_name_79,Dive Ball
+item_name_80,Net Ball
+item_name_129,Quick Ball
+item_name_150,Timer Ball
+item_name_157,Heavy Ball
+item_name_158,Dusk Ball
+item_name_159,Level Ball
+item_name_160,Lure Ball
+item_name_161,Fast Ball
+item_name_164,Friend Ball
+item_name_165,Moon Ball
+item_name_166,Love Ball
+item_name_168,Repeat Ball
+item_name_174,Luxury Ball
+item_name_177,Sport Ball
+item_name_181,Safari Ball
+item_name_186,Heal Ball
+item_name_188,Nest Ball
+
+Key Items:
+item_name_6,Bicycle
+item_name_41,S.S. Ticket
+item_name_54,Coin Case
+item_name_55,Item Finder
+item_name_56,Crystal Wing
+item_name_58,Old Rod
+item_name_59,Good Rod
+item_name_61,Super Rod
+item_name_66,Red Scale
+item_name_67,Secret Potion
+item_name_69,Mystery Egg
+item_name_71,Silver Wing
+item_name_78,Running Shoes
+item_name_115,GS Ball
+item_name_116,Blue Card
+item_name_127,Card Key
+item_name_128,Machine Part
+item_name_130,Lost Item
+item_name_133,Basement Key
+item_name_134,Pass
+item_name_175,Squirt Bottle
+item_name_178,Rainbow Wing
+item_name_241,Oval Charm
+item_name_242,Shiny Charm
+item_name_265,Tri Pass
+item_name_284,Rainbow Pass
+item_name_285,Old Sea Map
+item_name_286,Ancient Shard
+item_name_292,Empty Sea Map
+item_name_592,Liberty Sea Map
+item_name_576,Mega Bracelet
+item_name_651,Light Stone
+item_name_652,Dark Stone
+
+Technical Machines:
+item_name_191,TM01
+item_name_192,TM02
+item_name_193,TM03
+item_name_194,TM04
+item_name_195,TM05
+item_name_196,TM06
+item_name_197,TM07
+item_name_198,TM08
+item_name_199,TM09
+item_name_200,TM10
+item_name_201,TM11
+item_name_202,TM12
+item_name_203,TM13
+item_name_204,TM14
+item_name_205,TM15
+item_name_206,TM16
+item_name_207,TM17
+item_name_208,TM18
+item_name_209,TM19
+item_name_210,TM20
+item_name_211,TM21
+item_name_212,TM22
+item_name_213,TM23
+item_name_214,TM24
+item_name_215,TM25
+item_name_216,TM26
+item_name_217,TM27
+item_name_218,TM28
+item_name_219,TM29
+item_name_220,TM30
+item_name_221,TM31
+item_name_222,TM32
+item_name_223,TM33
+item_name_224,TM34
+item_name_225,TM35
+item_name_226,TM36
+item_name_227,TM37
+item_name_228,TM38
+item_name_229,TM39
+item_name_230,TM40
+item_name_231,TM41
+item_name_232,TM42
+item_name_233,TM43
+item_name_234,TM44
+item_name_235,TM45
+item_name_236,TM46
+item_name_237,TM47
+item_name_238,TM48
+item_name_239,TM49
+item_name_240,TM50
+item_name_351,TM51
+item_name_352,TM52
+item_name_353,TM53
+item_name_354,TM54
+item_name_355,TM55
+item_name_356,TM56
+item_name_357,TM57
+item_name_358,TM58
+item_name_359,TM59
+item_name_360,TM60
+item_name_361,TM61
+item_name_362,TM62
+item_name_363,TM63
+item_name_364,TM64
+item_name_365,TM65
+item_name_366,TM66
+item_name_367,TM67
+item_name_368,TM68
+item_name_369,TM69
+item_name_370,TM70
+item_name_371,TM71
+item_name_372,TM72
+item_name_373,TM73
+item_name_374,TM74
+item_name_375,TM75
+item_name_376,TM76
+item_name_377,TM77
+item_name_378,TM78
+item_name_379,TM79
+item_name_380,TM80
+item_name_381,TM81
+item_name_382,TM82
+item_name_383,TM83
+item_name_384,TM84
+item_name_385,TM85
+item_name_386,TM86
+item_name_387,TM87
+item_name_388,TM88
+item_name_389,TM89
+item_name_390,TM90
+item_name_391,TM91
+item_name_392,TM92
+item_name_393,TM93
+item_name_394,TM94
+item_name_395,TM95
+item_name_396,TM96
+item_name_397,TM97
+item_name_398,TM98
+item_name_399,TM99
+item_name_400,TM100
+item_name_401,TM101
+item_name_402,TM102
+item_name_403,TM103
+item_name_404,TM104
+item_name_405,TM105
+item_name_406,TM106
+item_name_407,TM107
+item_name_408,TM108
+item_name_409,TM109
+item_name_410,TM110
+item_name_411,TM111
+item_name_412,TM112
+item_name_413,TM113
+item_name_414,TM114
+item_name_415,TM115
+item_name_416,TM116
+item_name_417,TM117
+item_name_418,TM118
+item_name_419,TM119
+item_name_420,TM120
+item_name_421,TM121
+item_name_422,TM122
+item_name_423,TM123
+item_name_424,TM124
+item_name_425,TM125
+item_name_426,TM126
+item_name_427,TM127
+item_name_428,TM128
+item_name_429,TM129
+item_name_430,TM130
+item_name_431,TM131
+item_name_432,TM132
+item_name_433,TM133
+item_name_434,TM134
+item_name_435,TM135
+item_name_436,TM136
+item_name_437,TM137
+item_name_438,TM138
+item_name_439,TM139
+item_name_440,TM140
+item_name_441,TM141
+item_name_442,TM142
+item_name_443,TM143
+item_name_444,TM144
+item_name_445,TM145
+item_name_446,TM146
+item_name_447,TM147
+item_name_448,TM148
+item_name_449,TM149
+item_name_450,TM150
+item_name_451,TM151
+item_name_452,TM152
+item_name_453,TM153
+item_name_454,TM154
+item_name_455,TM155
+item_name_456,TM156
+item_name_457,TM157
+item_name_458,TM158
+item_name_459,TM159
+item_name_460,TM160
+item_name_461,TM161
+item_name_462,TM162
+item_name_463,TM163
+item_name_464,TM164
+item_name_465,TM165
+item_name_466,TM166
+item_name_467,TM167
+item_name_468,TM168
+item_name_469,TM169
+item_name_470,TM170
+item_name_471,TM171
+item_name_472,TM172
+item_name_473,TM173
+item_name_474,TM174
+item_name_475,TM175
+item_name_476,TM176
+item_name_477,TM177
+item_name_478,TM178
+item_name_479,TM179
+item_name_480,TM180
+item_name_481,TM181
+
+Hidden Machines:
+item_name_247,HM01
+item_name_244,HM02
+item_name_245,HM03
+item_name_246,HM04
+item_name_243,HM05
+item_name_248,HM06
+item_name_249,HM07
+item_name_250,HM08
+item_name_251,HM09
+item_name_252,HM10
+
+Medicine:
+item_name_7,LavaCookie
+item_name_9,Antidote
+item_name_10,BurnHeal
+item_name_11,IceHeal
+item_name_12,Awakening
+item_name_13,ParalyzeHeal
+item_name_14,FullRestore
+item_name_15,MaxPotion
+item_name_16,HyperPotion
+item_name_17,SuperPotion
+item_name_18,Potion
+item_name_21,MaxElixir
+item_name_38,FullHeal
+item_name_39,Revive
+item_name_40,MaxRevive
+item_name_46,FreshWater
+item_name_47,SodaPop
+item_name_48,Lemonade
+item_name_62,PPUp
+item_name_63,Ether
+item_name_64,MaxEther
+item_name_65,Elixir
+item_name_72,MooMooMilk
+item_name_114,RageCandyBar
+item_name_121,EnergyPowder
+item_name_122,EnergyRoot
+item_name_123,HealPowder
+item_name_124,RevivalHerb
+item_name_139,BerryJuice
+item_name_152,PewterCrunchies
+item_name_156,SacredAsh
+item_name_266,Fanta
+item_name_502,PPMax
+
+Berries:
+item_name_2000,Cheri Berry
+item_name_2001,Chesto Berry
+item_name_2002,Pecha Berry
+item_name_2003,Rawst Berry
+item_name_2004,Aspear Berry
+item_name_2005,Leppa Berry
+item_name_2006,Oran Berry
+item_name_2007,Persim Berry
+item_name_2008,Lum Berry
+item_name_2009,Sitrus Berry
+item_name_2010,Figy Berry
+item_name_2011,Wiki Berry
+item_name_2012,Mago Berry
+item_name_2013,Aguav Berry
+item_name_2014,Iapapa Berry
+item_name_2015,Razz Berry
+item_name_2016,Bluk Berry
+item_name_2017,Nanab Berry
+item_name_2018,Wepear Berry
+item_name_2019,Pinap Berry
+item_name_2020,Pomeg Berry
+item_name_2021,Kelpsy Berry
+item_name_2022,Qualot Berry
+item_name_2023,Hondew Berry
+item_name_2024,Grepa Berry
+item_name_2025,Tamato Berry
+item_name_2026,Cornn Berry
+item_name_2027,Magost Berry
+item_name_2028,Rabuta Berry
+item_name_2029,Nomel Berry
+item_name_2030,Spelon Berry
+item_name_2031,Pamtre Berry
+item_name_2032,Watmel Berry
+item_name_2033,Durin Berry
+item_name_2034,Belue Berry
+item_name_2035,Occa Berry
+item_name_2036,Passho Berry
+item_name_2037,Wacan Berry
+item_name_2038,Rindo Berry
+item_name_2039,YacheBerry
+item_name_2040,Chople Berry
+item_name_2041,Kebia Berry
+item_name_2042,Shuca Berry
+item_name_2043,Coba Berry
+item_name_2044,Payapa Berry
+item_name_2045,Tanga Berry
+item_name_2046,Charti Berry
+item_name_2047,Kasib Berry
+item_name_2048,Haban Berry
+item_name_2049,Colbur Berry
+item_name_2050,Babiri Berry
+item_name_2051,Chilan Berry
+item_name_2052,Liechi Berry
+item_name_2053,Ganlon Berry
+item_name_2054,Salac Berry
+item_name_2055,Petaya Berry
+item_name_2056,Apicot Berry
+item_name_2057,Lansat Berry
+item_name_2058,Starf Berry
+item_name_2059,Enigma Berry
+item_name_2060,Micle Berry
+item_name_2061,Custap Berry
+item_name_2062,Jaboca Berry
+item_name_2063,Rowap Berry
+item_name_2064,Roseli Berry
+item_name_2065,Kee Berry
+item_name_2066,Maranga Berry
+---
 GameMessages:
 game_message_screenshot,Screenshot saved as 
 game_message_screenshot_failed,Cannot create screenshot
