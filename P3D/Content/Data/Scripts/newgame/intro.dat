@@ -186,6 +186,6 @@
 @player.addmoney(3000)
 
 
-@system.endnewgame(yourroom.dat,1,0.1,3,1)
+@system.endnewgame(cities\newbark\yourhousef2.dat,1,0.1,3,1)
 
 :end

@@ -48,7 +48,7 @@
             Me._pokemonRevealStage += 8
             If Me._pokemonRevealStage >= textureWidth Then
                 Me._pokemonRevealStage = textureWidth
-                Me._startbattleStage = IntroStages.P3DMoveIn
+                Me._introStage = IntroStages.P3DMoveIn
             End If
         End If
     End Sub
@@ -68,7 +68,7 @@
     Public Overrides Sub Draw()
         Core.SpriteBatch.DrawRectangle(Core.windowSize, Color.Black)
 
-        Select Case _startbattleStage
+        Select Case _introStage
             Case IntroStages.RevealPokemon
                 Me.DrawRevealPokemon()
             Case IntroStages.P3DMoveIn

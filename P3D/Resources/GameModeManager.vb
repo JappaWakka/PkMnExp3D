@@ -603,7 +603,7 @@ Public Class GameMode
             "StartDialogue|" & Me._startDialogue & Environment.NewLine &
             "StartColor|" & Me._startColor.R & "," & Me._startColor.G & "," & Me._startColor.B & Environment.NewLine &
             "PokemonAppear|" & Me._pokemonAppear & Environment.NewLine &
-            "IntroMusic|" & Me._startbattleMusic & Environment.NewLine
+            "IntroMusic|" & Me._introMusic & Environment.NewLine
 
         Dim SkinColorsString As String = "SkinColors|"
         Dim iSC As Integer = 0

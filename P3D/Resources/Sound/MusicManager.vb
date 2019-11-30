@@ -1,5 +1,4 @@
-﻿Imports Microsoft.VisualBasic
-Public Class MusicManager
+﻿Public Class MusicManager
 
     Private Const NO_MUSIC As String = "*nomusic*" ' contains * as character, which cannot be in a filename
     Private Const DEFAULT_FADE_SPEED As Single = 0.02F
@@ -208,7 +207,7 @@ Public Class MusicManager
     End Sub
 
     Private Shared Sub Play(song As SongContainer)
-        MediaPlayer.Stop()
+        'MediaPlayer.Stop()
 
         If Not song Is Nothing Then
             Logger.Debug($"Play song [{song.Name}]")
