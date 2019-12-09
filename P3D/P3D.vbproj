@@ -15363,22 +15363,51 @@
     <Compile Include="Pokemon\Items\Standard\ExpertBelt.vb" />
     <Compile Include="Pokemon\Items\Stones\IceStone.vb" />
     <Compile Include="Resources\Blur\BlurHandler.vb" />
-    <None Include="Content\Data\Maps\Corna\Cities\BreezeTown\Main.dat" />
-    <None Include="Content\Data\Scripts\center_script.dat" />
-    <None Include="Content\Data\Scripts\computer.dat" />
-    <None Include="Content\Data\Scripts\computer_choose.dat" />
-    <None Include="Content\Data\Scripts\heal_machine.dat" />
-    <None Include="Content\Data\Scripts\multiplayer.dat" />
-    <None Include="Content\Data\Scripts\newgame\intro.dat" />
-    <None Include="Content\Data\Scripts\oldguide.dat" />
-    <None Include="Content\Data\Scripts\skin_surf.dat" />
-    <None Include="Content\Data\System\badges.dat" />
-    <None Include="Content\Data\System\channels.dat" />
-    <None Include="Content\Data\System\interactions.dat" />
-    <None Include="Content\Data\System\Moves\example.dat" />
-    <None Include="Content\Data\System\pokedex.dat" />
-    <None Include="Content\Data\System\restplaces.dat" />
-    <None Include="Content\Data\System\smashrockitems.dat" />
+    <Content Include="Content\Data\Maps\Corna\Cities\BreezeTown\Main.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\center_script.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\computer.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\computer_choose.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\heal_machine.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\multiplayer.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\newgame\intro.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\oldguide.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\System\badges.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\System\channels.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\System\interactions.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\System\Moves\example.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\System\pokedex.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\System\restplaces.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\System\smashrockitems.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Content\Pokemon\Data\172_spiky-eared.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
