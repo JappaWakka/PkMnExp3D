@@ -820,7 +820,7 @@ Public Class NewMainMenuScreen
                 Next
 
                 If _isGameJolt = False Then
-                    _sprite = TextureManager.GetTexture("Textures\NPC\" & _skin)
+                    _sprite = TextureManager.GetTexture("Textures\NPC\PlayerSkins\" & _skin)
                 End If
             Else
                 _gameModeExists = False

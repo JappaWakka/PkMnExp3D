@@ -25,7 +25,32 @@
                     Core.Player.HasPokegear = True
                     IsReady = True
                 Case "renamerival"
-                    Core.SetScreen(New NameObjectScreen(Core.CurrentScreen, TextureManager.GetTexture("NPC\4", New Rectangle(0, 64, 32, 32)), False, False, "rival", "Silver", AddressOf Script.NameRival))
+                    Dim RivalTexture As String
+                    Dim RivalName As String
+                    If GameModeManager.ActiveGameMode.DirectoryName = "Quartz" Then
+                        If Core.Player.Gender = "Male" Then
+                            RivalTexture = "NPC\RivalFemale"
+                            RivalName = "Rande"
+                        ElseIf Core.Player.Gender = "Female" Then
+                            RivalTexture = "NPC\RivalMale"
+                            RivalName = "J. Akira"
+                        Else
+                            RivalTexture = "NPC\RivalGenderless"
+                            RivalName = "Robin"
+                        End If
+                    Else
+                        If Core.Player.Gender = "Male" Then
+                            RivalTexture = "NPC\RivalFemale"
+                            RivalName = "Rival"
+                        ElseIf Core.Player.Gender = "Female" Then
+                            RivalTexture = "NPC\RivalMale"
+                            RivalName = "Rival"
+                        Else
+                            RivalTexture = "NPC\RivalGenderless"
+                            RivalName = "Rival"
+                        End If
+                    End If
+                    Core.SetScreen(New NameObjectScreen(Core.CurrentScreen, TextureManager.GetTexture(RivalTexture, New Rectangle(0, 64, 32, 32)), False, False, "rival", RivalName, AddressOf Script.NameRival))
                     IsReady = True
                     CanContinue = False
                 Case "wearskin"
