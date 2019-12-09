@@ -93,6 +93,7 @@
     <Content Include="Content\Models\truck2\140l155.jpg" />
     <Content Include="Content\Songs\ancient_ruins.ogg" />
     <Content Include="Content\Songs\azalea.ogg" />
+    <Content Include="Content\Songs\barktown.ogg" />
     <Content Include="Content\Songs\battlefactory.ogg" />
     <Content Include="Content\Songs\battletower.ogg" />
     <Content Include="Content\Songs\bikesong.ogg" />
@@ -226,7 +227,6 @@
     <Content Include="Content\Songs\lighthouse.ogg" />
     <Content Include="Content\Songs\lobby.ogg" />
     <Content Include="Content\Songs\Looker_encounter.ogg" />
-    <Content Include="Content\Songs\lugia_battle.ogg" />
     <Content Include="Content\Songs\lugia_battle_startbattle.ogg" />
     <Content Include="Content\Songs\mart.ogg" />
     <Content Include="Content\Songs\mary_encounter.ogg" />

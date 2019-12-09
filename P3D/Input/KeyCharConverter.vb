@@ -356,480 +356,480 @@ Public Class KeyCharConverter
 
 #End Region
 
-    Private Shared Function GetVirtualKeyFromKey(ByVal k As System.Windows.Forms.Keys) As Integer
+    Private Shared Function GetVirtualKeyFromKey(ByVal k As Windows.Forms.Keys) As Integer
 
         Dim virtualKey As Integer = 0
 
         Select Case CInt(k)
-            Case System.Windows.Forms.Keys.Cancel
+            Case Windows.Forms.Keys.Cancel
                 virtualKey = VK_CANCEL
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Back
+            Case Windows.Forms.Keys.Back
                 virtualKey = VK_BACK
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Tab
+            Case Windows.Forms.Keys.Tab
                 virtualKey = VK_TAB
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Clear
+            Case Windows.Forms.Keys.Clear
                 virtualKey = VK_CLEAR
                 Exit Select
 
-            Case System.Windows.Forms.Keys.[Return]
+            Case Windows.Forms.Keys.[Return]
                 virtualKey = VK_RETURN
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Pause
+            Case Windows.Forms.Keys.Pause
                 virtualKey = VK_PAUSE
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Capital
+            Case Windows.Forms.Keys.Capital
                 virtualKey = VK_CAPITAL
                 Exit Select
 
-            Case System.Windows.Forms.Keys.KanaMode
+            Case Windows.Forms.Keys.KanaMode
                 virtualKey = VK_KANA
                 Exit Select
 
-            Case System.Windows.Forms.Keys.JunjaMode
+            Case Windows.Forms.Keys.JunjaMode
                 virtualKey = VK_JUNJA
                 Exit Select
 
-            Case System.Windows.Forms.Keys.FinalMode
+            Case Windows.Forms.Keys.FinalMode
                 virtualKey = VK_FINAL
                 Exit Select
 
-            Case System.Windows.Forms.Keys.KanjiMode
+            Case Windows.Forms.Keys.KanjiMode
                 virtualKey = VK_KANJI
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Escape
+            Case Windows.Forms.Keys.Escape
                 virtualKey = VK_ESCAPE
                 Exit Select
 
-            Case System.Windows.Forms.Keys.IMEConvert
+            Case Windows.Forms.Keys.IMEConvert
                 virtualKey = VK_CONVERT
                 Exit Select
 
-            Case System.Windows.Forms.Keys.IMENonconvert
+            Case Windows.Forms.Keys.IMENonconvert
                 virtualKey = VK_NONCONVERT
                 Exit Select
 
-            Case System.Windows.Forms.Keys.IMEAccept
+            Case Windows.Forms.Keys.IMEAccept
                 virtualKey = VK_ACCEPT
                 Exit Select
 
-            Case System.Windows.Forms.Keys.IMEModeChange
+            Case Windows.Forms.Keys.IMEModeChange
                 virtualKey = VK_MODECHANGE
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Space
+            Case Windows.Forms.Keys.Space
                 virtualKey = VK_SPACE
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Prior
+            Case Windows.Forms.Keys.Prior
                 virtualKey = VK_PRIOR
                 Exit Select
 
-            Case System.Windows.Forms.Keys.[Next]
+            Case Windows.Forms.Keys.[Next]
                 virtualKey = VK_NEXT
                 Exit Select
 
-            Case System.Windows.Forms.Keys.[End]
+            Case Windows.Forms.Keys.[End]
                 virtualKey = VK_END
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Home
+            Case Windows.Forms.Keys.Home
                 virtualKey = VK_HOME
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Left
+            Case Windows.Forms.Keys.Left
                 virtualKey = VK_LEFT
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Up
+            Case Windows.Forms.Keys.Up
                 virtualKey = VK_UP
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Right
+            Case Windows.Forms.Keys.Right
                 virtualKey = VK_RIGHT
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Down
+            Case Windows.Forms.Keys.Down
                 virtualKey = VK_DOWN
                 Exit Select
 
-            Case System.Windows.Forms.Keys.[Select]
+            Case Windows.Forms.Keys.[Select]
                 virtualKey = VK_SELECT
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Print
+            Case Windows.Forms.Keys.Print
                 virtualKey = VK_PRINT
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Execute
+            Case Windows.Forms.Keys.Execute
                 virtualKey = VK_EXECUTE
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Snapshot
+            Case Windows.Forms.Keys.Snapshot
                 virtualKey = VK_SNAPSHOT
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Insert
+            Case Windows.Forms.Keys.Insert
                 virtualKey = VK_INSERT
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Delete
+            Case Windows.Forms.Keys.Delete
                 virtualKey = VK_DELETE
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Help
+            Case Windows.Forms.Keys.Help
                 virtualKey = VK_HELP
                 Exit Select
 
-            Case System.Windows.Forms.Keys.D0
+            Case Windows.Forms.Keys.D0
                 virtualKey = VK_0
                 Exit Select
 
-            Case System.Windows.Forms.Keys.D1
+            Case Windows.Forms.Keys.D1
                 virtualKey = VK_1
                 Exit Select
 
-            Case System.Windows.Forms.Keys.D2
+            Case Windows.Forms.Keys.D2
                 virtualKey = VK_2
                 Exit Select
 
-            Case System.Windows.Forms.Keys.D3
+            Case Windows.Forms.Keys.D3
                 virtualKey = VK_3
                 Exit Select
 
-            Case System.Windows.Forms.Keys.D4
+            Case Windows.Forms.Keys.D4
                 virtualKey = VK_4
                 Exit Select
 
-            Case System.Windows.Forms.Keys.D5
+            Case Windows.Forms.Keys.D5
                 virtualKey = VK_5
                 Exit Select
 
-            Case System.Windows.Forms.Keys.D6
+            Case Windows.Forms.Keys.D6
                 virtualKey = VK_6
                 Exit Select
 
-            Case System.Windows.Forms.Keys.D7
+            Case Windows.Forms.Keys.D7
                 virtualKey = VK_7
                 Exit Select
 
-            Case System.Windows.Forms.Keys.D8
+            Case Windows.Forms.Keys.D8
                 virtualKey = VK_8
                 Exit Select
 
-            Case System.Windows.Forms.Keys.D9
+            Case Windows.Forms.Keys.D9
                 virtualKey = VK_9
                 Exit Select
 
-            Case System.Windows.Forms.Keys.A
+            Case Windows.Forms.Keys.A
                 virtualKey = VK_A
                 Exit Select
 
-            Case System.Windows.Forms.Keys.B
+            Case Windows.Forms.Keys.B
                 virtualKey = VK_B
                 Exit Select
 
-            Case System.Windows.Forms.Keys.C
+            Case Windows.Forms.Keys.C
                 virtualKey = VK_C
                 Exit Select
 
-            Case System.Windows.Forms.Keys.D
+            Case Windows.Forms.Keys.D
                 virtualKey = VK_D
                 Exit Select
 
-            Case System.Windows.Forms.Keys.E
+            Case Windows.Forms.Keys.E
                 virtualKey = VK_E
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F
+            Case Windows.Forms.Keys.F
                 virtualKey = VK_F
                 Exit Select
 
-            Case System.Windows.Forms.Keys.G
+            Case Windows.Forms.Keys.G
                 virtualKey = VK_G
                 Exit Select
 
-            Case System.Windows.Forms.Keys.H
+            Case Windows.Forms.Keys.H
                 virtualKey = VK_H
                 Exit Select
 
-            Case System.Windows.Forms.Keys.I
+            Case Windows.Forms.Keys.I
                 virtualKey = VK_I
                 Exit Select
 
-            Case System.Windows.Forms.Keys.J
+            Case Windows.Forms.Keys.J
                 virtualKey = VK_J
                 Exit Select
 
-            Case System.Windows.Forms.Keys.K
+            Case Windows.Forms.Keys.K
                 virtualKey = VK_K
                 Exit Select
 
-            Case System.Windows.Forms.Keys.L
+            Case Windows.Forms.Keys.L
                 virtualKey = VK_L
                 Exit Select
 
-            Case System.Windows.Forms.Keys.M
+            Case Windows.Forms.Keys.M
                 virtualKey = VK_M
                 Exit Select
 
-            Case System.Windows.Forms.Keys.N
+            Case Windows.Forms.Keys.N
                 virtualKey = VK_N
                 Exit Select
 
-            Case System.Windows.Forms.Keys.O
+            Case Windows.Forms.Keys.O
                 virtualKey = VK_O
                 Exit Select
 
-            Case System.Windows.Forms.Keys.P
+            Case Windows.Forms.Keys.P
                 virtualKey = VK_P
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Q
+            Case Windows.Forms.Keys.Q
                 virtualKey = VK_Q
                 Exit Select
 
-            Case System.Windows.Forms.Keys.R
+            Case Windows.Forms.Keys.R
                 virtualKey = VK_R
                 Exit Select
 
-            Case System.Windows.Forms.Keys.S
+            Case Windows.Forms.Keys.S
                 virtualKey = VK_S
                 Exit Select
 
-            Case System.Windows.Forms.Keys.T
+            Case Windows.Forms.Keys.T
                 virtualKey = VK_T
                 Exit Select
 
-            Case System.Windows.Forms.Keys.U
+            Case Windows.Forms.Keys.U
                 virtualKey = VK_U
                 Exit Select
 
-            Case System.Windows.Forms.Keys.V
+            Case Windows.Forms.Keys.V
                 virtualKey = VK_V
                 Exit Select
 
-            Case System.Windows.Forms.Keys.W
+            Case Windows.Forms.Keys.W
                 virtualKey = VK_W
                 Exit Select
 
-            Case System.Windows.Forms.Keys.X
+            Case Windows.Forms.Keys.X
                 virtualKey = VK_X
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Y
+            Case Windows.Forms.Keys.Y
                 virtualKey = VK_Y
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Z
+            Case Windows.Forms.Keys.Z
                 virtualKey = VK_Z
                 Exit Select
 
-            Case System.Windows.Forms.Keys.LWin
+            Case Windows.Forms.Keys.LWin
                 virtualKey = VK_LWIN
                 Exit Select
 
-            Case System.Windows.Forms.Keys.RWin
+            Case Windows.Forms.Keys.RWin
                 virtualKey = VK_RWIN
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Apps
+            Case Windows.Forms.Keys.Apps
                 virtualKey = VK_APPS
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Sleep
+            Case Windows.Forms.Keys.Sleep
                 virtualKey = VK_SLEEP
                 Exit Select
 
-            Case System.Windows.Forms.Keys.NumPad0
+            Case Windows.Forms.Keys.NumPad0
                 virtualKey = VK_NUMPAD0
                 Exit Select
 
-            Case System.Windows.Forms.Keys.NumPad1
+            Case Windows.Forms.Keys.NumPad1
                 virtualKey = VK_NUMPAD1
                 Exit Select
 
-            Case System.Windows.Forms.Keys.NumPad2
+            Case Windows.Forms.Keys.NumPad2
                 virtualKey = VK_NUMPAD2
                 Exit Select
 
-            Case System.Windows.Forms.Keys.NumPad3
+            Case Windows.Forms.Keys.NumPad3
                 virtualKey = VK_NUMPAD3
                 Exit Select
 
-            Case System.Windows.Forms.Keys.NumPad4
+            Case Windows.Forms.Keys.NumPad4
                 virtualKey = VK_NUMPAD4
                 Exit Select
 
-            Case System.Windows.Forms.Keys.NumPad5
+            Case Windows.Forms.Keys.NumPad5
                 virtualKey = VK_NUMPAD5
                 Exit Select
 
-            Case System.Windows.Forms.Keys.NumPad6
+            Case Windows.Forms.Keys.NumPad6
                 virtualKey = VK_NUMPAD6
                 Exit Select
 
-            Case System.Windows.Forms.Keys.NumPad7
+            Case Windows.Forms.Keys.NumPad7
                 virtualKey = VK_NUMPAD7
                 Exit Select
 
-            Case System.Windows.Forms.Keys.NumPad8
+            Case Windows.Forms.Keys.NumPad8
                 virtualKey = VK_NUMPAD8
                 Exit Select
 
-            Case System.Windows.Forms.Keys.NumPad9
+            Case Windows.Forms.Keys.NumPad9
                 virtualKey = VK_NUMPAD9
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Multiply
+            Case Windows.Forms.Keys.Multiply
                 virtualKey = VK_MULTIPLY
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Add
+            Case Windows.Forms.Keys.Add
                 virtualKey = VK_ADD
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Separator
+            Case Windows.Forms.Keys.Separator
                 virtualKey = VK_SEPARATOR
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Subtract
+            Case Windows.Forms.Keys.Subtract
                 virtualKey = VK_SUBTRACT
                 Exit Select
 
-            Case System.Windows.Forms.Keys.[Decimal]
+            Case Windows.Forms.Keys.[Decimal]
                 virtualKey = VK_DECIMAL
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Divide
+            Case Windows.Forms.Keys.Divide
                 virtualKey = VK_DIVIDE
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F1
+            Case Windows.Forms.Keys.F1
                 virtualKey = VK_F1
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F2
+            Case Windows.Forms.Keys.F2
                 virtualKey = VK_F2
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F3
+            Case Windows.Forms.Keys.F3
                 virtualKey = VK_F3
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F4
+            Case Windows.Forms.Keys.F4
                 virtualKey = VK_F4
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F5
+            Case Windows.Forms.Keys.F5
                 virtualKey = VK_F5
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F6
+            Case Windows.Forms.Keys.F6
                 virtualKey = VK_F6
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F7
+            Case Windows.Forms.Keys.F7
                 virtualKey = VK_F7
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F8
+            Case Windows.Forms.Keys.F8
                 virtualKey = VK_F8
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F9
+            Case Windows.Forms.Keys.F9
                 virtualKey = VK_F9
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F10
+            Case Windows.Forms.Keys.F10
                 virtualKey = VK_F10
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F11
+            Case Windows.Forms.Keys.F11
                 virtualKey = VK_F11
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F12
+            Case Windows.Forms.Keys.F12
                 virtualKey = VK_F12
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F13
+            Case Windows.Forms.Keys.F13
                 virtualKey = VK_F13
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F14
+            Case Windows.Forms.Keys.F14
                 virtualKey = VK_F14
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F15
+            Case Windows.Forms.Keys.F15
                 virtualKey = VK_F15
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F16
+            Case Windows.Forms.Keys.F16
                 virtualKey = VK_F16
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F17
+            Case Windows.Forms.Keys.F17
                 virtualKey = VK_F17
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F18
+            Case Windows.Forms.Keys.F18
                 virtualKey = VK_F18
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F19
+            Case Windows.Forms.Keys.F19
                 virtualKey = VK_F19
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F20
+            Case Windows.Forms.Keys.F20
                 virtualKey = VK_F20
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F21
+            Case Windows.Forms.Keys.F21
                 virtualKey = VK_F21
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F22
+            Case Windows.Forms.Keys.F22
                 virtualKey = VK_F22
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F23
+            Case Windows.Forms.Keys.F23
                 virtualKey = VK_F23
                 Exit Select
 
-            Case System.Windows.Forms.Keys.F24
+            Case Windows.Forms.Keys.F24
                 virtualKey = VK_F24
                 Exit Select
 
-            Case System.Windows.Forms.Keys.NumLock
+            Case Windows.Forms.Keys.NumLock
                 virtualKey = VK_NUMLOCK
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Scroll
+            Case Windows.Forms.Keys.Scroll
                 virtualKey = VK_SCROLL
                 Exit Select
 
-            Case System.Windows.Forms.Keys.LShiftKey
+            Case Windows.Forms.Keys.LShiftKey
                 virtualKey = VK_LSHIFT
                 Exit Select
 
-            Case System.Windows.Forms.Keys.RShiftKey
+            Case Windows.Forms.Keys.RShiftKey
                 virtualKey = VK_RSHIFT
                 Exit Select
 
-            Case System.Windows.Forms.Keys.LControlKey
+            Case Windows.Forms.Keys.LControlKey
                 virtualKey = VK_LCONTROL
                 Exit Select
 
-            Case System.Windows.Forms.Keys.RControlKey
+            Case Windows.Forms.Keys.RControlKey
                 virtualKey = VK_RCONTROL
                 Exit Select
 
@@ -841,103 +841,103 @@ Public Class KeyCharConverter
                 virtualKey = VK_RMENU
                 Exit Select
 
-            Case System.Windows.Forms.Keys.BrowserBack
+            Case Windows.Forms.Keys.BrowserBack
                 virtualKey = VK_BROWSER_BACK
                 Exit Select
 
-            Case System.Windows.Forms.Keys.BrowserForward
+            Case Windows.Forms.Keys.BrowserForward
                 virtualKey = VK_BROWSER_FORWARD
                 Exit Select
 
-            Case System.Windows.Forms.Keys.BrowserRefresh
+            Case Windows.Forms.Keys.BrowserRefresh
                 virtualKey = VK_BROWSER_REFRESH
                 Exit Select
 
-            Case System.Windows.Forms.Keys.BrowserStop
+            Case Windows.Forms.Keys.BrowserStop
                 virtualKey = VK_BROWSER_STOP
                 Exit Select
 
-            Case System.Windows.Forms.Keys.BrowserSearch
+            Case Windows.Forms.Keys.BrowserSearch
                 virtualKey = VK_BROWSER_SEARCH
                 Exit Select
 
-            Case System.Windows.Forms.Keys.BrowserFavorites
+            Case Windows.Forms.Keys.BrowserFavorites
                 virtualKey = VK_BROWSER_FAVORITES
                 Exit Select
 
-            Case System.Windows.Forms.Keys.BrowserHome
+            Case Windows.Forms.Keys.BrowserHome
                 virtualKey = VK_BROWSER_HOME
                 Exit Select
 
-            Case System.Windows.Forms.Keys.VolumeMute
+            Case Windows.Forms.Keys.VolumeMute
                 virtualKey = VK_VOLUME_MUTE
                 Exit Select
 
-            Case System.Windows.Forms.Keys.VolumeDown
+            Case Windows.Forms.Keys.VolumeDown
                 virtualKey = VK_VOLUME_DOWN
                 Exit Select
 
-            Case System.Windows.Forms.Keys.VolumeUp
+            Case Windows.Forms.Keys.VolumeUp
                 virtualKey = VK_VOLUME_UP
                 Exit Select
 
-            Case System.Windows.Forms.Keys.MediaNextTrack
+            Case Windows.Forms.Keys.MediaNextTrack
                 virtualKey = VK_MEDIA_NEXT_TRACK
                 Exit Select
 
-            Case System.Windows.Forms.Keys.MediaPreviousTrack
+            Case Windows.Forms.Keys.MediaPreviousTrack
                 virtualKey = VK_MEDIA_PREV_TRACK
                 Exit Select
 
-            Case System.Windows.Forms.Keys.MediaStop
+            Case Windows.Forms.Keys.MediaStop
                 virtualKey = VK_MEDIA_STOP
                 Exit Select
 
-            Case System.Windows.Forms.Keys.MediaPlayPause
+            Case Windows.Forms.Keys.MediaPlayPause
                 virtualKey = VK_MEDIA_PLAY_PAUSE
                 Exit Select
 
-            Case System.Windows.Forms.Keys.LaunchMail
+            Case Windows.Forms.Keys.LaunchMail
                 virtualKey = VK_LAUNCH_MAIL
                 Exit Select
 
-            Case System.Windows.Forms.Keys.SelectMedia
+            Case Windows.Forms.Keys.SelectMedia
                 virtualKey = VK_LAUNCH_MEDIA_SELECT
                 Exit Select
 
-            Case System.Windows.Forms.Keys.LaunchApplication1
+            Case Windows.Forms.Keys.LaunchApplication1
                 virtualKey = VK_LAUNCH_APP1
                 Exit Select
 
-            Case System.Windows.Forms.Keys.LaunchApplication2
+            Case Windows.Forms.Keys.LaunchApplication2
                 virtualKey = VK_LAUNCH_APP2
                 Exit Select
 
-            Case System.Windows.Forms.Keys.OemSemicolon
+            Case Windows.Forms.Keys.OemSemicolon
                 virtualKey = VK_OEM_1
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Oemplus
+            Case Windows.Forms.Keys.Oemplus
                 virtualKey = VK_OEM_PLUS
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Oemcomma
+            Case Windows.Forms.Keys.Oemcomma
                 virtualKey = VK_OEM_COMMA
                 Exit Select
 
-            Case System.Windows.Forms.Keys.OemMinus
+            Case Windows.Forms.Keys.OemMinus
                 virtualKey = VK_OEM_MINUS
                 Exit Select
 
-            Case System.Windows.Forms.Keys.OemPeriod
+            Case Windows.Forms.Keys.OemPeriod
                 virtualKey = VK_OEM_PERIOD
                 Exit Select
 
-            Case System.Windows.Forms.Keys.OemQuestion
+            Case Windows.Forms.Keys.OemQuestion
                 virtualKey = VK_OEM_2
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Oemtilde
+            Case Windows.Forms.Keys.Oemtilde
                 virtualKey = VK_OEM_3
                 Exit Select
 
@@ -949,27 +949,27 @@ Public Class KeyCharConverter
                 virtualKey = VK_C2
                 Exit Select
 
-            Case System.Windows.Forms.Keys.OemOpenBrackets
+            Case Windows.Forms.Keys.OemOpenBrackets
                 virtualKey = VK_OEM_4
                 Exit Select
 
-            Case System.Windows.Forms.Keys.OemPipe
+            Case Windows.Forms.Keys.OemPipe
                 virtualKey = VK_OEM_5
                 Exit Select
 
-            Case System.Windows.Forms.Keys.OemCloseBrackets
+            Case Windows.Forms.Keys.OemCloseBrackets
                 virtualKey = VK_OEM_6
                 Exit Select
 
-            Case System.Windows.Forms.Keys.OemQuotes
+            Case Windows.Forms.Keys.OemQuotes
                 virtualKey = VK_OEM_7
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Oem8
+            Case Windows.Forms.Keys.Oem8
                 virtualKey = VK_OEM_8
                 Exit Select
 
-            Case System.Windows.Forms.Keys.OemBackslash
+            Case Windows.Forms.Keys.OemBackslash
                 virtualKey = VK_OEM_102
                 Exit Select
 
@@ -1013,55 +1013,55 @@ Public Class KeyCharConverter
                 ' VK_DBE_ROMAN
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Attn
+            Case Windows.Forms.Keys.Attn
                 ' DbeNoRoman
                 virtualKey = VK_ATTN
                 ' VK_DBE_NOROMAN
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Crsel
+            Case Windows.Forms.Keys.Crsel
                 ' DbeEnterWordRegisterMode
                 virtualKey = VK_CRSEL
                 ' VK_DBE_ENTERWORDREGISTERMODE
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Exsel
+            Case Windows.Forms.Keys.Exsel
                 ' EnterImeConfigureMode
                 virtualKey = VK_EXSEL
                 ' VK_DBE_ENTERIMECONFIGMODE
                 Exit Select
 
-            Case System.Windows.Forms.Keys.EraseEof
+            Case Windows.Forms.Keys.EraseEof
                 ' DbeFlushString
                 virtualKey = VK_EREOF
                 ' VK_DBE_FLUSHSTRING
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Play
+            Case Windows.Forms.Keys.Play
                 ' DbeCodeInput
                 virtualKey = VK_PLAY
                 ' VK_DBE_CODEINPUT
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Zoom
+            Case Windows.Forms.Keys.Zoom
                 ' DbeNoCodeInput
                 virtualKey = VK_ZOOM
                 ' VK_DBE_NOCODEINPUT
                 Exit Select
 
-            Case System.Windows.Forms.Keys.NoName
+            Case Windows.Forms.Keys.NoName
                 ' DbeDetermineString
                 virtualKey = VK_NONAME
                 ' VK_DBE_DETERMINESTRING
                 Exit Select
 
-            Case System.Windows.Forms.Keys.Pa1
+            Case Windows.Forms.Keys.Pa1
                 ' DbeEnterDlgConversionMode
                 virtualKey = VK_PA1
                 ' VK_ENTERDLGCONVERSIONMODE
                 Exit Select
 
-            Case System.Windows.Forms.Keys.OemClear
+            Case Windows.Forms.Keys.OemClear
                 virtualKey = VK_OEM_CLEAR
                 Exit Select
 
@@ -1101,14 +1101,14 @@ Public Class KeyCharConverter
     ''' </summary>
     ''' <param name="key">The key. Returns nothing when no keypress was detected.</param>
     Public Shared Function GetCharFromKey(key As Keys) As Char?
-        Return GetCharFromKey(CType(key, System.Windows.Forms.Keys))
+        Return GetCharFromKey(CType(key, Windows.Forms.Keys))
     End Function
 
     ''' <summary>
     ''' Returns chars representing the keys pressed on a keyboard.
     ''' </summary>
     ''' <param name="key">The key. Returns nothing when no keypress was detected.</param>
-    Public Shared Function GetCharFromKey(key As System.Windows.Forms.Keys) As Char?
+    Public Shared Function GetCharFromKey(key As Windows.Forms.Keys) As Char?
         Dim ch As Char? = Nothing
 
         Dim virtualKey As Integer = GetVirtualKeyFromKey(key)

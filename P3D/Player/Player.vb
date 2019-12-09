@@ -24,12 +24,12 @@
         End Set
     End Property
 
-    Public Property Male() As Boolean
+    Public Property Gender() As String
         Get
-            Return _male
+            Return _gender
         End Get
-        Set(value As Boolean)
-            _male = value
+        Set(value As String)
+            _gender = value
         End Set
     End Property
 
@@ -362,16 +362,16 @@
     Public DifficultyMode As Integer = 0
     Public BattleStyle As Integer = 1
     Public ShowModelsInBattle As Boolean = True
-    Public TempSurfSkin As String = "Hilbert"
-    Public TempFishSkin As String = "Hilbert"
-    Public TempBikeSkin As String = "Hilbert"
-    Public TempRideSkin As String = "Hil"
+    Public TempSurfSkin As String = "Gold_GBA"
+    Public TempFishSkin As String = "Gold_GBA"
+    Public TempBikeSkin As String = "Gold_GBA"
+    Public TempRideSkin As String = "Gold_GBA"
     Public Statistics As String = ""
 
     'Secure fields:
     Private _name As String = "<playername>"
     Private _rivalName As String = ""
-    Private _male As Boolean = True
+    Private _gender As String = "Male"
     Private _money As Integer = 0
     Private _OT As String = "00000"
     Private _points As Integer = 0
@@ -379,14 +379,14 @@
     Private _coins As Integer = 0
     Private _hasPokedex As Boolean = False
     Private _hasPokegear As Boolean = False
-    Private _lastRestPlace As String = "johto\cities\newbark\yourhousef2.dat"
+    Private _lastRestPlace As String = "Corna\Cities\BreezeTown\YourHousef2.dat"
     Private _lastRestPlacePosition As String = "1,0.1,3"
-    Private _lastSavePlace As String = "johto\cities\newbark\yourhousef2.dat"
+    Private _lastSavePlace As String = "Corna\Cities\BreezeTown\YourHousef2.dat"
     Private _lastSavePlacePosition As String = "1,0.1,3"
     Private _repelSteps As Integer = 0
     Private _saveCreated As String = "Pre 0.21"
     Private _daycareSteps As Integer = 0
-    Private _gameMode As String = "Kolben"
+    Private _gameMode As String = "Quartz"
     Private _skin As String = ""
     Private _visitedMaps As String = ""
     Private _GTSStars As Integer = 8
@@ -442,7 +442,7 @@
         Public Shared LastPosition As Vector3
         Public Shared IsInBattle As Boolean = False
         Public Shared BeforeBattlePosition As Vector3 = New Vector3(0)
-        Public Shared BeforeBattleLevelFile As String = "johto\cities\newbark\yourhousef2.dat"
+        Public Shared BeforeBattleLevelFile As String = "Corna\Cities\BreezeTown\YourHousef2.dat"
         Public Shared BeforeBattleFacing As Integer = 0
         Public Shared PokedexModeIndex As Integer = 0
         Public Shared PokedexHabitatIndex As Integer = 0
@@ -784,10 +784,13 @@
                         startRotation = CSng(Value.Replace(".", GameController.DecSeparator))
                     Case "Gender"
                         If Value = "Male" Then
-                            Male = True
+                            Gender = "Male"
+                        ElseIf Value = "Female" Then
+                            Gender = "Female"
                         Else
-                            Male = False
+                            Gender = "Genderless"
                         End If
+
                     Case "playtime"
                         Dim dd() As String = Value.Split(CChar(","))
                         If dd.Count >= 4 Then
@@ -886,11 +889,11 @@
             Skin = GameJolt.Emblem.GetPlayerSpriteFile(GameJolt.Emblem.GetPlayerLevel(GameJoltSave.Points), GameJoltSave.GameJoltID, GameJoltSave.Gender)
             Select Case GameJoltSave.Gender
                 Case "0"
-                    Male = True
+                    Gender = True
                 Case "1"
-                    Male = False
+                    Gender = False
                 Case Else
-                    Male = True
+                    Gender = True
             End Select
         End If
 
@@ -898,11 +901,11 @@
             Skin = GameJolt.Emblem.GetPlayerSpriteFile(GameJolt.Emblem.GetPlayerLevel(GameJoltSave.Points), GameJoltSave.GameJoltID, GameJoltSave.Gender)
             Select Case GameJoltSave.Gender
                 Case "0"
-                    Male = True
+                    Gender = True
                 Case "1"
-                    Male = False
+                    Gender = False
                 Case Else
-                    Male = True
+                    Gender = True
             End Select
         End If
 
@@ -1245,10 +1248,12 @@
 
     Public Function GetPlayerData(ByVal IsAutosave As Boolean) As String
         Dim GenderString As String = ""
-        If Male = True Then
+        If Gender = "Male" Then
             GenderString = "Male"
-        Else
+        ElseIf Gender = "Female" Then
             GenderString = "Female"
+        Else
+            GenderString = "Genderless"
         End If
 
         Dim badgeString As String = ""
@@ -2046,7 +2051,7 @@
             'Restore default values:
             Name = "<playername>"
             RivalName = ""
-            Male = True
+            Gender = True
             Money = 0
             PlayTime = TimeSpan.Zero
             GameStart = Date.Now
@@ -2058,9 +2063,9 @@
             HasPokegear = False
             ShowBattleAnimations = 2
             BoxAmount = 10
-            LastRestPlace = "johto\cities\newbark\yourhousef2.dat"
+            LastRestPlace = "Corna\Cities\BreezeTown\YourHousef2.dat"
             LastRestPlacePosition = "1,0.1,3"
-            LastSavePlace = "johto\cities\newbark\yourhousef2.dat"
+            LastSavePlace = "Corna\Cities\BreezeTown\YourHousef2.dat"
             LastSavePlacePosition = "1,0.1,3"
             DiagonalMovement = False
             RepelSteps = 0
@@ -2070,7 +2075,7 @@
             SaveCreated = "Pre 0.21"
             LastPokemonPosition = New Vector3(999)
             DaycareSteps = 0
-            GameMode = "Kolben"
+            GameMode = "Quartz"
             VisitedMaps = ""
             TempSurfSkin = "Hilbert"
             TempFishSkin = "Hilbert"

@@ -275,7 +275,7 @@
         Public Sub Copy()
             If _selectionLength > 0 Then
                 Try
-                    System.Windows.Forms.Clipboard.SetText(SelectedText)
+                    Windows.Forms.Clipboard.SetText(SelectedText)
                 Catch ex As Exception
                     Logger.Log(Logger.LogTypes.Message, "KeyboardInput.vb: An error occurred while copying text to the clipboard.")
                 End Try
@@ -288,7 +288,7 @@
         Public Sub Cut()
             If _selectionLength > 0 Then
                 Try
-                    System.Windows.Forms.Clipboard.SetText(SelectedText)
+                    Windows.Forms.Clipboard.SetText(SelectedText)
                     Text = Text.Remove(_selectionStart, _selectionLength)
                     Deselect()
                 Catch ex As Exception

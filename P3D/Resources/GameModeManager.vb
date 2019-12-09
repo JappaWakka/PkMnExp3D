@@ -102,22 +102,22 @@ Public Class GameModeManager
     ''' </summary>
     Public Shared Sub CreateKolbenMode()
         Dim doCreateKolbenMode As Boolean = False
-        If System.IO.Directory.Exists(GameController.GamePath & "\GameModes\Kolben") = True Then
-            System.IO.Directory.Delete(GameController.GamePath & "\GameModes\Kolben", True)
+        If System.IO.Directory.Exists(GameController.GamePath & "\GameModes\Quartz") = True Then
+            System.IO.Directory.Delete(GameController.GamePath & "\GameModes\Quartz", True)
         End If
-        If System.IO.Directory.Exists(GameController.GamePath & "\GameModes\Kolben") = False Then
+        If System.IO.Directory.Exists(GameController.GamePath & "\GameModes\Quartz") = False Then
             doCreateKolbenMode = True
-            System.IO.Directory.CreateDirectory(GameController.GamePath & "\GameModes\Kolben")
+            System.IO.Directory.CreateDirectory(GameController.GamePath & "\GameModes\Quartz")
         End If
         If doCreateKolbenMode = False Then
-            If System.IO.File.Exists(GameController.GamePath & "\GameModes\Kolben\GameMode.dat") = False Then
+            If System.IO.File.Exists(GameController.GamePath & "\GameModes\Quartz\GameMode.dat") = False Then
                 doCreateKolbenMode = True
             End If
         End If
 
         If doCreateKolbenMode = True Then
-            Dim kolbenMode As GameMode = GameMode.GetKolbenGameMode()
-            kolbenMode.SaveToFile(GameController.GamePath & "\GameModes\Kolben\GameMode.dat")
+            Dim kolbenMode As GameMode = GameMode.GetQuartzGameMode()
+            kolbenMode.SaveToFile(GameController.GamePath & "\GameModes\Quartz\GameMode.dat")
         End If
     End Sub
 
@@ -308,7 +308,7 @@ Public Class GameMode
     Public ReadOnly Property IsValid() As Boolean
         Get
             If _loaded = True Then
-                If Me.Name.ToLower() = "pokemon 3d" And Me.DirectoryName.ToLower() <> "kolben" Then
+                If Me.Name.ToLower() = "pokemon 3d" And Me.DirectoryName.ToLower() <> "quartz" Then
                     Logger.Log(Logger.LogTypes.Message, "Unofficial GameMode with the name ""Pokemon 3D"" exists (in folder: """ & Me.DirectoryName & """)!")
                     Return False
                 End If
@@ -381,8 +381,9 @@ Public Class GameMode
     ''' <param name="SkinColors">The skin colors for the new GameMode. Must be the same amount as SkinFiles and SkinNames.</param>
     ''' <param name="SkinFiles">The skin files for the new GameMode. Must be the same amount as SkinColors and SkinNames.</param>
     ''' <param name="SkinNames">The skin names for the new GameMode. Must be the same amount as SkinFiles and SkinColors.</param>
+    ''' <param name="SkinGenders">The skin names for the new GameMode. Must be the same amount as SkinFiles and SkinColors.</param>
     Public Sub New(ByVal Name As String, ByVal Description As String, ByVal Version As String, ByVal Author As String, ByVal MapPath As String, ByVal ScriptPath As String, ByVal PokeFilePath As String, ByVal PokemonDataPath As String, ByVal ContentPath As String, ByVal LocalizationsPath As String, ByVal GameRules As List(Of GameRule),
-                   ByVal StartMap As String, ByVal StartPosition As Vector3, ByVal StartRotation As Single, ByVal StartLocationName As String, ByVal StartDialogue As String, ByVal StartColor As Color, ByVal PokemonAppear As String, ByVal IntroMusic As String, ByVal SkinColors As List(Of Color), ByVal SkinFiles As List(Of String), ByVal SkinNames As List(Of String))
+                   ByVal StartMap As String, ByVal StartPosition As Vector3, ByVal StartRotation As Single, ByVal StartLocationName As String, ByVal StartDialogue As String, ByVal StartColor As Color, ByVal PokemonAppear As String, ByVal IntroMusic As String, ByVal SkinColors As List(Of Color), ByVal SkinFiles As List(Of String), ByVal SkinNames As List(Of String), ByVal SkinGenders As List(Of String))
         Me._name = Name
         Me._description = Description
         Me._version = Version
@@ -406,6 +407,7 @@ Public Class GameMode
         Me._skinColors = SkinColors
         Me._skinFiles = SkinFiles
         Me._skinNames = SkinNames
+        Me._skinGenders = SkinGenders
 
         Me._loaded = True
     End Sub
@@ -520,6 +522,14 @@ Public Class GameMode
                             If l.Count > 0 Then
                                 Me._skinNames = l
                             End If
+                        Case "skingenders"
+                            Dim l As New List(Of String)
+                            For Each skin As String In Value.Split(CChar(","))
+                                l.Add(skin)
+                            Next
+                            If l.Count > 0 Then
+                                Me._skinGenders = l
+                            End If
                     End Select
                 End If
             Next
@@ -548,13 +558,14 @@ Public Class GameMode
     ''' <summary>
     ''' Returns the default Kolben Game Mode.
     ''' </summary>
-    Public Shared Function GetKolbenGameMode() As GameMode
+    Public Shared Function GetQuartzGameMode() As GameMode
         Dim SkinColors As List(Of Color) = {New Color(248, 176, 32), New Color(248, 216, 88), New Color(56, 88, 200), New Color(216, 96, 112), New Color(56, 88, 152), New Color(239, 90, 156)}.ToList()
-        Dim SkinFiles As List(Of String) = {"Gold_GBA", "Gold_GBC", "Crystal_DS"}.ToList()
-        Dim SkinNames As List(Of String) = {"Ethan (GBA)", "Ethan (GBC)", "Lyra (NDS)"}.ToList()
+        Dim SkinFiles As List(Of String) = {"Gold_GBA", "Crystal_GBA"}.ToList()
+        Dim SkinNames As List(Of String) = {"Gold", "Crystal"}.ToList()
+        Dim SkinGenders As List(Of String) = {"Male", "Female"}.ToList()
 
-        Dim gameMode As New GameMode("Pokemon 3D", "The normal game mode.", GameController.GAMEVERSION, "Kolben Games", "\Content\Data\maps\", "\Content\Data\Scripts\", "\Content\Data\maps\poke\", "\Content\Pokemon\Data\", "\Content\", "\Content\Localization\", New List(Of GameRule),
-                                     "NewGame.dat", New Vector3(1.0F, 0.1F, 3.0F), MathHelper.PiOver2, "Your Room", "", New Color(59, 123, 165), "0", "welcome", SkinColors, SkinFiles, SkinNames)
+        Dim gameMode As New GameMode("Pokémon Quartz 3D", "Remake project of the infamous Pokémon Quartz romhack by TehBaro in Pokémon 3D.", GameController.GAMEVERSION, "JappaWakka", "\Content\Data\Maps\", "\Content\Data\Scripts\", "\Content\Data\System\WildEncounters\", "\Content\Pokemon\Data\", "\Content\", "\Content\Localization\", New List(Of GameRule),
+                                     "NewGame.dat", New Vector3(1.0F, 0.1F, 3.0F), MathHelper.PiOver2, "Your Room", "", New Color(59, 123, 165), "0", "welcome", SkinColors, SkinFiles, SkinNames, SkinGenders)
 
         Dim gameRules As New List(Of GameRule)
         gameRules.Add(New GameRule("MaxLevel", "100"))
@@ -647,6 +658,20 @@ Public Class GameMode
 
         s &= SkinNamesString
 
+        Dim SkinGendersString As String = "SkinGenders|"
+        Dim iSG As Integer = 0
+        For Each SkinGender As String In Me._skinGenders
+            If iSG > 0 Then
+                SkinGendersString &= ","
+            End If
+
+            SkinGendersString &= SkinGender
+
+            iSN += 1
+        Next
+
+        s &= SkinGendersString
+
         Dim folder As String = System.IO.Path.GetDirectoryName(File)
         If System.IO.Directory.Exists(folder) = False Then
             System.IO.Directory.CreateDirectory(folder)
@@ -657,7 +682,7 @@ Public Class GameMode
 
     Public ReadOnly Property IsDefaultGamemode() As Boolean
         Get
-            Return (Me.Name = "Pokemon 3D")
+            Return (Me.Name = "Pokemon Quartz 3D")
         End Get
     End Property
 
@@ -833,6 +858,7 @@ Public Class GameMode
     Private _skinColors As New List(Of Color)
     Private _skinFiles As New List(Of String)
     Private _skinNames As New List(Of String)
+    Private _skinGenders As New List(Of String)
     Private _pokemonRange() As Integer
 
     ''' <summary>
@@ -986,6 +1012,18 @@ Public Class GameMode
         End Get
         Set(value As List(Of String))
             Me._skinNames = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' The skin genders for this GameMode. Must be the same amount as SkinFiles and SkinColors.
+    ''' </summary>
+    Public Property SkinGenders() As List(Of String)
+        Get
+            Return Me._skinGenders
+        End Get
+        Set(value As List(Of String))
+            Me._skinGenders = value
         End Set
     End Property
 

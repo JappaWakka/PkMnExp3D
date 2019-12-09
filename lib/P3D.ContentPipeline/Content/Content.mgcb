@@ -304,6 +304,12 @@
 /processorParam:Quality=Best
 /build:Songs/azalea.ogg
 
+#begin Songs/barktown.ogg
+/importer:OggImporter
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Songs/barktown.ogg
+
 #begin Songs/battlefactory.ogg
 /importer:OggImporter
 /processor:SongProcessor
@@ -1101,12 +1107,6 @@
 /processor:SongProcessor
 /processorParam:Quality=Best
 /build:Songs/Looker_encounter.ogg
-
-#begin Songs/lugia_battle.ogg
-/importer:OggImporter
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Songs/lugia_battle.ogg
 
 #begin Songs/lugia_battle_startbattle.ogg
 /importer:OggImporter

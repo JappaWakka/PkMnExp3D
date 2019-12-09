@@ -68,7 +68,7 @@
                 Case "name"
                     Return Core.Player.Name
                 Case "gender"
-                    If Core.Player.Male = True Then
+                    If Core.Player.Gender = True Then
                         Return "1"
                     Else
                         Return "0"

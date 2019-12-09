@@ -12,22 +12,22 @@ Public Class GameController
     ''' <summary>
     ''' The current version of the game.
     ''' </summary>
-    Public Const GAMEVERSION As String = "0.1.3"
+    Public Const GAMEVERSION As String = "0.1.4"
 
     ''' <summary>
     ''' The number of released iterations of the game.
     ''' </summary>
-    Public Const RELEASEVERSION As String = "3"
+    Public Const RELEASEVERSION As String = "4"
 
     ''' <summary>
     ''' The development stage the game is in.
     ''' </summary>
-    Public Const GAMEDEVELOPMENTSTAGE As String = "Unofficial Indev"
+    Public Const GAMEDEVELOPMENTSTAGE As String = "Quartz"
 
     ''' <summary>
     ''' The name of the game.
     ''' </summary>
-    Public Const GAMENAME As String = "Pokémon 3D"
+    Public Const GAMENAME As String = "Pokémon Quartz 3D"
 
     ''' <summary>
     ''' The name of the developer that appears on the title screen.
