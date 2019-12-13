@@ -894,7 +894,7 @@ Namespace GameJolt
                 "saveCreated|" & GameController.GAMEDEVELOPMENTSTAGE & " " & GameController.GAMEVERSION & Environment.NewLine &
                 "LastPokemonPosition|999,999,999" & Environment.NewLine &
                 "DaycareSteps|0" & Environment.NewLine &
-                "GameMode|Kolben" & Environment.NewLine &
+                "GameMode|Quartz" & Environment.NewLine &
                 "PokeFiles|" & Environment.NewLine &
                 "VisitedMaps|johto\cities\newbark\yourhousef2.dat" & Environment.NewLine &
                 "TempSurfSkin|Hilbert" & Environment.NewLine &

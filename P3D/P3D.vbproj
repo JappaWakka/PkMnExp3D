@@ -166,6 +166,9 @@
     <Content Include="Content\GUI\MainMenu\lugiaParticle.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\GUI\Map\corna_map.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Items\Fossils.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -6502,7 +6505,10 @@
     <Content Include="Content\Textures\NPC\PlayerSkins\Gold_GBA_Surf.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\NPC\PlayerSkins\Template_Surf.png">
+    <Content Include="Content\Textures\NPC\PlayerSkins\JAkira.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\NPC\PlayerSkins\JAkira_Surf.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\NPC\Pokeball.png">

@@ -8,12 +8,13 @@ Public Class OverworldPokemon
     Public Texture As Texture2D
     Dim lastRectangle As New Rectangle(0, 0, 0, 0)
     Public faceRotation As Integer = 0
-    Public MoveSpeed As Single = 0.04F
+    Public MoveSpeed As Single = 0.01F
     Public warped As Boolean = True
 
-    Dim AnimationX As Integer = 1
-    Dim AnimationDelayLenght As Single = 2.2F
-    Dim AnimationDelay As Single = AnimationDelayLenght
+    Dim Moving As Boolean = False
+    Dim AnimationX As Integer = 0
+    Dim AnimationDelayLength As Single = 2.2F
+    Dim AnimationDelay As Single = AnimationDelayLength
 
     Public Sub New(ByVal X As Single, ByVal Y As Single, ByVal Z As Single)
         MyBase.New(X, Y, Z, "OverworldPokemon", {P3D.TextureManager.DefaultTexture}, {0, 0}, False, 0, New Vector3(1.0F), BaseModel.BillModel, 0, "", New Vector3(1))
@@ -48,7 +49,7 @@ Public Class OverworldPokemon
             spriteIndex += 4
         End If
 
-        Dim width As Integer = CInt(Me.Texture.Width / 3)
+        Dim width As Integer = CInt(Me.Texture.Width / 4)
 
         Dim x As Integer = 0
         x = AnimationX * width
@@ -82,23 +83,27 @@ Public Class OverworldPokemon
                 Me.PokemonReference = Core.Player.GetWalkPokemon()
             End If
 
-            Me.ChangeTexture()
 
-            Me.AnimationDelay -= 0.1F
-            If AnimationDelay <= 0.0F Then
-                AnimationDelay = AnimationDelayLenght
-                AnimationX += 1
-                If AnimationX > 2 Then
-                    AnimationX = 1
+            Me.ChangeTexture()
+            If Moving = True Then
+                Me.AnimationDelay -= 0.1F
+                If AnimationDelay <= 0.0F Then
+                    AnimationDelay = AnimationDelayLength
+                    AnimationX += 1
+                    If AnimationX > 3 Then
+                        AnimationX = 0
+                    End If
                 End If
+            Else
+                AnimationX = 0
             End If
 
             ChangePosition()
         End If
     End Sub
 
-    Protected Overrides Function CalculateCameraDistance(CPosition As Vector3) as Single
-        Return MyBase.CalculateCameraDistance(CPosition) - 0.2f
+    Protected Overrides Function CalculateCameraDistance(CPosition As Vector3) As Single
+        Return MyBase.CalculateCameraDistance(CPosition) - 0.2F
     End Function
 
     Public Overrides Sub UpdateEntity()
@@ -162,10 +167,12 @@ Public Class OverworldPokemon
         If Screen.Camera.IsMoving() = True Then
             If CInt(Me.Position.X) <> CInt(Screen.Camera.Position.X) Or CInt(Me.Position.Z) <> CInt(Screen.Camera.Position.Z) Then
                 Me.Position += GetMove()
-                Me.AnimationDelayLenght = 1.1F
+                Me.AnimationDelayLength = 0.4F
+                Me.Moving = True
             End If
         Else
-            Me.AnimationDelayLenght = 2.2F
+            Me.AnimationDelayLength = 2.2F
+            Me.Moving = False
         End If
     End Sub
 

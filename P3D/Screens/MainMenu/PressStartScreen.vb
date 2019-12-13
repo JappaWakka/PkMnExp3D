@@ -41,9 +41,9 @@ Public Class PressStartScreen
         PokemonImageView.Showing = False
         ChooseBox.Showing = False
 
-        GameModeManager.SetGameModePointer("Kolben")
+        GameModeManager.SetGameModePointer("Quartz")
 
-        Core.Player.Skin = "Hilbert"
+        Core.Player.Skin = "Gold_GBA"
 
         If IO.Directory.Exists(GameController.GamePath & "\Save\") = False Then
             IO.Directory.CreateDirectory(GameController.GamePath & "\Save\")
@@ -655,7 +655,7 @@ Public Class NewMainMenuScreen
             End If
         Next
 
-        GameModeManager.SetGameModePointer("Kolben")
+        GameModeManager.SetGameModePointer("Quartz")
 
         _profiles.Add(New GameProfile("", True))
 
@@ -992,7 +992,7 @@ Public Class NewMainMenuScreen
                 World.IsMainMenu = False
                 If GameModeManager.GameModeCount = 1 Then
                     ' There's only the default GameMode available, so just load that one.
-                    GameModeManager.SetGameModePointer("Kolben")
+                    GameModeManager.SetGameModePointer("Quartz")
                     SetScreen(New Screens.MainMenu.NewNewGameScreen(CurrentScreen))
                 Else
                     ' There is more than one GameMode, prompt a selection screen:

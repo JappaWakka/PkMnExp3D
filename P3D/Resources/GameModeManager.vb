@@ -11,7 +11,7 @@ Public Class GameModeManager
         GameModeList.Clear()
         GameModePointer = 0
 
-        CreateKolbenMode()
+        CreateQuartzMode()
 
         For Each GameModeFolder As String In System.IO.Directory.GetDirectories(GameController.GamePath & "\GameModes\")
             If System.IO.File.Exists(GameModeFolder & "\GameMode.dat") = True Then
@@ -19,7 +19,7 @@ Public Class GameModeManager
             End If
         Next
 
-        SetGameModePointer("Kolben")
+        SetGameModePointer("Quartz")
         Initialized = True
     End Sub
 
@@ -100,22 +100,22 @@ Public Class GameModeManager
     ''' <summary>
     ''' Creates the default Kolben GameMode.
     ''' </summary>
-    Public Shared Sub CreateKolbenMode()
-        Dim doCreateKolbenMode As Boolean = False
+    Public Shared Sub CreateQuartzMode()
+        Dim doCreateQuartzMode As Boolean = False
         If System.IO.Directory.Exists(GameController.GamePath & "\GameModes\Quartz") = True Then
             System.IO.Directory.Delete(GameController.GamePath & "\GameModes\Quartz", True)
         End If
         If System.IO.Directory.Exists(GameController.GamePath & "\GameModes\Quartz") = False Then
-            doCreateKolbenMode = True
+            doCreateQuartzMode = True
             System.IO.Directory.CreateDirectory(GameController.GamePath & "\GameModes\Quartz")
         End If
-        If doCreateKolbenMode = False Then
+        If doCreateQuartzMode = False Then
             If System.IO.File.Exists(GameController.GamePath & "\GameModes\Quartz\GameMode.dat") = False Then
-                doCreateKolbenMode = True
+                doCreateQuartzMode = True
             End If
         End If
 
-        If doCreateKolbenMode = True Then
+        If doCreateQuartzMode = True Then
             Dim kolbenMode As GameMode = GameMode.GetQuartzGameMode()
             kolbenMode.SaveToFile(GameController.GamePath & "\GameModes\Quartz\GameMode.dat")
         End If
@@ -656,7 +656,7 @@ Public Class GameMode
             iSN += 1
         Next
 
-        s &= SkinNamesString
+        s &= SkinNamesString & Environment.NewLine
 
         Dim SkinGendersString As String = "SkinGenders|"
         Dim iSG As Integer = 0

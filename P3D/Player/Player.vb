@@ -494,7 +494,7 @@
         Next
 
         GameModeManager.CreateGameModesFolder()
-        GameModeManager.CreateKolbenMode()
+        GameModeManager.CreateQuartzMode()
 
         ScriptStorage.Clear()
         ScriptBlock.TriggeredScriptBlock = False
@@ -506,13 +506,13 @@
 
         Me.filePrefix = filePrefix
         PokeFiles.Clear()
-        GameMode = "Kolben"
+        GameMode = "Quartz"
 
         LoadPlayer()
 
         If GameModeManager.GameModeExists(GameMode) = False Then
-            GameMode = "Kolben"
-            GameModeManager.SetGameModePointer("Kolben")
+            GameMode = "Quartz"
+            GameModeManager.SetGameModePointer("Quartz")
         Else
             GameModeManager.SetGameModePointer(GameMode)
         End If
