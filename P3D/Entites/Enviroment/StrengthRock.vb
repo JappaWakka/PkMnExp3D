@@ -87,7 +87,7 @@
             If CheckCollision(newPosition) = True Then
                 Me.Moved = 1
                 Me.FaceDirection = Screen.Camera.GetPlayerFacingDirection()
-                SoundManager.PlaySound("destroy", False)
+                SoundManager.PlaySound("FieldMove_Strength", False)
             End If
         End If
 

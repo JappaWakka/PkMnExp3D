@@ -40,6 +40,7 @@ Public Class Level
     Private _canDig As Boolean = False
     Private _canFly As Boolean = False
     Private _rideType As Integer = 0
+    Private _enterType As Integer = 0
     Private _weatherType As Integer = 0
     Private _environmentType As Integer = 0
     Private _wildPokemonGrass As Boolean = True
@@ -353,6 +354,18 @@ Public Class Level
         End Get
         Set(value As Integer)
             Me._rideType = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Whether a map is entered through a regular door, a slide door or a cave entrance.
+    ''' </summary>
+    Public Property EnterType As Integer
+        Get
+            Return Me._enterType
+        End Get
+        Set(value As Integer)
+            Me._enterType = value
         End Set
     End Property
 
@@ -967,7 +980,7 @@ Public Class Level
             ' Change the player position:
             Screen.Camera.Position = WarpData.WarpPosition
 
-            Dim tempProperties As String = Me.CanDig.ToString() & "," & Me.CanFly.ToString() ' Store properties to determine if the "enter" sound should be played.
+            Dim tempProperties As String = Me.EnterType.ToString() ' Store properties to determine what kind of entrance/exit sound should be played.
 
             ' Store skin values:
             Dim usingGameJoltTexture As Boolean = OwnPlayer.UsingGameJoltTexture
@@ -1055,8 +1068,22 @@ Public Class Level
             RoamingPokemon.ShiftRoamingPokemon(-1)
 
             ' Check if the enter sound should be played by checking if CanDig or CanFly properties are different from the last map:
-            If tempProperties <> Me.CanDig.ToString() & "," & Me.CanFly.ToString() Then
-                SoundManager.PlaySound("enter", False)
+            If tempProperties <> Me.EnterType.ToString() Then
+                If Me.EnterType = 0 Then
+                    SoundManager.PlaySound("Warp_General", False)
+                ElseIf Me.EnterType = 1 Then
+                    If GameModeManager.ContentFileExists("Warp_Door_Regular") = True Then
+                        SoundManager.PlaySound("Warp_Door_Regular", False)
+                    Else
+                        SoundManager.PlaySound("Warp_General", False)
+                    End If
+                ElseIf Me.EnterType = 2 Then
+                    If GameModeManager.ContentFileExists("Warp_Door_Slide") = True Then
+                        SoundManager.PlaySound("Warp_Door_Slide", False)
+                    Else
+                        SoundManager.PlaySound("Warp_General", False)
+                End If
+            End If
             End If
 
             ' Unlock the yaw on the camera:

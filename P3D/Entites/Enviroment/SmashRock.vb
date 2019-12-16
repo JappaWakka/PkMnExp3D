@@ -57,13 +57,13 @@
                 If spawnedPokemon Is Nothing Then
                     Dim s As String = "version=2" & Environment.NewLine &
                         "@text.show(" & pName & " used~Rock Smash!)" & Environment.NewLine &
-                        "@sound.play(destroy)" & Environment.NewLine &
+                        "@sound.play(FieldMove_RockSmash)" & Environment.NewLine &
                         ":end"
                     CType(Core.CurrentScreen, OverworldScreen).ActionScript.StartScript(s, 2)
                 Else
                     Dim s As String = "version=2" & Environment.NewLine &
                         "@text.show(" & pName & " used~Rock Smash!)" & Environment.NewLine &
-                        "@sound.play(destroy)" & Environment.NewLine &
+                        "@sound.play(FieldMove_RockSmash)" & Environment.NewLine &
                         "@level.update" & Environment.NewLine &
                         "@text.show(A wild Pokémon~appeared!)" & Environment.NewLine &
                         "@battle.wild(" & spawnedPokemon.Number & "," & spawnedPokemon.Level & ")" & Environment.NewLine &
@@ -75,7 +75,7 @@
                     Dim ItemID As Integer = GetItemID()
                     Dim s As String = "version=2" & Environment.NewLine &
                         "@text.show(" & pName & " used~Rock Smash!)" & Environment.NewLine &
-                        "@sound.play(destroy)" & Environment.NewLine &
+                        "@sound.play(FieldMove_RockSmash)" & Environment.NewLine &
                         "@level.update" & Environment.NewLine &
                         "@item.give(" & ItemID & ",1)" & Environment.NewLine &
                         "@item.messagegive(" & ItemID & ",1)" & Environment.NewLine &
@@ -84,7 +84,7 @@
                 Else
                     Dim s As String = "version=2" & Environment.NewLine &
                         "@text.show(" & pName & " used~Rock Smash!)" & Environment.NewLine &
-                        "@sound.play(destroy)" & Environment.NewLine &
+                        "@sound.play(FieldMove_RockSmash)" & Environment.NewLine &
                         ":end"
                     CType(Core.CurrentScreen, OverworldScreen).ActionScript.StartScript(s, 2)
                 End If

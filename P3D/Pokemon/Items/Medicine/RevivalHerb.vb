@@ -32,7 +32,7 @@ Namespace Items.Medicine
                 Pokemon.HP = CInt(Math.Floor(Pokemon.MaxHP))
                 Pokemon.ChangeFriendShip(Pokemon.FriendShipCauses.RevivalHerb)
 
-                SoundManager.PlaySound("heal_single", False)
+                SoundManager.PlaySound("UseItem", False)
                 Screen.TextBox.Show(Pokemon.GetDisplayName() & "~is revitalized.", {}, False, False)
                 PlayerStatistics.Track("[17]Medicine Items used", 1)
 

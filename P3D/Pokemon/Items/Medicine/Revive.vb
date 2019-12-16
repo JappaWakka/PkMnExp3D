@@ -31,7 +31,7 @@ Namespace Items.Medicine
                 Pokemon.Status = P3D.Pokemon.StatusProblems.None
                 Pokemon.HP = CInt(Math.Floor(Pokemon.MaxHP / 2))
 
-                SoundManager.PlaySound("heal_single", False)
+                SoundManager.PlaySound("UseItem", False)
                 Screen.TextBox.Show(Pokemon.GetDisplayName() & "~is revitalized.", {}, False, False)
                 PlayerStatistics.Track("[17]Medicine Items used", 1)
 

@@ -3091,40 +3091,56 @@
     <Content Include="Content\Pokemon\Sprites\Zygarde_Dog.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\badge_acquired.wav">
+    <Content Include="Content\Sounds\Battle\Attacks\Ember.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\Battle\Damage\normaldamage.wav">
+    <Content Include="Content\Sounds\Battle\Attacks\Fly.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\Battle\Damage\not_effective.wav">
+    <Content Include="Content\Sounds\Battle\Attacks\Pound.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\Battle\Damage\super_effective.wav">
+    <Content Include="Content\Sounds\Battle\Attacks\Thunderbolt.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\Battle\Effects\effect_ember.wav">
+    <Content Include="Content\Sounds\badge_acquired.wav" />
+    <Content Include="Content\Sounds\Battle\Damage\Effective.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\Battle\Effects\effect_fly.wav">
+    <Content Include="Content\Sounds\Battle\Damage\NotVeryEffective.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\Battle\Effects\effect_ice1.wav">
+    <Content Include="Content\Sounds\Battle\Damage\SuperEffective.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\Battle\Effects\effect_poison.wav">
+    <Content Include="Content\Sounds\Battle\Effects\Burned.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\Battle\Effects\effect_pound.wav">
+    <Content Include="Content\Sounds\Battle\Effects\Frozen.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\Battle\Effects\effect_thunderbolt.wav">
+    <Content Include="Content\Sounds\Battle\Effects\Paralyzed.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\Battle\Effects\effect_thundershock2.wav">
+    <Content Include="Content\Sounds\Battle\Effects\Poisoned.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\Battle\levelup.wav">
+    <Content Include="Content\Sounds\Battle\Effects\Stat_Lower.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sounds\Battle\Effects\Stat_Raise.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sounds\Battle\Exp_Fill.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sounds\Battle\Exp_Max.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sounds\Battle\Heal.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sounds\Battle\LowHP.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Sounds\Battle\Pokeball\catch.wav">
@@ -3145,13 +3161,13 @@
     <Content Include="Content\Sounds\Battle\shiny.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\bicycle.wav">
+    <Content Include="Content\Sounds\bicycle.wav" />
+    <Content Include="Content\Sounds\bump.wav" />
+    <Content Include="Content\Sounds\buy.wav" />
+    <Content Include="Content\Sounds\CableCar_Move.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\bump.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sounds\buy.wav">
+    <Content Include="Content\Sounds\CableCar_Stop.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Sounds\Contest\rankplace.wav">
@@ -5323,85 +5339,84 @@
     <Content Include="Content\Sounds\Cries\99.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\destroy.wav">
+    <Content Include="Content\Sounds\destroy.wav" />
+    <Content Include="Content\Sounds\egg_hatch.wav" />
+    <Content Include="Content\Sounds\Elevator_Move.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\egg_hatch.wav">
+    <Content Include="Content\Sounds\Elevator_Stop.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\enter.wav">
+    <Content Include="Content\Sounds\Evolved.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\exit.wav">
+    <Content Include="Content\Sounds\FieldMove_Cut.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\heal_party.wav">
+    <Content Include="Content\Sounds\FieldMove_Fly.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\heal_single.wav">
+    <Content Include="Content\Sounds\FieldMove_RockSmash.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\ice_break.wav">
+    <Content Include="Content\Sounds\FieldMove_Strength.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\ice_crack.wav">
+    <Content Include="Content\Sounds\GameCorner_GreatSuccess.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\itemfinder.wav">
+    <Content Include="Content\Sounds\GameCorner_Lose.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\item_found.wav">
+    <Content Include="Content\Sounds\GameCorner_Win.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\jump_ledge.wav">
+    <Content Include="Content\Sounds\HealParty.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\magnettrain.wav">
+    <Content Include="Content\Sounds\ice_break.wav" />
+    <Content Include="Content\Sounds\ice_crack.wav" />
+    <Content Include="Content\Sounds\itemfinder.wav" />
+    <Content Include="Content\Sounds\jump_ledge.wav" />
+    <Content Include="Content\Sounds\menu_open.wav" />
+    <Content Include="Content\Sounds\Notice.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\menu_open.wav">
+    <Content Include="Content\Sounds\PC\LogOn.wav" />
+    <Content Include="Content\Sounds\PC\TurnOff.wav" />
+    <Content Include="Content\Sounds\PC\TurnOn.wav" />
+    <Content Include="Content\Sounds\Phone\RingTone.wav" />
+    <Content Include="Content\Sounds\Phone\TurnOff.wav" />
+    <Content Include="Content\Sounds\Phone\TurnOn.wav" />
+    <Content Include="Content\Sounds\pickup.wav" />
+    <Content Include="Content\Sounds\Poison_Walk.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\PC\pc_logon.wav">
+    <Content Include="Content\Sounds\Receive_Berry.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\PC\pc_turnoff.wav">
+    <Content Include="Content\Sounds\Receive_TM.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\PC\pc_turnon.wav">
+    <Content Include="Content\Sounds\repel_use.wav" />
+    <Content Include="Content\Sounds\Save.wav" />
+    <Content Include="Content\Sounds\select.wav" />
+    <Content Include="Content\Sounds\StoreNumber.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\pickup.wav">
+    <Content Include="Content\Sounds\success.wav" />
+    <Content Include="Content\Sounds\success_small.wav" />
+    <Content Include="Content\Sounds\teleport.wav" />
+    <Content Include="Content\Sounds\UseItem.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\Pokegear\pokegear_off.wav">
+    <Content Include="Content\Sounds\Warp_Door_Regular.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\Pokegear\pokegear_on.wav">
+    <Content Include="Content\Sounds\Warp_Door_Slide.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\repel_use.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sounds\Save.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sounds\select.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sounds\shutter.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sounds\success.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sounds\success_small.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sounds\teleport.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sounds\trhq_alarm.wav">
+    <Content Include="Content\Sounds\Warp_General.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Apricorn.png">
@@ -6481,34 +6496,37 @@
     <Content Include="Content\Textures\NPC\PinkShirtGirl.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\NPC\PlayerSkins\Crystal_GBA.png">
+    <Content Include="Content\Textures\NPC\PlayerSkins\Ethan_GBA.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\NPC\PlayerSkins\Crystal_GBA_Bike.png">
+    <Content Include="Content\Textures\NPC\PlayerSkins\Ethan_GBA_Bike.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\NPC\PlayerSkins\Crystal_GBA_Fish.png">
+    <Content Include="Content\Textures\NPC\PlayerSkins\Ethan_GBA_Fish.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\NPC\PlayerSkins\Crystal_GBA_Surf.png">
+    <Content Include="Content\Textures\NPC\PlayerSkins\Ethan_GBA_Surf.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\NPC\PlayerSkins\Gold_GBA.png">
+    <Content Include="Content\Textures\NPC\PlayerSkins\J_Akira.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\NPC\PlayerSkins\Gold_GBA_Bike.png">
+    <Content Include="Content\Textures\NPC\PlayerSkins\J_Akira_Fish.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\NPC\PlayerSkins\Gold_GBA_Fish.png">
+    <Content Include="Content\Textures\NPC\PlayerSkins\J_Akira_Surf.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\NPC\PlayerSkins\Gold_GBA_Surf.png">
+    <Content Include="Content\Textures\NPC\PlayerSkins\Lyra_GBA.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\NPC\PlayerSkins\JAkira.png">
+    <Content Include="Content\Textures\NPC\PlayerSkins\Lyra_GBA_Bike.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\NPC\PlayerSkins\JAkira_Surf.png">
+    <Content Include="Content\Textures\NPC\PlayerSkins\Lyra_GBA_Fish.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\NPC\PlayerSkins\Lyra_GBA_Surf.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\NPC\Pokeball.png">
@@ -15417,7 +15435,6 @@
     <None Include="Content\Pokemon\Data\172_spiky-eared.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Content\Sounds\item_found.xnb" />
     <None Include="meta">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

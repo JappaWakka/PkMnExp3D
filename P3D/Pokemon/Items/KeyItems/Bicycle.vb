@@ -40,15 +40,16 @@ Namespace Items.KeyItems
                         BikeSkin = Core.Player.Skin & "_Bike"
                         Screen.Level.OwnPlayer.SetTexture(BikeSkin, False)
                     End If
-
-                    SoundManager.PlaySound("bicycle")
+                    If GameModeManager.ContentFileExists("Sounds\Bicycle.wav") Then
+                        SoundManager.PlaySound("bicycle")
+                    End If
                     PlayerStatistics.Track("Bike used", 1)
 
-                    If Screen.Level.IsRadioOn = False OrElse GameJolt.PokegearScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = False Then
-                        MusicManager.Play("bikesong", True)
-                    End If
-                Else
-                    Screen.TextBox.Show("Now is not the time~to use that.", {}, True, False)
+                        If Screen.Level.IsRadioOn = False OrElse GameJolt.PokegearScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = False Then
+                            MusicManager.Play("bikesong", True)
+                        End If
+                    Else
+                        Screen.TextBox.Show("Now is not the time~to use that.", {}, True, False)
                 End If
             End If
         End Sub

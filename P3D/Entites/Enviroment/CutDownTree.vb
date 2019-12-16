@@ -64,7 +64,7 @@
             Dim s As String =
                 "version=2" & Environment.NewLine &
                 "@text.show(" & Text & ")" & Environment.NewLine &
-                "@sound.play(destroy,0)" & Environment.NewLine &
+                "@sound.play(FieldMove_Cut,0)" & Environment.NewLine &
                 ":end"
 
             PlayerStatistics.Track("Cut used", 1)

@@ -109,6 +109,11 @@ Namespace Servers
                     Return True
                 End If
 
+                'gender
+                If Me._lastPackage.DataItems(9) <> Core.Player.Gender Then
+                    Return True
+                End If
+
                 Return False
             End Get
         End Property

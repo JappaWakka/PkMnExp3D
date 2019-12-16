@@ -21,7 +21,7 @@
                     End If
 
                     If sound = "healing" Then
-                        sound = "heal_party"
+                        sound = "HealParty"
                     End If
 
                     SoundManager.PlaySound(sound, stopMusic)

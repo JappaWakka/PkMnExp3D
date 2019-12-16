@@ -82,7 +82,7 @@
 
             Select Case EntryMode
                 Case EntryModes.MainMenu
-                    SoundManager.PlaySound("Pokegear\pokegear_on")
+                    SoundManager.PlaySound("Phone\TurnOn")
                     Me.menuIndex = Player.Temp.LastPokegearPage
                 Case EntryModes.DisplayUser
                     InitializeUserView(Data)
@@ -112,7 +112,7 @@
             menuIndex = MenuScreens.TradeRequest
             Me.TradeRequestNetworkID = CInt(Data(0))
             Me.TradeRequestGameJoltID = CStr(Data(1))
-            SoundManager.PlaySound("heal_single", False)
+            SoundManager.PlaySound("UseItem", False)
             TradeRequestData = -1
         End Sub
 
@@ -122,7 +122,7 @@
             menuIndex = MenuScreens.BattleRequest
             Me.BattleRequestNetworkID = CInt(Data(0))
             Me.BattleRequestGameJoltID = CStr(Data(1))
-            SoundManager.PlaySound("heal_single", False)
+            SoundManager.PlaySound("UseItem", False)
             BattleRequestData = -1
         End Sub
 
@@ -182,7 +182,7 @@
             If Me.menuIndex <> MenuScreens.TradeRequest Then
                 If KeyBoardHandler.KeyPressed(KeyBindings.SpecialKey) = True Or ControllerHandler.ButtonPressed(Buttons.Y) = True Then
                     If Me.menuIndex <> MenuScreens.UserView Then Player.Temp.LastPokegearPage = Me.menuIndex
-                    SoundManager.PlaySound("Pokegear\pokegear_off")
+                    SoundManager.PlaySound("Phone\TurnOff")
                     Core.SetScreen(Me.PreScreen)
                 End If
             End If
@@ -325,7 +325,7 @@
             End If
 
             If Controls.Dismiss(True, True) = True Then
-                SoundManager.PlaySound("Pokegear\pokegear_off")
+                SoundManager.PlaySound("Phone\TurnOff")
                 Core.SetScreen(Me.PreScreen)
             End If
         End Sub
@@ -1336,6 +1336,8 @@
 
                 Call_Flag = "receiving"
 
+                SoundManager.PlaySound("Phone\RingTone", False)
+
                 CType(Core.CurrentScreen, OverworldScreen).ActionScript.StartScript("phone\" & chosenID, 0)
             End If
         End Sub
@@ -1386,6 +1388,8 @@
                 End While
 
                 Call_Flag = "receiving"
+
+                SoundManager.PlaySound("Phone\RingTone", False)
 
                 CType(Core.CurrentScreen, OverworldScreen).ActionScript.StartScript("phone\" & chosenID, 0)
             End If

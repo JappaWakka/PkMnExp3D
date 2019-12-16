@@ -98,7 +98,7 @@ Public Class GameModeManager
     End Sub
 
     ''' <summary>
-    ''' Creates the default Kolben GameMode.
+    ''' Creates the default Quartz GameMode.
     ''' </summary>
     Public Shared Sub CreateQuartzMode()
         Dim doCreateQuartzMode As Boolean = False
@@ -116,8 +116,8 @@ Public Class GameModeManager
         End If
 
         If doCreateQuartzMode = True Then
-            Dim kolbenMode As GameMode = GameMode.GetQuartzGameMode()
-            kolbenMode.SaveToFile(GameController.GamePath & "\GameModes\Quartz\GameMode.dat")
+            Dim QuartzMode As GameMode = GameMode.GetQuartzGameMode()
+            QuartzMode.SaveToFile(GameController.GamePath & "\GameModes\Quartz\GameMode.dat")
         End If
     End Sub
 
@@ -556,13 +556,13 @@ Public Class GameMode
     End Sub
 
     ''' <summary>
-    ''' Returns the default Kolben Game Mode.
+    ''' Returns the default Quartz Game Mode.
     ''' </summary>
     Public Shared Function GetQuartzGameMode() As GameMode
         Dim SkinColors As List(Of Color) = {New Color(248, 176, 32), New Color(248, 216, 88), New Color(56, 88, 200), New Color(216, 96, 112), New Color(56, 88, 152), New Color(239, 90, 156)}.ToList()
-        Dim SkinFiles As List(Of String) = {"Gold_GBA", "Crystal_GBA"}.ToList()
-        Dim SkinNames As List(Of String) = {"Gold", "Crystal"}.ToList()
-        Dim SkinGenders As List(Of String) = {"Male", "Female"}.ToList()
+        Dim SkinFiles As List(Of String) = {"J_Akira", "Ethan_GBA", "Lyra_GBA"}.ToList()
+        Dim SkinNames As List(Of String) = {"J. Akira", "Ethan (GBA)", "Lyra (GBA)"}.ToList()
+        Dim SkinGenders As List(Of String) = {"Male", "Male", "Female"}.ToList()
 
         Dim gameMode As New GameMode("Pokémon Quartz 3D", "Remake project of the infamous Pokémon Quartz romhack by TehBaro in Pokémon 3D.", GameController.GAMEVERSION, "JappaWakka", "\Content\Data\Maps\", "\Content\Data\Scripts\", "\Content\Data\System\WildEncounters\", "\Content\Pokemon\Data\", "\Content\", "\Content\Localization\", New List(Of GameRule),
                                      "NewGame.dat", New Vector3(1.0F, 0.1F, 3.0F), MathHelper.PiOver2, "Your Room", "", New Color(59, 123, 165), "0", "welcome", SkinColors, SkinFiles, SkinNames, SkinGenders)

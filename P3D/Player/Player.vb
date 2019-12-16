@@ -1348,6 +1348,7 @@
             "TempSurfSkin|" & TempSurfSkin & Environment.NewLine &
             "TempFishSkin|" & TempFishSkin & Environment.NewLine &
             "TempBikeSkin|" & TempFishSkin & Environment.NewLine &
+            "TempRideSkin|" & TempFishSkin & Environment.NewLine &
             "Surfing|" & Screen.Level.Surfing.ToNumberString() & Environment.NewLine &
             "BP|" & BP & Environment.NewLine &
             "ShowModels|" & ShowModelsInBattle.ToNumberString() & Environment.NewLine &
@@ -2051,7 +2052,7 @@
             'Restore default values:
             Name = "<playername>"
             RivalName = ""
-            Gender = True
+            Gender = "Male"
             Money = 0
             PlayTime = TimeSpan.Zero
             GameStart = Date.Now
@@ -2077,24 +2078,24 @@
             DaycareSteps = 0
             GameMode = "Quartz"
             VisitedMaps = ""
-            TempSurfSkin = "Hilbert"
-            TempFishSkin = "Hilbert"
-            TempBikeSkin = "Hilbert"
-            TempRideSkin = "Hilbert"
+            TempSurfSkin = "J_Akira"
+            TempFishSkin = "J_Akira"
+            TempBikeSkin = "J_Akira"
+            TempRideSkin = "J_Akira"
             GTSStars = 8
             SandBoxMode = False
             Statistics = ""
             startPosition = New Vector3(14, 0.1, 10)
             startRotation = 0
             startFreeCameraMode = False
-            startMap = "johto\cities\newbark\main.dat"
+            startMap = "Corna\Cities\BreezeTown\Main.dat"
             startFOV = 45.0F
             startRotationSpeed = 12
             startThirdPerson = False
             startSurfing = False
             startBiking = False
             startRiding = False
-            Skin = "Hilbert"
+            Skin = "J_Akira"
 
             'Clear temp save data:
             RegisterData = ""

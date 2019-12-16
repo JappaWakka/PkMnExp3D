@@ -86,7 +86,7 @@ Public Class StorageSystemScreen
 
         Me.texture = TextureManager.GetTexture("GUI\Box\storage")
         Me.menuTexture = TextureManager.GetTexture("GUI\Menus\General")
-
+        SoundManager.PlaySound("PC\LogOn")
         LoadScreen()
     End Sub
 

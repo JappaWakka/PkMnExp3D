@@ -244,7 +244,7 @@
                         Core.Player.PokedexData = Pokedex.ChangeEntry(Core.Player.PokedexData, evolvedPokemon.Number, type)
 
                         evolvedPokemon.PlayCry()
-                        SoundManager.PlaySound("success", True)
+                        SoundManager.PlaySound("Evolved", True)
 
                         evolutionReady = True
                         Dim t As String = "Congratulations!*Your " & currentPokemon.GetDisplayName() & " evolved into a~" & evolvedPokemon.GetName() & "!"

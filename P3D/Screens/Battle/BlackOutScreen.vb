@@ -48,7 +48,7 @@
                 End If
             Else
                 If Controls.Accept(True, True) = True Then
-                    SoundManager.PlaySound("heal_party")
+                    SoundManager.PlaySound("HealParty")
 
                     If FromBattle = True Then
                         Core.Player.HealParty()

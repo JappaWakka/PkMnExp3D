@@ -35,7 +35,7 @@ Namespace Items.Medicine
                 t &= RemoveItem()
                 PlayerStatistics.Track("[17]Medicine Items used", 1)
 
-                SoundManager.PlaySound("heal_single", False)
+                SoundManager.PlaySound("UseItem", False)
                 Screen.TextBox.Show(t, {}, True, True)
                 Return True
             Else

@@ -1183,7 +1183,7 @@
                 If Core.Random.Next(0, 100) < 20 Then
                     CureStatusProblem(own, own, BattleScreen, p.GetDisplayName() & " thawed out.", "own defrost")
                 Else
-                    BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\effect_ice1", False))
+                    BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\Frozen", False))
                     BattleScreen.BattleQuery.Add(New TextQueryObject(p.GetDisplayName() & " is frozen solid!"))
                     Exit Sub
                 End If
@@ -1390,7 +1390,7 @@
 
             If p.Status = Pokemon.StatusProblems.Paralyzed Then
                 If Core.Random.Next(0, 4) = 0 Then
-                    BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\effect_thundershock2", False))
+                    BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\Paralyzed", False))
                     BattleScreen.BattleQuery.Add(New TextQueryObject(p.GetDisplayName() & " is fully paralyzed!" & Environment.NewLine & "It cannot move!"))
                     Exit Sub
                 End If
@@ -1950,12 +1950,12 @@
                                         BattleScreen.FieldEffects.OwnPokemonDamagedThisTurn = True
                                     End If
 
-                                    Dim sound As String = "Battle\Damage\normaldamage"
+                                    Dim sound As String = "Battle\Damage\Effective"
                                     If effectiveness > 1.0F Then
-                                        sound = "Battle\Damage\super_effective"
+                                        sound = "Battle\Damage\SuperEffective"
                                     End If
                                     If effectiveness < 1.0F And effectiveness <> 0.0F Then
-                                        sound = "Battle\Damage\not_effective"
+                                        sound = "Battle\Damage\NotVeryEffective"
                                     End If
 
                                     ReduceHP(Damage, Not own, own, BattleScreen, "", "battledamage", sound)
@@ -2675,7 +2675,7 @@
                                 'Works!
                                 p.Status = Pokemon.StatusProblems.Burn
                                 ChangeCameraAngel(1, own, BattleScreen)
-                                BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\effect_ember", False))
+                                BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\Burned", False))
                                 Select Case message
                                     Case "" 'Print default message only
                                         BattleScreen.BattleQuery.Add(New TextQueryObject(p.GetDisplayName() & " got burned!"))
@@ -2692,7 +2692,7 @@
                                 If Not p.Item Is Nothing Then
                                     If p.Item.Name.ToLower() = "rawst" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True AndAlso BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                                         If RemoveHeldItem(own, own, BattleScreen, "", "berry:rawst") = True Then
-                                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
+                                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("UseItem", False))
                                             CureStatusProblem(own, own, BattleScreen, "The Rawst Berry cured the burn of " & p.GetDisplayName() & "!", "berry:rawst")
                                         End If
                                     End If
@@ -2701,7 +2701,7 @@
                                 If Not p.Item Is Nothing Then
                                     If p.Item.Name.ToLower() = "lum" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True AndAlso BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                                         If RemoveHeldItem(own, own, BattleScreen, "", "berry:lum") = True Then
-                                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
+                                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("UseItem", False))
                                             CureStatusProblem(own, own, BattleScreen, "The Lum Berry cured the burn of " & p.GetDisplayName() & "!", "berry:lum")
                                         End If
                                     End If
@@ -2787,7 +2787,7 @@
                             'Works!
                             p.Status = Pokemon.StatusProblems.Freeze
                             ChangeCameraAngel(1, own, BattleScreen)
-                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\effect_ice1", False))
+                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\Frozen", False))
                             Select Case message
                                 Case "" 'Print default message only
                                     BattleScreen.BattleQuery.Add(New TextQueryObject(p.GetDisplayName() & " was frozen solid!"))
@@ -2804,7 +2804,7 @@
                             If Not p.Item Is Nothing Then
                                 If p.Item.Name.ToLower() = "aspear" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True And BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                                     If RemoveHeldItem(own, own, BattleScreen, "", "berry:aspear") = True Then
-                                        BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
+                                        BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("UseItem", False))
                                         CureStatusProblem(own, own, BattleScreen, "The Aspear Berry thraw out " & p.GetDisplayName() & "!", "berry:aspear")
                                     End If
                                 End If
@@ -2813,7 +2813,7 @@
                             If Not p.Item Is Nothing Then
                                 If p.Item.Name.ToLower() = "lum" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True And BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                                     If RemoveHeldItem(own, own, BattleScreen, "", "berry:lum") = True Then
-                                        BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
+                                        BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("UseItem", False))
                                         CureStatusProblem(own, own, BattleScreen, "The Lum Berry thraw out " & p.GetDisplayName() & "!", "berry:lum")
                                     End If
                                 End If
@@ -2890,7 +2890,7 @@
                             'Works!
                             p.Status = Pokemon.StatusProblems.Paralyzed
                             ChangeCameraAngel(1, own, BattleScreen)
-                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\effect_thundershock2", False))
+                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\Paralyzed", False))
                             Select Case message
                                 Case "" 'Print default message only
                                     BattleScreen.BattleQuery.Add(New TextQueryObject(p.GetDisplayName() & " is paralyzed!" & Environment.NewLine & "It can't move!"))
@@ -2907,7 +2907,7 @@
                             If Not p.Item Is Nothing Then
                                 If p.Item.Name.ToLower() = "cheri" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True And BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                                     If RemoveHeldItem(own, own, BattleScreen, "", "berry:cheri") = True Then
-                                        BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
+                                        BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("UseItem", False))
                                         CureStatusProblem(own, own, BattleScreen, "The Cheri Berry cured the paralysis of " & p.GetDisplayName() & "!", "berry:cheri")
                                     End If
                                 End If
@@ -2916,7 +2916,7 @@
                             If Not p.Item Is Nothing Then
                                 If p.Item.Name.ToLower() = "lum" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True And BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                                     If RemoveHeldItem(own, own, BattleScreen, "", "berry:lum") = True Then
-                                        BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
+                                        BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("UseItem", False))
                                         CureStatusProblem(own, own, BattleScreen, "The Lum Berry cured the paralyzis of " & p.GetDisplayName() & "!", "berry:lum")
                                     End If
                                 End If
@@ -3047,7 +3047,7 @@
                                         If Not p.Item Is Nothing Then
                                             If p.Item.Name.ToLower() = "chesto" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True AndAlso BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                                                 If RemoveHeldItem(own, own, BattleScreen, "", "berry:chesto") = True Then
-                                                    BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
+                                                    BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("UseItem", False))
                                                     CureStatusProblem(own, own, BattleScreen, "The Chesto Berry woke up " & p.GetDisplayName() & "!", "berry:chesto")
                                                 End If
                                             End If
@@ -3056,7 +3056,7 @@
                                         If Not p.Item Is Nothing Then
                                             If p.Item.Name.ToLower() = "lum" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True AndAlso BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                                                 If RemoveHeldItem(own, own, BattleScreen, "", "berry:lum") = True Then
-                                                    BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
+                                                    BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("UseItem", False))
                                                     CureStatusProblem(own, own, BattleScreen, "The Lum Berry woke up " & p.GetDisplayName() & "!", "berry:lum")
                                                 End If
                                             End If
@@ -3131,7 +3131,7 @@
                             Else
                                 'Works!
                                 ChangeCameraAngel(1, own, BattleScreen)
-                                BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\effect_poison", False))
+                                BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\Poisoned", False))
                                 If bad = True Then
                                     p.Status = Pokemon.StatusProblems.BadPoison
                                     Select Case message
@@ -3167,7 +3167,7 @@
                                 If Not p.Item Is Nothing Then
                                     If p.Item.Name.ToLower() = "pecha" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True AndAlso BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                                         If RemoveHeldItem(own, own, BattleScreen, "", "berry:pecha") = True Then
-                                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
+                                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("UseItem", False))
                                             CureStatusProblem(own, own, BattleScreen, "The Pecha Berry cured the poison of " & p.GetDisplayName() & "!", "berry:pecha")
                                         End If
                                     End If
@@ -3176,7 +3176,7 @@
                                 If Not p.Item Is Nothing Then
                                     If p.Item.Name.ToLower() = "lum" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True AndAlso BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                                         If RemoveHeldItem(own, own, BattleScreen, "", "berry:lum") = True Then
-                                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
+                                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("UseItem", False))
                                             CureStatusProblem(own, own, BattleScreen, "The Lum Berry cured the poison of " & p.GetDisplayName() & "!", "berry:lum")
                                         End If
                                     End If
@@ -3248,7 +3248,7 @@
                     If p.Item.Name.ToLower() = "persim" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True AndAlso BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                         If RemoveHeldItem(own, own, BattleScreen, "", "berry:persim") = True Then
                             Me.ChangeCameraAngel(1, own, BattleScreen)
-                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
+                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("UseItem", False))
                             BattleScreen.BattleQuery.Add(New TextQueryObject("The Persim Berry cured the confusion of " & p.GetDisplayName() & "!"))
                             If own = True Then
                                 BattleScreen.FieldEffects.OwnConfusionTurns = 0
@@ -3260,7 +3260,7 @@
                     ElseIf p.Item.Name.ToLower() = "lum" AndAlso BattleScreen.FieldEffects.CanUseItem(own) = True AndAlso BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                         If RemoveHeldItem(own, own, BattleScreen, "", "berry:lum") = True Then
                             Me.ChangeCameraAngel(1, own, BattleScreen)
-                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
+                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("UseItem", False))
                             BattleScreen.BattleQuery.Add(New TextQueryObject("The Lum Berry cured the confusion of " & p.GetDisplayName() & "!"))
                             If own = True Then
                                 BattleScreen.FieldEffects.OwnConfusionTurns = 0
@@ -3370,7 +3370,7 @@
             End If
 
             '***SHOW STAT INCREASE ANIMATION HERE***
-
+            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\Stat_Raise", False))
             Dim printMessage As String = p.GetDisplayName() & "'s " & statString
             Select Case val
                 Case 2
@@ -3630,7 +3630,7 @@
             End If
 
             '***SHOW STAT DECREASE ANIMATION HERE***
-
+            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\Stat_Lower", False))
             Dim printMessage As String = p.GetDisplayName() & "'s " & statString
             Select Case val
                 Case 2
@@ -3907,7 +3907,7 @@
 
                 If sound <> "NOSOUND" Then
                     If sound = "" Then
-                        sound = "Battle\Damage\normaldamage"
+                        sound = "Battle\Damage\Effective"
                     End If
                     BattleScreen.BattleQuery.Add(New PlaySoundQueryObject(sound, False, 0.0F))
                 End If
@@ -3974,7 +3974,7 @@
                     If Not p.Item Is Nothing Then
                         If BattleScreen.FieldEffects.CanUseItem(own) = True And BattleScreen.FieldEffects.CanUseOwnItem(own, BattleScreen) = True Then
                             Select Case p.Item.Name.ToLower()
-								Case "figy"
+                                Case "figy"
                                     If RemoveHeldItem(own, own, BattleScreen, "", "berry:figy") = True Then
                                         UseBerry(own, from, Item.GetItemByID(ItemID), BattleScreen, message, cause)
                                     End If
@@ -4047,7 +4047,7 @@
 
             Dim berry As Items.Berry = CType(BerryItem, Items.Berry)
 
-            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("heal_single", False))
+            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("UseItem", False))
             Select Case BerryItem.Name.ToLower()
                 Case "oran"
                     GainHP(10, own, from, BattleScreen, "The Oran Berry filled up " & p.GetDisplayName() & "'s HP!", "berry:oran")
@@ -5263,14 +5263,14 @@
                     Else
                         If .OwnPokemon.Ability.Name.ToLower() <> "magic guard" Then
                             If .OwnPokemon.Status = Pokemon.StatusProblems.Poison Then 'Own Poison
-                                BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\effect_poison", False))
+                                BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\Poisoned", False))
                                 ReduceHP(CInt(.OwnPokemon.MaxHP / 8), True, True, BattleScreen, "The poison hurt " & .OwnPokemon.GetDisplayName() & ".", "poison")
                             End If
 
                             If .OwnPokemon.Status = Pokemon.StatusProblems.BadPoison Then 'Own Toxic
                                 .FieldEffects.OwnPoisonCounter += 1
                                 Dim multiplier As Double = (.FieldEffects.OwnPoisonCounter / 16)
-                                BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\effect_poison", False))
+                                BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\Poisoned", False))
                                 ReduceHP(CInt(.OwnPokemon.MaxHP * multiplier), True, True, BattleScreen, "The toxic hurt " & .OwnPokemon.GetDisplayName() & ".", "badpoison")
                             End If
                         End If
@@ -5285,7 +5285,7 @@
                                 reduceAmount = CInt(.OwnPokemon.MaxHP / 32)
                             End If
 
-                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\effect_ember", False))
+                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\Burned", False))
                             ReduceHP(reduceAmount, True, True, BattleScreen, .OwnPokemon.GetDisplayName() & " is hurt by the burn.", "burn")
                         End If
                     End If
@@ -6012,14 +6012,14 @@
                     Else
                         If .OppPokemon.Ability.Name.ToLower() <> "magic guard" Then
                             If .OppPokemon.Status = Pokemon.StatusProblems.Poison Then 'Opp Poison
-                                BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\effect_poison", False))
+                                BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\Poisoned", False))
                                 ReduceHP(CInt(.OppPokemon.MaxHP / 8), False, False, BattleScreen, "The poison hurt " & .OppPokemon.GetDisplayName() & ".", "poison")
                             End If
 
                             If .OppPokemon.Status = Pokemon.StatusProblems.BadPoison Then 'Opp Toxic
                                 .FieldEffects.OppPoisonCounter += 1
                                 Dim multiplier As Double = (.FieldEffects.OppPoisonCounter / 16)
-                                BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\effect_poison", False))
+                                BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\Poisoned", False))
                                 ReduceHP(CInt(.OppPokemon.MaxHP * multiplier), False, False, BattleScreen, "The toxic hurt " & .OppPokemon.GetDisplayName() & ".", "badpoison")
                             End If
                         End If
@@ -6034,7 +6034,7 @@
                                 reduceAmount = CInt(.OppPokemon.MaxHP / 16)
                             End If
 
-                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\effect_ember", False))
+                            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\Burned", False))
                             ReduceHP(reduceAmount, False, False, BattleScreen, .OppPokemon.GetDisplayName() & " is hurt by the burn.", "burn")
                         End If
                     End If

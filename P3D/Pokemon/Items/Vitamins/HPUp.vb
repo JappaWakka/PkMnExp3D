@@ -18,7 +18,7 @@ Namespace Items.Vitamins
                 p.EVHP += 10
                 p.ChangeFriendShip(Pokemon.FriendShipCauses.Vitamin)
 
-                SoundManager.PlaySound("heal_single", False)
+                SoundManager.PlaySound("UseItem", False)
                 Screen.TextBox.Show("Raised " & p.GetDisplayName() & "'s~HP.", {}, False, False)
                 PlayerStatistics.Track("[25]Vitamins used", 1)
 

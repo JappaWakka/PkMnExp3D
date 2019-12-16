@@ -21,6 +21,7 @@
         Private _decimalSeparator As String = ","
         Private _busyType As Integer = 0
         Private _gameMode As String = ""
+        Private _gender As String = ""
 
         Private _pokemonPosition As Vector3 = New Vector3(0)
         Private _pokemonFacing As Integer = 0
@@ -117,6 +118,12 @@
             End Get
         End Property
 
+        Public ReadOnly Property Gender() As String
+            Get
+                Return Me._gender
+            End Get
+        End Property
+
         Public Sub ApplyNewData(ByVal p As Package)
             '---General information---
             '0: Active gamemode
@@ -138,6 +145,9 @@
             '12: Position
             '13: Skin
             '14: facing
+
+            '---Additional information---'
+            '15: Gender
 
             Dim d() As String = p.DataItems.ToArray()
 
@@ -181,6 +191,8 @@
                             Me._pokemonSkin = value
                         Case 14 '14: facing
                             Me._pokemonFacing = CInt(value)
+                        Case 15 '15: Gender
+                            Me._gender = CStr(value)
                     End Select
                 End If
             Next

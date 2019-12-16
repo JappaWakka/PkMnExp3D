@@ -897,9 +897,9 @@ Namespace GameJolt
                 "GameMode|Quartz" & Environment.NewLine &
                 "PokeFiles|" & Environment.NewLine &
                 "VisitedMaps|johto\cities\newbark\yourhousef2.dat" & Environment.NewLine &
-                "TempSurfSkin|Hilbert" & Environment.NewLine &
-                "TempBikeSkin|Hilbert" & Environment.NewLine &
-                "TempFishSkin|Hilbert" & Environment.NewLine &
+                "TempSurfSkin|J_Akira" & Environment.NewLine &
+                "TempBikeSkin|J_Akira" & Environment.NewLine &
+                "TempFishSkin|J_Akira" & Environment.NewLine &
                 "Surfing|0" & Environment.NewLine &
                 "ShowModels|1" & Environment.NewLine &
                 "GTSStars|4" & Environment.NewLine &

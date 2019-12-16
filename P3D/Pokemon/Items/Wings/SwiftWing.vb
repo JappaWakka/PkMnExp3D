@@ -17,7 +17,7 @@ Namespace Items.Wings
             If CanUseWing(p.EVSpeed, p) = True Then
                 p.EVSpeed += 1
 
-                SoundManager.PlaySound("heal_single", False)
+                SoundManager.PlaySound("UseItem", False)
                 Screen.TextBox.Show("Raised " & p.GetDisplayName() & "'s~Speed.", {}, False, False)
                 PlayerStatistics.Track("[254]Wings used", 1)
 

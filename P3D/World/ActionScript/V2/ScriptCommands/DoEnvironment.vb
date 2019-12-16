@@ -17,6 +17,8 @@
                     World.RegionWeather = CType(int(argument), World.Weathers)
                 Case "setcanfly"
                     Screen.Level.CanFly = CBool(argument)
+                Case "setentertype"
+                    Screen.Level.EnterType = CInt(argument)
                 Case "setcandig"
                     Screen.Level.CanDig = CBool(argument)
                 Case "setcanteleport"
