@@ -942,6 +942,8 @@
                 p = BattleScreen.Trainer.Pokemons(target)
             End If
 
+            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("UseItem", False))
+
             'Potion,Super Point,Hyper Potion,Full Heal,Full Restore,Burn Heal,Antidote,Paralyze heal,Awakening,Ice Heal,Revive,Max Revive,Max Potion
             Select Case ItemID
                 Case 18 'Potion
