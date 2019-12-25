@@ -43,7 +43,7 @@ Public Class PressStartScreen
 
         GameModeManager.SetGameModePointer("Quartz")
 
-        Core.Player.Skin = "Gold_GBA"
+        Core.Player.Skin = "J_Akira"
 
         If IO.Directory.Exists(GameController.GamePath & "\Save\") = False Then
             IO.Directory.CreateDirectory(GameController.GamePath & "\Save\")
@@ -235,7 +235,7 @@ Public Class PressStartScreen
 
     Public Overrides Sub ChangeTo()
         Core.Player.Unload()
-        Core.Player.Skin = "Hilbert"
+        Core.Player.Skin = "J_Akira"
         TextBox.Hide()
         TextBox.CanProceed = True
         OverworldScreen.FadeValue = 0
@@ -820,7 +820,7 @@ Public Class NewMainMenuScreen
                 Next
 
                 If _isGameJolt = False Then
-                    _sprite = TextureManager.GetTexture("Textures\NPC\PlayerSkins\" & _skin)
+                    _sprite = TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins\" & _skin)
                 End If
             Else
                 _gameModeExists = False

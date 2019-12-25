@@ -34,7 +34,7 @@
         Me.SkinName = TextureID
         HasPokemonTexture = False
 
-        Dim texturePath As String = "Textures\NPC\PlayerSkins\"
+        Dim texturePath As String = "Textures\OverworldSprites\PlayerSkins\"
         Dim isPokemon As Boolean = False
         If TextureID.StartsWith("[POKEMON|N]") Or TextureID.StartsWith("[Pokémon|N]") Then
             TextureID = TextureID.Remove(0, 11)
@@ -54,7 +54,7 @@
         End If
 
         If Core.Player.IsGameJoltSave Then
-            If texturePath & TextureID & PokemonAddition = "Textures\NPC\" & GameJolt.Emblem.GetPlayerSpriteFile(GameJolt.Emblem.GetPlayerLevel(Core.GameJoltSave.Points), Core.GameJoltSave.GameJoltID, Core.GameJoltSave.Gender) Then
+            If texturePath & TextureID & PokemonAddition = "Textures\OverworldSprites\" & GameJolt.Emblem.GetPlayerSpriteFile(GameJolt.Emblem.GetPlayerLevel(Core.GameJoltSave.Points), Core.GameJoltSave.GameJoltID, Core.GameJoltSave.Gender) Then
                 UseGameJoltID = True
             End If
         End If

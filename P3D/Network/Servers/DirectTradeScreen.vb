@@ -138,7 +138,7 @@
                 If TextureManager.TextureExist(tPath) = True Then
                     t = TextureManager.GetTexture(tPath)
                 Else
-                    t = TextureManager.GetTexture("Textures\NPC\0")
+                    t = TextureManager.GetTexture("Textures\OverworldSprites\0")
                 End If
                 tempPlayer = p
 

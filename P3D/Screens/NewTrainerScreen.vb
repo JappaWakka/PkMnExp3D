@@ -45,13 +45,13 @@
         target2 = New RenderTarget2D(GraphicsDevice, Core.windowSize.Width, Core.windowSize.Height, False, SurfaceFormat.Color, DepthFormat.Depth24Stencil8)
 
         If Screen.Level.Surfing = True Then
-            _charTexture = TextureManager.GetTexture("Textures\NPC\PlayerSkins\" & Core.Player.TempSurfSkin)
+            _charTexture = TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins\" & Core.Player.TempSurfSkin)
         Else
             If Screen.Level.Riding = True Then
-                _charTexture = TextureManager.GetTexture("Textures\NPC\PlayerSkins\" & Core.Player.TempRideSkin)
+                _charTexture = TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins\" & Core.Player.TempRideSkin)
             Else
                 If Screen.Level.Biking = True Then
-                    _charTexture = TextureManager.GetTexture("Textures\NPC\PlayerSkins\" & Core.Player.TempBikeSkin)
+                    _charTexture = TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins\" & Core.Player.TempBikeSkin)
                 Else
                     _charTexture = Screen.Level.OwnPlayer.Texture
                 End If

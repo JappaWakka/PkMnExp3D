@@ -26,7 +26,7 @@
     End Sub
 
     Private Sub ChangeTexture()
-        Dim r As New Rectangle(16, 32, 16, 16)
+        Dim r As New Rectangle(16, 32, 16, 32)
 
         If hasApricorn = True Then
             Dim x As Integer = GetColorCode(ApricornColor)
@@ -37,7 +37,7 @@
                 y += 1
             End While
 
-            r = New Rectangle(x * 16, y * 16, 16, 16)
+            r = New Rectangle(x * 16, y * 32, 16, 32)
         End If
 
         Textures(0) = TextureManager.GetTexture("Apricorn", r)

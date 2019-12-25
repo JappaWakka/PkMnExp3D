@@ -836,7 +836,7 @@
                         If TextureManager.TextureExist(tPath) = True Then
                             t = TextureManager.GetTexture(tPath)
                         Else
-                            t = TextureManager.GetTexture("Textures\NPC\0")
+                            t = TextureManager.GetTexture("Textures\OverworldSprites\0")
                         End If
                         Dim lP As New LocalPlayer(p.ServersID)
 
@@ -1168,10 +1168,10 @@
                         Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\pokegear"), New Rectangle(CInt(startPos.X + 45 + 16), CInt(startPos.Y + 80 + i * 35), 478, 32), New Rectangle(102, 112, 4, 16), Color.White, 0.0F, Vector2.Zero, eff, 0.0F)
                         Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\pokegear"), New Rectangle(CInt(startPos.X + 45 + 16 + 478), CInt(startPos.Y + 80 + i * 35), 16, 32), New Rectangle(104, 112, 8, 16), Color.White, 0.0F, Vector2.Zero, eff, 0.0F)
 
-                        Dim _spriteTexture As Texture2D = TextureManager.GetTexture("Textures\NPC\" & C.Texture)
+                        Dim _spriteTexture As Texture2D = TextureManager.GetTexture("Textures\OverworldSprites\" & C.Texture)
                         Dim frameSize As New Size(CInt(_spriteTexture.Width / 3), CInt(_spriteTexture.Height / 4))
 
-                        Core.SpriteBatch.Draw(TextureManager.GetTexture("Textures\NPC\" & C.Texture), New Rectangle(CInt(startPos.X + 50), CInt(startPos.Y + 80 + i * 35), 32, 32), New Rectangle(0, frameSize.Height * 2, frameSize.Width, frameSize.Height), Color.White)
+                        Core.SpriteBatch.Draw(TextureManager.GetTexture("Textures\OverworldSprites\" & C.Texture), New Rectangle(CInt(startPos.X + 50), CInt(startPos.Y + 80 + i * 35), 32, 32), New Rectangle(0, frameSize.Height * 2, frameSize.Width, frameSize.Height), Color.White)
                         Core.SpriteBatch.DrawString(FontManager.MiniFont, C.Name, New Vector2(CInt(startPos.X + 90), CInt(startPos.Y + 85 + i * 35)), Color.Black)
                         Core.SpriteBatch.DrawString(FontManager.MiniFont, "Location: " & C.Location, New Vector2(CInt(startPos.X + 280), CInt(startPos.Y + 85 + i * 35)), Color.Black)
                     End If
@@ -1990,7 +1990,7 @@
                             If TextureManager.TextureExist(tPath) = True Then
                                 t = TextureManager.GetTexture(tPath)
                             Else
-                                t = TextureManager.GetTexture("Textures\NPC\0")
+                                t = TextureManager.GetTexture("Textures\OverworldSprites\0")
                             End If
                             Me.TradeRequestTexture = t
                             Me.TradeRequestName = p.Name
@@ -2121,7 +2121,7 @@
                             If TextureManager.TextureExist(tPath) = True Then
                                 t = TextureManager.GetTexture(tPath)
                             Else
-                                t = TextureManager.GetTexture("Textures\NPC\0")
+                                t = TextureManager.GetTexture("Textures\OverworldSprites\0")
                             End If
                             Me.BattleRequestTexture = t
                             Me.BattleRequestName = p.Name

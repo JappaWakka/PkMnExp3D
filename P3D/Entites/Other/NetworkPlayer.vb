@@ -96,7 +96,7 @@
                 Me.Texture = TextureManager.GetTexture(texturePath)
             Else
                 Logger.Debug("Texture fallback!")
-                Me.Texture = TextureManager.GetTexture("Textures\NPC\" & FallBack(Me.NetworkID))
+                Me.Texture = TextureManager.GetTexture("Textures\OverworldSprites\" & FallBack(Me.NetworkID))
             End If
         End If
     End Sub
@@ -110,7 +110,7 @@
     End Sub
 
     Public Shared Function GetTexturePath(ByVal TextureID As String) As String
-        Dim texturePath As String = "Textures\NPC\"
+        Dim texturePath As String = "Textures\OverworldSprites\"
         Dim isPokemon As Boolean = False
         If TextureID.StartsWith("[POKEMON|N]") = True Or TextureID.StartsWith("[Pokémon|N]") = True Then
             TextureID = TextureID.Remove(0, 11)

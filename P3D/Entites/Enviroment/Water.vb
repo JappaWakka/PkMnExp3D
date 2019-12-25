@@ -11,7 +11,7 @@
     Public Overrides Sub Initialize()
         MyBase.Initialize()
 
-        WaterAnimation = New Animation(TextureManager.GetTexture("Textures\Backdrops\Water"), 1, 3, 64, 64, 9, 0, 0)
+        WaterAnimation = New Animation(TextureManager.GetTexture("Textures\TextureSheets\Water"), 1, 3, 64, 64, 9, 0, 0)
 
         CreateWaterTextureTemp()
     End Sub

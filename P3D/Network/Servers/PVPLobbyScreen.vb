@@ -198,7 +198,7 @@
                 If TextureManager.TextureExist(tPath) = True Then
                     t = TextureManager.GetTexture(tPath)
                 Else
-                    t = TextureManager.GetTexture("Textures\NPC\0")
+                    t = TextureManager.GetTexture("Textures\OverworldSprites\0")
                 End If
                 tempPlayer = p
 
@@ -556,20 +556,20 @@
         Me.CanBePaused = False
         ScreenState = ScreenStates.StartBattle
 
-        Dim tPath As String = "Textures\NPC\0"
+        Dim tPath As String = "Textures\OverworldSprites\0"
         Dim tempPlayer As Servers.Player = Nothing
         For Each p As Servers.Player In Core.ServersManager.PlayerCollection
             If p.ServersID = PartnerNetworkID Then
                 tPath = NetworkPlayer.GetTexturePath(p.Skin)
                 If TextureManager.TextureExist(tPath) = False Then
-                    tPath = "Textures\NPC\0"
+                    tPath = "Textures\OverworldSprites\0"
                 End If
                 tempPlayer = p
                 Exit For
             End If
         Next
 
-        tPath = tPath.Remove(0, ("Textures\NPC\").Length)
+        tPath = tPath.Remove(0, ("Textures\OverworldSprites\").Length)
 
         Dim t As New Trainer()
         t.Pokemons = OppTeam
@@ -770,7 +770,7 @@
                     If TextureManager.TextureExist(tPath) = True Then
                         t = TextureManager.GetTexture(tPath)
                     Else
-                        t = TextureManager.GetTexture("Textures\NPC\0")
+                        t = TextureManager.GetTexture("Textures\OverworldSprites\0")
                     End If
                     tempPlayer = p
                     Exit For

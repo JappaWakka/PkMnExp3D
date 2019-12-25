@@ -261,7 +261,7 @@
         Public Shared Function GetPlayerSprite(ByVal level As Integer, ByVal id As String, ByVal gender As String) As Texture2D
             For Each staffMember As StaffProfile In StaffProfile.Staff
                 If staffMember.GameJoltID.ToLower() = id.ToLower() And staffMember.Sprite <> "" Then
-                    Return TextureManager.GetTexture("Textures\NPC\" & staffMember.Sprite)
+                    Return TextureManager.GetTexture("Textures\OverworldSprites\" & staffMember.Sprite)
                 End If
             Next
 
@@ -276,7 +276,7 @@
                 tFile = tFile.Remove(0, 2)
             End If
 
-            Return TextureManager.GetTexture("Textures\NPC\" & tFile)
+            Return TextureManager.GetTexture("Textures\OverworldSprites\" & tFile)
         End Function
 
         Public Shared Function GetEmblemBackgroundTexture(ByVal emblemName As String) As Texture2D

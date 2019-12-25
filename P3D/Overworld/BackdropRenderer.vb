@@ -106,7 +106,7 @@
             Select Case BackdropType.ToLower()
                 Case "water"
                     Me._backdropType = BackdropTypes.Water
-                    _backdropTexture = TextureManager.GetTexture("Backdrops\Water", New Rectangle(0, 0, 64, 64))
+                    _backdropTexture = TextureManager.GetTexture("TextureSheets\Water", New Rectangle(0, 0, 16, 16))
                 Case "grass"
                     Me._backdropType = BackdropTypes.Grass
                 Case "texture"
@@ -130,7 +130,7 @@
                             _waterAnimationIndex = 0
                         End If
 
-                        _backdropTexture = TextureManager.GetTexture("Backdrops\Water", New Rectangle(64 * _waterAnimationIndex, 0, 64, 64))
+                        _backdropTexture = TextureManager.GetTexture("TextureSheets\Water", New Rectangle(16 * _waterAnimationIndex, 0, 16, 16))
                     End If
                 Case BackdropTypes.Grass
                     If Me._setTexture = False Then
@@ -142,12 +142,12 @@
                             Case World.Seasons.Spring
                                 x = 16
                             Case World.Seasons.Summer
-                                x = 32
+                                x = 16
                             Case World.Seasons.Fall
-                                x = 48
+                                x = 16
                         End Select
 
-                        _backdropTexture = TextureManager.GetTexture("Backdrops\Grass", New Rectangle(x, 0, 16, 16))
+                        _backdropTexture = TextureManager.GetTexture("TextureSheets\FloorOutside", New Rectangle(x, 0, 16, 16))
                         Me._setTexture = True
                     End If
             End Select

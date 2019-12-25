@@ -13,7 +13,7 @@ Public Class OverworldPokemon
 
     Dim Moving As Boolean = False
     Dim AnimationX As Integer = 0
-    Dim AnimationDelayLength As Single = 2.2F
+    Dim AnimationDelayLength As Single = 0.3F
     Dim AnimationDelay As Single = AnimationDelayLength
 
     Public Sub New(ByVal X As Single, ByVal Y As Single, ByVal Z As Single)
@@ -95,7 +95,18 @@ Public Class OverworldPokemon
                     End If
                 End If
             Else
-                AnimationX = 0
+                If AnimationX > 0 Then
+                    Me.AnimationDelay -= 0.1F
+                    If AnimationDelay <= 0.0F Then
+                        AnimationDelay = AnimationDelayLength
+                        AnimationX += 1
+                        If AnimationX > 3 Then
+                            AnimationX = 0
+                        End If
+                    End If
+                Else
+                    AnimationX = 0
+                End If
             End If
 
             ChangePosition()
@@ -167,11 +178,11 @@ Public Class OverworldPokemon
         If Screen.Camera.IsMoving() = True Then
             If CInt(Me.Position.X) <> CInt(Screen.Camera.Position.X) Or CInt(Me.Position.Z) <> CInt(Screen.Camera.Position.Z) Then
                 Me.Position += GetMove()
-                Me.AnimationDelayLength = 0.4F
+                Me.AnimationDelayLength = 0.35F
                 Me.Moving = True
             End If
         Else
-            Me.AnimationDelayLength = 2.2F
+            Me.AnimationDelayLength = 0.35F
             Me.Moving = False
         End If
     End Sub

@@ -89,7 +89,7 @@
     Public Sub SetupSprite(ByVal UseTextureID As String, ByVal GameJoltID As String, ByVal UseGameJoltID As Boolean)
         Me.TextureID = UseTextureID
 
-        Dim texturePath As String = "Textures\NPC\"
+        Dim texturePath As String = "Textures\OverworldSprites\"
         HasPokemonTexture = False
         If Me.TextureID.StartsWith("[POKEMON|N]") = True Or Me.TextureID.StartsWith("[Pokémon|N]") = True Then
             Me.TextureID = Me.TextureID.Remove(0, 11)

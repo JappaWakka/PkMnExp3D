@@ -846,7 +846,7 @@
 
                     Logger.Debug(TextureID)
 
-                    .Texture = P3D.TextureManager.GetTexture("Textures\NPC\" & TextureID)
+                    .Texture = P3D.TextureManager.GetTexture("Textures\OverworldSprites\" & TextureID)
                     .SkinName = TextureID
 
                     .UpdateEntity()

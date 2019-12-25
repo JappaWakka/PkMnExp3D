@@ -1,9 +1,9 @@
 ﻿Public Class GameOptions
-
     Public RenderDistance As Integer = 3
     Public ShowDebug As Integer = 0
     Public ShowGUI As Boolean = True
     Public GraphicStyle As Integer = 1
+    Public MenuFontColor As String = "Regular"
     Public LoadOffsetMaps As Integer = 10
     Public ContentPackNames() As String = {}
     Public ViewBobbing As Boolean = True
@@ -58,6 +58,14 @@
                         Me.ShowGUI = CBool(value)
                     Case "graphicstyle"
                         Me.GraphicStyle = CInt(value)
+                    Case "menufontcolor"
+                        If value = "Regular" Then
+                            Me.MenuFontColor = "Regular"
+                        ElseIf value = "Inverted" Then
+                            Me.MenuFontColor = "Inverted"
+                        Else
+                            Me.MenuFontColor = "Regular"
+                        End If
                     Case "loadoffsetmaps"
                         Me.LoadOffsetMaps = CInt(value)
                     Case "language"
@@ -141,6 +149,7 @@
                 "ShowDebugConsole|" & Logger.DisplayLog.ToNumberString() & Environment.NewLine &
                 "ShowGUI|" & Me.ShowGUI.ToNumberString() & Environment.NewLine &
                 "GraphicStyle|" & Me.GraphicStyle.ToString() & Environment.NewLine &
+                "MenuFontColor|" & Me.MenuFontColor.ToString() & Environment.NewLine &
                 "LoadOffsetMaps|" & Me.LoadOffsetMaps.ToString() & Environment.NewLine &
                 "Language|" & Localization.LanguageSuffix & Environment.NewLine &
                 "ViewBobbing|" & Me.ViewBobbing.ToNumberString() & Environment.NewLine &
@@ -172,6 +181,7 @@
             "ShowDebugConsole|0" & Environment.NewLine &
             "ShowGUI|1" & Environment.NewLine &
             "GraphicStyle|1" & Environment.NewLine &
+            "MenuFontColor|Regular" & Environment.NewLine &
             "LoadOffsetMaps|10" & Environment.NewLine &
             "Language|en" & Environment.NewLine &
             "ViewBobbing|1" & Environment.NewLine &

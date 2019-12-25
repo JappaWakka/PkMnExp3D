@@ -233,7 +233,7 @@
                 MouseVisible = True
 
                 For Each skin As String In skins
-                    _sprites.Add(TextureManager.GetTexture("Textures\NPC\PlayerSkins\" & skin))
+                    _sprites.Add(TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins\" & skin))
                 Next
 
                 _skins = skins
