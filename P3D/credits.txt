@@ -3,11 +3,49 @@ Pokémon created by Nintendo, Game Freak and The Pokémon Company / Creatures In
 Pokémon Quartz 3D
 
 	Modifications by JappaWakka
-	2019
-	
-	
+	2019 - 2020
 
-Pokémon 3D
+	Based on the infamous romhack Pokémon Quartz by TehBaro
+	
+	Textures
+		Apricorn Plant
+			spherical-ice
+		Various textures/tiles
+			The-Red-Ex
+		Overworld sprites
+			PlayerSkins
+				TehBaro
+				JappaWakka
+				KisiroKitsune
+				Marnic
+			NPCs
+				aveontrainer
+				Skeizerr
+				Ulithium_Dragon
+				PurlpleZaffre
+				15avaughn
+				spherical-ice
+				Mashirosakura
+				Mimi
+				M.vit
+				Delta231
+				Ulithium_Dragon
+				Lagoon-Sadnes
+	Pokemon
+		Overworld sprites
+			JappaWakka
+
+	Pokédex entries
+		Luis-386/lonedeoxys
+		(https://issuu.com/luis-386)
+
+	Special thanks to
+		Discord users
+			ReconVirus#7856
+			jianmingyong#4964
+			HampstaPig#8406
+
+Pokémon 3D Legacy
 
 	Created by Kolben Games 
 	2012 - 2019
