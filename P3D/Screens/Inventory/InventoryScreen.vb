@@ -33,7 +33,7 @@
         Me.Identification = Identifications.InventoryScreen
         Me.PreScreen = currentScreen
         Me.mainTexture = TextureManager.GetTexture("GUI\Menus\Menu")
-        Me.texture = TextureManager.GetTexture(mainTexture, New Rectangle(0, 0, 48, 48))
+        Me.texture = TextureManager.GetTexture(mainTexture, New Rectangle(0, 176, 48, 48))
 
         Me.ReturnItem = DoStuff
         Me.AllowedPages = AllowedPages
@@ -172,21 +172,21 @@
     Private Sub ChangeBag()
         Select Case bagIndex
             Case 0
-                bagIdentifier = Game.Items.ItemTypes.Standard
+                bagIdentifier = P3D.Items.ItemTypes.Standard
             Case 1
-                bagIdentifier = Game.Items.ItemTypes.Medicine
+                bagIdentifier = P3D.Items.ItemTypes.Medicine
             Case 2
-                bagIdentifier = Game.Items.ItemTypes.Machines
+                bagIdentifier = P3D.Items.ItemTypes.Machines
             Case 3
-                bagIdentifier = Game.Items.ItemTypes.Pokéballs
+                bagIdentifier = P3D.Items.ItemTypes.Pokéballs
             Case 4
-                bagIdentifier = Game.Items.ItemTypes.Plants
+                bagIdentifier = P3D.Items.ItemTypes.Plants
             Case 5
-                bagIdentifier = Game.Items.ItemTypes.Mail
+                bagIdentifier = P3D.Items.ItemTypes.Mail
             Case 6
-                bagIdentifier = Game.Items.ItemTypes.BattleItems
+                bagIdentifier = P3D.Items.ItemTypes.BattleItems
             Case 7
-                bagIdentifier = Game.Items.ItemTypes.KeyItems
+                bagIdentifier = P3D.Items.ItemTypes.KeyItems
         End Select
 
         cItems.Clear()
@@ -237,15 +237,17 @@
 
         Canvas.DrawImageBorder(texture, 2, New Rectangle(60, 100, 800, 480))
         Canvas.DrawImageBorder(texture, 2, New Rectangle(572, 100, 288, 64))
-        Canvas.DrawImageBorder(texture, 2, New Rectangle(60, 516, 480, 64))
-        Canvas.DrawImageBorder(texture, 2, New Rectangle(572, 196, 288, 384))
+        Canvas.DrawImageBorder(texture, 2, New Rectangle(60, 516, 480, 96))
+        Canvas.DrawImageBorder(texture, 2, New Rectangle(572, 196, 288, 330))
+        Canvas.DrawImageBorder(TextureManager.GetTexture(mainTexture, New Rectangle(208, 128, 48, 48)), 2, New Rectangle(572, 516, 288, 96))
         Canvas.DrawImageBorder(texture, 2, New Rectangle(620, 420, 192, 64))
 
         Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\BagPack"), New Rectangle(592, 126, 48, 48), New Rectangle(24 * bagIndex, 150, 24, 24), Color.White)
 
-        Core.SpriteBatch.DrawString(FontManager.InGameFont, Localization.GetString("inventory_menu_bag"), New Vector2(646, 134), Color.Black)
-        Core.SpriteBatch.DrawString(FontManager.MiniFont, Localization.GetString("inventory_menu_backadvice"), New Vector2(1200 - FontManager.MiniFont.MeasureString(Localization.GetString("inventory_menu_backadvice")).X - 330, 580), Color.DarkGray)
-        Core.SpriteBatch.DrawString(FontManager.MainFont, Localization.GetString("inventory_menu_items") & ":" & vbNewLine & Localization.GetString("item_category_" & Me.bagIdentifier.ToString()), New Vector2(640, 446), Color.Black)
+        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("inventory_menu_bag"), New Vector2(646, 134), Color.White)
+        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("inventory_menu_backadvice").Replace("~", Environment.NewLine), New Vector2(FontManager.MainFontBlack.MeasureString(Localization.GetString("inventory_menu_backadvice").Replace("~", Environment.NewLine)).X + 640, 116), Color.White)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("inventory_menu_pocketadvice").Replace("~", Environment.NewLine), New Vector2(FontManager.MainFontWhite.MeasureString(Localization.GetString("inventory_menu_pocketadvice").Replace("~", Environment.NewLine)).X / 2 + 520, 548), Color.White)
+        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("inventory_menu_items") & ":" & Environment.NewLine & Localization.GetString("item_category_" & Me.bagIdentifier.ToString()), New Vector2(640, 436), Color.White)
 
         Canvas.DrawScrollBar(New Vector2(555, 120), cItems.Count, 6, scrollIndex(bagIndex), New Size(4, 390), False, TextureManager.GetTexture(mainTexture, New Rectangle(112, 12, 1, 1)), TextureManager.GetTexture(mainTexture, New Rectangle(113, 12, 1, 1)))
 
@@ -253,32 +255,35 @@
             Dim Item As Item = cItems.Keys(i)
             If i + scrollIndex(bagIndex) <= 5 And i + scrollIndex(bagIndex) >= 0 Then
                 Dim p As New Vector2(100, 114)
+                Dim FontColor As SpriteFont
                 With Core.SpriteBatch
 
                     Dim BorderTexture As Texture2D
                     If i = index(bagIndex) Then
-                        BorderTexture = TextureManager.GetTexture(mainTexture, New Rectangle(48, 0, 48, 48))
+                        BorderTexture = TextureManager.GetTexture(mainTexture, New Rectangle(0, 48, 48, 48))
+                        FontColor = FontManager.MainFontWhite
                     Else
-                        BorderTexture = texture
+                        BorderTexture = TextureManager.GetTexture(mainTexture, New Rectangle(0, 0, 48, 48))
+                        FontColor = FontManager.MainFontBlack
                     End If
 
                     Canvas.DrawImageBorder(BorderTexture, 1, New Rectangle(CInt(p.X), CInt(p.Y + (i + scrollIndex(bagIndex)) * 70), 320, 32))
 
-                    .Draw(Item.Texture, New Rectangle(CInt(p.X), CInt(p.Y + (i + scrollIndex(bagIndex)) * 70), 64, 64), Color.White)
-                    .DrawString(FontManager.MiniFont, Item.Name, New Vector2(CInt(p.X + 74), CInt(p.Y + (i + scrollIndex(bagIndex)) * 70) + 13), Color.Black)
+                    .Draw(Item.Texture, New Rectangle(CInt(p.X), CInt(p.Y + (i + scrollIndex(bagIndex)) * 70), 48, 48), Color.White)
+                    .DrawString(FontColor, Item.Name, New Vector2(CInt(p.X + 74), CInt(p.Y + (i + scrollIndex(bagIndex)) * 70) + 13), Color.White)
 
                     If Me.bagIndex <> 7 Then
-                        Dim lenght As String = ""
+                        Dim length As String = ""
                         If cItems.Values(i).ToString().Length < 3 Then
                             For n = 1 To 3 - cItems.Values(i).ToString().Length
-                                lenght &= " "
+                                length &= " "
                             Next
                         End If
-                        .DrawString(FontManager.MiniFont, "x" & lenght & cItems.Values(i).ToString(), New Vector2(CInt(p.X + 280), CInt(p.Y + (i + scrollIndex(bagIndex)) * 70) + 13), Color.Black)
+                        .DrawString(FontColor, "x" & length & cItems.Values(i).ToString(), New Vector2(CInt(p.X + 280), CInt(p.Y + (i + scrollIndex(bagIndex)) * 70) + 13), Color.White)
                     End If
 
                     If i = index(bagIndex) Then
-                        .DrawString(FontManager.MiniFont, Item.Description.CropStringToWidth(FontManager.MiniFont, 450), New Vector2(80, 534), Color.Black)
+                        .DrawString(FontManager.MainFontBlack, Item.GetDescription().CropStringToWidth(FontManager.MainFontBlack, 450), New Vector2(80, 532), Color.White)
                     End If
                 End With
             End If

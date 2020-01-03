@@ -58,17 +58,17 @@
             Canvas.DrawRectangle(rec, New Color(0, 0, 0, 150))
 
             Dim text As String = Me._text.Substring(0, _textIndex)
-            text = text.CropStringToWidth(FontManager.InGameFont, Core.windowSize.Width - 300)
+            text = text.CropStringToWidth(FontManager.MainFontWhite, Core.windowSize.Width - 300)
 
-            Core.SpriteBatch.DrawString(FontManager.InGameFont, text, New Vector2(rec.X + 20, rec.Y + 20), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, text, New Vector2(rec.X + 20, rec.Y + 20), Color.White)
 
             If GamePad.GetState(PlayerIndex.One).IsConnected = True And Core.GameOptions.GamePadEnabled = True And BV2Screen.IsCurrentScreen() = True Then
                 Dim d As New Dictionary(Of Buttons, String)
-                d.Add(Buttons.A, "OK")
+                d.Add(Buttons.A, Localization.GetString("game_interaction_ok", "OK"))
                 BV2Screen.DrawGamePadControls(d, New Vector2(rec.X + rec.Width - 100, rec.Y + rec.Height - 40))
             Else
                 If TextReady = True Then
-                    Core.SpriteBatch.DrawString(FontManager.InGameFont, "OK", New Vector2(rec.X + rec.Width - FontManager.InGameFont.MeasureString("OK").X - 20, rec.Y + rec.Height - FontManager.InGameFont.MeasureString("OK").Y - 5), Color.White)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "OK", New Vector2(rec.X + rec.Width - FontManager.MainFontWhite.MeasureString("OK").X - 20, rec.Y + rec.Height - FontManager.MainFontWhite.MeasureString("OK").Y - 5), Color.White)
                 End If
             End If
         End Sub
@@ -99,17 +99,17 @@
 
             If _chooseIndex = 0 Then
                 Canvas.DrawRectangle(New Rectangle(Core.windowSize.Width - 213, Core.windowSize.Height - 438, 80, 50), Color.White)
-                Core.SpriteBatch.DrawString(FontManager.InGameFont, "Yes", New Vector2(Core.windowSize.Width - 200, Core.windowSize.Height - 430), Color.Black)
-                Core.SpriteBatch.DrawString(FontManager.InGameFont, "No", New Vector2(Core.windowSize.Width - 200, Core.windowSize.Height - 370), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Yes", New Vector2(Core.windowSize.Width - 200, Core.windowSize.Height - 430), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "No", New Vector2(Core.windowSize.Width - 200, Core.windowSize.Height - 370), Color.White)
             Else
                 Canvas.DrawRectangle(New Rectangle(Core.windowSize.Width - 213, Core.windowSize.Height - 378, 80, 50), Color.White)
-                Core.SpriteBatch.DrawString(FontManager.InGameFont, "Yes", New Vector2(Core.windowSize.Width - 200, Core.windowSize.Height - 430), Color.White)
-                Core.SpriteBatch.DrawString(FontManager.InGameFont, "No", New Vector2(Core.windowSize.Width - 200, Core.windowSize.Height - 370), Color.Black)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Yes", New Vector2(Core.windowSize.Width - 200, Core.windowSize.Height - 430), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "No", New Vector2(Core.windowSize.Width - 200, Core.windowSize.Height - 370), Color.White)
             End If
 
             If Controls.Accept(True, True, True) = True Then
                 If _chooseIndex = 0 Then
-                    Dim selScreen = New PartyScreen(Core.CurrentScreen, Item.GetItemByID(5), AddressOf ChoosePokemon, "Choose Pokémon to battle!", False) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = True}
+                    Dim selScreen = New PartyScreenV2(Core.CurrentScreen, Item.GetItemByID(5), AddressOf ChoosePokemon, "Choose Pokémon to battle!", False) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = True}
                     AddHandler selScreen.SelectedObject, AddressOf ChoosePokemonHandler
 
                     Core.SetScreen(selScreen)

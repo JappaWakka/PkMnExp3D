@@ -1132,8 +1132,7 @@ Public Class StorageSystemScreen
             End If
 
 
-            Core.SpriteBatch.DrawString(FontManager.MainFont, b.Name, New Vector2(384 - FontManager.MainFont.MeasureString(b.Name).X, 80), Color.Black, 0.0F, New Vector2(0), 2, SpriteEffects.None, 0.0F)
-            Core.SpriteBatch.DrawString(FontManager.MainFont, b.Name, New Vector2(380 - FontManager.MainFont.MeasureString(b.Name).X, 76), Color.White, 0.0F, New Vector2(0), 2, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, b.Name, New Vector2(380 - FontManager.MainFontWhite.MeasureString(b.Name).X, 76), Color.White, 0.0F, New Vector2(0), 2, SpriteEffects.None, 0.0F)
 
             Core.SpriteBatch.Draw(Me.menuTexture, New Rectangle(10, 52, 96, 96), New Rectangle(0, 16, 16, 16), Color.White)
             Core.SpriteBatch.Draw(Me.menuTexture, New Rectangle(655, 52, 96, 96), New Rectangle(0, 16, 16, 16), Color.White, 0.0F, New Vector2(0), SpriteEffects.FlipHorizontally, 0.0F)
@@ -1738,7 +1737,7 @@ Public Class StorageSystemScreen
             Core.SpriteBatch.Draw(t2, New Rectangle(CInt(startPos.X + 128), CInt(startPos.Y), 64, 64), Color.White)
             Core.SpriteBatch.Draw(t1, New Rectangle(CInt(startPos.X + 192), CInt(startPos.Y), 64, 64), Nothing, Color.White, 0.0F, New Vector2(0), SpriteEffects.FlipHorizontally, 0.0F)
 
-            Core.SpriteBatch.DrawString(FontManager.MainFont, Me.Text, New Vector2(startPos.X + 128 - (FontManager.MainFont.MeasureString(Me.Text).X * 1.4F) / 2, startPos.Y + 15), Color.Black, 0.0F, Vector2.Zero, 1.4F, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Me.Text, New Vector2(startPos.X + 128 - (FontManager.MainFontBlack.MeasureString(Me.Text).X * 1.4F) / 2, startPos.Y + 15), Color.White, 0.0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0.0F)
 
             If Me.Index = CursorIndex Then
                 Dim cPosition As Vector2 = New Vector2(startPos.X + 128, startPos.Y - 40)
@@ -1900,7 +1899,7 @@ Public Class StorageSystemFilterScreen
                         Core.SpriteBatch.Draw(t2, New Rectangle(CInt(startPos.X + 128), CInt(startPos.Y), 64, 64), Color.White)
                         Core.SpriteBatch.Draw(t1, New Rectangle(CInt(startPos.X + 192), CInt(startPos.Y), 64, 64), Nothing, Color.White, 0.0F, New Vector2(0), SpriteEffects.FlipHorizontally, 0.0F)
 
-                        Core.SpriteBatch.DrawString(FontManager.MainFont, Text, New Vector2(startPos.X + 128 - (FontManager.MainFont.MeasureString(Text).X * 1.4F) / 2, startPos.Y + 15), Color.Black, 0.0F, Vector2.Zero, 1.4F, SpriteEffects.None, 0.0F)
+                        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Text, New Vector2(startPos.X + 128 - (FontManager.MainFontWhite.MeasureString(Text).X * 1.4F) / 2, startPos.Y + 15), Color.Black, 0.0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0.0F)
 
                         If Me.Index = i Then
                             Dim cPosition As Vector2 = New Vector2(startPos.X + 128, startPos.Y - 40)
@@ -1962,7 +1961,7 @@ Public Class StorageSystemFilterScreen
         Canvas.DrawGradient(New Rectangle(0, 0, CInt(Core.windowSize.Width), 200), New Color(42, 167, 198), New Color(42, 167, 198, 0), False, -1)
         Canvas.DrawGradient(New Rectangle(0, CInt(Core.windowSize.Height - 200), CInt(Core.windowSize.Width), 200), New Color(42, 167, 198, 0), New Color(42, 167, 198), False, -1)
 
-        Core.SpriteBatch.DrawString(FontManager.MainFont, "Configure the filters:", New Vector2(100, 24), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Configure the filters:", New Vector2(100, 24), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
 
         For i = Scroll To Scroll + 5
             If i <= Me.mainMenuItems.Count - 1 Then
@@ -1980,13 +1979,13 @@ Public Class StorageSystemFilterScreen
                     Core.SpriteBatch.Draw(Me.texture, New Rectangle(120, 116 + p * 96, 32, 32), New Rectangle(16, 32, 16, 16), Color.White)
                 End If
 
-                Core.SpriteBatch.DrawString(FontManager.MainFont, s, New Vector2(160, 116 + p * 96), Color.Black, 0.0F, Vector2.Zero, 1.25F, SpriteEffects.None, 0.0F)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, s, New Vector2(160, 116 + p * 96), Color.White, 0.0F, Vector2.Zero, 1.25F, SpriteEffects.None, 0.0F)
             End If
         Next
 
         If Filters.Count > 0 Then
-            Core.SpriteBatch.DrawString(FontManager.MainFont, "Results: " & Environment.NewLine & Environment.NewLine & "Filters: ", New Vector2(90 + 64 * 11, 119), Color.Black)
-            Core.SpriteBatch.DrawString(FontManager.MainFont, Me.Results & Environment.NewLine & Environment.NewLine & Me.Filters.Count, New Vector2(190 + 64 * 11, 119), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Results: " & Environment.NewLine & Environment.NewLine & "Filters: ", New Vector2(90 + 64 * 11, 119), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Me.Results & Environment.NewLine & Environment.NewLine & Me.Filters.Count, New Vector2(190 + 64 * 11, 119), Color.White)
         End If
 
         If Menu.Visible = True Then

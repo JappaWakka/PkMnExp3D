@@ -703,8 +703,8 @@
                     End If
                     Core.Player.PokedexData = Pokedex.ChangeEntry(Core.Player.PokedexData, p.Number, i)
                 Next
-            Case Me.Value.ToLower() = "receivepokegear"
-                Core.Player.HasPokegear = True
+            Case Me.Value.ToLower() = "receivephone"
+                Core.Player.HasPhone = True
             Case Me.Value.ToLower().StartsWith("renamepokemon(") = True
                 Me.Value = Me.Value.Remove(0, Me.Value.IndexOf("(") + 1)
                 Me.Value = Me.Value.Remove(Me.Value.Length - 1, 1)
@@ -736,31 +736,31 @@
                 If canRename = True Then
                     Core.SetScreen(New NameObjectScreen(Core.CurrentScreen, Core.Player.Pokemons(PokemonIndex)))
                 Else
-                    Screen.TextBox.Show("I cannot rename this~Pokémon because the~OT is different!*Did you receive it in~a trade or something?", {}, True, False)
+                    Screen.TextBox.Show("I cannot rename this~Pokémon because the~Original Trainer seems to be~someone else!*Did you receive it in~a trade or something?", {}, True, False)
                 End If
             Case Me.Value.ToLower() = "renamerival"
                 Dim RivalTexture As String
                 Dim RivalName As String
                 If GameModeManager.ActiveGameMode.DirectoryName = "Quartz" Then
-                    If Core.Player.Gender = "Male" Then
-                        RivalTexture = "NPC\RivalFemale"
+                    If Core.Player.Gender = "Boy" Then
+                        RivalTexture = "OverworldSprites\PlayerSkins\Rande"
                         RivalName = "Rande"
-                    ElseIf Core.Player.Gender = "Female" Then
-                        RivalTexture = "NPC\RivalMale"
+                    ElseIf Core.Player.Gender = "Girl" Then
+                        RivalTexture = "OverworldSprites\PlayerSkins\J_Akira"
                         RivalName = "J. Akira"
                     Else
-                        RivalTexture = "NPC\RivalGenderless"
-                        RivalName = "Robin"
+                        RivalTexture = "OverworldSprites\PlayerSkins\Rande"
+                        RivalName = "Rande"
                     End If
                 Else
-                    If Core.Player.Gender = "Male" Then
-                        RivalTexture = "NPC\RivalFemale"
+                    If Core.Player.Gender = "Boy" Then
+                        RivalTexture = "OverworldSprites\RivalGirl"
                         RivalName = "Rival"
-                    ElseIf Core.Player.Gender = "Female" Then
-                        RivalTexture = "NPC\RivalMale"
+                    ElseIf Core.Player.Gender = "Girl" Then
+                        RivalTexture = "OverworldSprites\RivalBoy"
                         RivalName = "Rival"
                     Else
-                        RivalTexture = "NPC\RivalGenderless"
+                        RivalTexture = "OverworldSprites\RivalOther"
                         RivalName = "Rival"
                     End If
                 End If
@@ -1266,8 +1266,8 @@
                 Dim splits() As String = argument.Split(CChar("|"))
                 Script.SaveNPCTrade = splits
 
-                Core.SetScreen(New PartyScreen(Core.CurrentScreen, Item.GetItemByID(5), AddressOf Script.DoNPCTrade, "Choose trade Pokémon", True))
-                CType(Core.CurrentScreen, PartyScreen).ExitedSub = AddressOf Script.ExitedNPCTrade
+                Core.SetScreen(New PartyScreenV2(Core.CurrentScreen, Item.GetItemByID(5), AddressOf Script.DoNPCTrade, "Choose trade Pokémon", True))
+                CType(Core.CurrentScreen, PartyScreenV2).ExitedSub = AddressOf Script.ExitedNPCTrade
             Case "hide"
                 Screen.Level.OverworldPokemon.Visible = False
         End Select

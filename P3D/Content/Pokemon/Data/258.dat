@@ -1,7 +1,7 @@
-Name|Mudkip
+Name|Aquegg
 Number|258
 ExperienceType|2
-BaseExperience|62
+BaseExperience|66
 Type1|Water
 Type2|
 CatchRate|45
@@ -19,21 +19,21 @@ Ability2|Nothing
 HiddenAbility|6
 EggMoves|246,419,112,44,68,174,38,301,243,426,287,124,23,469,250,281,253
 Machines|174,205,92,249,237,173,59,63,196,182,240,203,218,231,216,91,189,104,207,214,111,197,156,213,34,36,61,55,58,99,102,117,157,164,352,258,317,263,290,416,445,363,482,496,497,503,590,57,70,250,127,291
-BaseHP|50
-BaseAttack|70
-BaseDefense|50
-BaseSpAttack|50
-BaseSpDefense|50
-BaseSpeed|40
-FPHP|0
-FPAttack|1
+BaseHP|65
+BaseAttack|52
+BaseDefense|44
+BaseSpAttack|51
+BaseSpDefense|49
+BaseSpeed|48
+FPHP|1
+FPAttack|0
 FPDefense|0
 FPSpAttack|0
 FPSpDefense|0
 FPSpeed|0
 CanFly|0
 CanSwim|0
-Pokedex|Its power can crush boulders. It rests by covering itself with mud at the bottom of a river.\Mud Fish Pokémon\7.6\0.4\0,148,0
+Pokedex|Aquegg's shell is wet and slippery because it's covered by a special film that protects it from harm. If you try to pick it up it may slip and break. You must handle it carefully.\Dino Egg Pokémon\7.6\0.4\0,148,0
 Scale|0.7
 Move|1,33
 Move|1,45

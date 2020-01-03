@@ -102,31 +102,26 @@
         Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\GTS"), Core.windowSize, New Rectangle(320, 176, 192, 160), Color.White)
 
         Dim header As String = "Mystery Event"
-        Core.SpriteBatch.DrawString(FontManager.InGameFont, header, New Vector2(52, 52), Color.Black)
-        Core.SpriteBatch.DrawString(FontManager.InGameFont, header, New Vector2(50, 50), Color.White)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, header, New Vector2(50, 50), Color.White)
 
         If Me.finishedDownload = False Then
             Dim t As String = "Downloading Mystery Event data. Please wait" & LoadingDots.Dots
 
-            Core.SpriteBatch.DrawString(FontManager.InGameFont, t, New Vector2(52, 152), Color.Black)
-            Core.SpriteBatch.DrawString(FontManager.InGameFont, t, New Vector2(50, 150), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(50, 150), Color.White)
         Else
             If Me.failedDownload = True Then
                 Dim t As String = "Failed to download Mystery Event data." & Environment.NewLine & "Please check your internet connection and try again."
 
-                Core.SpriteBatch.DrawString(FontManager.InGameFont, t, New Vector2(52, 152), Color.Black)
-                Core.SpriteBatch.DrawString(FontManager.InGameFont, t, New Vector2(50, 150), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(50, 150), Color.White)
             Else
                 If EventData.Count = 0 Then
                     Dim t As String = "There are no Mystery Events available" & Environment.NewLine & "at the moment. Please try again later."
 
-                    Core.SpriteBatch.DrawString(FontManager.InGameFont, t, New Vector2(52, 152), Color.Black)
-                    Core.SpriteBatch.DrawString(FontManager.InGameFont, t, New Vector2(50, 150), Color.White)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(50, 150), Color.White)
                 Else
                     Dim t As String = "Please select the Mystery Events that" & Environment.NewLine & "you want to activate for your gameplay session:"
 
-                    Core.SpriteBatch.DrawString(FontManager.InGameFont, t, New Vector2(52, 152), Color.Black)
-                    Core.SpriteBatch.DrawString(FontManager.InGameFont, t, New Vector2(50, 150), Color.White)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(50, 150), Color.White)
 
                     Dim startY As Integer = 240
                     For i = 0 To Me.EventData.Count - 1

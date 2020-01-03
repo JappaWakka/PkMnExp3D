@@ -89,12 +89,12 @@
         End Set
     End Property
 
-    Public Property HasPokegear() As Boolean
+    Public Property HasPhone() As Boolean
         Get
-            Return _hasPokegear
+            Return _hasPhone
         End Get
         Set(value As Boolean)
-            _hasPokegear = value
+            _hasPhone = value
         End Set
     End Property
 
@@ -350,7 +350,7 @@
     Public LastPokemonPosition As Vector3 = New Vector3(999, 999, 999)
     Public PokeFiles As New List(Of String)
     Public EarnedAchievements As New List(Of String)
-    Public PokegearModules As New List(Of Integer)
+    Public PhoneModules As New List(Of Integer)
     Public PhoneContacts As New List(Of String)
     Public Mails As New List(Of Items.MailItem.MailData)
     Public Trophies As New List(Of Integer)
@@ -378,7 +378,7 @@
     Private _BP As Integer = 0
     Private _coins As Integer = 0
     Private _hasPokedex As Boolean = False
-    Private _hasPokegear As Boolean = False
+    Private _hasPhone As Boolean = False
     Private _lastRestPlace As String = "Corna\Cities\BreezeTown\YourHousef2.dat"
     Private _lastRestPlacePosition As String = "1,0.1,3"
     Private _lastSavePlace As String = "Corna\Cities\BreezeTown\YourHousef2.dat"
@@ -446,7 +446,7 @@
         Public Shared BeforeBattleFacing As Integer = 0
         Public Shared PokedexModeIndex As Integer = 0
         Public Shared PokedexHabitatIndex As Integer = 0
-        Public Shared PokegearPage As Integer = 0
+        Public Shared PhonePage As Integer = 0
         Public Shared LastCall As Integer = 32
         Public Shared LastUsedRepel As Integer = -1
         Public Shared MapSteps As Integer = 0
@@ -454,7 +454,7 @@
         Public Shared PCBoxChooseMode As Boolean = False
         Public Shared PCSelectionType As StorageSystemScreen.SelectionModes = StorageSystemScreen.SelectionModes.SingleMove
         Public Shared RadioStation As Decimal = 0D
-        Public Shared LastPokegearPage As GameJolt.PokegearScreen.MenuScreens = GameJolt.PokegearScreen.MenuScreens.Main
+        Public Shared LastPhonePage As GameJolt.PhoneScreen.MenuScreens = GameJolt.PhoneScreen.MenuScreens.Main
     End Structure
 
     Private Sub ResetTemp()
@@ -474,7 +474,7 @@
         Next
         Temp.PokedexModeIndex = 0
         Temp.PokedexHabitatIndex = 0
-        Temp.PokegearPage = 0
+        Temp.PhonePage = 0
         Temp.LastCall = 32
         Temp.LastUsedRepel = -1
         Temp.MapSteps = 0
@@ -483,7 +483,7 @@
         Temp.StorageSystemCursorPosition = New Vector2(1, 0)
         Temp.PCSelectionType = StorageSystemScreen.SelectionModes.SingleMove
         Temp.RadioStation = 0D
-        Temp.LastPokegearPage = GameJolt.PokegearScreen.MenuScreens.Main
+        Temp.LastPhonePage = GameJolt.PhoneScreen.MenuScreens.Main
     End Sub
 
 #Region "Load"
@@ -559,7 +559,7 @@
 
             Dim outputString As String = newFilePrefix
 
-            Core.GameMessage.ShowMessage(Localization.GetString("game_message_continue_autosave") & " """ & outputString & """", 12, FontManager.MainFont, Color.White)
+            Core.GameMessage.ShowMessage(Localization.GetString("game_message_continue_autosave") & " """ & outputString & """", 12, FontManager.MainFontWhite, Color.White)
 
             newFilePrefix = ""
         End If
@@ -783,12 +783,12 @@
                     Case "rotation"
                         startRotation = CSng(Value.Replace(".", GameController.DecSeparator))
                     Case "Gender"
-                        If Value = "Male" Then
-                            Gender = "Male"
-                        ElseIf Value = "Female" Then
-                            Gender = "Female"
+                        If Value = "Boy" Then
+                            Gender = "Boy"
+                        ElseIf Value = "Girl" Then
+                            Gender = "Girl"
                         Else
-                            Gender = "Genderless"
+                            Gender = "Other"
                         End If
 
                     Case "playtime"
@@ -804,8 +804,8 @@
                         Points = CInt(Value)
                     Case "haspokedex"
                         HasPokedex = CBool(Value)
-                    Case "haspokegear"
-                        HasPokegear = CBool(Value)
+                    Case "hasphone"
+                        HasPhone = CBool(Value)
                     Case "freecamera"
                         startFreeCameraMode = CBool(Value)
                     Case "thirdperson"
@@ -888,24 +888,24 @@
         If IsGameJoltSave = True And startBiking = False Then
             Skin = GameJolt.Emblem.GetPlayerSpriteFile(GameJolt.Emblem.GetPlayerLevel(GameJoltSave.Points), GameJoltSave.GameJoltID, GameJoltSave.Gender)
             Select Case GameJoltSave.Gender
-                Case "0"
-                    Gender = True
-                Case "1"
-                    Gender = False
+                Case "Boy"
+                    Gender = "Boy"
+                Case "Girl"
+                    Gender = "Girl"
                 Case Else
-                    Gender = True
+                    Gender = "Other"
             End Select
         End If
 
         If IsGameJoltSave = True And startSurfing = False Then
             Skin = GameJolt.Emblem.GetPlayerSpriteFile(GameJolt.Emblem.GetPlayerLevel(GameJoltSave.Points), GameJoltSave.GameJoltID, GameJoltSave.Gender)
             Select Case GameJoltSave.Gender
-                Case "0"
-                    Gender = True
-                Case "1"
-                    Gender = False
+                Case "Boy"
+                    Gender = "Boy"
+                Case "Girl"
+                    Gender = "Girl"
                 Case Else
-                    Gender = True
+                    Gender = "Other"
             End Select
         End If
 
@@ -1248,12 +1248,12 @@
 
     Public Function GetPlayerData(ByVal IsAutosave As Boolean) As String
         Dim GenderString As String = ""
-        If Gender = "Male" Then
-            GenderString = "Male"
-        ElseIf Gender = "Female" Then
-            GenderString = "Female"
+        If Gender = "Boy" Then
+            GenderString = "Boy"
+        ElseIf Gender = "Girl" Then
+            GenderString = "Girl"
         Else
-            GenderString = "Genderless"
+            GenderString = "Other"
         End If
 
         Dim badgeString As String = ""
@@ -1324,7 +1324,7 @@
             "OT|" & OT & Environment.NewLine &
             "Points|" & Points.ToString() & Environment.NewLine &
             "hasPokedex|" & hasPokedexString & Environment.NewLine &
-            "hasPokegear|" & HasPokegear.ToNumberString() & Environment.NewLine &
+            "hasPhone|" & HasPhone.ToNumberString() & Environment.NewLine &
             "freeCamera|" & freeCameraString & Environment.NewLine &
             "thirdPerson|" & c.ThirdPerson.ToNumberString() & Environment.NewLine &
             "skin|" & skin & Environment.NewLine &
@@ -1705,7 +1705,7 @@
     'Egg hatches			    | 2		    | Screen change	| Will happen On Next Step automatically.
     'Repel wears out			| 3		    | Script		| Add one Step To the repel counter, so the Event happens On the Next Step.
     'Wild Pokémon appears		| 4		    | WildPokemon	| Just ignore, random Event
-    'Pokegear call			    | 5		    | Script		| Just ignore, Not too important
+    'Phone call			    | 5		    | Script		| Just ignore, Not too important
     '----------------------------------------------------------------------------------------------------------------------------------------
     'All Script Events need a special check condition set.
     'Script Blocks are handled externally.
@@ -1768,7 +1768,7 @@
             StepEventCheckEggHatching(stepAmount)
             StepEventCheckRepel(stepAmount)
             StepEventWildPokemon()
-            StepEventPokegearCall()
+            StepEventPhoneCall()
         Else
             IsFlying = False
         End If
@@ -1867,14 +1867,14 @@
         End If
     End Sub
 
-    Private Sub StepEventPokegearCall()
+    Private Sub StepEventPhoneCall()
         If CanFireStepEvent() = True Then
             If Temp.MapSteps > 0 Then
                 If Temp.LastCall < 256 Then
                     Temp.LastCall += 1
                 Else
                     If Random.Next(0, 700) = 0 Then
-                        GameJolt.PokegearScreen.RandomCall()
+                        GameJolt.PhoneScreen.RandomCall()
                         Temp.LastCall = 0
                     End If
                 End If
@@ -2044,7 +2044,7 @@
             Badges.Clear()
             PokeFiles.Clear()
             EarnedAchievements.Clear()
-            PokegearModules.Clear()
+            PhoneModules.Clear()
             PhoneContacts.Clear()
             Mails.Clear()
             Trophies.Clear()
@@ -2061,7 +2061,7 @@
             BP = 0
             Coins = 0
             HasPokedex = False
-            HasPokegear = False
+            HasPhone = False
             ShowBattleAnimations = 2
             BoxAmount = 10
             LastRestPlace = "Corna\Cities\BreezeTown\YourHousef2.dat"

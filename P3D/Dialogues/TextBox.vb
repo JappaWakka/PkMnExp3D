@@ -1,7 +1,8 @@
 ﻿Public Class TextBox
 
-    Public Shared ReadOnly DefaultColor As Color = New Color(16, 24, 32)
-    Public Shared ReadOnly PlayerColor As Color = New Color(0, 0, 180)
+    Public Shared ReadOnly DefaultColor As Color = Color.White
+    Public Shared PlayerColor As Color = New Color(0, 106, 255)
+    Dim _playerColor As Color = New Color(0, 106, 255)
 
     Public Shared TextSpeed As Integer = 1
 
@@ -20,9 +21,9 @@
     Public reDelay As Single = 1.5F
     Public PositionY As Single = 0
     Public CanProceed As Boolean = True
-    Public TextColor As Color = New Color(16, 24, 33)
 
-    Public TextFont As FontContainer = FontManager.GetFontContainer("textfont")
+    Public TextColor As Color = Color.White
+    Public TextFont As FontContainer = FontManager.GetFontContainer("mainfontblack")
 
     Dim Entities() As Entity
 
@@ -41,6 +42,9 @@
             Me.Text = Text
             Me.ResultFunction = ResultFunction
             Me.TextColor = TextColor
+            If TextColor <> Color.White Then
+                TextFont = FontManager.GetFontContainer("mainfontwhite")
+            End If
             showText(0) = ""
             showText(1) = ""
             through = False
@@ -52,7 +56,17 @@
             FormatText()
         End If
     End Sub
+    Public Sub SetPlayerColor(ByVal Gender As String)
+        If Gender = "Boy" Then
+            Me._playerColor = New Color(0, 106, 255)
+        ElseIf Gender = "Girl" Then
+            Me._playerColor = New Color(245, 49, 110)
+        Else
+            Me._playerColor = New Color(120, 176, 70)
+        End If
 
+        PlayerColor = _playerColor
+    End Sub
     Public Sub Show(ByVal Text As String, ByVal Entities() As Entity, ByVal doReDelay As Boolean, ByVal CheckDelay As Boolean, ByVal TextColor As Color)
         If reDelay = 0.0F Or CheckDelay = False Then
             If Me.Showing = False Then
@@ -114,6 +128,37 @@
                 End If
             End If
         Next
+
+        If Core.Player.Gender = "Boy" Then
+            Me.Text = Me.Text.Replace("<he>", "he")
+            Me.Text = Me.Text.Replace("<He>", "He")
+            Me.Text = Me.Text.Replace("<his>", "his")
+            Me.Text = Me.Text.Replace("<His>", "His")
+            Me.Text = Me.Text.Replace("<ofhis>", "his")
+            Me.Text = Me.Text.Replace("<ofHis>", "His")
+            Me.Text = Me.Text.Replace("<him>", "him")
+            Me.Text = Me.Text.Replace("<Him>", "Him")
+        End If
+        If Core.Player.Gender = "Girl" Then
+            Me.Text = Me.Text.Replace("<he>", "she")
+            Me.Text = Me.Text.Replace("<He>", "She")
+            Me.Text = Me.Text.Replace("<his>", "her")
+            Me.Text = Me.Text.Replace("<His>", "Her")
+            Me.Text = Me.Text.Replace("<ofhis>", "hers")
+            Me.Text = Me.Text.Replace("<ofHis>", "Hers")
+            Me.Text = Me.Text.Replace("<him>", "her")
+            Me.Text = Me.Text.Replace("<Him>", "Her")
+        End If
+        If Core.Player.Gender = "Other" Then
+            Me.Text = Me.Text.Replace("<he>", "they")
+            Me.Text = Me.Text.Replace("<He>", "They")
+            Me.Text = Me.Text.Replace("<his>", "their")
+            Me.Text = Me.Text.Replace("<His>", "Their")
+            Me.Text = Me.Text.Replace("<ofhis>", "theirs")
+            Me.Text = Me.Text.Replace("<ofHis>", "Theirs")
+            Me.Text = Me.Text.Replace("<him>", "them")
+            Me.Text = Me.Text.Replace("<Him>", "Them")
+        End If
 
         Me.Text = Me.Text.Replace("<playername>", Core.Player.Name)
         Me.Text = Me.Text.Replace("<rivalname>", Core.Player.RivalName)
@@ -182,7 +227,7 @@
                                     Me.FollowUp = Nothing
                                 End If
 
-                                Me.TextFont = FontManager.GetFontContainer("textfont")
+                                Me.TextFont = FontManager.GetFontContainer("mainfontblack")
                                 Me.TextColor = TextBox.DefaultColor
                                 If Me.doReDelay = True Then
                                     Me.reDelay = 1.0F
@@ -238,7 +283,7 @@
 
                 Dim m As Single = 1.0F
                 Select Case Me.TextFont.FontName.ToLower()
-                    Case "textfont", "braille"
+                    Case "braille"
                         m = 2.0F
                 End Select
 

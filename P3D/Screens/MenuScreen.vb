@@ -50,9 +50,9 @@
             Next
             .Draw(T, New Rectangle(CInt(Position.X + offsetX), CInt(Position.Y) + 96 + (Options.Count - 2) * 48, 288, 48), New Rectangle(0, 32, 96, 16), Color.White)
             For i = 0 To Options.Count - 1
-                .DrawString(FontManager.InGameFont, Options(i), New Vector2(CInt(Position.X + 40) + offsetX, CInt(Position.Y) + 32 + i * 48), Color.Black)
+                .DrawString(FontManager.MainFontBlack, Options(i), New Vector2(CInt(Position.X + 40) + offsetX, CInt(Position.Y) + 32 + i * 48), Color.White)
             Next
-            .Draw(T, New Rectangle(CInt(Position.X + 20) + offsetX, CInt(Position.Y) + 36 + index * 48, 10, 20), New Rectangle(96, 0, 3, 6), Color.White)
+            .Draw(T, New Rectangle(CInt(Position.X + 22) + offsetX, CInt(Position.Y) + 36 + index * 48, 32, 32), New Rectangle(96, 0, 16, 16), Color.White)
         End With
 
         TextBox.Draw()
@@ -70,13 +70,13 @@
                         Case Localization.GetString("game_menu_pokedex")
                             Core.SetScreen(New TransitionScreen(Core.CurrentScreen, New PokedexSelectScreen(Me), Color.White, False))
                         Case Localization.GetString("game_menu_party")
-                            Core.SetScreen(New PartyScreen(Me))
+                            Core.SetScreen(New PartyScreenV1(Me, 0))
                         Case Localization.GetString("game_menu_bag")
-                            Core.SetScreen(New NewInventoryScreen(Me))
+                            Core.SetScreen(New InventoryScreen(Me))
                         Case Localization.GetString("game_menu_trainer_card")
                             Core.SetScreen(New NewTrainerScreen(Me))
-                        Case "Pokégear"
-                            Core.SetScreen(New GameJolt.PokegearScreen(Me, GameJolt.PokegearScreen.EntryModes.MainMenu, {}))
+                        Case Localization.GetString("game_menu_phone")
+                            Core.SetScreen(New GameJolt.PhoneScreen(Me, GameJolt.PhoneScreen.EntryModes.MainMenu, {}))
                         Case Localization.GetString("game_menu_save")
                             Core.SetScreen(New SaveScreen(Me))
                         Case Localization.GetString("game_menu_options")

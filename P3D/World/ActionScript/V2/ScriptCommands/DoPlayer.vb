@@ -21,32 +21,32 @@
                         Core.Player.PokedexData = Pokedex.ChangeEntry(Core.Player.PokedexData, p.Number, i)
                     Next
                     IsReady = True
-                Case "receivepokegear"
-                    Core.Player.HasPokegear = True
+                Case "receivephone"
+                    Core.Player.HasPhone = True
                     IsReady = True
                 Case "renamerival"
                     Dim RivalTexture As String
                     Dim RivalName As String
                     If GameModeManager.ActiveGameMode.DirectoryName = "Quartz" Then
-                        If Core.Player.Gender = "Male" Then
-                            RivalTexture = "NPC\RivalFemale"
+                        If Core.Player.Gender = "Boy" Then
+                            RivalTexture = "OverworldSprites\PlayerSkins\Rande"
                             RivalName = "Rande"
-                        ElseIf Core.Player.Gender = "Female" Then
-                            RivalTexture = "NPC\RivalMale"
+                        ElseIf Core.Player.Gender = "Girl" Then
+                            RivalTexture = "OverworldSprites\PlayerSkins\J_Akira"
                             RivalName = "J. Akira"
                         Else
-                            RivalTexture = "NPC\RivalGenderless"
-                            RivalName = "Robin"
+                            RivalTexture = "OverworldSprites\PlayerSkins\Rande"
+                            RivalName = "Rande"
                         End If
                     Else
-                        If Core.Player.Gender = "Male" Then
-                            RivalTexture = "NPC\RivalFemale"
+                        If Core.Player.Gender = "Boy" Then
+                            RivalTexture = "OverworldSprites\RivalGirl"
                             RivalName = "Rival"
-                        ElseIf Core.Player.Gender = "Female" Then
-                            RivalTexture = "NPC\RivalMale"
+                        ElseIf Core.Player.Gender = "Girl" Then
+                            RivalTexture = "OverworldSprites\RivalBoy"
                             RivalName = "Rival"
                         Else
-                            RivalTexture = "NPC\RivalGenderless"
+                            RivalTexture = "OverworldSprites\RivalOther"
                             RivalName = "Rival"
                         End If
                     End If
@@ -279,6 +279,9 @@
                     IsReady = True
                 Case "setname"
                     Core.Player.Name = argument
+                    IsReady = True
+                Case "setgender"
+                    Core.Player.Gender = argument
                     IsReady = True
                 Case "setrivalname"
                     Core.Player.RivalName = argument

@@ -33,7 +33,7 @@
                                     End If
                                 End If
                             End If
-                            Core.SpriteBatch.DrawString(FontManager.MainFont, name, New Vector2(startX + (x - 1) * 256 + 4, startY + (y - 1) * 40 + 6), c)
+                            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, name, New Vector2(startX + (x - 1) * 256 + 4, startY + (y - 1) * 40 + 6), c)
 
                             Select Case playerList((x - 1) * 10 + (y - 1)).BusyType
                                 Case 1 'Battle
@@ -50,12 +50,12 @@
 
                 Dim serverName As String = JoinServerScreen.SelectedServer.GetName()
                 Dim plateLength As Integer = 256
-                If FontManager.MainFont.MeasureString(serverName).X > 230.0F Then
-                    plateLength = 26 + CInt(FontManager.MainFont.MeasureString(serverName).X)
+                If FontManager.MainFontWhite.MeasureString(serverName).X > 230.0F Then
+                    plateLength = 26 + CInt(FontManager.MainFontWhite.MeasureString(serverName).X)
                 End If
 
                 Canvas.DrawRectangle(New Rectangle(CInt(Core.windowSize.Width / 2 - plateLength / 2), 80, plateLength, 40), New Color(0, 0, 0, 150))
-                Core.SpriteBatch.DrawString(FontManager.MainFont, serverName, New Vector2(CInt(Core.windowSize.Width / 2 - plateLength / 2) + 4, 80 + 6), Chat.ServerColor)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, serverName, New Vector2(CInt(Core.windowSize.Width / 2 - plateLength / 2) + 4, 80 + 6), Chat.ServerColor)
                 Canvas.DrawBorder(3, New Rectangle(CInt(Core.windowSize.Width / 2 - plateLength / 2), 80, plateLength, 40), New Color(220, 220, 220))
             End If
         End If

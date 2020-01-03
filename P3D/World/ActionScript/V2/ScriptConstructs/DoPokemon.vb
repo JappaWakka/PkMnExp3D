@@ -179,7 +179,7 @@
 
                     Return ReturnBoolean(has)
                 Case "selected"
-                    Return PartyScreen.Selected
+                    Return PartyScreenV2.Selected
                 Case "selectedmove"
                     Return ChooseAttackScreen.Selected
                 Case "hasegg"

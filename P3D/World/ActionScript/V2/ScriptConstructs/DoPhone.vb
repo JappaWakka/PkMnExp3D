@@ -12,9 +12,9 @@
 
             Select Case command.ToLower()
                 Case "callflag"
-                    Return GameJolt.PokegearScreen.Call_Flag
+                    Return GameJolt.PhoneScreen.Call_Flag
                 Case "got"
-                    Return ReturnBoolean(Core.Player.HasPokegear)
+                    Return ReturnBoolean(Core.Player.HasPhone)
             End Select
 
             Return DEFAULTNULL

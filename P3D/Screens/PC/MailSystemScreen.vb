@@ -21,7 +21,7 @@
     Public Overrides Sub Draw()
         Canvas.DrawRectangle(Core.windowSize, Color.White)
 
-        Core.SpriteBatch.DrawString(FontManager.InGameFont, "Inbox", New Vector2(42, 28), Color.Black)
+        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Inbox", New Vector2(42, 28), Color.White)
         Canvas.DrawImageBorder(TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 0, 48, 48), ""), 2, New Rectangle(32, 64, 320, 576))
 
         Canvas.DrawImageBorder(TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 0, 48, 48), ""), 2, New Rectangle(400, 64, 672, 576))
@@ -44,9 +44,9 @@
 
         If message <> "" Then
             Canvas.DrawRectangle(Core.windowSize, New Color(0, 0, 0, 150))
-            Dim t As String = message.CropStringToWidth(FontManager.InGameFont, 800)
+            Dim t As String = message.CropStringToWidth(FontManager.MainFontWhite, 800)
 
-            Core.SpriteBatch.DrawString(FontManager.InGameFont, t, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.InGameFont.MeasureString(t).X / 2), 340), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString(t).X / 2), 340), Color.White)
         End If
     End Sub
 
@@ -113,7 +113,7 @@
                 c = Color.Gray
             End If
 
-            Core.SpriteBatch.DrawString(FontManager.InGameFont, "Header: " & mail.MailHeader, New Vector2(480, 92), c)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Header: " & mail.MailHeader, New Vector2(480, 92), c)
 
             Canvas.DrawRectangle(New Rectangle(420, 140, 660, 2), Color.DarkGray)
 
@@ -158,7 +158,7 @@
 
             Core.SpriteBatch.Draw(item.Texture, New Rectangle(420, 84, 48, 48), Color.White)
 
-            Core.SpriteBatch.DrawString(FontManager.InGameFont, mail.MailHeader, New Vector2(480, 92), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, mail.MailHeader, New Vector2(480, 92), Color.White)
 
             Canvas.DrawRectangle(New Rectangle(420, 140, 660, 2), Color.DarkGray)
 
@@ -219,12 +219,7 @@
 
             If Controls.Accept(True, True, True) = True Then
                 If Me.selectIndex = 0 Then
-                    Dim selScreen As New NewInventoryScreen(Core.CurrentScreen, {5}, 5, Nothing)
-                    selScreen.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection
-                    selScreen.CanExit = True
-
-                    AddHandler selScreen.SelectedObject, AddressOf ChosenMailHandler
-                    Core.SetScreen(selScreen)
+                    Core.SetScreen(New InventoryScreen(Me, {5}, 5, AddressOf Me.ChosenMail))
                 Else
                     If Me.index = Me.selectIndex Then
                         Me.index = -1
@@ -280,10 +275,7 @@
                         If TempNewMail.MailHeader = "" Or TempNewMail.MailText = "" Or TempNewMail.MailSignature = "" Then
                             message = "Please fill in the Header, the Message and the Signature."
                         Else
-                            Dim selScreen = New PartyScreen(Me, Item.GetItemByID(TempNewMail.MailID), AddressOf Me.ChosenPokemon, "Give mail to:", True) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = True}
-                            AddHandler selScreen.SelectedObject, AddressOf ChosenPokemonHandler
-
-                            Core.SetScreen(selScreen)
+                            Core.SetScreen(New ChoosePokemonScreen(Me, Item.GetItemByID(TempNewMail.MailID), AddressOf Me.ChosenPokemon, "Give mail to:", True))
                         End If
                     Case 4
                         Me.index = -1
@@ -294,10 +286,6 @@
                 Me.index = -1
             End If
         End If
-    End Sub
-
-    Private Sub ChosenMailHandler(ByVal params As Object())
-        ChosenMail(CInt(params(0)))
     End Sub
 
     Private Sub ChosenMail(ByVal ItemID As Integer)
@@ -312,10 +300,6 @@
         Me.TempNewMail.MailAttachment = -1
         Me.TempNewMail.MailRead = False
         Me.TempNewMail.MailSignature = ""
-    End Sub
-
-    Private Sub ChosenPokemonHandler(ByVal params As Object())
-        ChosenPokemon(CInt(params(0)))
     End Sub
 
     Private Sub ChosenPokemon(ByVal PokeIndex As Integer)

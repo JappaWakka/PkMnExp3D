@@ -222,7 +222,7 @@ Public Class TradeScreen
         Canvas.DrawGradient(New Rectangle(0, 0, CInt(Core.windowSize.Width), 200), New Color(42, 167, 198), New Color(42, 167, 198, 0), False, -1)
         Canvas.DrawGradient(New Rectangle(0, CInt(Core.windowSize.Height - 200), CInt(Core.windowSize.Width), 200), New Color(42, 167, 198, 0), New Color(42, 167, 198), False, -1)
 
-        Core.SpriteBatch.DrawString(FontManager.MainFont, Me.Title, New Vector2(100, 24), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Me.Title, New Vector2(100, 24), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
 
         Select Case Me.MenuState
             Case MenuStates.MainPage
@@ -466,7 +466,7 @@ Public Class TradeScreen
 
             Me.DrawMainCursor()
         Else
-            DrawBanner(New Vector2(CSng(Core.windowSize.Width / 2 - 250), CSng(Core.windowSize.Height / 2 - 50)), 100, "There are no items to buy.", FontManager.MainFont, 500)
+            DrawBanner(New Vector2(CSng(Core.windowSize.Width / 2 - 250), CSng(Core.windowSize.Height / 2 - 50)), 100, "There are no items to buy.", FontManager.MainFontWhite, 500)
         End If
     End Sub
 
@@ -724,7 +724,7 @@ Public Class TradeScreen
 
             ' - button:
             Core.SpriteBatch.Draw(texture, New Rectangle(664, 484, 64, 64), New Rectangle(16, 32, 16, 16), Color.White)
-            Core.SpriteBatch.DrawString(FontManager.MainFont, "-", New Vector2(664 + 23, 484 + 2), Color.Black, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "-", New Vector2(664 + 23, 484 + 2), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
 
             ' Amount field:
             Canvas.DrawRectangle(New Rectangle(740, 492, 104, 48), New Color(77, 147, 198))
@@ -734,13 +734,13 @@ Public Class TradeScreen
                 amountString = "0" & amountString
             End While
             amountString = "x" & amountString
-            Core.SpriteBatch.DrawString(FontManager.MainFont, amountString, New Vector2(792 - FontManager.MainFont.MeasureString(amountString).X / 2.0F, 504), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, amountString, New Vector2(792 - FontManager.MainFontWhite.MeasureString(amountString).X / 2.0F, 504), Color.White)
 
             ' + button:
             Core.SpriteBatch.Draw(texture, New Rectangle(856, 484, 64, 64), New Rectangle(16, 32, 16, 16), Color.White)
-            Core.SpriteBatch.DrawString(FontManager.MainFont, "+", New Vector2(856 + 19, 484 + 6), Color.Black, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "+", New Vector2(856 + 19, 484 + 6), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
 
-            Core.SpriteBatch.DrawString(FontManager.MainFont, "Per Item: " & selectedItem.Price.ToString() & GetCurrencyShort() & Environment.NewLine &
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Per Item: " & selectedItem.Price.ToString() & GetCurrencyShort() & Environment.NewLine &
                                                        "Total: " & (BuyItemsAmount * selectedItem.Price).ToString() & GetCurrencyShort(), New Vector2(930, 490), Color.White)
 
             ' Buy button:
@@ -859,7 +859,7 @@ Public Class TradeScreen
 
             Me.DrawMainCursor()
         Else
-            DrawBanner(New Vector2(CSng(Core.windowSize.Width / 2 - 250), CSng(Core.windowSize.Height / 2 - 50)), 100, "You have no items to sell.", FontManager.MainFont, 500)
+            DrawBanner(New Vector2(CSng(Core.windowSize.Width / 2 - 250), CSng(Core.windowSize.Height / 2 - 50)), 100, "You have no items to sell.", FontManager.MainFontWhite, 500)
         End If
     End Sub
 
@@ -1061,7 +1061,7 @@ Public Class TradeScreen
 
             ' - button:
             Core.SpriteBatch.Draw(texture, New Rectangle(664, 484, 64, 64), New Rectangle(16, 32, 16, 16), Color.White)
-            Core.SpriteBatch.DrawString(FontManager.MainFont, "-", New Vector2(664 + 23, 484 + 2), Color.Black, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "-", New Vector2(664 + 23, 484 + 2), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
 
             ' Amount field:
             Canvas.DrawRectangle(New Rectangle(740, 492, 104, 48), New Color(77, 147, 198))
@@ -1071,13 +1071,13 @@ Public Class TradeScreen
                 amountString = "0" & amountString
             End While
             amountString = "x" & amountString
-            Core.SpriteBatch.DrawString(FontManager.MainFont, amountString, New Vector2(792 - FontManager.MainFont.MeasureString(amountString).X / 2.0F, 504), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, amountString, New Vector2(792 - FontManager.MainFontWhite.MeasureString(amountString).X / 2.0F, 504), Color.White)
 
             ' + button:
             Core.SpriteBatch.Draw(texture, New Rectangle(856, 484, 64, 64), New Rectangle(16, 32, 16, 16), Color.White)
-            Core.SpriteBatch.DrawString(FontManager.MainFont, "+", New Vector2(856 + 19, 484 + 6), Color.Black, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "+", New Vector2(856 + 19, 484 + 6), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
 
-            Core.SpriteBatch.DrawString(FontManager.MainFont, "Per Item: " & selectedItem.SellPrice().ToString() & GetCurrencyShort() & Environment.NewLine &
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Per Item: " & selectedItem.SellPrice().ToString() & GetCurrencyShort() & Environment.NewLine &
                                                        "Total: " & (SellItemsAmount * selectedItem.SellPrice()).ToString() & GetCurrencyShort(), New Vector2(930, 490), Color.White)
 
             ' Sell button:
@@ -1200,9 +1200,9 @@ Public Class TradeScreen
         Core.SpriteBatch.Draw(Me.texture, New Rectangle(CInt(Position.X) + 64 * (Width + 1), CInt(Position.Y), 64, 64), New Rectangle(16, 16, 16, 16), Color.White, 0.0F, Vector2.Zero, SpriteEffects.FlipHorizontally, 0.0F)
 
         If Image Is Nothing Then
-            Core.SpriteBatch.DrawString(FontManager.MainFont, Text, New Vector2(TextOffset + CInt(Position.X), CInt(Position.Y) + 16), Color.Black, 0.0F, Vector2.Zero, 1.25F, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Text, New Vector2(TextOffset + CInt(Position.X), CInt(Position.Y) + 16), Color.White, 0.0F, Vector2.Zero, 1.25F, SpriteEffects.None, 0.0F)
         Else
-            Core.SpriteBatch.DrawString(FontManager.MainFont, Text, New Vector2(4 + 16 + Image.Width + TextOffset + CInt(Position.X), CInt(Position.Y) + 16), Color.Black, 0.0F, Vector2.Zero, 1.25F, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Text, New Vector2(4 + 16 + Image.Width + TextOffset + CInt(Position.X), CInt(Position.Y) + 16), Color.White, 0.0F, Vector2.Zero, 1.25F, SpriteEffects.None, 0.0F)
             Core.SpriteBatch.Draw(Image, New Rectangle(CInt(Position.X) + TextOffset + 8, CInt(Position.Y) + 19, Image.Width, Image.Height), Color.White)
         End If
     End Sub

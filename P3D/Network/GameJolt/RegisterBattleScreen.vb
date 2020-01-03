@@ -89,7 +89,7 @@
         Public Overrides Sub Draw()
             Canvas.DrawGradient(Core.windowSize, New Color(10, 145, 227), New Color(6, 77, 139), False, -1)
             Canvas.DrawGradient(New Rectangle(0, 0, CInt(Core.windowSize.Width), 65), New Color(0, 24, 114), New Color(13, 138, 228), False, -1)
-            Core.SpriteBatch.DrawString(FontManager.MainFont, "Battle Spot", New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString("Battle Spot").X / 2), 20), New Color(196, 231, 255))
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Battle Spot", New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString("Battle Spot").X / 2), 20), New Color(196, 231, 255))
             Canvas.DrawRectangle(New Rectangle(0, 65, Core.windowSize.Width, 1), New Color(0, 24, 114))
 
             If TeamDownloaded = True Then
@@ -107,7 +107,7 @@
                 End Select
             Else
                 Dim t As String = "Downloading data, please wait" & LoadingDots.Dots
-                Core.SpriteBatch.DrawString(FontManager.MainFont, t, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString(t).X / 2), CSng(Core.windowSize.Height / 2 - 10)), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString(t).X / 2), CSng(Core.windowSize.Height / 2 - 10)), Color.White)
             End If
         End Sub
 
@@ -141,14 +141,14 @@
                     t &= Environment.NewLine & Environment.NewLine & "Quit the Battle Spot."
             End Select
 
-            Core.SpriteBatch.DrawString(FontManager.MainFont, t, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString(t).X / 2), 220 - FontManager.MainFont.MeasureString(t).Y / 2), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, t, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontBlack.MeasureString(t).X / 2), 220 - FontManager.MainFontWhite.MeasureString(t).Y / 2), Color.White)
 
             For i = 0 To Me.MainMenuItems.Count - 1
                 Core.SpriteBatch.Draw(Me.texture, New Rectangle(CInt(Core.windowSize.Width / 2 - (64 * 5) / 2), 400 + i * 96, 64, 64), New Rectangle(16, 16, 16, 16), Color.White)
                 Core.SpriteBatch.Draw(Me.texture, New Rectangle(CInt(Core.windowSize.Width / 2 - (64 * 5) / 2) + 64, 400 + i * 96, 64 * 3, 64), New Rectangle(32, 16, 16, 16), Color.White)
                 Core.SpriteBatch.Draw(Me.texture, New Rectangle(CInt(Core.windowSize.Width / 2 - (64 * 5) / 2) + 64 * 4, 400 + i * 96, 64, 64), New Rectangle(16, 16, 16, 16), Color.White, 0.0F, Vector2.Zero, SpriteEffects.FlipHorizontally, 0.0F)
 
-                Core.SpriteBatch.DrawString(FontManager.MainFont, Me.MainMenuItems(i), New Vector2(CInt(Core.windowSize.Width / 2 - (64 * 5) / 2) + 20, 416 + i * 96), Color.Black, 0.0F, Vector2.Zero, 1.25F, SpriteEffects.None, 0.0F)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Me.MainMenuItems(i), New Vector2(CInt(Core.windowSize.Width / 2 - (64 * 5) / 2) + 20, 416 + i * 96), Color.White, 0.0F, Vector2.Zero, 1.25F, SpriteEffects.None, 0.0F)
             Next
 
             DrawMainCursor()
@@ -220,12 +220,12 @@
 
             Dim t As String = "When you register your team, the game will store a copy of your" & Environment.NewLine & "Pokémon online so that other players can download that team and" & Environment.NewLine & "battle against it." & Environment.NewLine & Environment.NewLine & "If you register a new team, the old one will be overwritten with" & Environment.NewLine & "the new one."
 
-            Core.SpriteBatch.DrawString(FontManager.MainFont, t, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString(t).X / 2), 180 - FontManager.MainFont.MeasureString(t).Y / 2), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, t, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontBlack.MeasureString(t).X / 2), 180 - FontManager.MainFontWhite.MeasureString(t).Y / 2), Color.White)
 
             If HasTeamUploaded = True Then
-                Core.SpriteBatch.DrawString(FontManager.MainFont, "Registered Team:", New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString(t).X / 2), 335 - FontManager.MainFont.MeasureString(t).Y / 2), Color.Black)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Registered Team:", New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontBlack.MeasureString(t).X / 2), 335 - FontManager.MainFontBlack.MeasureString(t).Y / 2), Color.White)
 
-                Dim startPos As New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString(t).X / 2), 335 - FontManager.MainFont.MeasureString(t).Y / 2)
+                Dim startPos As New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString(t).X / 2), 335 - FontManager.MainFontWhite.MeasureString(t).Y / 2)
 
                 For i = 0 To Me.OwnTeam.Count - 1
                     Dim p As Pokemon = Me.OwnTeam(i)
@@ -233,7 +233,7 @@
                     Core.SpriteBatch.Draw(pokeTexture, New Rectangle(CInt(startPos.X) + 200 + i * 68 - CInt(pokeTexture.Width - 32), CInt(startPos.Y) - 26, pokeTexture.Width * 2, 64), Color.White)
                 Next
             Else
-                Core.SpriteBatch.DrawString(FontManager.MainFont, "No Team registered.", New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString(t).X / 2), 335 - FontManager.MainFont.MeasureString(t).Y / 2), Color.Black)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "No Team registered.", New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString(t).X / 2), 335 - FontManager.MainFontWhite.MeasureString(t).Y / 2), Color.White)
             End If
 
             For i = 0 To Me.TeamRegisterMenuItems.Count - 1
@@ -241,7 +241,7 @@
                 Core.SpriteBatch.Draw(Me.texture, New Rectangle(CInt(Core.windowSize.Width / 2 - (64 * 5) / 2) + 64, 400 + i * 96, 64 * 3, 64), New Rectangle(32, 16, 16, 16), Color.White)
                 Core.SpriteBatch.Draw(Me.texture, New Rectangle(CInt(Core.windowSize.Width / 2 - (64 * 5) / 2) + 64 * 4, 400 + i * 96, 64, 64), New Rectangle(16, 16, 16, 16), Color.White, 0.0F, Vector2.Zero, SpriteEffects.FlipHorizontally, 0.0F)
 
-                Core.SpriteBatch.DrawString(FontManager.MainFont, Me.TeamRegisterMenuItems(i), New Vector2(CInt(Core.windowSize.Width / 2 - (64 * 5) / 2) + 20, 416 + i * 96), Color.Black, 0.0F, Vector2.Zero, 1.25F, SpriteEffects.None, 0.0F)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Me.TeamRegisterMenuItems(i), New Vector2(CInt(Core.windowSize.Width / 2 - (64 * 5) / 2) + 20, 416 + i * 96), Color.White, 0.0F, Vector2.Zero, 1.25F, SpriteEffects.None, 0.0F)
             Next
 
             DrawTeamRegisterCursor()
@@ -358,7 +358,7 @@
 
         Private Sub DrawUploadTeam()
             Dim t As String = "Registering, please wait" & LoadingDots.Dots
-            Core.SpriteBatch.DrawString(FontManager.MainFont, t, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString(t).X / 2), CSng(Core.windowSize.Height / 2 - 10)), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString(t).X / 2), CSng(Core.windowSize.Height / 2 - 10)), Color.White)
         End Sub
 
 #End Region
@@ -367,7 +367,7 @@
 
         Private Sub DrawChooseTeam()
             Dim t As String = "Choose your team:"
-            Core.SpriteBatch.DrawString(FontManager.MainFont, t, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString(t).X / 2), 100), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString(t).X / 2), 100), Color.White)
 
             Dim startPos As New Vector2(CSng(Core.windowSize.Width / 2) - 400, 300)
             Canvas.DrawGradient(New Rectangle(CInt(Core.windowSize.Width / 2) - 410, 230, 290, 360), New Color(203, 40, 41), New Color(238, 128, 128), False, -1)
@@ -387,7 +387,7 @@
                     Core.SpriteBatch.Draw(pokeTexture, New Rectangle(CInt(startPos.X) + x * 140 + 32 - CInt(pokeTexture.Width - 32), y * 100 + CInt(startPos.Y) + 10, pokeTexture.Width * 2, 64), Color.White)
                 End If
 
-                Core.SpriteBatch.DrawString(FontManager.MainFont, "Battle Box", New Vector2(CInt(startPos.X) + 80, CInt(startPos.Y) - 45), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Battle Box", New Vector2(CInt(startPos.X) + 80, CInt(startPos.Y) - 45), Color.White)
             Next
 
             startPos = New Vector2(CSng(Core.windowSize.Width / 2) + 130, 300)
@@ -408,7 +408,7 @@
                     Core.SpriteBatch.Draw(pokeTexture, New Rectangle(CInt(startPos.X) + x * 140 + 32 - CInt(pokeTexture.Width - 32), y * 100 + CInt(startPos.Y) + 10, pokeTexture.Width * 2, 64), Color.White)
                 End If
 
-                Core.SpriteBatch.DrawString(FontManager.MainFont, "Team", New Vector2(CInt(startPos.X) + 106, CInt(startPos.Y) - 45), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Team", New Vector2(CInt(startPos.X) + 106, CInt(startPos.Y) - 45), Color.White)
             Next
 
             DrawChooseTeamCursor()
@@ -591,7 +591,7 @@
 
         Private Sub DrawPreparingBattle()
             Dim t As String = "Preparing the battle, please wait" & LoadingDots.Dots
-            Core.SpriteBatch.DrawString(FontManager.MainFont, t, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString(t).X / 2), CSng(Core.windowSize.Height / 2 - 10)), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString(t).X / 2), CSng(Core.windowSize.Height / 2 - 10)), Color.White)
         End Sub
 
         Private Sub UpdatePreparingBattle()

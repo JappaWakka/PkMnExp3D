@@ -68,11 +68,7 @@
                 Case "name"
                     Return Core.Player.Name
                 Case "gender"
-                    If Core.Player.Gender = True Then
-                        Return "1"
-                    Else
-                        Return "0"
-                    End If
+                    Return Core.Player.Gender
                 Case "bp"
                     Return Core.Player.BP.ToString()
                 Case "badges"
@@ -87,8 +83,8 @@
                     Return Core.GameJoltSave.GameJoltID
                 Case "haspokedex"
                     Return ReturnBoolean(Core.Player.HasPokedex)
-                Case "haspokegear"
-                    Return ReturnBoolean(Core.Player.HasPokegear)
+                Case "hasphone"
+                    Return ReturnBoolean(Core.Player.HasPhone)
             End Select
             Return DEFAULTNULL
         End Function

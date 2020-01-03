@@ -17,7 +17,7 @@
     Dim LoadOffsetMaps As Integer = 10
     Dim ViewBobbing As Boolean = True
     Dim ShowModels As Integer = 1
-    Dim Muted As Integer = 0
+    Dim Muted As Boolean = False
     Dim GamePadEnabled As Boolean = True
     Dim PreferMultiSampling As Boolean = True
 
@@ -52,7 +52,7 @@
         Me.Difficulty = Core.Player.DifficultyMode
         Me.BattleStyle = Core.Player.BattleStyle
         Me.ShowModels = CInt(Core.Player.ShowModelsInBattle)
-        Me.Muted = CInt(MediaPlayer.IsMuted.ToNumberString())
+        Me.Muted = CBool(MediaPlayer.IsMuted.ToNumberString())
         If Core.GameOptions.LoadOffsetMaps = 0 Then
             Me.LoadOffsetMaps = 0
         Else
@@ -70,9 +70,9 @@
 
         Canvas.DrawImageBorder(TextureManager.GetTexture(TextureManager.GetTexture("GUI\Menus\Menu"), New Rectangle(0, 0, 48, 48)), 2, New Rectangle(60, 100, 800, 480))
 
-        Core.SpriteBatch.DrawString(FontManager.InGameFont, Me.CurrentPath, New Vector2(80, 130), Color.Black)
+        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Me.CurrentPath, New Vector2(80, 130), Color.White)
         If savedOptions = False Then
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, Localization.GetString("option_screen_warning"), New Vector2(90 + FontManager.InGameFont.MeasureString(Localization.GetString("option_screen_title")).X, 138), Color.DarkRed)
+            Core.SpriteBatch.DrawString(FontManager.MiniFont, Localization.GetString("option_screen_warning"), New Vector2(90 + FontManager.MainFontWhite.MeasureString(Localization.GetString("option_screen_title")).X, 138), Color.DarkRed)
         End If
 
         For Each C As Control In ControlList
@@ -100,7 +100,7 @@
             End If
         Next
 
-        If net.Pokemon3D.Game.Controls.Dismiss(True, True, True) = True Then
+        If P3D.Controls.Dismiss(True, True, True) = True Then
             Close()
         End If
     End Sub
@@ -204,7 +204,7 @@
         Me.LoadOffsetMaps = 10
         Me.ViewBobbing = True
         Me.ShowModels = 1
-        Me.Muted = 0
+        Me.Muted = False
         Me.GamePadEnabled = True
         Me.PreferMultiSampling = True
     End Sub
@@ -215,8 +215,8 @@
         C.RotationSpeed = CSng(Me.MouseSpeed / 10000)
         MusicManager.MasterVolume = CSng(Me.Music / 100)
         SoundManager.Volume = CSng(Me.Sound / 100)
-        MusicManager.Mute(CBool(Me.Muted))
-        SoundManager.Mute(CBool(Me.Muted))
+        MusicManager.Muted = CBool(Me.Muted)
+        SoundManager.Muted = CBool(Me.Muted)
         Core.GameOptions.RenderDistance = Me.RenderDistance
         Core.GameOptions.GraphicStyle = Me.GraphicStyle
         Screen.Level.World.Initialize(Screen.Level.EnvironmentType, Screen.Level.WeatherType)
@@ -242,7 +242,7 @@
 
     Public Overrides Sub ToggledMute()
         If Me.ScreenIndex = 5 Then
-            Me.Muted = CInt(MediaPlayer.IsMuted)
+            Me.Muted = CBool(MediaPlayer.IsMuted)
             InitializeControls()
         End If
     End Sub
@@ -403,17 +403,17 @@
     End Sub
 
     Private Sub ToggleMute(ByVal c As ToggleButton)
-        If Me.Muted = 0 Then
-            Me.Muted = 1
+        If Me.Muted = False Then
+            Me.Muted = True
         Else
-            Me.Muted = 0
+            Me.Muted = False
         End If
         ApplyMusicChange()
     End Sub
 
     Private Sub ApplyMusicChange()
-        MusicManager.Mute(CBool(Me.Muted))
-        SoundManager.Mute(CBool(Me.Muted))
+        MusicManager.Muted = CBool(Me.Muted)
+        SoundManager.Muted = CBool(Me.Muted)
         MusicManager.MasterVolume = CSng(Me.Music / 100)
         SoundManager.Volume = CSng(Me.Sound / 100)
     End Sub
@@ -515,14 +515,14 @@
                 End If
             End If
 
-            Core.SpriteBatch.DrawString(FontManager.InGameFont, t, New Vector2(CInt(_position.X) + CInt(((Me._size * 32 + 20) / 2) - (FontManager.InGameFont.MeasureString(t).X / 2)), CInt(_position.Y) + 32 + YScroll), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, t, New Vector2(CInt(_position.X) + CInt(((Me._size * 32 + 20) / 2) - (FontManager.MainFontBlack.MeasureString(t).X / 2)), CInt(_position.Y) + 32 + YScroll), Color.White)
         End Sub
 
         Public Overrides Sub Update()
             Dim r As New Rectangle(CInt(_position.X), CInt(_position.Y) + YScroll, 32 * _size, 96)
 
             If r.Contains(MouseHandler.MousePosition) = True Then
-                If net.Pokemon3D.Game.Controls.Accept(True, False, False) = True Then
+                If P3D.Controls.Accept(True, False, False) = True Then
                     Me._toggled = Not Me._toggled
                     OnToggleTrigger(Me)
                 End If
@@ -588,14 +588,14 @@
                 Canvas.DrawImageBorder(TextureManager.GetTexture(TextureManager.GetTexture("GUI\Menus\Menu"), New Rectangle(0, 0, 48, 48)), 2, New Rectangle(CInt(_position.X), CInt(_position.Y) + YScroll, 32 * _size, 64))
             End If
 
-            Core.SpriteBatch.DrawString(FontManager.InGameFont, Me._text, New Vector2(CInt(_position.X) + CInt(((Me._size * 32 + 20) / 2) - (FontManager.InGameFont.MeasureString(Me._text).X / 2)), CInt(_position.Y) + 32 + YScroll), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Me._text, New Vector2(CInt(_position.X) + CInt(((Me._size * 32 + 20) / 2) - (FontManager.MainFontBlack.MeasureString(Me._text).X / 2)), CInt(_position.Y) + 32 + YScroll), Color.White)
         End Sub
 
         Public Overrides Sub Update()
             Dim r As New Rectangle(CInt(_position.X), CInt(_position.Y) + YScroll, 32 * _size + 32, 96)
 
             If r.Contains(MouseHandler.MousePosition) = True Then
-                If net.Pokemon3D.Game.Controls.Accept(True, False, False) = True Then
+                If P3D.Controls.Accept(True, False, False) = True Then
                     OnClickTrigger(Me)
                 End If
             End If

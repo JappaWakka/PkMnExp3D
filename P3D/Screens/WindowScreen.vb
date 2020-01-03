@@ -116,9 +116,9 @@ Public MustInherit Class WindowScreen
             Dim titleStartY As Integer = CInt(startPosition.Y)
             Dim titleAreaWidth As Integer = CInt((_windowElementsX - 4) * GetWindowElementSize()) ' Width of the window minus the two panels on each side.
             Dim titleAreaHeight As Integer = GetWindowElementSize()
-            Dim FontSize As Vector2 = FontManager.MainFont.MeasureString(_title)
+            Dim FontSize As Vector2 = FontManager.MainFontWhite.MeasureString(_title)
 
-            Core.SpriteBatch.DrawString(FontManager.MainFont, Me._title, New Vector2(CSng(titleStartX + titleAreaWidth / 2 - FontSize.X / 2), CSng(titleStartY + titleAreaHeight / 2 - FontSize.Y / 2) + _textureScale + _windowSink), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Me._title, New Vector2(CSng(titleStartX + titleAreaWidth / 2 - FontSize.X / 2), CSng(titleStartY + titleAreaHeight / 2 - FontSize.Y / 2) + _textureScale + _windowSink), Color.White)
         End If
     End Sub
 

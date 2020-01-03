@@ -52,33 +52,33 @@
             Me.Buttons.Clear()
             Me.Labels.Clear()
 
-            Me.Labels.Add(New Label(Localization.GetString("apricorn_screen_apricorns"), New Vector2(80, 128), FontManager.MainFont))
+            Me.Labels.Add(New Label(Localization.GetString("apricorn_screen_apricorns"), New Vector2(80, 128), FontManager.MainFontWhite))
 
             Select Case Me.State
                 Case States.Wait
-                    Me.Labels.Add(New Label(Localization.GetString("apricorn_screen_producing").Replace("~", Environment.NewLine), New Vector2(100, 200), FontManager.MainFont))
-                    Me.Labels.Add(New Label(Localization.GetString("apricorn_screen_backadvice"), New Vector2(100, 260), Color.DarkGray, FontManager.MainFont))
+                    Me.Labels.Add(New Label(Localization.GetString("apricorn_screen_producing").Replace("~", Environment.NewLine), New Vector2(100, 200), FontManager.MainFontWhite))
+                    Me.Labels.Add(New Label(Localization.GetString("apricorn_screen_backadvice"), New Vector2(100, 260), Color.DarkGray, FontManager.MainFontWhite))
                 Case States.CanGive
                     Dim T As Texture2D = TextureManager.GetTexture("Items\ItemSheet")
 
-                    Me.Labels.Add(New Label(Localization.GetString("apricorn_screen_choose_apricorns"), New Vector2(100, 200), FontManager.MainFont))
-                    Dim RedApricorn As ButtonIcon = New ButtonIcon(AddressOf Me.GiveApricorn, "0 / " & Core.Player.Inventory.GetItemAmount(85), FontManager.MainFont, T, New Rectangle(240, 72, 24, 24), New Vector2(98, 240), New Size(48, 48), "85")
-                    Dim BlueApricorn As ButtonIcon = New ButtonIcon(AddressOf Me.GiveApricorn, "0 / " & Core.Player.Inventory.GetItemAmount(89), FontManager.MainFont, T, New Rectangle(336, 72, 24, 24), New Vector2(98, 304), New Size(48, 48), "89")
-                    Dim YellowApricorn As ButtonIcon = New ButtonIcon(AddressOf Me.GiveApricorn, "0 / " & Core.Player.Inventory.GetItemAmount(92), FontManager.MainFont, T, New Rectangle(384, 72, 24, 24), New Vector2(98, 368), New Size(48, 48), "92")
-                    Dim GreenApricorn As ButtonIcon = New ButtonIcon(AddressOf Me.GiveApricorn, "0 / " & Core.Player.Inventory.GetItemAmount(93), FontManager.MainFont, T, New Rectangle(408, 72, 24, 24), New Vector2(98, 432), New Size(48, 48), "93")
-                    Dim WhiteApricorn As ButtonIcon = New ButtonIcon(AddressOf Me.GiveApricorn, "0 / " & Core.Player.Inventory.GetItemAmount(97), FontManager.MainFont, T, New Rectangle(0, 96, 24, 24), New Vector2(98, 496), New Size(48, 48), "97")
-                    Dim BlackApricorn As ButtonIcon = New ButtonIcon(AddressOf Me.GiveApricorn, "0 / " & Core.Player.Inventory.GetItemAmount(99), FontManager.MainFont, T, New Rectangle(48, 96, 24, 24), New Vector2(162, 240), New Size(48, 48), "99")
-                    Dim PinkApricorn As ButtonIcon = New ButtonIcon(AddressOf Me.GiveApricorn, "0 / " & Core.Player.Inventory.GetItemAmount(101), FontManager.MainFont, T, New Rectangle(72, 96, 24, 24), New Vector2(162, 304), New Size(48, 48), "101")
+                    Me.Labels.Add(New Label(Localization.GetString("apricorn_screen_choose_apricorns"), New Vector2(100, 200), FontManager.MainFontWhite))
+                    Dim RedApricorn As ButtonIcon = New ButtonIcon(AddressOf Me.GiveApricorn, "0 / " & Core.Player.Inventory.GetItemAmount(85), FontManager.MainFontWhite, T, New Rectangle(240, 72, 24, 24), New Vector2(98, 240), New Size(48, 48), "85")
+                    Dim BlueApricorn As ButtonIcon = New ButtonIcon(AddressOf Me.GiveApricorn, "0 / " & Core.Player.Inventory.GetItemAmount(89), FontManager.MainFontWhite, T, New Rectangle(336, 72, 24, 24), New Vector2(98, 304), New Size(48, 48), "89")
+                    Dim YellowApricorn As ButtonIcon = New ButtonIcon(AddressOf Me.GiveApricorn, "0 / " & Core.Player.Inventory.GetItemAmount(92), FontManager.MainFontWhite, T, New Rectangle(384, 72, 24, 24), New Vector2(98, 368), New Size(48, 48), "92")
+                    Dim GreenApricorn As ButtonIcon = New ButtonIcon(AddressOf Me.GiveApricorn, "0 / " & Core.Player.Inventory.GetItemAmount(93), FontManager.MainFontWhite, T, New Rectangle(408, 72, 24, 24), New Vector2(98, 432), New Size(48, 48), "93")
+                    Dim WhiteApricorn As ButtonIcon = New ButtonIcon(AddressOf Me.GiveApricorn, "0 / " & Core.Player.Inventory.GetItemAmount(97), FontManager.MainFontWhite, T, New Rectangle(0, 96, 24, 24), New Vector2(98, 496), New Size(48, 48), "97")
+                    Dim BlackApricorn As ButtonIcon = New ButtonIcon(AddressOf Me.GiveApricorn, "0 / " & Core.Player.Inventory.GetItemAmount(99), FontManager.MainFontWhite, T, New Rectangle(48, 96, 24, 24), New Vector2(162, 240), New Size(48, 48), "99")
+                    Dim PinkApricorn As ButtonIcon = New ButtonIcon(AddressOf Me.GiveApricorn, "0 / " & Core.Player.Inventory.GetItemAmount(101), FontManager.MainFontWhite, T, New Rectangle(72, 96, 24, 24), New Vector2(162, 304), New Size(48, 48), "101")
 
-                    Dim GiveButton As ButtonIcon = New ButtonIcon(AddressOf Me.Give, Localization.GetString("apricorn_screen_ok"), FontManager.MainFont, mainTexture, New Rectangle(48, 128, 16, 16), New Vector2(162, 496), New Size(48, 48), "OK")
+                    Dim GiveButton As ButtonIcon = New ButtonIcon(AddressOf Me.Give, Localization.GetString("apricorn_screen_ok"), FontManager.MainFontWhite, mainTexture, New Rectangle(48, 128, 16, 16), New Vector2(162, 496), New Size(48, 48), "OK")
                     GiveButton.Enabled = False
-                    Dim ClearButton As ButtonIcon = New ButtonIcon(AddressOf Me.ClearApricorns, Localization.GetString("apricorn_screen_clear"), FontManager.MainFont, mainTexture, New Rectangle(64, 128, 16, 16), New Vector2(162, 432), New Size(48, 48), "Clear")
+                    Dim ClearButton As ButtonIcon = New ButtonIcon(AddressOf Me.ClearApricorns, Localization.GetString("apricorn_screen_clear"), FontManager.MainFontWhite, mainTexture, New Rectangle(64, 128, 16, 16), New Vector2(162, 432), New Size(48, 48), "Clear")
 
                     Buttons.AddRange({RedApricorn, BlueApricorn, YellowApricorn, GreenApricorn, WhiteApricorn, BlackApricorn, PinkApricorn, ClearButton, GiveButton})
                 Case States.CanTake
-                    Dim TakeButton As ButtonIcon = New ButtonIcon(AddressOf Me.Take, Localization.GetString("apricorn_screen_take"), FontManager.MainFont, mainTexture, New Rectangle(48, 128, 16, 16), New Vector2(98, 450), New Size(48, 48))
+                    Dim TakeButton As ButtonIcon = New ButtonIcon(AddressOf Me.Take, Localization.GetString("apricorn_screen_take"), FontManager.MainFontWhite, mainTexture, New Rectangle(48, 128, 16, 16), New Vector2(98, 450), New Size(48, 48))
                     Buttons.AddRange({TakeButton})
-                    Me.Labels.Add(New Label(Localization.GetString("apricorn_screen_ready"), New Vector2(100, 200), FontManager.MainFont))
+                    Me.Labels.Add(New Label(Localization.GetString("apricorn_screen_ready"), New Vector2(100, 200), FontManager.MainFontWhite))
             End Select
         End If
     End Sub
@@ -207,7 +207,7 @@
 
             Dim Item As Item = Item.GetItemByID(ItemID)
             Core.SpriteBatch.Draw(Item.Texture, New Rectangle(100 + x * 64, 260 + y * 96, 48, 48), Color.White)
-            Core.SpriteBatch.DrawString(FontManager.MainFont, "x" & Apricorns(i), New Vector2(110 + x * 64, 300 + y * 96), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "x" & Apricorns(i), New Vector2(110 + x * 64, 300 + y * 96), Color.White)
         Next
     End Sub
 

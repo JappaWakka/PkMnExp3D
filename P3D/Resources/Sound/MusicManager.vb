@@ -51,10 +51,10 @@
 
                 If _muted = True Then
                     MediaPlayer.Pause()
-                    Core.GameMessage.ShowMessage(Localization.GetString("game_message_music_off"), 12, FontManager.MainFont, Color.White)
+                    Core.GameMessage.ShowMessage(Localization.GetString("game_message_music_off"), 12, FontManager.MainFontWhite, Color.White)
                 Else
                     ResumePlayback()
-                    Core.GameMessage.ShowMessage(Localization.GetString("game_message_music_on"), 12, FontManager.MainFont, Color.White)
+                    Core.GameMessage.ShowMessage(Localization.GetString("game_message_music_on"), 12, FontManager.MainFontWhite, Color.White)
                 End If
             End If
         End Set

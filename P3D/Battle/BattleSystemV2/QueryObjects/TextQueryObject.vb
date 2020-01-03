@@ -76,7 +76,7 @@
 
             If GamePad.GetState(PlayerIndex.One).IsConnected = True And Core.GameOptions.GamePadEnabled = True And BV2Screen.IsCurrentScreen() = True Then
                 Dim d As New Dictionary(Of Buttons, String)
-                d.Add(Buttons.A, "OK")
+                d.Add(Buttons.A, Localization.GetString("game_interaction_ok", "OK"))
                 BV2Screen.DrawGamePadControls(d, New Vector2(rec.X + rec.Width - 100, rec.Y + rec.Height - 40))
             Else
                 If TextReady = True Then

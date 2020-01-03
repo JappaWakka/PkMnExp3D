@@ -97,7 +97,7 @@
 
         If CommandLineArgHandler.NoSplash = True Then
             Core.LoadContent()
-            SetScreen(New PressStartScreen())
+            SetScreen(New MainMenuScreen())
         Else
             SetScreen(New SplashScreen(GameInstance))
         End If

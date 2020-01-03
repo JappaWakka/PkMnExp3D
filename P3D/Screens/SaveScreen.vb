@@ -46,7 +46,7 @@
             .Draw(menuTexture, New Rectangle(Delta_X, Delta_Y, 700, 440), Color.White)
 
             If saveSessionFailed = True Then
-                .DrawString(FontManager.InGameFont, "Saving failed!", New Vector2(Delta_X + 90, Delta_Y + 50), Color.Red)
+                .DrawString(FontManager.MainFontWhite, "Saving failed!", New Vector2(Delta_X + 90, Delta_Y + 50), Color.Red)
 
                 If Core.GameOptions.Extras.Contains("Backup Save Feature") Then
                     .DrawString(FontManager.MiniFont,
@@ -101,17 +101,17 @@
 
             Else
                 If ready = True Then
-                    .DrawString(FontManager.InGameFont, "Saved the game.", New Vector2(Delta_X + 90, Delta_Y + 50), Color.DarkBlue)
+                    .DrawString(FontManager.MainFontWhite, "Saved the game.", New Vector2(Delta_X + 90, Delta_Y + 50), Color.DarkBlue)
                 Else
                     If SaveGameHelpers.GameJoltSaveDone() = False And savingStarted = True Then
                         If SaveGameHelpers.StartedDownloadCheck = True Then
-                            .DrawString(FontManager.InGameFont, "Validating data" & LoadingDots.Dots, New Vector2(Delta_X + 90, Delta_Y + 50), Color.Black)
+                            .DrawString(FontManager.MainFontBlack, "Validating data" & LoadingDots.Dots, New Vector2(Delta_X + 90, Delta_Y + 50), Color.White)
                         Else
-                            .DrawString(FontManager.InGameFont, "Saving, please wait" & LoadingDots.Dots, New Vector2(Delta_X + 77, Delta_Y + 50), Color.Black)
+                            .DrawString(FontManager.MainFontBlack, "Saving, please wait" & LoadingDots.Dots, New Vector2(Delta_X + 77, Delta_Y + 50), Color.White)
                         End If
                     Else
-                        .DrawString(FontManager.InGameFont, "Would you like to", New Vector2(Delta_X + 90, Delta_Y + 50), Color.Black)
-                        .DrawString(FontManager.InGameFont, "save the game?", New Vector2(Delta_X + 90, Delta_Y + 80), Color.Black)
+                        .DrawString(FontManager.MainFontBlack, "Would you like to", New Vector2(Delta_X + 90, Delta_Y + 50), Color.White)
+                        .DrawString(FontManager.MainFontBlack, "save the game?", New Vector2(Delta_X + 90, Delta_Y + 80), Color.White)
                     End If
                 End If
 

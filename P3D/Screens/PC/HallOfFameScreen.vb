@@ -172,10 +172,10 @@
         Canvas.DrawGradient(New Rectangle(0, 0, CInt(Core.windowSize.Width), 200), New Color(42, 167, 198, alpha), New Color(42, 167, 198, 0), False, -1)
         Canvas.DrawGradient(New Rectangle(0, CInt(Core.windowSize.Height - 200), CInt(Core.windowSize.Width), 200), New Color(42, 167, 198, 0), New Color(42, 167, 198, alpha), False, -1)
 
-        Core.SpriteBatch.DrawString(FontManager.MainFont, "Hall of Fame", New Vector2(100, 24), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Hall of Fame", New Vector2(100, 24), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
 
         If Not Me.SelectedEntry Is Nothing Then
-            Core.SpriteBatch.DrawString(FontManager.MainFont, "Entry No. " & (Me.SelectedEntry.ID + 1).ToString(), New Vector2(-1100 + (255 - alpha) * 5.0F, 70), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Entry No. " & (Me.SelectedEntry.ID + 1).ToString(), New Vector2(-1100 + (255 - alpha) * 5.0F, 70), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
         End If
 
         If Me.Preselect = -1 Then
@@ -187,7 +187,7 @@
                     Core.SpriteBatch.Draw(Me.texture, New Rectangle(100 + 64, 100 + p * 96, 64 * 8, 64), New Rectangle(32, 16, 16, 16), New Color(255, 255, 255, alpha))
                     Core.SpriteBatch.Draw(Me.texture, New Rectangle(100 + 64 * 9, 100 + p * 96, 64, 64), New Rectangle(16, 16, 16, 16), New Color(255, 255, 255, alpha), 0.0F, Vector2.Zero, SpriteEffects.FlipHorizontally, 0.0F)
 
-                    Core.SpriteBatch.DrawString(FontManager.MainFont, "Entry No. " & (Me.Entries(i).ID + 1).ToString(), New Vector2(120, 116 + p * 96), New Color(0, 0, 0, alpha), 0.0F, Vector2.Zero, 1.25F, SpriteEffects.None, 0.0F)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Entry No. " & (Me.Entries(i).ID + 1).ToString(), New Vector2(120, 116 + p * 96), New Color(0, 0, 0, alpha), 0.0F, Vector2.Zero, 1.25F, SpriteEffects.None, 0.0F)
 
                     For d = 0 To Me.Entries(i).PokemonList.Count - 1
                         Dim pokeTexture = Me.Entries(i).PokemonList(d).GetPokemon().GetMenuTexture()
@@ -196,8 +196,8 @@
                 End If
             Next
 
-            Core.SpriteBatch.DrawString(FontManager.MainFont, "Entries: ", New Vector2(90 + 64 * 11, 119), New Color(0, 0, 0, alpha))
-            Core.SpriteBatch.DrawString(FontManager.MainFont, AmountOfEntries.ToString(), New Vector2(190 + 64 * 11, 119), New Color(255, 255, 255, alpha))
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Entries: ", New Vector2(90 + 64 * 11, 119), New Color(0, 0, 0, alpha))
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, AmountOfEntries.ToString(), New Vector2(190 + 64 * 11, 119), New Color(255, 255, 255, alpha))
 
             DrawCursor()
         End If
@@ -242,15 +242,15 @@
         Dim pos As New Vector2(CInt(Core.windowSize.Width - 500), 50)
 
         If id = -1 Then
-            Core.SpriteBatch.DrawString(FontManager.MainFont, "Player " & SelectedEntry.Name, New Vector2(pos.X + 4, pos.Y + 4), Color.White, 0.0F, Vector2.Zero, 1.5F, SpriteEffects.None, 0.0F)
-            Core.SpriteBatch.DrawString(FontManager.MainFont, "Playtime" & Environment.NewLine & Environment.NewLine & "OT" & Environment.NewLine & Environment.NewLine & "Points", New Vector2(pos.X + 10, pos.Y + 54), Color.White, 0.0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0.0F)
-            Core.SpriteBatch.DrawString(FontManager.MainFont, SelectedEntry.PlayTime & Environment.NewLine & Environment.NewLine & SelectedEntry.OT & Environment.NewLine & Environment.NewLine & SelectedEntry.Points, New Vector2(pos.X + 116, pos.Y + 55), New Color(173, 216, 230), 0.0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Player " & SelectedEntry.Name, New Vector2(pos.X + 4, pos.Y + 4), Color.White, 0.0F, Vector2.Zero, 1.5F, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Playtime" & Environment.NewLine & Environment.NewLine & "OT" & Environment.NewLine & Environment.NewLine & "Points", New Vector2(pos.X + 10, pos.Y + 54), Color.White, 0.0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, SelectedEntry.PlayTime & Environment.NewLine & Environment.NewLine & SelectedEntry.OT & Environment.NewLine & Environment.NewLine & SelectedEntry.Points, New Vector2(pos.X + 116, pos.Y + 55), New Color(173, 216, 230), 0.0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0.0F)
         Else
             Dim p As Pokemon = SelectedEntry.PokemonList(id).GetPokemon()
             Dim pokeTexture = p.GetMenuTexture()
             Core.SpriteBatch.Draw(pokeTexture, New Rectangle(CInt(pos.X + 4) - CInt((pokeTexture.Width - 32) / 2), CInt(pos.Y + 6), pokeTexture.Width, 32), Color.White)
-            Core.SpriteBatch.DrawString(FontManager.MainFont, p.GetDisplayName(), New Vector2(pos.X + 40, pos.Y + 4), Color.White, 0.0F, Vector2.Zero, 1.5F, SpriteEffects.None, 0.0F)
-            Core.SpriteBatch.DrawString(FontManager.MainFont, "Level" & Environment.NewLine & Environment.NewLine & "OT" & Environment.NewLine & Environment.NewLine & "Type 1" & Environment.NewLine & Environment.NewLine & "Type 2", New Vector2(pos.X + 10, pos.Y + 43), Color.White, 0.0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, p.GetDisplayName(), New Vector2(pos.X + 40, pos.Y + 4), Color.White, 0.0F, Vector2.Zero, 1.5F, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Level" & Environment.NewLine & Environment.NewLine & "OT" & Environment.NewLine & Environment.NewLine & "Type 1" & Environment.NewLine & Environment.NewLine & "Type 2", New Vector2(pos.X + 10, pos.Y + 43), Color.White, 0.0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0.0F)
 
             Dim s As String = p.Level & Environment.NewLine & Environment.NewLine & p.OT & " / " & p.CatchTrainerName & Environment.NewLine & Environment.NewLine & p.Type1.Type.ToString()
             If p.Type2.Type <> Element.Types.Blank Then
@@ -259,7 +259,7 @@
                 s &= Environment.NewLine & Environment.NewLine & "none"
             End If
 
-            Core.SpriteBatch.DrawString(FontManager.MainFont, s, New Vector2(pos.X + 116, pos.Y + 44), New Color(173, 216, 230), 0.0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, s, New Vector2(pos.X + 116, pos.Y + 44), New Color(173, 216, 230), 0.0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0.0F)
         End If
     End Sub
 

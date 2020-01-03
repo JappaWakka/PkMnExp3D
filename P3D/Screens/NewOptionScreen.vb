@@ -775,8 +775,8 @@
             Core.SpriteBatch.Draw(s._menuTexture, New Rectangle(CInt(pos.X), CInt(pos.Y), size, size), New Rectangle(CInt(B.X), CInt(B.Y), 16, 16), c)
             Core.SpriteBatch.Draw(s._menuTexture, New Rectangle(CInt(pos.X) + size, CInt(pos.Y), size * ButtonWidth, size), New Rectangle(CInt(B.X) + 16, CInt(B.Y), 16, 16), c)
             Core.SpriteBatch.Draw(s._menuTexture, New Rectangle(CInt(pos.X) + size * (ButtonWidth + 1), CInt(pos.Y), size, size), New Rectangle(CInt(B.X), CInt(B.Y), 16, 16), c, 0.0F, Vector2.Zero, SpriteEffects.FlipHorizontally, 0.0F)
-            Dim fontWidth As Integer = CInt(FontManager.MainFont.MeasureString(t).X * 1.25 * (size / 64.0F))
-            Core.SpriteBatch.DrawString(FontManager.MainFont, t, New Vector2(CInt((pos.X + (size * (2 + ButtonWidth) - fontWidth) * 0.5F)), CInt(pos.Y) + CInt(16 * size / 64)), textColor, 0.0F, Vector2.Zero, 1.25F * CSng(size / 64), SpriteEffects.None, 0.0F)
+            Dim fontWidth As Integer = CInt(FontManager.MainFontWhite.MeasureString(t).X * 1.25 * (size / 64.0F))
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(CInt((pos.X + (size * (2 + ButtonWidth) - fontWidth) * 0.5F)), CInt(pos.Y) + CInt(16 * size / 64)), textColor, 0.0F, Vector2.Zero, 1.25F * CSng(size / 64), SpriteEffects.None, 0.0F)
 
         End Sub
 
@@ -874,8 +874,8 @@
             Core.SpriteBatch.Draw(s._texture, New Rectangle(CInt(pos.X) + Size, CInt(pos.Y), Size * ButtonWidth, Size), New Rectangle(32, 16, 16, 16), c)
             Core.SpriteBatch.Draw(s._texture, New Rectangle(CInt(pos.X) + Size * (ButtonWidth + 1), CInt(pos.Y), Size, Size), New Rectangle(16, 16, 16, 16), c, 0.0F, Vector2.Zero, SpriteEffects.FlipHorizontally, 0.0F)
 
-            Dim fontWidth As Integer = CInt(FontManager.MainFont.MeasureString(Text).X * 1.25 * (Size / 64.0F))
-            Core.SpriteBatch.DrawString(FontManager.MainFont, Text, New Vector2(CInt((pos.X + (Size * (2 + ButtonWidth) - fontWidth) * 0.5F)), CInt(pos.Y) + CInt(16 * Size / 64)), New Color(0, 0, 0, CInt(255 * s._interfaceFade * s._pageFade)), 0.0F, Vector2.Zero, 1.25F * CSng(Size / 64), SpriteEffects.None, 0.0F)
+            Dim fontWidth As Integer = CInt(FontManager.MainFontWhite.MeasureString(Text).X * 1.25 * (Size / 64.0F))
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Text, New Vector2(CInt((pos.X + (Size * (2 + ButtonWidth) - fontWidth) * 0.5F)), CInt(pos.Y) + CInt(16 * Size / 64)), New Color(0, 0, 0, CInt(255 * s._interfaceFade * s._pageFade)), 0.0F, Vector2.Zero, 1.25F * CSng(Size / 64), SpriteEffects.None, 0.0F)
         End Sub
 
         Public Overrides Sub Update(ByRef s As NewOptionScreen)

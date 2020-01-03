@@ -38,7 +38,7 @@
             Next
 
             If Me.IsCurrentScreen() = True Then
-                Core.SpriteBatch.DrawString(FontManager.InGameFont, "Setup", New Vector2(132, 100), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Setup", New Vector2(132, 100), Color.White)
                 Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\GTS"), New Rectangle(CInt(Core.windowSize.Width / 2 - 104), CInt(32), 208, 96), New Rectangle(304, 0, 208, 96), Color.White)
             End If
 
@@ -89,10 +89,10 @@
                         Core.SpriteBatch.Draw(D.Pokemon.GetTexture(True), New Rectangle(500, 164, 128, 128), Color.White)
 
                         If D.Pokemon.GetDisplayName() <> D.Pokemon.OriginalName Then
-                            Core.SpriteBatch.DrawString(FontManager.MainFont, D.Pokemon.GetDisplayName(), New Vector2(630, 190), Color.Black)
-                            Core.SpriteBatch.DrawString(FontManager.MainFont, "/" & D.Pokemon.OriginalName, New Vector2(640, 220), Color.Black)
+                            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, D.Pokemon.GetDisplayName(), New Vector2(630, 190), Color.White)
+                            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "/" & D.Pokemon.OriginalName, New Vector2(640, 220), Color.White)
                         Else
-                            Core.SpriteBatch.DrawString(FontManager.MainFont, D.Pokemon.GetDisplayName(), New Vector2(630, 205), Color.Black)
+                            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, D.Pokemon.GetDisplayName(), New Vector2(630, 205), Color.White)
                         End If
 
                         Dim ItemString As String = "None"
@@ -116,10 +116,10 @@
                         Core.SpriteBatch.Draw(p.GetTexture(True), New Rectangle(800, 164, 128, 128), Color.White)
 
                         If D.Pokemon.GetDisplayName() <> p.OriginalName Then
-                            Core.SpriteBatch.DrawString(FontManager.MainFont, p.GetDisplayName(), New Vector2(930, 190), Color.Black)
-                            Core.SpriteBatch.DrawString(FontManager.MainFont, "/" & p.OriginalName, New Vector2(940, 220), Color.Black)
+                            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, p.GetDisplayName(), New Vector2(930, 190), Color.White)
+                            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "/" & p.OriginalName, New Vector2(940, 220), Color.White)
                         Else
-                            Core.SpriteBatch.DrawString(FontManager.MainFont, p.GetDisplayName(), New Vector2(930, 205), Color.Black)
+                            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, p.GetDisplayName(), New Vector2(930, 205), Color.White)
                         End If
 
                         Core.SpriteBatch.DrawString(FontManager.MiniFont, "Request:" & Environment.NewLine & Environment.NewLine &
@@ -419,9 +419,9 @@
                 If Uploading = True Then
                     Canvas.DrawRectangle(New Rectangle(CInt(Core.windowSize.Width / 2 - 200), 250, 400, 200), New Color(255, 255, 255, 150))
 
-                    Core.SpriteBatch.DrawString(FontManager.MainFont, "Uploading" & LoadingDots.Dots, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString("Uploading").X / 2), 300), Color.Black)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Uploading" & LoadingDots.Dots, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString("Uploading").X / 2), 300), Color.White)
                     If AssignedTradeID = True Then
-                        Core.SpriteBatch.DrawString(FontManager.MainFont, "Transaction ID: " & NewTradeID, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString("Transaction ID: " & NewTradeID).X / 2), 370), Color.Black)
+                        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Transaction ID: " & NewTradeID, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString("Transaction ID: " & NewTradeID).X / 2), 370), Color.White)
                     End If
 
                     Exit Sub
@@ -434,10 +434,10 @@
                     Core.SpriteBatch.Draw(D.Pokemon.GetTexture(True), New Rectangle(50, 120, 128, 128), Color.White)
 
                     If D.Pokemon.GetDisplayName() <> D.Pokemon.OriginalName Then
-                        Core.SpriteBatch.DrawString(FontManager.MainFont, D.Pokemon.GetDisplayName(), New Vector2(180, 146), Color.Black)
-                        Core.SpriteBatch.DrawString(FontManager.MainFont, "/" & D.Pokemon.OriginalName, New Vector2(190, 176), Color.Black)
+                        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, D.Pokemon.GetDisplayName(), New Vector2(180, 146), Color.White)
+                        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "/" & D.Pokemon.OriginalName, New Vector2(190, 176), Color.White)
                     Else
-                        Core.SpriteBatch.DrawString(FontManager.MainFont, D.Pokemon.GetDisplayName(), New Vector2(180, 161), Color.Black)
+                        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, D.Pokemon.GetDisplayName(), New Vector2(180, 161), Color.White)
                     End If
 
                     Dim ItemString As String = "None"
@@ -461,7 +461,7 @@
                     Core.SpriteBatch.DrawString(FontManager.MiniFont, "Transaction ID: " & D.TradeID, New Vector2(925, 102), Color.Black)
                 End If
 
-                Core.SpriteBatch.DrawString(FontManager.MainFont, "Request:", New Vector2(420, 140), Color.Black)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Request:", New Vector2(420, 140), Color.White)
 
                 If StringHelper.IsNumeric(D.RequestID) = True Then
                     DrawFilter(New Vector2(420, 200), 4, "Pokémon:", Pokemon.GetPokemonByID(CInt(D.RequestID)).GetDisplayName() & " (" & D.RequestID & ")")
@@ -491,7 +491,7 @@
                         Dim p As Pokemon = TempPokemon
 
                         Core.SpriteBatch.Draw(p.GetTexture(True), New Rectangle(800, 120, 128, 128), Color.White)
-                        Core.SpriteBatch.DrawString(FontManager.MainFont, p.OriginalName, New Vector2(180 + 750, 176), Color.Black)
+                        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, p.OriginalName, New Vector2(180 + 750, 176), Color.White)
 
                         'Stars:
                         GTSMainScreen.DrawStars(p.TradeValue, New Vector2(930, 222))
@@ -716,12 +716,12 @@
                             Core.SetScreen(New SelectFriendScreen(Me))
                         End If
                         If New Rectangle(100, 300, 32 * 5 + 64, 32).Contains(MouseHandler.MousePosition) = True Then
-                            Dim selScreen = New PartyScreen(Me, Item.GetItemByID(5), AddressOf ChosenPokemon, "Choose Pokémon for Trade", True, True, False) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = True}
+                            Dim selScreen = New PartyScreenV2(Me, Item.GetItemByID(5), AddressOf ChosenPokemon, "Choose Pokémon for Trade", True, True, False) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = True}
                             AddHandler selScreen.SelectedObject, AddressOf ChosenPokemonHandler
 
                             Core.SetScreen(selScreen)
-                            CType(Core.CurrentScreen, PartyScreen).CanChooseHMPokemon = False
-                            CType(Core.CurrentScreen, PartyScreen).CanChooseFusedPokemon = False
+                            CType(Core.CurrentScreen, PartyScreenV2).CanChooseHMPokemon = False
+                            CType(Core.CurrentScreen, PartyScreenV2).CanChooseFusedPokemon = False
                         End If
                         If New Rectangle(700, 540, 32 * 3 + 64, 32).Contains(MouseHandler.MousePosition) = True Then
                             Me.GTSSetupScreen.loaded = False

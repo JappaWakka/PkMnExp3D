@@ -54,9 +54,9 @@
 
         Canvas.DrawRectangle(New Rectangle(0, 75, Core.windowSize.Width, 680 - 240), New Color(0, 0, 0, 128))
 
-        Core.SpriteBatch.DrawString(FontManager.MainFont, "Add a server", New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString("Add a server").X), 14), Color.White, 0.0F, New Vector2(0), 2.0F, SpriteEffects.None, 0.0F)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Add a server", New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString("Add a server").X), 14), Color.White, 0.0F, New Vector2(0), 2.0F, SpriteEffects.None, 0.0F)
 
-        Core.SpriteBatch.DrawString(FontManager.MainFont, "Name:", New Vector2(CSng(Core.windowSize.Width / 2 - 300), 140), Color.White)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Name:", New Vector2(CSng(Core.windowSize.Width / 2 - 300), 140), Color.White)
         Canvas.DrawRectangle(New Rectangle(CInt(Core.windowSize.Width / 2 - 300), 170, 600, 40), New Color(40, 40, 40, 255))
 
         If Index = 0 Then
@@ -72,9 +72,9 @@
                 t = "Press Y to edit."
             End If
         End If
-        Core.SpriteBatch.DrawString(FontManager.MainFont, t, New Vector2(CSng(Core.windowSize.Width / 2 - 294), 175), Color.White)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(CSng(Core.windowSize.Width / 2 - 294), 175), Color.White)
 
-        Core.SpriteBatch.DrawString(FontManager.MainFont, "Address:", New Vector2(CSng(Core.windowSize.Width / 2 - 300), 270), Color.White)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Address:", New Vector2(CSng(Core.windowSize.Width / 2 - 300), 270), Color.White)
         Canvas.DrawRectangle(New Rectangle(CInt(Core.windowSize.Width / 2 - 300), 300, 600, 40), New Color(40, 40, 40, 255))
 
         If Index = 1 Then
@@ -90,7 +90,7 @@
                 t = "Press Y to edit."
             End If
         End If
-        Core.SpriteBatch.DrawString(FontManager.MainFont, t, New Vector2(CSng(Core.windowSize.Width / 2 - 294), 305), Color.White)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(CSng(Core.windowSize.Width / 2 - 294), 305), Color.White)
 
         Dim CanvasTexture As Texture2D
         CanvasTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 0, 48, 48), "")
@@ -111,20 +111,20 @@
             End If
 
             Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(Core.windowSize.Width / 2) - 180 + i * 192, 544, 128, 64))
-            Core.SpriteBatch.DrawString(FontManager.InGameFont, Text, New Vector2(CInt(Core.windowSize.Width / 2) - 162 + i * 192, 574), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Text, New Vector2(CInt(Core.windowSize.Width / 2) - 162 + i * 192, 574), Color.White)
         Next
 
         If IsValid() <> "" Then
             Canvas.DrawRectangle(New Rectangle(CInt(Core.windowSize.Width / 2 - 300), 430, 600, 40), New Color(40, 40, 40, 255))
             Canvas.DrawBorder(3, New Rectangle(CInt(Core.windowSize.Width / 2 - 300), 430, 600, 40), New Color(200, 200, 200, 255))
-            Core.SpriteBatch.DrawString(FontManager.MainFont, IsValid(), New Vector2(CInt(Core.windowSize.Width / 2 - 294), 436), New Color(180, 0, 0, 255))
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, IsValid(), New Vector2(CInt(Core.windowSize.Width / 2 - 294), 436), New Color(180, 0, 0, 255))
         End If
 
         Dim d As New Dictionary(Of Buttons, String)
-        d.Add(Input.Buttons.A, "Accept")
-        d.Add(Input.Buttons.B, "Back")
-        d.Add(Input.Buttons.Y, "Edit")
-        d.Add(Input.Buttons.X, "Clear")
+        d.Add(Input.Buttons.A, Localization.GetString("controls_accept","Accept"))
+        d.Add(Input.Buttons.B, Localization.GetString("game_interaction_back", "Back"))
+        d.Add(Input.Buttons.Y, Localization.GetString("game_interaction_edit", "Edit"))
+        d.Add(Input.Buttons.X, Localization.GetString("game_interaction_clear", "Clear"))
         Me.DrawGamePadControls(d)
     End Sub
 

@@ -5,7 +5,7 @@ Namespace Items.KeyItems
 
         Inherits KeyItem
 
-        Public Overrides ReadOnly Property Description As String = "A folding Bicycle that enables much faster movement than the Running Shoes."
+        Public Overrides ReadOnly Property Description As String = Localization.GetString("item_desc_6")
 
         Public Sub New()
             _textureRectangle = New Rectangle(120, 0, 24, 24)
@@ -20,7 +20,7 @@ Namespace Items.KeyItems
                     Core.SetScreen(Core.CurrentScreen.PreScreen)
                 End If
 
-                If Screen.Level.IsRadioOn = False OrElse GameJolt.PokegearScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = False Then
+                If Screen.Level.IsRadioOn = False OrElse GameJolt.PhoneScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = False Then
                     MusicManager.Play(Screen.Level.MusicLoop)
                 End If
             Else
@@ -40,12 +40,12 @@ Namespace Items.KeyItems
                         BikeSkin = Core.Player.Skin & "_Bike"
                         Screen.Level.OwnPlayer.SetTexture(BikeSkin, False)
                     End If
-                    If GameModeManager.ContentFileExists("Sounds\Bicycle.wav") Then
+                    If GameModeManager.ContentFileExists("Sounds\Bicycle") Then
                         SoundManager.PlaySound("bicycle")
                     End If
-                    PlayerStatistics.Track("Bike used", 1)
+                    PlayerStatistics.Track("Bicycle used", 1)
 
-                        If Screen.Level.IsRadioOn = False OrElse GameJolt.PokegearScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = False Then
+                    If Screen.Level.IsRadioOn = False OrElse GameJolt.PhoneScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = False Then
                             MusicManager.Play("bikesong", True)
                         End If
                     Else

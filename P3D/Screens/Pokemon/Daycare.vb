@@ -585,7 +585,7 @@
             If Not c(0) Is Nothing And Not c(1) Is Nothing Then
                 Dim callID As String = CStr(c(0))
 
-                GameJolt.PokegearScreen.CallID(callID, True, False)
+                GameJolt.PhoneScreen.CallID(callID, True, False)
             Else
                 Logger.Debug("Cannot initialize call for Daycare ID " & daycareID.ToString() & ".")
             End If

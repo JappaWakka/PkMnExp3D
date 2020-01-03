@@ -73,7 +73,7 @@ Public Class Level
 
     ' Radio:
     Private _isRadioOn As Boolean = False
-    Private _selectedRadioStation As GameJolt.PokegearScreen.RadioStation = Nothing
+    Private _selectedRadioStation As GameJolt.PhoneScreen.RadioStation = Nothing
     Private _radioChannels As New List(Of Decimal)
 
     Private _offsetTimer As New Timers.Timer()
@@ -586,11 +586,11 @@ Public Class Level
     ''' <summary>
     ''' The currently selected Radio station. If possible, this will replace the Music Loop.
     ''' </summary>
-    Public Property SelectedRadioStation() As GameJolt.PokegearScreen.RadioStation
+    Public Property SelectedRadioStation() As GameJolt.PhoneScreen.RadioStation
         Get
             Return Me._selectedRadioStation
         End Get
-        Set(value As GameJolt.PokegearScreen.RadioStation)
+        Set(value As GameJolt.PhoneScreen.RadioStation)
             Me._selectedRadioStation = value
         End Set
     End Property
@@ -736,7 +736,7 @@ Public Class Level
     ''' Loads a level from a levelfile.
     ''' </summary>
     ''' <param name="Levelpath">The path to load the level from. Start with "|" to prevent loading a levelfile.</param>
-    Public Sub Load(ByVal Levelpath As String)
+    Public Sub Load(ByVal Levelpath As String, Optional ByVal IsMainMenu As Boolean = False)
 
         ' copy all changed files
         If GameController.IS_DEBUG_ACTIVE Then
@@ -748,7 +748,7 @@ Public Class Level
         params.AddRange({Levelpath, False, New Vector3(0, 0, 0), 0, New List(Of String)})
 
         ' Create the world and load the level:
-        World = New World(0, 0)
+        World = New World(0, 0, CInt(IsMainMenu))
 
         If Levelpath.StartsWith("|") = False Then
             Me.StopOffsetMapUpdate()
@@ -759,7 +759,7 @@ Public Class Level
         End If
 
         ' Create own player entity and OverworldPokémon entity and add them to the entity enumeration:
-        OwnPlayer = New OwnPlayer(0, 0, 0, {TextureManager.DefaultTexture}, Core.Player.Skin, 0, 0, "", "Gold", 0)
+        OwnPlayer = New OwnPlayer(0, 0, 0, {TextureManager.DefaultTexture}, Core.Player.Skin, 0, 0, "", "J. Akira", 0)
         OverworldPokemon = New OverworldPokemon(Screen.Camera.Position.X, Screen.Camera.Position.Y, Screen.Camera.Position.Z + 1)
         OverworldPokemon.ChangeRotation()
         Entities.AddRange({OwnPlayer, OverworldPokemon})
@@ -1029,7 +1029,7 @@ Public Class Level
             Me._routeSign.Setup(MapName)
 
             ' Play the correct music track:
-            If IsRadioOn = True AndAlso GameJolt.PokegearScreen.StationCanPlay(Me.SelectedRadioStation) = True Then
+            If IsRadioOn = True AndAlso GameJolt.PhoneScreen.StationCanPlay(Me.SelectedRadioStation) = True Then
                 MusicManager.Play(SelectedRadioStation.Music, True)
             Else
                 IsRadioOn = False

@@ -420,8 +420,8 @@ endsub:
     Public EnvironmentType As EnvironmentTypes = EnvironmentTypes.Outside
     Public UseLightning As Boolean = False
 
-    Public Sub New(ByVal EnvironmentType As Integer, ByVal WeatherType As Integer)
-        Initialize(EnvironmentType, WeatherType)
+    Public Sub New(ByVal EnvironmentType As Integer, ByVal WeatherType As Integer, Optional ByVal IsMainMenu As Integer = 0)
+        Initialize(EnvironmentType, WeatherType, IsMainMenu)
     End Sub
 
     Public Shared Function GetWeatherFromWeatherType(ByVal WeatherType As Integer) As Weathers
@@ -487,7 +487,8 @@ endsub:
         End Select
     End Function
 
-    Public Sub Initialize(ByVal EnvironmentType As Integer, ByVal WeatherType As Integer)
+    Public Sub Initialize(ByVal EnvironmentType As Integer, ByVal WeatherType As Integer, Optional ByVal MainMenu As Integer = 0)
+        IsMainMenu = CBool(MainMenu)
         If _regionWeatherSet = False Then
             World._regionWeather = World.GetRegionWeather(World.CurrentSeason)
             World._regionWeatherSet = True

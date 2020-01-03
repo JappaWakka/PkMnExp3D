@@ -47,13 +47,13 @@
 
             DrawMain()
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Version " & GTSMainScreen.GTSVersion, New Vector2(4, Core.windowSize.Height - 1 - FontManager.MiniFont.MeasureString("Version " & GTSMainScreen.GTSVersion).Y), Color.DarkGray)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Version " & GTSMainScreen.GTSVersion, New Vector2(4, Core.windowSize.Height - 1 - FontManager.MainFontWhite.MeasureString("Version " & GTSMainScreen.GTSVersion).Y), Color.DarkGray)
         End Sub
 
         Private Sub DrawFilters()
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Area: " & Me.AreaFilter, New Vector2(280, 4), Color.White)
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Offer:", New Vector2(280, 26), Color.White)
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Request:", New Vector2(792, 26), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Area: " & Me.AreaFilter, New Vector2(280, 4), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Offer:", New Vector2(280, 26), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Request:", New Vector2(792, 26), Color.White)
 
             DrawFilter(New Vector2(280, 48), 4, "Pokémon:", OfferFilter)
             DrawFilter(New Vector2(472, 48), 3, "Level:", LevelFilter)
@@ -72,8 +72,8 @@
             Next
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\GTS"), New Rectangle(CInt(Position.X + Size * 32), CInt(Position.Y), 32, 64), New Rectangle(TexX + 16, 112, 16, 32), Color.White)
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, Label, New Vector2(Position.X + 4, Position.Y + 4), New Color(100, 100, 100))
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, Text, New Vector2(Position.X + 4, Position.Y + 32), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Label, New Vector2(Position.X + 4, Position.Y + 4), New Color(100, 100, 100))
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Text, New Vector2(Position.X + 4, Position.Y + 32), Color.White)
         End Sub
 
         Private Sub DrawButton(ByVal Position As Vector2, ByVal Text As String, ByVal Size As Integer)
@@ -95,14 +95,13 @@
             Core.SpriteBatch.Draw(t, New Rectangle(CInt(Position.X + Size * 32 + 32), CInt(Position.Y), 32, 32), New Rectangle(32, Y, 16, 16), Color.White)
 
             Dim sizeX As Integer = Size * 32 + 64
-            Dim TextSizeX As Integer = CInt(FontManager.MiniFont.MeasureString(Text).X)
+            Dim TextSizeX As Integer = CInt(FontManager.MainFontBlack.MeasureString(Text).X)
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, Text, New Vector2(CSng(Position.X + sizeX / 2 - TextSizeX / 2 - 2), Position.Y + 4), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Text, New Vector2(CSng(Position.X + sizeX / 2 - TextSizeX / 2 - 2), Position.Y + 4), Color.White)
         End Sub
 
         Private Sub DrawStringC(ByVal t As String, ByVal p As Vector2)
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, t, New Vector2(p.X + 2, p.Y + 2), Color.Black)
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, t, p, Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, p, Color.White)
         End Sub
 
         Dim TempPokemon As Pokemon = Nothing
@@ -140,8 +139,8 @@
                                 Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\GTS"), New Rectangle(100, Y, 96, 96), New Rectangle(320, 96, 48, 48), Color.White)
                                 Core.SpriteBatch.Draw(D.Pokemon.GetMenuTexture(), New Rectangle(116, Y + 16, 64, 64), C)
 
-                                Core.SpriteBatch.DrawString(FontManager.MiniFont, D.Pokemon.GetDisplayName(), New Vector2(198, Y + 37), Color.Black)
-                                Core.SpriteBatch.DrawString(FontManager.MiniFont, "Lv. " & D.Pokemon.Level, New Vector2(360, Y + 37), Color.Black)
+                                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, D.Pokemon.GetDisplayName(), New Vector2(198, Y + 37), Color.White)
+                                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Lv. " & D.Pokemon.Level, New Vector2(360, Y + 37), Color.White)
                             End If
                         Next
                     End If
@@ -151,17 +150,17 @@
                         Canvas.DrawRectangle(New Rectangle(500, 164, 600, 500), New Color(255, 255, 255, 150))
 
                         If D.TradeID <> "" Then
-                            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Transaction ID: " & D.TradeID, New Vector2(510, 166), Color.Black)
+                            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Transaction ID: " & D.TradeID, New Vector2(510, 166), Color.White)
                         End If
 
                         'Pokemon image/data:
                         Core.SpriteBatch.Draw(D.Pokemon.GetTexture(True), New Rectangle(500, 164, 128, 128), Color.White)
 
                         If D.Pokemon.GetDisplayName() <> D.Pokemon.OriginalName Then
-                            Core.SpriteBatch.DrawString(FontManager.MainFont, D.Pokemon.GetDisplayName(), New Vector2(630, 190), Color.Black)
-                            Core.SpriteBatch.DrawString(FontManager.MainFont, "/" & D.Pokemon.OriginalName, New Vector2(640, 220), Color.Black)
+                            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, D.Pokemon.GetDisplayName(), New Vector2(630, 190), Color.White)
+                            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "/" & D.Pokemon.OriginalName, New Vector2(640, 220), Color.White)
                         Else
-                            Core.SpriteBatch.DrawString(FontManager.MainFont, D.Pokemon.GetDisplayName(), New Vector2(630, 205), Color.Black)
+                            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, D.Pokemon.GetDisplayName(), New Vector2(630, 205), Color.White)
                         End If
 
                         Dim ItemString As String = "None"
@@ -184,10 +183,10 @@
                         Core.SpriteBatch.Draw(p.GetTexture(True), New Rectangle(800, 164, 128, 128), Color.White)
 
                         If D.Pokemon.GetDisplayName() <> p.OriginalName Then
-                            Core.SpriteBatch.DrawString(FontManager.MainFont, p.GetDisplayName(), New Vector2(930, 190), Color.Black)
-                            Core.SpriteBatch.DrawString(FontManager.MainFont, "/" & p.OriginalName, New Vector2(940, 220), Color.Black)
+                            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, p.GetDisplayName(), New Vector2(930, 190), Color.White)
+                            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "/" & p.OriginalName, New Vector2(940, 220), Color.White)
                         Else
-                            Core.SpriteBatch.DrawString(FontManager.MainFont, p.GetDisplayName(), New Vector2(930, 205), Color.Black)
+                            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, p.GetDisplayName(), New Vector2(930, 205), Color.White)
                         End If
 
                         Core.SpriteBatch.DrawString(FontManager.MiniFont, "Request:" & Environment.NewLine & Environment.NewLine &

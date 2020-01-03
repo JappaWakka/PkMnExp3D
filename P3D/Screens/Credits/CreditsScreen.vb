@@ -188,18 +188,18 @@ Public Class CreditsScreen
         Public Sub Draw()
             Dim alpha As Byte = GetAlphaValue()
 
-            Dim posTitle As Vector2 = New Vector2(CInt(Core.windowSize.Width / 2 - FontManager.InGameFont.MeasureString(_title).X / 2), CInt(100))
+            Dim posTitle As Vector2 = New Vector2(CInt(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString(_title).X / 2), CInt(100))
 
-            Core.SpriteBatch.DrawString(FontManager.InGameFont, Me._title, New Vector2(posTitle.X + 2, posTitle.Y + 2), AColor(Me._color2))
-            Core.SpriteBatch.DrawString(FontManager.InGameFont, Me._title, posTitle, AColor(Me._color))
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Me._title, New Vector2(posTitle.X + 2, posTitle.Y + 2), AColor(Me._color2))
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Me._title, posTitle, AColor(Me._color))
 
             For i = 0 To _rows.Count - 1
                 Dim line As String = _rows(i)
 
-                Dim posLine As Vector2 = New Vector2(CInt(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString(line).X / 2), CInt(200) + i * 35)
+                Dim posLine As Vector2 = New Vector2(CInt(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString(line).X / 2), CInt(200) + i * 35)
 
-                Core.SpriteBatch.DrawString(FontManager.MainFont, line, New Vector2(posLine.X + 2, posLine.Y + 2), AColor(Me._color2))
-                Core.SpriteBatch.DrawString(FontManager.MainFont, line, posLine, AColor(Me._color))
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, line, New Vector2(posLine.X + 2, posLine.Y + 2), AColor(Me._color2))
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, line, posLine, AColor(Me._color))
             Next
         End Sub
 

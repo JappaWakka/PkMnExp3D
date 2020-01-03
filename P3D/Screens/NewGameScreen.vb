@@ -2,9 +2,10 @@
 
     Inherits Screen
 
-    Dim startSkins() As String = {"Ethan", "Lyra", "Nate", "Rosa", "Hilbert", "Hilda"}
-    Dim skinNames() As String = {"Ethan", "Lyra", "Nate", "Rosa", "Hilbert", "Hilda"}
-    Dim backColors() As Color = {New Color(248, 176, 32), New Color(248, 216, 88), New Color(56, 88, 200), New Color(216, 96, 112), New Color(56, 88, 152), New Color(239, 90, 156)}
+    Dim skinFiles() As String = {"J_Akira", "Rande", "Ethan_GBA", "Lyra_GBA"}
+    Dim skinNames() As String = {"J. Akira", "Rande", "Ethan (GBA)", "Lyra (GBA)"}
+    Dim skinGenders() As String = {"Boy", "Girl", "Boy", "Girl"}
+    Dim backColors() As Color = {New Color(248, 176, 32), New Color(248, 216, 88), New Color(56, 88, 200), New Color(216, 96, 112)}
 
     Public Index As Integer = 0
     Dim pokeIndex As Integer = 0
@@ -35,9 +36,10 @@
 
     Dim pokemonRange() As Integer = {1, 252}
     Dim introMusic As String = "welcome"
-    Dim startMap As String = "yourroom.dat"
-    Dim startPosition As Vector3 = New Vector3(1, 0.1F, 3)
-    Dim startLocation As String = "Your Room"
+    'Dim startMap As String = "yourroom.dat"
+    Dim startMap As String = "Corna\Cities\BreezeTown\Main.dat"
+    Dim startPosition As Vector3 = New Vector3(9, 0.1F, 10)
+    Dim startLocation As String = "Breeze Town"
     Dim startYaw As Single = MathHelper.PiOver2
 
     Dim Dialogues As New List(Of String)
@@ -52,8 +54,8 @@
         Localization.ReloadGameModeTokens()
 
         If GameModeManager.ActiveGameMode.IsDefaultGamemode = False Then
-            MusicManager.LoadMusic(True)
-            SoundManager.LoadSounds(True)
+            'MusicManager.LoadMusic(True)
+            'SoundManager.LoadSounds(True)
         End If
         SmashRock.Load()
         Badge.Load()
@@ -78,16 +80,17 @@
         TextBox.Showing = False
         Me.Index = 0
         TextBox.reDelay = 0
-        skinTexture = TextureManager.GetTexture(TextureManager.GetTexture("Textures\NPC\" & startSkins(SkinIndex)), New Rectangle(0, 64, 32, 32))
+        skinTexture = TextureManager.GetTexture(TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins" & skinFiles(SkinIndex)), New Rectangle(0, 64, 32, 32))
 
-        MusicManager.PlayMusic("nomusic")
+        MusicManager.Play("nomusic")
     End Sub
 
     Private Sub LoadIntroValues()
         Dim GameMode As GameMode = GameModeManager.ActiveGameMode
 
         Me.skinNames = GameMode.SkinNames.ToArray()
-        Me.startSkins = GameMode.SkinFiles.ToArray()
+        Me.skinFiles = GameMode.SkinFiles.ToArray()
+        Me.skinGenders = GameMode.SkinGenders.ToArray()
         Me.backColors = GameMode.SkinColors.ToArray()
 
         Me.pokemonRange = GameMode.PokemonRange
@@ -107,7 +110,7 @@
         End If
         If Me.Dialogues.Count < 3 Then
             Me.Dialogues.Clear()
-            Me.Dialogues.AddRange({Localization.GetString("new_game_oak_1"), Localization.GetString("new_game_oak_2"), Localization.GetString("new_game_oak_3")})
+            Me.Dialogues.AddRange({Localization.GetString("new_game_intro_1"), Localization.GetString("new_game_intro_2"), Localization.GetString("new_game_intro_3")})
         End If
     End Sub
 
@@ -121,7 +124,7 @@
         If ProfAlpha < 255 And Index = 0 Then
             ProfAlpha += 2
             If ProfAlpha >= 255 Then
-                MusicManager.PlayMusic(Me.introMusic, True, 0.0F, 0.0F)
+                MusicManager.Play(Me.introMusic, True, 0.0F)
             End If
         ElseIf ProfAlpha >= 255 Or Index > 0 Then
             TextBox.Update()
@@ -228,7 +231,7 @@
 
         Select Case Index
             Case 5
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, Localization.GetString("new_game_your_name") & ":", New Vector2(TextboxPosition.X, TextboxPosition.Y - 24), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MiniFont, Localization.GetString("new_game_your_name") & ": ", New Vector2(TextboxPosition.X, TextboxPosition.Y - 24), Color.White)
                 DrawTextBox()
 
                 If enterCorrectName = True Then
@@ -237,9 +240,9 @@
             Case 4
                 Canvas.DrawRectangle(New Rectangle(CInt(TextboxPosition.X - 5), CInt(TextboxPosition.Y - 24), 138, 42), New Color(0, 0, 0, 80))
 
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, Localization.GetString("new_game_choose_skin") & ":" & vbNewLine & skinNames(SkinIndex), New Vector2(TextboxPosition.X, TextboxPosition.Y - 24), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MiniFont, Localization.GetString("new_game_choose_skin") & ":" & Environment.NewLine & skinNames(SkinIndex) & Environment.NewLine & skinGenders(SkinIndex), New Vector2(TextboxPosition.X, TextboxPosition.Y - 24), Color.White)
 
-                Canvas.DrawScrollBar(New Vector2(TextboxPosition.X, TextboxPosition.Y + 48), startSkins.Count, 1, SkinIndex, New Size(128, 4), True, TextureManager.GetTexture(TextureManager.GetTexture("GUI\Menus\Menu"), New Rectangle(112, 12, 1, 1)), TextureManager.GetTexture(TextureManager.GetTexture("GUI\Menus\Menu"), New Rectangle(113, 12, 1, 1)))
+                Canvas.DrawScrollBar(New Vector2(TextboxPosition.X, TextboxPosition.Y + 48), skinFiles.Count, 1, SkinIndex, New Size(128, 4), True, TextureManager.GetTexture(TextureManager.GetTexture("GUI\Menus\Menu"), New Rectangle(112, 12, 1, 1)), TextureManager.GetTexture(TextureManager.GetTexture("GUI\Menus\Menu"), New Rectangle(113, 12, 1, 1)))
         End Select
     End Sub
 
@@ -254,7 +257,7 @@
         Core.SpriteBatch.DrawString(FontManager.MiniFont, t, TextboxPosition(), Color.Black)
 
         Dim l As New Dictionary(Of Buttons, String)
-        l.Add(Buttons.A, "Accept")
+        l.Add(Buttons.A, Localization.GetString("controls_accept","Accept"))
         l.Add(Buttons.X, "Edit name")
         Me.DrawGamePadControls(l)
     End Sub
@@ -346,10 +349,10 @@
             SkinIndex -= 1
         End If
 
-        SkinIndex = CInt(MathHelper.Clamp(SkinIndex, 0, startSkins.Count - 1))
+        SkinIndex = CInt(MathHelper.Clamp(SkinIndex, 0, skinFiles.Count - 1))
 
         If sIndex <> SkinIndex Then
-            skinTexture = TextureManager.GetTexture(TextureManager.GetTexture("Textures\NPC\" & startSkins(SkinIndex)), New Rectangle(0, 64, 32, 32))
+            skinTexture = TextureManager.GetTexture(TextureManager.GetTexture("Textures\NPC\" & skinFiles(SkinIndex)), New Rectangle(0, 64, 32, 32))
         End If
 
         If Controls.Accept() = True Then
@@ -361,7 +364,7 @@
         CanMuteMusic = False
 
         If ControllerHandler.ButtonPressed(Buttons.X) = True Then
-            Core.SetScreen(New InputScreen(Core.CurrentScreen, "Player", InputScreen.InputModes.Name, Me.CurrentText, 14, {TextureManager.GetTexture(TextureManager.GetTexture("Textures\NPC\" & startSkins(SkinIndex)),New Rectangle(0, 64, 32, 32))}.ToList(), AddressOf Me.ConfirmInput))
+            Core.SetScreen(New InputScreen(Core.CurrentScreen, "Player", InputScreen.InputModes.Name, Me.CurrentText, 14, {TextureManager.GetTexture(TextureManager.GetTexture("Textures\NPC\" & skinFiles(SkinIndex)), New Rectangle(0, 64, 32, 32))}.ToList(), AddressOf Me.ConfirmInput))
         Else
             KeyBindings.GetNameInput(Me.CurrentText, 14)
 
@@ -438,7 +441,7 @@
         System.IO.File.WriteAllText(savePath & folderPath & "\RoamingPokemon.dat", "")
         System.IO.File.WriteAllText(savePath & folderPath & "\Statistics.dat", "")
 
-        Core.Player.IsGamejoltSave = False
+        Core.Player.IsGameJoltSave = False
         Core.Player.LoadGame(folderPath)
         Core.SetScreen(New TransitionScreen(Me, New OverworldScreen(), Color.Black, False, 5))
     End Sub
@@ -449,82 +452,82 @@
             ot = "0" & ot
         End While
 
-        Dim s As String = "Name|" & Name & vbNewLine & _
-            "Position|" & Me.startPosition.X.ToString().Replace(GameController.DecSeparator, ".") & "," & Me.startPosition.Y.ToString().Replace(GameController.DecSeparator, ".") & "," & Me.startPosition.Z.ToString().Replace(GameController.DecSeparator, ".") & vbNewLine & _
-            "MapFile|" & Me.startMap & vbNewLine & _
-            "Rotation|" & Me.startYaw.ToString() & vbNewLine & _
-            "RivalName|???" & vbNewLine & _
-            "Money|3000" & vbNewLine & _
-            "Badges|0" & vbNewLine & _
-            "Gender|Male" & vbNewLine & _
-            "PlayTime|0,0,0" & vbNewLine & _
-            "OT|" & ot & vbNewLine & _
-            "Points|0" & vbNewLine & _
-            "hasPokedex|0" & vbNewLine & _
-            "hasPokegear|0" & vbNewLine & _
-            "freeCamera|1" & vbNewLine & _
-            "thirdPerson|0" & vbNewLine & _
-            "skin|" & startSkins(SkinIndex) & vbNewLine & _
-            "location|" & Me.startLocation & vbNewLine & _
-            "battleAnimations|2" & vbNewLine & _
-            "BoxAmount|5" & vbNewLine & _
-            "LastRestPlace|yourroom.dat" & vbNewLine & _
-            "LastRestPlacePosition|1,0.1,3" & vbNewLine & _
-            "DiagonalMovement|0" & vbNewLine & _
-            "RepelSteps|0" & vbNewLine & _
-            "LastSavePlace|yourroom.dat" & vbNewLine & _
-            "LastSavePlacePosition|1,0.1,3" & vbNewLine & _
-            "Difficulty|" & GameModeManager.GetGameRuleValue("Difficulty", "0") & vbNewLine & _
-            "BattleStyle|0" & vbNewLine & _
-            "saveCreated|" & GameController.GAMEDEVELOPMENTSTAGE & " " & GameController.GAMEVERSION & vbNewLine & _
-            "LastPokemonPosition|999,999,999" & vbNewLine & _
-            "DaycareSteps|0" & vbNewLine & _
-            "GameMode|" & GameModeManager.ActiveGameMode.DirectoryName & vbNewLine &
-            "PokeFiles|" & vbNewLine &
-            "VisitedMaps|yourroom.dat" & vbNewLine &
-            "TempSurfSkin|Hilbert" & vbNewLine &
-            "Surfing|0" & vbNewLine &
-            "ShowModels|1" & vbNewLine &
-            "GTSStars|4" & vbNewLine &
+        Dim s As String = "Name|" & Name & Environment.NewLine &
+            "Position|" & Me.startPosition.X.ToString().Replace(GameController.DecSeparator, ".") & "," & Me.startPosition.Y.ToString().Replace(GameController.DecSeparator, ".") & "," & Me.startPosition.Z.ToString().Replace(GameController.DecSeparator, ".") & Environment.NewLine &
+            "MapFile|" & Me.startMap & Environment.NewLine &
+            "Rotation|" & Me.startYaw.ToString() & Environment.NewLine &
+            "RivalName|???" & Environment.NewLine &
+            "Money|3000" & Environment.NewLine &
+            "Badges|0" & Environment.NewLine &
+            "Gender|Male" & Environment.NewLine &
+            "PlayTime|0,0,0" & Environment.NewLine &
+            "OT|" & ot & Environment.NewLine &
+            "Points|0" & Environment.NewLine &
+            "hasPokedex|0" & Environment.NewLine &
+            "hasPhone|0" & Environment.NewLine &
+            "freeCamera|1" & Environment.NewLine &
+            "thirdPerson|0" & Environment.NewLine &
+            "skin|" & skinFiles(SkinIndex) & Environment.NewLine &
+            "location|" & Me.startLocation & Environment.NewLine &
+            "battleAnimations|2" & Environment.NewLine &
+            "BoxAmount|5" & Environment.NewLine &
+            "LastRestPlace|yourroom.dat" & Environment.NewLine &
+            "LastRestPlacePosition|1,0.1,3" & Environment.NewLine &
+            "DiagonalMovement|0" & Environment.NewLine &
+            "RepelSteps|0" & Environment.NewLine &
+            "LastSavePlace|yourroom.dat" & Environment.NewLine &
+            "LastSavePlacePosition|1,0.1,3" & Environment.NewLine &
+            "Difficulty|" & GameModeManager.GetGameRuleValue("Difficulty", "0") & Environment.NewLine &
+            "BattleStyle|0" & Environment.NewLine &
+            "saveCreated|" & GameController.GAMEDEVELOPMENTSTAGE & " " & GameController.GAMEVERSION & Environment.NewLine &
+            "LastPokemonPosition|999,999,999" & Environment.NewLine &
+            "DaycareSteps|0" & Environment.NewLine &
+            "GameMode|" & GameModeManager.ActiveGameMode.DirectoryName & Environment.NewLine &
+            "PokeFiles|" & Environment.NewLine &
+            "VisitedMaps|yourroom.dat" & Environment.NewLine &
+            "TempSurfSkin|Hilbert" & Environment.NewLine &
+            "Surfing|0" & Environment.NewLine &
+            "ShowModels|1" & Environment.NewLine &
+            "GTSStars|4" & Environment.NewLine &
             "SandBoxMode|0"
 
         Return s
     End Function
 
     Public Shared Function GetOptionsData() As String
-        Dim s As String = "FOV|50" & vbNewLine & _
-            "TextSpeed|2" & vbNewLine & _
+        Dim s As String = "FOV|50" & Environment.NewLine &
+            "TextSpeed|2" & Environment.NewLine &
             "MouseSpeed|12"
 
         Return s
     End Function
 
     Public Shared Function GetBerryData() As String
-        Dim s As String = "{route29.dat|13,0,5|6|2|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{route29.dat|14,0,5|6|2|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{route29.dat|15,0,5|6|2|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{azalea.dat|9,0,3|0|2|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{azalea.dat|9,0,4|1|1|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{azalea.dat|9,0,5|0|2|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{route30.dat|7,0,41|10|1|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{route30.dat|14,0,5|2|1|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{route30.dat|15,0,5|6|2|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{route30.dat|16,0,5|2|1|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{routes\route35.dat|0,0,4|7|2|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{routes\route35.dat|1,0,4|8|2|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{route36.dat|37,0,7|0|1|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{route36.dat|38,0,7|4|1|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{route36.dat|39,0,7|3|2|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{route39.dat|8,0,2|9|1|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{route39.dat|8,0,3|6|1|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{route38.dat|13,0,12|16|2|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{route38.dat|14,0,12|23|1|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{route38.dat|15,0,12|16|2|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{routes\route43.dat|13,0,45|23|2|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{routes\route43.dat|13,0,46|24|2|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{routes\route43.dat|13,0,47|25|2|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{safarizone\main.dat|3,0,11|5|2|0|2012,9,21,4,0,0|1}" & vbNewLine &
-            "{safarizone\main.dat|4,0,11|0|2|0|2012,9,21,4,0,0|1}" & vbNewLine &
+        Dim s As String = "{route29.dat|13,0,5|6|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{route29.dat|14,0,5|6|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{route29.dat|15,0,5|6|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{azalea.dat|9,0,3|0|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{azalea.dat|9,0,4|1|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{azalea.dat|9,0,5|0|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{route30.dat|7,0,41|10|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{route30.dat|14,0,5|2|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{route30.dat|15,0,5|6|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{route30.dat|16,0,5|2|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{routes\route35.dat|0,0,4|7|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{routes\route35.dat|1,0,4|8|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{route36.dat|37,0,7|0|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{route36.dat|38,0,7|4|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{route36.dat|39,0,7|3|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{route39.dat|8,0,2|9|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{route39.dat|8,0,3|6|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{route38.dat|13,0,12|16|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{route38.dat|14,0,12|23|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{route38.dat|15,0,12|16|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{routes\route43.dat|13,0,45|23|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{routes\route43.dat|13,0,46|24|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{routes\route43.dat|13,0,47|25|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{safarizone\main.dat|3,0,11|5|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+            "{safarizone\main.dat|4,0,11|0|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
             "{safarizone\main.dat|5,0,11|6|3|0|2012,9,21,4,0,0|1}"
 
         Return s
@@ -533,17 +536,18 @@
     Private Function NameReaction(ByVal name As String) As String
         Dim WeirdNames() As String = {"derp", "karp"}
         Dim KnownNames() As String = {"ash", "gary", "misty", "brock", "tracey", "may", "max", "dawn", "iris", "cilan", "red", "blue", "green", "gold", "silver"}
-        Dim OwnNames() As String = {"oak", "samuel", "prof. oak", "prof oak"}
+        'MAKE THIS EDITABLE IN LOCALIZATION: Dim OwnNames() As String = {"oak", "samuel", "prof. oak", "prof oak"}
+        Dim OwnNames() As String = {"baro", "boar", "prof. baro", "prof baro", "tehbaro", "dr. baro", "dr baro"}
 
         Select Case True
             Case WeirdNames.Contains(name.ToLower())
-                Return Localization.GetString("new_game_oak_weird_name_1") & name & Localization.GetString("new_game_oak_weird_name_2")
+                Return Localization.GetString("new_game_intro_weird_name_1") & name & Localization.GetString("new_game_intro_weird_name_2")
             Case KnownNames.Contains(name.ToLower())
-                Return Localization.GetString("new_game_oak_known_name_1") & name & Localization.GetString("new_game_oak_known_name_2")
+                Return Localization.GetString("new_game_intro_known_name_1") & name & Localization.GetString("new_game_intro_known_name_2")
             Case OwnNames.Contains(name.ToLower())
-                Return Localization.GetString("new_game_oak_same_name_1") & name & Localization.GetString("new_game_oak_same_name_2")
+                Return Localization.GetString("new_game_intro_same_name_1") & name & Localization.GetString("new_game_intro_same_name_2")
         End Select
 
-        Return Localization.GetString("new_game_oak_name_1") & name & Localization.GetString("new_game_oak_name_2")
+        Return Localization.GetString("new_game_intro_name_1") & name & Localization.GetString("new_game_intro_name_2")
     End Function
 End Class

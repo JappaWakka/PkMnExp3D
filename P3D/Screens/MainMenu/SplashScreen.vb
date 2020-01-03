@@ -34,7 +34,7 @@ Friend Class SplashScreen
         CanGoFullscreen = True
 
         _monoGameLogo = TextureManager.LoadDirect("GUI\Logos\MonoGame.png")
-        _licenseFont = Core.Content.Load(Of SpriteFont)("Fonts\BMP\mainFont")
+        _licenseFont = Core.Content.Load(Of SpriteFont)("Fonts\BMP\MainFontWhite")
         _licenseTextSize = _licenseFont.MeasureString(LICENSE_TEXT)
 
         Me.Identification = Identifications.SplashScreen
@@ -67,7 +67,7 @@ Friend Class SplashScreen
                 If MapPreviewScreen.MapViewMode = True Then
                     Core.SetScreen(New MapPreviewScreen())
                 Else
-                    Core.SetScreen(New PressStartScreen())
+                    Core.SetScreen(New MainMenuScreen())
                 End If
                 'Core.SetScreen(New TransitionScreen(Me, New IntroScreen(), Color.Black, False))
             End If

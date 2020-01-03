@@ -829,7 +829,7 @@
             If HasToWaitPVP() = True Then
                 Canvas.DrawRectangle(New Rectangle(0, CInt(Core.windowSize.Height / 2 - 60), CInt(Core.windowSize.Width), 120), New Color(0, 0, 0, 150))
                 Dim t As String = "Waiting for the other player  "
-                Core.SpriteBatch.DrawString(FontManager.MainFont, t.Remove(t.Length - 2, 2) & LoadingDots.Dots, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString(t).X / 2), CSng(Core.windowSize.Height / 2 - FontManager.MainFont.MeasureString(t).Y / 2)), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t.Remove(t.Length - 2, 2) & LoadingDots.Dots, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString(t).X / 2), CSng(Core.windowSize.Height / 2 - FontManager.MainFontWhite.MeasureString(t).Y / 2)), Color.White)
             Else
                 If BattleMenu.Visible = True Then
                     BattleMenu.Draw(Me)
@@ -857,7 +857,7 @@ nextIndex:
                 Next
             End If
 
-            'Core.SpriteBatch.DrawString(FontManager.MiniFont, "Battle system not final!", New Vector2(0, Core.windowSize.Height - 20), Color.White)
+            'Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Battle system not final!", New Vector2(0, Core.windowSize.Height - 20), Color.White)
 
             TextBox.Draw()
 

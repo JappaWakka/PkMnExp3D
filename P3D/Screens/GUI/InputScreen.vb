@@ -162,7 +162,7 @@
         If CurrentText.Length < Me.MaxChars Then
             t &= "_"
         End If
-        Core.SpriteBatch.DrawString(FontManager.InGameFont, t, New Vector2(CInt((Core.windowSize.Width / 2) - 306), 112), Color.Black)
+        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, t, New Vector2(CInt((Core.windowSize.Width / 2) - 306), 112), Color.White)
 
         Canvas.DrawRectangle(New Rectangle(CInt((Core.windowSize.Width / 2) - ((13 * 64) / 2)) - 4, 196, (13 * 64) + 8, 5 * 64 + 8), Color.White)
         Canvas.DrawBorder(1, New Rectangle(CInt((Core.windowSize.Width / 2) - ((13 * 64) / 2)) - 4, 196, (13 * 64) + 8, 5 * 64 + 8), Color.Gray)
@@ -170,13 +170,13 @@
             b.Draw(New Vector2(CSng((Core.windowSize.Width / 2) - ((13 * 64) / 2)), 200), Me.ButtonSelector)
         Next
 
-        Core.SpriteBatch.DrawString(FontManager.MainFont, "Chars left: " & (MaxChars - Me.CurrentText.Length).ToString(), New Vector2(CInt((Core.windowSize.Width / 2) + 180), 477), Color.Gray)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Chars left: " & (MaxChars - Me.CurrentText.Length).ToString(), New Vector2(CInt((Core.windowSize.Width / 2) + 180), 477), Color.Gray)
 
         Dim d As New Dictionary(Of Buttons, String)
-        d.Add(Input.Buttons.A, "Enter")
+        d.Add(Input.Buttons.A, Localization.GetString("game_interaction_enter", "Enter"))
         d.Add(Input.Buttons.B, "Delete")
         d.Add(Input.Buttons.Y, "Confirm")
-        d.Add(Input.Buttons.X, "Clear")
+        d.Add(Input.Buttons.X, Localization.GetString("game_interaction_clear", "Clear"))
         Me.DrawGamePadControls(d)
     End Sub
 
@@ -364,7 +364,7 @@
             End If
 
             Dim middelPoint As New Vector2(CSng(Me.Size / 2) + p.X, CSng(RasterSize / 2) + p.Y)
-            Dim f As SpriteFont = FontManager.MainFont
+            Dim f As SpriteFont = FontManager.MainFontWhite
             Core.SpriteBatch.DrawString(f, text, New Vector2(middelPoint.X - CSng(f.MeasureString(text).X / 2), middelPoint.Y - CSng(f.MeasureString(text).Y / 2)), fontColor)
         End Sub
 

@@ -167,14 +167,14 @@
         Private Shared Sub HandleTradeQuit(ByVal p As Package)
             DirectTradeScreen.OtherPlayerQuits()
 
-            GameJolt.PokegearScreen.TradeRequestData = -1
+            GameJolt.PhoneScreen.TradeRequestData = -1
             Dim s As Screen = Core.CurrentScreen
-            While Not s.PreScreen Is Nothing And s.Identification <> Screen.Identifications.PokegearScreen
+            While Not s.PreScreen Is Nothing And s.Identification <> Screen.Identifications.PhoneScreen
                 s = s.PreScreen
             End While
 
-            If s.Identification = Screen.Identifications.PokegearScreen Then
-                If CType(s, GameJolt.PokegearScreen).menuIndex = GameJolt.PokegearScreen.MenuScreens.TradeRequest Then
+            If s.Identification = Screen.Identifications.PhoneScreen Then
+                If CType(s, GameJolt.PhoneScreen).menuIndex = GameJolt.PhoneScreen.MenuScreens.TradeRequest Then
                     Core.SetScreen(s.PreScreen)
                 End If
             End If
@@ -189,8 +189,8 @@
         End Sub
 
         Private Shared Sub HandleTradeRequest(ByVal p As Package)
-            If GameJolt.PokegearScreen.TradeRequestData = -1 Then
-                GameJolt.PokegearScreen.TradeRequestData = p.Origin
+            If GameJolt.PhoneScreen.TradeRequestData = -1 Then
+                GameJolt.PhoneScreen.TradeRequestData = p.Origin
             End If
         End Sub
 
@@ -217,22 +217,22 @@
         Private Shared Sub HandleBattleQuit(ByVal p As Package)
             PVPLobbyScreen.OtherPlayerQuits()
 
-            GameJolt.PokegearScreen.BattleRequestData = -1
+            GameJolt.PhoneScreen.BattleRequestData = -1
             Dim s As Screen = Core.CurrentScreen
-            While Not s.PreScreen Is Nothing And s.Identification <> Screen.Identifications.PokegearScreen
+            While Not s.PreScreen Is Nothing And s.Identification <> Screen.Identifications.PhoneScreen
                 s = s.PreScreen
             End While
 
-            If s.Identification = Screen.Identifications.PokegearScreen Then
-                If CType(s, GameJolt.PokegearScreen).menuIndex = GameJolt.PokegearScreen.MenuScreens.BattleRequest Then
+            If s.Identification = Screen.Identifications.PhoneScreen Then
+                If CType(s, GameJolt.PhoneScreen).menuIndex = GameJolt.PhoneScreen.MenuScreens.BattleRequest Then
                     Core.SetScreen(s.PreScreen)
                 End If
             End If
         End Sub
 
         Private Shared Sub HandleBattleRequest(ByVal p As Package)
-            If GameJolt.PokegearScreen.BattleRequestData = -1 Then
-                GameJolt.PokegearScreen.BattleRequestData = p.Origin
+            If GameJolt.PhoneScreen.BattleRequestData = -1 Then
+                GameJolt.PhoneScreen.BattleRequestData = p.Origin
             End If
         End Sub
 

@@ -19,7 +19,7 @@ Namespace Items.Berries
         End Sub
 
         Public Overrides Sub Use()
-            Dim selScreen = New PartyScreen(Core.CurrentScreen, Me, AddressOf Me.UseOnPokemon, "Use " & Me.Name, True) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = True}
+            Dim selScreen = New PartyScreenV2(Core.CurrentScreen, Me, AddressOf Me.UseOnPokemon, "Use " & Me.Name, True) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = True}
             AddHandler selScreen.SelectedObject, AddressOf UseItemhandler
 
             Core.SetScreen(selScreen)

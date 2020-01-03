@@ -45,7 +45,7 @@
             If Controls.Accept(True, False) = True Then
                 If New Rectangle(180, 560, 32 * 5 + 64, 32).Contains(MouseHandler.MousePosition) = True Then
 
-                    Dim selScreen = New PartyScreen(Me, Item.GetItemByID(5), AddressOf ChosePokemon, "Choose Pokémon to trade", True) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = True}
+                    Dim selScreen = New PartyScreenV2(Me, Item.GetItemByID(5), AddressOf ChosePokemon, "Choose Pokémon to trade", True) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = True}
                     AddHandler selScreen.SelectedObject, AddressOf ChosePokemonHandler
 
                     Core.SetScreen(selScreen)
@@ -86,7 +86,7 @@
 
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\GTS"), New Rectangle(CInt(Core.windowSize.Width / 2 - 104), CInt(32), 208, 96), New Rectangle(304, 0, 208, 96), Color.White)
 
-            Core.SpriteBatch.DrawString(FontManager.InGameFont, "Trade", New Vector2(560, 160), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Trade", New Vector2(560, 160), Color.White)
 
             'DRAW STUFF:
 
@@ -109,8 +109,7 @@
 
                 Dim SpriteSize As New Size(CInt(ownEmblem.SpriteTexture.Width / 3), CInt(ownEmblem.SpriteTexture.Height / 4))
                 Core.SpriteBatch.Draw(ownEmblem.SpriteTexture, New Rectangle(110, 90, 64, 64), New Rectangle(0, SpriteSize.Height * 2, SpriteSize.Width, SpriteSize.Height), Color.White)
-                Core.SpriteBatch.DrawString(FontManager.InGameFont, ownEmblem.Username, New Vector2(183, 115), Color.Black)
-                Core.SpriteBatch.DrawString(FontManager.InGameFont, ownEmblem.Username, New Vector2(180, 112), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, ownEmblem.Username, New Vector2(180, 112), Color.White)
             End If
 
             Dim P As Pokemon = Nothing
@@ -129,10 +128,10 @@
                 Core.SpriteBatch.Draw(P.GetTexture(True), New Rectangle(100 + OwnX, 164, 128, 128), Color.White)
 
                 If P.GetDisplayName() <> P.OriginalName Then
-                    Core.SpriteBatch.DrawString(FontManager.MainFont, P.GetDisplayName(), New Vector2(230 + OwnX, 190), Color.Black)
-                    Core.SpriteBatch.DrawString(FontManager.MainFont, "/" & P.OriginalName, New Vector2(240 + OwnX, 220), Color.Black)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontBlack, P.GetDisplayName(), New Vector2(230 + OwnX, 190), Color.White)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "/" & P.OriginalName, New Vector2(240 + OwnX, 220), Color.White)
                 Else
-                    Core.SpriteBatch.DrawString(FontManager.MainFont, P.GetDisplayName(), New Vector2(230 + OwnX, 205), Color.Black)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontBlack, P.GetDisplayName(), New Vector2(230 + OwnX, 205), Color.White)
                 End If
 
                 If PokeIndex > -1 Then
@@ -174,11 +173,9 @@
             If E.DoneLoading = True Then
                 Dim spriteSize As New Size(CInt(E.SpriteTexture.Width / 3), CInt(E.SpriteTexture.Height / 4))
                 Core.SpriteBatch.Draw(E.SpriteTexture, New Rectangle(710, 90, 64, 64), New Rectangle(0, spriteSize.Height * 2, spriteSize.Width, spriteSize.Height), Color.White)
-                Core.SpriteBatch.DrawString(FontManager.InGameFont, E.Username, New Vector2(783, 115), Color.Black)
-                Core.SpriteBatch.DrawString(FontManager.InGameFont, E.Username, New Vector2(780, 112), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, E.Username, New Vector2(780, 112), Color.White)
             Else
-                Core.SpriteBatch.DrawString(FontManager.InGameFont, "Loading" & LoadingDots.Dots, New Vector2(783, 115), Color.Black)
-                Core.SpriteBatch.DrawString(FontManager.InGameFont, "Loading" & LoadingDots.Dots, New Vector2(780, 112), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Loading" & LoadingDots.Dots, New Vector2(780, 112), Color.White)
             End If
 
             If Not D.Pokemon Is Nothing Then
@@ -186,10 +183,10 @@
                 Core.SpriteBatch.Draw(D.Pokemon.GetTexture(True), New Rectangle(100 + OppX, 164, 128, 128), Color.White)
 
                 If D.Pokemon.GetDisplayName() <> D.Pokemon.OriginalName Then
-                    Core.SpriteBatch.DrawString(FontManager.MainFont, D.Pokemon.GetDisplayName(), New Vector2(230 + OppX, 190), Color.Black)
-                    Core.SpriteBatch.DrawString(FontManager.MainFont, "/" & D.Pokemon.OriginalName, New Vector2(240 + OppX, 220), Color.Black)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontBlack, D.Pokemon.GetDisplayName(), New Vector2(230 + OppX, 190), Color.White)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "/" & D.Pokemon.OriginalName, New Vector2(240 + OppX, 220), Color.White)
                 Else
-                    Core.SpriteBatch.DrawString(FontManager.MainFont, D.Pokemon.GetDisplayName(), New Vector2(230 + OppX, 205), Color.Black)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontBlack, D.Pokemon.GetDisplayName(), New Vector2(230 + OppX, 205), Color.White)
                 End If
 
                 Dim ItemString As String = "None"
@@ -392,8 +389,8 @@
                 If UploadDone = False Then
                     Canvas.DrawRectangle(New Rectangle(CInt(Core.windowSize.Width / 2 - 200), 250, 400, 200), New Color(255, 255, 255, 150))
 
-                    Core.SpriteBatch.DrawString(FontManager.MainFont, "Trading" & LoadingDots.Dots, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString("Uploading").X / 2), 300), Color.Black)
-                    Core.SpriteBatch.DrawString(FontManager.MainFont, "Transaction ID: " & D.TradeID, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString("Transaction ID: " & D.TradeID).X / 2), 370), Color.Black)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Trading" & LoadingDots.Dots, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString("Uploading").X / 2), 300), Color.White)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Transaction ID: " & D.TradeID, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString("Transaction ID: " & D.TradeID).X / 2), 370), Color.White)
 
                     Core.SpriteBatch.DrawString(FontManager.MiniFont, "Version " & GTSMainScreen.GTSVersion, New Vector2(4, Core.windowSize.Height - 1 - FontManager.MiniFont.MeasureString("Version " & GTSMainScreen.GTSVersion).Y), Color.DarkGray)
                 Else

@@ -431,7 +431,7 @@ Namespace ScriptVersion2
         Private Shared Sub DoPlayer()
             ' Commands:
             r(New ScriptCommand("player", "receivepokedex", "Makes the Pokédex accessible for the player."))
-            r(New ScriptCommand("player", "receivepokegear", "Makes the Pokégear accessible for the player."))
+            r(New ScriptCommand("player", "receivephone", "Makes the Pokégear accessible for the player."))
             r(New ScriptCommand("player", "renamerival", "Opens the rival rename screen."))
             r(New ScriptCommand("player", "wearskin", {New ScriptArgument("skin", ScriptArgument.ArgumentTypes.Str)}.ToList(), "Changes the player skin."))
             r(New ScriptCommand("player", "setonlineskin", {New ScriptArgument("gamejoltID", ScriptArgument.ArgumentTypes.Str)}.ToList(), "Changes the player skin to a skin downloaded for the GameJoltID."))
@@ -493,7 +493,7 @@ Namespace ScriptVersion2
             r(New ScriptCommand("player", "ot", "str", "Returns the player's Original Trainer value.", ",", True))
             r(New ScriptCommand("player", "gamejoltid", "str", "Returns the player's GameJolt ID.", ",", True))
             r(New ScriptCommand("player", "haspokedex", "bool", "Returns if the player received the Pokédex.", ",", True))
-            r(New ScriptCommand("player", "haspokegear", "bool", "Returns if the player received the Pokégear.", ",", True))
+            r(New ScriptCommand("player", "hasphone", "bool", "Returns if the player received the Pokégear.", ",", True))
         End Sub
 
         Private Shared Sub DoNPC()

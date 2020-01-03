@@ -31,6 +31,8 @@ Namespace GameJolt
 
         Dim _tempCloseScreen As Boolean = False 'To prevent the screen closing and so mouse visibility change from a different thread than main.
 
+        Public Shared FontType As SpriteFont = FontManager.MainFontWhite
+
         Public Sub New(ByVal currentScreen As Screen)
             Me.PreScreen = currentScreen
 
@@ -40,26 +42,26 @@ Namespace GameJolt
             Me.CanChat = False
             Me.CanMuteMusic = False
 
-            Me.UserName = New JoltTextBox(FontManager.MainFont, Color.Black, Color.White)
+            Me.UserName = New JoltTextBox(Color.Black, Color.White)
             UserName.Size = New Size(400, 30)
 
-            Me.Token = New JoltTextBox(FontManager.MainFont, Color.Black, Color.White)
+            Me.Token = New JoltTextBox(Color.Black, Color.White)
             Token.Size = New Size(400, 30)
             Token.IsPassword = True
 
-            Me.LogInButton = New JoltButton("Log in", FontManager.MainFont, New Color(68, 68, 68), New Color(204, 255, 0))
+            Me.LogInButton = New JoltButton("Log in", New Color(68, 68, 68), New Color(204, 255, 0))
             LogInButton.Size = New Size(100, 30)
             LogInButton.SetDelegate(AddressOf LogIn)
 
-            Me.CloseButton = New JoltButton("Close", FontManager.MainFont, New Color(68, 68, 68), New Color(204, 255, 0))
+            Me.CloseButton = New JoltButton("Close", New Color(68, 68, 68), New Color(204, 255, 0))
             CloseButton.Size = New Size(100, 30)
             CloseButton.SetDelegate(AddressOf Me.Close)
 
-            Me.CreateAccountButton = New JoltButton("Create Account", FontManager.MainFont, New Color(68, 68, 68), New Color(204, 255, 0))
+            Me.CreateAccountButton = New JoltButton("Create Account", New Color(68, 68, 68), New Color(204, 255, 0))
             CreateAccountButton.Size = New Size(180, 30)
             CreateAccountButton.SetDelegate(AddressOf Me.CreateAccount)
 
-            Me.OkButton = New JoltButton("OK", FontManager.MainFont, New Color(68, 68, 68), New Color(204, 255, 0))
+            Me.OkButton = New JoltButton("OK", New Color(68, 68, 68), New Color(204, 255, 0))
             OkButton.Size = New Size(100, 30)
             OkButton.SetDelegate(AddressOf Me.PressOK)
 
@@ -117,20 +119,20 @@ Namespace GameJolt
             Canvas.DrawRectangle(New Rectangle(CInt(Core.ScreenSize.Width / 2 - 300), 100, 600, 400), New Color(39, 39, 39), True)
 
             If DownloadedBanList = True Then
-                Core.SpriteBatch.DrawInterfaceString(FontManager.InGameFont, "Sign in with", New Vector2(CSng(Core.ScreenSize.Width / 2 - 280), 130), Color.White)
+                Core.SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, "Sign in with", New Vector2(CSng(Core.ScreenSize.Width / 2 - 280), 130), Color.White)
                 Core.SpriteBatch.DrawInterface(TextureManager.LoadDirect("GUI\Logos\GameJolt.png"), New Rectangle(CInt(Core.ScreenSize.Width / 2 - 120), 130, 328, 36), Color.White)
 
                 If WaitingForResponse = True Then
-                    Dim textSize As Vector2 = FontManager.MainFont.MeasureString(WaitingMessage)
+                    Dim textSize As Vector2 = FontManager.MainFontWhite.MeasureString(WaitingMessage)
 
-                    Core.SpriteBatch.DrawInterfaceString(FontManager.MainFont, WaitingMessage, New Vector2(CSng(Core.ScreenSize.Width / 2 - textSize.X / 2), 310 - textSize.Y / 2), Color.White)
+                    Core.SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, WaitingMessage, New Vector2(CSng(Core.ScreenSize.Width / 2 - textSize.X / 2), 310 - textSize.Y / 2), Color.White)
 
                     If ShowokButton = True Then
                         OkButton.Draw()
                     End If
                 Else
-                    Core.SpriteBatch.DrawInterfaceString(FontManager.MiniFont, "Username:", New Vector2(CSng(Core.ScreenSize.Width / 2) - 200, 195), Color.White)
-                    Core.SpriteBatch.DrawInterfaceString(FontManager.MiniFont, "Token:", New Vector2(CSng(Core.ScreenSize.Width / 2) - 200, 275), Color.White)
+                    Core.SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, "Username:", New Vector2(CSng(Core.ScreenSize.Width / 2) - 200, 195), Color.White)
+                    Core.SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, "Token:", New Vector2(CSng(Core.ScreenSize.Width / 2) - 200, 275), Color.White)
 
                     Me.UserName.Draw()
                     Me.Token.Draw()
@@ -139,7 +141,7 @@ Namespace GameJolt
                     Me.CreateAccountButton.Draw()
                 End If
             Else
-                Core.SpriteBatch.DrawInterfaceString(FontManager.MiniFont, "Please wait" & LoadingDots.Dots, New Vector2(CSng(Core.ScreenSize.Width / 2) - 200, 195), Color.White)
+                Core.SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, "Please wait" & LoadingDots.Dots, New Vector2(CSng(Core.ScreenSize.Width / 2) - 200, 195), Color.White)
             End If
         End Sub
 
@@ -476,8 +478,7 @@ Namespace GameJolt
             Public Size As New Size(0, 0)
             Public MaxChars As Integer = -1
 
-            Public Sub New(ByVal Font As SpriteFont, ByVal BackColor As Color, ByVal FontColor As Color)
-                Me._font = Font
+            Public Sub New(ByVal BackColor As Color, ByVal FontColor As Color)
                 Me._backcolor = BackColor
                 Me._forecolor = FontColor
             End Sub
@@ -530,9 +531,11 @@ Namespace GameJolt
             Public Sub Draw()
                 Dim useColor As Color = _backcolor
                 Dim useFontColor As Color = _forecolor
+
                 If Me.IsActive = True Then
                     useColor = _forecolor
-                    useFontColor = _backcolor
+                    useFontColor = Color.White
+                    FontType = FontManager.MainFontBlack
                 End If
 
                 Canvas.DrawRectangle(New Rectangle(CInt(Me.Position.X), CInt(Me.Position.Y), Me.Size.Width, Me.Size.Height), useColor, True)
@@ -551,7 +554,7 @@ Namespace GameJolt
                     End If
                 End If
 
-                Core.SpriteBatch.DrawInterfaceString(Me._font, useText, Me.Position, useFontColor)
+                Core.SpriteBatch.DrawInterfaceString(FontType, useText, Me.Position, useFontColor)
             End Sub
 
             Public Sub Update()
@@ -592,11 +595,11 @@ Namespace GameJolt
 
             Public DoPress As Press
 
-            Public Sub New(ByVal Text As String, ByVal Font As SpriteFont, ByVal BackColor As Color, ByVal TextColor As Color)
+            Public Sub New(ByVal Text As String, ByVal BackColor As Color, ByVal TextColor As Color)
                 Me._text = Text
                 Me._backColor = BackColor
                 Me._textColor = TextColor
-                Me._font = Font
+                Me._font = FontType
             End Sub
 
             Public Sub SetDelegate(ByVal DelegateSub As Press)
@@ -611,8 +614,8 @@ Namespace GameJolt
                     Dim useColor As Color = _backColor
                     Dim useFontColor As Color = _textColor
                     If Me.IsActive = True Then
-                        useColor = _textColor
-                        useFontColor = _backColor
+                        useColor = New Color(47, 127, 111)
+                        useFontColor = Color.White
                     End If
 
                     Canvas.DrawRectangle(New Rectangle(CInt(Me.Position.X), CInt(Me.Position.Y), Me.Size.Width, Me.Size.Height), useColor, True)

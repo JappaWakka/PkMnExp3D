@@ -92,11 +92,11 @@
 
         Public Overrides Sub Use()
             SoundManager.PlaySound("PC\LogOn", False)
-            Dim selScreen = New PartyScreen(Core.CurrentScreen, Me, AddressOf Me.UseOnPokemon, "Use " & Me.Name, True) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = True}
+            Dim selScreen = New PartyScreenV2(Core.CurrentScreen, Me, AddressOf Me.UseOnPokemon, "Use " & Me.Name, True) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = True}
             AddHandler selScreen.SelectedObject, AddressOf UseItemhandler
 
             Core.SetScreen(selScreen)
-            CType(CurrentScreen, PartyScreen).SetupLearnAttack(Attack, 1, Me)
+            CType(CurrentScreen, PartyScreenV2).SetupLearnAttack(Attack, 1, Me)
         End Sub
 
         Public Overrides Function UseOnPokemon(ByVal PokeIndex As Integer) As Boolean

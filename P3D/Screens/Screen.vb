@@ -1,4 +1,4 @@
-Imports net.Pokemon3D.Game
+Imports P3D
 ''' <summary>
 ''' The base class for all screens in the game.
 ''' </summary>
@@ -44,7 +44,7 @@ Public MustInherit Class Screen
         NameObjectScreen
         LearnAttackScreen
         SecretBaseScreen
-        PokegearScreen
+        PhoneScreen
         BattleGrowStatsScreen
         DaycareScreen
         HatchEggScreen
@@ -320,7 +320,7 @@ Public MustInherit Class Screen
             End Select
 
             'Add to the x location for the length of the string and a separator.
-            x -= CInt(FontManager.MainFont.MeasureString(Descriptions.Values(i)).X) + 16
+            x -= CInt(FontManager.MainFontWhite.MeasureString(Descriptions.Values(i)).X) + 16
         Next
 
         'Finally, render the buttons:
@@ -379,11 +379,10 @@ Public MustInherit Class Screen
                 x += width + 4
 
                 'Draw the button description (again, with a shadow):
-                SpriteBatch.DrawString(FontManager.MainFont, Descriptions.Values(i), New Vector2(x + 3, y + 7), Color.Black)
-                SpriteBatch.DrawString(FontManager.MainFont, Descriptions.Values(i), New Vector2(x, y + 4), Color.White)
+                SpriteBatch.DrawString(FontManager.MainFontWhite, Descriptions.Values(i), New Vector2(x, y + 4), Color.White)
 
                 'Add the text width and the offset for the next button description to the drawing position:
-                x += CInt(FontManager.MainFont.MeasureString(Descriptions.Values(i)).X) + 16
+                x += CInt(FontManager.MainFontWhite.MeasureString(Descriptions.Values(i)).X) + 16
             Next
         End If
     End Sub

@@ -71,17 +71,17 @@ inventory_menu_items,Objekt
 inventory_menu_description,Beskrivning
 ---
 NewGameScreen:
-new_game_oak_1,Hej!~Ursäkta att låta dig vänta!*Välkommen till världen~av Pokemon!*Mitt namn är Oak.~Folk kallar mig för ~Pokémon professorn.*Denna värld är bebodd~av varselser som vi kallar för
-new_game_oak_2,Pokémon.*Folk och Pokémon lever~tillsammans genom att~stötta varandra.~Vissa folk leker med Pokémon,~andra strider med dem.*Men vi vet inte allt om~Pokémon än.~Det är fortfarande många~mysterier kvar att lösa.*Därför studerar jag Pokémon~varje dag.*Nu så, vad sade du~ditt namn var?
-new_game_oak_3,~är du redo?*Ditt helt egna~Pokémon äventyr är påväg~att börja.*Du kommer ha roliga~tider och utsättas för ~svåra utmaningar.~En värld av drömmar och~äventyr med Pokémon~väntar!*Låt oss börja!*Jag kommer se~dig senare!
-new_game_oak_weird_name_1,Okay! Så ditt namn är~
-new_game_oak_weird_name_2,!*Hmm, det är ett~udda namn.
-new_game_oak_known_name_1,Okay! Så ditt namn är~
-new_game_oak_known_name_2,!*Hmm, jag är säker jag~har hört detta namn innan.
-new_game_oak_same_name_1,Åh, vi har~samma namn.*Mitt namn är också~
-new_game_oak_same_name_2,!
-new_game_oak_name_1,Okay! Så ditt namn är~
-new_game_oak_name_2,!
+new_game_intro_1,Hej!~Ursäkta att låta dig vänta!*Välkommen till världen~av Pokemon!*Mitt namn är Oak.~Folk kallar mig för ~Pokémon professorn.*Denna värld är bebodd~av varselser som vi kallar för
+new_game_intro_2,Pokémon.*Folk och Pokémon lever~tillsammans genom att~stötta varandra.~Vissa folk leker med Pokémon,~andra strider med dem.*Men vi vet inte allt om~Pokémon än.~Det är fortfarande många~mysterier kvar att lösa.*Därför studerar jag Pokémon~varje dag.*Nu så, vad sade du~ditt namn var?
+new_game_intro_3,~är du redo?*Ditt helt egna~Pokémon äventyr är påväg~att börja.*Du kommer ha roliga~tider och utsättas för ~svåra utmaningar.~En värld av drömmar och~äventyr med Pokémon~väntar!*Låt oss börja!*Jag kommer se~dig senare!
+new_game_intro_weird_name_1,Okay! Så ditt namn är~
+new_game_intro_weird_name_2,!*Hmm, det är ett~udda namn.
+new_game_intro_known_name_1,Okay! Så ditt namn är~
+new_game_intro_known_name_2,!*Hmm, jag är säker jag~har hört detta namn innan.
+new_game_intro_same_name_1,Åh, vi har~samma namn.*Mitt namn är också~
+new_game_intro_same_name_2,!
+new_game_intro_name_1,Okay! Så ditt namn är~
+new_game_intro_name_2,!
 new_game_your_name,Ditt namn
 new_game_choose_skin,Välj utseende
 new_game_name_too_short,Det här namnet är för kort.

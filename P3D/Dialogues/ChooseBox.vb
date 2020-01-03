@@ -157,13 +157,13 @@
                 For i = 0 To Options.Count - 1
                     Dim useSize As Single = Size
                     Select Case Me.TextFont.FontName.ToLower()
-                        Case "textfont", "braille"
+                        Case "braille"
                             useSize = 2 * Size
                     End Select
-                    .DrawString(Me.TextFont.SpriteFont, Options(i).Replace("[POKE]", "Poké"), New Vector2(CInt(Position.X + 40), CInt(Position.Y) + 32 + i * 48 * Size), Color.Black, 0.0F, Vector2.Zero, useSize, SpriteEffects.None, 0.0F)
+                    .DrawString(Me.TextFont.SpriteFont, Options(i).Replace("[POKE]", "Poké"), New Vector2(CInt(Position.X + 40), CInt(Position.Y) + 32 + i * 48 * Size), Color.White, 0.0F, Vector2.Zero, useSize, SpriteEffects.None, 0.0F)
                 Next
                 'Cursor
-                .Draw(TextureManager.GetTexture("GUI\Overworld\ChooseBox"), New Rectangle(CInt(Position.X + 20), CInt(Position.Y) + 36 + CInt(index * 48 * Size), CInt(10 * Size), CInt(20 * Size)), New Rectangle(96, 0, 3, 6), Color.White)
+                .Draw(TextureManager.GetTexture("GUI\Overworld\ChooseBox"), New Rectangle(CInt(Position.X + 20), CInt(Position.Y) + 36 + CInt(index * 48 * Size), CInt(16 * Size * 2), CInt(16 * Size * 2)), New Rectangle(96, 0, 16, 16), Color.White)
             End With
         End If
     End Sub

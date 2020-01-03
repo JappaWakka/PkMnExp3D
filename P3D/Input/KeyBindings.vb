@@ -58,7 +58,7 @@ Public Class KeyBindings
                             OpenInventoryKey = binding
                         Case "chat"
                             ChatKey = binding
-                        Case "special", "pokegear"
+                        Case "special", "phone"
                             SpecialKey = binding
                         Case "mutemusic"
                             MuteMusicKey = binding

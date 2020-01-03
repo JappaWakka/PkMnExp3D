@@ -65,7 +65,9 @@
         Public Enum BackdropTypes
             Water
             Grass
-            Texture
+            Snow
+            Sand
+            Rock
         End Enum
 
         Private _vertices As New List(Of VertexPositionNormalTangentTexture)
@@ -109,8 +111,16 @@
                     _backdropTexture = TextureManager.GetTexture("TextureSheets\Water", New Rectangle(0, 0, 16, 16))
                 Case "grass"
                     Me._backdropType = BackdropTypes.Grass
-                Case "texture"
-                    Me._backdropType = BackdropTypes.Texture
+                    _backdropTexture = TextureManager.GetTexture("TextureSheets\FloorOutside", New Rectangle(16, 0, 16, 16))
+                Case "snow"
+                    Me._backdropType = BackdropTypes.Snow
+                    _backdropTexture = TextureManager.GetTexture("TextureSheets\FloorOutside", New Rectangle(0, 0, 16, 16))
+                Case "sand"
+                    Me._backdropType = BackdropTypes.Sand
+                    _backdropTexture = TextureManager.GetTexture("TextureSheets\FloorOutside", New Rectangle(32, 0, 16, 16))
+                Case "rock"
+                    Me._backdropType = BackdropTypes.Rock
+                    _backdropTexture = TextureManager.GetTexture("TextureSheets\FloorOutside", New Rectangle(48, 0, 16, 16))
             End Select
 
             Me.Update()
@@ -131,24 +141,6 @@
                         End If
 
                         _backdropTexture = TextureManager.GetTexture("TextureSheets\Water", New Rectangle(16 * _waterAnimationIndex, 0, 16, 16))
-                    End If
-                Case BackdropTypes.Grass
-                    If Me._setTexture = False Then
-                        Dim x As Integer = 0
-
-                        Select Case World.CurrentSeason
-                            Case World.Seasons.Winter
-                                x = 0
-                            Case World.Seasons.Spring
-                                x = 16
-                            Case World.Seasons.Summer
-                                x = 16
-                            Case World.Seasons.Fall
-                                x = 16
-                        End Select
-
-                        _backdropTexture = TextureManager.GetTexture("TextureSheets\FloorOutside", New Rectangle(x, 0, 16, 16))
-                        Me._setTexture = True
                     End If
             End Select
         End Sub

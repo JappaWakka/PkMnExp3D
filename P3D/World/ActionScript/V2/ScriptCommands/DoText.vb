@@ -33,7 +33,7 @@
                     If args.Length = 1 Then
                         Select Case args(0).ToLower()
                             Case "playercolor", "player"
-                                Screen.TextBox.TextColor = TextBox.PlayerColor
+                                Screen.TextBox.TextColor = Textbox.PlayerColor
                             Case "defaultcolor", "default"
                                 Screen.TextBox.TextColor = TextBox.DefaultColor
                             Case Else ' Try to convert the input color name into a color: (https://msdn.microsoft.com/en-us/library/system.drawing.knowncolor%28v=vs.110%29.aspx)

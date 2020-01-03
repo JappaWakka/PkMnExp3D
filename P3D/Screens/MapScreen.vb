@@ -483,8 +483,7 @@
             regionString &= " (Press the Shift/Shoulder Buttons to switch between regions.)"
         End If
 
-        Core.SpriteBatch.DrawString(FontManager.InGameFont, regionString, New Vector2(MapScreen.mapOffsetX + 3, MapScreen.mapOffsetY - 30), Color.Black)
-        Core.SpriteBatch.DrawString(FontManager.InGameFont, regionString, New Vector2(MapScreen.mapOffsetX, MapScreen.mapOffsetY - 33), Color.White)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, regionString, New Vector2(MapScreen.mapOffsetX, MapScreen.mapOffsetY - 33), Color.White)
 
         DrawSwitch()
         DrawCursor()

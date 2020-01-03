@@ -148,6 +148,9 @@
     <Import Include="Microsoft.Xna.Framework.Audio" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\GUI\Logos\PokemonQuartz3D.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\GUI\MainMenu\clouds.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -167,6 +170,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\GUI\Map\corna_map.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\GUI\Menus\phone.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Items\Fossils.png">
@@ -5419,9 +5425,6 @@
     <Content Include="Content\Sounds\Warp_General.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\Apricorn.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Textures\battlefactory.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -5869,13 +5872,7 @@
     <Content Include="Content\Textures\OverworldSprites\6.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\OverworldSprites\63.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Textures\OverworldSprites\66.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Textures\OverworldSprites\68.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\OverworldSprites\69.png">
@@ -6220,6 +6217,7 @@
     <Content Include="Content\Textures\OverworldSprites\Flame.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Textures\OverworldSprites\GateKeeper.png" />
     <Content Include="Content\Textures\OverworldSprites\gentleman.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -6556,6 +6554,9 @@
     <Content Include="Content\Textures\switch.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Textures\TextureSheets\Apricorn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\TextureSheets\FloorOutside.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -6853,9 +6854,6 @@
     <Content Include="Content\GUI\Logos\P3D.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\GUI\Logos\Pokemon_Small.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\GUI\Map\johto_map.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -6890,9 +6888,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\GUI\Menus\pokedexhabitat.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\GUI\Menus\pokegear.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\GUI\Menus\PokemonInfo.png">
@@ -15105,6 +15100,7 @@
     <Compile Include="Pokemon\Items\Standard\ChoiceBand.vb" />
     <Compile Include="Pokemon\Items\Standard\ChoiceScarf.vb" />
     <Compile Include="Pokemon\Items\Standard\ChoiceSpecs.vb" />
+    <Compile Include="Pokemon\Items\Standard\ShoalSalt.vb" />
     <Compile Include="Pokemon\Items\Standard\PsychicSeed.vb" />
     <Compile Include="Pokemon\Items\Standard\MistySeed.vb" />
     <Compile Include="Pokemon\Items\Standard\GrassySeed.vb" />
@@ -15163,6 +15159,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Data\System\smashrockitems.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Maps\MainMenu\mainmenu0.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Content\Data\Maps\Structures\PokeCenterInterior.dat">
@@ -15235,42 +15234,42 @@
     <Compile Include="Dialogues\ChooseBox.vb" />
     <Compile Include="Dialogues\PokemonImageView.vb" />
     <Compile Include="Dialogues\TextBox.vb" />
-    <Compile Include="Entites\Entity.vb" />
-    <Compile Include="Entites\Enviroment\AllSidesObject.vb" />
-    <Compile Include="Entites\Enviroment\ApricornPlant.vb" />
-    <Compile Include="Entites\Enviroment\BerryPlant.vb" />
-    <Compile Include="Entites\Enviroment\CutDownTree.vb" />
-    <Compile Include="Entites\Enviroment\DiveTile.vb" />
-    <Compile Include="Entites\Enviroment\Floor.vb" />
-    <Compile Include="Entites\Enviroment\Grass.vb" />
-    <Compile Include="Entites\Enviroment\HeadbuttTree.vb" />
-    <Compile Include="Entites\Enviroment\ItemObject.vb" />
-    <Compile Include="Entites\Enviroment\LoamySoil.vb" />
-    <Compile Include="Entites\Enviroment\ModelEntity.vb" />
-    <Compile Include="Entites\Enviroment\RockClimbEntity.vb" />
-    <Compile Include="Entites\Enviroment\RotationTile.vb" />
-    <Compile Include="Entites\Enviroment\ScriptBlock.vb" />
-    <Compile Include="Entites\Enviroment\SignBlock.vb" />
-    <Compile Include="Entites\Enviroment\SlideBlock.vb" />
-    <Compile Include="Entites\Enviroment\SmashRock.vb" />
-    <Compile Include="Entites\Enviroment\StepBlock.vb" />
-    <Compile Include="Entites\Enviroment\StrengthRock.vb" />
-    <Compile Include="Entites\Enviroment\StrengthTrigger.vb" />
-    <Compile Include="Entites\Enviroment\TurningSign.vb" />
-    <Compile Include="Entites\Enviroment\WallBill.vb" />
-    <Compile Include="Entites\Enviroment\WallBlock.vb" />
-    <Compile Include="Entites\Enviroment\WarpBlock.vb" />
-    <Compile Include="Entites\Enviroment\AnimatedBlock.vb" />
-    <Compile Include="Entites\Enviroment\Water.vb" />
-    <Compile Include="Entites\Enviroment\Waterfall.vb" />
-    <Compile Include="Entites\Enviroment\Whirlpool.vb" />
-    <Compile Include="Entites\Other\MessageBulb.vb" />
-    <Compile Include="Entites\Other\NetworkPlayer.vb" />
-    <Compile Include="Entites\Other\NetworkPokemon.vb" />
-    <Compile Include="Entites\Other\NPC.vb" />
-    <Compile Include="Entites\Other\OverworldPokemon.vb" />
-    <Compile Include="Entites\Other\OwnPlayer.vb" />
-    <Compile Include="Entites\Other\Particle.vb" />
+    <Compile Include="Entities\Entity.vb" />
+    <Compile Include="Entities\Environment\AllSidesObject.vb" />
+    <Compile Include="Entities\Environment\ApricornPlant.vb" />
+    <Compile Include="Entities\Environment\BerryPlant.vb" />
+    <Compile Include="Entities\Environment\CutDownTree.vb" />
+    <Compile Include="Entities\Environment\DiveTile.vb" />
+    <Compile Include="Entities\Environment\Floor.vb" />
+    <Compile Include="Entities\Environment\Grass.vb" />
+    <Compile Include="Entities\Environment\HeadbuttTree.vb" />
+    <Compile Include="Entities\Environment\ItemObject.vb" />
+    <Compile Include="Entities\Environment\LoamySoil.vb" />
+    <Compile Include="Entities\Environment\ModelEntity.vb" />
+    <Compile Include="Entities\Environment\RockClimbEntity.vb" />
+    <Compile Include="Entities\Environment\RotationTile.vb" />
+    <Compile Include="Entities\Environment\ScriptBlock.vb" />
+    <Compile Include="Entities\Environment\SignBlock.vb" />
+    <Compile Include="Entities\Environment\SlideBlock.vb" />
+    <Compile Include="Entities\Environment\SmashRock.vb" />
+    <Compile Include="Entities\Environment\StepBlock.vb" />
+    <Compile Include="Entities\Environment\StrengthRock.vb" />
+    <Compile Include="Entities\Environment\StrengthTrigger.vb" />
+    <Compile Include="Entities\Environment\TurningSign.vb" />
+    <Compile Include="Entities\Environment\WallBill.vb" />
+    <Compile Include="Entities\Environment\WallBlock.vb" />
+    <Compile Include="Entities\Environment\WarpBlock.vb" />
+    <Compile Include="Entities\Environment\AnimatedBlock.vb" />
+    <Compile Include="Entities\Environment\Water.vb" />
+    <Compile Include="Entities\Environment\Waterfall.vb" />
+    <Compile Include="Entities\Environment\Whirlpool.vb" />
+    <Compile Include="Entities\Other\MessageBulb.vb" />
+    <Compile Include="Entities\Other\NetworkPlayer.vb" />
+    <Compile Include="Entities\Other\NetworkPokemon.vb" />
+    <Compile Include="Entities\Other\NPC.vb" />
+    <Compile Include="Entities\Other\OverworldPokemon.vb" />
+    <Compile Include="Entities\Other\OwnPlayer.vb" />
+    <Compile Include="Entities\Other\Particle.vb" />
     <Compile Include="HelperClasses\Animation.vb" />
     <Compile Include="HelperClasses\BasicObject.vb" />
     <Compile Include="HelperClasses\Camera.vb" />
@@ -16726,14 +16725,18 @@
     <Compile Include="Screens\GUI\ISelectionScreen.vb" />
     <Compile Include="Screens\HistoryScreen.vb" />
     <Compile Include="Screens\Inventory\ApricornScreen.vb" />
+    <Compile Include="Screens\Inventory\ChoosePokemonScreen.vb" />
+    <Compile Include="Screens\Inventory\InventoryScreen.vb" />
+    <Compile Include="Screens\Inventory\ItemDetailScreen.vb" />
     <Compile Include="Screens\Inventory\NewInventoryScreen.vb" />
-    <Compile Include="Screens\Inventory\PokegearScreen.vb" />
+    <Compile Include="Screens\Inventory\PhoneScreen.vb" />
     <Compile Include="Screens\MainMenu\AddServerScreen.vb" />
     <Compile Include="Screens\MainMenu\ConnectScreen.vb" />
     <Compile Include="Screens\MainMenu\IntroScreen.vb" />
     <Compile Include="Screens\MainMenu\JoinServerScreen.vb" />
     <Compile Include="Screens\MainMenu\MainMenuCamera.vb" />
     <Compile Include="Screens\MainMenu\MainMenuEntity.vb" />
+    <Compile Include="Screens\MainMenu\MainMenuScreen.vb" />
     <Compile Include="Screens\MainMenu\NewGameCamera.vb" />
     <Compile Include="Screens\MainMenu\NewNewGameScreen.vb" />
     <Compile Include="Screens\MainMenu\OfflineGameWarningScreen.vb" />
@@ -16750,9 +16753,12 @@
     <Compile Include="Screens\MapPreview\MapPreviewCamera.vb" />
     <Compile Include="Screens\MapPreview\MapPreviewScreen.vb" />
     <Compile Include="Screens\MapScreen.vb" />
+    <Compile Include="Screens\MenuScreen.vb" />
+    <Compile Include="Screens\NewGameScreen.vb" />
     <Compile Include="Screens\NewMenuScreen.vb" />
     <Compile Include="Screens\NewTrainerScreen.vb" />
     <Compile Include="Screens\NewOptionScreen.vb" />
+    <Compile Include="Screens\OptionScreen.vb" />
     <Compile Include="Screens\PC\HallOfFameScreen.vb" />
     <Compile Include="Screens\PC\MailSystemScreen.vb" />
     <Compile Include="Screens\PC\StorageSystemScreen.vb" />
@@ -16766,7 +16772,9 @@
     <Compile Include="Screens\Pokemon\HatchEggScreen.vb" />
     <Compile Include="Screens\Pokemon\LearnAttackScreen.vb" />
     <Compile Include="Screens\Pokemon\NameObjectScreen.vb" />
-    <Compile Include="Screens\Pokemon\PartyScreen.vb" />
+    <Compile Include="Screens\Pokemon\PartyScreenV2.vb" />
+    <Compile Include="Screens\Pokemon\PartyScreenV1.vb" />
+    <Compile Include="Screens\Pokemon\PokemonStatusScreen.vb" />
     <Compile Include="Screens\Pokemon\SummaryScreen.vb" />
     <Compile Include="Screens\Pokemon\TeachMovesScreen.vb" />
     <Compile Include="Screens\SaveScreen.vb" />

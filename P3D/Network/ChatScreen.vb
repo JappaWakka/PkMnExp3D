@@ -216,7 +216,7 @@ Public Class ChatScreen
                     If playerName <> "" And (Core.ServersManager.PlayerCollection.HasPlayer(playerName) = True Or PMChats.ContainsKey(playerName) = True) And playerName.ToLower() <> Core.Player.Name.ToLower() Then
                         EnterPMChat(playerName)
                     Else
-                        Core.GameMessage.ShowMessage("Player " & playerName & " not found!", 20, FontManager.MainFont, Color.White)
+                        Core.GameMessage.ShowMessage("Player " & playerName & " not found!", 20, FontManager.MainFontWhite, Color.White)
                     End If
                 ElseIf currentText.StartsWith("/global") = True Then
                     CurrentPMChat = ""
@@ -619,10 +619,10 @@ Public Class ChatScreen
         End If
 
         Dim d As New Dictionary(Of Buttons, String)
-        d.Add(Input.Buttons.A, "Enter")
-        d.Add(Input.Buttons.B, "Back")
-        d.Add(Input.Buttons.Y, "Edit")
-        d.Add(Input.Buttons.X, "Clear")
+        d.Add(Input.Buttons.A, Localization.GetString("game_interaction_enter", "Enter"))
+        d.Add(Input.Buttons.B, Localization.GetString("game_interaction_back", "Back"))
+        d.Add(Input.Buttons.Y, Localization.GetString("game_interaction_edit", "Edit"))
+        d.Add(Input.Buttons.X, Localization.GetString("game_interaction_clear", "Clear"))
         Me.DrawGamePadControls(d)
     End Sub
 
@@ -743,7 +743,7 @@ Public Class ChatScreen
         End If
 
         If textureType = "pm" Or textureType = "pmoff" Then
-            drawWidth = CInt(MathHelper.Clamp(40 + FontManager.MainFont.MeasureString(Text).X * 0.75F, 120, 200))
+            drawWidth = CInt(MathHelper.Clamp(40 + FontManager.MainFontWhite.MeasureString(Text).X * 0.75F, 120, 200))
         End If
 
         Canvas.DrawRectangle(New Rectangle(xPosition, Core.windowSize.Height - 114, drawWidth, drawHeight), New Color(0, 0, 0, 150))
@@ -764,7 +764,7 @@ Public Class ChatScreen
             Core.SpriteBatch.Draw(texture, New Rectangle(xPosition, Core.windowSize.Height - 114, 12, 12), New Rectangle(22, 0, 12, 12), Color.White)
         End If
 
-        Core.SpriteBatch.DrawString(FontManager.MainFont, Text, New Vector2(xPosition + 30, Core.windowSize.Height - 114 + 4), Color.White, 0F, Vector2.Zero, 0.75F, SpriteEffects.None, 0F)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Text, New Vector2(xPosition + 30, Core.windowSize.Height - 114 + 4), Color.White, 0F, Vector2.Zero, 0.75F, SpriteEffects.None, 0F)
 
         Return drawWidth
     End Function

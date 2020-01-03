@@ -47,8 +47,7 @@
                 s &= Environment.NewLine & contentPackString
             End If
 
-            Core.SpriteBatch.DrawInterfaceString(FontManager.MainFont, s, New Vector2(7, 7), Color.Black)
-            Core.SpriteBatch.DrawInterfaceString(FontManager.MainFont, s, New Vector2(5, 5), Color.White)
+            Core.SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, s, New Vector2(5, 5), Color.White)
 
             ' DrawMediaInfo() To test music
         End If
@@ -108,8 +107,7 @@
             "Is Muted: " + MediaPlayer.IsMuted.ToString() + Environment.NewLine +
             "Is Repeating: " + MediaPlayer.IsRepeating.ToString()
 
-        Core.SpriteBatch.DrawInterfaceString(FontManager.MainFont, str, New Vector2(7, 7), Color.Black)
-        Core.SpriteBatch.DrawInterfaceString(FontManager.MainFont, str, New Vector2(5, 5), Color.White)
+        Core.SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, str, New Vector2(5, 5), Color.White)
     End Sub
 
     ''' <summary>

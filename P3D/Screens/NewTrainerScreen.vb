@@ -116,13 +116,13 @@
             DrawLevelProgress()
         End If
 
-        _textBatch.DrawString(FontManager.MainFont, "Trainer Card", New Vector2(260, 100), Color.Black, 0F, Vector2.Zero, 1.5F, SpriteEffects.None, 0F)
+        _textBatch.DrawString(FontManager.MainFontBlack, "Trainer Card", New Vector2(260, 100), Color.Black, 0F, Vector2.Zero, 1.5F, SpriteEffects.None, 0F)
 
-        _textBatch.DrawString(FontManager.MainFont, "Name: ", New Vector2(270, 160), Color.Black, 0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0F)
-        _textBatch.DrawString(FontManager.MainFont, "Money: ", New Vector2(270, 190), Color.Black, 0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0F)
-        _textBatch.DrawString(FontManager.MainFont, "OT: ", New Vector2(270, 220), Color.Black, 0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0F)
-        _textBatch.DrawString(FontManager.MainFont, "Time: ", New Vector2(270, 250), Color.Black, 0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0F)
-        _textBatch.DrawString(FontManager.MainFont, "Points: ", New Vector2(270, 280), Color.Black, 0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0F)
+        _textBatch.DrawString(FontManager.MainFontBlack, "Name: ", New Vector2(270, 160), Color.White, 0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0F)
+        _textBatch.DrawString(FontManager.MainFontBlack, "Money: ", New Vector2(270, 190), Color.White, 0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0F)
+        _textBatch.DrawString(FontManager.MainFontBlack, "OT: ", New Vector2(270, 220), Color.White, 0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0F)
+        _textBatch.DrawString(FontManager.MainFontBlack, "Time: ", New Vector2(270, 250), Color.White, 0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0F)
+        _textBatch.DrawString(FontManager.MainFontBlack, "Points: ", New Vector2(270, 280), Color.White, 0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0F)
 
         _textBatch.DrawString(FontManager.MiniFont, Core.Player.Name, New Vector2(390, 165), New Color(80, 80, 80), 0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0F)
 

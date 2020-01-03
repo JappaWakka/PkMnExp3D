@@ -74,21 +74,21 @@ Public Class FontManager
         Return Nothing
     End Function
 
-    Public Shared ReadOnly Property MainFont() As SpriteFont
+    Public Shared ReadOnly Property MainFontWhite() As SpriteFont
         Get
-            Return GetFont("mainfont")
+            Return GetFont("mainfontwhite")
+        End Get
+    End Property
+
+    Public Shared ReadOnly Property MainFontBlack() As SpriteFont
+        Get
+            Return GetFont("mainfontblack")
         End Get
     End Property
 
     Public Shared ReadOnly Property TextFont() As SpriteFont
         Get
             Return GetFont("textfont")
-        End Get
-    End Property
-
-    Public Shared ReadOnly Property InGameFont() As SpriteFont
-        Get
-            Return GetFont("ingame")
         End Get
     End Property
 

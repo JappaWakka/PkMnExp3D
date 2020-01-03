@@ -238,12 +238,12 @@
                     Dim splits() As String = argument.Split(CChar("|"))
                     Script.SaveNPCTrade = splits
 
-                    Dim selScreen = New PartyScreen(Core.CurrentScreen, Item.GetItemByID(5), AddressOf Script.DoNPCTrade, "Choose Pokémon for trade", True) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = True}
+                    Dim selScreen = New PartyScreenV2(Core.CurrentScreen, Item.GetItemByID(5), AddressOf Script.DoNPCTrade, "Choose Pokémon for trade", True) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = True}
                     AddHandler selScreen.SelectedObject, AddressOf Script.DoNPCTradeHandler
 
                     Core.SetScreen(selScreen)
 
-                    CType(Core.CurrentScreen, PartyScreen).ExitedSub = AddressOf Script.ExitedNPCTrade
+                    CType(Core.CurrentScreen, PartyScreenV2).ExitedSub = AddressOf Script.ExitedNPCTrade
 
                     CanContinue = False
                 Case "hide"
@@ -363,7 +363,7 @@
                         End If
                     End If
 
-                    Dim selScreen = New PartyScreen(Core.CurrentScreen, Item.GetItemByID(5), Nothing, "Choose Pokémon", canExit, canChooseFainted, canChooseEgg) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = canExit}
+                    Dim selScreen = New PartyScreenV2(Core.CurrentScreen, Item.GetItemByID(5), Nothing, "Choose Pokémon", canExit, canChooseFainted, canChooseEgg) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = canExit}
                     AddHandler selScreen.SelectedObject, Nothing
 
                     Core.SetScreen(selScreen)

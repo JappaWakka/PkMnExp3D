@@ -179,7 +179,7 @@
                 End If
             End If
 
-            Core.SpriteBatch.DrawString(FontManager.InGameFont, drawText, New Vector2(CInt(Core.windowSize.Width / 2) - CInt(FontManager.InGameFont.MeasureString(drawText).X / 2), 200), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, drawText, New Vector2(CInt(Core.windowSize.Width / 2) - CInt(FontManager.MainFontBlack.MeasureString(drawText).X / 2), 200), Color.White)
 
             Dim endIndex As Integer = 1
             If canForget = False Then
@@ -203,7 +203,7 @@
                 End If
 
                 Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(Core.windowSize.Width / 2) - 182 + i * 192 + 22, 550, 128, 64))
-                Core.SpriteBatch.DrawString(FontManager.InGameFont, Text, New Vector2(CInt(Core.windowSize.Width / 2) - 164 + i * 192 + 22, 402 + 180), Color.Black)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Text, New Vector2(CInt(Core.windowSize.Width / 2) - 164 + i * 192 + 22, 402 + 180), Color.White)
             Next
         End If
 

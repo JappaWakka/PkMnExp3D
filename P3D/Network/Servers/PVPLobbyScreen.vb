@@ -82,20 +82,20 @@
     Public Overrides Sub Draw()
         Canvas.DrawGradient(Core.windowSize, New Color(10, 145, 227), New Color(6, 77, 139), False, -1)
         Canvas.DrawGradient(New Rectangle(0, 0, CInt(Core.windowSize.Width), 65), New Color(0, 24, 114), New Color(13, 138, 228), False, -1)
-        Core.SpriteBatch.DrawString(FontManager.MainFont, "Versus Battle", New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString("Versus Battle").X / 2), 20), New Color(196, 231, 255))
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Versus Battle", New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString("Versus Battle").X / 2), 20), New Color(196, 231, 255))
         Canvas.DrawRectangle(New Rectangle(0, 65, Core.windowSize.Width, 1), New Color(0, 24, 114))
 
         Select Case ScreenState
             Case ScreenStates.Idle
                 If WaitingForPlayer = True Then
                     Dim t As String = "Waiting for other player" & LoadingDots.Dots
-                    Core.SpriteBatch.DrawString(FontManager.MainFont, t, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString(t).X / 2), CSng(Core.windowSize.Height / 2 - 10)), Color.White)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString(t).X / 2), CSng(Core.windowSize.Height / 2 - 10)), Color.White)
                 Else
                     Me.DrawIdle()
                 End If
             Case ScreenStates.Stopped
                 Dim t As String = DisconnectMessage
-                Core.SpriteBatch.DrawString(FontManager.MainFont, t, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString(t).X / 2), CSng(Core.windowSize.Height / 2 - 10)), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString(t).X / 2), CSng(Core.windowSize.Height / 2 - 10)), Color.White)
             Case ScreenStates.ChooseTeam
                 Me.DrawChooseTeam()
             Case ScreenStates.BattleResults
@@ -150,7 +150,7 @@
         Canvas.DrawRectangle(New Rectangle(100, 200, 300, 64), New Color(177, 228, 247, 200))
         Canvas.DrawGradient(New Rectangle(0, 200, 100, 64), New Color(255, 255, 255, 0), New Color(177, 228, 247, 200), True, -1)
 
-        Core.SpriteBatch.DrawString(FontManager.MainFont, Core.Player.Name, New Vector2(140, 215), Color.Black, 0.0F, Vector2.Zero, 1.5F, SpriteEffects.None, 0.0F)
+        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Core.Player.Name, New Vector2(140, 215), Color.White, 0.0F, Vector2.Zero, 1.5F, SpriteEffects.None, 0.0F)
         Core.SpriteBatch.Draw(Screen.Level.OwnPlayer.Texture, New Rectangle(60, 200, 64, 64), New Rectangle(0, 64, 32, 32), Color.White)
 
         Canvas.DrawRectangle(New Rectangle(0, 264, 400, 32), New Color(6, 77, 139))
@@ -181,7 +181,7 @@
             Core.SpriteBatch.Draw(Me.texture, New Rectangle(CInt(Core.windowSize.Width / 2 - (64 * 4) / 2) + 64, 200 + i * 96, 64 * 2, 64), New Rectangle(32, 16, 16, 16), Color.White)
             Core.SpriteBatch.Draw(Me.texture, New Rectangle(CInt(Core.windowSize.Width / 2 - (64 * 4) / 2) + 64 * 3, 200 + i * 96, 64, 64), New Rectangle(16, 16, 16, 16), Color.White, 0.0F, Vector2.Zero, SpriteEffects.FlipHorizontally, 0.0F)
 
-            Core.SpriteBatch.DrawString(FontManager.MainFont, Me.menuItems(i), New Vector2(CInt(Core.windowSize.Width / 2 - (64 * 4) / 2) + 20, 216 + i * 96), Color.Black, 0.0F, Vector2.Zero, 1.25F, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Me.menuItems(i), New Vector2(CInt(Core.windowSize.Width / 2 - (64 * 4) / 2) + 20, 216 + i * 96), Color.White, 0.0F, Vector2.Zero, 1.25F, SpriteEffects.None, 0.0F)
         Next
 
         DrawCursor()
@@ -216,7 +216,7 @@
         Next
 
         If Not t Is Nothing And Not tempPlayer Is Nothing Then
-            Core.SpriteBatch.DrawString(FontManager.MainFont, tempPlayer.Name, New Vector2(Core.windowSize.Width - 260, 215), Color.Black, 0.0F, Vector2.Zero, 1.5F, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, tempPlayer.Name, New Vector2(Core.windowSize.Width - 260, 215), Color.White, 0.0F, Vector2.Zero, 1.5F, SpriteEffects.None, 0.0F)
             Core.SpriteBatch.Draw(t, New Rectangle(CInt(Core.windowSize.Width - 340), 200, 64, 64), New Rectangle(0, 64, 32, 32), Color.White)
         End If
 
@@ -300,7 +300,7 @@
 
     Private Sub StartBattle()
         If Not Me.OwnTeam Is Nothing And Not OppTeam Is Nothing Then
-            Dim selScreen = New PartyScreen(Core.CurrentScreen, Item.GetItemByID(5), AddressOf LeadPickedStart, "Choose your Lead", True, True, False, _pokemonList:=OwnTeam) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = True}
+            Dim selScreen = New PartyScreenV2(Core.CurrentScreen, Item.GetItemByID(5), AddressOf LeadPickedStart, "Choose your Lead", True, True, False, _pokemonList:=OwnTeam) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = True}
             AddHandler selScreen.SelectedObject, AddressOf LeadPickedStartHandler
 
             Core.SetScreen(selScreen)
@@ -340,7 +340,7 @@
 
     Private Sub DrawChooseTeam()
         Dim t As String = "Choose your team:"
-        Core.SpriteBatch.DrawString(FontManager.MainFont, t, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString(t).X / 2), 100), Color.White)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString(t).X / 2), 100), Color.White)
 
         Dim startPos As New Vector2(CSng(Core.windowSize.Width / 2) - 400, 300)
         Canvas.DrawGradient(New Rectangle(CInt(Core.windowSize.Width / 2) - 410, 230, 290, 360), New Color(203, 40, 41), New Color(238, 128, 128), False, -1)
@@ -360,7 +360,7 @@
                 Core.SpriteBatch.Draw(pokeTexture, New Rectangle(CInt(startPos.X) + x * 140 + 32 - CInt(pokeTexture.Width - 32), y * 100 + CInt(startPos.Y) + 10, pokeTexture.Width * 2, 64), Color.White)
             End If
 
-            Core.SpriteBatch.DrawString(FontManager.MainFont, "Battle Box", New Vector2(CInt(startPos.X) + 80, CInt(startPos.Y) - 45), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Battle Box", New Vector2(CInt(startPos.X) + 80, CInt(startPos.Y) - 45), Color.White)
         Next
 
         startPos = New Vector2(CSng(Core.windowSize.Width / 2) + 130, 300)
@@ -381,7 +381,7 @@
                 Core.SpriteBatch.Draw(pokeTexture, New Rectangle(CInt(startPos.X) + x * 140 + 32 - CInt(pokeTexture.Width - 32), y * 100 + CInt(startPos.Y) + 10, pokeTexture.Width * 2, 64), Color.White)
             End If
 
-            Core.SpriteBatch.DrawString(FontManager.MainFont, "Team", New Vector2(CInt(startPos.X) + 106, CInt(startPos.Y) - 45), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Team", New Vector2(CInt(startPos.X) + 106, CInt(startPos.Y) - 45), Color.White)
         Next
 
         DrawChooseTeamCursor()
@@ -697,14 +697,14 @@
                 resultStateText = "Lost"
                 resultColor = Color.LightBlue
             End If
-            Core.SpriteBatch.DrawString(FontManager.MainFont, resultText, New Vector2(Core.windowSize.Width / 2.0F - FontManager.MainFont.MeasureString(resultText).X / 2.0F, 120), Color.White)
-            Core.SpriteBatch.DrawString(FontManager.MainFont, resultStateText, New Vector2(Core.windowSize.Width / 2.0F - FontManager.MainFont.MeasureString(resultText).X / 2.0F + FontManager.MainFont.MeasureString("You ").X, 120), resultColor)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, resultText, New Vector2(Core.windowSize.Width / 2.0F - FontManager.MainFontWhite.MeasureString(resultText).X / 2.0F, 120), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, resultStateText, New Vector2(Core.windowSize.Width / 2.0F - FontManager.MainFontWhite.MeasureString(resultText).X / 2.0F + FontManager.MainFontWhite.MeasureString("You ").X, 120), resultColor)
 
             'Own side:
             Canvas.DrawRectangle(New Rectangle(100, 200, 300, 64), New Color(177, 228, 247, 200))
             Canvas.DrawGradient(New Rectangle(0, 200, 100, 64), New Color(255, 255, 255, 0), New Color(177, 228, 247, 200), True, -1)
 
-            Core.SpriteBatch.DrawString(FontManager.MainFont, Core.Player.Name, New Vector2(140, 215), Color.Black, 0.0F, Vector2.Zero, 1.5F, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Core.Player.Name, New Vector2(140, 215), Color.White, 0.0F, Vector2.Zero, 1.5F, SpriteEffects.None, 0.0F)
             Core.SpriteBatch.Draw(Screen.Level.OwnPlayer.Texture, New Rectangle(60, 200, 64, 64), New Rectangle(0, 64, 32, 32), Color.White)
 
             Canvas.DrawRectangle(New Rectangle(0, 264, 400, 32), New Color(6, 77, 139))
@@ -756,7 +756,7 @@
             Next
 
             Dim pokeLeft As String = countOwnPokemon.ToString & " VS " & countOppPokemon.ToString()
-            Core.SpriteBatch.DrawString(FontManager.MainFont, pokeLeft, New Vector2(Core.windowSize.Width / 2.0F - FontManager.MainFont.MeasureString(pokeLeft).X * 2.0F, 240), Color.White, 0.0F, Vector2.Zero, 4.0F, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, pokeLeft, New Vector2(Core.windowSize.Width / 2.0F - FontManager.MainFontWhite.MeasureString(pokeLeft).X * 2.0F, 240), Color.White, 0.0F, Vector2.Zero, 4.0F, SpriteEffects.None, 0.0F)
 
             'Opp Side:
             Canvas.DrawRectangle(New Rectangle(CInt(Core.windowSize.Width - 300), 200, 300, 64), New Color(177, 228, 247, 200))
@@ -778,7 +778,7 @@
             Next
 
             If Not t Is Nothing And Not tempPlayer Is Nothing Then
-                Core.SpriteBatch.DrawString(FontManager.MainFont, tempPlayer.Name, New Vector2(Core.windowSize.Width - 260, 215), Color.Black, 0.0F, Vector2.Zero, 1.5F, SpriteEffects.None, 0.0F)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, tempPlayer.Name, New Vector2(Core.windowSize.Width - 260, 215), Color.White, 0.0F, Vector2.Zero, 1.5F, SpriteEffects.None, 0.0F)
                 Core.SpriteBatch.Draw(t, New Rectangle(CInt(Core.windowSize.Width - 340), 200, 64, 64), New Rectangle(0, 64, 32, 32), Color.White)
             End If
 

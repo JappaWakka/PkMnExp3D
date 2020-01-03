@@ -54,7 +54,7 @@
                         End If
 
                         Screen.TextBox.reDelay = 0.0F
-                        Screen.TextBox.TextColor = TextBox.PlayerColor
+                        Screen.TextBox.TextColor = Textbox.PlayerColor
                         Screen.TextBox.Show(Message, {})
 
                         CanContinue = False
@@ -90,7 +90,7 @@
                         SoundManager.PlaySound("Success", True)
 
                         Screen.TextBox.reDelay = 0.0F
-                        Screen.TextBox.TextColor = TextBox.PlayerColor
+                        Screen.TextBox.TextColor = Textbox.PlayerColor
                         Screen.TextBox.Show(receiveString & Core.Player.Inventory.GetMessageReceive(Item, Amount), {})
 
                         CanContinue = False

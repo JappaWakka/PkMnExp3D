@@ -63,17 +63,17 @@
             Next
         Next
 
-        Dim t As String = Me.message.CropStringToWidth(FontManager.MainFont, 500)
+        Dim t As String = Me.message.CropStringToWidth(FontManager.MainFontWhite, 500)
 
-        Core.SpriteBatch.DrawString(FontManager.MainFont, Me.header, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString(Me.header).X), 168), Color.White, 0.0F, New Vector2(0), 2.0F, SpriteEffects.None, 0.0F)
-        Core.SpriteBatch.DrawString(FontManager.MainFont, t, New Vector2(CSng(Core.windowSize.Width / 2 - (FontManager.MainFont.MeasureString(t).X * 1.4F) / 2), 320), Color.White, 0.0F, New Vector2(0), 1.4F, SpriteEffects.None, 0.0F)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Me.header, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString(Me.header).X), 168), Color.White, 0.0F, New Vector2(0), 2.0F, SpriteEffects.None, 0.0F)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(CSng(Core.windowSize.Width / 2 - (FontManager.MainFontWhite.MeasureString(t).X * 1.4F) / 2), 320), Color.White, 0.0F, New Vector2(0), 1.0F, SpriteEffects.None, 0.0F)
     End Sub
 
     Public Overrides Sub Update()
         If Me.MyMode = Modes.Disconnect Then
             If Controls.Accept(True, True, True) = True Or Controls.Dismiss(True, True, True) = True Then
                 If quitToMenu = True Then
-                    Core.SetScreen(New PressStartScreen())
+                    Core.SetScreen(New MainMenuScreen())
                 Else
                     Core.SetScreen(Me.PreScreen)
                 End If
@@ -86,7 +86,7 @@
             If Controls.Dismiss() = True Then
                 Connected = False
                 Core.ServersManager.ServerConnection.Disconnect()
-                Core.SetScreen(New PressStartScreen())
+                Core.SetScreen(New MainMenuScreen())
             End If
         End If
     End Sub

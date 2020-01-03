@@ -68,13 +68,13 @@
             End If
 
             Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(Core.windowSize.Width / 2) - 180 + offSetX, 240 + offSetY, 320, 64))
-            Core.SpriteBatch.DrawString(FontManager.InGameFont, Text, New Vector2(CInt(Core.windowSize.Width / 2) - (FontManager.InGameFont.MeasureString(Text).X / 2) - 10 + offSetX, 276 + offSetY), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Text, New Vector2(CInt(Core.windowSize.Width / 2) - (FontManager.MainFontWhite.MeasureString(Text).X / 2) - 10 + offSetX, 276 + offSetY), Color.White)
 
             If MenuItems(i) = Localization.GetString("item_detail_screen_trash") Then
                 Dim trashText As String = trashValue & "/" & Core.Player.Inventory.GetItemAmount(Me.Item.ID)
 
                 Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(Core.windowSize.Width / 2) + 180 + offSetX, 240 + offSetY, 128, 64))
-                Core.SpriteBatch.DrawString(FontManager.InGameFont, trashText, New Vector2(CInt(Core.windowSize.Width / 2) - (FontManager.InGameFont.MeasureString(trashText).X / 2) + 256 + offSetX, 276 + offSetY), Color.Black)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, trashText, New Vector2(CInt(Core.windowSize.Width / 2) - (FontManager.MainFontWhite.MeasureString(trashText).X / 2) + 256 + offSetX, 276 + offSetY), Color.White)
             End If
         Next
     End Sub
@@ -139,7 +139,7 @@
                     Case Localization.GetString("item_detail_screen_use")
                         Item.Use()
                     Case Localization.GetString("item_detail_screen_give")
-                        Dim selScreen = New PartyScreen(Core.CurrentScreen, Me.Item, AddressOf GiveItem, Localization.GetString("item_detail_screen_give_item") & Me.Item.Name, True) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = True}
+                        Dim selScreen = New PartyScreenV2(Core.CurrentScreen, Me.Item, AddressOf GiveItem, Localization.GetString("item_detail_screen_give_item") & Me.Item.Name, True) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = True}
                         AddHandler selScreen.SelectedObject, AddressOf GiveItemHandler
 
                         Core.SetScreen(selScreen)
@@ -195,7 +195,7 @@
         If Item.CanBeHold = True Then
             MenuItems.Add(Localization.GetString("item_detail_screen_give"))
         End If
-        If Item.ItemType <> Game.Items.ItemTypes.KeyItems And Item.CanBeTossed = True Then
+        If Item.ItemType <> P3D.Items.ItemTypes.KeyItems And Item.CanBeTossed = True Then
             MenuItems.Add(Localization.GetString("item_detail_screen_trash"))
         End If
         MenuItems.Add(Localization.GetString("item_detail_screen_back"))

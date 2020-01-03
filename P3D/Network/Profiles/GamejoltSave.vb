@@ -876,7 +876,7 @@ Namespace GameJolt
                 "OT|" & ot & Environment.NewLine &
                 "Points|0" & Environment.NewLine &
                 "hasPokedex|0" & Environment.NewLine &
-                "hasPokegear|0" & Environment.NewLine &
+                "hasPhone|0" & Environment.NewLine &
                 "freeCamera|1" & Environment.NewLine &
                 "thirdPerson|0" & Environment.NewLine &
                 "skin|" & GameJolt.Emblem.GetPlayerSpriteFile(1, Core.GameJoltSave.GameJoltID, Core.GameJoltSave.Gender) & Environment.NewLine &

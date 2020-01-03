@@ -6,7 +6,7 @@
 {7.5|7.5|Pokémon Music|Johto|1,2|RADIO|pokemon_march|Hi there, folks.~This is DJ Ben. And you are listening to Pokémon Music.~We are bringing you the song that fits this time of the day:~The Pokémon March.|1|0|0}
 {8.5|8.5|Lucky Channel|Johto|0,1,2,3|RADIO|gamecorner|[luckychannel]|1|0|0}
 {20.5|0-21|Rocket Transmission|Johto|0,1,2,3|RADIO|rocket_broadcast|...~e.olv.!~...~.row str..ge., f.ster.~...~mag..arp.~...|1|1|johto_rocket_hq_broadcast}
-{0-21|0-21|Team Rocket Announcement|Johto|0,1,2,3|RADIO|johto_rocket_encounter|---Start of Message---~Team Rocket Executive:~Attention everybody! This is Team Rocket!~We've taken over the Radio Tower in Goldenrod City!~We did this to broadcast a message:~Giovanni! A new Team Rocket has been built.~Now, we reach out to you to come back to lead Team Rocket to victory!~Rejoin Team Rocket and help us taking over the World!~---End of Message---|1|0|johto_rocket_radio_pokegear}
+{0-21|0-21|Team Rocket Announcement|Johto|0,1,2,3|RADIO|johto_rocket_encounter|---Start of Message---~Team Rocket Executive:~Attention everybody! This is Team Rocket!~We've taken over the Radio Tower in Goldenrod City!~We did this to broadcast a message:~Giovanni! A new Team Rocket has been built.~Now, we reach out to you to come back to lead Team Rocket to victory!~Rejoin Team Rocket and help us taking over the World!~---End of Message---|1|0|johto_rocket_radio_phone}
 {13.5|0-21|Mysterious Transmission|Johto|0,1,2,3|RADIO|unown_broadcast|[unown]|0|1|0}
 {0-21|0|Mysterious Transmission|Kanto|0,1,2,3|EXPN|cerulean_cave|...~we ar.~...eam Ro~....ey us...~...wer and mig...~...oin u...|0|1|0}
 

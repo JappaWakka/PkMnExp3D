@@ -467,7 +467,7 @@ Public Class NewInventoryScreen
 
         Dim itemTitle As String = cItem.Name
         Dim itemSubTitle As String = cItem.ItemType.ToString()
-        Dim itemDescription As String = cItem.Description
+        Dim itemDescription As String = cItem.GetDescription()
 
         Select Case cItem.ItemType
             Case Items.ItemTypes.Machines
@@ -540,7 +540,7 @@ Public Class NewInventoryScreen
             Dim offsetY As Integer = Core.windowSize.Height - 390
 
             Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(Core.windowSize.Width / 2) + 180 + offsetX, 240 + offsetY, 128, 64))
-            Core.SpriteBatch.DrawString(FontManager.InGameFont, trashText, New Vector2(CInt(Core.windowSize.Width / 2) - (FontManager.InGameFont.MeasureString(trashText).X / 2) + 256 + offsetX, 276 + offsetY), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, trashText, New Vector2(CInt(Core.windowSize.Width / 2) - (FontManager.MainFontBlack.MeasureString(trashText).X / 2) + 256 + offsetX, 276 + offsetY), Color.White)
         End If
     End Sub
 
@@ -886,7 +886,7 @@ Public Class NewInventoryScreen
                 Case INFO_ITEM_OPTION_USE
                     cItem.Use()
                 Case INFO_ITEM_OPTION_GIVE
-                    Dim selScreen = New PartyScreen(Core.CurrentScreen) With {.Mode = ISelectionScreen.ScreenMode.Selection, .CanExit = True}
+                    Dim selScreen = New PartyScreenV2(Core.CurrentScreen) With {.Mode = ISelectionScreen.ScreenMode.Selection, .CanExit = True}
                     AddHandler selScreen.SelectedObject, AddressOf GiveItemHandler
 
                     Core.SetScreen(selScreen)

@@ -221,15 +221,15 @@ Public Class OverworldScreen
                     Level.RouteSign.Hide()
 
                     SoundManager.PlaySound("menu_open")
-                    Core.SetScreen(New NewMenuScreen(Me))
+                    Core.SetScreen(New MenuScreen(Me))
                 End If
             End If
 
             'Open the PokégearScreen:
             If KeyBoardHandler.KeyPressed(KeyBindings.SpecialKey) = True Or ControllerHandler.ButtonPressed(Buttons.Y) = True Then
-                If Core.Player.HasPokegear = True Or GameController.IS_DEBUG_ACTIVE = True Then
+                If Core.Player.HasPhone = True Or GameController.IS_DEBUG_ACTIVE = True Then
                     If Screen.Camera.IsMoving() = False And ActionScript.IsReady = True Then
-                        Core.SetScreen(New GameJolt.PokegearScreen(Me, GameJolt.PokegearScreen.EntryModes.MainMenu, {}))
+                        Core.SetScreen(New GameJolt.PhoneScreen(Me, GameJolt.PhoneScreen.EntryModes.MainMenu, {}))
                     End If
                 End If
             End If
@@ -307,20 +307,20 @@ Public Class OverworldScreen
     ''' </summary>
     ''' <returns>True, if no requests are in the queue, False otherwise.</returns>
     Private Function HandleServerRequests() As Boolean
-        If GameJolt.PokegearScreen.BattleRequestData <> -1 Then 'A Servers ID from another player is set here.
-            If Core.ServersManager.PlayerCollection.HasPlayer(GameJolt.PokegearScreen.BattleRequestData) = True Then 'If the player still exists on the server.
-                Core.SetScreen(New GameJolt.PokegearScreen(Core.CurrentScreen, GameJolt.PokegearScreen.EntryModes.BattleRequest, {GameJolt.PokegearScreen.BattleRequestData, Core.ServersManager.PlayerCollection.GetPlayer(GameJolt.PokegearScreen.BattleRequestData).GameJoltId}))
+        If GameJolt.PhoneScreen.BattleRequestData <> -1 Then 'A Servers ID from another player is set here.
+            If Core.ServersManager.PlayerCollection.HasPlayer(GameJolt.PhoneScreen.BattleRequestData) = True Then 'If the player still exists on the server.
+                Core.SetScreen(New GameJolt.PhoneScreen(Core.CurrentScreen, GameJolt.PhoneScreen.EntryModes.BattleRequest, {GameJolt.PhoneScreen.BattleRequestData, Core.ServersManager.PlayerCollection.GetPlayer(GameJolt.PhoneScreen.BattleRequestData).GameJoltId}))
                 Return False
             Else 'Otherwise, reset the data.
-                GameJolt.PokegearScreen.BattleRequestData = -1
+                GameJolt.PhoneScreen.BattleRequestData = -1
             End If
         End If
-        If GameJolt.PokegearScreen.TradeRequestData <> -1 Then 'A Servers ID from another player is set here.
-            If Core.ServersManager.PlayerCollection.HasPlayer(GameJolt.PokegearScreen.TradeRequestData) = True Then 'If the player still exists on the server.
-                Core.SetScreen(New GameJolt.PokegearScreen(Core.CurrentScreen, GameJolt.PokegearScreen.EntryModes.TradeRequest, {GameJolt.PokegearScreen.TradeRequestData, Core.ServersManager.PlayerCollection.GetPlayer(GameJolt.PokegearScreen.TradeRequestData).GameJoltId}))
+        If GameJolt.PhoneScreen.TradeRequestData <> -1 Then 'A Servers ID from another player is set here.
+            If Core.ServersManager.PlayerCollection.HasPlayer(GameJolt.PhoneScreen.TradeRequestData) = True Then 'If the player still exists on the server.
+                Core.SetScreen(New GameJolt.PhoneScreen(Core.CurrentScreen, GameJolt.PhoneScreen.EntryModes.TradeRequest, {GameJolt.PhoneScreen.TradeRequestData, Core.ServersManager.PlayerCollection.GetPlayer(GameJolt.PhoneScreen.TradeRequestData).GameJoltId}))
                 Return False
             Else 'Otherwise, reset the data.
-                GameJolt.PokegearScreen.TradeRequestData = -1
+                GameJolt.PhoneScreen.TradeRequestData = -1
             End If
         End If
         Return True
@@ -347,11 +347,11 @@ Public Class OverworldScreen
         'If the XBOX render control delay is 0, render the controls.
         If ShowControlsDelay = 0.0F Then
             Dim d As New Dictionary(Of Buttons, String)
-            d.Add(Buttons.A, "Interact")
-            d.Add(Buttons.X, "Menu")
+            d.Add(Buttons.A, Localization.GetString("game_interaction_interact", "Interact"))
+            d.Add(Buttons.X, Localization.GetString("game_interaction_menu", "Menu"))
 
-            If Core.Player.HasPokegear = True Then
-                d.Add(Buttons.Y, "Pokégear")
+            If Core.Player.HasPhone = True Then
+                d.Add(Buttons.Y, Localization.GetString("game_interaction_phone", "Pokégear"))
             End If
 
             d.Add(Buttons.Start, "Game Menu")
@@ -429,7 +429,7 @@ Public Class OverworldScreen
             End If
 
             'If the radio is activated and the station can be played on the current map, play the music.
-            If Level.IsRadioOn = True AndAlso GameJolt.PokegearScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = True Then
+            If Level.IsRadioOn = True AndAlso GameJolt.PhoneScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = True Then
                 theme = Level.SelectedRadioStation.Music
             Else
                 Level.IsRadioOn = False

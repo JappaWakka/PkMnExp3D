@@ -44,21 +44,21 @@
 #begin Fonts/BMP/GameJolt.xnb
 /copy:Fonts/BMP/GameJolt.xnb
 
-#begin Fonts/BMP/InGame.png
+#begin Fonts/BMP/MainFontBlack.png
 /importer:TextureImporter
 /processor:FontTextureProcessor
 /processorParam:FirstCharacter= 
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Color
-/build:Fonts/BMP/InGame.png
+/build:Fonts/BMP/MainFontBlack.png
 
-#begin Fonts/BMP/mainFont.png
+#begin Fonts/BMP/MainFontWhite.png
 /importer:TextureImporter
 /processor:FontTextureProcessor
 /processorParam:FirstCharacter= 
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Color
-/build:Fonts/BMP/mainFont.png
+/build:Fonts/BMP/MainFontWhite.png
 
 #begin Fonts/BMP/miniFont.spritefont
 /importer:FontDescriptionImporter
@@ -303,12 +303,6 @@
 /processor:SongProcessor
 /processorParam:Quality=Best
 /build:Songs/azalea.ogg
-
-#begin Songs/barktown.ogg
-/importer:OggImporter
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Songs/barktown.ogg
 
 #begin Songs/battlefactory.ogg
 /importer:OggImporter

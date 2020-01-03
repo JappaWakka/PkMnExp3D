@@ -57,10 +57,10 @@ Public Class RouteSign
             Dim placeString As String = Localization.GetString("Places_" & Me._text, Me._text)
 
             'Get the point to render the text to.
-            Dim pX As Integer = CInt(316 / 2) - CInt(FontManager.InGameFont.MeasureString(placeString).X / 2)
+            Dim pX As Integer = CInt(316 / 2) - CInt(FontManager.MainFontBlack.MeasureString(placeString).X / 2)
 
             Core.SpriteBatch.DrawInterface(TextureManager.GetTexture("GUI\Overworld\Sign"), New Rectangle(5, CInt(Me._positionY), 316, 60), Color.White) 'Draw the sign image.
-            Core.SpriteBatch.DrawInterfaceString(FontManager.InGameFont, placeString, New Vector2(pX, CInt(Me._positionY) + 13), Color.Black) 'Draw the text on the sign.
+            Core.SpriteBatch.DrawInterfaceString(FontManager.MainFontBlack, placeString, New Vector2(pX, CInt(Me._positionY) + 13), Color.White) 'Draw the text on the sign.
         End If
     End Sub
 

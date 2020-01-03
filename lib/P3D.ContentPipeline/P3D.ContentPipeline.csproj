@@ -65,6 +65,8 @@
     <None Include="Content\Models\Environment\Test_floor\Test_floor.mtl" />
     <None Include="Content\Models\Environment\Test_floor\Test_floor.obj" />
     <None Include="Content\Models\Environment\Test_floor\Texture\floor.tga" />
+    <Content Include="Content\Fonts\BMP\MainFontBlack.png" />
+    <Content Include="Content\Fonts\BMP\MainFontWhite.png" />
     <Content Include="Content\Models\MovingTruck\MovingTruck.FBX" />
     <None Include="Content\Models\Snorlax\Normal.mtl" />
     <None Include="Content\Models\Snorlax\Normal.obj" />
@@ -85,8 +87,6 @@
     <Content Include="Content\Fonts\BMP\Braille.png" />
     <Content Include="Content\Fonts\BMP\chatFont.png" />
     <Content Include="Content\Fonts\BMP\GameJolt.png" />
-    <Content Include="Content\Fonts\BMP\InGame.png" />
-    <Content Include="Content\Fonts\BMP\mainFont.png" />
     <Content Include="Content\Fonts\BMP\TextFont.png" />
     <Content Include="Content\Fonts\BMP\Unown.png" />
     <Content Include="Content\Models\boat2\Boat.png" />
@@ -94,7 +94,6 @@
     <Content Include="Content\Models\MovingTruck\MovingTruck.jpg" />
     <Content Include="Content\Songs\ancient_ruins.ogg" />
     <Content Include="Content\Songs\azalea.ogg" />
-    <Content Include="Content\Songs\barktown.ogg" />
     <Content Include="Content\Songs\battlefactory.ogg" />
     <Content Include="Content\Songs\battletower.ogg" />
     <Content Include="Content\Songs\bikesong.ogg" />

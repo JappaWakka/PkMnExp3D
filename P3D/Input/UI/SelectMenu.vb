@@ -111,7 +111,7 @@
                         Core.SpriteBatch.Draw(t2, New Rectangle(CInt(startPos.X + 128), CInt(startPos.Y), 64, 64), Color.White)
                         Core.SpriteBatch.Draw(t1, New Rectangle(CInt(startPos.X + 192), CInt(startPos.Y), 64, 64), Nothing, Color.White, 0.0F, New Vector2(0), SpriteEffects.FlipHorizontally, 0.0F)
 
-                        Core.SpriteBatch.DrawString(FontManager.MainFont, Text, New Vector2(startPos.X + 128 - (FontManager.MainFont.MeasureString(Text).X * 1.4F) / 2, startPos.Y + 15), Color.Black, 0.0F, Vector2.Zero, 1.4F, SpriteEffects.None, 0.0F)
+                        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Text, New Vector2(startPos.X + 128 - (FontManager.MainFontBlack.MeasureString(Text).X) / 2, startPos.Y + 15), Color.White, 0.0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0.0F)
                     End If
                 Next
             End If

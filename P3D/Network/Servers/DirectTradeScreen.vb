@@ -72,12 +72,12 @@
         Select Case ScreenState
             Case ScreenStates.Idle
                 If WaitingForPlayer = True Then
-                    Core.SpriteBatch.DrawString(FontManager.MainFont, "Waiting for other player" & LoadingDots.Dots, New Vector2(100), Color.White)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Waiting for other player" & LoadingDots.Dots, New Vector2(100), Color.White)
                 Else
                     Me.DrawIdle()
                 End If
             Case ScreenStates.Stopped
-                Core.SpriteBatch.DrawString(FontManager.MainFont, DisconnectMessage, New Vector2(100), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, DisconnectMessage, New Vector2(100), Color.White)
             Case ScreenStates.Trading
                 Me.DrawTrading()
         End Select
@@ -89,7 +89,7 @@
     Private Sub DrawIdle()
         'Own Side:
         Core.SpriteBatch.Draw(Screen.Level.OwnPlayer.Texture, New Rectangle(100, 32, 64, 64), New Rectangle(0, 64, 32, 32), Color.White)
-        Core.SpriteBatch.DrawString(FontManager.MainFont, Core.Player.Name, New Vector2(170, 54), Color.White, 0.0F, Vector2.Zero, 1.25F, SpriteEffects.None, 0.0F)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Core.Player.Name, New Vector2(170, 54), Color.White, 0.0F, Vector2.Zero, 1.25F, SpriteEffects.None, 0.0F)
 
         Canvas.DrawRectangle(New Rectangle(100, 100, 256, 256), New Color(255, 255, 255, 150))
 
@@ -123,7 +123,7 @@
             Core.SpriteBatch.Draw(Me.texture, New Rectangle(CInt(Core.windowSize.Width / 2 - (64 * 4) / 2) + 64, 200 + i * 96, 64 * 2, 64), New Rectangle(32, 16, 16, 16), Color.White)
             Core.SpriteBatch.Draw(Me.texture, New Rectangle(CInt(Core.windowSize.Width / 2 - (64 * 4) / 2) + 64 * 3, 200 + i * 96, 64, 64), New Rectangle(16, 16, 16, 16), Color.White, 0.0F, Vector2.Zero, SpriteEffects.FlipHorizontally, 0.0F)
 
-            Core.SpriteBatch.DrawString(FontManager.MainFont, Me.menuItems(i), New Vector2(CInt(Core.windowSize.Width / 2 - (64 * 4) / 2) + 20, 216 + i * 96), Color.Black, 0.0F, Vector2.Zero, 1.25F, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Me.menuItems(i), New Vector2(CInt(Core.windowSize.Width / 2 - (64 * 4) / 2) + 20, 216 + i * 96), Color.White, 0.0F, Vector2.Zero, 1.25F, SpriteEffects.None, 0.0F)
         Next
 
         DrawCursor()
@@ -157,7 +157,7 @@
 
         If Not t Is Nothing And Not tempPlayer Is Nothing Then
             Core.SpriteBatch.Draw(t, New Rectangle(CInt(Core.windowSize.Width - 356), 32, 64, 64), New Rectangle(0, 64, 32, 32), Color.White)
-            Core.SpriteBatch.DrawString(FontManager.MainFont, tempPlayer.Name, New Vector2(CInt(Core.windowSize.Width - 356) + 70, 54), Color.White, 0.0F, Vector2.Zero, 1.25F, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, tempPlayer.Name, New Vector2(CInt(Core.windowSize.Width - 356) + 70, 54), Color.White, 0.0F, Vector2.Zero, 1.25F, SpriteEffects.None, 0.0F)
         End If
 
         Canvas.DrawRectangle(New Rectangle(CInt(Core.windowSize.Width - 356), 100, 256, 256), New Color(255, 255, 255, 150))
@@ -288,12 +288,12 @@
             Case 0
                 Me.StartTrade()
             Case 1
-                Dim selScreen = New PartyScreen(Core.CurrentScreen, Item.GetItemByID(5), AddressOf SelectPokemonForTrade, "Choose Pokémon for Trade", True, False, False) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = True}
+                Dim selScreen = New PartyScreenV2(Core.CurrentScreen, Item.GetItemByID(5), AddressOf SelectPokemonForTrade, "Choose Pokémon for Trade", True, False, False) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = True}
                 AddHandler selScreen.SelectedObject, AddressOf SelectPokemonForTradeHandler
 
                 Core.SetScreen(selScreen)
-                CType(Core.CurrentScreen, PartyScreen).CanChooseHMPokemon = False
-                CType(Core.CurrentScreen, PartyScreen).CanChooseFusedPokemon = False
+                CType(Core.CurrentScreen, PartyScreenV1).CanChooseHMPokemon = False
+                CType(Core.CurrentScreen, PartyScreenV1).CanChooseFusedPokemon = False
 
             Case 2
                 Me.QuitTrade()
@@ -434,7 +434,7 @@
 
                 Dim t As String = "Sending " & OfferPokemon.GetDisplayName() & " to " & p.Name & "." & Environment.NewLine & "Good-bye, " & OfferPokemon.GetDisplayName() & "!"
 
-                Core.SpriteBatch.DrawString(FontManager.MainFont, t, New Vector2(CInt(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString(t).X / 2), CInt(Core.windowSize.Height / 2 + 130)), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(CInt(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString(t).X / 2), CInt(Core.windowSize.Height / 2 + 130)), Color.White)
             Case 2
                 Core.SpriteBatch.Draw(Me.OfferPokemon.GetTexture(False), New Rectangle(CInt(Core.windowSize.Width / 2 - 128), ownPokemonPosition, 256, 256), Color.White)
             Case 3
@@ -452,7 +452,7 @@
 
                 Dim t As String = p.Name & " sent over " & TradePokemon.GetDisplayName() & "."
 
-                Core.SpriteBatch.DrawString(FontManager.MainFont, t, New Vector2(CInt(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString(t).X / 2), CInt(Core.windowSize.Height / 2 + 130)), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(CInt(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString(t).X / 2), CInt(Core.windowSize.Height / 2 + 130)), Color.White)
         End Select
     End Sub
 

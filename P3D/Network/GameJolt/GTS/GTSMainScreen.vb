@@ -114,12 +114,12 @@
                     DrawMain()
             End Select
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Version " & GTSVersion, New Vector2(4, Core.windowSize.Height - 1 - FontManager.MiniFont.MeasureString("Version " & GTSVersion).Y), Color.DarkGray)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Version " & GTSVersion, New Vector2(4, Core.windowSize.Height - 1 - FontManager.MainFontWhite.MeasureString("Version " & GTSVersion).Y), Color.DarkGray)
 
             If PokemonGTSCount > 0 Then
                 Dim countString As String = "Pokémon in the GTS: " & PokemonGTSCount
-                Dim sSize As Vector2 = FontManager.MiniFont.MeasureString(countString)
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, countString, New Vector2(Core.windowSize.Width - 8 - sSize.X, Core.windowSize.Height - 1 - sSize.Y), Color.DarkGray)
+                Dim sSize As Vector2 = FontManager.MainFontWhite.MeasureString(countString)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, countString, New Vector2(Core.windowSize.Width - 8 - sSize.X, Core.windowSize.Height - 1 - sSize.Y), Color.DarkGray)
             End If
         End Sub
 
@@ -127,10 +127,9 @@
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\GTS"), New Rectangle(CInt(Core.windowSize.Width / 2 - 152), CInt(GlobeY), 304, 304), New Rectangle(0, 32, 304, 304), Color.White)
 
             If GlobeY = 200.0F And LoadedVersionData = True Then
-                Core.SpriteBatch.DrawString(FontManager.MainFont, "Click to enter!", New Vector2(CInt(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString("Click to enter!").X / 2) + 2, 442), Color.Black)
-                Core.SpriteBatch.DrawString(FontManager.MainFont, "Click to enter!", New Vector2(CInt(Core.windowSize.Width / 2 - FontManager.MainFont.MeasureString("Click to enter!").X / 2), 440), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Click to enter!", New Vector2(CInt(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString("Click to enter!").X / 2), 440), Color.White)
 
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, "The ""Pokémon GTS"" is not affiliated with Nintendo or GameFreak.", New Vector2(1, 1), Color.Gray)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "The ""Pokémon GTS"" is not affiliated with Nintendo or GameFreak.", New Vector2(1, 1), Color.Gray)
             End If
 
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\GTS"), New Rectangle(CInt(Core.windowSize.Width / 2 - 104), CInt(-422 - GlobeY), 208, 96), New Rectangle(304, 0, 208, 96), Color.White)
@@ -161,7 +160,7 @@
                 End Select
 
                 Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(Core.windowSize.Width / 2) - 180, 160 + i * 128, 320, 64))
-                Core.SpriteBatch.DrawString(FontManager.InGameFont, Text, New Vector2(CInt(Core.windowSize.Width / 2) - (FontManager.InGameFont.MeasureString(Text).X / 2) - 10, 196 + i * 128), Color.Black)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Text, New Vector2(CInt(Core.windowSize.Width / 2) - (FontManager.MainFontBlack.MeasureString(Text).X / 2) - 10, 196 + i * 128), Color.White)
             Next
 
             If Me.InboxPokemon > 0 Then

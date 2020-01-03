@@ -34,7 +34,7 @@
     Public Overrides Sub Update()
         If Me.IsGameOver = True Then
             If Controls.Accept(True, False) = True Then
-                Core.SetScreen(New PressStartScreen())
+                Core.SetScreen(New MainMenuScreen())
                 Core.Player.loadedSave = False
             End If
         Else
@@ -94,7 +94,7 @@
         Canvas.DrawRectangle(New Rectangle(0, 0, Core.windowSize.Width, Core.windowSize.Height), Color.Black)
 
         If IsGameOver = True Then
-            Core.SpriteBatch.DrawString(FontManager.InGameFont, "GAME OVER", New Vector2(CInt(Core.windowSize.Width / 2) - CInt(FontManager.InGameFont.MeasureString("GAME OVER").X / 2), 100), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "GAME OVER", New Vector2(CInt(Core.windowSize.Width / 2) - CInt(FontManager.MainFontWhite.MeasureString("GAME OVER").X / 2), 100), Color.White)
         Else
             Dim f As SpriteFont = FontManager.MiniFont
             Dim aText As String = ""
@@ -115,7 +115,7 @@
 
         If Me.IsGameOver = True Or Me.ready = True Then
             Dim d As New Dictionary(Of Buttons, String)
-            d.Add(Buttons.A, "Accept")
+            d.Add(Buttons.A, Localization.GetString("controls_accept","Accept"))
             DrawGamePadControls(d)
         End If
     End Sub

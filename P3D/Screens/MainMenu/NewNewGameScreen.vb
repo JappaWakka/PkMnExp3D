@@ -295,7 +295,7 @@
 
                 DrawGradients(255)
 
-                SpriteBatch.DrawString(FontManager.MainFont, "Select your appearance", New Vector2(windowSize.Width / 2.0F - FontManager.MainFont.MeasureString("Select your appearance").X, 100), New Color(255, 255, 255, CInt(255 * _fadeIn)), 0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0F)
+                SpriteBatch.DrawString(FontManager.MainFontWhite, "Select your appearance", New Vector2(windowSize.Width / 2.0F - FontManager.MainFontWhite.MeasureString("Select your appearance").X, 100), New Color(255, 255, 255, CInt(255 * _fadeIn)), 0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0F)
 
                 For i = 0 To _sprites.Count - 1
                     Dim sprite As Texture2D = _sprites(i)
@@ -306,7 +306,7 @@
                     SpriteBatch.Draw(sprite, New Rectangle(CInt(windowSize.Width / 2 - CInt(outSize / 2) + i * 280 - _index * 280 + _offset), CInt(windowSize.Height / 2 - 128), outSize, outSize), New Rectangle(0, frameSize.Height * 2, frameSize.Width, frameSize.Height), New Color(255, 255, 255, CInt(255 * _fadeIn)))
                 Next
 
-                SpriteBatch.DrawString(FontManager.MainFont, _skins(_index), New Vector2(windowSize.Width / 2.0F - FontManager.MainFont.MeasureString(_skins(_index)).X / 2.0F, windowSize.Height / 2.0F + 200), New Color(255, 255, 255, CInt(255 * _fadeIn)))
+                SpriteBatch.DrawString(FontManager.MainFontWhite, _skins(_index), New Vector2(windowSize.Width / 2.0F - FontManager.MainFontWhite.MeasureString(_skins(_index)).X / 2.0F, windowSize.Height / 2.0F + 200), New Color(255, 255, 255, CInt(255 * _fadeIn)))
             End Sub
 
         End Class
