@@ -292,8 +292,8 @@
                 AddHandler selScreen.SelectedObject, AddressOf SelectPokemonForTradeHandler
 
                 Core.SetScreen(selScreen)
-                CType(Core.CurrentScreen, PartyScreenV1).CanChooseHMPokemon = False
-                CType(Core.CurrentScreen, PartyScreenV1).CanChooseFusedPokemon = False
+                CType(Core.CurrentScreen, PartyScreenV2).CanChooseHMPokemon = False
+                CType(Core.CurrentScreen, PartyScreenV2).CanChooseFusedPokemon = False
 
             Case 2
                 Me.QuitTrade()
