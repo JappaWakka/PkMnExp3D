@@ -1,0 +1,44 @@
+version=2
+:if:<register.registered(clubintro)>=true <and> <register.registered(WhitneyRematchTalk)>=false
+    @text.show(Hi there!~So good to see you again!*I've been so bored lately,~we should totally have a~rematch!*Um, have you heard about~this new Battle Bar?*It's supposed to be like the~coolest place in town!*If you want I could be~there in the evenings.*Don't be late!)
+    @register.register(WhitneyRematchTalk)
+	@register.change(clubregisters,<register.value(clubregisters)>+1)
+    :end
+:endif
+
+:if:<register.registered(whitneyTM)>=False <and> <register.registered(plainbadge_obtain)>=True
+	@item.give(235,1)
+	@register.register(whitneyTM)
+:endif
+
+:if:<register.registered(plainbadge_obtain)>=True
+	@player.AchieveEmblem(plain)
+	@text.show(Ah, that was a~good cry!*Come for a visit~again! Bye-bye!)
+	:end
+:endif
+
+:if:<register.registered(defeat_whitney_2)>=True
+	@text.show(...Sniff...*What? What do you~want? A badge?*Oh, right. I forgot.~Here's the Plain Badge.)
+	@player.GetBadge(11)
+	@player.AchieveEmblem(plain)
+	@text.show(The Plain Badge lets~your Pokémon use~Strength and Ride~outside of battle.*It also boosts~your Pokémon's~Speed.)
+	@register.register(plainbadge_obtain)
+	@text.show(Oh, you can have this, too!)
+	@item.give(235,1)
+	@item.messagegive(235,1)
+	@text.show(It's Attract!*It makes full use~of a Pokémon's charm.*Isn't it just perfect~for a cutie like me?)
+	@register.register(whitneyTM)
+	:end
+:endif
+
+@battle.starttrainer(gyms\goldenrod\leader)
+
+:if:<register.registered(defeat_whitney_1)>=False
+	@register.register(defeat_whitney_1)
+	@register.register(trainer_goldenrod_gym\001)
+	@register.register(trainer_goldenrod_gym\002)
+	@register.register(trainer_goldenrod_gym\003)
+	@register.register(trainer_goldenrod_gym\004)
+	@text.show(Waaaaah!*Waaaaah!*...Snivel, hic...~...You meanie!)
+:endif
+:end

@@ -139,9 +139,7 @@
                     Case Localization.GetString("item_detail_screen_use")
                         Item.Use()
                     Case Localization.GetString("item_detail_screen_give")
-                        Dim selScreen = New PartyScreenV2(Core.CurrentScreen, Me.Item, AddressOf GiveItem, Localization.GetString("item_detail_screen_give_item") & Me.Item.Name, True) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = True}
-                        AddHandler selScreen.SelectedObject, AddressOf GiveItemHandler
-
+                        Dim selScreen = New ChoosePokemonScreen(Core.CurrentScreen, Me.Item, AddressOf GiveItem, Localization.GetString("item_detail_screen_give_item") & Me.Item.Name, True) With {.canExit = True}
                         Core.SetScreen(selScreen)
                     Case Localization.GetString("item_detail_screen_trash")
                         Core.Player.Inventory.RemoveItem(Me.Item.ID, trashValue)
@@ -156,9 +154,6 @@
         End If
     End Sub
 
-    Private Sub GiveItemHandler(ByVal params As Object())
-        GiveItem(CInt(params(0)))
-    End Sub
 
     Private Sub GiveItem(ByVal PokeIndex As Integer)
         Dim Pokemon As Pokemon = Core.Player.Pokemons(PokeIndex)
@@ -176,9 +171,9 @@
 
             TextBox.reDelay = 0.0F
 
-            Dim t As String = Localization.GetString("pokemon_screen_give_item_1") & Item.Name & Localization.GetString("pokemon_screen_give_item_2") & Pokemon.GetDisplayName() & Localization.GetString("pokemon_screen_give_item_3")
+            Dim t As String = Localization.GetString("party_screen_give_item_1") & Item.Name & Localization.GetString("party_screen_give_item_2") & Pokemon.GetDisplayName() & Localization.GetString("party_screen_give_item_3")
             If Not reItem Is Nothing Then
-                t &= Localization.GetString("pokemon_screen_give_item_4") & reItem.Name & Localization.GetString("pokemon_screen_give_item_5")
+                t &= Localization.GetString("party_screen_give_item_4") & reItem.Name & Localization.GetString("party_screen_give_item_5")
             Else
                 t &= "."
             End If

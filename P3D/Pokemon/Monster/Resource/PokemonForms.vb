@@ -39,13 +39,13 @@ Public Class PokemonForms
                         _name = _name.Remove(_name.Length - 9, 2)
                     End If
                 ElseIf _name.StartsWith("primal ") Then
-                        _name = _name.Remove(0, 7)
+                    _name = _name.Remove(0, 7)
                 End If
                 Return _name
             End If
         Next
-       
         Return P.OriginalName
+
     End Function
 
     ''' <summary>

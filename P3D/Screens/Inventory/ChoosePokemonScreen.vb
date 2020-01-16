@@ -17,7 +17,7 @@
     Dim Title As String = ""
 
     Dim used As Boolean = False
-    Dim canExit As Boolean = True
+    Public canExit As Boolean = True
 
     Public CanChooseFainted As Boolean = True
     Public CanChooseEgg As Boolean = True
@@ -29,6 +29,7 @@
 
     Public LearnAttack As BattleSystem.Attack
     Public LearnType As Integer = 0
+    Public TextColor As SpriteFont = FontManager.MainFontBlack
 
     Public Sub New(ByVal currentScreen As Screen, ByVal Item As Item, ByVal ChoosePokemon As DoStuff, ByVal Title As String, ByVal canExit As Boolean, ByVal canChooseFainted As Boolean, ByVal canChooseEgg As Boolean, Optional ByVal _pokemonList As List(Of Pokemon) = Nothing)
         Me.PreScreen = currentScreen
@@ -178,7 +179,7 @@
     Dim mPressed As Boolean = False
     Private Sub ShowMenu()
         Me.MenuID = 0
-        ChooseBox.Show({"Select", Localization.GetString("pokemon_screen_summary"), Localization.GetString("pokemon_screen_back")}, 0, {})
+        ChooseBox.Show({"Select", Localization.GetString("party_screen_summary"), Localization.GetString("party_screen_back")}, 0, {})
     End Sub
 
     Public Overrides Sub Draw()
@@ -190,7 +191,7 @@
         Core.SpriteBatch.Draw(Item.Texture, New Rectangle(78, 124, 48, 48), Color.White)
 
         If Me.canExit = True Then
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Press the E key to go back.", New Vector2(640, 580), Color.DarkGray)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("party_screen_backadvice"), New Vector2(1200 - FontManager.MainFontBlack.MeasureString(Localization.GetString("party_screen_backadvice")).X - 320, 572), Color.White)
         End If
 
         For i = 0 To Me.PokemonList.Count - 1
@@ -234,19 +235,21 @@
             Next
             .Draw(Texture, New Rectangle(CInt(p.X) + 320, CInt(p.Y), 32, 96), New Rectangle(32, 0, 16, 48), Color.White)
 
-            .DrawString(FontManager.MiniFont, "EMPTY", New Vector2(CInt(p.X + 72), CInt(p.Y + 18)), Color.Black)
+            .DrawString(FontManager.MainFontBlack, "EMPTY", New Vector2(CInt(p.X + 72), CInt(p.Y + 18)), Color.White)
         End With
     End Sub
 
     Private Sub DrawPokemonTile(ByVal i As Integer, ByVal Pokemon As Pokemon)
         Dim BorderTexture As Texture2D
         If i = index Then
+            TextColor = FontManager.MainFontWhite
             If Pokemon.Status = P3D.Pokemon.StatusProblems.Fainted Then
                 BorderTexture = TextureManager.GetTexture(MainTexture, New Rectangle(0, 128, 48, 48), ContentPackManager.GetTextureResolution("GUI\Menus\Menu"))
             Else
-                BorderTexture = TextureManager.GetTexture(MainTexture, New Rectangle(48, 0, 48, 48), ContentPackManager.GetTextureResolution("GUI\Menus\Menu"))
+                BorderTexture = TextureManager.GetTexture(MainTexture, New Rectangle(0, 48, 48, 48), ContentPackManager.GetTextureResolution("GUI\Menus\Menu"))
             End If
         Else
+            TextColor = FontManager.MainFontBlack
             If Pokemon.Status = P3D.Pokemon.StatusProblems.Fainted Then
                 BorderTexture = TextureManager.GetTexture(MainTexture, New Rectangle(48, 48, 48, 48), ContentPackManager.GetTextureResolution("GUI\Menus\Menu"))
             Else
@@ -293,7 +296,7 @@
                 .Draw(MainTexture, New Rectangle(CInt(p.X + 100), CInt(p.Y + 44), 4, 16), New Rectangle(112, 0, 1, 4), Color.White)
                 .Draw(MainTexture, New Rectangle(CInt(p.X + 206), CInt(p.Y + 44), 4, 16), New Rectangle(112, 0, 1, 4), Color.White)
 
-                .DrawString(FontManager.MiniFont, Pokemon.HP & " / " & Pokemon.MaxHP, New Vector2(CInt(p.X + 120), CInt(p.Y + 64)), Color.Black)
+                .DrawString(FontManager.MainFontBlack, Pokemon.HP & " / " & Pokemon.MaxHP, New Vector2(CInt(p.X + 160), CInt(p.Y + 48)), Color.White)
             End If
 
             Dim offset As Single = CSng(Math.Sin(yOffset))
@@ -305,15 +308,15 @@
             End If
 
             .Draw(Pokemon.GetMenuTexture(), New Rectangle(CInt(p.X + 5), CInt(p.Y + offset + 10), 64, 64), BattleStats.GetStatColor(Pokemon.Status))
-            .DrawString(FontManager.MiniFont, Pokemon.GetDisplayName(), New Vector2(CInt(p.X + 72), CInt(p.Y + 18)), Color.Black)
+            .DrawString(FontManager.MainFontBlack, Pokemon.GetDisplayName(), New Vector2(CInt(p.X + 72), CInt(p.Y + 18)), Color.White)
 
             If Pokemon.IsEgg() = False Then
                 .Draw(MainTexture, New Rectangle(CInt(p.X + 72), CInt(p.Y + 46), 26, 12), New Rectangle(96, 10, 13, 6), Color.White)
 
                 If Pokemon.Gender = P3D.Pokemon.Genders.Male Then
-                    .Draw(MainTexture, New Rectangle(CInt(p.X + FontManager.MiniFont.MeasureString(Pokemon.GetDisplayName()).X + 80), CInt(p.Y + 18), 12, 20), New Rectangle(96, 0, 6, 10), Color.White)
+                    .Draw(MainTexture, New Rectangle(CInt(p.X + FontManager.MainFontBlack.MeasureString(Pokemon.GetDisplayName()).X + 80), CInt(p.Y + 18), 12, 20), New Rectangle(96, 0, 6, 10), Color.White)
                 ElseIf Pokemon.Gender = P3D.Pokemon.Genders.Female Then
-                    .Draw(MainTexture, New Rectangle(CInt(p.X + FontManager.MiniFont.MeasureString(Pokemon.GetDisplayName()).X + 80), CInt(p.Y + 18), 12, 20), New Rectangle(102, 0, 6, 10), Color.White)
+                    .Draw(MainTexture, New Rectangle(CInt(p.X + FontManager.MainFontBlack.MeasureString(Pokemon.GetDisplayName()).X + 80), CInt(p.Y + 18), 12, 20), New Rectangle(102, 0, 6, 10), Color.White)
                 End If
             End If
 
@@ -328,18 +331,18 @@
 
             Dim AttackLable As String = ""
             If LearnType > 0 Then
-                AttackLable = "Unable!"
+                AttackLable = Localization.GetString("party_screen_teach_move_unable")
                 Select Case LearnType
                     Case 1 ' Technical/Hidden Machine
                         If CType(moveLearnArg, Items.TechMachine).CanTeach(Pokemon) = "" Then
-                            AttackLable = "Able!"
+                            AttackLable = Localization.GetString("party_screen_teach_move_able")
                         End If
                 End Select
             End If
 
             If Pokemon.IsEgg() = False Then
-                .DrawString(FontManager.MiniFont, "Lv." & space & Pokemon.Level, New Vector2(CInt(p.X + 14), CInt(p.Y + 64)), Color.Black)
-                .DrawString(FontManager.MiniFont, AttackLable, New Vector2(CInt(p.X + 230), CInt(p.Y + 64)), Color.Black)
+                .DrawString(FontManager.MainFontBlack, "Lv." & space & Pokemon.Level, New Vector2(CInt(p.X + 74), CInt(p.Y + 48)), Color.White)
+                .DrawString(FontManager.MainFontBlack, AttackLable, New Vector2(CInt(p.X + 230), CInt(p.Y + 18)), Color.White)
             End If
 
             Dim StatusTexture As Texture2D = BattleStats.GetStatImage(Pokemon.Status)

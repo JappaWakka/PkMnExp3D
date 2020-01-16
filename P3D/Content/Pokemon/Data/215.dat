@@ -54,5 +54,3 @@ Move|47,420
 TradeValue|40
 Item|50,176
 Item|5,73
-EvolutionCondition|461,holditem,184,Level
-EvolutionCondition|461,daytime,0,Level

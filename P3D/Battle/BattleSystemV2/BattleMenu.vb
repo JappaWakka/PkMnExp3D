@@ -1009,7 +1009,7 @@
 
 #End Region
 
-#Region "UseItem"
+#Region "Use_Item"
 
         Private Shared Sub SelectedItemHandler(ByVal params As Object())
             SelectedItem(CInt(params(0)))

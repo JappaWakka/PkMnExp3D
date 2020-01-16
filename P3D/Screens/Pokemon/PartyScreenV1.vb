@@ -337,7 +337,7 @@
             Next
             .Draw(BorderTexture, New Rectangle(CInt(p.X) + 320, CInt(p.Y), 32, 96), New Rectangle(32, 0, 16, 48), Color.White)
 
-            .DrawString(FontManager.MiniFont, Localization.GetString("party_screen_EMPTY"), New Vector2(CInt(p.X + 72), CInt(p.Y + 18)), Color.Black)
+            .DrawString(FontManager.MainFontBlack, Localization.GetString("party_screen_EMPTY"), New Vector2(CInt(p.X + 72), CInt(p.Y + 18)), Color.White)
         End With
     End Sub
 
@@ -475,7 +475,7 @@
             Dim s As String = "version=2" & Environment.NewLine &
                               "@text.show(" & Core.Player.Pokemons(index).GetDisplayName() & " used~Flash!)" & Environment.NewLine &
                               "@environment.toggledarkness" & Environment.NewLine &
-                              "@sound.play(Battle\Effects\effect_thunderbolt)" & Environment.NewLine &
+                              "@sound.play(FieldMove_Flash)" & Environment.NewLine &
                               "@text.show(The area got lit up!)" & Environment.NewLine &
                               ":end"
             PlayerStatistics.Track("Flash used", 1)
@@ -483,7 +483,7 @@
         Else
             Dim s As String = "version=2" & Environment.NewLine &
                 "@text.show(" & Core.Player.Pokemons(index).GetDisplayName() & " used~Flash!)" & Environment.NewLine &
-                                            "@sound.play(Battle\Effects\effect_thunderbolt)" & Environment.NewLine &
+                                            "@sound.play(FieldMove_Flash)" & Environment.NewLine &
                                             "@text.show(The area is already~lit up!)" & Environment.NewLine &
                                             ":end"
             CType(Core.CurrentScreen, OverworldScreen).ActionScript.StartScript(s, 2)

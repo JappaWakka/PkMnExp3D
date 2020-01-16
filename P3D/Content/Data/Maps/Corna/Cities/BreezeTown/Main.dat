@@ -1,4 +1,4 @@
-{"Level"{LEV[{"Name"{str[Breeze Town]}}{"MusicLoop"{str[BreezeTown]}}]}}
+{"Level"{LEV[{"Name"{str[Breeze Town]}}{"MusicLoop"{str[BreezeTown]}}]}}{"WildPokemon"{bool[0]}}{"CurrentRegion"{str[Corna]}}]}}
 {"Actions"{LEV[{"CanTeleport"{bool[1]}}{"CanDig"{bool[0]}}{"CanFly"{bool[1]}}{"EnviromentType"{int[1]}}{"Weather"{int[1]}}{"Lightning"{int[0]}}]}}
 
 Floors:

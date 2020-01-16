@@ -1,0 +1,34 @@
+version=2
+
+:if:<pokemon.count>=1
+:then
+@text.show(Do you really want to~end the Contest?*You haven't caught a~bug Pokémon yet.~That means you won't get~a prize afterwards.)
+@options.show(Yes,No)
+:when:Yes
+@screen.fadeout
+@player.warp(nationalpark\nationalpark2.dat,4,0.1,2,0)
+@level.update
+@player.turnto(0)
+@screen.fadein
+@level.update
+:if:<inventory.countitem(177)>>0
+:then
+@text.show(I will take the~Sport Balls.)
+@item.clearitem(177)
+:endif
+@text.show(Today's Contest is~over. We hope you*will participate~in the future.)
+:end
+:when:No
+:end
+:endwhen
+:else
+@text.show(Do you want to~end the contest?)
+@options.show(Yes,No)
+:when:Yes
+@script.start(nationalpark\contest_prize)
+:when:No
+:end
+:endwhen
+:endif
+
+:end

@@ -310,8 +310,6 @@ p3d/**/*.dll
 p3d/**/*.xnb
 
 # ignore generated files/folders by the game's exe in the p3d project
-p3d/ContentPacks/
-p3d/GameModes/
 p3d/save/
 p3d/screenshots/
 p3d/log.dat

@@ -1,0 +1,24 @@
+[TRAINER FORMAT]
+Name|Chuck
+TrainerClass|Leader
+Money|3000
+IntroMessage|There! Scared now,~are you?*What?~It has nothing to~do with Pokémon?*That's true!*Come on. We shall~do battle!
+OutroMessage|Wha? Huh?~I lost?*How about that!~You're worthy of~the Storm Badge!
+DefeatMessage|WAHAHAHA! I enjoyed~battling you!*But a loss is a~loss!*From now on, I'm~going to train 24~hours a day!
+TextureID|Chuck
+Region|Johto
+InSightMusic|
+IniMusic|Johto_leader_intro
+DefeatMusic|leader_defeat
+BattleMusic|johto_leader
+Pokemon1|{"Pokemon"[57]}{"Experience"[4666]}{"Gender"[0]}{"EggSteps"[0]}{"Item"[0]}{"NickName"[]}{"Level"[29]}{"OT"[00000]}{"Ability"[72]}{"Status"[]}{"Nature"[7]}{"CatchLocation"[at unknown place]}{"CatchTrainer"[???]}{"CatchBall"[5]}{"CatchMethod"[somehow obtained]}{"Friendship"[140]}{"isShiny"[0]}{"Attack1"[43,30,30]}{"Attack2"[104,15,15]}{"Attack3"[157,10,10]}{"Attack4"[223,5,5]}{"FPs"[10,30,20,10,10,10]}{"DVs"[22,13,14,17,21,17]}{"AdditionalData"[]}
+Pokemon2|{"Pokemon"[62]}{"Experience"[10000]}{"Gender"[0]}{"EggSteps"[0]}{"Item"[2009]}{"NickName"[]}{"Level"[31]}{"OT"[00000]}{"Ability"[11]}{"Status"[]}{"Nature"[16]}{"CatchLocation"[at unknown place]}{"CatchTrainer"[???]}{"CatchBall"[5]}{"CatchMethod"[somehow obtained]}{"Friendship"[70]}{"isShiny"[0]}{"Attack1"[95,20,20]}{"Attack2"[57,15,15]}{"Attack3"[34,15,15]}{"Attack4"[223,5,5]}{"FPs"[10,30,20,10,10,10]}{"DVs"[20,28,19,10,16,20]}{"AdditionalData"[]}
+Pokemon3|
+Pokemon4|
+Pokemon5|
+Pokemon6|
+Items|16,16,16
+Gender|0
+AI|30
+IntroSequence|Orange,Orange
+IntroType|11

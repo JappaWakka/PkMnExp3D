@@ -1,0 +1,24 @@
+[TRAINER FORMAT]
+Name|Falkner
+TrainerClass|Leader
+Money|900
+IntroMessage|I'm Falkner, the~Violet Pokémon Gym~Leader!*People say you can~clip flying-type*Pokémon's wings~with a jolt of~electricity...*I won't allow such~insults to bird~Pokémon!*I'll show you the~real power of the*magnificent bird~Pokémon!
+OutroMessage|...Darn! My Dad's~cherished bird~Pokémon...*All right.~Take this.*It's the official~Pokémon League~Zephyr Badge.
+DefeatMessage|There are Pokémon~Gyms in cities and~towns ahead.*You should test~your skills at~these Gyms.*I'm going to train~harder to become~the greatest bird~master!
+TextureID|Falkner
+Region|Johto
+InSightMusic|
+IniMusic|Johto_leader_intro
+DefeatMusic|leader_defeat
+BattleMusic|johto_leader
+Pokemon1|{"Pokemon"[16]}{"Experience"[420]}{"Gender"[0]}{"EggSteps"[0]}{"Item"[0]}{"NickName"[]}{"Level"[9]}{"OT"[00000]}{"Ability"[51]}{"Status"[]}{"Nature"[21]}{"CatchLocation"[at unknown place]}{"CatchTrainer"[???]}{"CatchBall"[5]}{"CatchMethod"[somehow obtained]}{"Friendship"[0]}{"isShiny"[0]}{"Attack1"[189,10,10]}{"Attack2"[28,15,15]}{"Attack3"[16,35,35]}{"Attack4"[]}{"Stats"[30,30,16,12,11,15,16]}{"FPs"[0,10,0,0,0,10]}{"DVs"[9,23,13,2,21,25]}
+Pokemon2|{"Pokemon"[17]}{"Experience"[1261]}{"Gender"[0]}{"EggSteps"[0]}{"Item"[0]}{"NickName"[]}{"Level"[13]}{"OT"[00000]}{"Ability"[51]}{"Status"[]}{"Nature"[1]}{"CatchLocation"[at unknown place]}{"CatchTrainer"[???]}{"CatchBall"[5]}{"CatchMethod"[somehow obtained]}{"Friendship"[0]}{"isShiny"[0]}{"Attack1"[16,35,35]}{"Attack2"[28,15,15]}{"Attack3"[189,10,10]}{"Attack4"[98,30,30]}{"Stats"[45,45,24,19,19,18,24]}{"FPs"[0,15,0,0,0,20]}{"DVs"[18,23,15,10,3,25]}
+Pokemon3|
+Pokemon4|
+Pokemon5|
+Pokemon6|
+Items|17,17,17
+Gender|0
+AI|10
+IntroSequence|Orange,Orange
+IntroType|11

@@ -97,8 +97,7 @@ game_interaction_phone,PokéBar
 NewGameScreen:
 new_game_intro_1,Hello friendo! We are very close to~the Breeze Town! I am excited man!*Remember me? I am Baro!~We made friendship when we~live in the Kanto land!*You will find a lot of Pokémon~in new Corna land, yes!
 new_game_intro_2,Like this funky Plug-Oink!~It is cool piggy.*The people live with Pokémon~very close with love.*They are pet friend sometime~but also we fight for victory!*But no getting angry, okay?~Fighting with the angry~gets you hurt.*We still do not know about~Pokémon much info.~We study for years, so weird.*I will know the info really soon~'cuz I do the study!*Uh-oh! Friendo, I am so sorry.~I forget your name now!~What is again?
-new_game_intro_3,Oh! I forget!~I have special Pokémon from~new Corna land.~You get one of me
-when we have home.*Ah the big moving car stop.~I think we are in the Breeze Town!~Is excited!*When you get out, go to momma!~She needs help with the clock 'cuz~technology hard for her.*When you are done with the~clock setting, go to Lab!~Oh! But maybe I am not there.~I hear the strange scream from here!*I wanna know what it is!~Maybe rare Pokémon!*~I cannot wait! I go now!~See ya later friendo!
+new_game_intro_3,Oh! I forget!~I have special Pokémon from~new Corna land.~You get one of me when we have home.*Ah the big moving car stop.~I think we are in the Breeze Town!~Is excited!*When you get out, go to momma!~She needs help with the clock 'cuz~technology hard for her.*When you are done with the~clock setting, go to Lab!~Oh! But maybe I am not there.~I hear the strange scream from here!*I wanna know what it is!~Maybe rare Pokémon!*~I cannot wait! I go now!~See ya later friendo!
 new_game_intro_weird_name_1,Oh right! I know it again now. Your name was~
 new_game_intro_weird_name_2,!*Still think it is crazy name you have.
 new_game_intro_known_name_1,Oh right! I remember now. Your name was~
@@ -144,6 +143,8 @@ party_screen_switch,Switch
 party_screen_item,Item
 party_screen_back,Back
 party_screen_EMPTY,EMPTY
+party_screen_teach_move_able,ABLE
+party_screen_teach_move_unable,UNABLE
 ---
 Pokemon Status Screen:
 All pages:
@@ -862,7 +863,7 @@ item_name_103,Slowpoke Tail
 item_name_104,Pink Bow
 item_name_105,Stick
 item_name_106,Smoke Ball
-item_name_107,Nevermelt Ice
+item_name_107,NeverMelt Ice
 item_name_108,Magnet
 item_name_109,Rare Bone
 item_name_110,Pearl

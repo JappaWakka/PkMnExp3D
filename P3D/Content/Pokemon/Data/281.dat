@@ -55,5 +55,3 @@ Move|59,138
 Move|64,500
 TradeValue|25
 EvolutionCondition|282,level,30,level
-EvolutionCondition|475,gender,0,item
-EvolutionCondition|475,item,137,item

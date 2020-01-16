@@ -209,7 +209,7 @@
 
     Private Sub CatchPokemon()
         p.ResetTemp()
-        SoundManager.PlaySound("Battle\Pokeball\catch")
+
         Dim s As String = "Gotcha!~" & p.GetName() & " was caught!"
 
         If Core.Player.HasPokedex = True Then
@@ -229,6 +229,7 @@
 
         p.SetCatchInfos(Me.Ball, "caught at")
 
+        SoundManager.PlaySound("Battle\Pokeball\catch", False)
         MusicManager.Stop()
         MusicManager.Play("wild_defeat", False, 0.2F)
         SoundManager.PlaySound("success", True)

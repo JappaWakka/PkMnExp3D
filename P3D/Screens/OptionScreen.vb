@@ -583,7 +583,7 @@
         Public Overrides Sub Draw()
             Dim r As New Rectangle(CInt(_position.X), CInt(_position.Y) + YScroll, Me._size * 32 + 32, 96)
             If r.Contains(MouseHandler.MousePosition) = True Then
-                Canvas.DrawImageBorder(TextureManager.GetTexture(TextureManager.GetTexture("GUI\Menus\Menu"), New Rectangle(48, 0, 48, 48)), 2, New Rectangle(CInt(_position.X), CInt(_position.Y) + YScroll, 32 * _size, 64))
+                Canvas.DrawImageBorder(TextureManager.GetTexture(TextureManager.GetTexture("GUI\Menus\Menu"), New Rectangle(0, 48, 48, 48)), 2, New Rectangle(CInt(_position.X), CInt(_position.Y) + YScroll, 32 * _size, 64))
             Else
                 Canvas.DrawImageBorder(TextureManager.GetTexture(TextureManager.GetTexture("GUI\Menus\Menu"), New Rectangle(0, 0, 48, 48)), 2, New Rectangle(CInt(_position.X), CInt(_position.Y) + YScroll, 32 * _size, 64))
             End If

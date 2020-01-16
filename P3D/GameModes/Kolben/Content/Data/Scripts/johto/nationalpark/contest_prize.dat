@@ -1,0 +1,312 @@
+version=2
+
+#Warp Player/NPCs
+@screen.fadeout
+@player.warp(18,0.1,25)
+@player.turnto(0)
+@level.update
+@npc.warp(10,0,-2,0)
+@npc.warp(11,0,-2,0)
+@npc.warp(12,0,-2,0)
+@npc.warp(13,0,-2,0)
+@npc.warp(14,0,-2,0)
+@npc.warp(15,0,-2,0)
+@npc.warp(16,0,-2,0)
+@npc.warp(17,0,-2,0)
+@npc.warp(18,0,-2,0)
+@npc.warp(19,0,-2,0)
+@npc.warp(20,0,-2,0)
+@npc.warp(4,16,0,25)
+@npc.warp(5,20,0,25)
+@npc.warp(6,22,0,25)
+@npc.warp(7,19,0,24)
+@level.update
+
+#Activate third person
+@storage.set(boolean,thirdperson,<player.thirdperson>)
+:if:<player.thirdperson>=false
+:then
+@camera.activatethirdperson
+:endif
+
+@camera.setposition(1,1,4)
+@camera.setyaw(0)
+@camera.setpitch(-0.1)
+
+#build scenario
+#select NPC 1
+:select:<system.random(1,4)>
+:when:1
+@npc.wearskin(6,13)
+@storage.set(string,name1,Ace Trainer Nick)
+@storage.set(string,pokename1,Pinsir)
+@storage.set(integer,score1,190)
+@npc.register(nationalpark\nationalpark2.dat|1|position|7,0,3)
+:when:2
+@npc.wearskin(6,23)
+@storage.set(string,name1,Ace Trainer Abby)
+@storage.set(string,pokename1,Scyther)
+@storage.set(integer,score1,170)
+@npc.register(nationalpark\nationalpark2.dat|2|position|7,0,3)
+:when:3
+@npc.wearskin(6,bugcatcher)
+@storage.set(string,name1,Bug Catcher Josh)
+@storage.set(string,pokename1,Butterfree)
+@storage.set(integer,score1,150)
+@npc.register(nationalpark\nationalpark2.dat|3|position|7,0,3)
+:when:4
+@npc.wearskin(6,16)
+@storage.set(string,name1,Picnicker Cindy)
+@storage.set(string,pokename1,Beedrill)
+@storage.set(integer,score1,180)
+@npc.register(nationalpark\nationalpark2.dat|4|position|7,0,3)
+:endwhen
+
+#select NPC 2
+:select:<system.random(1,4)>
+:when:1
+@npc.wearskin(5,bugcatcher)
+@storage.set(string,name2,Bug Catcher Ed)
+@storage.set(string,pokename2,Venonat)
+@storage.set(integer,score2,130)
+@npc.register(nationalpark\nationalpark2.dat|10|position|2,0,5)
+:when:2
+@npc.wearskin(5,11)
+@storage.set(string,name2,Pokéfan William)
+@storage.set(string,pokename2,Metapod)
+@storage.set(integer,score2,110)
+@npc.register(nationalpark\nationalpark2.dat|11|position|2,0,5)
+:when:3
+@npc.wearskin(5,17)
+@storage.set(string,name2,Camper Barry)
+@storage.set(string,pokename2,Paras)
+@storage.set(integer,score2,120)
+@npc.register(nationalpark\nationalpark2.dat|12|position|2,0,5)
+:when:4
+@npc.wearskin(5,bugcatcher)
+@storage.set(string,name2,Bug Catcher Don)
+@storage.set(string,pokename2,Kakuna)
+@storage.set(integer,score2,100)
+@npc.register(nationalpark\nationalpark2.dat|13|position|2,0,5)
+:endwhen
+
+#select NPC 3
+:select:<system.random(1,4)>
+:when:1
+@npc.wearskin(4,14)
+@storage.set(string,name3,Youngster Samuel)
+@storage.set(string,pokename3,Metapod)
+@storage.set(integer,score3,90)
+@npc.register(nationalpark\nationalpark2.dat|20|position|1,0,2)
+:when:2
+@npc.wearskin(4,bugcatcher)
+@storage.set(string,name3,Bug Catcher Benny)
+@storage.set(string,pokename3,Caterpie)
+@storage.set(integer,score3,80)
+@npc.register(nationalpark\nationalpark2.dat|21|position|1,0,2)
+:when:3
+@npc.wearskin(4,49)
+@storage.set(string,name3,School Kid Kipp)
+@storage.set(string,pokename3,Weedle)
+@storage.set(integer,score3,100)
+@npc.register(nationalpark\nationalpark2.dat|22|position|1,0,2)
+:when:4
+@npc.wearskin(4,bugcatcher)
+@storage.set(string,name3,Bug Catcher Ed)
+@storage.set(string,pokename3,Caterpie)
+@storage.set(integer,score3,90)
+@npc.register(nationalpark\nationalpark2.dat|23|position|1,0,2)
+:endwhen
+
+#Update level and fade screen in:
+
+@level.update
+@screen.fadein
+@level.update
+
+#Get the own Pokemon score
+@storage.set(integer,ownpokemonscore,60)
+:select:<pokemon.number(1)>
+:when:12
+@storage.set(integer,ownpokemonscore,80)
+:when:15
+@storage.set(integer,ownpokemonscore,80)
+:when:46
+@storage.set(integer,ownpokemonscore,80)
+:when:48
+@storage.set(integer,ownpokemonscore,80)
+:when:123
+@storage.set(integer,ownpokemonscore,100)
+:when:127
+@storage.set(integer,ownpokemonscore,100)
+:endwhen
+
+@storage.set(integer,ownscore,<pokemon.hp(1)>/<pokemon.maxhp(1)>*100+<storage.get(integer,ownpokemonscore)>)
+
+#Calculate the own place in the ranking
+@storage.set(integer,win_place,4)
+:if:<storage.get(integer,ownscore)>><storage.get(integer,score3)>
+:then
+@storage.set(integer,win_place,3)
+:endif
+:if:<storage.get(integer,ownscore)>><storage.get(integer,score2)>
+:then
+@storage.set(integer,win_place,2)
+:endif
+:if:<storage.get(integer,ownscore)>><storage.get(integer,score1)>
+:then
+@storage.set(integer,win_place,1)
+:endif
+
+@level.wait(40)
+
+#Display results:
+@text.show(Congratulations everyone~for catching a bug Pokémon~in the Bug-Catching Contest.*Now let's see who won~this time.)
+:select:<storage.get(integer,win_place)>
+:when:4
+@text.show(Placed on rank 4~is <player.name>~with a <pokemon.name(1)>!)
+@player.move(1)
+@player.turnto(2)
+@level.wait(40)
+@player.move(1)
+@player.turnto(0)
+@text.show(Placed on rank 3~is <storage.get(string,name3)>~with a <storage.get(string,pokename3)>!)
+@npc.move(4,1)
+@npc.turn(4,2)
+@level.wait(40)
+@npc.move(4,1)
+@npc.turn(4,0)
+@text.show(Placed on rank 2~is <storage.get(string,name2)>~with a <storage.get(string,pokename2)>!)
+@npc.move(5,1)
+@npc.turn(5,2)
+@level.wait(40)
+@npc.move(5,1)
+@npc.turn(5,0)
+@text.show(Placed on rank 1~is <storage.get(string,name1)>~with a <storage.get(string,pokename1)>!*Congratulations,~<storage.get(string,name1)>!~You won the~Bug-Catching Contest!~Come here to get your prize.)
+:when:3
+@text.show(Placed on rank 4~is <storage.get(string,name3)>~with a <storage.get(string,pokename3)>!)
+@npc.move(4,1)
+@npc.turn(4,2)
+@level.wait(40)
+@npc.move(4,1)
+@npc.turn(4,0)
+@text.show(Placed on rank 3~is <player.name>~with a <pokemon.name(1)>!)
+@player.move(1)
+@player.turnto(2)
+@level.wait(40)
+@player.move(1)
+@player.turnto(0)
+@text.show(Placed on rank 2~is <storage.get(string,name2)>~with a <storage.get(string,pokename2)>!)
+@npc.move(5,1)
+@npc.turn(5,2)
+@level.wait(40)
+@npc.move(5,1)
+@npc.turn(5,0)
+@text.show(Placed on rank 1~is <storage.get(string,name1)>~with a <storage.get(string,pokename1)>!*Congratulations,~<storage.get(string,name1)>!~You won the~Bug-Catching Contest!~Come here to get your prize.)
+:when:2
+@text.show(Placed on rank 4~is <storage.get(string,name3)>~with a <storage.get(string,pokename3)>!)
+@npc.move(4,1)
+@npc.turn(4,2)
+@level.wait(40)
+@npc.move(4,1)
+@npc.turn(4,0)
+@text.show(Placed on rank 3~is <storage.get(string,name2)>~with a <storage.get(string,pokename2)>!)
+@npc.move(5,1)
+@npc.turn(5,2)
+@level.wait(40)
+@npc.move(5,1)
+@npc.turn(5,0)
+@text.show(Placed on rank 2~is <player.name>~with a <pokemon.name(1)>!)
+@player.move(1)
+@player.turnto(2)
+@level.wait(40)
+@player.move(1)
+@player.turnto(0)
+@text.show(Placed on rank 1~is <storage.get(string,name1)>~with a <storage.get(string,pokename1)>!*Congratulations,~<storage.get(string,name1)>!~You won the~Bug-Catching Contest!~Come here to get your prize.)
+:when:1
+@text.show(Placed on rank 4~is <storage.get(string,name3)>~with a <storage.get(string,pokename3)>!)
+@npc.move(4,1)
+@npc.turn(4,2)
+@level.wait(40)
+@npc.move(4,1)
+@npc.turn(4,0)
+@text.show(Placed on rank 3~is <storage.get(string,name2)>~with a <storage.get(string,pokename2)>!)
+@npc.move(5,1)
+@npc.turn(5,2)
+@level.wait(40)
+@npc.move(5,1)
+@npc.turn(5,0)
+@text.show(Placed on rank 2~is <storage.get(string,name1)>~with a <storage.get(string,pokename1)>!)
+@npc.move(6,1)
+@npc.turn(6,2)
+@level.wait(40)
+@npc.move(6,1)
+@npc.turn(6,0)
+@text.show(Placed on rank 1~is <player.name>~with a <pokemon.name(1)>!*Congratulations,~<player.name>!~You won the~Bug-Catching Contest!~Come here to get your prize.)
+@player.move(1)
+@player.turnto(3)
+@npc.turn(7,1)
+@item.give(169,1)
+@item.messagegive(169,1)
+@player.turnto(2)
+@player.move(1)
+@npc.turn(7,2)
+@player.turnto(0)
+:endwhen
+
+:if:<storage.get(integer,win_place)>=4 <or> <storage.get(integer,win_place)>=3 <or> <storage.get(integer,win_place)>=2
+:then
+@npc.move(6,1)
+@npc.turn(6,1)
+@npc.move(6,2)
+@npc.turn(7,3)
+@level.wait(40)
+@npc.turn(6,3)
+@npc.move(6,2)
+@npc.turn(6,2)
+@npc.move(6,1)
+@npc.turn(6,0)
+@npc.turn(7,2)
+:endif
+
+@level.wait(20)
+
+@camera.reset
+@text.show(Well, that's it for~today's Bug-Catching Contest.*We hope you all~will participate~in the future.)
+
+@screen.fadeout
+@player.warp(nationalpark\nationalpark2.dat,4,0.1,2,0)
+@level.update
+@player.turnto(0)
+@screen.fadein
+@level.update
+:if:<inventory.countitem(177)>>0
+:then
+@text.show(I will take the~Sport Balls.)
+@item.clearitem(177)
+:endif
+
+:select:<storage.get(integer,win_place)>
+:when:4
+@text.show(Here's your prize for~being the 4th place.)
+@item.give(154,1)
+@item.messagegive(154,1)
+:when:3
+@text.show(Here's your prize for~being the 3rd place.)
+@item.give(2009,1)
+@item.messagegive(2009,1)
+:when:2
+@text.show(Here's your prize for~being the 2nd place.)
+@item.give(112,1)
+@item.messagegive(112,1)
+:endwhen
+
+@text.show(Today's Contest is~over. We hope you*will participate~in the future.)
+
+:if:<storage.get(boolean,thirdperson)>=false
+:then
+@camera.deactivatethirdperson
+:endif
+
+@storage.clear
+:end

@@ -1,0 +1,22 @@
+version=2
+:if:<register.registered(clubintro)>=true <and> <register.registered(MortyRematchTalk)>=false
+    @text.show(Hello <player.name>,~it's been a while.*To be honest not many really~strong trainers have passed~through here after you,~but that doesn't mean I~haven't been training!*What's that?*The new battle bar?*My ghosts prefer battling in~a quieter place but this~sounds like the ideal place~to improve my skills.*If we were to have another~battle we'd need to do~it when I'm free.*Usually around midnight~will work out.)
+    @register.register(MortyRematchTalk)
+	@register.change(clubregisters,<register.value(clubregisters)>+1)
+    :end
+:endif
+@battle.starttrainer(gyms\ecruteak\leader)
+@player.AchieveEmblem(fog)
+:if:<register.registered(fogbadge_obtain)>=False
+    @register.register(fogbadge_obtain)
+    @register.register(trainer_ecruteak_gym\001)
+    @register.register(trainer_ecruteak_gym\002)
+    @register.register(trainer_ecruteak_gym\003)
+    @register.register(trainer_ecruteak_gym\004)
+    @player.GetBadge(12)
+    @Text.show(By having Fog-~Badge, Pokémon up*to Level 50 will obey~you.*Also, Pokémon that~know Surf will be*able to use that~move anytime.*I want you to have~this too)
+    @item.give(220,1)
+    @item.messagegive(220,1)
+    @Text.show(It's Shadow Ball.~It causes damage*and may reduce~Special Defense.*Use it if it~appeals to you.)
+:endif
+:end

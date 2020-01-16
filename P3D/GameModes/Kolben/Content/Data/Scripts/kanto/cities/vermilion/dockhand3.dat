@@ -1,0 +1,198 @@
+version=2
+
+:if:<register.registered(specialmap-tixreg)>=false
+	@text.show(Yo!*I am the navigator.*If you ever find any odd~maps, come talk to me.*For our regularly scheduled~trips, talk to the first~mate next to me.)
+:endif
+
+:if:<inventory.countitem(285)>>0 <and> <register.registered(oldseamaptonav)>=false
+	@text.show(Oh, this is a cool map!*It seems to point to a place~called "Faraway Island."*We can take you~there if you want.)
+	@register.register(oldseamaptonav)
+	@register.register(specialmap-tixreg)
+	@options.show(Yes,No)
+		:when:Yes
+			@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
+			@script.start(vermilion\fastshipleaving)
+			@player.warp(hoenn\farawayisland\exterior.dat,16,2.1,32)
+			@level.update
+			@player.turnto(2)
+			@screen.fadein
+			:end
+		:endwhen
+	:end
+:endif
+
+:if:<inventory.countitem(292)>>0 <and> <register.registered(emptyseamaptonav)>=false
+	@text.show(Oh, this is a weird map...*I don't think there is~anything there, but this~map suggests otherwise.*We can take you~there if you want.)
+	@register.register(emptyseamaptonav)
+	@register.register(specialmap-tixreg)
+	@options.show(Yes,No)
+		:when:Yes
+			@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
+			@script.start(vermilion\fastshipleaving)
+			@player.warp(sevii_islands\underwatercave\surface.dat,10,0.1,9)
+			@level.update
+			@player.turnto(2)
+			@screen.fadein
+			@text.show(It is a good thing~I brought this raft!*The water seems to~be really deep here.*I don't see anything~here but feel free to~surf around and explore,~but don't go to far~from the boat.*I don't want you to~get lost.)
+			:end
+		:endwhen
+	:end
+:endif
+
+:if:<inventory.countitem(592)>>0 <and> <register.registered(libertyseamaptonav)>=false
+	@text.show(Oh, this is a nice map!*It's a map to "Liberty Garden"~in far-off Unova.*We can take you~there if you want.)
+	@register.register(libertyseamaptonav)
+	@register.register(specialmap-tixreg)
+	@options.show(Yes,No)
+		:when:Yes
+			@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
+			@script.start(vermilion\fastshipleaving)
+			@player.warp(unova\libertygarden\garden.dat,12,2.1,11)
+			@level.update
+			@player.turnto(1)
+			@screen.fadein
+			@text.show(Boy, that was a long voyage.*Unova is far from Kanto,~but it's also a very popular~tourist destination.)
+			:end
+		:endwhen
+	:end
+:endif
+
+:if:<register.registered(specialmap-tixreg)>=true
+@text.show(Where would you like to go?)
+
+	:if:<register.registered(oldseamaptonav)>=true <and> <register.registered(emptyseamaptonav)>=false <and> <register.registered(libertyseamaptonav)>=false
+		@options.show(Faraway Island,Quit)
+			:when:Faraway Island
+				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
+				@script.start(vermilion\fastshipleaving)
+				@player.warp(hoenn\farawayisland\exterior.dat,16,2.1,32)
+				@level.update
+				@player.turnto(2)
+				@screen.fadein
+			:endwhen
+		:end
+	:endif
+	
+	:if:<register.registered(oldseamaptonav)>=false <and> <register.registered(emptyseamaptonav)>=true <and> <register.registered(libertyseamaptonav)>=false
+		@options.show(Open Sea,Quit)
+			:when:Open Sea
+				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
+				@script.start(vermilion\fastshipleaving)
+				@player.warp(sevii_islands\underwatercave\surface.dat,10,0.1,9)
+				@level.update
+				@player.turnto(2)
+				@screen.fadein
+				@text.show(It is a good thing~I brought this raft!*The water seems to~be really deep here.*I don't see anything~here but feel free to~surf around and explore,~but don't go to far~from the boat.*I don't want you to~get lost.)
+			:endwhen
+		:end
+	:endif
+	
+	:if:<register.registered(oldseamaptonav)>=false <and> <register.registered(emptyseamaptonav)>=false <and> <register.registered(libertyseamaptonav)>=true
+		@options.show(Liberty Garden,Quit)
+			:when:Liberty Garden
+				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
+				@script.start(vermilion\fastshipleaving)
+				@player.warp(unova\libertygarden\garden.dat,12,2.1,11)
+				@level.update
+				@player.turnto(1)
+				@screen.fadein
+				@text.show(Boy, that was a long voyage.*Unova is far from Kanto,~but it's also a very popular~tourist destination.)
+			:endwhen
+		:end
+	:endif
+	
+	:if:<register.registered(oldseamaptonav)>=true <and> <register.registered(emptyseamaptonav)>=true <and> <register.registered(libertyseamaptonav)>=false
+		@options.show(Faraway Island,Open Sea,Quit)
+			:when:Faraway Island
+				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
+				@script.start(vermilion\fastshipleaving)
+				@player.warp(hoenn\farawayisland\exterior.dat,16,2.1,32)
+				@level.update
+				@player.turnto(2)
+				@screen.fadein
+			:when:Open Sea
+				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
+				@script.start(vermilion\fastshipleaving)
+				@player.warp(sevii_islands\underwatercave\surface.dat,10,0.1,9)
+				@level.update
+				@player.turnto(2)
+				@screen.fadein
+				@text.show(It is a good thing~I brought this raft!*The water seems to~be really deep here.*I don't see anything~here but feel free to~surf around and explore,~but don't go to far~from the boat.*I don't want you to~get lost.)
+			:endwhen
+		:end
+	:endif
+	
+	:if:<register.registered(oldseamaptonav)>=false <and> <register.registered(emptyseamaptonav)>=true <and> <register.registered(libertyseamaptonav)>=true
+		@options.show(Open Sea,Liberty Garden,Quit)
+			:when:Open Sea
+				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
+				@script.start(vermilion\fastshipleaving)
+				@player.warp(sevii_islands\underwatercave\surface.dat,10,0.1,9)
+				@level.update
+				@player.turnto(2)
+				@screen.fadein
+				@text.show(It is a good thing~I brought this raft!*The water seems to~be really deep here.*I don't see anything~here but feel free to~surf around and explore,~but don't go to far~from the boat.*I don't want you to~get lost.)
+			:when:Liberty Garden
+				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
+				@script.start(vermilion\fastshipleaving)
+				@player.warp(unova\libertygarden\garden.dat,12,2.1,11)
+				@level.update
+				@player.turnto(1)
+				@screen.fadein
+				@text.show(Boy, that was a long voyage.*Unova is far from Kanto,~but it's also a very popular~tourist destination.)
+			:endwhen
+		:end	
+	:endif
+	
+	:if:<register.registered(oldseamaptonav)>=true <and> <register.registered(emptyseamaptonav)>=false <and> <register.registered(libertyseamaptonav)>=true
+		@options.show(Faraway Island,Liberty Garden,Quit)
+			:when:Faraway Island
+				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
+				@script.start(vermilion\fastshipleaving)
+				@player.warp(hoenn\farawayisland\exterior.dat,16,2.1,32)
+				@level.update
+				@player.turnto(2)
+				@screen.fadein
+			:when:Liberty Garden
+				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
+				@script.start(vermilion\fastshipleaving)
+				@player.warp(unova\libertygarden\garden.dat,12,2.1,11)
+				@level.update
+				@player.turnto(1)
+				@screen.fadein
+				@text.show(Boy, that was a long voyage.*Unova is far from Kanto,~but it's also a very popular~tourist destination.)
+			:endwhen
+		:end
+	:endif
+	
+	:if:<register.registered(oldseamaptonav)>=true <and> <register.registered(emptyseamaptonav)>=true <and> <register.registered(libertyseamaptonav)>=true
+		@options.show(Faraway Island,Open Sea,Liberty Garden,Quit)
+			:when:Faraway Island
+				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
+				@script.start(vermilion\fastshipleaving)
+				@player.warp(hoenn\farawayisland\exterior.dat,16,2.1,32)
+				@level.update
+				@player.turnto(2)
+				@screen.fadein
+			:when:Open Sea
+				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
+				@script.start(vermilion\fastshipleaving)
+				@player.warp(sevii_islands\underwatercave\surface.dat,10,0.1,9)
+				@level.update
+				@player.turnto(2)
+				@screen.fadein
+				@text.show(It is a good thing~I brought this raft!*The water seems to~be really deep here.*I don't see anything~here but feel free to~surf around and explore,~but don't go to far~from the boat.*I don't want you to~get lost.)
+			:when:Liberty Garden
+				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
+				@script.start(vermilion\fastshipleaving)
+				@player.warp(unova\libertygarden\garden.dat,12,2.1,11)
+				@level.update
+				@player.turnto(1)
+				@screen.fadein
+				@text.show(Boy, that was a long voyage.*Unova is far from Kanto,~but it's also a very popular~tourist destination.)
+			:endwhen
+		:end
+	:endif
+	
+:endif
+:end
