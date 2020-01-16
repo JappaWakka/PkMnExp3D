@@ -148,6 +148,1446 @@
     <Import Include="Microsoft.Xna.Framework.Audio" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bass.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Bass.Net.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="basswma.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bass_fx.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Battle\Interface.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Battle\WeatherIcons.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\0.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\1.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\10.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\11.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\12.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\13.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\14.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\15.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\16.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\17.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\18.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\19.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\2.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\20.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\21.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\22.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\23.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\3.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\4.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\5.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\6.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\7.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\8.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\9.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\BattleBox.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\Sparkle.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Box\storage.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Chat\Icons.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Evolution\EvolutionSpark.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Evolution\Light.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\GamePad\xboxControllerButtonA.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\GamePad\xboxControllerButtonB.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\GamePad\xboxControllerButtonX.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\GamePad\xboxControllerButtonY.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\GamePad\xboxControllerLeftShoulder.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\GamePad\xboxControllerLeftThumbstick.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\GamePad\xboxControllerLeftTrigger.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\GamePad\xboxControllerRightShoulder.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\GamePad\xboxControllerRightThumbstick.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\GamePad\xboxControllerRightTrigger.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\GamePad\xboxControllerStart.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Intro\battlefrontier.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Intro\VSIntro.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\MainMenu\clouds.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\MainMenu\ground.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\MainMenu\hooh.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\MainMenu\hoohParticles.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\MainMenu\lugia.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\MainMenu\lugiaParticle.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Map\corna_map.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Map\hoenn_map.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Map\johto_map.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Map\kanto_map.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Map\map_objects.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Map\sevii islands_map.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Menus\BagPack.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Menus\General.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Menus\GTS.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Menus\Inventory.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Menus\MainMenu.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Menus\Menu.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Menus\Options.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Menus\phone.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Menus\pokedexhabitat.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Menus\PokemonInfo.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Menus\SaveBook.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Menus\SummaryStatus.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Menus\Types.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Overworld\ChooseBox.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Overworld\flash_overlay.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Overworld\Particles.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Overworld\Rods.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Overworld\Sign.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\GUI\Overworld\TextBox.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\ancient_ruins.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\azalea.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\battlefactory.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\battletower.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\brain_battle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\brain_battle_startbattle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\bugcontest.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\burnedtower.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\celadon.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\center.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\cerulean.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\cerulean_cave.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\champion_defeat.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\cherrygrove.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\cinnabar.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\credits.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\dark_cave.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\diglettscave.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\dragonsden.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\ecruteak.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\elite_defeat.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\elmslab.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\entei_battle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\entei_battle_startbattle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\eusine_encounter.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\evolution.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\frontier.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\gamecorner.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\gameintro.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\Goldenrod.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\gts.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\gym.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\HallofFame.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\ho-oh_battle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\ho-oh_battle_startbattle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\hoenn_trainer.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\hoenn_trainer_startbattle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\hoenn_wild.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\hoenn_wild_startbattle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\IlexForest.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\indigo.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\azalea.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\battlefactory.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\battletower.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\bugcontest.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\burnedtower.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\celadon.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\cerulean.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\cerulean_cave.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\champion_defeat.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\cherrygrove.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\dark_cave.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\diglettscave.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\elite_defeat.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\elmslab.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\entei_battle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\eusine_encounter.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\evolution.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\frontier.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\gamecorner.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\Goldenrod.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\gts.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\gym.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\HallofFame.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\ho-oh_battle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\hoenn_wild.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\IlexForest.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\indigo.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\johto_champion.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\johto_elite.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\johto_leader.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\johto_rival.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\johto_rival_encounter.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\johto_rocket.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\johto_trainer.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\johto_wild.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\kanto_leader.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\kanto_trainer.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\kanto_wild.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\kimono.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\lavender.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\leader_defeat.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\lighthouse.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\lobby.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\lugia_battle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\mart.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\mary_encounter.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\nationalpark.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\NewBark.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\oakslab.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\oak_encounter.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\pallet.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\pokeflute.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\pokemon_lullaby.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\pokemon_march.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\pvp.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\raikou_battle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\rHideout.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\ride.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic0.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic1.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic10.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic11.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic2.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic3.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic4.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic5.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic6.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic7.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic8.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic9.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RuinsOfAlph.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\safari.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\safarigate.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\Sevii Islands_wild.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\show_me_around.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\space_legend_battle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\sprout_tower.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\ssaqua.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\startower.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\suicune_battle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\Surf.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\trainerschool.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\trainer_defeat.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\trainer_encounter.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\unown_broadcast.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\vermilion.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\violet.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\viridian_forest.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\welcome.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\wild_defeat.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_champion.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\Johto_champion_startbattle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_elite.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_elite_startbattle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_leader.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_leader_startbattle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_rival.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_rival_encounter.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_rival_startbattle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_rocket.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_rocket_encounter.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_rocket_startbattle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_trainer.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_trainer_startbattle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_wild.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_wild_startbattle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\kanto_leader.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\kanto_leader_startbattle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\kanto_trainer.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\kanto_trainer_startbattle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\kanto_wild.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\kanto_wild_startbattle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\kimono.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\kvictoryroad.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\lavender.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\leader_defeat.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\lighthouse.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\lobby.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\Looker_encounter.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\lugia_battle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\lugia_battle_startbattle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\mart.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\mary_encounter.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\mtmoonsq.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\nationalpark.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\NewBark.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\oakslab.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\oak_encounter.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\pallet.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\pokeflute.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\pokemon_lullaby.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\pokemon_march.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\pvp.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\raikou_battle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\raikou_battle_startbattle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\rHideout.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\ride.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\rocket_broadcast.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic0.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic1.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic10.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic11.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic2.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic3.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic4.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic5.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic6.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic7.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic8.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic9.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\RuinsOfAlph.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\safari.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\safarigate.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\Sevii Islands_wild.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\Sevii Islands_wild_startbattle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\show_me_around.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\sovietmarch.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\space_legend_battle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\space_legend_battle_startbattle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\sprout_tower.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\ssaqua.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\startower.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\suicune_battle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\suicune_battle_startbattle.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\surf.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\tintower.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\title.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\trainerschool.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\trainer_defeat.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\trainer_encounter.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\unown_broadcast.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\vermilion.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\violet.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\viridian_forest.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\welcome.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\wild_defeat.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Songs\wind.wma" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Badge_Acquired.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Attacks\Ember.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Attacks\Fly.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Attacks\Pound.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Attacks\Thunderbolt.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Damage\Effective.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Damage\NotVeryEffective.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Damage\SuperEffective.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Effects\Burned.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Effects\Frozen.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Effects\Paralyzed.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Effects\Poisoned.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Effects\Stat_Lower.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Effects\Stat_Raise.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Exp_Fill.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Exp_Max.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Heal.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\LowHP.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Pokeball\Catch.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Pokeball\Open.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Pokeball\Shake.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Pokeball\Throw.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Running.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Battle\Shiny.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Bicycle.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Bump.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Buy.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Contest\RankPlace.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\1.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\10.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\100.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\101.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\102.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\103.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\104.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\105.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\106.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\107.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\108.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\109.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\11.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\110.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\111.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\112.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\113.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\114.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\115.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\116.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\117.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\118.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\119.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\12.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\120.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\121.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\122.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\123.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\124.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\125.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\126.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\127.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\128.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\129.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\13.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\130.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\131.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\132.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\133.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\134.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\135.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\136.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\137.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\138.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\139.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\14.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\140.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\141.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\142.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\143.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\144.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\145.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\146.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\147.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\148.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\149.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\15.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\150.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\151.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\152.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\153.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\154.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\155.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\156.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\157.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\158.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\159.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\16.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\160.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\161.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\162.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\163.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\164.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\165.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\166.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\167.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\168.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\169.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\17.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\170.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\171.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\172.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\173.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\174.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\175.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\176.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\177.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\178.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\179.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\18.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\180.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\181.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\182.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\183.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\184.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\185.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\186.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\187.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\188.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\189.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\19.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\190.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\191.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\192.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\193.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\194.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\195.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\196.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\197.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\198.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\199.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\2.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\20.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\200.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\201.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\202.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\203.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\204.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\205.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\206.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\207.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\208.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\209.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\21.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\210.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\211.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\212.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\213.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\214.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\215.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\216.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\217.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\218.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\219.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\22.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\220.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\221.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\222.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\223.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\224.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\225.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\226.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\227.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\228.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\229.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\23.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\230.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\231.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\232.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\233.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\234.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\235.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\236.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\237.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\238.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\239.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\24.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\240.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\241.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\242.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\243.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\244.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\245.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\246.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\247.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\248.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\249.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\25.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\250.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\251.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\252.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\253.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\254.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\255.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\256.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\257.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\258.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\259.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\26.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\260.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\261.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\262.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\263.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\264.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\265.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\266.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\267.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\268.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\269.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\27.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\270.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\271.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\272.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\273.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\274.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\275.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\276.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\277.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\278.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\279.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\28.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\280.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\281.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\282.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\283.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\284.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\285.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\286.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\287.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\288.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\289.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\29.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\290.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\291.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\292.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\293.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\294.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\295.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\296.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\297.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\298.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\299.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\3.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\30.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\300.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\301.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\302.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\303.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\304.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\305.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\306.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\307.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\308.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\309.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\31.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\310.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\311.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\312.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\313.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\314.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\315.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\316.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\317.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\318.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\319.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\32.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\320.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\321.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\322.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\323.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\324.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\325.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\326.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\327.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\328.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\329.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\33.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\330.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\331.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\332.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\333.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\334.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\335.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\336.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\337.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\338.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\339.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\34.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\340.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\341.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\342.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\343.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\344.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\345.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\346.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\347.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\348.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\349.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\35.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\350.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\351.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\352.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\353.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\354.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\355.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\356.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\357.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\358.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\359.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\36.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\360.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\361.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\362.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\363.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\364.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\365.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\366.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\367.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\368.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\369.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\37.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\370.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\371.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\372.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\373.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\374.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\375.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\376.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\377.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\378.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\379.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\38.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\380.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\381.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\382.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\383.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\384.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\385.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\386.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\387.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\388.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\389.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\39.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\390.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\391.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\392.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\393.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\394.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\395.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\396.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\397.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\398.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\399.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\4.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\40.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\400.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\401.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\402.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\403.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\404.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\405.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\406.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\407.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\408.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\409.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\41.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\410.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\411.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\412.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\413.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\414.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\415.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\416.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\417.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\418.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\419.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\42.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\420.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\421.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\422.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\423.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\424.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\425.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\426.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\427.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\428.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\429.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\43.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\430.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\431.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\432.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\433.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\434.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\435.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\436.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\437.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\438.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\439.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\44.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\440.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\441.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\442.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\443.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\444.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\445.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\446.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\447.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\448.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\449.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\45.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\450.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\451.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\452.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\453.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\454.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\455.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\456.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\457.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\458.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\459.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\46.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\460.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\461.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\462.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\463.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\464.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\465.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\466.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\467.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\468.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\469.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\47.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\470.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\471.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\472.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\473.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\474.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\475.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\476.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\477.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\478.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\479.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\48.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\480.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\481.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\482.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\483.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\484.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\485.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\486.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\487.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\488.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\489.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\49.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\490.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\491.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\492.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\492_sky.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\493.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\494.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\495.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\496.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\497.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\498.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\499.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\5.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\50.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\500.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\501.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\502.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\503.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\504.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\505.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\506.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\507.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\508.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\509.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\51.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\510.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\511.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\512.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\513.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\514.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\515.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\516.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\517.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\518.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\519.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\52.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\520.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\521.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\522.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\523.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\524.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\525.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\526.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\527.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\528.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\529.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\53.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\530.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\531.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\532.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\533.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\534.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\535.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\536.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\537.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\538.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\539.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\54.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\540.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\541.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\542.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\543.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\544.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\545.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\546.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\547.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\548.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\549.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\55.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\550.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\551.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\552.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\553.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\554.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\555.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\556.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\557.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\558.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\559.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\56.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\560.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\561.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\562.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\563.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\564.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\565.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\566.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\567.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\568.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\569.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\57.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\570.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\571.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\572.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\573.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\574.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\575.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\576.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\577.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\578.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\579.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\58.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\580.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\581.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\582.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\583.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\584.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\585.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\586.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\587.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\588.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\589.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\59.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\590.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\591.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\592.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\593.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\594.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\595.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\596.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\597.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\598.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\599.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\6.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\60.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\600.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\601.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\602.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\603.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\604.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\605.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\606.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\607.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\608.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\609.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\61.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\610.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\611.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\612.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\613.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\614.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\615.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\616.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\617.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\618.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\619.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\62.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\620.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\621.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\622.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\623.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\624.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\625.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\626.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\627.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\628.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\629.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\63.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\630.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\631.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\632.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\633.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\634.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\635.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\636.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\637.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\638.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\639.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\64.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\640.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\641.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\642.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\643.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\644.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\645.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\646.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\647.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\648.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\649.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\65.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\650.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\651.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\652.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\653.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\654.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\655.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\656.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\657.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\658.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\659.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\66.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\660.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\661.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\662.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\663.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\664.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\665.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\666.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\667.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\668.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\669.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\67.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\670.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\671.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\672.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\673.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\674.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\675.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\676.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\677.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\678.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\679.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\68.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\680.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\681.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\682.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\683.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\684.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\685.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\686.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\687.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\688.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\689.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\69.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\690.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\691.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\692.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\693.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\694.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\695.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\696.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\697.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\698.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\699.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\7.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\70.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\700.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\701.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\702.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\703.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\704.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\705.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\706.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\707.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\708.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\709.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\71.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\710 - Pumpkaboo %28Super Size%29.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\710.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\711 - Gourgeist %28Super Size%29.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\711.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\712.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\713.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\714.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\715.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\716.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\717.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\718.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\72.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\721.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\73.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\74.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\75.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\76.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\77.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\78.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\79.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\8.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\80.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\81.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\82.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\83.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\84.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\85.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\86.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\87.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\88.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\89.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\9.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\90.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\91.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\92.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\93.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\94.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\95.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\96.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\97.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\98.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Cries\99.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Destroy.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Egg_Hatch.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Evolved.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\FieldMove_Cut.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\FieldMove_Flash.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\FieldMove_Fly.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\FieldMove_RockSmash.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\FieldMove_Strength.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\HealParty.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Ice_Break.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Ice_Crack.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\ItemFinder.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Jump_Ledge.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\MagnetTrain.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Menu_Open.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Notice.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\PC\LogOn.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\PC\TurnOff.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\PC\TurnOn.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Phone\RingTone.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Phone\TurnOff.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Phone\TurnOn.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Pickup.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Receive_TM.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Repel_Use.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Save.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Select.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Shutter.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\StoreNumber.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Success.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Success_Small.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Teleport.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\TRHQ_Alarm.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\UseItem.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Use_Item.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Use_Repel.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Warp_Door_Regular.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Warp_Door_Slide.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Sounds\Warp_General.wav" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\BattleFactory.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\BattleFrontier.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\BattleTower.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Battle\Cloud.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Battle\Fighting\forcepalmhand.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Battle\Fighting\forcepalmhandfaded.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Battle\Fighting\forcepalmhandfading.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Battle\Fighting\forcepalmimpact.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Battle\Fighting\forcepalmparticle.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Battle\Fire\EmberBall.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Battle\Fire\Fire.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Battle\Fire\Hand.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Battle\Other\RedCircle.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Battle\Other\Star.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Battle\Other\YellowCloud.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Battle\Physical\Particle.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Battle\Physical\Tackle.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Battle\StatChange\Heal.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Battle\StatChange\statDown.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Battle\StatChange\statUp.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Battle\Status.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Battle\Water\bubble.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Battle\Water\Water.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Berries.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\BerryForest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Center.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\chess.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Cities\Azalea.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Cities\Blackthorn.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Cities\Cherrygrove.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Cities\Cianwood.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Cities\Ecruteak.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Cities\Goldenrod.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Cities\Kanto.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Cities\Lavender.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Cities\Mahogany.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Cities\NewBark.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Cities\Olivine.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Cities\Violet.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\club.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\cyclingroad.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\DiglettCave.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\dungeon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\alph.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\ancestor.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\beast.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\border.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\boulder.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\cascade.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\champion.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\cyber.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\deep sea.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\earth.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\eevee.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\eggsplosion.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\eruption.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\floral.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\fog.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\genetics.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\glacier.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\glowing.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\gold ability.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\gold knowledge.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\hive.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\johto.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\kanto.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\legendary.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\mailman.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\marsh.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\material.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\mega.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\mineral.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\missingno.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\overkill.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\plain.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\pokedex.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\rainbow.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\rising.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\shooting star.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\silver ability.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\silver knowledge.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\snow.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\soul.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\alph.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\ancestor.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\beast.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\boulder.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\cascade.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\champion.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\cyber.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\deep sea.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\earth.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\eevee.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\eggsplosion.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\eruption.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\fog.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\genetics.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\glacier.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\gold ability.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\gold knowledge.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\hive.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\johto.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\kanto.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\legendary.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\mailman.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\marsh.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\material.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\mega.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\mineral.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\overkill.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\plain.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\pokedex.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\rainbow.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\rising.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\shooting star.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\silver ability.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\silver knowledge.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\snow.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\soul.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\stars.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\storm.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\thunder.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\time.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\unodostres.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\victorious.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\volcano.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\Square\zephyr.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\stars.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\storm.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\thunder.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\time.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\trainer.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\unodostres.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\victorious.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\volcano.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Emblem\zephyr.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\emoticons.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Gates_Johto.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Gates_Kanto.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Gym.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\indigo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Interior.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\intro.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\kolben.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Lab.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Lakeofrage.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Mart.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\ModelViewer\Ground.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\mtsilver.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\NES.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Outside.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\OverworldSprites\StaticEntities\ItemBall.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\OverworldSprites\StaticEntities\rock.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Park.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\portraits.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\rocketbase.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Rotomroom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Routes.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\RuinsOfAlph.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Safari.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\SafariGate.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Seasons\Flowers.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Seasons\Grass.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Seasons\PlantColoring.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Seasons\PlantColoringAlt.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\SecretBase.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\sevii.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Shrine.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\shuttle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\SparkleAnimation.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\switch.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TextureSheets\Apricorn.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TextureSheets\FloorOutside.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TextureSheets\Water.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TextureSheets\WaterFall.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TextureSheets\Water_Dive.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\train.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\trainertower.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\Anime.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\aragas.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\Art.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\Bear.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\BearAnimated.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\benwork.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\blank.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\Blue.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\BSOD.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\Crystal.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\derp.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\desert.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\Emerald.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\Enethil.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\F.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\fanta.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\Flower.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\GameGrumps.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\Gold.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\inception.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\joker.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\Kolben.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\Lilli.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\MarioKart8.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\MilkyWay.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\nile.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\Nyan.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\office.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\Omega.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\P3d.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\pat.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\PerpendStone.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\Pong.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\Portrait.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\PSwebCode.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\Red.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\RickRolled.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\RickRolled2.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\Ruby.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\Sapphire.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\segis.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\server.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\Silver.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\star.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\swear.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\victini.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\vs.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\webcode.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\website.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\webwork.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\work.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\TVs\Yellow.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\UI\GameJolt\gameJoltIcon.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\UI\GameJolt\Loading\0.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\UI\GameJolt\Loading\1.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\UI\GameJolt\Loading\2.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\UI\GameJolt\Loading\3.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\UI\GameJolt\login.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\UI\GameJolt\logo.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\UI\GameJolt\question.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\UI\GameJolt\x.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\UI\TrainerCard\Back.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\UI\TrainerCard\Paperclip.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\UI\TrainerCard\Papers.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\UnderwaterCave.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Village.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\viridianForest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Weather\ash.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Weather\ash2.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Weather\bubble.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Weather\rain.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Weather\rain2.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Weather\rain3.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Weather\sand.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Weather\snow.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\Weather\snow2.png" />
+    <Content Include="ContentPacks\Kolben GBA Texture Pack\Textures\WoodTower.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\GUI\Logos\PokemonQuartz3D.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -16516,6 +17956,9 @@
     <Content Include="GameModes\Kolben\Content\Sounds\FieldMove_Cut.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="GameModes\Kolben\Content\Sounds\FieldMove_Flash.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="GameModes\Kolben\Content\Sounds\FieldMove_Fly.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -16603,6 +18046,8 @@
     <Content Include="GameModes\Kolben\Content\Sounds\UseItem.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="GameModes\Kolben\Content\Sounds\Use_Item.wav" />
+    <Content Include="GameModes\Kolben\Content\Sounds\Use_Repel.wav" />
     <Content Include="GameModes\Kolben\Content\Sounds\Warp_Door_Regular.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -16610,15 +18055,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="GameModes\Kolben\Content\Sounds\Warp_General.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameModes\Kolben\Content\Textures\Alph.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameModes\Kolben\Content\Textures\Azalea.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameModes\Kolben\Content\Textures\BarkTown.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="GameModes\Kolben\Content\Textures\battlefactory.png">
@@ -16693,19 +18129,46 @@
     <Content Include="GameModes\Kolben\Content\Textures\berryForest.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="GameModes\Kolben\Content\Textures\blackthorn.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="GameModes\Kolben\Content\Textures\center.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameModes\Kolben\Content\Textures\cherrygrove.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="GameModes\Kolben\Content\Textures\chess.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="GameModes\Kolben\Content\Textures\cianwood.png">
+    <Content Include="GameModes\Kolben\Content\Textures\Cities\Azalea.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameModes\Kolben\Content\Textures\Cities\Blackthorn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameModes\Kolben\Content\Textures\Cities\Cherrygrove.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameModes\Kolben\Content\Textures\Cities\Cianwood.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameModes\Kolben\Content\Textures\Cities\Ecruteak.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameModes\Kolben\Content\Textures\Cities\Goldenrod.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameModes\Kolben\Content\Textures\Cities\Kanto.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameModes\Kolben\Content\Textures\Cities\Lavender.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameModes\Kolben\Content\Textures\Cities\Mahogany.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameModes\Kolben\Content\Textures\Cities\NewBark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameModes\Kolben\Content\Textures\Cities\Olivine.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameModes\Kolben\Content\Textures\Cities\Violet.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="GameModes\Kolben\Content\Textures\club.png">
@@ -16718,9 +18181,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="GameModes\Kolben\Content\Textures\dungeon.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameModes\Kolben\Content\Textures\ecruteak.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="GameModes\Kolben\Content\Textures\EmbeddedTower.png">
@@ -17014,7 +18474,10 @@
     <Content Include="GameModes\Kolben\Content\Textures\gate.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="GameModes\Kolben\Content\Textures\Goldenrod.png">
+    <Content Include="GameModes\Kolben\Content\Textures\Gates_Johto.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameModes\Kolben\Content\Textures\Gates_Kanto.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="GameModes\Kolben\Content\Textures\Gym.png">
@@ -17035,10 +18498,10 @@
     <Content Include="GameModes\Kolben\Content\Textures\indigo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="GameModes\Kolben\Content\Textures\intro.png">
+    <Content Include="GameModes\Kolben\Content\Textures\Interior.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="GameModes\Kolben\Content\Textures\Kanto0.png">
+    <Content Include="GameModes\Kolben\Content\Textures\intro.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="GameModes\Kolben\Content\Textures\kantogates.png">
@@ -17053,12 +18516,6 @@
     <Content Include="GameModes\Kolben\Content\Textures\Lakeofrage.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="GameModes\Kolben\Content\Textures\Lavender.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameModes\Kolben\Content\Textures\Mahogany.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="GameModes\Kolben\Content\Textures\mart.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -17069,12 +18526,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="GameModes\Kolben\Content\Textures\NES.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameModes\Kolben\Content\Textures\newbark.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameModes\Kolben\Content\Textures\Olivine.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="GameModes\Kolben\Content\Textures\OverworldSprites\10.png">
@@ -17089,13 +18540,7 @@
     <Content Include="GameModes\Kolben\Content\Textures\OverworldSprites\20.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="GameModes\Kolben\Content\Textures\OverworldSprites\30.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="GameModes\Kolben\Content\Textures\OverworldSprites\32.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameModes\Kolben\Content\Textures\OverworldSprites\33.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="GameModes\Kolben\Content\Textures\OverworldSprites\34.png">
@@ -17407,6 +18852,9 @@
     <Content Include="GameModes\Kolben\Content\Textures\OverworldSprites\biker.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="GameModes\Kolben\Content\Textures\OverworldSprites\Bill.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="GameModes\Kolben\Content\Textures\OverworldSprites\Blaine.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -17615,6 +19063,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="GameModes\Kolben\Content\Textures\OverworldSprites\MasterRoshi.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameModes\Kolben\Content\Textures\OverworldSprites\Medium.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="GameModes\Kolben\Content\Textures\OverworldSprites\Meowth-O.png">
@@ -17860,6 +19311,9 @@
     <Content Include="GameModes\Kolben\Content\Textures\Routes.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="GameModes\Kolben\Content\Textures\RuinsOfAlph.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="GameModes\Kolben\Content\Textures\Safari.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -17909,6 +19363,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="GameModes\Kolben\Content\Textures\TextureSheets\Water_Dive.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameModes\Kolben\Content\Textures\TextureSheets\Whirlpool.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="GameModes\Kolben\Content\Textures\train.png">
@@ -18113,9 +19570,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="GameModes\Kolben\Content\Textures\Village.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GameModes\Kolben\Content\Textures\violet.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="GameModes\Kolben\Content\Textures\viridianForest.png">
@@ -24913,6 +26367,225 @@
     <Content Include="Content\Data\Maps\MainMenu\mainmenu0.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="ContentPacks\Kolben GBA Texture Pack\info.dat" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\ancient_ruins.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\azalea.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\battlefactory.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\battletower.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\brain_battle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\brain_battle_startbattle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\bugcontest.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\burnedtower.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\celadon.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\center.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\cerulean.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\cerulean_cave.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\champion_defeat.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\cherrygrove.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\cinnabar.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\credits.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\dark_cave.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\diglettscave.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\dragonsden.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\ecruteak.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\elite_defeat.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\elmslab.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\entei_battle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\entei_battle_startbattle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\eusine_encounter.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\evolution.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\frontier.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\gamecorner.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\gameintro.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\Goldenrod.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\gts.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\gym.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\HallofFame.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\ho-oh_battle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\ho-oh_battle_startbattle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\hoenn_trainer.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\hoenn_trainer_startbattle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\hoenn_wild.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\hoenn_wild_startbattle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\IlexForest.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\indigo.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\azalea.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\battlefactory.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\battletower.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\bugcontest.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\burnedtower.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\celadon.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\cerulean.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\cerulean_cave.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\champion_defeat.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\cherrygrove.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\dark_cave.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\diglettscave.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\elite_defeat.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\elmslab.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\entei_battle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\eusine_encounter.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\evolution.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\frontier.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\gamecorner.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\Goldenrod.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\gts.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\gym.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\HallofFame.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\ho-oh_battle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\hoenn_wild.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\IlexForest.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\indigo.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\johto_champion.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\johto_elite.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\johto_leader.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\johto_rival.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\johto_rival_encounter.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\johto_rocket.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\johto_trainer.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\johto_wild.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\kanto_leader.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\kanto_trainer.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\kanto_wild.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\kimono.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\lavender.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\leader_defeat.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\lighthouse.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\lobby.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\lugia_battle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\mart.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\mary_encounter.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\nationalpark.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\NewBark.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\oakslab.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\oak_encounter.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\pallet.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\pokeflute.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\pokemon_lullaby.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\pokemon_march.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\pvp.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\raikou_battle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\rHideout.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\ride.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic0.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic1.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic10.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic11.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic2.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic3.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic4.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic5.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic6.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic7.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic8.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RouteMusic9.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\RuinsOfAlph.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\safari.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\safarigate.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\Sevii Islands_wild.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\show_me_around.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\space_legend_battle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\sprout_tower.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\ssaqua.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\startower.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\suicune_battle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\Surf.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\trainerschool.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\trainer_defeat.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\trainer_encounter.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\unown_broadcast.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\vermilion.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\violet.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\viridian_forest.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\welcome.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\intro\wild_defeat.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_champion.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\Johto_champion_startbattle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_elite.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_elite_startbattle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_leader.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_leader_startbattle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_rival.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_rival_encounter.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_rival_startbattle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_rocket.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_rocket_encounter.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_rocket_startbattle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_trainer.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_trainer_startbattle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_wild.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\johto_wild_startbattle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\kanto_leader.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\kanto_leader_startbattle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\kanto_trainer.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\kanto_trainer_startbattle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\kanto_wild.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\kanto_wild_startbattle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\kimono.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\kvictoryroad.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\lavender.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\leader_defeat.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\lighthouse.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\lobby.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\Looker_encounter.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\lugia_battle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\lugia_battle_startbattle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\mart.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\mary_encounter.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\mtmoonsq.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\nationalpark.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\NewBark.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\oakslab.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\oak_encounter.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\pallet.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\pokeflute.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\pokemon_lullaby.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\pokemon_march.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\pvp.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\raikou_battle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\raikou_battle_startbattle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\rHideout.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\ride.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\rocket_broadcast.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic0.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic1.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic10.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic11.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic2.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic3.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic4.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic5.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic6.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic7.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic8.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\RouteMusic9.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\RuinsOfAlph.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\safari.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\safarigate.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\Sevii Islands_wild.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\Sevii Islands_wild_startbattle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\show_me_around.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\sovietmarch.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\space_legend_battle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\space_legend_battle_startbattle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\sprout_tower.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\ssaqua.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\startower.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\suicune_battle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\suicune_battle_startbattle.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\surf.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\tintower.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\title.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\trainerschool.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\trainer_defeat.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\trainer_encounter.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\unown_broadcast.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\vermilion.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\violet.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\viridian_forest.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\welcome.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\wild_defeat.xnb" />
+    <None Include="ContentPacks\Kolben GBA Texture Pack\Songs\wind.xnb" />
     <None Include="Content\Data\Maps\Structures\PokeCenterInterior.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
