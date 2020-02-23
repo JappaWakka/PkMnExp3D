@@ -1,0 +1,51 @@
+version=2
+@player.move(0)
+@player.move(1)
+@player.turnto(2)
+@text.show(Which floor would~you like to go to?)
+@Options.show(1F - Pokémon Center,2F - Lounge,3F - Staff Offices,4F - Assistant Offices,5F - Developer Offices,B1F - Basement)
+	:when:1F - Pokémon Center
+		@text.show(...)
+		@player.move(1)
+		@player.warp(SeviiIslands\1knot\kolbentower\center.dat,12,0.1,-1,0)
+		@level.update
+		@player.move(1)
+		:end
+	:when:2F - Lounge
+		@text.show(...)
+		@player.move(1)
+		@player.warp(SeviiIslands\1knot\kolbentower\lounge.dat,9,0.1,-1,0)
+		@level.update
+		@player.move(1)
+		:end
+	:when:3F - Staff Offices
+		@text.show(...)
+		@player.move(1)
+		@player.warp(SeviiIslands\1knot\kolbentower\Offices_Staff.dat,9,0.1,-1,0)
+		@level.update
+		@player.move(1)
+		:end
+	:when:4F - Assistant Offices
+		@text.show(...)
+		@player.move(1)
+		@player.warp(SeviiIslands\1knot\kolbentower\Offices_Assistant.dat,9,0.1,-1,0)
+		@level.update
+		@player.move(1)
+		:end
+	:when:5F - Developer Offices
+		@text.show(...)
+		@player.move(1)
+		@player.warp(SeviiIslands\1knot\kolbentower\Offices_Developer.dat,9,0.1,-1,0)
+		@level.update
+		@player.move(1)
+		:end
+	:when:B1F - Basement
+		@text.show(...)
+		@player.move(1)
+		@player.warp(SeviiIslands\1knot\kolbentower\basement.dat,9,0.1,-1,0)
+		@level.update
+		@player.move(1)
+		:end
+:endwhen
+:end
+	

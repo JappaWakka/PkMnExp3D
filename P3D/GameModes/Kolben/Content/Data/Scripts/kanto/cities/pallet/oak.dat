@@ -11,7 +11,7 @@ version=2
 	@item.give(284,1)
 	@item.messagegive(284,1)
 	@register.register(rainbowpass)
-	@text.show(That pass will allow~you to take the~Sea Gallop Ferries~from Vermilion to all~of the Sevii Islands.*I have heard many~ruins and secrets lie~on those islands.*I am sure visiting~those islands will be~an amazing experience!)
+	@text.show(That pass will allow~you to take the~Sea Gallop Ferries~from Vermilion to all~of the SeviiIslands.*I have heard many~ruins and secrets lie~on those islands.*I am sure visiting~those islands will be~an amazing experience!)
 	@register.register(postblueoak)
 	:end
 :endif
@@ -38,6 +38,6 @@ version=2
 
 :endif
 
-#This sets a flag for the evaldist script so that it knows where the call came from:
+#This sets a flag for the EvaluationDistribution script so that it knows where the call came from:
 @storage.set(str,pallet_oak_scriptcaller,flag)
-@script.start(pallet\evaldist)
+@script.start(pallet\EvaluationDistribution)

@@ -5,7 +5,7 @@ version=2
 	@register.change(clubregisters,<register.value(clubregisters)>+1)
     :end
 :endif
-@battle.starttrainer(gyms\ecruteak\leader)
+@battle.starttrainer(Gyms\Ecruteak\leader)
 @player.AchieveEmblem(fog)
 :if:<register.registered(fogbadge_obtain)>=False
     @register.register(fogbadge_obtain)

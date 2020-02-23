@@ -1,11 +1,11 @@
 version=2
-:if:<register.registered(rival_dragonsden_encounter)>=true
+:if:<register.registered(Rival_dragonsden_encounter)>=true
     :if:<environment.day>=Tuesday <or> <environment.day>=Thursday
         @npc.warp(6,17,0,20)
     :endif
 :endif
 
-:if:<register.registered(clairtmget)>=False <and> <register.registered(ddenquizpass)>=True
+:if:<register.registered(ClairTMGet)>=False <and> <register.registered(ddenquizpass)>=True
 	@npc.warp(0,11,0,26)
 	@player.move(0)
 	@level.update
@@ -18,6 +18,6 @@ version=2
 	@item.messagegive(214,1)
 	@Text.show(That contains~Dragon Breath.*No, it doesn't~have anything to~do with my breath.*If you don't want~it, you don't have~to take it.)
 	@Text.show(Clair: What's the matter?*Aren't you going on~to the Pokémon League?*Do you know how to~get there?*From here, go to~New Bark Town.*Then Surf east to~the Pokémon League.*The route there is~very tough.*Don't you dare~lose at the~Pokémon League!*If you do, I'll~feel even worse*about having lost~to you!*Give it everything~you've got.)
-	@register.register(clairtmget)
+	@register.register(ClairTMGet)
 :endif
 :end

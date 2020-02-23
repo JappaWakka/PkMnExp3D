@@ -8,7 +8,7 @@ DefeatMessage|
 TextureID|Petrel
 Region|Sevii Islands
 insightmusic|johto_rocket_encounter
-IniMusic|Johto_rocket_intro
+IniMusic|Johto_rocket_StartBattle
 DefeatMusic|trainer_defeat
 BattleMusic|johto_rocket
 Pokemon1|20,64

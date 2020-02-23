@@ -31,7 +31,7 @@ version=2
 	:end
 :endif
 
-@battle.starttrainer(gyms\goldenrod\leader)
+@battle.starttrainer(Gyms\Goldenrod\leader)
 
 :if:<register.registered(defeat_whitney_1)>=False
 	@register.register(defeat_whitney_1)

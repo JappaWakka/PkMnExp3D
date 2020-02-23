@@ -8,7 +8,7 @@ DefeatMessage|WAHAHAHA! I enjoyed~battling you!*But a loss is a~loss!*From now o
 TextureID|Chuck
 Region|Johto
 InSightMusic|
-IniMusic|Johto_leader_intro
+IniMusic|Johto_leader_StartBattle
 DefeatMusic|leader_defeat
 BattleMusic|johto_leader
 Pokemon1|{"Pokemon"[57]}{"Experience"[4666]}{"Gender"[0]}{"EggSteps"[0]}{"Item"[0]}{"NickName"[]}{"Level"[29]}{"OT"[00000]}{"Ability"[72]}{"Status"[]}{"Nature"[7]}{"CatchLocation"[at unknown place]}{"CatchTrainer"[???]}{"CatchBall"[5]}{"CatchMethod"[somehow obtained]}{"Friendship"[140]}{"isShiny"[0]}{"Attack1"[43,30,30]}{"Attack2"[104,15,15]}{"Attack3"[157,10,10]}{"Attack4"[223,5,5]}{"FPs"[10,30,20,10,10,10]}{"DVs"[22,13,14,17,21,17]}{"AdditionalData"[]}

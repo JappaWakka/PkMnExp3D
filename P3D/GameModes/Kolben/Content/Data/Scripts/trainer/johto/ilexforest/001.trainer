@@ -5,9 +5,9 @@ Money|3960
 IntroMessage|I must challenge you!*Show me if you have~some of that same grace~in battle!
 OutroMessage|Oh, you truly demonstrate a passion for Pokémon.
 DefeatMessage|
-TextureID|31
+TextureID|KimonoGirl
 Region|Johto
-IniMusic|Johto_trainer_intro
+IniMusic|Johto_trainer_StartBattle
 DefeatMusic|trainer_defeat
 BattleMusic|johto_trainer
 Pokemon1|{"Pokemon"[470]}{"Gender"[1]}{"Item"[]}{"ItemData"[]}{"Level"[58]}{"OT"[00000]}{"Ability"[34]}{"Nature"[3]}{"CatchLocation"[Somewhere]}{"CatchTrainer"[Akemi]}{"CatchBall"[5]}{"CatchMethod"[]}{"Friendship"[255]}{"isShiny"[0]}{"Attack1"[14,20,20]}{"Attack2"[348,15,15]}{"Attack3"[241,15,15]}{"Attack4"[216,20,20]}

@@ -1,5 +1,5 @@
-{"Level"{LEV[{"Name"{str[Mt. Silver]}}{"MusicLoop"{str[lighthouse]}}{"WildPokemon"{bool[1]}}{"CurrentRegion"{str[Kanto]}}]}}
-{"Actions"{LEV[{"CanTeleport"{bool[0]}}{"CanDig"{bool[1]}}{"CanFly"{bool[0]}}{"EnviromentType"{int[2]}}{"Weather"{int[1]}}{"BattleMap"{str[johto\mtsilver\1f.dat,14,7,15.5]}}]}}
+{"Level"{LEV[{"Name"{str[Mt. Silver]}}{"MusicLoop"{str[Lighthouse]}}{"WildPokemon"{bool[1]}}{"CurrentRegion"{str[Kanto]}}]}}
+{"Actions"{LEV[{"CanTeleport"{bool[0]}}{"CanDig"{bool[1]}}{"CanFly"{bool[0]}}{"EnviromentType"{int[2]}}{"Weather"{int[1]}}{"BattleMap"{str[Johto\mtsilver\1f.dat,14,7,15.5]}}]}}
 
 Frame:
 Floor:
@@ -750,22 +750,22 @@ Corners:
 
 Items:
 {"Entity"{ENT[{"EntityID"{str[ItemObject]}}{"Position"{sngArr[1,6.625,24]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[192,16,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[1]}}{"AdditionalValue"{str[0,2]}}{"Rotation"{int[0]}}{"Scale"{sngArr[0.25,0.25,0.25]}}]}}
-{"Entity"{ENT[{"EntityID"{str[ItemObject]}}{"Position"{sngArr[36,4.625,30]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[192,16,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[1]}}{"AdditionalValue"{str[kanto\routes\1,44]}}{"Rotation"{int[0]}}{"Scale"{sngArr[0.25,0.25,0.25]}}]}}
+{"Entity"{ENT[{"EntityID"{str[ItemObject]}}{"Position"{sngArr[36,4.625,30]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[192,16,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[1]}}{"AdditionalValue"{str[1,44]}}{"Rotation"{int[0]}}{"Scale"{sngArr[0.25,0.25,0.25]}}]}}
 {"Entity"{ENT[{"EntityID"{str[ItemObject]}}{"Position"{sngArr[36,6.625,2]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[192,16,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[1]}}{"AdditionalValue"{str[2,39]}}{"Rotation"{int[0]}}{"Scale"{sngArr[0.25,0.25,0.25]}}]}}
 {"Entity"{ENT[{"EntityID"{str[ItemObject]}}{"Position"{sngArr[45,8.625,0]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[192,16,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[3,14]}}{"Rotation"{int[0]}}{"Scale"{sngArr[0.25,0.25,0.25]}}]}}
 {"Entity"{ENT[{"EntityID"{str[ItemObject]}}{"Position"{sngArr[15,3.625,19]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[192,16,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[4,591]}}{"Rotation"{int[0]}}{"Scale"{sngArr[0.25,0.25,0.25]}}]}}
 
 Warps:
 mt base:
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[31,0,47]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[80,48,16,16][112,48,16,16]]}}{"TextureIndex"{intArr[1,1,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[johto\mtsilver\exterior.dat,18,0.1,11,0]}}{"Rotation"{int[2]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[31,0,47]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[80,48,16,16][112,48,16,16]]}}{"TextureIndex"{intArr[1,1,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\mtsilver\exterior.dat,18,0.1,11,0]}}{"Rotation"{int[2]}}]}}
 Mt side:
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[43,5,31]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[80,48,16,16][112,48,16,16]]}}{"TextureIndex"{intArr[1,1,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[johto\mtsilver\side.dat,11,0.1,28,0]}}{"Rotation"{int[3]}}]}}
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[45,7,26]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[80,48,16,16][112,48,16,16]]}}{"TextureIndex"{intArr[1,1,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[johto\mtsilver\side.dat,7,2.1,23,0]}}{"Rotation"{int[3]}}]}}
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[47,9,9]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[80,48,16,16][112,48,16,16]]}}{"TextureIndex"{intArr[1,1,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[johto\mtsilver\side.dat,3,4.1,6,0]}}{"Rotation"{int[3]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[43,5,31]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[80,48,16,16][112,48,16,16]]}}{"TextureIndex"{intArr[1,1,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\mtsilver\side.dat,11,0.1,28,0]}}{"Rotation"{int[3]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[45,7,26]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[80,48,16,16][112,48,16,16]]}}{"TextureIndex"{intArr[1,1,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\mtsilver\side.dat,7,2.1,23,0]}}{"Rotation"{int[3]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[47,9,9]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[80,48,16,16][112,48,16,16]]}}{"TextureIndex"{intArr[1,1,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\mtsilver\side.dat,3,4.1,6,0]}}{"Rotation"{int[3]}}]}}
 
 Moltres:
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[6,10,-3]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[80,48,16,16][192,80,16,16]]}}{"TextureIndex"{intArr[1,1,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[johto\mtsilver\moltres.dat,8,6.1,21,0]}}{"Rotation"{int[0]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[6,10,-3]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[80,48,16,16][192,80,16,16]]}}{"TextureIndex"{intArr[1,1,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\mtsilver\moltres.dat,8,6.1,21,0]}}{"Rotation"{int[0]}}]}}
 Expert:
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[25,5,32]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[80,48,16,16][192,80,16,16]]}}{"TextureIndex"{intArr[1,1,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[johto\mtsilver\expert.dat,3,0.1,7,0]}}{"Rotation"{int[0]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[25,5,32]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[80,48,16,16][192,80,16,16]]}}{"TextureIndex"{intArr[1,1,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\mtsilver\expert.dat,3,0.1,7,0]}}{"Rotation"{int[0]}}]}}
 2f:
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[23,13,-6]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[80,48,16,16][192,80,16,16]]}}{"TextureIndex"{intArr[1,1,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[johto\mtsilver\2f.dat,18,0.1,21,0]}}{"Rotation"{int[0]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[23,13,-6]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[80,48,16,16][192,80,16,16]]}}{"TextureIndex"{intArr[1,1,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\mtsilver\2f.dat,18,0.1,21,0]}}{"Rotation"{int[0]}}]}}

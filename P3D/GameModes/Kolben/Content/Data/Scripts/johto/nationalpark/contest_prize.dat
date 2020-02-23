@@ -41,25 +41,25 @@ version=2
 @storage.set(string,name1,Ace Trainer Nick)
 @storage.set(string,pokename1,Pinsir)
 @storage.set(integer,score1,190)
-@npc.register(nationalpark\nationalpark2.dat|1|position|7,0,3)
+@npc.register(NationalPark\nationalpark2.dat|1|position|7,0,3)
 :when:2
 @npc.wearskin(6,23)
 @storage.set(string,name1,Ace Trainer Abby)
 @storage.set(string,pokename1,Scyther)
 @storage.set(integer,score1,170)
-@npc.register(nationalpark\nationalpark2.dat|2|position|7,0,3)
+@npc.register(NationalPark\nationalpark2.dat|2|position|7,0,3)
 :when:3
 @npc.wearskin(6,bugcatcher)
 @storage.set(string,name1,Bug Catcher Josh)
 @storage.set(string,pokename1,Butterfree)
 @storage.set(integer,score1,150)
-@npc.register(nationalpark\nationalpark2.dat|3|position|7,0,3)
+@npc.register(NationalPark\nationalpark2.dat|3|position|7,0,3)
 :when:4
 @npc.wearskin(6,16)
 @storage.set(string,name1,Picnicker Cindy)
 @storage.set(string,pokename1,Beedrill)
 @storage.set(integer,score1,180)
-@npc.register(nationalpark\nationalpark2.dat|4|position|7,0,3)
+@npc.register(NationalPark\nationalpark2.dat|4|position|7,0,3)
 :endwhen
 
 #select NPC 2
@@ -69,25 +69,25 @@ version=2
 @storage.set(string,name2,Bug Catcher Ed)
 @storage.set(string,pokename2,Venonat)
 @storage.set(integer,score2,130)
-@npc.register(nationalpark\nationalpark2.dat|10|position|2,0,5)
+@npc.register(NationalPark\nationalpark2.dat|10|position|2,0,5)
 :when:2
 @npc.wearskin(5,11)
 @storage.set(string,name2,Pokéfan William)
 @storage.set(string,pokename2,Metapod)
 @storage.set(integer,score2,110)
-@npc.register(nationalpark\nationalpark2.dat|11|position|2,0,5)
+@npc.register(NationalPark\nationalpark2.dat|11|position|2,0,5)
 :when:3
 @npc.wearskin(5,17)
 @storage.set(string,name2,Camper Barry)
 @storage.set(string,pokename2,Paras)
 @storage.set(integer,score2,120)
-@npc.register(nationalpark\nationalpark2.dat|12|position|2,0,5)
+@npc.register(NationalPark\nationalpark2.dat|12|position|2,0,5)
 :when:4
 @npc.wearskin(5,bugcatcher)
 @storage.set(string,name2,Bug Catcher Don)
 @storage.set(string,pokename2,Kakuna)
 @storage.set(integer,score2,100)
-@npc.register(nationalpark\nationalpark2.dat|13|position|2,0,5)
+@npc.register(NationalPark\nationalpark2.dat|13|position|2,0,5)
 :endwhen
 
 #select NPC 3
@@ -97,25 +97,25 @@ version=2
 @storage.set(string,name3,Youngster Samuel)
 @storage.set(string,pokename3,Metapod)
 @storage.set(integer,score3,90)
-@npc.register(nationalpark\nationalpark2.dat|20|position|1,0,2)
+@npc.register(NationalPark\nationalpark2.dat|20|position|1,0,2)
 :when:2
 @npc.wearskin(4,bugcatcher)
 @storage.set(string,name3,Bug Catcher Benny)
 @storage.set(string,pokename3,Caterpie)
 @storage.set(integer,score3,80)
-@npc.register(nationalpark\nationalpark2.dat|21|position|1,0,2)
+@npc.register(NationalPark\nationalpark2.dat|21|position|1,0,2)
 :when:3
 @npc.wearskin(4,49)
 @storage.set(string,name3,School Kid Kipp)
 @storage.set(string,pokename3,Weedle)
 @storage.set(integer,score3,100)
-@npc.register(nationalpark\nationalpark2.dat|22|position|1,0,2)
+@npc.register(NationalPark\nationalpark2.dat|22|position|1,0,2)
 :when:4
 @npc.wearskin(4,bugcatcher)
 @storage.set(string,name3,Bug Catcher Ed)
 @storage.set(string,pokename3,Caterpie)
 @storage.set(integer,score3,90)
-@npc.register(nationalpark\nationalpark2.dat|23|position|1,0,2)
+@npc.register(NationalPark\nationalpark2.dat|23|position|1,0,2)
 :endwhen
 
 #Update level and fade screen in:
@@ -275,7 +275,7 @@ version=2
 @text.show(Well, that's it for~today's Bug-Catching Contest.*We hope you all~will participate~in the future.)
 
 @screen.fadeout
-@player.warp(nationalpark\nationalpark2.dat,4,0.1,2,0)
+@player.warp(NationalPark\nationalpark2.dat,4,0.1,2,0)
 @level.update
 @player.turnto(0)
 @screen.fadein

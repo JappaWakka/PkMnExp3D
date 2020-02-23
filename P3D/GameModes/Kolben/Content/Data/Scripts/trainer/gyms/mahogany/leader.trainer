@@ -8,7 +8,7 @@ DefeatMessage|When the ice and~snow melt, spring arrives.*You and your Pokémon~
 TextureID|Pryce
 Region|Johto
 InSightMusic|
-IniMusic|Johto_leader_intro
+IniMusic|Johto_leader_StartBattle
 DefeatMusic|leader_defeat
 BattleMusic|johto_leader
 Pokemon1|{"Pokemon"[86]}{"Experience"[4666]}{"Gender"[0]}{"EggSteps"[0]}{"Item"[0]}{"NickName"[]}{"Level"[30]}{"OT"[00000]}{"Ability"[47]}{"Status"[]}{"Nature"[7]}{"CatchLocation"[at unknown place]}{"CatchTrainer"[???]}{"CatchBall"[5]}{"CatchMethod"[somehow obtained]}{"Friendship"[140]}{"isShiny"[0]}{"Attack1"[196,15,15]}{"Attack2"[258,10,10]}{"Attack3"[156,10,10]}{"Attack4"[173,15,15]}{"FPs"[20,20,20,20,20,20]}{"DVs"[22,23,14,17,21,27]}{"AdditionalData"[]}

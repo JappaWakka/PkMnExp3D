@@ -6,7 +6,7 @@ version=2
 @options.show(Yes,No)
 :when:Yes
 @screen.fadeout
-@player.warp(nationalpark\nationalpark2.dat,4,0.1,2,0)
+@player.warp(NationalPark\nationalpark2.dat,4,0.1,2,0)
 @level.update
 @player.turnto(0)
 @screen.fadein
@@ -27,7 +27,7 @@ version=2
 @options.show(Yes,No)
 :when:Yes
 @text.show(Ok, please follow me to~the center of the park.)
-@script.start(nationalpark\contest_prize)
+@script.start(NationalPark\contest_prize)
 :when:No
 @text.show(Have fun catching~more bug Pokémon.)
 :end

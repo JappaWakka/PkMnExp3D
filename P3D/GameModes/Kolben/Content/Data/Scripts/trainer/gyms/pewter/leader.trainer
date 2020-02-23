@@ -8,7 +8,7 @@ DefeatMessage|Brock: The world is huge.*There are still many~strong trainers lik
 TextureID|Brock
 Region|Kanto
 InSightMusic|
-IniMusic|Kanto_leader_intro
+IniMusic|Kanto_leader_StartBattle
 DefeatMusic|leader_defeat
 BattleMusic|Kanto_leader
 Pokemon1|{"Pokemon"[76]}{"Experience"[2744]}{"Gender"[0]}{"EggSteps"[0]}{"Item"[0]}{"NickName"[]}{"Level"[51]}{"OT"[00000]}{"Ability"[5]}{"Status"[]}{"Nature"[7]}{"CatchLocation"[New Map]}{"CatchTrainer"[Misty]}{"CatchBall"[5]}{"CatchMethod"[caught at]}{"Friendship"[0]}{"isShiny"[0]}{"Attack1"[111,40,40]}{"Attack2"[205,20,20]}{"Attack3"[89,10,10]}{"Attack4"[157,10,10]}{"FPs"[10,10,20,10,10,10]}{"DVs"[18,12,25,12,28,26]}

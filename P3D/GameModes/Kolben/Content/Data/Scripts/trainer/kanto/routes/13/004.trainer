@@ -7,7 +7,7 @@ OutroMessage|How... How dare you mock royalty!
 DefeatMessage|Doesn't everyone wish~to someday be a king?
 TextureID|11
 Region|Kanto
-IniMusic|Kanto_trainer_intro
+IniMusic|Kanto_trainer_StartBattle
 DefeatMusic|trainer_defeat
 BattleMusic|Kanto_trainer
 Pokemon1|34,46

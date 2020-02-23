@@ -37,7 +37,7 @@ version=2
 	@player.move(1)
 	@player.turnto(0)
 	@npc.turn(0,2)
-	@battle.starttrainer(gyms\cianwood\leader)
+	@battle.starttrainer(Gyms\Cianwood\leader)
 	@Music.play(gym)
 	@register.register(stormbadge_obtain)
 	@register.register(trainer_cianwood_gym\001)
@@ -53,5 +53,5 @@ version=2
 	:end
 :endif
 
-@battle.starttrainer(gyms\cianwood\leader)
+@battle.starttrainer(Gyms\Cianwood\leader)
 :end

@@ -42,7 +42,7 @@ version=2
 @player.turnto(1)
 @player.move(1)
 @screen.fadeout
-@player.warp(nationalpark\contest.dat,13,0.1,47,3)
+@player.warp(NationalPark\contest.dat,13,0.1,47,3)
 @level.update
 @npc.warp(0,14,0,47)
 @npc.warp(1,11,0,47)
@@ -56,7 +56,7 @@ version=2
 @npc.turn(0,0)
 @npc.turn(1,0)
 
-@script.start(nationalpark\unregister_NPCs)
+@script.start(NationalPark\unregister_NPCs)
 
 :when:No
 @text.show(OK. We hope you'll~take part in the~future.)

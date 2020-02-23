@@ -8,7 +8,7 @@ DefeatMessage|Misty: Are there many~strong trainers in Johto?*Like you, I mean.*
 TextureID|Misty
 Region|Kanto
 InSightMusic|
-IniMusic|Kanto_leader_intro
+IniMusic|Kanto_leader_StartBattle
 DefeatMusic|leader_defeat
 BattleMusic|Kanto_leader
 Pokemon1|{"Pokemon"[55]}{"Experience"[2744]}{"Gender"[1]}{"EggSteps"[0]}{"Item"[0]}{"NickName"[]}{"Level"[49]}{"OT"[00000]}{"Ability"[6]}{"Status"[]}{"Nature"[7]}{"CatchLocation"[New Map]}{"CatchTrainer"[Misty]}{"CatchBall"[5]}{"CatchMethod"[caught at]}{"Friendship"[0]}{"isShiny"[0]}{"Attack1"[352,20,20]}{"Attack2"[50,20,20]}{"Attack3"[94,10,10]}{"Attack4"[244,10,10]}{"FPs"[10,10,12,10,10,10]}{"DVs"[18,12,25,12,28,26]}

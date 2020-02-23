@@ -6,7 +6,7 @@ version=2
     :end
 :endif
 
-@battle.starttrainer(gyms\violet\leader)
+@battle.starttrainer(Gyms\Violet\leader)
 @player.AchieveEmblem(zephyr)
 :if:<register.registered(zephyrbadge_obtain)>=False
     @Register.register(zephyrbadge_obtain)

@@ -8,7 +8,7 @@ DefeatMessage|Surge: Hey, kid!~Still slugging and~chugging away?*My Pokémon and
 TextureID|LtSurge
 Region|Kanto
 InSightMusic|
-IniMusic|Kanto_leader_intro
+IniMusic|Kanto_leader_StartBattle
 DefeatMusic|leader_defeat
 BattleMusic|Kanto_leader
 Pokemon1|{"Pokemon"[26]}{"Experience"[2744]}{"Gender"[0]}{"EggSteps"[0]}{"Item"[0]}{"NickName"[]}{"Level"[51]}{"OT"[00000]}{"Ability"[9]}{"Status"[]}{"Nature"[7]}{"CatchLocation"[New Map]}{"CatchTrainer"[Lt. Surge]}{"CatchBall"[5]}{"CatchMethod"[caught at]}{"Friendship"[0]}{"isShiny"[0]}{"Attack1"[86,20,20]}{"Attack2"[351,20,20]}{"Attack3"[98,30,30]}{"Attack4"[104,15,15]}{"EVs"[10,20,20,30,10,10]}{"IVs"[8,12,25,20,28,26]}

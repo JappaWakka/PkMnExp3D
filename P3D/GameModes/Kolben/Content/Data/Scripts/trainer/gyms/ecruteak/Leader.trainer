@@ -8,7 +8,7 @@ DefeatMessage|I see...*Your journey has~taken you to far-~away places.*And you h
 TextureID|Morty
 Region|Johto
 InSightMusic|
-IniMusic|Johto_leader_intro
+IniMusic|Johto_leader_StartBattle
 DefeatMusic|leader_defeat
 BattleMusic|johto_leader
 Pokemon1|{"Pokemon"[92]}{"Experience"[420]}{"Gender"[0]}{"EggSteps"[0]}{"Item"[0]}{"NickName"[]}{"Level"[21]}{"OT"[00000]}{"Ability"[26]}{"Status"[]}{"Nature"[21]}{"CatchLocation"[at unknown place]}{"CatchTrainer"[???]}{"CatchBall"[5]}{"CatchMethod"[somehow obtained]}{"Friendship"[0]}{"isShiny"[0]}{"Attack1"[122,30,30]}{"Attack2"[180,10,10]}{"Attack3"[212,5,5]}{"Attack4"[174,10,10]}{"FPs"[20,20,20,20,20,21]}{"DVs"[29,23,13,12,21,11]}

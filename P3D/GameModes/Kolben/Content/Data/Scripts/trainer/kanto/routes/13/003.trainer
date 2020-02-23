@@ -7,7 +7,7 @@ OutroMessage|Pi-Pikachu!
 DefeatMessage|You look like you have~many Pokémon, but Pikachu~is still the best.
 TextureID|11
 Region|Kanto
-IniMusic|Kanto_trainer_intro
+IniMusic|Kanto_trainer_StartBattle
 DefeatMusic|trainer_defeat
 BattleMusic|Kanto_trainer
 Pokemon1|25,38

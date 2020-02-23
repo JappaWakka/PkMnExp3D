@@ -5,7 +5,7 @@ version=2
 	@register.change(clubregisters,<register.value(clubregisters)>+1)
     :end
 :endif
-@battle.starttrainer(gyms\azalea\leader)
+@battle.starttrainer(Gyms\Azalea\leader)
 @player.AchieveEmblem(hive)
 :if:<register.registered(hivebadge_obtain)>=False
     @register.register(hivebadge_obtain)

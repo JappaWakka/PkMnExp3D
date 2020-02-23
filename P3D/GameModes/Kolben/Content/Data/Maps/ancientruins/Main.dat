@@ -56,8 +56,8 @@ Fences:
 {"EntityField"{ENT[{"Size"{intArr[5,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[10,1,4]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[112,32,16,16][128,32,16,16]]}}{"TextureIndex"{intArr[0,0,1,1,1,1,0,0,1,1]}}{"Collision"{bool[1]}}{"ModelID"{int[4]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 
 NPCs:
-{"NPC"{NPC[{"Position"{sngArr[9,1,4]}}{"TextureID"{str[GateKeeper]}}{"ID"{int[0]}}{"Name"{str[TrainManLOLMATRIX]}}{"Action"{int[1]}}{"AdditionalValue"{str[ancientruins\trainman]}}{"Rotation"{int[2]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
-{"NPC"{NPC[{"Position"{sngArr[12,0,10]}}{"TextureID"{str[hiker]}}{"ID"{int[2]}}{"Name"{str[ConfusedMan]}}{"Action"{int[1]}}{"AdditionalValue"{str[ancientruins\hiker]}}{"Rotation"{int[1]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[[12,10,1,5]]}}]}}
+{"NPC"{NPC[{"Scale"{sngArr[1.35,1.35,1.35]}}{"Position"{sngArr[9,1,4]}}{"TextureID"{str[GateKeeper]}}{"ID"{int[0]}}{"Name"{str[TrainManLOLMATRIX]}}{"Action"{int[1]}}{"AdditionalValue"{str[AncientRuins\trainman]}}{"Rotation"{int[2]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+{"NPC"{NPC[{"Scale"{sngArr[1.35,1.35,1.35]}}{"Position"{sngArr[12,0,10]}}{"TextureID"{str[hiker]}}{"ID"{int[2]}}{"Name"{str[ConfusedMan]}}{"Action"{int[1]}}{"AdditionalValue"{str[AncientRuins\hiker]}}{"Rotation"{int[1]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[[12,10,1,5]]}}]}}
 
 Stairs:
 {"EntityField"{ENT[{"Size"{intArr[3,1]}}{"EntityID"{str[SlideBlock]}}{"Position"{sngArr[8,0,8]}}{"TexturePath"{str[dungeon]}}{"Textures"{recArr[[32,16,16,16][16,0,16,16]]}}{"TextureIndex"{intArr[-1,-1,1,1,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[2]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}
@@ -90,8 +90,8 @@ Tunnel:
 
 Crystal:
 {"EntityField"{ENT[{"Size"{intArr[1,1]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1,1,1]}}{"Position"{sngArr[4,0,13]}}{"TexturePath"{str[dungeon]}}{"Textures"{recArr[[64,0,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
-{"Entity"{ENT[{"EntityID"{str[ScriptBlock]}}{"Position"{sngArr[4,0,13]}}{"TexturePath"{str[dungeon]}}{"Visible"{bool[0]}}{"Textures"{recArr[[32,48,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[0]}}{"Action"{int[1]}}{"AdditionalValue"{str[ancientruins\blue]}}{"Rotation"{int[0]}}]}}
+{"Entity"{ENT[{"EntityID"{str[ScriptBlock]}}{"Position"{sngArr[4,0,13]}}{"TexturePath"{str[dungeon]}}{"Visible"{bool[0]}}{"Textures"{recArr[[32,48,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[0]}}{"Action"{int[1]}}{"AdditionalValue"{str[AncientRuins\blue]}}{"Rotation"{int[0]}}]}}
 
 Warps:
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[17,0,21]}}{"TexturePath"{str[dungeon]}}{"Visible"{bool[0]}}{"Textures"{recArr[[32,0,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[ancientruins\Maze\0.dat,7,0.1,8,2]}}{"Rotation"{int[0]}}]}}
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[-1,0,21]}}{"TexturePath"{str[dungeon]}}{"Visible"{bool[0]}}{"Textures"{recArr[[32,0,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[ancientruins\Maze\0.dat,1,0.1,8,2]}}{"Rotation"{int[0]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[17,0,21]}}{"TexturePath"{str[dungeon]}}{"Visible"{bool[0]}}{"Textures"{recArr[[32,0,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[AncientRuins\Maze\0.dat,7,0.1,8,2]}}{"Rotation"{int[0]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[-1,0,21]}}{"TexturePath"{str[dungeon]}}{"Visible"{bool[0]}}{"Textures"{recArr[[32,0,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[AncientRuins\Maze\0.dat,1,0.1,8,2]}}{"Rotation"{int[0]}}]}}

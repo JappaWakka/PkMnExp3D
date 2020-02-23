@@ -2,7 +2,7 @@ version=2
 @pokemon.cry(494)
 @battle.wild(494,70,-1,,12)
 @register.register(battlevictini)
-@npc.register(unova\libertygarden\room.dat|0|remove|0)
+@npc.register(Unova\LibertyGarden\room.dat|0|remove|0)
 @npc.remove(0)
 @player.achieveemblem(victorious)
 :end

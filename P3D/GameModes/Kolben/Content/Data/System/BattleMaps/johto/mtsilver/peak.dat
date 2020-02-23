@@ -212,7 +212,7 @@ Corners:
 {"Entity"{ENT[{"EntityID"{str[WallBlock]}}{"Position"{sngArr[-22,-5,12]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[160,16,16,16]]}}{"TextureIndex"{intArr[-1,-1,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[5]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[3]}}]}}
 
 warp:
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[-27,0,0]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[160,16,16,16][176,16,16,16]]}}{"TextureIndex"{intArr[1,1,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[johto\mtsilver\3f.dat,11,10.1,-1,0]}}{"Rotation"{int[1]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[-27,0,0]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[160,16,16,16][176,16,16,16]]}}{"TextureIndex"{intArr[1,1,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\mtsilver\3f.dat,11,10.1,-1,0]}}{"Rotation"{int[1]}}]}}
 
 
 {"Backdrop"{BAC[{"Position"{sngArr[-49.5,-4.5,-25.5]}}{"Size"{intArr[75,50]}}{"Rotation"{sngArr[0,0,0]}}{"Type"{str[Texture]}}{"TexturePath"{str[Safari]}}{"Texture"{rec[128,16,16,16]}}{"Trigger"{str[Offset]}}]}}

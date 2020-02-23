@@ -12,7 +12,7 @@ version=2
 		:when:Yes
 			@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
 			@script.start(vermilion\fastshipleaving)
-			@player.warp(hoenn\farawayisland\exterior.dat,16,2.1,32)
+			@player.warp(Hoenn\FarawayIsland\exterior.dat,16,2.1,32)
 			@level.update
 			@player.turnto(2)
 			@screen.fadein
@@ -29,7 +29,7 @@ version=2
 		:when:Yes
 			@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
 			@script.start(vermilion\fastshipleaving)
-			@player.warp(sevii_islands\underwatercave\surface.dat,10,0.1,9)
+			@player.warp(SeviiIslands\UnderwaterCave\surface.dat,10,0.1,9)
 			@level.update
 			@player.turnto(2)
 			@screen.fadein
@@ -47,7 +47,7 @@ version=2
 		:when:Yes
 			@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
 			@script.start(vermilion\fastshipleaving)
-			@player.warp(unova\libertygarden\garden.dat,12,2.1,11)
+			@player.warp(Unova\LibertyGarden\garden.dat,12,2.1,11)
 			@level.update
 			@player.turnto(1)
 			@screen.fadein
@@ -65,7 +65,7 @@ version=2
 			:when:Faraway Island
 				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
 				@script.start(vermilion\fastshipleaving)
-				@player.warp(hoenn\farawayisland\exterior.dat,16,2.1,32)
+				@player.warp(Hoenn\FarawayIsland\exterior.dat,16,2.1,32)
 				@level.update
 				@player.turnto(2)
 				@screen.fadein
@@ -78,7 +78,7 @@ version=2
 			:when:Open Sea
 				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
 				@script.start(vermilion\fastshipleaving)
-				@player.warp(sevii_islands\underwatercave\surface.dat,10,0.1,9)
+				@player.warp(SeviiIslands\UnderwaterCave\surface.dat,10,0.1,9)
 				@level.update
 				@player.turnto(2)
 				@screen.fadein
@@ -92,7 +92,7 @@ version=2
 			:when:Liberty Garden
 				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
 				@script.start(vermilion\fastshipleaving)
-				@player.warp(unova\libertygarden\garden.dat,12,2.1,11)
+				@player.warp(Unova\LibertyGarden\garden.dat,12,2.1,11)
 				@level.update
 				@player.turnto(1)
 				@screen.fadein
@@ -106,14 +106,14 @@ version=2
 			:when:Faraway Island
 				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
 				@script.start(vermilion\fastshipleaving)
-				@player.warp(hoenn\farawayisland\exterior.dat,16,2.1,32)
+				@player.warp(Hoenn\FarawayIsland\exterior.dat,16,2.1,32)
 				@level.update
 				@player.turnto(2)
 				@screen.fadein
 			:when:Open Sea
 				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
 				@script.start(vermilion\fastshipleaving)
-				@player.warp(sevii_islands\underwatercave\surface.dat,10,0.1,9)
+				@player.warp(SeviiIslands\UnderwaterCave\surface.dat,10,0.1,9)
 				@level.update
 				@player.turnto(2)
 				@screen.fadein
@@ -127,7 +127,7 @@ version=2
 			:when:Open Sea
 				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
 				@script.start(vermilion\fastshipleaving)
-				@player.warp(sevii_islands\underwatercave\surface.dat,10,0.1,9)
+				@player.warp(SeviiIslands\UnderwaterCave\surface.dat,10,0.1,9)
 				@level.update
 				@player.turnto(2)
 				@screen.fadein
@@ -135,7 +135,7 @@ version=2
 			:when:Liberty Garden
 				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
 				@script.start(vermilion\fastshipleaving)
-				@player.warp(unova\libertygarden\garden.dat,12,2.1,11)
+				@player.warp(Unova\LibertyGarden\garden.dat,12,2.1,11)
 				@level.update
 				@player.turnto(1)
 				@screen.fadein
@@ -149,14 +149,14 @@ version=2
 			:when:Faraway Island
 				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
 				@script.start(vermilion\fastshipleaving)
-				@player.warp(hoenn\farawayisland\exterior.dat,16,2.1,32)
+				@player.warp(Hoenn\FarawayIsland\exterior.dat,16,2.1,32)
 				@level.update
 				@player.turnto(2)
 				@screen.fadein
 			:when:Liberty Garden
 				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
 				@script.start(vermilion\fastshipleaving)
-				@player.warp(unova\libertygarden\garden.dat,12,2.1,11)
+				@player.warp(Unova\LibertyGarden\garden.dat,12,2.1,11)
 				@level.update
 				@player.turnto(1)
 				@screen.fadein
@@ -170,14 +170,14 @@ version=2
 			:when:Faraway Island
 				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
 				@script.start(vermilion\fastshipleaving)
-				@player.warp(hoenn\farawayisland\exterior.dat,16,2.1,32)
+				@player.warp(Hoenn\FarawayIsland\exterior.dat,16,2.1,32)
 				@level.update
 				@player.turnto(2)
 				@screen.fadein
 			:when:Open Sea
 				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
 				@script.start(vermilion\fastshipleaving)
-				@player.warp(sevii_islands\underwatercave\surface.dat,10,0.1,9)
+				@player.warp(SeviiIslands\UnderwaterCave\surface.dat,10,0.1,9)
 				@level.update
 				@player.turnto(2)
 				@screen.fadein
@@ -185,7 +185,7 @@ version=2
 			:when:Liberty Garden
 				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
 				@script.start(vermilion\fastshipleaving)
-				@player.warp(unova\libertygarden\garden.dat,12,2.1,11)
+				@player.warp(Unova\LibertyGarden\garden.dat,12,2.1,11)
 				@level.update
 				@player.turnto(1)
 				@screen.fadein

@@ -8,7 +8,7 @@ DefeatMessage|There are Pokémon~Gyms in cities and~towns ahead.*You should test
 TextureID|Falkner
 Region|Johto
 InSightMusic|
-IniMusic|Johto_leader_intro
+IniMusic|Johto_leader_StartBattle
 DefeatMusic|leader_defeat
 BattleMusic|johto_leader
 Pokemon1|{"Pokemon"[16]}{"Experience"[420]}{"Gender"[0]}{"EggSteps"[0]}{"Item"[0]}{"NickName"[]}{"Level"[9]}{"OT"[00000]}{"Ability"[51]}{"Status"[]}{"Nature"[21]}{"CatchLocation"[at unknown place]}{"CatchTrainer"[???]}{"CatchBall"[5]}{"CatchMethod"[somehow obtained]}{"Friendship"[0]}{"isShiny"[0]}{"Attack1"[189,10,10]}{"Attack2"[28,15,15]}{"Attack3"[16,35,35]}{"Attack4"[]}{"Stats"[30,30,16,12,11,15,16]}{"FPs"[0,10,0,0,0,10]}{"DVs"[9,23,13,2,21,25]}
