@@ -299,8 +299,8 @@
                 Canvas.DrawScrollBar(New Vector2(90, 96 + 54), Me.InboxList.Count, 6, ScrollIndex, New Size(6, 380), False, New Color(4, 84, 157), New Color(125, 214, 234))
             End If
 
-            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Version " & GTSMainScreen.GTSVersion, New Vector2(4, Core.windowSize.Height - 1 - FontManager.MiniFont.MeasureString("Version " & GTSMainScreen.GTSVersion).Y), Color.DarkGray)
-        End Sub
+			Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Version " & GTSMainScreen.GTSVersion, New Vector2(4, Core.windowSize.Height - 1 - FontManager.MainFontWhite.MeasureString("Version " & GTSMainScreen.GTSVersion).Y), Color.DarkGray)
+		End Sub
 
         Private Sub DrawButton(ByVal Position As Vector2, ByVal Text As String, ByVal Size As Integer)
             Dim t As Texture2D = TextureManager.GetTexture("GUI\Menus\GTS")

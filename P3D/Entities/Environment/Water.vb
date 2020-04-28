@@ -11,7 +11,7 @@
     Public Overrides Sub Initialize()
         MyBase.Initialize()
 
-        WaterAnimation = New Animation(TextureManager.GetTexture("Textures\TextureSheets\Water"), 1, 3, 64, 64, 9, 0, 0)
+        WaterAnimation = New Animation(TextureManager.GetTexture("Textures\TextureSheets\Water"), 1, 4, 16, 16, 4, 0, 0)
 
         CreateWaterTextureTemp()
     End Sub
@@ -32,29 +32,13 @@
                     Water.WaterTexturesTemp.Add(AdditionalValue & "_1", TextureManager.GetTexture(texturePath, New Rectangle(r.X + r.Width, r.Y, r.Width, r.Height)))
                     Water.WaterTexturesTemp.Add(AdditionalValue & "_2", TextureManager.GetTexture(texturePath, New Rectangle(r.X + r.Width * 2, r.Y, r.Width, r.Height)))
                     Water.WaterTexturesTemp.Add(AdditionalValue & "_3", TextureManager.GetTexture(texturePath, New Rectangle(r.X + r.Width * 3, r.Y, r.Width, r.Height)))
-                    Water.WaterTexturesTemp.Add(AdditionalValue & "_4", TextureManager.GetTexture(texturePath, New Rectangle(r.X + r.Width * 4, r.Y, r.Width, r.Height)))
-                    Water.WaterTexturesTemp.Add(AdditionalValue & "_5", TextureManager.GetTexture(texturePath, New Rectangle(r.X + r.Width * 5, r.Y, r.Width, r.Height)))
-                    Water.WaterTexturesTemp.Add(AdditionalValue & "_6", TextureManager.GetTexture(texturePath, New Rectangle(r.X + r.Width * 6, r.Y, r.Width, r.Height)))
-                    Water.WaterTexturesTemp.Add(AdditionalValue & "_7", TextureManager.GetTexture(texturePath, New Rectangle(r.X + r.Width * 7, r.Y, r.Width, r.Height)))
-                    Water.WaterTexturesTemp.Add(AdditionalValue & "_8", TextureManager.GetTexture(texturePath, New Rectangle(r.X + r.Width * 8, r.Y, r.Width, r.Height)))
-                    Water.WaterTexturesTemp.Add(AdditionalValue & "_9", TextureManager.GetTexture(texturePath, New Rectangle(r.X + r.Width * 9, r.Y, r.Width, r.Height)))
-                    Water.WaterTexturesTemp.Add(AdditionalValue & "_10", TextureManager.GetTexture(texturePath, New Rectangle(r.X + r.Width * 10, r.Y, r.Width, r.Height)))
-                    Water.WaterTexturesTemp.Add(AdditionalValue & "_11", TextureManager.GetTexture(texturePath, New Rectangle(r.X + r.Width * 11, r.Y, r.Width, r.Height)))
                 End If
             Else
                 If Water.WaterTexturesTemp.ContainsKey("_0") = False Then
-                    Water.WaterTexturesTemp.Add("_0", TextureManager.GetTexture("Routes", New Rectangle(0, 220, 20, 20)))
-                    Water.WaterTexturesTemp.Add("_1", TextureManager.GetTexture("Routes", New Rectangle(20, 220, 20, 20)))
-                    Water.WaterTexturesTemp.Add("_2", TextureManager.GetTexture("Routes", New Rectangle(40, 220, 20, 20)))
-                    Water.WaterTexturesTemp.Add("_3", TextureManager.GetTexture("Routes", New Rectangle(60, 220, 20, 20)))
-                    Water.WaterTexturesTemp.Add("_4", TextureManager.GetTexture("Routes", New Rectangle(80, 220, 20, 20)))
-                    Water.WaterTexturesTemp.Add("_5", TextureManager.GetTexture("Routes", New Rectangle(100, 220, 20, 20)))
-                    Water.WaterTexturesTemp.Add("_6", TextureManager.GetTexture("Routes", New Rectangle(120, 220, 20, 20)))
-                    Water.WaterTexturesTemp.Add("_7", TextureManager.GetTexture("Routes", New Rectangle(140, 220, 20, 20)))
-                    Water.WaterTexturesTemp.Add("_8", TextureManager.GetTexture("Routes", New Rectangle(160, 220, 20, 20)))
-                    Water.WaterTexturesTemp.Add("_9", TextureManager.GetTexture("Routes", New Rectangle(180, 220, 20, 20)))
-                    Water.WaterTexturesTemp.Add("_10", TextureManager.GetTexture("Routes", New Rectangle(200, 220, 20, 20)))
-                    Water.WaterTexturesTemp.Add("_11", TextureManager.GetTexture("Routes", New Rectangle(220, 220, 20, 20)))
+                    Water.WaterTexturesTemp.Add("_0", TextureManager.GetTexture("TextureSheets\Water", New Rectangle(0, 0, 16, 16)))
+                    Water.WaterTexturesTemp.Add("_1", TextureManager.GetTexture("TextureSheets\Water", New Rectangle(16, 0, 16, 16)))
+                    Water.WaterTexturesTemp.Add("_2", TextureManager.GetTexture("TextureSheets\Water", New Rectangle(32, 0, 16, 16)))
+                    Water.WaterTexturesTemp.Add("_3", TextureManager.GetTexture("TextureSheets\Water", New Rectangle(48, 0, 16, 16)))
                 End If
             End If
         End If
@@ -186,33 +170,41 @@
                             Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_1")
                         Case 2
                             Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_2")
+                        Case 3
+                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_3")
                     End Select
                 Case MathHelper.Pi * 0.5F
                     Select Case WaterAnimation.CurrentColumn
                         Case 0
-                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_3")
+                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_0")
                         Case 1
-                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_4")
+                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_1")
                         Case 2
-                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_5")
+                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_2")
+                        Case 3
+                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_3")
                     End Select
                 Case MathHelper.Pi
                     Select Case WaterAnimation.CurrentColumn
                         Case 0
-                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_6")
+                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_0")
                         Case 1
-                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_7")
+                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_1")
                         Case 2
-                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_8")
+                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_2")
+                        Case 3
+                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_3")
                     End Select
                 Case MathHelper.Pi * 1.5
                     Select Case WaterAnimation.CurrentColumn
                         Case 0
-                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_9")
+                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_0")
                         Case 1
-                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_10")
+                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_1")
                         Case 2
-                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_11")
+                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_2")
+                        Case 3
+                            Me.Textures(0) = Water.WaterTexturesTemp(waterTextureName & "_3")
                     End Select
             End Select
         End If

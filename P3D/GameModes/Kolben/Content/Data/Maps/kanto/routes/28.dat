@@ -79,7 +79,7 @@ Steps:
 
 Water:
 Flat:
-{"EntityField"{ENT[{"Size"{intArr[4,2]}}{"EntityID"{str[Water]}}{"Position"{sngArr[23,-0.25,13]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[0,16,16,16][144,16,16,6]]}}{"TextureIndex"{intArr[0,0,1,1]}}{"Collision"{bool[0]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+{"EntityField"{ENT[{"Size"{intArr[4,2]}}{"EntityID"{str[Water]}}{"Position"{sngArr[23,-0.25,13]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[0,16,16,16][144,24,16,6]]}}{"TextureIndex"{intArr[0,0,1,1]}}{"Collision"{bool[0]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 
 Borders:
 {"EntityField"{ENT[{"Size"{intArr[2,1]}}{"EntityID"{str[Water]}}{"Position"{sngArr[21,-0.25,8]}}{"TexturePath"{str[Cities\Kanto]}}{"Textures"{recArr[[112,112,16,16][16,16,16,8]]}}{"TextureIndex"{intArr[0,0,1,1]}}{"Collision"{bool[0]}}{"ModelID"{int[9]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}

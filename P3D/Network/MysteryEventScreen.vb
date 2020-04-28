@@ -127,13 +127,13 @@
                     For i = 0 To Me.EventData.Count - 1
                         Dim cEvent As MysteryEvent = Me.EventData(i)
 
-                        Dim textColor As Color = Color.White
-                        Dim backColor As Color = Color.Transparent
+						Dim textColor As SpriteFont = FontManager.MainFontWhite
+						Dim backColor As Color = Color.Transparent
                         Dim borderColor As Color = Color.White
 
                         If i = cursor Then
-                            textColor = Color.Black
-                            backColor = Color.White
+							textColor = FontManager.MainFontBlack
+							backColor = Color.White
                             borderColor = Color.Black
                         End If
 
@@ -148,18 +148,18 @@
                             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\GTS"), New Rectangle(58, startY + i * 100 + 13, 32, 32), New Rectangle(384, 96, 16, 16), Color.White)
                         End If
 
-                        Core.SpriteBatch.DrawString(FontManager.MiniFont, cEvent.EventType.ToString() & ": " & cEvent.Name & Environment.NewLine & activated, New Vector2(100, startY + i * 100 + 8), textColor)
-                    Next
+						Core.SpriteBatch.DrawString(textColor, cEvent.EventType.ToString() & ": " & cEvent.Name & Environment.NewLine & activated, New Vector2(100, startY + i * 100 + 8), Color.White)
+					Next
 
                     Canvas.DrawGradient(New Rectangle(500, startY, 400, 300), Color.White, Color.Gray, False, -1)
 
                     Dim sEvent As MysteryEvent = EventData(cursor)
-                    Core.SpriteBatch.DrawString(FontManager.MiniFont, "Name: " & sEvent.Name & Environment.NewLine & Environment.NewLine &
-                                                 "Type: " & sEvent.EventType.ToString() & Environment.NewLine & Environment.NewLine &
-                                                 "Multiplicator: " & sEvent.Value & "x" & Environment.NewLine & Environment.NewLine &
-                                                 "Description:" & Environment.NewLine &
-                                                 sEvent.Description.CropStringToWidth(FontManager.MiniFont, 300), New Vector2(512, startY + 12), Color.Black)
-                End If
+					Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Name: " & sEvent.Name & Environment.NewLine & Environment.NewLine &
+												 "Type: " & sEvent.EventType.ToString() & Environment.NewLine & Environment.NewLine &
+												 "Multiplicator: " & sEvent.Value & "x" & Environment.NewLine & Environment.NewLine &
+												 "Description:" & Environment.NewLine &
+												 sEvent.Description.CropStringToWidth(FontManager.MiniFont, 300), New Vector2(512, startY + 12), Color.White)
+				End If
             End If
         End If
     End Sub

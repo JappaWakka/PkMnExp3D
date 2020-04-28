@@ -141,21 +141,21 @@
                         Core.SpriteBatch.Draw(P.Item.Texture, New Rectangle(202 + OwnX, 474, 24, 24), Color.White)
                     End If
 
-                    Core.SpriteBatch.DrawString(FontManager.MiniFont, "Level: " & P.Level & Environment.NewLine & Environment.NewLine &
-                                                 "Gender: " & P.Gender.ToString() & Environment.NewLine & Environment.NewLine &
-                                                 "OT: " & P.CatchTrainerName & "/" & P.OT & Environment.NewLine & Environment.NewLine &
-                                                 "Item: " & ItemString, New Vector2(150 + OwnX, 360), Color.Black)
+					Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Level: " & P.Level & Environment.NewLine & Environment.NewLine &
+												 "Gender: " & P.Gender.ToString() & Environment.NewLine & Environment.NewLine &
+												 "OT: " & P.CatchTrainerName & "/" & P.OT & Environment.NewLine & Environment.NewLine &
+												 "Item: " & ItemString, New Vector2(150 + OwnX, 360), Color.White)
 
-                    DrawButton(New Vector2(180, 520), "Clear", 5)
+					DrawButton(New Vector2(180, 520), "Clear", 5)
                 Else
                     Dim GenderString As String = "None"
                     If D.RequestGender <> "" Then
                         GenderString = D.RequestGender
                     End If
 
-                    Core.SpriteBatch.DrawString(FontManager.MiniFont, "Request Level: " & D.RequestLevel & Environment.NewLine & Environment.NewLine &
-                                                 "Request Gender: " & GenderString, New Vector2(150 + OwnX, 360), Color.Black)
-                End If
+					Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Request Level: " & D.RequestLevel & Environment.NewLine & Environment.NewLine &
+												 "Request Gender: " & GenderString, New Vector2(150 + OwnX, 360), Color.White)
+				End If
 
 
                 'Stars:
@@ -167,10 +167,10 @@
             'Other:
             Canvas.DrawRectangle(New Rectangle(100 + OppX, 160, 400, 450), New Color(255, 255, 255, 150))
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Transaction ID: " & D.TradeID, New Vector2(706, 160), Color.Black)
+			Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Transaction ID: " & D.TradeID, New Vector2(706, 160), Color.White)
 
-            'User:
-            If E.DoneLoading = True Then
+			'User:
+			If E.DoneLoading = True Then
                 Dim spriteSize As New Size(CInt(E.SpriteTexture.Width / 3), CInt(E.SpriteTexture.Height / 4))
                 Core.SpriteBatch.Draw(E.SpriteTexture, New Rectangle(710, 90, 64, 64), New Rectangle(0, spriteSize.Height * 2, spriteSize.Width, spriteSize.Height), Color.White)
                 Core.SpriteBatch.DrawString(FontManager.MainFontWhite, E.Username, New Vector2(780, 112), Color.White)
@@ -195,14 +195,14 @@
                     Core.SpriteBatch.Draw(D.Pokemon.Item.Texture, New Rectangle(202 + OppX, 474, 24, 24), Color.White)
                 End If
 
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, "Level: " & D.Pokemon.Level & Environment.NewLine & Environment.NewLine &
-                                             "Gender: " & D.Pokemon.Gender.ToString() & Environment.NewLine & Environment.NewLine &
-                                             "OT: " & D.Pokemon.CatchTrainerName & "/" & D.Pokemon.OT & Environment.NewLine & Environment.NewLine &
-                                             "Item: " & ItemString, New Vector2(150 + OppX, 360), Color.Black)
+				Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Level: " & D.Pokemon.Level & Environment.NewLine & Environment.NewLine &
+											 "Gender: " & D.Pokemon.Gender.ToString() & Environment.NewLine & Environment.NewLine &
+											 "OT: " & D.Pokemon.CatchTrainerName & "/" & D.Pokemon.OT & Environment.NewLine & Environment.NewLine &
+											 "Item: " & ItemString, New Vector2(150 + OppX, 360), Color.White)
 
 
-                'Stars:
-                GTSMainScreen.DrawStars(D.Pokemon.TradeValue, New Vector2(230 + OppX, 256))
+				'Stars:
+				GTSMainScreen.DrawStars(D.Pokemon.TradeValue, New Vector2(230 + OppX, 256))
 
                 DrawButton(New Vector2(780, 560), "View summary", 5)
             End If
@@ -219,9 +219,9 @@
                 If v > 0 Then
                     Canvas.DrawRectangle(New Rectangle(540, 430, 120, 120), New Color(255, 255, 255, 150))
 
-                    Core.SpriteBatch.DrawString(FontManager.MiniFont, "You get" & Environment.NewLine & "stars:", New Vector2(560, 435), Color.Black)
+					Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "You get" & Environment.NewLine & "stars:", New Vector2(560, 435), Color.White)
 
-                    GTSMainScreen.DrawStars(v, New Vector2(560, 480))
+					GTSMainScreen.DrawStars(v, New Vector2(560, 480))
                 End If
             Else
                 If PokeIndex > -1 Then
@@ -232,12 +232,12 @@
                     If Core.Player.Pokemons(PokeIndex).IsEgg() = True Then
                         t = "You can't trade an egg."
                     End If
-                    Core.SpriteBatch.DrawString(FontManager.MiniFont, t, New Vector2(120, 300), Color.Black)
-                End If
+					Core.SpriteBatch.DrawString(FontManager.MainFontBlack, t, New Vector2(120, 300), Color.White)
+				End If
             End If
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Version " & GTSMainScreen.GTSVersion, New Vector2(4, Core.windowSize.Height - 1 - FontManager.MiniFont.MeasureString("Version " & GTSMainScreen.GTSVersion).Y), Color.DarkGray)
-        End Sub
+			Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Version " & GTSMainScreen.GTSVersion, New Vector2(4, Core.windowSize.Height - 1 - FontManager.MainFontBlack.MeasureString("Version " & GTSMainScreen.GTSVersion).Y), Color.White)
+		End Sub
 
         Private Sub DrawButton(ByVal Position As Vector2, ByVal Text As String, ByVal Size As Integer)
             Dim t As Texture2D = TextureManager.GetTexture("GUI\Menus\GTS")
@@ -258,10 +258,10 @@
             Core.SpriteBatch.Draw(t, New Rectangle(CInt(Position.X + Size * 32 + 32), CInt(Position.Y), 32, 32), New Rectangle(32, Y, 16, 16), Color.White)
 
             Dim sizeX As Integer = Size * 32 + 64
-            Dim TextSizeX As Integer = CInt(FontManager.MiniFont.MeasureString(Text).X)
+			Dim TextSizeX As Integer = CInt(FontManager.MainFontBlack.MeasureString(Text).X)
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, Text, New Vector2(CSng(Position.X + sizeX / 2 - TextSizeX / 2 - 2), Position.Y + 4), Color.Black)
-        End Sub
+			Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Text, New Vector2(CSng(Position.X + sizeX / 2 - TextSizeX / 2 - 2), Position.Y + 4), Color.White)
+		End Sub
 
         Private Function MeetsCondition() As Boolean
             If PokeIndex > -1 Then
@@ -392,8 +392,8 @@
                     Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Trading" & LoadingDots.Dots, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString("Uploading").X / 2), 300), Color.White)
                     Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Transaction ID: " & D.TradeID, New Vector2(CSng(Core.windowSize.Width / 2 - FontManager.MainFontWhite.MeasureString("Transaction ID: " & D.TradeID).X / 2), 370), Color.White)
 
-                    Core.SpriteBatch.DrawString(FontManager.MiniFont, "Version " & GTSMainScreen.GTSVersion, New Vector2(4, Core.windowSize.Height - 1 - FontManager.MiniFont.MeasureString("Version " & GTSMainScreen.GTSVersion).Y), Color.DarkGray)
-                Else
+					Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Version " & GTSMainScreen.GTSVersion, New Vector2(4, Core.windowSize.Height - 1 - FontManager.MainFontBlack.MeasureString("Version " & GTSMainScreen.GTSVersion).Y), Color.White)
+				Else
                     Fur.Draw()
                     Core.SpriteBatch.Draw(D.Pokemon.GetTexture(True), New Rectangle(CInt(P1Pos.X), CInt(P1Pos.Y), 128, 128), Color.White)
                     Core.SpriteBatch.Draw(P.GetTexture(True), New Rectangle(CInt(P2Pos.X), CInt(P2Pos.Y), 128, 128), Color.White)

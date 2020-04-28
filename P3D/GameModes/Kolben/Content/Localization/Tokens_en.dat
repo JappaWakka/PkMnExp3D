@@ -94,16 +94,6 @@ game_interaction_interact,Interact
 game_interaction_menu,Menu
 game_interaction_phone,Pokégear
 ---
-NewGameScreen:
-new_game_intro_1,Hello, sorry to keep you waiting!*Welcome to the world of Pokémon!*My name is Oak.~People call me the Pokémon Professor.*This world is inhabited by creatures~that we call...
-new_game_intro_2,...Pokémon.*People and Pokémon live together~by supporting each other.
-new_game_intro_3,Some people play with Pokémon,~some battle with them.*But we don't know everything~about Pokémon yet.
-new_game_intro_4,There are still many mysteries to solve.*That's why I study Pokémon every day.
-new_game_intro_5,But let's get back to you.
-new_game_intro_6,Now, what did you say your name was?
-new_game_intro_7,Alright, nice to meet you,~<player.name>!
-new_game_intro_8,This is your home in New Bark Town,~you live there with your mother~right next to Professor Elm.
-new_game_intro_9,<player.name>, are you ready?*Your very own Pokémon story~is about to unfold.*You'll face fun times and tough challenges.*A world of dreams and adventures~with Pokémon awaits!*Let's go! I'll be seeing you later!
 new_game_select_skin,What do you look like?
 ---
 MapScreen:
@@ -1553,10 +1543,3 @@ pokemon_name_Lugia,Lugia
 pokemon_name_Ho-Oh,Ho-Oh
 pokemon_name_Celebi,Celebi
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
-Story translation:
----
-New Bark Town:
----
-barktown.dat:
----
-barktown_player_house,<playername>'s House

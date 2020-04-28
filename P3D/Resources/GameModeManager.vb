@@ -171,8 +171,8 @@ start:
         End If
 
         If System.IO.File.Exists(GameController.GamePath & ActiveGameMode.MapPath & levelFile) = True Then
-            Return ActiveGameMode.MapPath & levelFile
-        End If
+			Return GameController.GamePath & ActiveGameMode.MapPath & levelFile
+		End If
 
         If GameController.GamePath & GameMode.DefaultMapPath & levelFile <> GameController.GamePath & ActiveGameMode.MapPath & levelFile Then
             Logger.Log(Logger.LogTypes.Message, "Map file: """ & ActiveGameMode.MapPath & levelFile & """ does not exist in the GameMode. The game tries to load the normal file at ""\maps\" & levelFile & """.")

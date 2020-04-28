@@ -311,7 +311,7 @@ version=2
 				@level.wait(15)
 				@screen.fadeout
 				@sound.play(teleport)
-				@player.warp(ilexforest.dat,10,0.1,26,0)
+				@player.warp(IlexForest.dat,10,0.1,26,0)
 				:if:<register.registered(clubextendinvite)>=true
 					@npc.register(Johto\tohjofalls\hideout.dat|3|position|3,0,0)
 					@npc.register(Johto\tohjofalls\hideout.dat|4|position|4,0,1)

@@ -19,7 +19,7 @@
     Public Overrides Sub Initialize()
         MyBase.Initialize()
 
-        WaterAnimation = New Animation(TextureManager.GetTexture("Textures\TextureSheets\WaterFall"), 1, 3, 16, 16, 9, 0, 0)
+        WaterAnimation = New Animation(TextureManager.GetTexture("Textures\TextureSheets\WaterFall"), 1, 4, 16, 16, 9, 0, 0)
 
         CreateWaterTextureTemp()
     End Sub
@@ -33,23 +33,6 @@
                 Dim texturePath As String = textureData(0)
                 Me.waterFallTextureName = AdditionalValue
                 If Waterfall.WaterfallTexturesTemp.ContainsKey(AdditionalValue & "_0") = False Then
-                    Waterfall.WaterfallTexturesTemp.Add(AdditionalValue & "_0", TextureManager.GetTexture(texturePath, New Rectangle(r.X, r.Y, r.Width, r.Height)))
-                    Waterfall.WaterfallTexturesTemp.Add(AdditionalValue & "_1", TextureManager.GetTexture(texturePath, New Rectangle(r.X + r.Width, r.Y, r.Width, r.Height)))
-                    Waterfall.WaterfallTexturesTemp.Add(AdditionalValue & "_2", TextureManager.GetTexture(texturePath, New Rectangle(r.X + r.Width * 2, r.Y, r.Width, r.Height)))
-                End If
-            Else
-                If Waterfall.WaterfallTexturesTemp.ContainsKey("_0") = False Then
-                    Waterfall.WaterfallTexturesTemp.Add("_0", TextureManager.GetTexture("Textures\TextureSheets\WaterFall", New Rectangle(0, 0, 16, 16)))
-                    Waterfall.WaterfallTexturesTemp.Add("_1", TextureManager.GetTexture("Textures\TextureSheets\WaterFall", New Rectangle(16, 0, 16, 16)))
-                    Waterfall.WaterfallTexturesTemp.Add("_2", TextureManager.GetTexture("Textures\TextureSheets\WaterFall", New Rectangle(32, 0, 16, 16)))
-                End If
-            End If
-
-            If textureData.Count >= 10 Then
-                Dim r As New Rectangle(CInt(textureData(6)), CInt(textureData(7)), CInt(textureData(8)), CInt(textureData(9)))
-                Dim texturePath As String = textureData(5)
-                Me.waterTextureName = AdditionalValue
-                If Waterfall.WaterTexturesTemp.ContainsKey(AdditionalValue & "_0") = False Then
                     Waterfall.WaterTexturesTemp.Add(AdditionalValue & "_0", TextureManager.GetTexture(texturePath, New Rectangle(r.X, r.Y, r.Width, r.Height)))
                     Waterfall.WaterTexturesTemp.Add(AdditionalValue & "_1", TextureManager.GetTexture(texturePath, New Rectangle(r.X + r.Width, r.Y, r.Width, r.Height)))
                     Waterfall.WaterTexturesTemp.Add(AdditionalValue & "_2", TextureManager.GetTexture(texturePath, New Rectangle(r.X + r.Width * 2, r.Y, r.Width, r.Height)))
@@ -64,10 +47,30 @@
                     Waterfall.WaterTexturesTemp.Add(AdditionalValue & "_11", TextureManager.GetTexture(texturePath, New Rectangle(r.X + r.Width * 11, r.Y, r.Width, r.Height)))
                 End If
             Else
+                If Waterfall.WaterfallTexturesTemp.ContainsKey("_0") = False Then
+                    Waterfall.WaterfallTexturesTemp.Add("_0", TextureManager.GetTexture("TextureSheets\WaterFall", New Rectangle(0, 0, 16, 16)))
+                    Waterfall.WaterfallTexturesTemp.Add("_1", TextureManager.GetTexture("TextureSheets\WaterFall", New Rectangle(16, 0, 16, 16)))
+                    Waterfall.WaterfallTexturesTemp.Add("_2", TextureManager.GetTexture("TextureSheets\WaterFall", New Rectangle(32, 0, 16, 16)))
+                    Waterfall.WaterfallTexturesTemp.Add("_3", TextureManager.GetTexture("TextureSheets\WaterFall", New Rectangle(48, 0, 16, 16)))
+                End If
+            End If
+
+            If textureData.Count >= 10 Then
+                Dim r As New Rectangle(CInt(textureData(6)), CInt(textureData(7)), CInt(textureData(8)), CInt(textureData(9)))
+                Dim texturePath As String = textureData(5)
+                Me.waterTextureName = AdditionalValue
+                If Waterfall.WaterTexturesTemp.ContainsKey(AdditionalValue & "_0") = False Then
+                    Waterfall.WaterTexturesTemp.Add(AdditionalValue & "_0", TextureManager.GetTexture(texturePath, New Rectangle(r.X, r.Y, r.Width, r.Height)))
+                    Waterfall.WaterTexturesTemp.Add(AdditionalValue & "_1", TextureManager.GetTexture(texturePath, New Rectangle(r.X + r.Width, r.Y, r.Width, r.Height)))
+                    Waterfall.WaterTexturesTemp.Add(AdditionalValue & "_2", TextureManager.GetTexture(texturePath, New Rectangle(r.X + r.Width * 2, r.Y, r.Width, r.Height)))
+                    Waterfall.WaterTexturesTemp.Add(AdditionalValue & "_3", TextureManager.GetTexture(texturePath, New Rectangle(r.X + r.Width * 3, r.Y, r.Width, r.Height)))
+                End If
+            Else
                 If Waterfall.WaterTexturesTemp.ContainsKey("_0") = False Then
                     Waterfall.WaterTexturesTemp.Add("_0", TextureManager.GetTexture("Textures\TextureSheets\WaterFall", New Rectangle(0, 0, 16, 16)))
                     Waterfall.WaterTexturesTemp.Add("_1", TextureManager.GetTexture("Textures\TextureSheets\WaterFall", New Rectangle(16, 0, 16, 16)))
                     Waterfall.WaterTexturesTemp.Add("_2", TextureManager.GetTexture("Textures\TextureSheets\WaterFall", New Rectangle(32, 0, 16, 16)))
+                    Waterfall.WaterTexturesTemp.Add("_3", TextureManager.GetTexture("TextureSheets\WaterFall", New Rectangle(48, 0, 16, 16)))
                 End If
             End If
 
@@ -101,43 +104,53 @@
                     Me.Textures(0) = Waterfall.WaterfallTexturesTemp(waterFallTextureName & "_1")
                 Case 2
                     Me.Textures(0) = Waterfall.WaterfallTexturesTemp(waterFallTextureName & "_2")
+                Case 3
+                    Me.Textures(0) = Waterfall.WaterfallTexturesTemp(waterFallTextureName & "_3")
             End Select
             Select Case Me.Rotation.Y
                 Case 0, MathHelper.TwoPi
                     Select Case WaterAnimation.CurrentColumn
                         Case 0
-                            Me.Textures(1) = Waterfall.WaterTexturesTemp(waterTextureName & "_0")
+                            Me.Textures(0) = Waterfall.WaterfallTexturesTemp(waterTextureName & "_0")
                         Case 1
-                            Me.Textures(1) = Waterfall.WaterTexturesTemp(waterTextureName & "_1")
+                            Me.Textures(0) = Waterfall.WaterfallTexturesTemp(waterTextureName & "_1")
                         Case 2
-                            Me.Textures(1) = Waterfall.WaterTexturesTemp(waterTextureName & "_2")
+                            Me.Textures(0) = Waterfall.WaterfallTexturesTemp(waterTextureName & "_2")
+                        Case 3
+                            Me.Textures(0) = Waterfall.WaterfallTexturesTemp(waterTextureName & "_3")
                     End Select
                 Case MathHelper.Pi * 0.5F
                     Select Case WaterAnimation.CurrentColumn
                         Case 0
-                            Me.Textures(1) = Waterfall.WaterTexturesTemp(waterTextureName & "_3")
+                            Me.Textures(0) = Waterfall.WaterfallTexturesTemp(waterTextureName & "_0")
                         Case 1
-                            Me.Textures(1) = Waterfall.WaterTexturesTemp(waterTextureName & "_4")
+                            Me.Textures(0) = Waterfall.WaterfallTexturesTemp(waterTextureName & "_1")
                         Case 2
-                            Me.Textures(1) = Waterfall.WaterTexturesTemp(waterTextureName & "_5")
+                            Me.Textures(0) = Waterfall.WaterfallTexturesTemp(waterTextureName & "_2")
+                        Case 3
+                            Me.Textures(0) = Waterfall.WaterfallTexturesTemp(waterTextureName & "_3")
                     End Select
                 Case MathHelper.Pi
                     Select Case WaterAnimation.CurrentColumn
                         Case 0
-                            Me.Textures(1) = Waterfall.WaterTexturesTemp(waterTextureName & "_6")
+                            Me.Textures(0) = Waterfall.WaterfallTexturesTemp(waterTextureName & "_0")
                         Case 1
-                            Me.Textures(1) = Waterfall.WaterTexturesTemp(waterTextureName & "_7")
+                            Me.Textures(0) = Waterfall.WaterfallTexturesTemp(waterTextureName & "_1")
                         Case 2
-                            Me.Textures(1) = Waterfall.WaterTexturesTemp(waterTextureName & "_8")
+                            Me.Textures(0) = Waterfall.WaterfallTexturesTemp(waterTextureName & "_2")
+                        Case 3
+                            Me.Textures(0) = Waterfall.WaterfallTexturesTemp(waterTextureName & "_3")
                     End Select
                 Case MathHelper.Pi * 1.5
                     Select Case WaterAnimation.CurrentColumn
                         Case 0
-                            Me.Textures(1) = Waterfall.WaterTexturesTemp(waterTextureName & "_9")
+                            Me.Textures(0) = Waterfall.WaterfallTexturesTemp(waterTextureName & "_0")
                         Case 1
-                            Me.Textures(1) = Waterfall.WaterTexturesTemp(waterTextureName & "_10")
+                            Me.Textures(0) = Waterfall.WaterfallTexturesTemp(waterTextureName & "_1")
                         Case 2
-                            Me.Textures(1) = Waterfall.WaterTexturesTemp(waterTextureName & "_11")
+                            Me.Textures(0) = Waterfall.WaterfallTexturesTemp(waterTextureName & "_2")
+                        Case 3
+                            Me.Textures(0) = Waterfall.WaterfallTexturesTemp(waterTextureName & "_3")
                     End Select
             End Select
         End If
