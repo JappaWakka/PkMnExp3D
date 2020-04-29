@@ -775,7 +775,7 @@
                 If ScaleScreenRec(New Rectangle(r.X + 32 + r.Width, r.Y, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Or GameInstance.IsMouseVisible = False And loadGameJoltIndex = 1 Then
                     y = 16
 
-                    SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, "Change to Boy.", New Vector2(r.X + 64 + 4 + r.Width, r.Y + 4), Color.White)
+                    SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, "Change to Male.", New Vector2(r.X + 64 + 4 + r.Width, r.Y + 4), Color.White)
                 End If
                 SpriteBatch.DrawInterface(mainTexture, New Rectangle(r.X + 32 + r.Width, r.Y, 32, 32), New Rectangle(144, 32 + y, 16, 16), Color.White)
 
@@ -783,7 +783,7 @@
                 If ScaleScreenRec(New Rectangle(r.X + 32 + r.Width, r.Y + 48, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Or GameInstance.IsMouseVisible = False And loadGameJoltIndex = 2 Then
                     y = 16
 
-                    SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, "Change to Girl.", New Vector2(r.X + 64 + 4 + r.Width, r.Y + 4 + 48), Color.White)
+                    SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, "Change to Female.", New Vector2(r.X + 64 + 4 + r.Width, r.Y + 4 + 48), Color.White)
                 End If
                 SpriteBatch.DrawInterface(mainTexture, New Rectangle(r.X + 32 + r.Width, r.Y + 48, 32, 32), New Rectangle(160, 32 + y, 16, 16), Color.White)
 
@@ -850,10 +850,10 @@
 
                 Dim r As Rectangle = ScaleScreenRec(New Rectangle(CInt(ScreenSize.Width / 2) - 256, 240, 512, 128))
                 If GameInstance.IsMouseVisible = False And loadGameJoltIndex = 1 Or ScaleScreenRec(New Rectangle(r.X + 32 + r.Width, r.Y, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Then
-                    ButtonChangeBoy()
+                    ButtonChangeMale()
                 End If
                 If GameInstance.IsMouseVisible = False And loadGameJoltIndex = 2 Or ScaleScreenRec(New Rectangle(r.X + 32 + r.Width, r.Y + 48, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Then
-                    ButtonChangeGirl()
+                    ButtonChangeFemale()
                 End If
                 If GameInstance.IsMouseVisible = False And loadGameJoltIndex = 3 Or ScaleScreenRec(New Rectangle(r.X + 32 + r.Width, r.Y + 48 + 48, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Then
                     ButtonChangeOther()
@@ -869,29 +869,29 @@
         End If
     End Sub
 
-    Private Sub ButtonChangeBoy()
+    Private Sub ButtonChangeMale()
         GameJoltSave.Gender = "0"
 
         Core.Player.Skin = GameJolt.Emblem.GetPlayerSpriteFile(GameJolt.Emblem.GetPlayerLevel(GameJoltSave.Points), GameJoltSave.GameJoltID, GameJoltSave.Gender)
         Select Case GameJoltSave.Gender
             Case "0"
-                Core.Player.Gender = "Boy"
+                Core.Player.Gender = "Male"
             Case "1"
-                Core.Player.Gender = "Girl"
+                Core.Player.Gender = "Female"
             Case Else
                 Core.Player.Gender = "Other"
         End Select
     End Sub
 
-    Private Sub ButtonChangeGirl()
+    Private Sub ButtonChangeFemale()
         GameJoltSave.Gender = "1"
 
         Core.Player.Skin = GameJolt.Emblem.GetPlayerSpriteFile(GameJolt.Emblem.GetPlayerLevel(GameJoltSave.Points), GameJoltSave.GameJoltID, GameJoltSave.Gender)
         Select Case GameJoltSave.Gender
             Case "0"
-                Core.Player.Gender = "Boy"
+                Core.Player.Gender = "Male"
             Case "1"
-                Core.Player.Gender = "Girl"
+                Core.Player.Gender = "Female"
             Case Else
                 Core.Player.Gender = "Other"
         End Select
@@ -903,9 +903,9 @@
         Core.Player.Skin = GameJolt.Emblem.GetPlayerSpriteFile(GameJolt.Emblem.GetPlayerLevel(GameJoltSave.Points), GameJoltSave.GameJoltID, GameJoltSave.Gender)
         Select Case GameJoltSave.Gender
             Case "0"
-                Core.Player.Gender = "Boy"
+                Core.Player.Gender = "Male"
             Case "1"
-                Core.Player.Gender = "Girl"
+                Core.Player.Gender = "Female"
             Case Else
                 Core.Player.Gender = "Other"
         End Select

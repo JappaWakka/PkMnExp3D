@@ -57,9 +57,9 @@
         End If
     End Sub
     Public Sub SetPlayerColor(ByVal Gender As String)
-        If Gender = "Boy" Then
+        If Gender = "Male" Then
             Me._playerColor = New Color(0, 106, 255)
-        ElseIf Gender = "Girl" Then
+        ElseIf Gender = "Female" Then
             Me._playerColor = New Color(245, 49, 110)
         Else
             Me._playerColor = New Color(120, 176, 70)
@@ -128,37 +128,6 @@
                 End If
             End If
         Next
-
-        If Core.Player.Gender = "Boy" Then
-            Me.Text = Me.Text.Replace("<he>", "he")
-            Me.Text = Me.Text.Replace("<He>", "He")
-            Me.Text = Me.Text.Replace("<his>", "his")
-            Me.Text = Me.Text.Replace("<His>", "His")
-            Me.Text = Me.Text.Replace("<ofhis>", "his")
-            Me.Text = Me.Text.Replace("<ofHis>", "His")
-            Me.Text = Me.Text.Replace("<him>", "him")
-            Me.Text = Me.Text.Replace("<Him>", "Him")
-        End If
-        If Core.Player.Gender = "Girl" Then
-            Me.Text = Me.Text.Replace("<he>", "she")
-            Me.Text = Me.Text.Replace("<He>", "She")
-            Me.Text = Me.Text.Replace("<his>", "her")
-            Me.Text = Me.Text.Replace("<His>", "Her")
-            Me.Text = Me.Text.Replace("<ofhis>", "hers")
-            Me.Text = Me.Text.Replace("<ofHis>", "Hers")
-            Me.Text = Me.Text.Replace("<him>", "her")
-            Me.Text = Me.Text.Replace("<Him>", "Her")
-        End If
-        If Core.Player.Gender = "Other" Then
-            Me.Text = Me.Text.Replace("<he>", "they")
-            Me.Text = Me.Text.Replace("<He>", "They")
-            Me.Text = Me.Text.Replace("<his>", "their")
-            Me.Text = Me.Text.Replace("<His>", "Their")
-            Me.Text = Me.Text.Replace("<ofhis>", "theirs")
-            Me.Text = Me.Text.Replace("<ofHis>", "Theirs")
-            Me.Text = Me.Text.Replace("<him>", "them")
-            Me.Text = Me.Text.Replace("<Him>", "Them")
-        End If
 
         Me.Text = Me.Text.Replace("<playername>", Core.Player.Name)
         Me.Text = Me.Text.Replace("<rivalname>", Core.Player.RivalName)

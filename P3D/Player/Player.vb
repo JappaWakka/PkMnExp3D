@@ -783,10 +783,10 @@
                     Case "rotation"
                         startRotation = CSng(Value.Replace(".", GameController.DecSeparator))
                     Case "Gender"
-                        If Value = "Boy" Then
-                            Gender = "Boy"
-                        ElseIf Value = "Girl" Then
-                            Gender = "Girl"
+                        If Value = "Male" Then
+                            Gender = "Male"
+                        ElseIf Value = "Female" Then
+                            Gender = "Female"
                         Else
                             Gender = "Other"
                         End If
@@ -888,10 +888,10 @@
         If IsGameJoltSave = True And startBiking = False Then
             Skin = GameJolt.Emblem.GetPlayerSpriteFile(GameJolt.Emblem.GetPlayerLevel(GameJoltSave.Points), GameJoltSave.GameJoltID, GameJoltSave.Gender)
             Select Case GameJoltSave.Gender
-                Case "Boy"
-                    Gender = "Boy"
-                Case "Girl"
-                    Gender = "Girl"
+                Case "Male"
+                    Gender = "Male"
+                Case "Female"
+                    Gender = "Female"
                 Case Else
                     Gender = "Other"
             End Select
@@ -900,10 +900,10 @@
         If IsGameJoltSave = True And startSurfing = False Then
             Skin = GameJolt.Emblem.GetPlayerSpriteFile(GameJolt.Emblem.GetPlayerLevel(GameJoltSave.Points), GameJoltSave.GameJoltID, GameJoltSave.Gender)
             Select Case GameJoltSave.Gender
-                Case "Boy"
-                    Gender = "Boy"
-                Case "Girl"
-                    Gender = "Girl"
+                Case "Male"
+                    Gender = "Male"
+                Case "Female"
+                    Gender = "Female"
                 Case Else
                     Gender = "Other"
             End Select
@@ -1248,10 +1248,10 @@
 
     Public Function GetPlayerData(ByVal IsAutosave As Boolean) As String
         Dim GenderString As String = ""
-        If Gender = "Boy" Then
-            GenderString = "Boy"
-        ElseIf Gender = "Girl" Then
-            GenderString = "Girl"
+        If Gender = "Male" Then
+            GenderString = "Male"
+        ElseIf Gender = "Female" Then
+            GenderString = "Female"
         Else
             GenderString = "Other"
         End If

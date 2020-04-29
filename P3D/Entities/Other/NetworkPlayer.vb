@@ -162,18 +162,6 @@
     End Sub
 
     Private Function GetAnimationX() As Integer
-        If Me.HasPokemonTexture = True Then
-            Select Case AnimationX
-                Case 1
-                    Return 0
-                Case 2
-                    Return 1
-                Case 3
-                    Return 0
-                Case 4
-                    Return 1
-            End Select
-        End If
         Select Case AnimationX
             Case 1
                 Return 0

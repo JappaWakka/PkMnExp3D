@@ -117,11 +117,7 @@
             Me.Texture = P3D.TextureManager.GetTexture(texturePath & Me.TextureID & PokemonAddition)
         End If
 
-        If HasPokemonTexture = True Then
-            Me.FrameSize = New Vector2(CInt(Me.Texture.Width / 4), CInt(Me.Texture.Height / 4))
-        Else
-            Me.FrameSize = New Vector2(CInt(Me.Texture.Width / 3), CInt(Me.Texture.Height / 4))
-        End If
+        Me.FrameSize = New Vector2(CInt(Me.Texture.Width / 3), CInt(Me.Texture.Height / 4))
 
         If Me.Movement = Movements.Pokeball Then
             Me.FrameSize = New Vector2(32, 32)
@@ -201,19 +197,7 @@
 #End Region
 
     Private Function GetAnimationX() As Integer
-        If Me.HasPokemonTexture = True Then
-            Select Case AnimationX
-                Case 1
-                    Return 0
-                Case 2
-                    Return 1
-                Case 3
-                    Return 2
-                Case 4
-                    Return 3
-            End Select
-        End If
-        Select Case AnimationX
+       Select Case AnimationX
             Case 1
                 Return 0
             Case 2

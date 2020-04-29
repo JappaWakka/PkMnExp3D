@@ -566,7 +566,7 @@ Public Class GameMode
         Dim SkinColors As List(Of Color) = {New Color(248, 176, 32), New Color(248, 216, 88), New Color(56, 88, 200), New Color(216, 96, 112), New Color(56, 88, 152), New Color(239, 90, 156)}.ToList()
         Dim SkinFiles As List(Of String) = {"J_Akira", "Rande", "Ethan_GBA", "Lyra_GBA"}.ToList()
         Dim SkinNames As List(Of String) = {"J. Akira", "Rande", "Ethan (GBA)", "Lyra (GBA)"}.ToList()
-        Dim SkinGenders As List(Of String) = {"Boy", "Girl", "Boy", "Girl"}.ToList()
+        Dim SkinGenders As List(Of String) = {"Male", "Female", "Male", "Female"}.ToList()
 
         Dim gameMode As New GameMode("Pokémon Quartz 3D", "Remake project of the infamous~romhack Pokémon Quartz by TehBaro in Pokémon 3D.", GameController.GAMEVERSION, "JappaWakka", "\Content\Data\Maps\", "\Content\Data\Scripts\", "\Content\Data\System\WildEncounters\", "\Content\Pokemon\Data\", "\Content\", "\Content\Localization\", New List(Of GameRule),
                                      "Corna\Cities\BreezeTown\Main.dat", New Vector3(9.0F, 0.1F, 10.0F), MathHelper.PiOver2, "Breeze Town", "", New Color(59, 123, 165), "0", "welcome", "0", SkinColors, SkinFiles, SkinNames, SkinGenders)
