@@ -168,11 +168,11 @@
         'Menu:
         If ReceivedBattleOffer = True Then
             Canvas.DrawRectangle(New Rectangle(CInt(Core.windowSize.Width / 2 - (64 * 4) / 2), 100, 64 * 4, 64), New Color(255, 255, 255, 150))
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Your opponent wants to" & Environment.NewLine & "battle with this setup.", New Vector2(CInt(Core.windowSize.Width / 2 - (64 * 4) / 2) + 4, 104), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Your opponent wants to" & Environment.NewLine & "battle with this setup.", New Vector2(CInt(Core.windowSize.Width / 2 - (64 * 4) / 2) + 4, 104), Color.White)
         Else
             If SentBattleOffer = True Then
                 Canvas.DrawRectangle(New Rectangle(CInt(Core.windowSize.Width / 2 - (64 * 4) / 2), 100, 64 * 4, 64), New Color(255, 255, 255, 150))
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, "You want to battle" & Environment.NewLine & "with this setup.", New Vector2(CInt(Core.windowSize.Width / 2 - (64 * 4) / 2) + 4, 104), Color.Black)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "You want to battle" & Environment.NewLine & "with this setup.", New Vector2(CInt(Core.windowSize.Width / 2 - (64 * 4) / 2) + 4, 104), Color.White)
             End If
         End If
 
@@ -737,8 +737,8 @@
                                    .NoEffect & Environment.NewLine & Environment.NewLine &
                                    .Critical
 
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, s1, New Vector2(40, 340), Color.White, 0.0F, Vector2.Zero, 1.1F, SpriteEffects.None, 0.0F)
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, s2, New Vector2(250, 340), Color.LightBlue, 0.0F, Vector2.Zero, 1.1F, SpriteEffects.None, 0.0F)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, s1, New Vector2(40, 340), Color.White, 0.0F, Vector2.Zero, 1.1F, SpriteEffects.None, 0.0F)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, s2, New Vector2(250, 340), Color.LightBlue, 0.0F, Vector2.Zero, 1.1F, SpriteEffects.None, 0.0F)
             End With
 
             'Draw Pokémon left:
@@ -812,8 +812,8 @@
                                    .NoEffect & Environment.NewLine & Environment.NewLine &
                                    .Critical
 
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, s1, New Vector2(Core.windowSize.Width - 360, 340), Color.White, 0.0F, Vector2.Zero, 1.1F, SpriteEffects.None, 0.0F)
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, s2, New Vector2(Core.windowSize.Width - 150, 340), Color.LightBlue, 0.0F, Vector2.Zero, 1.1F, SpriteEffects.None, 0.0F)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, s1, New Vector2(Core.windowSize.Width - 360, 340), Color.White, 0.0F, Vector2.Zero, 1.1F, SpriteEffects.None, 0.0F)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, s2, New Vector2(Core.windowSize.Width - 150, 340), Color.LightBlue, 0.0F, Vector2.Zero, 1.1F, SpriteEffects.None, 0.0F)
             End With
 
         End If

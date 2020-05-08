@@ -104,17 +104,17 @@
                 itemString = OfferPokemon.Item.Name
             End If
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, OfferPokemon.GetDisplayName() & Environment.NewLine & "Level: " & OfferPokemon.Level & Environment.NewLine & "OT: " & OfferPokemon.OT & " / " & OfferPokemon.CatchTrainerName & Environment.NewLine & "Item: " & itemString, New Vector2(114, 414), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, OfferPokemon.GetDisplayName() & Environment.NewLine & "Level: " & OfferPokemon.Level & Environment.NewLine & "OT: " & OfferPokemon.OT & " / " & OfferPokemon.CatchTrainerName & Environment.NewLine & "Item: " & itemString, New Vector2(114, 414), Color.White)
         End If
 
         'Menu:
         If ReceivedTradeOffer = True Then
             Canvas.DrawRectangle(New Rectangle(CInt(Core.windowSize.Width / 2 - (64 * 4) / 2), 100, 64 * 4, 64), New Color(255, 255, 255, 150))
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Your trade partner" & Environment.NewLine & "accepts this trade.", New Vector2(CInt(Core.windowSize.Width / 2 - (64 * 4) / 2) + 4, 104), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Your trade partner" & Environment.NewLine & "accepts this trade.", New Vector2(CInt(Core.windowSize.Width / 2 - (64 * 4) / 2) + 4, 104), Color.White)
         Else
             If SentTradeOffer = True Then
                 Canvas.DrawRectangle(New Rectangle(CInt(Core.windowSize.Width / 2 - (64 * 4) / 2), 100, 64 * 4, 64), New Color(255, 255, 255, 150))
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, "You accepted" & Environment.NewLine & "this trade.", New Vector2(CInt(Core.windowSize.Width / 2 - (64 * 4) / 2) + 4, 104), Color.Black)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "You accepted" & Environment.NewLine & "this trade.", New Vector2(CInt(Core.windowSize.Width / 2 - (64 * 4) / 2) + 4, 104), Color.White)
             End If
         End If
 
@@ -173,7 +173,7 @@
                 itemString = TradePokemon.Item.Name
             End If
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, TradePokemon.GetDisplayName() & Environment.NewLine & "Level: " & TradePokemon.Level & Environment.NewLine & "OT: " & TradePokemon.OT & " / " & TradePokemon.CatchTrainerName & Environment.NewLine & "Item: " & itemString, New Vector2(CInt(Core.windowSize.Width - 356) + 14, 414), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, TradePokemon.GetDisplayName() & Environment.NewLine & "Level: " & TradePokemon.Level & Environment.NewLine & "OT: " & TradePokemon.OT & " / " & TradePokemon.CatchTrainerName & Environment.NewLine & "Item: " & itemString, New Vector2(CInt(Core.windowSize.Width - 356) + 14, 414), Color.White)
         End If
     End Sub
 

@@ -154,12 +154,12 @@
                     Canvas.DrawGradient(New Rectangle(500, startY, 400, 300), Color.White, Color.Gray, False, -1)
 
                     Dim sEvent As MysteryEvent = EventData(cursor)
-					Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Name: " & sEvent.Name & Environment.NewLine & Environment.NewLine &
-												 "Type: " & sEvent.EventType.ToString() & Environment.NewLine & Environment.NewLine &
-												 "Multiplicator: " & sEvent.Value & "x" & Environment.NewLine & Environment.NewLine &
-												 "Description:" & Environment.NewLine &
-												 sEvent.Description.CropStringToWidth(FontManager.MiniFont, 300), New Vector2(512, startY + 12), Color.White)
-				End If
+                    Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Name: " & sEvent.Name & Environment.NewLine & Environment.NewLine &
+                                                 "Type: " & sEvent.EventType.ToString() & Environment.NewLine & Environment.NewLine &
+                                                 "Multiplicator: " & sEvent.Value & "x" & Environment.NewLine & Environment.NewLine &
+                                                 "Description:" & Environment.NewLine &
+                                                 sEvent.Description.CropStringToWidth(FontManager.MainFontWhite, 300), New Vector2(512, startY + 12), Color.White)
+                End If
             End If
         End If
     End Sub
