@@ -309,7 +309,7 @@
                     displayMode = "ID"
             End Select
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Sortmode: """ & displayMode & """", New Vector2(638, 522), Color.Gray)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Sortmode: """ & displayMode & """", New Vector2(638, 522), Color.White)
         End If
 
         Canvas.DrawScrollBar(New Vector2(630, 405), 8, 1, bagIndex, New Size(200, 4), True, TextureManager.GetTexture(mainTexture, New Rectangle(112, 12, 1, 1)), TextureManager.GetTexture(mainTexture, New Rectangle(113, 12, 1, 1)))

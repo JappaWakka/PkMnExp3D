@@ -199,24 +199,24 @@
             Dim t As String = TimeHelpers.GetDisplayTime(Date.Now, True)
             Dim t2 As String = Localization.GetString("game_menu_phone")
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, t, New Vector2(startPos.X + width - FontManager.MiniFont.MeasureString(t).X - 5, startPos.Y + 4), Color.White)
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, t2, New Vector2(startPos.X + 5, startPos.Y + 4), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(startPos.X + width - FontManager.MainFontWhite.MeasureString(t).X - 5, startPos.Y + 4), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t2, New Vector2(startPos.X + 5, startPos.Y + 4), Color.White)
 
             If API.LoggedIn = True Then
-                Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 10 + FontManager.MiniFont.MeasureString(t2).X), CInt(startPos.Y + 8), 16, 16), New Rectangle(80, 112, 16, 16), Color.White)
+                Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 10 + FontManager.MainFontWhite.MeasureString(t2).X), CInt(startPos.Y + 8), 16, 16), New Rectangle(80, 112, 16, 16), Color.White)
             End If
             If ConnectScreen.Connected = True Then
-                Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 34 + FontManager.MiniFont.MeasureString(t2).X), CInt(startPos.Y + 8), 16, 16), New Rectangle(112, 112, 16, 16), Color.White)
+                Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 34 + FontManager.MainFontWhite.MeasureString(t2).X), CInt(startPos.Y + 8), 16, 16), New Rectangle(112, 112, 16, 16), Color.White)
             End If
             Select Case World.GetTime
                 Case World.DayTime.Night
-                    Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + width - FontManager.MiniFont.MeasureString(t).X - 34), CInt(startPos.Y + 6), 16, 16), New Rectangle(64, 112, 8, 8), Color.White)
+                    Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + width - FontManager.MainFontWhite.MeasureString(t).X - 34), CInt(startPos.Y + 6), 16, 16), New Rectangle(64, 112, 8, 8), Color.White)
                 Case World.DayTime.Morning
-                    Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + width - FontManager.MiniFont.MeasureString(t).X - 34), CInt(startPos.Y + 6), 16, 16), New Rectangle(72, 112, 8, 8), Color.White)
+                    Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + width - FontManager.MainFontWhite.MeasureString(t).X - 34), CInt(startPos.Y + 6), 16, 16), New Rectangle(72, 112, 8, 8), Color.White)
                 Case World.DayTime.Day
-                    Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + width - FontManager.MiniFont.MeasureString(t).X - 34), CInt(startPos.Y + 6), 16, 16), New Rectangle(64, 120, 8, 8), Color.White)
+                    Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + width - FontManager.MainFontWhite.MeasureString(t).X - 34), CInt(startPos.Y + 6), 16, 16), New Rectangle(64, 120, 8, 8), Color.White)
                 Case World.DayTime.Evening
-                    Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + width - FontManager.MiniFont.MeasureString(t).X - 34), CInt(startPos.Y + 6), 16, 16), New Rectangle(72, 120, 8, 8), Color.White)
+                    Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + width - FontManager.MainFontWhite.MeasureString(t).X - 34), CInt(startPos.Y + 6), 16, 16), New Rectangle(72, 120, 8, 8), Color.White)
             End Select
         End Sub
 
@@ -268,7 +268,7 @@
 
                 Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + (x * 96) + 124), CInt(startPos.Y + 80 + (y * 100)), 64, 64), New Rectangle(0, 0, 32, 32), Color.White)
                 Core.SpriteBatch.Draw(t, New Rectangle(CInt(startPos.X + (x * 96) + 124), CInt(startPos.Y + 80 + (y * 100)), 64, 64), New Rectangle(0, 0, 32, 32), Color.White)
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, displayText, New Vector2(CInt(startPos.X + (x * 96) + 124) + 32 - FontManager.MiniFont.MeasureString(displayText).X / 2.0F, CInt(startPos.Y + 150 + (y * 100))), Color.Black)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, displayText, New Vector2(CInt(startPos.X + (x * 96) + 124) + 32 - FontManager.MiniFont.MeasureString(displayText).X / 2.0F, CInt(startPos.Y + 150 + (y * 100))), Color.White)
 
                 If Cursors(0) = i Then
                     Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + (x * 96) + 124), CInt(startPos.Y + 80 + (y * 100)), 64, 64), New Rectangle(0, 32, 32, 32), Color.White)
@@ -425,7 +425,7 @@
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16), CInt(startPos.Y + 40), 128, 32), New Rectangle(102, 112, 4, 16), Color.White)
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16 + 128), CInt(startPos.Y + 40), 16, 32), New Rectangle(104, 112, 8, 16), Color.White)
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "PSS Ranklist", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 45)), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "PSS Ranklist", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 45)), Color.White)
 
             If Core.Player.IsGameJoltSave = True Then
                 ' Draw own information:
@@ -436,10 +436,10 @@
                 Dim ownE As New Emblem(Core.Player.Name, Core.GameJoltSave.GameJoltID, Core.GameJoltSave.Points, Core.GameJoltSave.Gender, Core.GameJoltSave.Emblem)
 
                 Core.SpriteBatch.Draw(ownE.SpriteTexture, New Rectangle(CInt(startPos.X + 225), CInt(startPos.Y + 40), 32, 32), New Rectangle(0, 64, 32, 32), Color.White)
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, ownE.Username, New Vector2(CInt(startPos.X + 265), CInt(startPos.Y + 45)), Color.Black)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, ownE.Username, New Vector2(CInt(startPos.X + 265), CInt(startPos.Y + 45)), Color.White)
 
                 If OwnRank > -1 Then
-                    Core.SpriteBatch.DrawString(FontManager.MiniFont, "Rank " & OwnRank.ToString(), New Vector2(CInt(startPos.X + 380), CInt(startPos.Y + 45)), Color.Black)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Rank " & OwnRank.ToString(), New Vector2(CInt(startPos.X + 380), CInt(startPos.Y + 45)), Color.White)
                 End If
 
                 If UserBanned = False Then
@@ -465,25 +465,25 @@
                                         Dim frameSize As New Size(CInt(e.SpriteTexture.Width / 3), CInt(e.SpriteTexture.Height / 4))
 
                                         Core.SpriteBatch.Draw(e.SpriteTexture, New Rectangle(CInt(startPos.X + 50), CInt(startPos.Y + 80 + i * 35), 32, 32), New Rectangle(0, frameSize.Height * 2, frameSize.Width, frameSize.Height), Color.White)
-                                        Core.SpriteBatch.DrawString(FontManager.MiniFont, e.Username, New Vector2(CInt(startPos.X + 90), CInt(startPos.Y + 85 + i * 35)), Color.Black)
-                                        Core.SpriteBatch.DrawString(FontManager.MiniFont, "Rank " & (index + 1).ToString() & " (" & e.Points.ToString() & ")", New Vector2(CInt(startPos.X + 380), CInt(startPos.Y + 85 + i * 35)), Color.Black)
+                                        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, e.Username, New Vector2(CInt(startPos.X + 90), CInt(startPos.Y + 85 + i * 35)), Color.White)
+                                        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Rank " & (index + 1).ToString() & " (" & e.Points.ToString() & ")", New Vector2(CInt(startPos.X + 380), CInt(startPos.Y + 85 + i * 35)), Color.White)
                                     Else
                                         If e.startedLoading = False Then
                                             e.StartLoading(e.Username)
                                         End If
 
-                                        Core.SpriteBatch.DrawString(FontManager.MiniFont, "Loading" & LoadingDots.Dots, New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 85 + i * 35)), Color.Black)
+                                        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Loading" & LoadingDots.Dots, New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 85 + i * 35)), Color.White)
                                     End If
                                 End If
                             End If
                         Next
                         Canvas.DrawScrollBar(New Vector2(startPos.X + 570, startPos.Y + 85), 100, 9, RankListScroll, New Size(4, 300), False, New Color(252, 196, 68), New Color(217, 120, 18))
                     Else
-                        Core.SpriteBatch.DrawString(FontManager.MiniFont, "Loading" & LoadingDots.Dots, New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 85)), Color.Black)
+                        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Loading" & LoadingDots.Dots, New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 85)), Color.White)
                     End If
                 End If
             Else
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, "You are not logged in with a GameJolt profile.", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 85)), Color.Black)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "You are not logged in with a GameJolt profile.", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 85)), Color.White)
             End If
         End Sub
 
@@ -619,7 +619,7 @@
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16), CInt(startPos.Y + 40), 128, 32), New Rectangle(102, 112, 4, 16), Color.White)
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16 + 128), CInt(startPos.Y + 40), 16, 32), New Rectangle(104, 112, 8, 16), Color.White)
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "PSS Friendlist", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 45)), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "PSS Friendlist", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 45)), Color.White)
 
             If Core.Player.IsGameJoltSave = True Then
                 ' Draw own information:
@@ -630,10 +630,10 @@
                 Dim ownE As New Emblem(Core.Player.Name, Core.GameJoltSave.GameJoltID, Core.GameJoltSave.Points, Core.GameJoltSave.Gender, Core.GameJoltSave.Emblem)
 
                 Core.SpriteBatch.Draw(ownE.SpriteTexture, New Rectangle(CInt(startPos.X + 225), CInt(startPos.Y + 40), 32, 32), New Rectangle(0, 64, 32, 32), Color.White)
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, ownE.Username, New Vector2(CInt(startPos.X + 265), CInt(startPos.Y + 45)), Color.Black)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, ownE.Username, New Vector2(CInt(startPos.X + 265), CInt(startPos.Y + 45)), Color.White)
 
                 If OwnRank > -1 Then
-                    Core.SpriteBatch.DrawString(FontManager.MiniFont, "Rank " & OwnRank.ToString(), New Vector2(CInt(startPos.X + 380), CInt(startPos.Y + 45)), Color.Black)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Rank " & OwnRank.ToString(), New Vector2(CInt(startPos.X + 380), CInt(startPos.Y + 45)), Color.White)
                 End If
 
                 If UserBanned = False Then
@@ -659,25 +659,25 @@
                                         Dim frameSize As New Size(CInt(e.SpriteTexture.Width / 3), CInt(e.SpriteTexture.Height / 4))
 
                                         Core.SpriteBatch.Draw(e.SpriteTexture, New Rectangle(CInt(startPos.X + 50), CInt(startPos.Y + 80 + i * 35), 32, 32), New Rectangle(0, frameSize.Height * 2, frameSize.Width, frameSize.Height), Color.White)
-                                        Core.SpriteBatch.DrawString(FontManager.MiniFont, e.Username, New Vector2(CInt(startPos.X + 90), CInt(startPos.Y + 85 + i * 35)), Color.Black)
-                                        Core.SpriteBatch.DrawString(FontManager.MiniFont, "Level " & Emblem.GetPlayerLevel(e.Points) & " (" & e.Points.ToString() & ")", New Vector2(CInt(startPos.X + 380), CInt(startPos.Y + 85 + i * 35)), Color.Black)
+                                        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, e.Username, New Vector2(CInt(startPos.X + 90), CInt(startPos.Y + 85 + i * 35)), Color.White)
+                                        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Level " & Emblem.GetPlayerLevel(e.Points) & " (" & e.Points.ToString() & ")", New Vector2(CInt(startPos.X + 380), CInt(startPos.Y + 85 + i * 35)), Color.White)
                                     Else
                                         If e.startedLoading = False Then
                                             e.StartLoading(e.Username)
                                         End If
 
-                                        Core.SpriteBatch.DrawString(FontManager.MiniFont, "Loading" & LoadingDots.Dots, New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 85 + i * 35)), Color.Black)
+                                        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Loading" & LoadingDots.Dots, New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 85 + i * 35)), Color.White)
                                     End If
                                 End If
                             End If
                         Next
                         Canvas.DrawScrollBar(New Vector2(startPos.X + 570, startPos.Y + 85), FriendList.Count, 9, FriendListScroll, New Size(4, 300), False, New Color(252, 196, 68), New Color(217, 120, 18))
                     Else
-                        Core.SpriteBatch.DrawString(FontManager.MiniFont, "Loading" & LoadingDots.Dots, New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 85)), Color.Black)
+                        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Loading" & LoadingDots.Dots, New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 85)), Color.White)
                     End If
                 End If
             Else
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, "You are not logged in with a GameJolt profile.", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 85)), Color.Black)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "You are not logged in with a GameJolt profile.", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 85)), Color.White)
             End If
         End Sub
 
@@ -858,7 +858,7 @@
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16), CInt(startPos.Y + 40), 128, 32), New Rectangle(102, 112, 4, 16), Color.White)
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16 + 128), CInt(startPos.Y + 40), 16, 32), New Rectangle(104, 112, 8, 16), Color.White)
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "PSS Passby", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 45)), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "PSS Passby", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 45)), Color.White)
 
             If InitializedLocals = True Then
                 If LocalList.Count > 0 Then
@@ -880,15 +880,15 @@
                             Dim frameSize As New Size(CInt(lP.Sprite.Width / 3), CInt(lP.Sprite.Height / 4))
 
                             Core.SpriteBatch.Draw(lP.Sprite, New Rectangle(CInt(startPos.X + 50), CInt(startPos.Y + 80 + i * 35), 32, 32), New Rectangle(0, frameSize.Height * 2, frameSize.Width, frameSize.Height), Color.White)
-                            Core.SpriteBatch.DrawString(FontManager.MiniFont, lP.Name, New Vector2(CInt(startPos.X + 90), CInt(startPos.Y + 85 + i * 35)), Color.Black)
+                            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, lP.Name, New Vector2(CInt(startPos.X + 90), CInt(startPos.Y + 85 + i * 35)), Color.White)
                         End If
                     Next
                     Canvas.DrawScrollBar(New Vector2(startPos.X + 570, startPos.Y + 85), LocalList.Count, 9, LocalScroll, New Size(4, 300), False, New Color(252, 196, 68), New Color(217, 120, 18))
                 Else
                     If ConnectScreen.Connected = True Then
-                        Core.SpriteBatch.DrawString(FontManager.MiniFont, "No other players connected to server" & Environment.NewLine & """" & JoinServerScreen.SelectedServer.GetName() & """.", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 85)), Color.Black)
+                        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "No other players connected to server" & Environment.NewLine & """" & JoinServerScreen.SelectedServer.GetName() & """.", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 85)), Color.White)
                     Else
-                        Core.SpriteBatch.DrawString(FontManager.MiniFont, "You are playing locally.", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 85)), Color.Black)
+                        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "You are playing locally.", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 85)), Color.White)
                     End If
                 End If
             End If
@@ -997,7 +997,7 @@
 
             Dim frameSize As New Size(CInt(UserSprite.Width / 3), CInt(UserSprite.Height / 4))
             Core.SpriteBatch.Draw(UserSprite, New Rectangle(CInt(startPos.X + 50), CInt(startPos.Y + 40), 32, 32), New Rectangle(0, frameSize.Height * 2, frameSize.Width, frameSize.Height), Color.White)
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, UserName, New Vector2(CInt(startPos.X + 90), CInt(startPos.Y + 45)), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, UserName, New Vector2(CInt(startPos.X + 90), CInt(startPos.Y + 45)), Color.White)
 
             If UserOrigin.Contains("GJ") = True Then
                 Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 284), CInt(startPos.Y + 48), 16, 16), New Rectangle(80, 112, 16, 16), Color.White)
@@ -1067,7 +1067,7 @@
                 If Cursors(1) = x Then
                     Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + (x * 96) + 76), CInt(startPos.Y + 100), 64, 64), New Rectangle(0, 32, 32, 32), Color.White)
                 End If
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, t, New Vector2(CInt(startPos.X + (x * 96) + 76) + 32 - FontManager.MiniFont.MeasureString(t).X / 2.0F, CInt(startPos.Y + 170)), Color.Black)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, t, New Vector2(CInt(startPos.X + (x * 96) + 76) + 32 - FontManager.MiniFont.MeasureString(t).X / 2.0F, CInt(startPos.Y + 170)), Color.White)
             Next
 
             If Not UserEmblem Is Nothing Then
@@ -1150,7 +1150,7 @@
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16), CInt(startPos.Y + 40), 128, 32), New Rectangle(102, 112, 4, 16), Color.White)
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16 + 128), CInt(startPos.Y + 40), 16, 32), New Rectangle(104, 112, 8, 16), Color.White)
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Phone", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 45)), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Phone", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 45)), Color.White)
 
             If PhoneContacts.Count > 0 Then
                 For i = 0 To 8
@@ -1172,8 +1172,8 @@
                         Dim frameSize As New Size(CInt(_spriteTexture.Width / 3), CInt(_spriteTexture.Height / 4))
 
                         Core.SpriteBatch.Draw(TextureManager.GetTexture("Textures\OverworldSprites\" & C.Texture), New Rectangle(CInt(startPos.X + 50), CInt(startPos.Y + 80 + i * 35), 32, 32), New Rectangle(0, frameSize.Height * 2, frameSize.Width, frameSize.Height), Color.White)
-                        Core.SpriteBatch.DrawString(FontManager.MiniFont, C.Name, New Vector2(CInt(startPos.X + 90), CInt(startPos.Y + 85 + i * 35)), Color.Black)
-                        Core.SpriteBatch.DrawString(FontManager.MiniFont, "Location: " & C.Location, New Vector2(CInt(startPos.X + 280), CInt(startPos.Y + 85 + i * 35)), Color.Black)
+                        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, C.Name, New Vector2(CInt(startPos.X + 90), CInt(startPos.Y + 85 + i * 35)), Color.White)
+                        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Location: " & C.Location, New Vector2(CInt(startPos.X + 280), CInt(startPos.Y + 85 + i * 35)), Color.White)
                     End If
                 Next
                 Canvas.DrawScrollBar(New Vector2(startPos.X + 570, startPos.Y + 85), PhoneContacts.Count, 9, PhoneScroll, New Size(4, 300), False, New Color(252, 196, 68), New Color(217, 120, 18))
@@ -1417,7 +1417,7 @@
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16), CInt(startPos.Y + 40), 128, 32), New Rectangle(102, 112, 4, 16), Color.White)
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16 + 128), CInt(startPos.Y + 40), 16, 32), New Rectangle(104, 112, 8, 16), Color.White)
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Frontier Emblems", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 45)), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Frontier Emblems", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 45)), Color.White)
 
             If FrontierList.Count > 0 Then
                 For x = 0 To FrontierList.Count - 1
@@ -1427,15 +1427,15 @@
                     Core.SpriteBatch.Draw(FrontierList(x).Texture, New Rectangle(CInt(startPos.X + (x * 96) + 83), CInt(startPos.Y + 107), 50, 50), c)
                     If Cursors(2) = x Then
                         Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + (x * 96) + 76), CInt(startPos.Y + 100), 64, 64), New Rectangle(0, 32, 32, 32), Color.White)
-                        Core.SpriteBatch.DrawString(FontManager.MiniFont, t, New Vector2(CInt(startPos.X + (x * 96) + 76) + 32 - FontManager.MiniFont.MeasureString(t).X / 2.0F, CInt(startPos.Y + 170)), Color.Black)
+                        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, t, New Vector2(CInt(startPos.X + (x * 96) + 76) + 32 - FontManager.MainFontBlack.MeasureString(t).X / 2.0F, CInt(startPos.Y + 170)), Color.White)
 
                         Canvas.DrawGradient(New Rectangle(CInt(startPos.X + 50), CInt(startPos.Y + 220), width - 100, heigth - 260), Color.White, Color.Gray, False, -1)
 
-                        Core.SpriteBatch.DrawString(FontManager.MiniFont, FrontierList(x).Description, New Vector2(CInt(startPos.X + 55), CInt(startPos.Y + 225)), Color.Black)
+                        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, FrontierList(x).Description, New Vector2(CInt(startPos.X + 55), CInt(startPos.Y + 225)), Color.White)
                     End If
                 Next
             Else
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, "You don't own any Frontier Emblems yet.", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 85)), Color.Black)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "You don't own any Frontier Emblems yet.", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 85)), Color.White)
                 Canvas.DrawGradient(New Rectangle(CInt(startPos.X + 50), CInt(startPos.Y + 220), width - 100, heigth - 260), Color.White, Color.Gray, False, -1)
             End If
         End Sub
@@ -1494,7 +1494,7 @@
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 365 + 16), CInt(startPos.Y + 40), 128, 32), New Rectangle(102, 112, 4, 16), Color.White)
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 365 + 16 + 128), CInt(startPos.Y + 40), 16, 32), New Rectangle(104, 112, 8, 16), Color.White)
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Minimap", New Vector2(CInt(startPos.X + 372), CInt(startPos.Y + 45)), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Minimap", New Vector2(CInt(startPos.X + 372), CInt(startPos.Y + 45)), Color.White)
 
             If InitializedMinimap = True Then
                 Canvas.DrawBorder(1, New Rectangle(CInt(startPos.X + 49 - 32), CInt(startPos.Y + 79 - 32), 21 * 16 + 2, 21 * 16 + 2), Color.Black)
@@ -1940,10 +1940,10 @@
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16), CInt(startPos.Y + 40), 128, 32), New Rectangle(102, 112, 4, 16), Color.White)
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16 + 128), CInt(startPos.Y + 40), 16, 32), New Rectangle(104, 112, 8, 16), Color.White)
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Trade", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 45)), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Trade", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 45)), Color.White)
 
             If Not TradeRequestTexture Is Nothing Then
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, "The player """ & TradeRequestName & """ wants to trade with you.", New Vector2(CInt(startPos.X + 84), CInt(startPos.Y + 80)), Color.Black)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "The player """ & TradeRequestName & """ wants to trade with you.", New Vector2(CInt(startPos.X + 84), CInt(startPos.Y + 80)), Color.White)
 
                 Dim frameSize As New Size(CInt(TradeRequestTexture.Width / 3), CInt(TradeRequestTexture.Height / 4))
                 Core.SpriteBatch.Draw(TradeRequestTexture, New Rectangle(CInt(startPos.X + 45), CInt(startPos.Y + 74), 32, 32), New Rectangle(0, frameSize.Height * 2, frameSize.Width, frameSize.Height), Color.White)
@@ -1963,7 +1963,7 @@
                         t = "No"
                     End If
 
-                    Core.SpriteBatch.DrawString(FontManager.MiniFont, t, New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 155 + i * 64)), Color.Black)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontBlack, t, New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 155 + i * 64)), Color.White)
 
                 Next
             End If
@@ -2072,10 +2072,10 @@
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16), CInt(startPos.Y + 40), 128, 32), New Rectangle(102, 112, 4, 16), Color.White)
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16 + 128), CInt(startPos.Y + 40), 16, 32), New Rectangle(104, 112, 8, 16), Color.White)
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Battle", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 45)), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Battle", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 45)), Color.White)
 
             If Not BattleRequestTexture Is Nothing Then
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, "The player """ & BattleRequestName & """ wants to battle with you.", New Vector2(CInt(startPos.X + 84), CInt(startPos.Y + 80)), Color.Black)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "The player """ & BattleRequestName & """ wants to battle with you.", New Vector2(CInt(startPos.X + 84), CInt(startPos.Y + 80)), Color.White)
 
                 Dim frameSize As New Size(CInt(BattleRequestTexture.Width / 3), CInt(BattleRequestTexture.Height / 4))
                 Core.SpriteBatch.Draw(BattleRequestTexture, New Rectangle(CInt(startPos.X + 45), CInt(startPos.Y + 74), 32, 32), New Rectangle(0, frameSize.Height * 2, frameSize.Width, frameSize.Height), Color.White)
@@ -2095,7 +2095,7 @@
                         t = "No"
                     End If
 
-                    Core.SpriteBatch.DrawString(FontManager.MiniFont, t, New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 155 + i * 64)), Color.Black)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontBlack, t, New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 155 + i * 64)), Color.White)
                 Next
             End If
         End Sub

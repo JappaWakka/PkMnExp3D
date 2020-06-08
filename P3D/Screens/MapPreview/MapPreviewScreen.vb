@@ -225,7 +225,7 @@
                 "RENDERDISTANCE: " & Core.GameOptions.RenderDistance.ToString() & Environment.NewLine &
                 "OFFSETMAPS: " & offsetString
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, t, New Vector2(2, Core.windowSize.Height - FontManager.MiniFont.MeasureString(t).Y - 2), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(2, Core.windowSize.Height - FontManager.MainFontWhite.MeasureString(t).Y - 2), Color.White)
 
             Dim t2 As String = "WASD: Move around" & Environment.NewLine &
                 "MOUSE SCROLL: Change camera speed" & Environment.NewLine &
@@ -236,10 +236,10 @@
                 "Q: Replace player" & Environment.NewLine &
                 "ESC: Close Map Preview"
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, t2, New Vector2(Core.windowSize.Width - FontManager.MiniFont.MeasureString(t2).X - 2, Core.windowSize.Height - FontManager.MiniFont.MeasureString(t2).Y - 2), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t2, New Vector2(Core.windowSize.Width - FontManager.MainFontWhite.MeasureString(t2).X - 2, Core.windowSize.Height - FontManager.MainFontWhite.MeasureString(t2).Y - 2), Color.White)
 
             Dim t3 As String = "MAP PREVIEW MODE"
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, t3, New Vector2(Core.windowSize.Width - FontManager.MiniFont.MeasureString(t3).X - 2, 2), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t3, New Vector2(Core.windowSize.Width - FontManager.MainFontWhite.MeasureString(t3).X - 2, 2), Color.White)
 
             Me.DrawMapDisplays()
         End If

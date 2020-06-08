@@ -395,16 +395,16 @@ Public Class NewInventoryScreen
                         End If
                         Canvas.DrawRectangle(itemBatch, New Rectangle(CInt(itemLoc.X) - 16 - 9, CInt(itemLoc.Y) + 48, 128 + 18, nameTextHeight), New Color(0, 0, 0, CInt(If(_tabInControl, 64, 128) * _interfaceFade)))
 
-                        Dim fontWidth As Integer = CInt(FontManager.MiniFont.MeasureString(cItem.Name).X)
-                        itemBatch.DrawString(FontManager.MiniFont, cItem.Name, itemLoc + New Vector2(48 - fontWidth / 2.0F, 51), New Color(255, 255, 255, itemPanelAlpha))
+                        Dim fontWidth As Integer = CInt(FontManager.MainFontWhite.MeasureString(cItem.Name).X)
+                        itemBatch.DrawString(FontManager.MainFontWhite, cItem.Name, itemLoc + New Vector2(48 - fontWidth / 2.0F, 51), New Color(255, 255, 255, itemPanelAlpha))
                         If _tabIndex <> 7 Then
-                            itemBatch.DrawString(FontManager.MiniFont, "x" & _items(i + (PageIndex * 10)).Amount.ToString(), itemLoc + New Vector2(84, 26), New Color(40, 40, 40, itemPanelAlpha))
+                            itemBatch.DrawString(FontManager.MainFontBlack, "x" & _items(i + (PageIndex * 10)).Amount.ToString(), itemLoc + New Vector2(84, 26), New Color(255, 255, 255, itemPanelAlpha))
                         End If
 
                         If _tabIndex = 4 Then
                             Dim AttackName As String = CType(cItem, Items.TechMachine).Attack.Name
-                            Dim TMfontWidth As Integer = CInt(FontManager.MiniFont.MeasureString(AttackName).X)
-                            itemBatch.DrawString(FontManager.MiniFont, AttackName, itemLoc + New Vector2(48 - TMfontWidth / 2.0F, 51 + 16), New Color(255, 255, 255, itemPanelAlpha))
+                            Dim TMfontWidth As Integer = CInt(FontManager.MainFontWhite.MeasureString(AttackName).X)
+                            itemBatch.DrawString(FontManager.MainFontWhite, AttackName, itemLoc + New Vector2(48 - TMfontWidth / 2.0F, 51 + 16), New Color(255, 255, 255, itemPanelAlpha))
                         End If
                     End If
                 End If

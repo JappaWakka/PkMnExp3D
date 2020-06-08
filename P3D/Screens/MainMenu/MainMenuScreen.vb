@@ -382,7 +382,7 @@
                         End If
                     End If
                 Else
-                    SpriteBatch.DrawInterfaceString(FontManager.MiniFont, "File Validation failed. Download a new copy of the game to fix this.", New Vector2(220, ScreenSize.Height - 30), Color.White)
+                    SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, "File Validation failed. Download a new copy of the game to fix this.", New Vector2(220, ScreenSize.Height - 30), Color.White)
                 End If
             Else
                 Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(ScreenSize.Width / 2) - 180, 240 + i * 128, 320, 64), True)
@@ -1375,7 +1375,7 @@
         SpriteBatch.DrawInterfaceString(FontManager.MainFontBlack, Localization.GetString("pack_menu_name") & ": " & PInfoName, New Vector2(CInt(ScreenSize.Width / 2) - CInt(FontManager.MainFontBlack.MeasureString(Localization.GetString("pack_menu_name") & ": " & PInfoName).X / 2), 195), Color.White)
 
         Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(ScreenSize.Width / 2) - 256, 288, 480, 224), True)
-        SpriteBatch.DrawInterfaceString(FontManager.MiniFont, Localization.GetString("pack_menu_version") & ": " & PInfoVersion & Environment.NewLine & Localization.GetString("pack_menu_by") & ": " & PInfoAuthor & Environment.NewLine & Localization.GetString("pack_menu_content") & ": " & PInfoContent & Environment.NewLine & Localization.GetString("pack_menu_description") & ": " & PInfoDescription.Replace("<br>", Environment.NewLine), New Vector2(CInt(ScreenSize.Width / 2) - 220, 323), Color.Black)
+        SpriteBatch.DrawInterfaceString(FontManager.MainFontBlack, Localization.GetString("pack_menu_version") & ": " & PInfoVersion & Environment.NewLine & Localization.GetString("pack_menu_by") & ": " & PInfoAuthor & Environment.NewLine & Localization.GetString("pack_menu_content") & ": " & PInfoContent & Environment.NewLine & Localization.GetString("pack_menu_description") & ": " & PInfoDescription.Replace("<br>", Environment.NewLine), New Vector2(CInt(ScreenSize.Width / 2) - 220, 323), Color.White)
 
         For i = 0 To 1
             If i = packInfoIndex Then

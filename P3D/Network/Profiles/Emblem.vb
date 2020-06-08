@@ -1239,7 +1239,7 @@
                     Case "platinum"
                         fontColor = New Color(172, 201, 202)
                 End Select
-                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, achieved_emblem_difficulty, New Vector2(emblemPositionX + (38 - CInt(FontManager.MiniFont.MeasureString(achieved_emblem_difficulty).X / 2)), 77), fontColor)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, achieved_emblem_difficulty, New Vector2(emblemPositionX + (38 - CInt(FontManager.MainFontWhite.MeasureString(achieved_emblem_difficulty).X / 2)), 77), fontColor)
 
                 Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Achieved new emblem background: " & achieved_emblem_title, New Vector2(emblemPositionX + 88, 4), fontColor)
 

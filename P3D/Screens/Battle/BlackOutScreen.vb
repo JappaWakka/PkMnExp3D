@@ -96,7 +96,7 @@
         If IsGameOver = True Then
             Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "GAME OVER", New Vector2(CInt(Core.windowSize.Width / 2) - CInt(FontManager.MainFontWhite.MeasureString("GAME OVER").X / 2), 100), Color.White)
         Else
-            Dim f As SpriteFont = FontManager.MiniFont
+            Dim f As SpriteFont = FontManager.MainFontWhite
             Dim aText As String = ""
             For i = 0 To textIndex
                 If i <> textIndex Then
@@ -110,7 +110,7 @@
 
             Dim p As New Vector2(CSng(Core.windowSize.Width / 2 - f.MeasureString(aText).X / 2), CSng(Core.windowSize.Height / 2 - (f.MeasureString(aText).Y) / 2))
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, aText, p, Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, aText, p, Color.White)
         End If
 
         If Me.IsGameOver = True Or Me.ready = True Then
