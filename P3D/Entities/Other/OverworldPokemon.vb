@@ -12,7 +12,7 @@ Public Class OverworldPokemon
     Public warped As Boolean = True
 
     Dim Moving As Boolean = False
-    Dim AnimationX As Integer = 0
+	Dim AnimationX As Integer = 1
 	Dim AnimationDelayLength As Single = 1.1F
 	Dim AnimationDelay As Single = AnimationDelayLength
 
@@ -52,9 +52,9 @@ Public Class OverworldPokemon
 		Dim width As Integer = CInt(Me.Texture.Width / 3)
 
 		Dim x As Integer = 0
-        x = AnimationX * width
+		x = GetAnimationX() * width
 
-        Dim height As Integer = CInt(Me.Texture.Height / 4)
+		Dim height As Integer = CInt(Me.Texture.Height / 4)
 
         Dim y As Integer = height * spriteIndex
 
@@ -85,31 +85,20 @@ Public Class OverworldPokemon
 
 
             Me.ChangeTexture()
-            If Moving = True Then
-                Me.AnimationDelay -= 0.1F
-                If AnimationDelay <= 0.0F Then
-                    AnimationDelay = AnimationDelayLength
-                    AnimationX += 1
-					If AnimationX > 2 Then
-						AnimationX = 0
+			If Moving = True Then
+				Me.AnimationDelay -= 0.1F
+				If AnimationDelay <= 0.0F Then
+					AnimationDelay = AnimationDelayLength
+					AnimationX += 1
+					If AnimationX > 4 Then
+						AnimationX = 1
 					End If
 				End If
-            Else
-                If AnimationX > 0 Then
-                    Me.AnimationDelay -= 0.1F
-                    If AnimationDelay <= 0.0F Then
-                        AnimationDelay = AnimationDelayLength
-                        AnimationX += 1
-						If AnimationX > 2 Then
-							AnimationX = 0
-						End If
-					End If
-                Else
-                    AnimationX = 0
-                End If
-            End If
+			Else
+				AnimationX = 1
+			End If
 
-            ChangePosition()
+			ChangePosition()
         End If
     End Sub
 
@@ -293,5 +282,19 @@ Public Class OverworldPokemon
         Me.lastRectangle = New Rectangle(0, 0, 0, 0)
         Me.ChangeTexture()
     End Sub
+
+	Private Function GetAnimationX() As Integer
+		Select Case AnimationX
+			Case 1
+				Return 0
+			Case 2
+				Return 1
+			Case 3
+				Return 0
+			Case 4
+				Return 2
+		End Select
+		Return 1
+	End Function
 
 End Class

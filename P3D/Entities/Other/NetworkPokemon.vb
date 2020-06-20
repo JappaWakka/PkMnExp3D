@@ -11,7 +11,8 @@
     Dim lastRectangle As New Rectangle(0, 0, 0, 0)
     Dim loadedTexture As String = ""
 
-    Dim AnimationX As Integer = 1
+	Dim Moving As Boolean = False
+	Dim AnimationX As Integer = 0
 	Dim AnimationDelayLength As Single = 1.1F
 	Dim AnimationDelay As Single = AnimationDelayLength
 
@@ -56,10 +57,10 @@
             If AnimationDelay <= 0.0F Then
                 AnimationDelay = AnimationDelayLength
                 AnimationX += 1
-                If AnimationX > 2 Then
-                    AnimationX = 1
-                End If
-            End If
+				If AnimationX > 4 Then
+					AnimationX = 1
+				End If
+			End If
         End If
     End Sub
 
@@ -122,9 +123,9 @@
         Dim dimension As Integer = CInt(Me.Texture.Width / 3)
 
         Dim x As Integer = 0
-        x = AnimationX * dimension
+		x = GetAnimationX() * dimension
 
-        Dim height As Integer = dimension
+		Dim height As Integer = dimension
 
         Dim y As Integer = dimension * spriteIndex
         y -= 2
@@ -178,5 +179,19 @@
             End If
         Catch : End Try
     End Sub
+
+	Private Function GetAnimationX() As Integer
+		Select Case AnimationX
+			Case 1
+				Return 0
+			Case 2
+				Return 1
+			Case 3
+				Return 0
+			Case 4
+				Return 2
+		End Select
+		Return 0
+	End Function
 
 End Class
