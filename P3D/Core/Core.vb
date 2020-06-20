@@ -109,8 +109,8 @@
 
         FontManager.LoadFonts()
 
-        Screen.TextBox.TextFont = FontManager.GetFontContainer("textfont")
-        Logger.Debug("Loaded fonts.")
+		Screen.TextBox.TextFont = FontManager.GetFontContainer("MainFontBlack")
+		Logger.Debug("Loaded fonts.")
 
         KeyBindings.LoadKeys()
         TextureManager.InitializeTextures()

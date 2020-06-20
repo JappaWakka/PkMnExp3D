@@ -19,8 +19,8 @@
     Public faceRotation As Integer
     Public TextureID As String
     Dim lastRectangle As New Rectangle(0, 0, 0, 0)
-    Dim FrameSize As New Vector2(32, 32)
-    Dim Texture As Texture2D
+	Dim FrameSize As New Vector2(32, 32)
+	Dim Texture As Texture2D
     Public ActivationValue As Integer = 0
 
     Public HasPokemonTexture As Boolean = False

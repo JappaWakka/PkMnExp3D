@@ -21,8 +21,8 @@
                     If Not f Is Nothing Then
                         Screen.TextBox.TextFont = f
                     Else
-                        Screen.TextBox.TextFont = FontManager.GetFontContainer("textfont")
-                    End If
+						Screen.TextBox.TextFont = FontManager.GetFontContainer("MainFontBlack")
+					End If
                 Case "debug"
                     Logger.Debug("DEBUG: " & argument.ToString())
                 Case "log"
@@ -33,12 +33,15 @@
                     If args.Length = 1 Then
                         Select Case args(0).ToLower()
                             Case "playercolor", "player"
-                                Screen.TextBox.TextColor = Textbox.PlayerColor
-                            Case "defaultcolor", "default"
-                                Screen.TextBox.TextColor = TextBox.DefaultColor
-                            Case Else ' Try to convert the input color name into a color: (https://msdn.microsoft.com/en-us/library/system.drawing.knowncolor%28v=vs.110%29.aspx)
-                                Screen.TextBox.TextColor = Drawing.Color.FromName(args(0)).ToXNA()
-                        End Select
+								Screen.TextBox.TextColor = TextBox.PlayerColor
+								Screen.TextBox.TextFont = FontManager.GetFontContainer("MainFontWhite")
+							Case "defaultcolor", "default"
+								Screen.TextBox.TextColor = TextBox.DefaultColor
+								Screen.TextBox.TextFont = FontManager.GetFontContainer("MainFontBlack")
+							Case Else ' Try to convert the input color name into a color: (https://msdn.microsoft.com/en-us/library/system.drawing.knowncolor%28v=vs.110%29.aspx)
+								Screen.TextBox.TextColor = Drawing.Color.FromName(args(0)).ToXNA()
+								Screen.TextBox.TextFont = FontManager.GetFontContainer("MainFontWhite")
+						End Select
                     ElseIf args.Length = 3 Then
                         Screen.TextBox.TextColor = New Color(int(args(0)), int(args(1)), int(args(2)))
                     End If

@@ -486,8 +486,8 @@ Public Class GameMode
                             Me._pokemonAppear = Value
 
                             If CInt(Value) = 0 Then
-                                Me._pokemonRange = {1, 252}
-                            Else
+								Me._pokemonRange = {1, 386}
+							Else
                                 If Value.Contains("-") = True Then
                                     Dim v1 As Integer = CInt(Value.GetSplit(0, "-"))
                                     Dim v2 As Integer = CInt(Value.GetSplit(1, "-")) + 1
@@ -568,10 +568,10 @@ Public Class GameMode
         Dim SkinNames As List(Of String) = {"J. Akira", "Rande", "Ethan (GBA)", "Lyra (GBA)"}.ToList()
         Dim SkinGenders As List(Of String) = {"Male", "Female", "Male", "Female"}.ToList()
 
-        Dim gameMode As New GameMode("Pokémon Quartz 3D", "Remake project of the infamous~romhack Pokémon Quartz by TehBaro in Pokémon 3D.", GameController.GAMEVERSION, "JappaWakka", "\Content\Data\Maps\", "\Content\Data\Scripts\", "\Content\Data\System\WildEncounters\", "\Content\Pokemon\Data\", "\Content\", "\Content\Localization\", New List(Of GameRule),
-                                     "Corna\Cities\BreezeTown\Main.dat", New Vector3(9.0F, 0.1F, 10.0F), MathHelper.PiOver2, "Breeze Town", "", New Color(59, 123, 165), "0", "welcome", "0", SkinColors, SkinFiles, SkinNames, SkinGenders)
+		Dim gameMode As New GameMode("Pokémon Quartz 3D", "Remake project of the infamous~romhack Pokémon Quartz by TehBaro in Pokémon 3D.", GameController.GAMEVERSION, "JappaWakka", "\Content\Data\Maps\", "\Content\Data\Scripts\", "\Content\Data\System\WildEncounters\", "\Content\Pokemon\Data\", "\Content\", "\Content\Localization\", New List(Of GameRule),
+									 "Corna\Cities\BreezeTown\Main.dat", New Vector3(9.0F, 0.1F, 10.0F), MathHelper.PiOver2, "Breeze Town", "", New Color(59, 123, 165), "309", "welcome", "0", SkinColors, SkinFiles, SkinNames, SkinGenders)
 
-        Dim gameRules As New List(Of GameRule)
+		Dim gameRules As New List(Of GameRule)
         gameRules.Add(New GameRule("MaxLevel", "100"))
         gameRules.Add(New GameRule("OnlyCaptureFirst", "0"))
         gameRules.Add(New GameRule("ForceRename", "0"))
@@ -673,8 +673,8 @@ Public Class GameMode
 
             SkinGendersString &= SkinGender
 
-            iSN += 1
-        Next
+			iSG += 1
+		Next
 
         s &= SkinGendersString
 
@@ -951,8 +951,8 @@ Public Class GameMode
             Me._pokemonAppear = value
 
             If CInt(value) = 0 Then
-                Me._pokemonRange = {1, 252}
-            Else
+				Me._pokemonRange = {1, 386}
+			Else
                 If value.Contains("-") = True Then
                     Dim v1 As Integer = CInt(value.GetSplit(0, "-"))
                     Dim v2 As Integer = CInt(value.GetSplit(1, "-")) + 1

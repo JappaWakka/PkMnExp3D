@@ -52,8 +52,8 @@
         Me.Difficulty = Core.Player.DifficultyMode
         Me.BattleStyle = Core.Player.BattleStyle
         Me.ShowModels = CInt(Core.Player.ShowModelsInBattle)
-        Me.Muted = CBool(MediaPlayer.IsMuted.ToNumberString())
-        If Core.GameOptions.LoadOffsetMaps = 0 Then
+		Me.Muted = CBool(MusicManager.Muted.ToNumberString())
+		If Core.GameOptions.LoadOffsetMaps = 0 Then
             Me.LoadOffsetMaps = 0
         Else
             Me.LoadOffsetMaps = 101 - Core.GameOptions.LoadOffsetMaps
@@ -242,8 +242,8 @@
 
     Public Overrides Sub ToggledMute()
         If Me.ScreenIndex = 5 Then
-            Me.Muted = CBool(MediaPlayer.IsMuted)
-            InitializeControls()
+			Me.Muted = CBool(MusicManager.Muted)
+			InitializeControls()
         End If
     End Sub
 

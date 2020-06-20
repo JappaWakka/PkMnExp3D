@@ -319,9 +319,9 @@ Public MustInherit Class Screen
                     x -= 64 + 4
             End Select
 
-            'Add to the x location for the length of the string and a separator.
-            x -= CInt(FontManager.MainFontWhite.MeasureString(Descriptions.Values(i)).X) + 16
-        Next
+			'Add to the x location for the length of the string and a separator.
+			x -= CInt(FontManager.MainFontBlack.MeasureString(Descriptions.Values(i)).X) + 16
+		Next
 
         'Finally, render the buttons:
         DrawGamePadControls(Descriptions, New Vector2(x, windowSize.Height - 40))
@@ -378,12 +378,12 @@ Public MustInherit Class Screen
                 'Add the button width and a little offset to the drawing position:
                 x += width + 4
 
-                'Draw the button description (again, with a shadow):
-                SpriteBatch.DrawString(FontManager.MainFontWhite, Descriptions.Values(i), New Vector2(x, y + 4), Color.White)
+				'Draw the button description (again, with a shadow):
+				SpriteBatch.DrawString(FontManager.MainFontBlack, Descriptions.Values(i), New Vector2(x, y + 4), Color.White)
 
-                'Add the text width and the offset for the next button description to the drawing position:
-                x += CInt(FontManager.MainFontWhite.MeasureString(Descriptions.Values(i)).X) + 16
-            Next
+				'Add the text width and the offset for the next button description to the drawing position:
+				x += CInt(FontManager.MainFontBlack.MeasureString(Descriptions.Values(i)).X) + 16
+			Next
         End If
     End Sub
 

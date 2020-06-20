@@ -80,9 +80,9 @@
         TextBox.Showing = False
         Me.Index = 0
         TextBox.reDelay = 0
-        skinTexture = TextureManager.GetTexture(TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins" & skinFiles(SkinIndex)), New Rectangle(0, 64, 32, 32))
+		skinTexture = TextureManager.GetTexture(TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins\" & skinFiles(SkinIndex)), New Rectangle(0, 56, 28, 28))
 
-        MusicManager.Play("nomusic")
+		MusicManager.Play("nomusic")
     End Sub
 
     Private Sub LoadIntroValues()
@@ -222,27 +222,27 @@
             Case 1
                 Core.SpriteBatch.Draw(mainTexture, New Rectangle(CInt(ballPosition.X), CInt(ballPosition.Y), 22, 22), New Rectangle(62 + CInt(ballIndex.X * 22), 48 + CInt(ballIndex.Y * 22), 22, 22), Color.White)
             Case 2
-                Core.SpriteBatch.Draw(pokeTexture, New Rectangle(CInt(pokePosition.X) - 100, CInt(pokePosition.Y) - 160, 256, 256), Color.White)
-            Case 3
+				Core.SpriteBatch.Draw(pokeTexture, New Rectangle(CInt(pokePosition.X) - 100, CInt(pokePosition.Y) - 218, 256, 256), Color.White)
+			Case 3
                 If Index < 6 Then
-                    Core.SpriteBatch.Draw(pokeTexture, New Rectangle(CInt(Core.windowSize.Width / 2) - 300, CInt(Core.windowSize.Height / 2) - 130, 256, 256), New Color(255, 255, 255, ProfAlpha))
-                End If
+					Core.SpriteBatch.Draw(pokeTexture, New Rectangle(CInt(Core.windowSize.Width / 2) - 300, CInt(Core.windowSize.Height / 2) - 218, 256, 256), New Color(255, 255, 255, ProfAlpha))
+				End If
         End Select
 
         Select Case Index
             Case 5
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, Localization.GetString("new_game_your_name") & ": ", New Vector2(TextboxPosition.X, TextboxPosition.Y - 24), Color.White)
-                DrawTextBox()
+				Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("new_game_your_name") & ": ", New Vector2(TextboxPosition.X, TextboxPosition.Y - 24), Color.White)
+				DrawTextBox()
 
                 If enterCorrectName = True Then
-                    Core.SpriteBatch.DrawString(FontManager.MiniFont, Localization.GetString("new_game_name_too_short"), New Vector2(TextboxPosition.X, TextboxPosition.Y + 30), Color.DarkRed)
-                End If
+					Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("new_game_name_too_short"), New Vector2(TextboxPosition.X, TextboxPosition.Y + 30), Color.DarkRed)
+				End If
             Case 4
                 Canvas.DrawRectangle(New Rectangle(CInt(TextboxPosition.X - 5), CInt(TextboxPosition.Y - 24), 138, 42), New Color(0, 0, 0, 80))
 
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, Localization.GetString("new_game_choose_skin") & ":" & Environment.NewLine & skinNames(SkinIndex) & Environment.NewLine & skinGenders(SkinIndex), New Vector2(TextboxPosition.X, TextboxPosition.Y - 24), Color.White)
+				Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("new_game_choose_skin") & ":" & Environment.NewLine & skinNames(SkinIndex) & Environment.NewLine & skinGenders(SkinIndex), New Vector2(TextboxPosition.X, TextboxPosition.Y - 24), Color.White)
 
-                Canvas.DrawScrollBar(New Vector2(TextboxPosition.X, TextboxPosition.Y + 48), skinFiles.Count, 1, SkinIndex, New Size(128, 4), True, TextureManager.GetTexture(TextureManager.GetTexture("GUI\Menus\Menu"), New Rectangle(112, 12, 1, 1)), TextureManager.GetTexture(TextureManager.GetTexture("GUI\Menus\Menu"), New Rectangle(113, 12, 1, 1)))
+				Canvas.DrawScrollBar(New Vector2(TextboxPosition.X, TextboxPosition.Y + 48), skinFiles.Count, 1, SkinIndex, New Size(128, 4), True, TextureManager.GetTexture(TextureManager.GetTexture("GUI\Menus\Menu"), New Rectangle(112, 12, 1, 1)), TextureManager.GetTexture(TextureManager.GetTexture("GUI\Menus\Menu"), New Rectangle(113, 12, 1, 1)))
         End Select
     End Sub
 
@@ -254,9 +254,9 @@
         If t.Length < 14 Then
             t &= "_"
         End If
-        Core.SpriteBatch.DrawString(FontManager.MiniFont, t, TextboxPosition(), Color.Black)
+		Core.SpriteBatch.DrawString(FontManager.MainFontBlack, t, TextboxPosition(), Color.White)
 
-        Dim l As New Dictionary(Of Buttons, String)
+		Dim l As New Dictionary(Of Buttons, String)
         l.Add(Buttons.A, Localization.GetString("controls_accept","Accept"))
         l.Add(Buttons.X, "Edit name")
         Me.DrawGamePadControls(l)
@@ -283,10 +283,10 @@
                 End If
                 AnimateBall()
             Case 2
-                If pokePosition.Y < CInt(Core.windowSize.Height / 2) + 38 Then
-                    pokePosition.Y += 5
-                Else
-                    Dim p As Pokemon = Pokemon.GetPokemonByID(pokeID)
+				If pokePosition.Y < CInt(Core.windowSize.Height / 2) Then
+					pokePosition.Y += 5
+				Else
+					Dim p As Pokemon = Pokemon.GetPokemonByID(pokeID)
                     p.PlayCry()
                     pokeIndex = 3
                     Index = 2

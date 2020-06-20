@@ -13,8 +13,8 @@ Public Class OverworldPokemon
 
     Dim Moving As Boolean = False
     Dim AnimationX As Integer = 0
-    Dim AnimationDelayLength As Single = 0.3F
-    Dim AnimationDelay As Single = AnimationDelayLength
+	Dim AnimationDelayLength As Single = 1.1F
+	Dim AnimationDelay As Single = AnimationDelayLength
 
     Public Sub New(ByVal X As Single, ByVal Y As Single, ByVal Z As Single)
         MyBase.New(X, Y, Z, "OverworldPokemon", {P3D.TextureManager.DefaultTexture}, {0, 0}, False, 0, New Vector3(1.0F), BaseModel.BillModel, 0, "", New Vector3(1))
@@ -49,9 +49,9 @@ Public Class OverworldPokemon
             spriteIndex += 4
         End If
 
-        Dim width As Integer = CInt(Me.Texture.Width / 4)
+		Dim width As Integer = CInt(Me.Texture.Width / 3)
 
-        Dim x As Integer = 0
+		Dim x As Integer = 0
         x = AnimationX * width
 
         Dim height As Integer = CInt(Me.Texture.Height / 4)
@@ -90,20 +90,20 @@ Public Class OverworldPokemon
                 If AnimationDelay <= 0.0F Then
                     AnimationDelay = AnimationDelayLength
                     AnimationX += 1
-                    If AnimationX > 3 Then
-                        AnimationX = 0
-                    End If
-                End If
+					If AnimationX > 2 Then
+						AnimationX = 0
+					End If
+				End If
             Else
                 If AnimationX > 0 Then
                     Me.AnimationDelay -= 0.1F
                     If AnimationDelay <= 0.0F Then
                         AnimationDelay = AnimationDelayLength
                         AnimationX += 1
-                        If AnimationX > 3 Then
-                            AnimationX = 0
-                        End If
-                    End If
+						If AnimationX > 2 Then
+							AnimationX = 0
+						End If
+					End If
                 Else
                     AnimationX = 0
                 End If
@@ -178,12 +178,12 @@ Public Class OverworldPokemon
         If Screen.Camera.IsMoving() = True Then
             If CInt(Me.Position.X) <> CInt(Screen.Camera.Position.X) Or CInt(Me.Position.Z) <> CInt(Screen.Camera.Position.Z) Then
                 Me.Position += GetMove()
-                Me.AnimationDelayLength = 0.35F
-                Me.Moving = True
+				Me.AnimationDelayLength = 1.1F
+				Me.Moving = True
             End If
         Else
-            Me.AnimationDelayLength = 0.35F
-            Me.Moving = False
+			Me.AnimationDelayLength = 1.1F
+			Me.Moving = False
         End If
     End Sub
 

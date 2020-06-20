@@ -10,55 +10,55 @@
         Return Warp(False)
     End Function
 
-    Public Function Warp(ByVal MapViewMode As Boolean) As Boolean
-        If IsValidLink(Me.AdditionalValue) = True And ScriptBlock.TriggeredScriptBlock = False Then
-            Dim destination As String = Me.AdditionalValue.GetSplit(0)
+	Public Function Warp(ByVal MapViewMode As Boolean) As Boolean
+		If IsValidLink(Me.AdditionalValue) = True And ScriptBlock.TriggeredScriptBlock = False Then
+			Dim destination As String = Me.AdditionalValue.GetSplit(0)
 
-            Dim link As String = Me.AdditionalValue
-            Dim c As Integer = 0
-            For e = 0 To link.Length - 1
-                If link(e) = CChar(",") Then
-                    c += 1
-                End If
-            Next
-            If c >= 5 Then
-                Dim validRotations As New List(Of Integer)
+			Dim link As String = Me.AdditionalValue
+			Dim c As Integer = 0
+			For e = 0 To link.Length - 1
+				If link(e) = CChar(",") Then
+					c += 1
+				End If
+			Next
+			If c >= 5 Then
+				Dim validRotations As New List(Of Integer)
 
-                Dim rotationData() As String = link.GetSplit(5, ",").Split(CChar("|"))
-                For Each Element As String In rotationData
-                    validRotations.Add(CInt(Element))
-                Next
-                If validRotations.Contains(Screen.Camera.GetPlayerFacingDirection()) = False Then
-                    Return True
-                End If
-            End If
+				Dim rotationData() As String = link.GetSplit(5, ",").Split(CChar("|"))
+				For Each Element As String In rotationData
+					validRotations.Add(CInt(Element))
+				Next
+				If validRotations.Contains(Screen.Camera.GetPlayerFacingDirection()) = False Then
+					Return True
+				End If
+			End If
 
-            If System.IO.File.Exists(GameController.GamePath & "\" & GameModeManager.ActiveGameMode.MapPath & destination) = True Or System.IO.File.Exists(GameController.GamePath & "\Content\Data\maps\" & destination) = True Then
-                If MapViewMode = False Then
-                    Screen.Level.WarpData.WarpDestination = Me.AdditionalValue.GetSplit(0)
-                    Screen.Level.WarpData.WarpPosition = New Vector3(CSng(Me.AdditionalValue.GetSplit(1)), CSng(Me.AdditionalValue.GetSplit(2).Replace(".", GameController.DecSeparator)), CSng(Me.AdditionalValue.GetSplit(3)))
-                    Screen.Level.WarpData.WarpRotations = CInt(Me.AdditionalValue.GetSplit(4))
-                    Screen.Level.WarpData.DoWarpInNextTick = True
-                    Screen.Level.WarpData.CorrectCameraYaw = Screen.Camera.Yaw
-                    Screen.Level.WarpData.IsWarpBlock = True
-                    Logger.Debug("Lock Camera")
-                    CType(Screen.Camera, OverworldCamera).YawLocked = True
-                Else
-                    Screen.Level = New Level()
-                    Screen.Level.Load(Me.AdditionalValue.GetSplit(0))
-                    Screen.Level.World.Initialize(Screen.Level.EnvironmentType, Screen.Level.WeatherType)
+			If System.IO.File.Exists(GameController.GamePath & "\" & GameModeManager.ActiveGameMode.MapPath & destination) = True Or System.IO.File.Exists(GameController.GamePath & "\Content\Data\maps\" & destination) = True Then
+				If MapViewMode = False Then
+					Screen.Level.WarpData.WarpDestination = Me.AdditionalValue.GetSplit(0)
+					Screen.Level.WarpData.WarpPosition = New Vector3(CSng(Me.AdditionalValue.GetSplit(1)), CSng(Me.AdditionalValue.GetSplit(2).Replace(".", GameController.DecSeparator)), CSng(Me.AdditionalValue.GetSplit(3)))
+					Screen.Level.WarpData.WarpRotations = CInt(Me.AdditionalValue.GetSplit(4))
+					Screen.Level.WarpData.DoWarpInNextTick = True
+					Screen.Level.WarpData.CorrectCameraYaw = Screen.Camera.Yaw
+					Screen.Level.WarpData.IsWarpBlock = True
+					Logger.Debug("Lock Camera")
+					CType(Screen.Camera, OverworldCamera).YawLocked = True
+				Else
+					Screen.Level = New Level()
+					Screen.Level.Load(Me.AdditionalValue.GetSplit(0))
+					Screen.Level.World.Initialize(Screen.Level.EnvironmentType, Screen.Level.WeatherType)
 
-                    Screen.Camera.Position = New Vector3(CSng(Me.AdditionalValue.GetSplit(1)), CSng(Me.AdditionalValue.GetSplit(2).Replace(".", GameController.DecSeparator)), CSng(Me.AdditionalValue.GetSplit(3)))
-                End If
-            Else
-                CallError("Map file """ & GameModeManager.ActiveGameMode.MapPath & destination & """ does not exist.")
-            End If
-        End If
+					Screen.Camera.Position = New Vector3(CSng(Me.AdditionalValue.GetSplit(1)), CSng(Me.AdditionalValue.GetSplit(2).Replace(".", GameController.DecSeparator)), CSng(Me.AdditionalValue.GetSplit(3)))
+				End If
+			Else
+				CallError("Map file """ & GameModeManager.ActiveGameMode.MapPath & destination & """ does not exist.")
+			End If
+		End If
 
-        Return False
-    End Function
+		Return False
+	End Function
 
-    Public Shared Function IsValidLink(ByVal link As String) As Boolean
+	Public Shared Function IsValidLink(ByVal link As String) As Boolean
         If link <> "" Then
             If link.Contains(",") = True Then
                 Dim c As Integer = 0

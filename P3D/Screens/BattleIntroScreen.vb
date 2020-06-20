@@ -22,16 +22,16 @@
     Public MusicLoop As String = ""
 
     Public Sub New(ByVal OldScreen As Screen, ByVal NewScreen As Screen, ByVal IntroType As Integer)
-        Dim musicLoop As String = Screen.Level.CurrentRegion.Split(CChar(","))(0) & "_wild_startbattle"
+        Dim musicLoop As String = Screen.Level.CurrentRegion.Split(CChar(","))(0) & "_wild_intro"
 
         If BattleSystem.BattleScreen.RoamingBattle = True Then
             If BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop <> "" Then
-                musicLoop = BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop & "_startbattle"
+                musicLoop = BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop & "_intro"
             End If
         End If
 
         If MusicManager.SongExists(musicLoop) = False Then
-            musicLoop = "johto_wild_startbattle"
+            musicLoop = "johto_wild_intro"
         End If
         musicLoop = musicLoop
 
@@ -40,15 +40,15 @@
 
     Public Sub New(ByVal OldScreen As Screen, ByVal NewScreen As Screen, ByVal IntroType As Integer, ByVal MusicLoop As String)
         If MusicLoop = "" Then
-            MusicLoop = Screen.Level.CurrentRegion.Split(CChar(","))(0) & "_wild_startbattle"
+            MusicLoop = Screen.Level.CurrentRegion.Split(CChar(","))(0) & "_wild_intro"
             If MusicManager.SongExists(MusicLoop) = False Then
                 If BattleSystem.BattleScreen.RoamingBattle = True Then
                     If BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop <> "" Then
-                        MusicLoop = BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop & "_startbattle"
+                        MusicLoop = BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop & "_intro"
                     End If
                 End If
                 If MusicManager.SongExists(MusicLoop) = False Then
-                    MusicLoop = "johto_wild_startbattle"
+                    MusicLoop = "johto_wild_intro"
                 End If
             End If
             MusicLoop = MusicLoop
@@ -208,15 +208,15 @@
 
         If Trainer.DoubleTrainer = True Then
             Dim t As String = ReplaceIntroName(Trainer.TrainerType) & " " & ReplaceIntroName(Trainer.Name) & " & " & ReplaceIntroName(Trainer.TrainerType2) & " " & ReplaceIntroName(Trainer.Name2)
-            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(Core.windowSize.Width - FontManager.MainFontWhite.MeasureString(t).X - 50, CInt(Core.windowSize.Height / 2 + 20)), Color.White)
+			Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(Core.windowSize.Width - FontManager.MainFontWhite.MeasureString(t).X - 50, CInt(Core.windowSize.Height / 2 + 20)), Color.White)
 
-            Core.SpriteBatch.Draw(t3, New Rectangle(Core.windowSize.Width - 540, CInt(Core.windowSize.Height / 2 - 230), 256, 256), Color.White)
+			Core.SpriteBatch.Draw(t3, New Rectangle(Core.windowSize.Width - 540, CInt(Core.windowSize.Height / 2 - 230), 256, 256), Color.White)
             Core.SpriteBatch.Draw(t4, New Rectangle(Core.windowSize.Width - 280, CInt(Core.windowSize.Height / 2 - 230), 256, 256), Color.White)
         Else
             Dim t As String = ReplaceIntroName(Trainer.TrainerType) & " " & ReplaceIntroName(Trainer.Name)
-            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(Core.windowSize.Width - FontManager.MainFontWhite.MeasureString(t).X - 50, CInt(Core.windowSize.Height / 2 + 20)), Color.White)
+			Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(Core.windowSize.Width - FontManager.MainFontWhite.MeasureString(t).X - 50, CInt(Core.windowSize.Height / 2 + 20)), Color.White)
 
-            Core.SpriteBatch.Draw(t3, New Rectangle(Core.windowSize.Width - 310, CInt(Core.windowSize.Height / 2 - 230), 256, 256), Color.White)
+			Core.SpriteBatch.Draw(t3, New Rectangle(Core.windowSize.Width - 310, CInt(Core.windowSize.Height / 2 - 230), 256, 256), Color.White)
         End If
         Core.SpriteBatch.Draw(t2, New Rectangle(420 - CInt(CInt(1.29 * value) / 3), CInt(Core.windowSize.Height / 2 - 20) - CInt(CInt(1 * value) / 3), CInt(1.12 * CInt(value / 1.5F)), 1 * CInt(value / 1.5F)), Color.White)
     End Sub
@@ -272,12 +272,12 @@
         Canvas.DrawRectangle(New Rectangle(0, Core.windowSize.Height - blackPosition, Core.windowSize.Width, blackPosition), Color.Black)
 
         If textPosition > 0 Then
-            Dim tWidth As Integer = CInt(FontManager.MainFontWhite.MeasureString(Trainer.TrainerType).X * 3.0F)
-            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Trainer.TrainerType, New Vector2((textPosition - tWidth).Clamp(-tWidth, CInt(Core.windowSize.Width / 2 - tWidth / 2)), 50), Color.White, 0.0F, New Vector2(0), 3.0F, SpriteEffects.None, 0.0F)
-            If textPosition > 300 Then
-                tWidth = CInt(FontManager.MainFontWhite.MeasureString(Trainer.Name).X * 3.0F)
-                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Trainer.Name, New Vector2((Core.windowSize.Width - (textPosition - 300)).Clamp(CInt(Core.windowSize.Width / 2 - tWidth / 2), Core.windowSize.Width), Core.windowSize.Height - 180), Color.White, 0.0F, New Vector2(0), 3.0F, SpriteEffects.None, 0.0F)
-            End If
+			Dim tWidth As Integer = CInt(FontManager.MainFontWhite.MeasureString(Trainer.TrainerType).X * 3.0F)
+			Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Trainer.TrainerType, New Vector2((textPosition - tWidth).Clamp(-tWidth, CInt(Core.windowSize.Width / 2 - tWidth / 2)), 50), Color.White, 0.0F, New Vector2(0), 3.0F, SpriteEffects.None, 0.0F)
+			If textPosition > 300 Then
+				tWidth = CInt(FontManager.MainFontWhite.MeasureString(Trainer.Name).X * 3.0F)
+				Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Trainer.Name, New Vector2((Core.windowSize.Width - (textPosition - 300)).Clamp(CInt(Core.windowSize.Width / 2 - tWidth / 2), Core.windowSize.Width), Core.windowSize.Height - 180), Color.White, 0.0F, New Vector2(0), 3.0F, SpriteEffects.None, 0.0F)
+			End If
         End If
     End Sub
 
@@ -294,9 +294,8 @@
             If Me.minDelay = 0.0F And SongOver() Then
                 Core.SetScreen(Me.NewScreen)
                 If Me.NewScreen.GetType() Is GetType(BattleSystem.BattleScreen) Then
-                    MediaPlayer.IsRepeating = True
 
-                    Dim b As BattleSystem.BattleScreen = CType(Me.NewScreen, BattleSystem.BattleScreen)
+					Dim b As BattleSystem.BattleScreen = CType(Me.NewScreen, BattleSystem.BattleScreen)
 
                     If b.IsPVPBattle = True Then
                         b.InitializePVP(b.Trainer, b.OverworldScreen)
@@ -342,16 +341,16 @@
     End Sub
 
     Private Sub UpdateFaceshotIntro()
-        Me.barOffset += 14
-        Me.blackPosition = (Me.blackPosition + 6).Clamp(0, CInt(Core.windowSize.Height / 2 - 128))
-        If blackPosition >= CInt(Core.windowSize.Height / 2 - 128) Then
-            trainerPosition = (trainerPosition + 16).Clamp(0, 420)
-            If trainerPosition >= 420 Then
-                textPosition += CInt(Math.Ceiling(Core.windowSize.Width / 75))
-                If textPosition >= CInt(Core.windowSize.Width / 2 - CInt(FontManager.MainFontWhite.MeasureString(Trainer.Name).X) / 2) + 1200 Then
-                    Me.ready = True
-                End If
-            End If
+		Me.barOffset += 18
+		Me.blackPosition = (Me.blackPosition + 10).Clamp(0, CInt(Core.windowSize.Height / 2 - 128))
+		If blackPosition >= CInt(Core.windowSize.Height / 2 - 128) Then
+			trainerPosition = (trainerPosition + 20).Clamp(0, 420)
+			If trainerPosition >= 420 Then
+				textPosition += CInt(Math.Ceiling(Core.windowSize.Width / 50))
+				If textPosition >= CInt(Core.windowSize.Width / 2 - CInt(FontManager.MainFontWhite.MeasureString(Trainer.Name).X) / 2) + 1200 Then
+					Me.ready = True
+				End If
+			End If
         End If
     End Sub
 
@@ -505,25 +504,23 @@
         Player.Temp.BeforeBattlePosition = Screen.Camera.Position
         Player.Temp.BeforeBattleLevelFile = Screen.Level.LevelFile
         Player.Temp.BeforeBattleFacing = Screen.Camera.GetPlayerFacingDirection()
-        MusicManager.Play(MusicLoop, False, 0F)
-        MediaPlayer.IsRepeating = False
+		MusicManager.Play(MusicLoop, False, 0F, False)
 
-        If Not MusicManager.CurrentSong Is Nothing Then
-            Me.duration = MusicManager.CurrentSong.Song.Duration
-        Else
-            Me.duration = New TimeSpan(0)
-        End If
+		If Not MusicManager.CurrentSong Is Nothing Then
+			Me.duration = MusicManager.CurrentSong.Duration
+		Else
+			Me.duration = New TimeSpan(0)
+		End If
+		Me.startTime = Date.Now
+	End Sub
 
-        Me.startTime = Date.Now
-    End Sub
+	Private Function SongOver() As Boolean
+		Return startTime + duration < Date.Now.AddSeconds(0.1)
+	End Function
 
-    Private Function SongOver() As Boolean
-        Return startTime + duration < Date.Now.AddSeconds(1)
-    End Function
-
-    'Protected Overrides Sub Finalize()
-    '    If blurTexture IsNot Nothing
-    '        blurTexture.Dispose()
-    '    End If
-    'End Sub
+	'Protected Overrides Sub Finalize()
+	'    If blurTexture IsNot Nothing
+	'        blurTexture.Dispose()
+	'    End If
+	'End Sub
 End Class

@@ -2148,16 +2148,16 @@ Public Class Pokemon
     Public Function NumberSprite() As String
         If Me.AnimationName.Contains("_") Then
             Dim _form = Me.AnimationName.Remove(0, Me.Name.Length)
-            If GameModeManager.ContentFileExists("Pokemon\Sprites\" & Me.Number & _form) = False Then
-                Return Me.AnimationName
-            Else
-                Return CStr(Me.Number & _form)
+			If GameModeManager.ContentFileExists("Pokemon\Sprites\" & Me.Number & _form & ".png") = False Then
+				Return Me.AnimationName
+			Else
+				Return CStr(Me.Number & _form)
             End If
         Else
-            If GameModeManager.ContentFileExists("Pokemon\Sprites\" & Me.Number) = False Then
-                Return Me.AnimationName
-            Else
-                Return CStr(Me.Number)
+			If GameModeManager.ContentFileExists("Pokemon\Sprites\" & Me.Number & ".png") = False Then
+				Return Me.AnimationName
+			Else
+				Return CStr(Me.Number)
             End If
         End If
 
@@ -2427,14 +2427,14 @@ Public Class Pokemon
         If Textures(index) Is Nothing Then
             Select Case index
                 Case 0
-                    Textures(index) = P3D.TextureManager.GetTexture("Pokemon\Sprites\" & NumberSprite(), New Rectangle(0, 0, 128, 128), "")
-                Case 1
-                    Textures(index) = P3D.TextureManager.GetTexture("Pokemon\Sprites\" & NumberSprite(), New Rectangle(128, 0, 128, 128), "")
-                Case 2
-                    Textures(index) = P3D.TextureManager.GetTexture("Pokemon\Sprites\" & NumberSprite(), New Rectangle(0, 128, 128, 128), "")
-                Case 3
-                    Textures(index) = P3D.TextureManager.GetTexture("Pokemon\Sprites\" & NumberSprite(), New Rectangle(128, 128, 128, 128), "")
-                Case 4
+					Textures(index) = P3D.TextureManager.GetTexture("Pokemon\Sprites\" & NumberSprite(), New Rectangle(0, 0, 64, 64), "")
+				Case 1
+					Textures(index) = P3D.TextureManager.GetTexture("Pokemon\Sprites\" & NumberSprite(), New Rectangle(64, 0, 64, 64), "")
+				Case 2
+					Textures(index) = P3D.TextureManager.GetTexture("Pokemon\Sprites\" & NumberSprite(), New Rectangle(0, 64, 64, 64), "")
+				Case 3
+					Textures(index) = P3D.TextureManager.GetTexture("Pokemon\Sprites\" & NumberSprite(), New Rectangle(64, 64, 64, 64), "")
+				Case 4
                     Dim v As Vector2 = PokemonForms.GetMenuImagePosition(Me)
                     Dim s As Size = PokemonForms.GetMenuImageSize(Me)
 

@@ -42,10 +42,10 @@
             Me.Text = Text
             Me.ResultFunction = ResultFunction
             Me.TextColor = TextColor
-            If TextColor <> Color.White Then
-                TextFont = FontManager.GetFontContainer("mainfontwhite")
-            End If
-            showText(0) = ""
+			If Me.TextColor <> Color.White Then
+				TextFont = FontManager.GetFontContainer("mainfontwhite")
+			End If
+			showText(0) = ""
             showText(1) = ""
             through = False
             currentLine = 0
