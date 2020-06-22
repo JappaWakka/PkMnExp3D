@@ -591,46 +591,50 @@
             Dim dispGameMode As String = "Quartz"
 
             Dim Data() As String = IO.File.ReadAllText(Saves(loadMenuIndex(0)) & "\Player.dat").SplitAtNewline()
-            For Each Line As String In Data
-                If Line.Contains("|") = True Then
-                    Dim ID As String = Line.Remove(Line.IndexOf("|"))
-                    Dim Value As String = Line.Remove(0, Line.IndexOf("|") + 1)
-                    Select Case ID
-                        Case "Name"
-                            dispName = Value
-                        Case "Badges"
-                            Dim bCount As Integer = 0
-                            If Value = "0" Then
-                                bCount = 0
-                            Else
-                                If Value.Contains(",") = False Then
-                                    bCount = 1
-                                Else
-                                    Dim s() As String = Value.Split(CChar(","))
-                                    bCount = s.Length
-                                End If
-                            End If
-                            dispBadges = bCount.ToString()
-                        Case "PlayTime"
-                            Dim dd() As String = Value.Split(CChar(","))
+			For Each Line As String In Data
+				If Line.Contains("|") = True Then
+					Dim ID As String = Line.Remove(Line.IndexOf("|"))
+					Dim Value As String = Line.Remove(0, Line.IndexOf("|") + 1)
+					Select Case ID
+						Case "Name"
+							dispName = Value
+						Case "Badges"
+							Dim bCount As Integer = 0
+							If Value = "0" Then
+								bCount = 0
+							Else
+								If Value.Contains(",") = False Then
+									bCount = 1
+								Else
+									Dim s() As String = Value.Split(CChar(","))
+									bCount = s.Length
+								End If
+							End If
+							dispBadges = bCount.ToString()
+						Case "PlayTime"
+							Dim dd() As String = Value.Split(CChar(","))
 
-                            Dim tSpan As TimeSpan = Nothing
-                            If dd.Count = 3 Then
-                                tSpan = New TimeSpan(CInt(dd(0)), CInt(dd(1)), CInt(dd(2)))
-                            ElseIf dd.Count = 4 Then
-                                tSpan = New TimeSpan(CInt(dd(3)), CInt(dd(0)), CInt(dd(1)), CInt(dd(2)))
-                            End If
+							Dim tSpan As TimeSpan = Nothing
+							If dd.Count = 3 Then
+								tSpan = New TimeSpan(CInt(dd(0)), CInt(dd(1)), CInt(dd(2)))
+							ElseIf dd.Count = 4 Then
+								tSpan = New TimeSpan(CInt(dd(3)), CInt(dd(0)), CInt(dd(1)), CInt(dd(2)))
+							End If
 
-                            dispPlayTime = TimeHelpers.GetDisplayTime(tSpan, True)
-                        Case "location"
-                            dispLocation = Value
-                        Case "GameMode"
-                            dispGameMode = Value
-                    End Select
-                End If
-            Next
-
-            tempLoadDisplay = Localization.GetString("load_menu_name") & ": " & dispName & Environment.NewLine &
+							dispPlayTime = TimeHelpers.GetDisplayTime(tSpan, True)
+						Case "location"
+							dispLocation = Value
+						Case "GameMode"
+							dispGameMode = Value
+					End Select
+				End If
+			Next
+			If GameModeManager.ActiveGameMode.DirectoryName <> dispGameMode Then
+				GameModeManager.SetGameModePointer(dispGameMode)
+				ChangeLevel()
+				Localization.ReloadGameModeTokens()
+			End If
+			tempLoadDisplay = Localization.GetString("load_menu_name") & ": " & dispName & Environment.NewLine &
                 Localization.GetString("load_menu_gamemode") & ": " & dispGameMode & Environment.NewLine &
                 Localization.GetString("load_menu_badges") & ": " & dispBadges & Environment.NewLine &
                 Localization.GetString("load_menu_location") & ": " & Localization.GetString("Places_" & dispLocation) & Environment.NewLine &
@@ -1675,11 +1679,13 @@
             Dim dispVersion As String = GameMode.Version
             Dim dispAuthor As String = GameMode.Author
             Dim dispContentPath As String = GameMode.ContentPath
-            If dispName = "Pokémon Quartz 3D" Then
-                Logo = "GUI\Logos\PokemonQuartz3D"
-            Else
-                Logo = "GUI\Logos\P3D"
-            End If
+			If dispName = "Pokémon Quartz 3D" Then
+				Logo = "GUI\Logos\PokemonQuartz3D"
+			ElseIf File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "GUI\Logos\GameModeLogo.png") Then
+				Logo = "GUI\Logos\GameModeLogo"
+			Else
+				Logo = "GUI\Logos\P3D"
+			End If
 
             tempGameModesDisplay = Localization.GetString("gamemode_menu_name") & ": " & dispName & Environment.NewLine &
                 Localization.GetString("gamemode_menu_version") & ": " & dispVersion & Environment.NewLine &
@@ -1800,12 +1806,13 @@
     End Sub
 
     Private Sub AcceptGameMode()
-        GameModeManager.SetGameModePointer(ModeNames(gameModeMenuIndex(0)))
-        If GameModeManager.GetGameRuleValue("IntroType", "0") = "0" Then
-            SetScreen(New TransitionScreen(Me, New NewGameScreen(), Color.Black, False))
-        Else
-            SetScreen(New Screens.MainMenu.NewNewGameScreen(Me))
-        End If
+		GameModeManager.SetGameModePointer(ModeNames(gameModeMenuIndex(0)))
+		Localization.ReloadGameModeTokens()
+		If GameModeManager.ActiveGameMode.IntroType = "0" Then
+			SetScreen(New Screens.MainMenu.NewNewGameScreen(Me))
+		Else
+			SetScreen(New TransitionScreen(Me, New NewGameScreen(), Color.Black, False))
+		End If
     End Sub
 
 #End Region

@@ -269,8 +269,10 @@ Namespace ScriptVersion2
                 Case "overworldpokemon"
                     Return DoOverworldPokemon(subClass)
                 Case "player"
-                    Return DoPlayer(subClass)
-                Case "environment"
+					Return DoPlayer(subClass)
+				Case "token"
+					Return Localization.GetString(subClass)
+				Case "environment"
                     Return DoEnvironment(subClass)
                 Case "register"
                     Return DoRegister(subClass)

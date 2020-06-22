@@ -581,10 +581,9 @@ Public Class GameMode
         gameRules.Add(New GameRule("LockDifficulty", "0"))
         gameRules.Add(New GameRule("GameOverAt0Pokemon", "0"))
         gameRules.Add(New GameRule("CanGetAchievements", "1"))
-        gameRules.Add(New GameRule("ShowFollowPokemon", "1"))
-        gameRules.Add(New GameRule("IntroType", "0"))
+		gameRules.Add(New GameRule("ShowFollowPokemon", "1"))
 
-        gameMode.GameRules = gameRules
+		gameMode.GameRules = gameRules
 
         Return gameMode
     End Function
@@ -610,19 +609,19 @@ Public Class GameMode
             GameRuleString &= "(" & rule.RuleName & "|" & rule.RuleValue & ")"
         Next
 
-        s &= GameRuleString & Environment.NewLine &
-            "StartMap|" & Me._startMap & Environment.NewLine &
-            "StartPosition|" & Me._startPosition.X.ToString().Replace(GameController.DecSeparator, ".") & "," & Me._startPosition.Y.ToString().Replace(GameController.DecSeparator, ".") & "," & Me._startPosition.Z.ToString().Replace(GameController.DecSeparator, ".") & Environment.NewLine &
-            "StartRotation|" & Me._startRotation.ToString().Replace(GameController.DecSeparator, ".") & Environment.NewLine &
-            "StartScript|" & StartScript & Environment.NewLine &
-            "StartLocationName|" & Me._startLocationName & Environment.NewLine &
-            "StartDialogue|" & Me._startDialogue & Environment.NewLine &
-            "StartColor|" & Me._startColor.R & "," & Me._startColor.G & "," & Me._startColor.B & Environment.NewLine &
-            "PokemonAppear|" & Me._pokemonAppear & Environment.NewLine &
-            "IntroMusic|" & Me._introMusic & Environment.NewLine &
-            "IntroType|" & Me._pokemonAppear & Environment.NewLine
+		s &= GameRuleString & Environment.NewLine &
+			"StartMap|" & Me._startMap & Environment.NewLine &
+			"StartPosition|" & Me._startPosition.X.ToString().Replace(GameController.DecSeparator, ".") & "," & Me._startPosition.Y.ToString().Replace(GameController.DecSeparator, ".") & "," & Me._startPosition.Z.ToString().Replace(GameController.DecSeparator, ".") & Environment.NewLine &
+			"StartRotation|" & Me._startRotation.ToString().Replace(GameController.DecSeparator, ".") & Environment.NewLine &
+			"StartScript|" & StartScript & Environment.NewLine &
+			"StartLocationName|" & Me._startLocationName & Environment.NewLine &
+			"StartDialogue|" & Me._startDialogue & Environment.NewLine &
+			"StartColor|" & Me._startColor.R & "," & Me._startColor.G & "," & Me._startColor.B & Environment.NewLine &
+			"PokemonAppear|" & Me._pokemonAppear & Environment.NewLine &
+			"IntroMusic|" & Me._introMusic & Environment.NewLine &
+			"IntroType|" & Me._introType & Environment.NewLine
 
-        Dim SkinColorsString As String = "SkinColors|"
+		Dim SkinColorsString As String = "SkinColors|"
         Dim iSC As Integer = 0
         For Each SkinColor As Color In _skinColors
             If iSC > 0 Then

@@ -63,9 +63,12 @@
                             TokenContent = TokenLine.Substring(splitIdx + 1, TokenLine.Length - splitIdx - 1)
                         End If
 
-                        If LocalizationTokens.ContainsKey(TokenName) = False Then
-                            LocalizationTokens.Add(TokenName, New Token(TokenContent, LanguageSuffix, IsGameModeFile))
-                        End If
+						If LocalizationTokens.ContainsKey(TokenName) = False Then
+							LocalizationTokens.Add(TokenName, New Token(TokenContent, LanguageSuffix, IsGameModeFile))
+						Else
+							LocalizationTokens.Remove(TokenName)
+							LocalizationTokens.Add(TokenName, New Token(TokenContent, LanguageSuffix, IsGameModeFile))
+						End If
                     End If
                 Next
             End If
@@ -84,9 +87,12 @@
                                 TokenContent = TokenLine.Substring(splitIdx + 1, TokenLine.Length - splitIdx - 1)
                             End If
 
-                            If LocalizationTokens.ContainsKey(TokenName) = False Then
-                                LocalizationTokens.Add(TokenName, New Token(TokenContent, "en", IsGameModeFile))
-                            End If
+							If LocalizationTokens.ContainsKey(TokenName) = False Then
+								LocalizationTokens.Add(TokenName, New Token(TokenContent, "en", IsGameModeFile))
+							Else
+								LocalizationTokens.Remove(TokenName)
+								LocalizationTokens.Add(TokenName, New Token(TokenContent, "en", IsGameModeFile))
+							End If
                         End If
                     Next
                 End If

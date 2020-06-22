@@ -723,8 +723,8 @@ endsub:
             If Core.Random.Next(0, 250) = 0 Then
                 Dim pitch As Single = -(Core.Random.Next(8, 11) / 10.0F)
                 Debug.Print(pitch.ToString())
-                SoundManager.PlaySound("Battle\Attacks\hunderbolt", pitch, 0F, SoundManager.Volume, False)
-            End If
+				SoundManager.PlaySound("Battle\Attacks\Thunderbolt", pitch, 0F, SoundManager.Volume, False)
+			End If
         End If
 
         If LevelLoader.IsBusy = False Then
