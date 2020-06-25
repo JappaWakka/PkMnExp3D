@@ -11,115 +11,115 @@ Public Class GameModeManager
         GameModeList.Clear()
         GameModePointer = 0
 
-        CreateQuartzMode()
+		CreateDefaultMode()
 
-        For Each GameModeFolder As String In System.IO.Directory.GetDirectories(GameController.GamePath & "\GameModes\")
-            If System.IO.File.Exists(GameModeFolder & "\GameMode.dat") = True Then
-                AddGameMode(GameModeFolder)
-            End If
-        Next
+		For Each GameModeFolder As String In System.IO.Directory.GetDirectories(GameController.GamePath & "\GameModes\")
+			If System.IO.File.Exists(GameModeFolder & "\GameMode.dat") = True Then
+				AddGameMode(GameModeFolder)
+			End If
+		Next
 
-        SetGameModePointer("Quartz")
-        Initialized = True
-    End Sub
+		SetGameModePointer("PkMnExp3D")
+		Initialized = True
+	End Sub
 
-    Public Shared Function GetGameMode(ByVal GameModeDirectory As String) As GameMode
-        For Each GameMode As GameMode In GameModeList
-            If GameMode.DirectoryName = GameModeDirectory Then
-                Return GameMode
-            End If
-        Next
+	Public Shared Function GetGameMode(ByVal GameModeDirectory As String) As GameMode
+		For Each GameMode As GameMode In GameModeList
+			If GameMode.DirectoryName = GameModeDirectory Then
+				Return GameMode
+			End If
+		Next
 
-        Return Nothing
-    End Function
+		Return Nothing
+	End Function
 
-    ''' <summary>
-    ''' Creates the GameModes directory.
-    ''' </summary>
-    Public Shared Sub CreateGameModesFolder()
-        If System.IO.Directory.Exists(GameController.GamePath & "\GameModes") = False Then
-            System.IO.Directory.CreateDirectory(GameController.GamePath & "\GameModes")
-        End If
-    End Sub
+	''' <summary>
+	''' Creates the GameModes directory.
+	''' </summary>
+	Public Shared Sub CreateGameModesFolder()
+		If System.IO.Directory.Exists(GameController.GamePath & "\GameModes") = False Then
+			System.IO.Directory.CreateDirectory(GameController.GamePath & "\GameModes")
+		End If
+	End Sub
 
-    ''' <summary>
-    ''' Sets the GameModePointer to a new item.
-    ''' </summary>
-    ''' <param name="GameModeDirectoryName">The directory resembeling the new GameMode.</param>
-    Public Shared Sub SetGameModePointer(ByVal GameModeDirectoryName As String)
-        For i = 0 To GameModeList.Count - 1
-            Dim GameMode As GameMode = GameModeList(i)
-            If GameMode.DirectoryName = GameModeDirectoryName Then
-                GameModePointer = i
-                Logger.Debug("---Set pointer to """ & GameModeDirectoryName & """!---")
-                Exit Sub
-            End If
-        Next
-        Logger.Debug("Couldn't find the GameMode """ & GameModeDirectoryName & """!")
-    End Sub
+	''' <summary>
+	''' Sets the GameModePointer to a new item.
+	''' </summary>
+	''' <param name="GameModeDirectoryName">The directory resembeling the new GameMode.</param>
+	Public Shared Sub SetGameModePointer(ByVal GameModeDirectoryName As String)
+		For i = 0 To GameModeList.Count - 1
+			Dim GameMode As GameMode = GameModeList(i)
+			If GameMode.DirectoryName = GameModeDirectoryName Then
+				GameModePointer = i
+				Logger.Debug("---Set pointer to """ & GameModeDirectoryName & """!---")
+				Exit Sub
+			End If
+		Next
+		Logger.Debug("Couldn't find the GameMode """ & GameModeDirectoryName & """!")
+	End Sub
 
-    ''' <summary>
-    ''' Returns the amount of loaded GameModes.
-    ''' </summary>
-    Public Shared ReadOnly Property GameModeCount() As Integer
-        Get
-            Return GameModeList.Count
-        End Get
-    End Property
+	''' <summary>
+	''' Returns the amount of loaded GameModes.
+	''' </summary>
+	Public Shared ReadOnly Property GameModeCount() As Integer
+		Get
+			Return GameModeList.Count
+		End Get
+	End Property
 
-    Public Shared ReadOnly Property GetAllGameModes() As GameMode()
-        Get
-            Return GameModeList.ToArray()
-        End Get
-    End Property
+	Public Shared ReadOnly Property GetAllGameModes() As GameMode()
+		Get
+			Return GameModeList.ToArray()
+		End Get
+	End Property
 
-    ''' <summary>
-    ''' Checks if a GameMode exists.
-    ''' </summary>
-    Public Shared Function GameModeExists(ByVal GameModePath As String) As Boolean
-        For Each GameMode As GameMode In GameModeList
-            If GameMode.DirectoryName = GameModePath Then
-                Return True
-            End If
-        Next
+	''' <summary>
+	''' Checks if a GameMode exists.
+	''' </summary>
+	Public Shared Function GameModeExists(ByVal GameModePath As String) As Boolean
+		For Each GameMode As GameMode In GameModeList
+			If GameMode.DirectoryName = GameModePath Then
+				Return True
+			End If
+		Next
 
-        Return False
-    End Function
+		Return False
+	End Function
 
-    ''' <summary>
-    ''' Adds a GameMode to the list.
-    ''' </summary>
-    ''' <param name="Path">The path of the GameMode directory.</param>
-    Private Shared Sub AddGameMode(ByVal Path As String)
-        Dim newGameMode As New GameMode(Path & "\GameMode.dat")
-        If newGameMode.IsValid = True Then
-            GameModeList.Add(newGameMode)
-        End If
-    End Sub
+	''' <summary>
+	''' Adds a GameMode to the list.
+	''' </summary>
+	''' <param name="Path">The path of the GameMode directory.</param>
+	Private Shared Sub AddGameMode(ByVal Path As String)
+		Dim newGameMode As New GameMode(Path & "\GameMode.dat")
+		If newGameMode.IsValid = True Then
+			GameModeList.Add(newGameMode)
+		End If
+	End Sub
 
-    ''' <summary>
-    ''' Creates the default Quartz GameMode.
-    ''' </summary>
-    Public Shared Sub CreateQuartzMode()
-        Dim doCreateQuartzMode As Boolean = False
-        If System.IO.Directory.Exists(GameController.GamePath & "\GameModes\Quartz") = True Then
-            System.IO.Directory.Delete(GameController.GamePath & "\GameModes\Quartz", True)
-        End If
-        If System.IO.Directory.Exists(GameController.GamePath & "\GameModes\Quartz") = False Then
-            doCreateQuartzMode = True
-            System.IO.Directory.CreateDirectory(GameController.GamePath & "\GameModes\Quartz")
-        End If
-        If doCreateQuartzMode = False Then
-            If System.IO.File.Exists(GameController.GamePath & "\GameModes\Quartz\GameMode.dat") = False Then
-                doCreateQuartzMode = True
-            End If
-        End If
+	''' <summary>
+	''' Creates the default PkMnExp3D GameMode.
+	''' </summary>
+	Public Shared Sub CreateDefaultMode()
+		Dim doCreateDefaultMode As Boolean = False
+		If System.IO.Directory.Exists(GameController.GamePath & "\GameModes\PkMnExp3D") = True Then
+			System.IO.Directory.Delete(GameController.GamePath & "\GameModes\PkMnExp3D", True)
+		End If
+		If System.IO.Directory.Exists(GameController.GamePath & "\GameModes\PkMnExp3D") = False Then
+			doCreateDefaultMode = True
+			System.IO.Directory.CreateDirectory(GameController.GamePath & "\GameModes\PkMnExp3D")
+		End If
+		If doCreateDefaultMode = False Then
+			If System.IO.File.Exists(GameController.GamePath & "\GameModes\PkMnExp3D\GameMode.dat") = False Then
+				doCreateDefaultMode = True
+			End If
+		End If
 
-        If doCreateQuartzMode = True Then
-            Dim QuartzMode As GameMode = GameMode.GetQuartzGameMode()
-            QuartzMode.SaveToFile(GameController.GamePath & "\GameModes\Quartz\GameMode.dat")
-        End If
-    End Sub
+		If doCreateDefaultMode = True Then
+			Dim PkMnExp3DMode As GameMode = GameMode.GetPkMnExp3DGameMode()
+			PkMnExp3DMode.SaveToFile(GameController.GamePath & "\GameModes\PkMnExp3D\GameMode.dat")
+		End If
+	End Sub
 
 #Region "Shared GameModeFunctions"
 
@@ -308,306 +308,306 @@ Public Class GameMode
     Public ReadOnly Property IsValid() As Boolean
         Get
             If _loaded = True Then
-                If Me.Name.ToLower() = "pokémon quartz 3d" And Me.DirectoryName.ToLower() <> "quartz" Then
-                    Logger.Log(Logger.LogTypes.Message, "Unofficial GameMode with the name ""Pokémon Quartz 3D"" exists (in folder: """ & Me.DirectoryName & """)!")
-                    Return False
-                End If
-                'If _name <> "" And _description <> "" And _version <> "" And _author <> "" And _mapPath <> "" And _scriptPath <> "" And _pokeFilePath <> "" And
-                '    _pokemonDataPath <> "" And _startMap <> "" And _startLocationName <> "" And _pokemonAppear <> "" And _introMusic <> "" And _skinColors.Count > 0 And _skinFiles.Count > 0 And _skinNames.Count > 0 Then
-                '    Return True
-                'End If
-                Return True
-            End If
+				If Me.Name.ToLower() = "PkMnExp3D" And Me.DirectoryName.ToLower() <> "PkMnExp3D" Then
+					Logger.Log(Logger.LogTypes.Message, "Unofficial GameMode with the name ""PkMnExp3D"" exists (in folder: """ & Me.DirectoryName & """)!")
+					Return False
+				End If
+				'If _name <> "" And _description <> "" And _version <> "" And _author <> "" And _mapPath <> "" And _scriptPath <> "" And _pokeFilePath <> "" And
+				'    _pokemonDataPath <> "" And _startMap <> "" And _startLocationName <> "" And _pokemonAppear <> "" And _introMusic <> "" And _skinColors.Count > 0 And _skinFiles.Count > 0 And _skinNames.Count > 0 Then
+				'    Return True
+				'End If
+				Return True
+			End If
 
-            Return False
-        End Get
-    End Property
+			Return False
+		End Get
+	End Property
 
-    ''' <summary>
-    ''' The name of the directory this GameMode is placed in. Not the full path.
-    ''' </summary>
-    Public ReadOnly Property DirectoryName() As String
-        Get
-            If _usedFileName <> "" Then
-                Dim directory As String = _usedFileName.Remove(_usedFileName.LastIndexOf("\"))
-                directory = directory.Remove(0, directory.LastIndexOf("\") + 1)
-                Return directory
-            Else
-                Return ""
-            End If
-        End Get
-    End Property
+	''' <summary>
+	''' The name of the directory this GameMode is placed in. Not the full path.
+	''' </summary>
+	Public ReadOnly Property DirectoryName() As String
+		Get
+			If _usedFileName <> "" Then
+				Dim directory As String = _usedFileName.Remove(_usedFileName.LastIndexOf("\"))
+				directory = directory.Remove(0, directory.LastIndexOf("\") + 1)
+				Return directory
+			Else
+				Return ""
+			End If
+		End Get
+	End Property
 
-    ''' <summary>
-    ''' The name of the directory this GameMode is placed in.
-    ''' </summary>
-    Public ReadOnly Property Path() As String
-        Get
-            If _usedFileName <> "" Then
-                Dim directory As String = _usedFileName.Remove(_usedFileName.LastIndexOf("\") + 1)
-                Return directory
-            Else
-                Return ""
-            End If
-        End Get
-    End Property
+	''' <summary>
+	''' The name of the directory this GameMode is placed in.
+	''' </summary>
+	Public ReadOnly Property Path() As String
+		Get
+			If _usedFileName <> "" Then
+				Dim directory As String = _usedFileName.Remove(_usedFileName.LastIndexOf("\") + 1)
+				Return directory
+			Else
+				Return ""
+			End If
+		End Get
+	End Property
 
-    ''' <summary>
-    ''' Create a new GameMode.
-    ''' </summary>
-    ''' <param name="FileName">The file the gamemode should load from.</param>
-    Public Sub New(ByVal FileName As String)
-        Load(FileName)
-    End Sub
+	''' <summary>
+	''' Create a new GameMode.
+	''' </summary>
+	''' <param name="FileName">The file the gamemode should load from.</param>
+	Public Sub New(ByVal FileName As String)
+		Load(FileName)
+	End Sub
 
-    ''' <summary>
-    ''' Create a new GameMode.
-    ''' </summary>
-    ''' <param name="Name">The name of the new GameMode.</param>
-    ''' <param name="Description">The description of the new GameMode.</param>
-    ''' <param name="Version">The version of the new GameMode. Warning: This doesn't have to be a number!</param>
-    ''' <param name="Author">The author of the new GameMode.</param>
-    ''' <param name="MapPath">The MapPath used from the new GameMode to load maps from.</param>
-    ''' <param name="ScriptPath">The ScriptPath used from the new GameMode to load scripts from.</param>
-    ''' <param name="PokemonDataPath">The Pokemon-Datapath to load Pokemon data from.</param>
-    ''' <param name="ContentPath">The path to load images, sound and music from.</param>
-    ''' <param name="GameRules">The GameRules that apply to the new GameMode.</param>
-    ''' <param name="StartMap">The start map for the new GameMode.</param>
-    ''' <param name="StartPosition">The start position for the new GameMode.</param>
-    ''' <param name="StartRotation">The start rotation for the new GameMode.</param>
-    ''' <param name="StartLocationName">The start location name for the new GameMode.</param>
-    ''' <param name="PokemonAppear">The Pokémon that appear on the new game screen for the new GameMode.</param>
-    ''' <param name="IntroMusic">The intro music that plays on the new game screen for the new GameMode.</param>
-    ''' <param name="IntroType">The type of intro used when starting a new game for the GameMode (0 = Old Intro (2D), 1 = New Intro (3D)).</param>
-    ''' <param name="SkinColors">The skin colors for the new GameMode. Must be the same amount as SkinFiles and SkinNames.</param>
-    ''' <param name="SkinFiles">The skin files for the new GameMode. Must be the same amount as SkinColors and SkinNames.</param>
-    ''' <param name="SkinNames">The skin names for the new GameMode. Must be the same amount as SkinFiles and SkinColors.</param>
-    ''' <param name="SkinGenders">The skin names for the new GameMode. Must be the same amount as SkinFiles and SkinColors.</param>
-    Public Sub New(ByVal Name As String, ByVal Description As String, ByVal Version As String, ByVal Author As String, ByVal MapPath As String, ByVal ScriptPath As String, ByVal PokeFilePath As String, ByVal PokemonDataPath As String, ByVal ContentPath As String, ByVal LocalizationsPath As String, ByVal GameRules As List(Of GameRule),
-                   ByVal StartMap As String, ByVal StartPosition As Vector3, ByVal StartRotation As Single, ByVal StartLocationName As String, ByVal StartDialogue As String, ByVal StartColor As Color, ByVal PokemonAppear As String, ByVal IntroMusic As String, ByVal IntroType As String, ByVal SkinColors As List(Of Color), ByVal SkinFiles As List(Of String), ByVal SkinNames As List(Of String), ByVal SkinGenders As List(Of String))
-        Me._name = Name
-        Me._description = Description
-        Me._version = Version
-        Me._author = Author
-        Me._mapPath = MapPath
-        Me._scriptPath = ScriptPath
-        Me._pokeFilePath = PokeFilePath
-        Me._pokemonDataPath = PokemonDataPath
-        Me._contentPath = ContentPath
-        Me._localizationsPath = LocalizationsPath
-        Me._gameRules = GameRules
+	''' <summary>
+	''' Create a new GameMode.
+	''' </summary>
+	''' <param name="Name">The name of the new GameMode.</param>
+	''' <param name="Description">The description of the new GameMode.</param>
+	''' <param name="Version">The version of the new GameMode. Warning: This doesn't have to be a number!</param>
+	''' <param name="Author">The author of the new GameMode.</param>
+	''' <param name="MapPath">The MapPath used from the new GameMode to load maps from.</param>
+	''' <param name="ScriptPath">The ScriptPath used from the new GameMode to load scripts from.</param>
+	''' <param name="PokemonDataPath">The Pokemon-Datapath to load Pokemon data from.</param>
+	''' <param name="ContentPath">The path to load images, sound and music from.</param>
+	''' <param name="GameRules">The GameRules that apply to the new GameMode.</param>
+	''' <param name="StartMap">The start map for the new GameMode.</param>
+	''' <param name="StartPosition">The start position for the new GameMode.</param>
+	''' <param name="StartRotation">The start rotation for the new GameMode.</param>
+	''' <param name="StartLocationName">The start location name for the new GameMode.</param>
+	''' <param name="PokemonAppear">The Pokémon that appear on the new game screen for the new GameMode.</param>
+	''' <param name="IntroMusic">The intro music that plays on the new game screen for the new GameMode.</param>
+	''' <param name="IntroType">The type of intro used when starting a new game for the GameMode (0 = Old Intro (2D), 1 = New Intro (3D)).</param>
+	''' <param name="SkinColors">The skin colors for the new GameMode. Must be the same amount as SkinFiles and SkinNames.</param>
+	''' <param name="SkinFiles">The skin files for the new GameMode. Must be the same amount as SkinColors and SkinNames.</param>
+	''' <param name="SkinNames">The skin names for the new GameMode. Must be the same amount as SkinFiles and SkinColors.</param>
+	''' <param name="SkinGenders">The skin names for the new GameMode. Must be the same amount as SkinFiles and SkinColors.</param>
+	Public Sub New(ByVal Name As String, ByVal Description As String, ByVal Version As String, ByVal Author As String, ByVal MapPath As String, ByVal ScriptPath As String, ByVal PokeFilePath As String, ByVal PokemonDataPath As String, ByVal ContentPath As String, ByVal LocalizationsPath As String, ByVal GameRules As List(Of GameRule),
+				   ByVal StartMap As String, ByVal StartPosition As Vector3, ByVal StartRotation As Single, ByVal StartLocationName As String, ByVal StartDialogue As String, ByVal StartColor As Color, ByVal PokemonAppear As String, ByVal IntroMusic As String, ByVal IntroType As String, ByVal SkinColors As List(Of Color), ByVal SkinFiles As List(Of String), ByVal SkinNames As List(Of String), ByVal SkinGenders As List(Of String))
+		Me._name = Name
+		Me._description = Description
+		Me._version = Version
+		Me._author = Author
+		Me._mapPath = MapPath
+		Me._scriptPath = ScriptPath
+		Me._pokeFilePath = PokeFilePath
+		Me._pokemonDataPath = PokemonDataPath
+		Me._contentPath = ContentPath
+		Me._localizationsPath = LocalizationsPath
+		Me._gameRules = GameRules
 
-        Me._startMap = StartMap
-        Me._startPosition = StartPosition
-        Me._startRotation = StartRotation
-        Me._startLocationName = StartLocationName
-        Me._startDialogue = StartDialogue
-        Me._startColor = StartColor
-        Me._pokemonAppear = PokemonAppear
-        Me._introMusic = IntroMusic
-        Me._introType = IntroType
-        Me._skinColors = SkinColors
-        Me._skinFiles = SkinFiles
-        Me._skinNames = SkinNames
-        Me._skinGenders = SkinGenders
+		Me._startMap = StartMap
+		Me._startPosition = StartPosition
+		Me._startRotation = StartRotation
+		Me._startLocationName = StartLocationName
+		Me._startDialogue = StartDialogue
+		Me._startColor = StartColor
+		Me._pokemonAppear = PokemonAppear
+		Me._introMusic = IntroMusic
+		Me._introType = IntroType
+		Me._skinColors = SkinColors
+		Me._skinFiles = SkinFiles
+		Me._skinNames = SkinNames
+		Me._skinGenders = SkinGenders
 
-        Me._loaded = True
-    End Sub
+		Me._loaded = True
+	End Sub
 
-    ''' <summary>
-    ''' This loads the GameMode.
-    ''' </summary>
-    Private Sub Load(ByVal FileName As String)
-        If System.IO.File.Exists(FileName) = True Then
-            Dim Data() As String = System.IO.File.ReadAllLines(FileName)
+	''' <summary>
+	''' This loads the GameMode.
+	''' </summary>
+	Private Sub Load(ByVal FileName As String)
+		If System.IO.File.Exists(FileName) = True Then
+			Dim Data() As String = System.IO.File.ReadAllLines(FileName)
 
-            For Each line As String In Data
-                If line <> "" And line.CountSeperators("|") > 0 Then
-                    Dim Pointer As String = line.Remove(line.IndexOf("|"))
-                    Dim Value As String = line.Remove(0, line.IndexOf("|") + 1)
+			For Each line As String In Data
+				If line <> "" And line.CountSeperators("|") > 0 Then
+					Dim Pointer As String = line.Remove(line.IndexOf("|"))
+					Dim Value As String = line.Remove(0, line.IndexOf("|") + 1)
 
-                    Select Case Pointer.ToLower()
-                        Case "name"
-                            Me._name = Value
-                        Case "description"
-                            Me._description = Value
-                        Case "version"
-                            Me._version = Value
-                        Case "author"
-                            Me._author = Value
-                        Case "mappath"
-                            Me._mapPath = Value
-                        Case "scriptpath"
-                            Me._scriptPath = Value
-                        Case "pokefilepath"
-                            Me._pokeFilePath = Value
-                        Case "pokemondatapath"
-                            Me._pokemonDataPath = Value
-                        Case "contentpath"
-                            Me._contentPath = Value
-                        Case "localizationspath"
-                            Me._localizationsPath = Value
-                        Case "gamerules"
-                            If Value <> "" And Value.Contains("(") And Value.Contains(")") And Value.Contains("|") = True Then
-                                Dim rules() As String = Value.Split(CChar(")"))
-                                For Each rule As String In rules
-                                    If rule.StartsWith("(") = True Then
-                                        rule = rule.Remove(0, 1)
+					Select Case Pointer.ToLower()
+						Case "name"
+							Me._name = Value
+						Case "description"
+							Me._description = Value
+						Case "version"
+							Me._version = Value
+						Case "author"
+							Me._author = Value
+						Case "mappath"
+							Me._mapPath = Value
+						Case "scriptpath"
+							Me._scriptPath = Value
+						Case "pokefilepath"
+							Me._pokeFilePath = Value
+						Case "pokemondatapath"
+							Me._pokemonDataPath = Value
+						Case "contentpath"
+							Me._contentPath = Value
+						Case "localizationspath"
+							Me._localizationsPath = Value
+						Case "gamerules"
+							If Value <> "" And Value.Contains("(") And Value.Contains(")") And Value.Contains("|") = True Then
+								Dim rules() As String = Value.Split(CChar(")"))
+								For Each rule As String In rules
+									If rule.StartsWith("(") = True Then
+										rule = rule.Remove(0, 1)
 
-                                        _gameRules.Add(New GameRule(rule.GetSplit(0, "|"), rule.GetSplit(1, "|")))
-                                    End If
-                                Next
-                            End If
-                        Case "startmap"
-                            Me._startMap = Value
-                        Case "startposition"
-                            Dim PositionList() As String = Value.Split(CChar(","))
-                            If PositionList.Length >= 3 Then
-                                Me._startPosition = New Vector3(CSng(PositionList(0).Replace(".", GameController.DecSeparator)), CSng(PositionList(1).Replace(".", GameController.DecSeparator)), CSng(PositionList(2).Replace(".", GameController.DecSeparator)))
-                            Else
-                                Me._startPosition = Vector3.Zero
-                            End If
-                        Case "startrotation"
-                            Me._startRotation = CSng(Value.Replace(".", GameController.DecSeparator))
-                        Case "startscript"
-                            StartScript = Value
-                        Case "startlocationname"
-                            Me._startLocationName = Value
-                        Case "startdialogue"
-                            Me._startDialogue = Value
-                        Case "startcolor"
-                            If Value <> "" And Value.CountSplits(",") = 3 Then
-                                Dim c() As String = Value.Split(CChar(","))
-                                Me._startColor = New Color(CInt(c(0)), CInt(c(1)), CInt(c(2)))
-                            Else
-                                Me._startColor = New Color(59, 123, 165)
-                            End If
-                        Case "pokemonappear"
-                            Me._pokemonAppear = Value
+										_gameRules.Add(New GameRule(rule.GetSplit(0, "|"), rule.GetSplit(1, "|")))
+									End If
+								Next
+							End If
+						Case "startmap"
+							Me._startMap = Value
+						Case "startposition"
+							Dim PositionList() As String = Value.Split(CChar(","))
+							If PositionList.Length >= 3 Then
+								Me._startPosition = New Vector3(CSng(PositionList(0).Replace(".", GameController.DecSeparator)), CSng(PositionList(1).Replace(".", GameController.DecSeparator)), CSng(PositionList(2).Replace(".", GameController.DecSeparator)))
+							Else
+								Me._startPosition = Vector3.Zero
+							End If
+						Case "startrotation"
+							Me._startRotation = CSng(Value.Replace(".", GameController.DecSeparator))
+						Case "startscript"
+							StartScript = Value
+						Case "startlocationname"
+							Me._startLocationName = Value
+						Case "startdialogue"
+							Me._startDialogue = Value
+						Case "startcolor"
+							If Value <> "" And Value.CountSplits(",") = 3 Then
+								Dim c() As String = Value.Split(CChar(","))
+								Me._startColor = New Color(CInt(c(0)), CInt(c(1)), CInt(c(2)))
+							Else
+								Me._startColor = New Color(59, 123, 165)
+							End If
+						Case "pokemonappear"
+							Me._pokemonAppear = Value
 
-                            If CInt(Value) = 0 Then
+							If CInt(Value) = 0 Then
 								Me._pokemonRange = {1, 386}
 							Else
-                                If Value.Contains("-") = True Then
-                                    Dim v1 As Integer = CInt(Value.GetSplit(0, "-"))
-                                    Dim v2 As Integer = CInt(Value.GetSplit(1, "-")) + 1
+								If Value.Contains("-") = True Then
+									Dim v1 As Integer = CInt(Value.GetSplit(0, "-"))
+									Dim v2 As Integer = CInt(Value.GetSplit(1, "-")) + 1
 
-                                    Me._pokemonRange = {v1, v2}
-                                Else
-                                    Me._pokemonRange = {CInt(Value), CInt(Value) + 1}
-                                End If
-                            End If
-                        Case "intromusic"
-                            Me._introMusic = Value
-                        Case "introtype"
-                            Me._introType = Value
-                        Case "skincolors"
-                            Dim l As New List(Of Color)
-                            For Each color As String In Value.Split(CChar(","))
-                                Dim c As New Color(CInt(color.GetSplit(0, ";")), CInt(color.GetSplit(1, ";")), CInt(color.GetSplit(2, ";")))
-                                l.Add(c)
-                            Next
-                            If l.Count > 0 Then
-                                Me._skinColors = l
-                            End If
-                        Case "skinfiles"
-                            Dim l As New List(Of String)
-                            For Each skin As String In Value.Split(CChar(","))
-                                l.Add(skin)
-                            Next
-                            If l.Count > 0 Then
-                                Me._skinFiles = l
-                            End If
-                        Case "skinnames"
-                            Dim l As New List(Of String)
-                            For Each skin As String In Value.Split(CChar(","))
-                                l.Add(skin)
-                            Next
-                            If l.Count > 0 Then
-                                Me._skinNames = l
-                            End If
-                        Case "skingenders"
-                            Dim l As New List(Of String)
-                            For Each skin As String In Value.Split(CChar(","))
-                                l.Add(skin)
-                            Next
-                            If l.Count > 0 Then
-                                Me._skinGenders = l
-                            End If
-                    End Select
-                End If
-            Next
+									Me._pokemonRange = {v1, v2}
+								Else
+									Me._pokemonRange = {CInt(Value), CInt(Value) + 1}
+								End If
+							End If
+						Case "intromusic"
+							Me._introMusic = Value
+						Case "introtype"
+							Me._introType = Value
+						Case "skincolors"
+							Dim l As New List(Of Color)
+							For Each color As String In Value.Split(CChar(","))
+								Dim c As New Color(CInt(color.GetSplit(0, ";")), CInt(color.GetSplit(1, ";")), CInt(color.GetSplit(2, ";")))
+								l.Add(c)
+							Next
+							If l.Count > 0 Then
+								Me._skinColors = l
+							End If
+						Case "skinfiles"
+							Dim l As New List(Of String)
+							For Each skin As String In Value.Split(CChar(","))
+								l.Add(skin)
+							Next
+							If l.Count > 0 Then
+								Me._skinFiles = l
+							End If
+						Case "skinnames"
+							Dim l As New List(Of String)
+							For Each skin As String In Value.Split(CChar(","))
+								l.Add(skin)
+							Next
+							If l.Count > 0 Then
+								Me._skinNames = l
+							End If
+						Case "skingenders"
+							Dim l As New List(Of String)
+							For Each skin As String In Value.Split(CChar(","))
+								l.Add(skin)
+							Next
+							If l.Count > 0 Then
+								Me._skinGenders = l
+							End If
+					End Select
+				End If
+			Next
 
-            _loaded = True
+			_loaded = True
 
-            Me._usedFileName = FileName
-        End If
-    End Sub
+			Me._usedFileName = FileName
+		End If
+	End Sub
 
-    ''' <summary>
-    ''' Reload the GameMode from an already used file.
-    ''' </summary>
-    Public Sub Reload()
-        Load(Me._usedFileName)
-    End Sub
+	''' <summary>
+	''' Reload the GameMode from an already used file.
+	''' </summary>
+	Public Sub Reload()
+		Load(Me._usedFileName)
+	End Sub
 
-    ''' <summary>
-    ''' Reload the GameMode.
-    ''' </summary>
-    ''' <param name="FileName">Use this file to reload the GameMode from.</param>
-    Public Sub Reload(ByVal FileName As String)
-        Load(FileName)
-    End Sub
+	''' <summary>
+	''' Reload the GameMode.
+	''' </summary>
+	''' <param name="FileName">Use this file to reload the GameMode from.</param>
+	Public Sub Reload(ByVal FileName As String)
+		Load(FileName)
+	End Sub
 
-    ''' <summary>
-    ''' Returns the default Quartz Game Mode.
-    ''' </summary>
-    Public Shared Function GetQuartzGameMode() As GameMode
-        Dim SkinColors As List(Of Color) = {New Color(248, 176, 32), New Color(248, 216, 88), New Color(56, 88, 200), New Color(216, 96, 112), New Color(56, 88, 152), New Color(239, 90, 156)}.ToList()
-        Dim SkinFiles As List(Of String) = {"J_Akira", "Rande", "Ethan_GBA", "Lyra_GBA"}.ToList()
-        Dim SkinNames As List(Of String) = {"J. Akira", "Rande", "Ethan (GBA)", "Lyra (GBA)"}.ToList()
-        Dim SkinGenders As List(Of String) = {"Male", "Female", "Male", "Female"}.ToList()
+	''' <summary>
+	''' Returns the default PkMnExp3D Game Mode.
+	''' </summary>
+	Public Shared Function GetPkMnExp3DGameMode() As GameMode
+		Dim SkinColors As List(Of Color) = {New Color(248, 176, 32), New Color(248, 216, 88), New Color(56, 88, 200), New Color(216, 96, 112), New Color(56, 88, 152), New Color(239, 90, 156)}.ToList()
+		Dim SkinFiles As List(Of String) = {"Ethan", "Rande", "Ethan_GBA", "Lyra_GBA"}.ToList()
+		Dim SkinNames As List(Of String) = {"J. Akira", "Rande", "Ethan (GBA)", "Lyra (GBA)"}.ToList()
+		Dim SkinGenders As List(Of String) = {"Male", "Female", "Male", "Female"}.ToList()
 
-		Dim gameMode As New GameMode("Pokémon Quartz 3D", "Remake project of the infamous~romhack Pokémon Quartz by TehBaro in Pokémon 3D.", GameController.GAMEVERSION, "JappaWakka", "\Content\Data\Maps\", "\Content\Data\Scripts\", "\Content\Data\System\WildEncounters\", "\Content\Pokemon\Data\", "\Content\", "\Content\Localization\", New List(Of GameRule),
-									 "Corna\Cities\BreezeTown\Main.dat", New Vector3(9.0F, 0.1F, 10.0F), MathHelper.PiOver2, "Breeze Town", "", New Color(59, 123, 165), "309", "welcome", "0", SkinColors, SkinFiles, SkinNames, SkinGenders)
+		Dim gameMode As New GameMode("Pokémon Exp3D", "The default GameMode based~on the GBC Pokémon games.", GameController.GAMEVERSION, "Pokémon Exp3D Team", "\Content\Data\Maps\", "\Content\Data\Scripts\", "\Content\Data\System\WildEncounters\", "\Content\Pokemon\Data\", "\Content\", "\Content\Localization\", New List(Of GameRule),
+									 "NewGameIntro.dat", New Vector3(1.0F, 0.1F, 3.0F), MathHelper.PiOver2, "Your Room", "", New Color(59, 123, 165), "0", "welcome", "0", SkinColors, SkinFiles, SkinNames, SkinGenders)
 
 		Dim gameRules As New List(Of GameRule)
-        gameRules.Add(New GameRule("MaxLevel", "100"))
-        gameRules.Add(New GameRule("OnlyCaptureFirst", "0"))
-        gameRules.Add(New GameRule("ForceRename", "0"))
-        gameRules.Add(New GameRule("DeathInsteadOfFaint", "0"))
-        gameRules.Add(New GameRule("CanUseHealItems", "1"))
-        gameRules.Add(New GameRule("Difficulty", "0"))
-        gameRules.Add(New GameRule("LockDifficulty", "0"))
-        gameRules.Add(New GameRule("GameOverAt0Pokemon", "0"))
-        gameRules.Add(New GameRule("CanGetAchievements", "1"))
+		gameRules.Add(New GameRule("MaxLevel", "100"))
+		gameRules.Add(New GameRule("OnlyCaptureFirst", "0"))
+		gameRules.Add(New GameRule("ForceRename", "0"))
+		gameRules.Add(New GameRule("DeathInsteadOfFaint", "0"))
+		gameRules.Add(New GameRule("CanUseHealItems", "1"))
+		gameRules.Add(New GameRule("Difficulty", "0"))
+		gameRules.Add(New GameRule("LockDifficulty", "0"))
+		gameRules.Add(New GameRule("GameOverAt0Pokemon", "0"))
+		gameRules.Add(New GameRule("CanGetAchievements", "1"))
 		gameRules.Add(New GameRule("ShowFollowPokemon", "1"))
 
 		gameMode.GameRules = gameRules
 
-        Return gameMode
-    End Function
+		Return gameMode
+	End Function
 
-    ''' <summary>
-    ''' Export this GameMode to a file.
-    ''' </summary>
-    ''' <param name="File">The file this GameMode should get exported to.</param>
-    Public Sub SaveToFile(ByVal File As String)
-        Dim s As String = "Name|" & Me._name & Environment.NewLine &
-            "Description|" & Me._description & Environment.NewLine &
-            "Version|" & Me._version & Environment.NewLine &
-            "Author|" & Me._author & Environment.NewLine &
-            "MapPath|" & Me._mapPath & Environment.NewLine &
-            "ScriptPath|" & Me._scriptPath & Environment.NewLine &
-            "PokeFilePath|" & Me._pokeFilePath & Environment.NewLine &
-            "PokemonDataPath|" & Me._pokemonDataPath & Environment.NewLine &
-            "ContentPath|" & Me._contentPath & Environment.NewLine &
-            "LocalizationsPath|" & Me._localizationsPath & Environment.NewLine
+	''' <summary>
+	''' Export this GameMode to a file.
+	''' </summary>
+	''' <param name="File">The file this GameMode should get exported to.</param>
+	Public Sub SaveToFile(ByVal File As String)
+		Dim s As String = "Name|" & Me._name & Environment.NewLine &
+			"Description|" & Me._description & Environment.NewLine &
+			"Version|" & Me._version & Environment.NewLine &
+			"Author|" & Me._author & Environment.NewLine &
+			"MapPath|" & Me._mapPath & Environment.NewLine &
+			"ScriptPath|" & Me._scriptPath & Environment.NewLine &
+			"PokeFilePath|" & Me._pokeFilePath & Environment.NewLine &
+			"PokemonDataPath|" & Me._pokemonDataPath & Environment.NewLine &
+			"ContentPath|" & Me._contentPath & Environment.NewLine &
+			"LocalizationsPath|" & Me._localizationsPath & Environment.NewLine
 
-        Dim GameRuleString As String = "Gamerules|"
-        For Each rule As GameRule In Me._gameRules
-            GameRuleString &= "(" & rule.RuleName & "|" & rule.RuleValue & ")"
-        Next
+		Dim GameRuleString As String = "Gamerules|"
+		For Each rule As GameRule In Me._gameRules
+			GameRuleString &= "(" & rule.RuleName & "|" & rule.RuleValue & ")"
+		Next
 
 		s &= GameRuleString & Environment.NewLine &
 			"StartMap|" & Me._startMap & Environment.NewLine &
@@ -622,73 +622,73 @@ Public Class GameMode
 			"IntroType|" & Me._introType & Environment.NewLine
 
 		Dim SkinColorsString As String = "SkinColors|"
-        Dim iSC As Integer = 0
-        For Each SkinColor As Color In _skinColors
-            If iSC > 0 Then
-                SkinColorsString &= ","
-            End If
+		Dim iSC As Integer = 0
+		For Each SkinColor As Color In _skinColors
+			If iSC > 0 Then
+				SkinColorsString &= ","
+			End If
 
-            SkinColorsString &= SkinColor.R & ";" & SkinColor.G & ";" & SkinColor.B
+			SkinColorsString &= SkinColor.R & ";" & SkinColor.G & ";" & SkinColor.B
 
-            iSC += 1
-        Next
+			iSC += 1
+		Next
 
-        s &= SkinColorsString & Environment.NewLine
+		s &= SkinColorsString & Environment.NewLine
 
-        Dim SkinFilesString As String = "SkinFiles|"
-        Dim iSF As Integer = 0
-        For Each SkinFile As String In Me._skinFiles
-            If iSF > 0 Then
-                SkinFilesString &= ","
-            End If
+		Dim SkinFilesString As String = "SkinFiles|"
+		Dim iSF As Integer = 0
+		For Each SkinFile As String In Me._skinFiles
+			If iSF > 0 Then
+				SkinFilesString &= ","
+			End If
 
-            SkinFilesString &= SkinFile
+			SkinFilesString &= SkinFile
 
-            iSF += 1
-        Next
+			iSF += 1
+		Next
 
-        s &= SkinFilesString & Environment.NewLine
+		s &= SkinFilesString & Environment.NewLine
 
-        Dim SkinNamesString As String = "SkinNames|"
-        Dim iSN As Integer = 0
-        For Each SkinName As String In Me._skinNames
-            If iSN > 0 Then
-                SkinNamesString &= ","
-            End If
+		Dim SkinNamesString As String = "SkinNames|"
+		Dim iSN As Integer = 0
+		For Each SkinName As String In Me._skinNames
+			If iSN > 0 Then
+				SkinNamesString &= ","
+			End If
 
-            SkinNamesString &= SkinName
+			SkinNamesString &= SkinName
 
-            iSN += 1
-        Next
+			iSN += 1
+		Next
 
-        s &= SkinNamesString & Environment.NewLine
+		s &= SkinNamesString & Environment.NewLine
 
-        Dim SkinGendersString As String = "SkinGenders|"
-        Dim iSG As Integer = 0
-        For Each SkinGender As String In Me._skinGenders
-            If iSG > 0 Then
-                SkinGendersString &= ","
-            End If
+		Dim SkinGendersString As String = "SkinGenders|"
+		Dim iSG As Integer = 0
+		For Each SkinGender As String In Me._skinGenders
+			If iSG > 0 Then
+				SkinGendersString &= ","
+			End If
 
-            SkinGendersString &= SkinGender
+			SkinGendersString &= SkinGender
 
 			iSG += 1
 		Next
 
-        s &= SkinGendersString
+		s &= SkinGendersString
 
-        Dim folder As String = System.IO.Path.GetDirectoryName(File)
-        If System.IO.Directory.Exists(folder) = False Then
-            System.IO.Directory.CreateDirectory(folder)
-        End If
+		Dim folder As String = System.IO.Path.GetDirectoryName(File)
+		If System.IO.Directory.Exists(folder) = False Then
+			System.IO.Directory.CreateDirectory(folder)
+		End If
 
-        System.IO.File.WriteAllText(File, s)
-    End Sub
+		System.IO.File.WriteAllText(File, s)
+	End Sub
 
-    Public ReadOnly Property IsDefaultGamemode() As Boolean
-        Get
-            Return (Me.Name = "Pokémon Quartz 3D")
-        End Get
+	Public ReadOnly Property IsDefaultGamemode() As Boolean
+		Get
+			Return (Me.Name = "PkMnExp3D")
+		End Get
     End Property
 
 #Region "Paths"

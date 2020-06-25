@@ -386,8 +386,8 @@
     Private _repelSteps As Integer = 0
     Private _saveCreated As String = "Pre 0.21"
     Private _daycareSteps As Integer = 0
-    Private _gameMode As String = "Quartz"
-    Private _skin As String = ""
+	Private _gameMode As String = "PkMnExp3D"
+	Private _skin As String = ""
     Private _visitedMaps As String = ""
     Private _GTSStars As Integer = 8
     Private _sandBoxMode As Boolean = False
@@ -494,9 +494,9 @@
         Next
 
         GameModeManager.CreateGameModesFolder()
-        GameModeManager.CreateQuartzMode()
+		GameModeManager.CreateDefaultMode()
 
-        ScriptStorage.Clear()
+		ScriptStorage.Clear()
         ScriptBlock.TriggeredScriptBlock = False
         MysteryEventScreen.ClearActivatedEvents()
         Pokedex.AutoDetect = True
@@ -506,18 +506,17 @@
 
         Me.filePrefix = filePrefix
         PokeFiles.Clear()
-        GameMode = "Quartz"
+		GameMode = "PkMnExp3D"
 
-        LoadPlayer()
+		LoadPlayer()
 
-        If GameModeManager.GameModeExists(GameMode) = False Then
-            GameMode = "Quartz"
-            GameModeManager.SetGameModePointer("Quartz")
-        Else
-            GameModeManager.SetGameModePointer(GameMode)
-        End If
+		If GameModeManager.GameModeExists(GameMode) = False Then
+			GameMode = "PkMnExp3D"
+		End If
 
-        BattleSystem.GameModeAttackLoader.Load()
+		GameModeManager.SetGameModePointer(GameMode)
+
+		BattleSystem.GameModeAttackLoader.Load()
 
         If IsGameJoltSave = True Then
             SandBoxMode = False
@@ -2076,29 +2075,29 @@
             SaveCreated = "Pre 0.21"
             LastPokemonPosition = New Vector3(999)
             DaycareSteps = 0
-            GameMode = "Quartz"
-            VisitedMaps = ""
-            TempSurfSkin = "J_Akira"
-            TempFishSkin = "J_Akira"
-            TempBikeSkin = "J_Akira"
-            TempRideSkin = "J_Akira"
-            GTSStars = 8
-            SandBoxMode = False
-            Statistics = ""
-            startPosition = New Vector3(14, 0.1, 10)
-            startRotation = 0
-            startFreeCameraMode = False
-            startMap = "Corna\Cities\BreezeTown\Main.dat"
-            startFOV = 45.0F
-            startRotationSpeed = 12
-            startThirdPerson = False
-            startSurfing = False
-            startBiking = False
-            startRiding = False
-            Skin = "J_Akira"
+			GameMode = "PkMnExp3D"
+			VisitedMaps = ""
+			TempSurfSkin = "Ethan"
+			TempFishSkin = "Ethan"
+			TempBikeSkin = "Ethan"
+			TempRideSkin = "Ethan"
+			GTSStars = 8
+			SandBoxMode = False
+			Statistics = ""
+			startPosition = New Vector3(14, 0.1, 10)
+			startRotation = 0
+			startFreeCameraMode = False
+			startMap = "Corna\Cities\BreezeTown\Main.dat"
+			startFOV = 45.0F
+			startRotationSpeed = 12
+			startThirdPerson = False
+			startSurfing = False
+			startBiking = False
+			startRiding = False
+			Skin = "Ethan"
 
-            'Clear temp save data:
-            RegisterData = ""
+			'Clear temp save data:
+			RegisterData = ""
             BerryData = ""
             PokedexData = ""
             ItemData = ""

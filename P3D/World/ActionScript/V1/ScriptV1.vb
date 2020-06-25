@@ -741,45 +741,32 @@
             Case Me.Value.ToLower() = "renamerival"
                 Dim RivalTexture As String
                 Dim RivalName As String
-                If GameModeManager.ActiveGameMode.DirectoryName = "Quartz" Then
-                    If Core.Player.Gender = "Male" Then
-                        RivalTexture = "OverworldSprites\PlayerSkins\Rande"
-                        RivalName = "Rande"
-                    ElseIf Core.Player.Gender = "Female" Then
-                        RivalTexture = "OverworldSprites\PlayerSkins\J_Akira"
-                        RivalName = "J. Akira"
-                    Else
-                        RivalTexture = "OverworldSprites\PlayerSkins\Rande"
-                        RivalName = "Rande"
-                    End If
-                Else
-                    If Core.Player.Gender = "Male" Then
-                        If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Textures\OverworldSprites\Rival_Female.png") Then
-                            RivalTexture = "OverworldSprites\Rival_Female"
-                            RivalName = "Rival"
-                        Else
-                            RivalTexture = "OverworldSprites\Rival"
-                            RivalName = "Rival"
-                        End If
-                    ElseIf Core.Player.Gender = "Female" Then
-                        If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Textures\OverworldSprites\Rival_Male.png") Then
-                            RivalTexture = "OverworldSprites\Rival_Male"
-                            RivalName = "Rival"
-                        Else
-                            RivalTexture = "OverworldSprites\Rival"
-                            RivalName = "Rival"
-                        End If
-                    Else
-                        If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Textures\OverworldSprites\Rival_Other.png") Then
-                            RivalTexture = "OverworldSprites\Rival_Other"
-                            RivalName = "Rival"
-                        Else
-                            RivalTexture = "OverworldSprites\Rival"
-                            RivalName = "Rival"
-                        End If
-                    End If
-                End If
-                Core.SetScreen(New NameObjectScreen(Core.CurrentScreen, TextureManager.GetTexture(RivalTexture, New Rectangle(0, 64, 32, 32)), False, False, "rival", RivalName, AddressOf Script.NameRival))
+				If Core.Player.Gender = "Male" Then
+					If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Textures\OverworldSprites\Rival_Female.png") Then
+						RivalTexture = "OverworldSprites\Rival_Female"
+						RivalName = "Rival"
+					Else
+						RivalTexture = "OverworldSprites\Rival"
+						RivalName = "Rival"
+					End If
+				ElseIf Core.Player.Gender = "Female" Then
+					If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Textures\OverworldSprites\Rival_Male.png") Then
+						RivalTexture = "OverworldSprites\Rival_Male"
+						RivalName = "Rival"
+					Else
+						RivalTexture = "OverworldSprites\Rival"
+						RivalName = "Rival"
+					End If
+				Else
+					If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Textures\OverworldSprites\Rival_Other.png") Then
+						RivalTexture = "OverworldSprites\Rival_Other"
+						RivalName = "Rival"
+					Else
+						RivalTexture = "OverworldSprites\Rival"
+						RivalName = "Rival"
+					End If
+				End If
+				Core.SetScreen(New NameObjectScreen(Core.CurrentScreen, TextureManager.GetTexture(RivalTexture, New Rectangle(0, 64, 32, 32)), False, False, "rival", RivalName, AddressOf Script.NameRival))
             Case Me.Value.ToLower().StartsWith("playcry(")
                 Me.Value = Me.Value.Remove(0, Me.Value.IndexOf("(") + 1)
                 Me.Value = Me.Value.Remove(Me.Value.Length - 1, 1)

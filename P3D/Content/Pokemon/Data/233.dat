@@ -53,3 +53,4 @@ Move|56,277
 Move|62,192
 Move|67,63
 TradeValue|90
+EvolutionCondition|474,holditem,185,trade

@@ -986,10 +986,10 @@
             Screen.Level.RideType = 0
         End If
 
-        If TagExists(Tags, "EnviromentType") = True Then
-            Screen.Level.EnvironmentType = CInt(GetTag(Tags, "EnviromentType"))
-        Else
-            Screen.Level.EnvironmentType = 0
+		If TagExists(Tags, "EnvironmentType") = True Then
+			Screen.Level.EnvironmentType = CInt(GetTag(Tags, "EnvironmentType"))
+		Else
+			Screen.Level.EnvironmentType = 0
         End If
 
         If TagExists(Tags, "Weather") = True Then

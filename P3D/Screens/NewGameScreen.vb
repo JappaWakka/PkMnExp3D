@@ -2,7 +2,7 @@
 
     Inherits Screen
 
-    Dim skinFiles() As String = {"J_Akira", "Rande", "Ethan_GBA", "Lyra_GBA"}
+    Dim skinFiles() As String = {"Ethan", "Rande", "Ethan_GBA", "Lyra_GBA"}
     Dim skinNames() As String = {"J. Akira", "Rande", "Ethan (GBA)", "Lyra (GBA)"}
     Dim skinGenders() As String = {"Male", "Female", "Male", "Female"}
     Dim backColors() As Color = {New Color(248, 176, 32), New Color(248, 216, 88), New Color(56, 88, 200), New Color(216, 96, 112)}

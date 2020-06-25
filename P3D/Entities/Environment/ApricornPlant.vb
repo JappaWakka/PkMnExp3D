@@ -26,8 +26,8 @@
     End Sub
 
     Private Sub ChangeTexture()
-        Dim _texture As Texture2D = TextureManager.GetTexture("TextureSheets\Apricorn")
-        Dim xOffset As Integer = 2
+		Dim _texture As Texture2D = TextureManager.GetTexture("Textures\TextureSheets\Apricorn")
+		Dim xOffset As Integer = 2
         Dim yOffset As Integer = 2
         Dim width As Integer = 16
         Dim height As Integer = 32

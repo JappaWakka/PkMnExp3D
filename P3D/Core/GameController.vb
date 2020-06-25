@@ -9,36 +9,36 @@ Public Class GameController
     Inherits Microsoft.Xna.Framework.Game
     Implements IGame
 
-    ''' <summary>
-    ''' The current version of the game.
-    ''' </summary>
-    Public Const GAMEVERSION As String = "0.1.4"
+	''' <summary>
+	''' The current version of the game.
+	''' </summary>
+	Public Const GAMEVERSION As String = "0.1.5"
 
-    ''' <summary>
-    ''' The number of released iterations of the game.
-    ''' </summary>
-    Public Const RELEASEVERSION As String = "4"
+	''' <summary>
+	''' The number of released iterations of the game.
+	''' </summary>
+	Public Const RELEASEVERSION As String = "5"
 
-    ''' <summary>
-    ''' The development stage the game is in.
-    ''' </summary>
-    Public Const GAMEDEVELOPMENTSTAGE As String = "Quartz"
+	''' <summary>
+	''' The development stage the game is in.
+	''' </summary>
+	Public Const GAMEDEVELOPMENTSTAGE As String = "Expanded"
 
-    ''' <summary>
-    ''' The name of the game.
-    ''' </summary>
-    Public Const GAMENAME As String = "Pokémon Quartz 3D"
+	''' <summary>
+	''' The name of the game.
+	''' </summary>
+	Public Const GAMENAME As String = "Pokémon Exp3D"
 
-    ''' <summary>
-    ''' The name of the developer that appears on the title screen.
-    ''' </summary>
-    Public Const DEVELOPER_NAME As String = "P3D Team & JappaWakka"
+	''' <summary>
+	''' The name of the developer that appears on the title screen.
+	''' </summary>
+	Public Const DEVELOPER_NAME As String = "P3D Team & Pokémon Exp3D Team"
 
-    ''' <summary>
-    ''' If the Debug Mode is active.
-    ''' </summary>
+	''' <summary>
+	''' If the Debug Mode is active.
+	''' </summary>
 #If DEBUG Or DEBUGNOCONTENT Then
-    Public Const IS_DEBUG_ACTIVE As Boolean = True
+	Public Const IS_DEBUG_ACTIVE As Boolean = True
 #Else
     Public Const IS_DEBUG_ACTIVE As Boolean = False
 #End If

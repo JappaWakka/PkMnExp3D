@@ -43,17 +43,17 @@ inventory_menu_items,Objet
 inventory_menu_description,Description
 ---
 NewGameScreen:
-new_game_intro_1,Bonjour!~Désolé de l'attente!*Bienvenu dans le monde~des POkéMON!*Mon nom est CHEN.~Mais on m'appelle le~PROF.POKéMON*Ce monde est peuplé de créature appelées POKéMON.
-new_game_intro_2*Humains et POKéMON vivent~en parfaite harmonie....~Certain jouent avec les~Pokémon,~d'autre font des combats~avec eux.*Mais il reste encore~beaucoup à apprendre sur~nos amis les POkéMON.~De nombreux mystères planent~à leur sujet.*Et c'est pourquoi j'étudie~les POKéMON tous les jours.*Heu....c'est quoi ton nom déjà?
-new_game_intro_3,~ta quête est sur le point~de commencer?*Joies et périls paveront ta route....~Un monde de rêve, de danger et de POKéMON~t'attend!En avant!*A plus tard!
-new_game_intro_weird_name_1,Bon! donc ton nom est~
-new_game_intro_weird_name_2,!*Hum c'est un~nom bizzare.
-new_game_intro_known_name_1,Bon! donc ton nom est~
-new_game_intro_known_name_2,!*Hm je suis sur d'avoir~entendu ce nom avant.
-new_game_intro_same_name_1,Hey nous avons le même nom.*Mon nom est aussi~
-new_game_intro_same_name_2,!
-new_game_intro_name_1,Bon! donc ton nom est~
-new_game_intro_name_2,!
+new_game_oak_1,Bonjour!~Désolé de l'attente!*Bienvenu dans le monde~des POkéMON!*Mon nom est CHEN.~Mais on m'appelle le~PROF.POKéMON*Ce monde est peuplé de créature appelées POKéMON.
+new_game_oak_2*Humains et POKéMON vivent~en parfaite harmonie....~Certain jouent avec les~Pokémon,~d'autre font des combats~avec eux.*Mais il reste encore~beaucoup à apprendre sur~nos amis les POkéMON.~De nombreux mystères planent~à leur sujet.*Et c'est pourquoi j'étudie~les POKéMON tous les jours.*Heu....c'est quoi ton nom déjà?
+new_game_oak_3,~ta quête est sur le point~de commencer?*Joies et périls paveront ta route....~Un monde de rêve, de danger et de POKéMON~t'attend!En avant!*A plus tard!
+new_game_oak_weird_name_1,Bon! donc ton nom est~
+new_game_oak_weird_name_2,!*Hum c'est un~nom bizzare.
+new_game_oak_known_name_1,Bon! donc ton nom est~
+new_game_oak_known_name_2,!*Hm je suis sur d'avoir~entendu ce nom avant.
+new_game_oak_same_name_1,Hey nous avons le même nom.*Mon nom est aussi~
+new_game_oak_same_name_2,!
+new_game_oak_name_1,Bon! donc ton nom est~
+new_game_oak_name_2,!
 new_game_your_name,Ton nom
 new_game_choose_skin,Choisis ton personnage
 new_game_name_too_short,Ce nom est trop court

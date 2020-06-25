@@ -51,3 +51,5 @@ Move|45,327
 Move|50,14
 Move|55,12
 TradeValue|20
+EvolutionCondition|472,holditem,183,Level
+EvolutionCondition|472,daytime,0,Level

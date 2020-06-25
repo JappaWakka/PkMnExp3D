@@ -67,7 +67,7 @@ pause_menu_no,No
 pause_menu_confirmation,Do you really want to quit? Unsaved progress will be lost.
 ---
 IngameMenu:
-game_menu_phone,PokéBar
+game_menu_phone,Pokégear
 game_menu_pokedex,Pokédex
 game_menu_party,Pokémon
 game_menu_bag,Bag
@@ -78,7 +78,7 @@ game_menu_exit,Exit Menu
 ---
 InventoryScreen:
 inventory_menu_bag,Bag
-inventory_menu_pocketadvice,PRESS LEFT OR RIGHT~TO SWITCH POCKETS
+inventory_menu_pocketadvice,
 inventory_menu_backadvice,PRESS E~TO GO BACK
 inventory_menu_items,Items
 inventory_menu_description,Description
@@ -92,23 +92,9 @@ game_interaction_edit,Edit
 game_interaction_clear,Clear
 game_interaction_interact,Interact
 game_interaction_menu,Menu
-game_interaction_phone,PokéBar
+game_interaction_phone,Pokégear
 ---
-NewGameScreen:
-new_game_intro_1,Hello friend! We are very close to~the Breeze Town! I am excited man!*Remember me? I am Baro!~We made friendship when we~live in the Kanto land!*You will find a lot of Pokémon~in new Corna land, yes!
-new_game_intro_2,Like this funky Plug-Oink!~It is cool piggy.*The people live with Pokémon~very close with love.*They are pet friend sometime~but also we fight for victory!*But no getting angry, okay?~Fighting with the angry~gets you hurt.*We still do not know about~Pokémon much info.~We study for years, so weird.*I will know the info really soon~'cuz I do the study!*Uh-oh! Friend, I am so sorry.~I forget your name now!~What is again?
-new_game_intro_3,Oh! I forget!~I have special Pokémon from~new Corna land.~You get one of me when we have home.*Ah the big moving car stop.~I think we are in the Breeze Town!~Is excited!*When you get out, go to momma!~She needs help with the clock 'cuz~technology hard for her.*When you are done with the~clock setting, go to Lab!~Oh! But maybe I am not there.~I hear the strange scream from here!*I wanna know what it is!~Maybe rare Pokémon!*~I cannot wait! I go now!~See ya later friend!
-new_game_intro_weird_name_1,Oh right! I know it again now. Your name was~
-new_game_intro_weird_name_2,!*Still think it is crazy name you have.
-new_game_intro_known_name_1,Oh right! I remember now. Your name was~
-new_game_intro_known_name_2,!*Funny how many people have same name as you!
-new_game_intro_same_name_1,Haha! You joke maker!~We don't have same name!~But okay, if you want, I call you~
-new_game_intro_same_name_2,!
-new_game_intro_name_1,Oh right! I remember now. Your name was~
-new_game_intro_name_2,!
-new_game_your_name,What is name now?
-new_game_choose_skin,Is dark, cannot see friend.
-new_game_name_too_short,What? You speak too fast. Saying name takes longer, no?
+new_game_select_skin,What do you look like?
 ---
 MapScreen:
 map_screen_cities,Cities
@@ -122,29 +108,27 @@ pokedex_screen_obtained,Obtained
 pokedex_screen_rare,Rare
 pokedex_screen_backadvice,PRESS E TO GO BACK
 ---
-PartyScreen:
-party_screen_choose_a_pokemon,Choose a Pokémon
-party_screen_backadvice,PRESS THE E KEY TO GO BACK
-party_screen_item_give,Give
-party_screen_item_take,Take
-party_screen_item_back,Back
-party_screen_doesnt_hold_item,~doesn't hold an item.
-party_screen_take_item_1,Took 
-party_screen_take_item_2, from~
-party_screen_take_item_3,~and put it into the~
-party_screen_take_item_4, pocket!
-party_screen_give_item_1,Gave 
-party_screen_give_item_2, to~
-party_screen_give_item_3,
-party_screen_give_item_4,~and put 
-party_screen_give_item_5,~back to the inventory.
-party_screen_summary,Summary
-party_screen_switch,Switch
-party_screen_item,Item
-party_screen_back,Back
-party_screen_EMPTY,EMPTY
-party_screen_teach_move_able,ABLE
-party_screen_teach_move_unable,UNABLE
+PokemonScreen:
+pokemon_screen_choose_a_pokemon,Choose a Pokémon
+pokemon_screen_backadvice,Press the E key to go back.
+pokemon_screen_item_give,Give
+pokemon_screen_item_take,Take
+pokemon_screen_item_back,Back
+pokemon_screen_doesnt_hold_item,~doesn't hold an item.
+pokemon_screen_take_item_1,Took 
+pokemon_screen_take_item_2, from~
+pokemon_screen_take_item_3,~and put it into the~
+pokemon_screen_take_item_4, pocket!
+pokemon_screen_give_item_1,Gave 
+pokemon_screen_give_item_2, to~
+pokemon_screen_give_item_3,
+pokemon_screen_give_item_4,~and put 
+pokemon_screen_give_item_5,~back to the inventory.
+pokemon_screen_summary,Summary
+pokemon_screen_switch,Switch
+pokemon_screen_item,Item
+pokemon_screen_back,Back
+pokemon_screen_EMPTY,EMPTY
 ---
 Pokemon Status Screen:
 All pages:
@@ -268,7 +252,7 @@ daycare_screen_pokemon_choose_header,Deposit Pokémon
 Egg,Egg
 ---
 Network Screen:
-network_screen_isonline,You are in a co-op game already! Please close the connection~to open a new game or connect again!~~~PRESS E TO GO BACK!
+network_screen_isonline,You are in a co-op game already! Please close the connection~to open a new game or connect again!~~~Press E to go back!
 network_screen_header,Co-Op Gameplay
 network_screen_main_header,You can either join a game or host a~new one to play together with a friend.
 network_screen_main_join,Join
@@ -283,7 +267,7 @@ network_screen_host_host,Host
 ---
 Donation screen:
 donation_screen_donators,Donators
-donation_screen_backadvice,PRESS E TO CLOSE
+donation_screen_backadvice,Press E to close
 ---
 Blackout Screen:
 black_out_screen_line1,You have run out of Pokémon!
@@ -334,120 +318,231 @@ battle_attack_no_PP_left, has~no PP left!*
 battle_attack_used, used 
 ---
 Badges:
-badge_Cocoon,Cocoon
-badge_Chaos,Chaos
-badge_Continent,Continent
-badge_Hilltop,Hilltop
-badge_Sting,Sting
-badge_Vegetable,Vegetable
-badge_Legend,Legend
-badge_Tear,Tear
-badge_Hawk,Hawk
-badge_Steam,Steam
-badge_Star,Star
-badge_Plate,Plate
-badge_unknown1,???
-badge_unknown2,???
-badge_unknown3,???
-badge_unknown4,???
+badge_Boulder,Boulder
+badge_Cascade,Cascade
+badge_Thunder,Thunder
+badge_Rainbow,Rainbow
+badge_Soul,Soul
+badge_Marsh,Marsh
+badge_Volcano,Volcano
+badge_Earth,Earth
+badge_Zephyr,Zephyr
+badge_Hive,Hive
+badge_Plain,Plain
+badge_Fog,Fog
+badge_Storm,Storm
+badge_Mineral,Mineral
+badge_Glacier,Glacier
+badge_Rising,Rising
 ---
 Regions:
-Corna,Corna
-Garna,Garna
-Origin Islands,Origin Islands
+Johto,Johto
+Kanto,Kanto
+Sevii Islands,Sevii Islands
 ---
 Places:
 Places_???,???
 
 Towns:
-Places_Breeze Town,Breeze Town
-Places_Pink Town,Pink Town
-Places_Cloudain City,Cloudain City
-Places_Pinkranite City,Pinkranite City
-Places_Golden Island,Golden Island
-Places_Seablue City,Seablue City
-Places_Purple City,Purple City
-Places_Greenie Ville,Greenie Ville
-Places_Maroon Town,Maroon Town
-Places_Polkadot Town,Polkadot Town
-Places_Black Village,Black Village
-Places_White Port City,White Port City
-Places_Grey Stone City,Grey Stone City
-Places_Quartztower Town,Quartztower Town
-Places_Muddy Island,Muddy Island
-Places_Olimpic Village,Olimpic Village
+Johto:
+Places_New Bark Town,New Bark Town
+Places_Cherrygrove City,Cherrygrove City
+Places_Violet City,Violet City
+Places_Azalea Town,Azalea Town
+Places_Goldenrod City,Goldenrod City
+Places_Ecruteak City,Ecruteak City
+Places_Olivine City,Olivine City
+Places_Cianwood City,Cianwood City
+Places_Mahogany Town,Mahogany Town
+Places_Blackthorn City,Blackthorn City
 
-Gyms:
-Places_Pinkranite City Gym,Pinkranite City Gym
-Places_Cloudain City Gym,Cloudain City Gym
-Places_Golden Island Gym,Golden Island Gym
-Places_Purple City Gym,Purple City Gym
-Places_Maroon Town Gym,Maroon Town Gym
-Places_Black Village Gym,Black Village Gym
-Places_Grey Stone City,Grey Stone City Gym
-Places_Quartztower Town,Quartztower Town Gym
+Kanto:
+Places_Pallet Town,Pallet Town
+Places_Viridian City,Viridian City
+Places_Saffron City,Saffron City
+Places_Pewter City,Pewter City
+Places_Cerulean City,Cerulean City
+Places_Celadon City,Celadon City
+Places_Vermilion City,Vermilion City
+Places_Fuchsia City,Fuchsia City
+Places_Cinnabar Island,Cinnabar Island
+Places_Lavender Town,Lavender Town
 
-Other Places:
-Places_Oil Platform,Oil Platform
+Sevii Islands:
+Places_One Island,One Island
+Places_Two Island,Two Island
+Places_Three Island,Three Island
+Places_Four Island,Four Island
+Places_Five Island,Five Island
+Places_Six Island,Six Island
+Places_Seven Island,Seven Island
+
+Hoenn:
+Places_Littleroot Town, Littleroot Town
+
+Special Houses:
 Places_Gate,Gate
-Places_Pokémon Center,Pokémon Center
-Places_Pokémon Mart,Pokémon Mart
-Places_Baro's Lab,Baro's Lab
+Places_Pokemon Center,Pokémon Center
+Places_Pokemon Mart,Pokémon Mart
+Places_Elms lab,Elm's Lab
+Places_Oak's lab,Oak's Lab
+Places_Azalea Town Gym,Azalea Town Gym
+Places_Violet City Gym,Violet City Gym
+Places_Goldenrod City Gym,Goldenrod City Gym
+Places_Ecruteak City Gym,Ecruteak City Gym
+Places_Cianwood City Gym,Cianwood City Gym
+Places_Olivine City Gym,Olivine City Gym
+Places_Mahogany City Gym,Mahogany City Gym
+Places_Blackthorn City Gym,Blackthorn City Gym
 Places_Your House,Your House
 Places_Your Room,Your Room
 Places_Daycare,Daycare
+Places_Pewter City Gym,Pewter City Gym
+Places_Cerulean City Gym,Cerulean City Gym
+Places_Vermilion City Gym,Vermilion City Gym
+Places_Celadon City Gym,Celadon City Gym
+Places_Fuchsania City Gym,Fuchsania City Gym
+Places_Saffron City Gym,Saffron City Gym
+Places_Cinnabar Gym,Cinnabar Gym
+Places_Viridian City Gym,Viridian City Gym
+Places_Dance Theater,Dance Theater
+Places_Lighthouse,Lighthouse
+Places_Team Rocket HQ,Team Rocket HQ
+Places_Radio Tower,Radio Tower
 
-Landmarks:
-Places_Greenie Cave,Greenie Cave
-Places_Downhill Tunnel,Downhill Tunnel
-Places_Darkness Forest,Darkness Forest
-Places_Greenie Tunnel,Greenie Tunnel
-Places_Broke Cave,Broke Cave
-Places_Generator Cave,Generator Cave
-Places_Cauldron,Cauldron
-Places_Mount Niveous,Mount Niveous
-Places_Downhill Tunnel,Downhill Tunnel
-Places_S.S. Anne,S.S. Anne
-Places_Maná Nests,Maná Nests
-Places_City Sewer,City Sewer
-Places_Marble Castle,Marble Castle
-Places_Descomune Cave,Descomune Cave
-Places_Nature Temple,Nature Temple
-Places_Star Temple,Star Temple
-Places_Chaos Cavern,Chaos Cavern
-Places_Peace Tower,Peace Tower
-Places_Forbidden Rooms,Forbidden Rooms
-Places_Mole Tomb,Mole Tomb
-Places_Wild Temple,Wild Temple
-Places_Sea Cavern,Sea Cavern
+Dungeons:
+Places_Ilex Forest,Ilex Forest
+Places_Dark Cave,Dark Cave
+Places_Ruins of Alph,Ruins of Alph
+Places_Slowpoke Well,Slowpoke Well
+Places_Sprout Tower,Sprout Tower
+Places_Union Cave,Union Cave
+Places_Mt. Mortar,Mt. Mortar
+Places_Bell Tower,Tin Tower
+Places_Tin Tower,Tin Tower
+Places_Tin Tower Peak,Tin Tower Peak
+Places_Burned Tower,Burned Tower
+Places_Glitter Lighthouse,Glitter Lighthouse
+Places_Ice Path,Ice Path
+Places_National Park,National Park
+Places_Whirl Islands,Whirl Islands
+Places_Lake of Rage,Lake of Rage
+Places_Underground,Underground
+Places_Dragon's Den,Dragon's Den
+Places_Tohjo Falls,Tohjo Falls
+Places_Victory Road,Victory Road
+Places_Mt. Silver,Mt. Silver
+Places_Indigo Plateau,Indigo Plateau
+Places_Safari Zone,Safari Zone
+Places_Viridian Forest,Viridian Forest
+Places_Cerulean Cave,Cerulean Cave
+Places_Power Plant,Power Plant
+Places_Rock Tunnel,Rock Tunnel
+Places_Seafoam Islands,Seafoam Islands
+Places_Pal Park,Pal Park
+Places_Diglett's Cave,Diglett's Cave
+Places_Mt. Moon,Mt. Moon
+Places_Mt. Ember,Mt. Ember
+Places_Three Isle Path,Three Isle Path
+Places_Berry Forest,Berry Forest
+Places_Icefall Cave,Icefall Cave
+Places_Lost Cave,Lost Cave
+Places_Trainer Tower,Trainer Tower
+Places_Altering Cave,Altering Cave
+Places_Pattern Bush,Pattern Bush
+Places_Dotted Hole,Dotted Hole
+Places_Tanoby Chambers,Tanoby Chambers
+Places_Tanoby Key,Tanoby Key
+Places_Monean Chamber,Monean Chamber
+Places_Liptoo Chamber,Liptoo Chamber
+Places_Weepth Chamber,Weepth Chamber
+Places_Dilford Chamber,Dilford Chamber
+Places_Scrufib Chamber,Scrufib Chamber
+Places_Rixy Chamber,Rixy Chamber
+Places_Viapois Chamber,Viapois Chamber
+Places_Ancient Ruins,Ancient Ruins
+Places_Millenial Star Tower,Millenial Star Tower
+Places_Kolben Tower,Kolben Tower
+Places_Faraway Island,Faraway Island
+Places_Underwater Cave,Underwater Cave
 
 Routes:
-Places_Breeze Way,Breeze Way
-Places_Cloud Way,Cloud Way
-Places_Rock Canyon,Rock Canyon
-Places_Cloud Beach,Cloud Beach
-Places_Boar Hill,Boar Hill
-Places_Green Way,Green Way
-Places_Gold Beach,Gold Beach
-Places_Gull Sea,Gull Sea
-Places_Flower Beach,Flower Beach
-Places_Seablue Lake,Seablue Lake
-Places_Brown Hill,Brown Hill
-Places_Lilac Way,Lilac Way
-Places_Purple Shore,Purple Shore
-Places_Maroon Hill,Maroon Hill
-Places_Deathland,Deathland
-Places_Grey Hill,Grey Hill
-Places_Black Jungle,Black Jungle
-Places_White Jungle,White Jungle
-Places_White Road,White Road
-Places_Union Sea,Union Sea
-Places_Grey Swamp,Grey Swamp
-Places_North Sea,North Sea 
-Places_Tower Sea,Tower Sea
-Places_Muddy Sea,Muddy Sea
-Places_Muddy Creak,Muddy Creak
-Places_Ditch Sea,Ditch Sea
+Places_Route 1,Route 1
+Places_Route 2,Route 2
+Places_Route 3,Route 3
+Places_Route 4,Route 4
+Places_Route 5,Route 5
+Places_Route 6,Route 6
+Places_Route 7,Route 7
+Places_Route 8,Route 8
+Places_Route 9,Route 9
+Places_Route 10,Route 10
+Places_Route 11,Route 11
+Places_Route 12,Route 12
+Places_Route 13,Route 13
+Places_Route 14,Route 14
+Places_Route 15,Route 15
+Places_Route 16,Route 16
+Places_Route 17,Route 17
+Places_Route 18,Route 18
+Places_Route 19,Route 19
+Places_Route 20,Route 20
+Places_Route 21,Route 21
+Places_Route 22,Route 22
+Places_Route 23,Route 23
+Places_Route 24,Route 24
+Places_Route 25,Route 25
+Places_Route 26,Route 26
+Places_Route 27,Route 27
+Places_Route 28,Route 28
+Places_Route 29,Route 29
+Places_Route 30,Route 30
+Places_Route 31,Route 31
+Places_Route 32,Route 32
+Places_Route 33,Route 33
+Places_Route 34,Route 34
+Places_Route 35,Route 35
+Places_Route 36,Route 36
+Places_Route 37,Route 37
+Places_Route 38,Route 38
+Places_Route 39,Route 39
+Places_Route 40,Route 40
+Places_Route 41,Route 41
+Places_Route 42,Route 42
+Places_Route 43,Route 43
+Places_Route 44,Route 44
+Places_Route 45,Route 45
+Places_Route 46,Route 46
+Places_Route 47,Route 47
+Places_Route 48,Route 48
+
+Places_Treasure Beach,Treasure Beach
+Places_Kindle Road,Kindle Road
+Places_Cape Brink,Cape Brink
+Places_Three Isle Port,Three Isle Port
+Places_Bond Bridge,Bond Bridge
+Places_Five Isle Meadow,Five Isle Meadow
+Places_Memorial Pillar,Memorial Pillar
+Places_Water Labyrinth,Water Labyrinth
+Places_Resort Gorgeous,Resort Gorgeous
+Places_Water Path,Water Path
+Places_Green Path,Green Path
+Places_Outcast Island,Outcast Island
+Places_Ruin Valley,Ruin Valley
+Places_Canyon Entrance,Canyon Entrance
+Places_Sevault Canyon,Sevault Canyon
+Places_Tanoby Ruins,Tanoby Ruins
+Places_Safari Zone Gate,Safari Zone Gate
+Places_S.S. Aqua,S.S. Aqua
+Places_Elite 4,Elite 4
+Places_Indigo Plateau,Indigo Plateau
+Places_Twirl Forest,Twirl Forest
+Places_Berry Vista,Berry Vista
+Places_Battle Frontier,Battle Frontier
+Places_Battle Tower,Battle Tower
+Places_Battle Factory,Battle Factory
+Places_Rocket Warehouse,Rocket Warehouse
+Places_Secret Laboratory,Secret Laboratory
 
 ---
 Item categories:
@@ -521,6 +616,7 @@ item_name_592,Liberty Sea Map
 item_name_576,Mega Bracelet
 item_name_651,Light Stone
 item_name_652,Dark Stone
+item_name_653,PokéGear
 
 Technical Machines:
 item_name_191,TM01
@@ -734,14 +830,14 @@ item_name_32,Rare Candy
 item_name_38,Full Heal
 item_name_39,Revive
 item_name_40,Max Revive
-item_name_46,Beer
+item_name_46,Fresh Water
 item_name_47,Soda Pop
-item_name_48,Absenta
+item_name_48,Lemonade
 item_name_62,PPUp
 item_name_63,Ether
 item_name_64,Max Ether
 item_name_65,Elixir
-item_name_72,MooMoo Milk
+item_name_72,Moo Moo Milk
 item_name_114,Rage Candy Bar
 item_name_121,Energy Powder
 item_name_122,Energy Root
@@ -863,7 +959,7 @@ item_name_103,Slowpoke Tail
 item_name_104,Pink Bow
 item_name_105,Stick
 item_name_106,Smoke Ball
-item_name_107,NeverMelt Ice
+item_name_107,Nevermelt Ice
 item_name_108,Magnet
 item_name_109,Rare Bone
 item_name_110,Pearl
@@ -957,7 +1053,6 @@ item_name_1996,Burn Drive
 item_name_1997,Chill Drive
 item_name_1998,Douse Drive
 item_name_1999,Shock Drive
-item_name_677,Shell Dust
 
 Fossils:
 item_name_601,Helix Fossil
@@ -1164,15 +1259,6 @@ item_name_673,Psychic Memory
 item_name_674,Rock Memory
 item_name_675,Steel Memory
 item_name_676,Water Memory
-
----
-Item descriptions:
-Standard:
-item_desc_677,Powder from turtle shells found at Descomune Cave.
-
-Key Items:
-item_desc_6,A pair of brightly colored Skates that enables much faster movement than Running Shoes and also allows climbing slippery slopes.
-
 ---
 GameMessages:
 game_message_screenshot,Screenshot saved as 
@@ -1258,7 +1344,6 @@ pokemon_name_Golbat,Golbat
 pokemon_name_Oddish,Oddish
 pokemon_name_Gloom,Gloom
 pokemon_name_Vileplume,Vileplume
-pokemon_name_Paras,Paras
 pokemon_name_Paras,Paras
 pokemon_name_Parasect,Parasect
 pokemon_name_Venonat,Venonat
@@ -1466,10 +1551,3 @@ pokemon_name_Lugia,Lugia
 pokemon_name_Ho-Oh,Ho-Oh
 pokemon_name_Celebi,Celebi
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
-Story translation:
----
-New Bark Town:
----
-johto\cities\newbark\main.dat:
----
-barktown_player_house,<playername>'s House

@@ -1,0 +1,17 @@
+1|Cocoon|HM=Cut|Texture=GUI\Badges,0,0,50,50|Region=Corna
+2|Chaos|level=30|HM=Flash|Texture=GUI\Badges,50,0,50,50|Region=Corna
+3|Continent|HM=RockSmash|Texture=GUI\Badges,100,0,50,50|Region=Corna
+4|Hilltop|level=50|HM=Strength|Texture=GUI\Badges,150,0,50,50|Region=Corna
+5|Sting|HM=Surf|Texture=GUI\Badges,200,0,50,50|Region=Corna
+6|Vegetable|level=70|HM=Fly|Texture=GUI\Badges,250,0,50,50|Region=Corna
+7|Legend|HM=Dive|Texture=GUI\Badges,300,0,50,50|Region=Corna
+8|Tear|level=100|HM=Waterfall|Texture=GUI\Badges,350,0,50,50|Region=Corna
+
+9|Hawk|Texture=GUI\Badges,0,50,50,50|Region=Garna
+10|Steam|Texture=GUI\Badges,50,50,50,50|Region=Garna
+11|Star|Texture=GUI\Badges,100,50,50,50|Region=Garna
+12|Plate|Texture=GUI\Badges,150,50,50,50|Region=Garna
+13|???|Texture=GUI\Badges,200,50,50,50|Region=Garna
+14|???|Texture=GUI\Badges,250,50,50,50|Region=Garna
+15|???|Texture=GUI\Badges,300,50,50,50|Region=Garna
+16|???|Texture=GUI\Badges,350,50,50,50|Region=Garna

@@ -1,4 +1,4 @@
-Name|Firegg
+Name|Torchic
 Number|255
 ExperienceType|2
 BaseExperience|62
@@ -8,7 +8,7 @@ CatchRate|45
 BaseFriendship|70
 EggGroup1|Field
 EggGroup2|None
-BaseEggSteps|5120
+BaseEggSteps|5355
 EggPokemon|255
 IsGenderLess|0
 CanBreed|1
@@ -19,21 +19,21 @@ Ability2|Nothing
 HiddenAbility|3
 EggMoves|97,226,68,306,174,203,297,364,481,387,67,400,179,265,157,207
 Machines|174,92,249,237,241,173,63,182,203,218,216,91,189,104,207,214,126,129,197,156,213,5,14,25,34,36,68,99,102,117,157,164,53,317,332,263,290,315,261,421,416,445,363,468,488,496,497,510,590,15,70
-BaseHP|50
-BaseAttack|65
-BaseDefense|49
-BaseSpAttack|35
+BaseHP|45
+BaseAttack|60
+BaseDefense|40
+BaseSpAttack|70
 BaseSpDefense|50
-BaseSpeed|60
+BaseSpeed|45
 FPHP|0
-FPAttack|1
+FPAttack|0
 FPDefense|0
-FPSpAttack|0
+FPSpAttack|1
 FPSpDefense|0
 FPSpeed|0
 CanFly|0
 CanSwim|0
-Pokedex|Firegg's shell can heat itself to really high temperatures of over 4.000 degrees. If it didn't have a hole in it, it would explode because of the heat it produces.\Dino Egg Pokémon\7.6\0.4\0,148,0
+Pokedex|Inside its body is a place where it keeps a small flame. Hug it! It will be as warm as a hot-water bottle.\Chick Pokémon\2.5\0.4\0,148,0
 Scale|0.7
 Move|1,10
 Move|1,45
