@@ -1617,9 +1617,9 @@
 			If GameModeManager.GameModeCount < 2 Then
 				GameModeManager.SetGameModePointer("PkMnExp3D")
 				If GameModeManager.GetGameRuleValue("IntroType", "0") = "0" Then
-					SetScreen(New TransitionScreen(Me.PreScreen, New NewGameScreen(), Color.Black, False))
-				Else
 					SetScreen(New Screens.MainMenu.NewNewGameScreen(Me.PreScreen))
+				Else
+					SetScreen(New TransitionScreen(Me, New NewGameScreen(), Color.Black, False))
 				End If
 			Else
 				GetGameModes()
