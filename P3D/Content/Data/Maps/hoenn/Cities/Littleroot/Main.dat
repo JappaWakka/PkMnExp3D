@@ -1,5 +1,5 @@
-{"Level"{LEV[{"Name"{str[Littleroot Town]}}{"MusicLoop"{str[NewBark]}}{"WildPokemon"{bool[0]}}{"CurrentRegion"{str[Hoenn]}}]}}
-{"Actions"{LEV[{"CanTeleport"{bool[1]}}{"CanDig"{bool[0]}}{"CanFly"{bool[1]}}{"EnvironmentType"{int[1]}}{"Weather"{int[1]}}{"Lightning"{int[0]}}]}}
+{"Level"{LEV[{"Name"{str[Littleroot Town]}}{"MusicLoop"{str[Littleroot]}}{"WildPokemon"{bool[0]}}{"CurrentRegion"{str[Hoenn]}}]}}
+{"Actions"{LEV[{"CanTeleport"{bool[1]}}{"CanDig"{bool[0]}}{"CanFly"{bool[1]}}{"EnvironmentType"{int[0]}}{"Weather"{int[1]}}{"Lightning"{int[1]}}]}}
 
 Floors:
 Grass
@@ -12,15 +12,11 @@ Sand
 
 Treewalls:
 Closest to map origin
-{"EntityField"{ENT[{"Size"{intArr[12,1]}}{"EntityID"{str[WallBlock]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[0.5,0.298,-1]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
-{"EntityField"{ENT[{"Size"{intArr[10,1]}}{"EntityID"{str[WallBlock]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[15.5,0.298,-1]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
-Left
 {"EntityField"{ENT[{"Size"{intArr[1,21]}}{"EntityID"{str[WallBlock]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[-1,0.298,0.5]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[1]}}]}}
-Right
 {"EntityField"{ENT[{"Size"{intArr[1,21]}}{"EntityID"{str[WallBlock]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[26,0.298,0.5]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[3]}}]}}
-Furthest from map origin
-{"EntityField"{ENT[{"Size"{intArr[26,1]}}{"EntityID"{str[WallBlock]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[0.5,0.298,22]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}
 
+{"EntityField"{ENT[{"Size"{intArr[26,1]}}{"EntityID"{str[WallBlock]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[0.5,0.298,22]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}
+Furthest from map origin
 Trees:
 Closest to map origin
 {"EntityField"{ENT[{"Size"{intArr[13,2]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[0,0.298,0]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
@@ -61,8 +57,8 @@ Front
 {"EntityField"{ENT[{"Size"{intArr[1,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[6,0,7]}}{"TexturePath"{str[Cities\Littleroot]}}{"Textures"{recArr[[32,32,16,16]]}}{"TextureIndex"{intArr[-1,-1,-1,-1,-1,-1,0,0,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}
 {"EntityField"{ENT[{"Size"{intArr[1,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[7,0,7]}}{"TexturePath"{str[Cities\Littleroot]}}{"Textures"{recArr[[16,32,16,16]]}}{"TextureIndex"{intArr[-1,-1,-1,-1,-1,-1,0,0,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}
 {"EntityField"{ENT[{"Size"{intArr[1,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[9,0,7]}}{"TexturePath"{str[Cities\Littleroot]}}{"Textures"{recArr[[96,16,16,16]]}}{"TextureIndex"{intArr[-1,-1,-1,-1,-1,-1,0,0,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}
-Door_Warp
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[8,0,7]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[128,96,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Hoenn\Cities\Littleroot\playerhouse.dat,2,0.1,7,0]}}{"Rotation"{int[0]}}]}}
+Door
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[8,0,7]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[128,96,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Hoenn\Cities\Littleroot\YourHouse1f.dat,2,0.1,7,0]}}{"Rotation"{int[0]}}]}}
 
 Roof
 Back
@@ -99,7 +95,7 @@ Front
 {"EntityField"{ENT[{"Size"{intArr[1,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[19,0,7]}}{"TexturePath"{str[Cities\Littleroot]}}{"Textures"{recArr[[16,32,16,16]]}}{"TextureIndex"{intArr[-1,-1,-1,-1,-1,-1,0,0,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}
 {"EntityField"{ENT[{"Size"{intArr[1,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[20,0,7]}}{"TexturePath"{str[Cities\Littleroot]}}{"Textures"{recArr[[96,16,16,16]]}}{"TextureIndex"{intArr[-1,-1,-1,-1,-1,-1,0,0,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}
 Door
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[17,0,7]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[128,96,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Hoenn\Cities\Littleroot\rivalhouse.dat,2,0.1,7,0]}}{"Rotation"{int[0]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[17,0,7]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[128,96,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Hoenn\Cities\Littleroot\RivalsHouse1f.dat,2,0.1,7,0]}}{"Rotation"{int[0]}}]}}
 
 Roof
 Back
@@ -143,7 +139,7 @@ Front
 {"EntityField"{ENT[{"Size"{intArr[1,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[11,0,15]}}{"TexturePath"{str[Cities\Littleroot]}}{"Textures"{recArr[[80,16,16,16]]}}{"TextureIndex"{intArr[-1,-1,-1,-1,-1,-1,0,0,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}
 {"EntityField"{ENT[{"Size"{intArr[1,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[12,0,15]}}{"TexturePath"{str[Cities\Littleroot]}}{"Textures"{recArr[[96,16,16,16]]}}{"TextureIndex"{intArr[-1,-1,-1,-1,-1,-1,0,0,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}
 Door
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[10,0,15]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[128,96,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Hoenn\Cities\Littleroot\barolab.dat,2,0.1,7,0]}}{"Rotation"{int[0]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[10,0,15]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[128,96,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Hoenn\Cities\Littleroot\BirchsLab.dat,2,0.1,7,0]}}{"Rotation"{int[0]}}]}}
 
 Roof
 Back
@@ -187,3 +183,13 @@ Flowers:
 {"EntityField"{ENT[{"Size"{intArr[1,1]}}{"EntityID"{str[WallBill]}}{"Position"{sngArr[21,-0.125,9]}}{"Scale"{sngArr[0.75,0.75,0.75]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[96,144,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 
 {"EntityField"{ENT[{"Size"{intArr[3,2]}}{"EntityID"{str[WallBill]}}{"Position"{sngArr[6,-0.125,16]}}{"Scale"{sngArr[0.75,0.75,0.75]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[96,144,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+
+Warps:
+Route 101
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[13,0,-1]}}{"TexturePath"{str[Village]}}{"Textures"{recArr[[128,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[Hoenn\Routes\101.dat,16,0.1,28,0]}}{"Rotation"{int[0]}}{"Visible"{bool[0]}}]}}
+{"Floor"{ENT[{"Size"{intArr[2,1]}}{"Position"{intArr[13,0,-1]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}{"Visible"{bool[0]}}]}}
+
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[14,0,-1]}}{"TexturePath"{str[Village]}}{"Textures"{recArr[[128,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[Hoenn\Routes\101.dat,17,0.1,28,0]}}{"Rotation"{int[0]}}{"Visible"{bool[0]}}]}}
+
+OffsetMaps:
+{"OffsetMap"{MAP[{"Offset"{intArr[-3,0,-28]}}{"Map"{str[Hoenn\Routes\101.dat]}}]}}
