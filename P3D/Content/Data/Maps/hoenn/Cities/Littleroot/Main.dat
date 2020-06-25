@@ -1,9 +1,9 @@
 {"Level"{LEV[{"Name"{str[Littleroot Town]}}{"MusicLoop"{str[Littleroot]}}{"WildPokemon"{bool[0]}}{"CurrentRegion"{str[Hoenn]}}]}}
-{"Actions"{LEV[{"CanTeleport"{bool[1]}}{"CanDig"{bool[0]}}{"CanFly"{bool[1]}}{"EnvironmentType"{int[0]}}{"Weather"{int[1]}}{"Lightning"{int[1]}}]}}
+{"Actions"{LEV[{"CanTeleport"{bool[1]}}{"CanDig"{bool[0]}}{"CanFly"{bool[1]}}{"EnvironmentType"{int[1]}}{"Weather"{int[1]}}{"Lightning"{int[1]}}]}}
 
 Floors:
 Grass
-{"Floor"{ENT[{"Size"{intArr[26,22]}}{"Position"{intArr[0,0,0]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[28,23]}}{"Position"{intArr[-1,0,0]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
 
 Sand
 {"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{intArr[8,0,8]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[64,96,16,16]}}]}}
@@ -12,28 +12,29 @@ Sand
 
 Treewalls:
 Closest to map origin
-{"EntityField"{ENT[{"Size"{intArr[1,21]}}{"EntityID"{str[WallBlock]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[-1,0.298,0.5]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[1]}}]}}
-{"EntityField"{ENT[{"Size"{intArr[1,21]}}{"EntityID"{str[WallBlock]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[26,0.298,0.5]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[3]}}]}}
+{"EntityField"{ENT[{"Size"{intArr[1,22]}}{"EntityID"{str[WallBlock]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[-2,0.298,0.5]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[1]}}]}}
+{"EntityField"{ENT[{"Size"{intArr[1,22]}}{"EntityID"{str[WallBlock]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[27,0.298,0.5]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[3]}}]}}
 
-{"EntityField"{ENT[{"Size"{intArr[26,1]}}{"EntityID"{str[WallBlock]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[0.5,0.298,22]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}
+{"EntityField"{ENT[{"Size"{intArr[26,1]}}{"EntityID"{str[WallBlock]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[0.5,0.298,23]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}
 Furthest from map origin
+
 Trees:
 Closest to map origin
-{"EntityField"{ENT[{"Size"{intArr[13,2]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[0,0.298,0]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
-{"EntityField"{ENT[{"Size"{intArr[11,2]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[15,0.298,0]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+{"EntityField"{ENT[{"Size"{intArr[14,2]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[-1,0.298,0]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+{"EntityField"{ENT[{"Size"{intArr[12,2]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[15,0.298,0]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 
-{"EntityField"{ENT[{"Size"{intArr[5,2]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[0,0.298,2]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
-{"EntityField"{ENT[{"Size"{intArr[5,2]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[21,0.298,2]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+{"EntityField"{ENT[{"Size"{intArr[6,2]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[-1,0.298,2]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+{"EntityField"{ENT[{"Size"{intArr[6,2]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[21,0.298,2]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 
-{"EntityField"{ENT[{"Size"{intArr[3,16]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[0,0.298,4]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
-{"EntityField"{ENT[{"Size"{intArr[3,16]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[23,0.298,4]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+{"EntityField"{ENT[{"Size"{intArr[4,16]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[-1,0.298,4]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+{"EntityField"{ENT[{"Size"{intArr[4,16]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[23,0.298,4]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 
 {"EntityField"{ENT[{"Size"{intArr[2,2]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[21,0.298,15]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 
 {"EntityField"{ENT[{"Size"{intArr[2,2]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[3,0.298,17]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 {"EntityField"{ENT[{"Size"{intArr[4,2]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[19,0.298,17]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 
-{"EntityField"{ENT[{"Size"{intArr[26,3]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[0,0.298,19]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+{"EntityField"{ENT[{"Size"{intArr[28,4]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[-1,0.298,19]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 Furthest from map origin
 
 Buildings:
@@ -186,10 +187,9 @@ Flowers:
 
 Warps:
 Route 101
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[13,0,-1]}}{"TexturePath"{str[Village]}}{"Textures"{recArr[[128,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[Hoenn\Routes\101.dat,16,0.1,28,0]}}{"Rotation"{int[0]}}{"Visible"{bool[0]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[13,0,-1]}}{"TexturePath"{str[Village]}}{"Textures"{recArr[[128,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[Hoenn\Routes\101.dat,13,0.1,28,0]}}{"Rotation"{int[0]}}{"Visible"{bool[0]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[14,0,-1]}}{"TexturePath"{str[Village]}}{"Textures"{recArr[[128,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[Hoenn\Routes\101.dat,14,0.1,28,0]}}{"Rotation"{int[0]}}{"Visible"{bool[0]}}]}}
 {"Floor"{ENT[{"Size"{intArr[2,1]}}{"Position"{intArr[13,0,-1]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}{"Visible"{bool[0]}}]}}
 
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[14,0,-1]}}{"TexturePath"{str[Village]}}{"Textures"{recArr[[128,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[Hoenn\Routes\101.dat,17,0.1,28,0]}}{"Rotation"{int[0]}}{"Visible"{bool[0]}}]}}
-
 OffsetMaps:
-{"OffsetMap"{MAP[{"Offset"{intArr[-3,0,-28]}}{"Map"{str[Hoenn\Routes\101.dat]}}]}}
+{"OffsetMap"{MAP[{"Offset"{intArr[0,0,-28]}}{"Map"{str[Hoenn\Routes\101.dat]}}]}}
