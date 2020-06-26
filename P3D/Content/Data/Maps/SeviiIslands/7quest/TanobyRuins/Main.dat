@@ -354,10 +354,10 @@ Corners:
 {"Entity"{ENT[{"Position"{sngArr[117,0,13]}}{"EntityID"{str[WallBlock]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Textures"{recArr[[96,16,16,16]]}}{"TextureIndex"{intArr[-1,-1,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[5]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}
 
 NPC:
-{"NPC"{NPC[{"Scale"{sngArr[1,1,1]}}{"Position"{sngArr[35,0,6]}}{"TextureID"{str[hiker]}}{"ID"{int[0]}}{"Name"{str[IDlotto]}}{"Action"{int[2]}}{"AdditionalValue"{str[1|trainer\7quest\TanobyRuins\001]}}{"Rotation"{int[1]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[35,6,2,3]]}}]}}
-{"NPC"{NPC[{"Scale"{sngArr[1,1,1]}}{"Position"{sngArr[84,0,4]}}{"TextureID"{str[oldhatman]}}{"ID"{int[1]}}{"Name"{str[IDlotto]}}{"Action"{int[2]}}{"AdditionalValue"{str[1|trainer\7quest\TanobyRuins\002]}}{"Rotation"{int[1]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[84,4,2,3]]}}]}}
-{"NPC"{NPC[{"Scale"{sngArr[1,1,1]}}{"Position"{sngArr[85,0,8]}}{"TextureID"{str[pinkshirtgirl]}}{"ID"{int[2]}}{"Name"{str[IDlotto]}}{"Action"{int[2]}}{"AdditionalValue"{str[2|trainer\7quest\TanobyRuins\003]}}{"Rotation"{int[3]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[84,4,2,3]]}}]}}
-{"NPC"{NPC[{"Scale"{sngArr[1,1,1]}}{"Position"{sngArr[122,0,14]}}{"TextureID"{str[hiker]}}{"ID"{int[3]}}{"Name"{str[IDlotto]}}{"Action"{int[2]}}{"AdditionalValue"{str[1|trainer\7quest\TanobyRuins\004]}}{"Rotation"{int[1]}}{"Movement"{str[Looking]}}{"MoveRectangles"{recArr[[84,4,2,3]]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[35,0,6]}}{"TextureID"{str[hiker]}}{"ID"{int[0]}}{"Name"{str[IDlotto]}}{"Action"{int[2]}}{"AdditionalValue"{str[1|trainer\7quest\TanobyRuins\001]}}{"Rotation"{int[1]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[35,6,2,3]]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[84,0,4]}}{"TextureID"{str[oldhatman]}}{"ID"{int[1]}}{"Name"{str[IDlotto]}}{"Action"{int[2]}}{"AdditionalValue"{str[1|trainer\7quest\TanobyRuins\002]}}{"Rotation"{int[1]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[84,4,2,3]]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[85,0,8]}}{"TextureID"{str[pinkshirtgirl]}}{"ID"{int[2]}}{"Name"{str[IDlotto]}}{"Action"{int[2]}}{"AdditionalValue"{str[2|trainer\7quest\TanobyRuins\003]}}{"Rotation"{int[3]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[84,4,2,3]]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[122,0,14]}}{"TextureID"{str[hiker]}}{"ID"{int[3]}}{"Name"{str[IDlotto]}}{"Action"{int[2]}}{"AdditionalValue"{str[1|trainer\7quest\TanobyRuins\004]}}{"Rotation"{int[1]}}{"Movement"{str[Looking]}}{"MoveRectangles"{recArr[[84,4,2,3]]}}]}}
 
 Boulders:
 {"EntityField"{ENT[{"Size"{intArr[1,1]}}{"Scale"{sngArr[0.8,0.8,0.8]}}{"EntityID"{str[WallBill]}}{"Position"{sngArr[9,-0.15,6]}}{"TexturePath"{str[Gym]}}{"Textures"{recArr[[64,112,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}

@@ -235,8 +235,8 @@
                     If Screens.MainMenu.NewNewGameScreen.CharacterSelectionScreen.SelectedSkin <> "" Then
                         IsReady = True
                     Else
-                        SetScreen(New Screens.MainMenu.NewNewGameScreen.CharacterSelectionScreen(CurrentScreen, skins))
-                    End If
+						SetScreen(New Screens.MainMenu.NewNewGameScreen.CharacterSelectionScreen(CurrentScreen))
+					End If
                 Case Else
                     IsReady = True
             End Select

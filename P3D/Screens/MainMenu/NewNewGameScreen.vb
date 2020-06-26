@@ -151,8 +151,8 @@
             Core.Player.startRotation = CSng(MathHelper.Pi * (rot / 2))
 
             Core.Player.BerryData = CreateBerryData()
-            Core.Player.AddVisitedMap("johto\cities\newbark\yourhousef2.dat")
-            Core.Player.SaveCreated = GameController.GAMEDEVELOPMENTSTAGE & " " & GameController.GAMEVERSION
+			Core.Player.AddVisitedMap(map)
+			Core.Player.SaveCreated = GameController.GAMEDEVELOPMENTSTAGE & " " & GameController.GAMEVERSION
             Core.Player.RivalName = "???"
 
 
@@ -203,8 +203,8 @@
 
             Inherits Screen
 
-            Private _skins As String()
-            Private _sprites As New List(Of Texture2D)
+			Private _skins As New List(Of String)
+			Private _sprites As New List(Of Texture2D)
 
             Private _offset As Single = 0F
             Private _index As Integer = 0
@@ -222,24 +222,24 @@
                 End Set
             End Property
 
-            Public Sub New(ByVal currentScreen As Screen, ByVal skins As String())
-                Identification = Identifications.CharacterSelectionScreen
-                PreScreen = currentScreen
-                CanBePaused = True
-                CanChat = False
-                CanDrawDebug = True
-                CanGoFullscreen = True
-                CanTakeScreenshot = True
-                MouseVisible = True
+			Public Sub New(ByVal currentScreen As Screen)
+				Identification = Identifications.CharacterSelectionScreen
+				PreScreen = currentScreen
+				CanBePaused = True
+				CanChat = False
+				CanDrawDebug = True
+				CanGoFullscreen = True
+				CanTakeScreenshot = True
+				MouseVisible = True
 
-                For Each skin As String In skins
-                    _sprites.Add(TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins\" & skin))
-                Next
+				For Each skin As String In GameModeManager.ActiveGameMode.SkinFiles
+					_sprites.Add(TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins\" & skin))
+				Next
 
-                _skins = skins
-            End Sub
+				_skins = GameModeManager.ActiveGameMode.SkinFiles
+			End Sub
 
-            Public Overrides Sub Update()
+			Public Overrides Sub Update()
                 If _fadeIn < 1.0F Then
                     _fadeIn = MathHelper.Lerp(1.0F, _fadeIn, 0.95F)
                     If _fadeIn + 0.01F >= 1.0F Then

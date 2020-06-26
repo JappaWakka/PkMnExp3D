@@ -56,8 +56,8 @@ Fences:
 {"EntityField"{ENT[{"Size"{intArr[5,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[10,1,4]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[112,32,16,16][128,32,16,16]]}}{"TextureIndex"{intArr[0,0,1,1,1,1,0,0,1,1]}}{"Collision"{bool[1]}}{"ModelID"{int[4]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 
 NPCs:
-{"NPC"{NPC[{"Scale"{sngArr[1,1,1]}}{"Position"{sngArr[9,1,4]}}{"TextureID"{str[GateKeeper]}}{"ID"{int[0]}}{"Name"{str[TrainManLOLMATRIX]}}{"Action"{int[1]}}{"AdditionalValue"{str[AncientRuins\trainman]}}{"Rotation"{int[2]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
-{"NPC"{NPC[{"Scale"{sngArr[1,1,1]}}{"Position"{sngArr[12,0,10]}}{"TextureID"{str[hiker]}}{"ID"{int[2]}}{"Name"{str[ConfusedMan]}}{"Action"{int[1]}}{"AdditionalValue"{str[AncientRuins\hiker]}}{"Rotation"{int[1]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[[12,10,1,5]]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[9,1,4]}}{"TextureID"{str[GateKeeper]}}{"ID"{int[0]}}{"Name"{str[TrainManLOLMATRIX]}}{"Action"{int[1]}}{"AdditionalValue"{str[AncientRuins\trainman]}}{"Rotation"{int[2]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[12,0,10]}}{"TextureID"{str[hiker]}}{"ID"{int[2]}}{"Name"{str[ConfusedMan]}}{"Action"{int[1]}}{"AdditionalValue"{str[AncientRuins\hiker]}}{"Rotation"{int[1]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[[12,10,1,5]]}}]}}
 
 Stairs:
 {"EntityField"{ENT[{"Size"{intArr[3,1]}}{"EntityID"{str[SlideBlock]}}{"Position"{sngArr[8,0,8]}}{"TexturePath"{str[dungeon]}}{"Textures"{recArr[[32,16,16,16][16,0,16,16]]}}{"TextureIndex"{intArr[-1,-1,1,1,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[2]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}

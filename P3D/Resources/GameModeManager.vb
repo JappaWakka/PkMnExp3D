@@ -564,8 +564,8 @@ Public Class GameMode
 	''' </summary>
 	Public Shared Function GetPkMnExp3DGameMode() As GameMode
 		Dim SkinColors As List(Of Color) = {New Color(248, 176, 32), New Color(248, 216, 88), New Color(56, 88, 200), New Color(216, 96, 112), New Color(56, 88, 152), New Color(239, 90, 156)}.ToList()
-		Dim SkinFiles As List(Of String) = {"Ethan", "Rande", "Ethan_GBA", "Lyra_GBA"}.ToList()
-		Dim SkinNames As List(Of String) = {"J. Akira", "Rande", "Ethan (GBA)", "Lyra (GBA)"}.ToList()
+		Dim SkinFiles As List(Of String) = {"Ethan", "Lyra"}.ToList()
+		Dim SkinNames As List(Of String) = {"Ethan", "Lyra"}.ToList()
 		Dim SkinGenders As List(Of String) = {"Male", "Female", "Male", "Female"}.ToList()
 
 		Dim gameMode As New GameMode("Pokémon Exp3D", "The default GameMode based~on the GBC Pokémon games.", GameController.GAMEVERSION, "Pokémon Exp3D Team", "\Content\Data\Maps\", "\Content\Data\Scripts\", "\Content\Data\System\WildEncounters\", "\Content\Pokemon\Data\", "\Content\", "\Content\Localization\", New List(Of GameRule),

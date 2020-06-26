@@ -260,19 +260,19 @@
             Screen.Level.Entities.Add(OppPokemonNPC)
             Screen.Level.Entities.Add(OppPokemonModel)
 
-            Dim ownSkin As String = Core.Player.Skin
-            If SavedOverworld.Level.Biking = True Then
-                ownSkin = Core.Player.TempBikeSkin
-            End If
-            If SavedOverworld.Level.Fishing = True Then
-                ownSkin = Core.Player.TempFishSkin
-            End If
-            If SavedOverworld.Level.Surfing = True Then
-                ownSkin = Core.Player.TempSurfSkin
-            End If
-            If SavedOverworld.Level.Riding = True Then
-                ownSkin = Core.Player.TempRideSkin
-            End If
+			Dim ownSkin As String = "\PlayerSkins\" & Core.Player.Skin
+			If SavedOverworld.Level.Biking = True Then
+				ownSkin = "\PlayerSkins\" & Core.Player.TempBikeSkin
+			End If
+			If SavedOverworld.Level.Fishing = True Then
+				ownSkin = "\PlayerSkins\" & Core.Player.TempFishSkin
+			End If
+			If SavedOverworld.Level.Surfing = True Then
+				ownSkin = "\PlayerSkins\" & Core.Player.TempSurfSkin
+			End If
+			If SavedOverworld.Level.Riding = True Then
+				ownSkin = "\PlayerSkins\" & Core.Player.TempRideSkin
+			End If
 
             OwnTrainerNPC = CType(Entity.GetNewEntity("NPC", New Vector3(10, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", True, New Vector3(1), 0, "", "", New Vector3(0), {ownSkin, 3, "Player", 2, False, "Still", New List(Of Rectangle)}), NPC)
             Screen.Level.Entities.Add(OwnTrainerNPC)
