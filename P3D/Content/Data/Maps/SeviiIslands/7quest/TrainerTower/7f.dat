@@ -52,4 +52,4 @@ Stairs:
 {"Entity"{ENT[{"EntityID"{str[WallBlock]}}{"TexturePath"{str[rocketbase]}}{"Textures"{recArr[[16,64,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}{"Position"{sngArr[4,-1.001,1]}}]}}
 
 NPCs:
-{"NPC"{NPC[{"Scale"{sngArr[1,1,1]}}{"Position"{sngArr[2,0,3]}}{"TextureID"{str[YoungWoman]}}{"ID"{int[3]}}{"Name"{str[Lass]}}{"Action"{int[0]}}{"AdditionalValue"{str[Let's crush berries!*...That'd be wasting berries?*You can always find~some berries on the~ground in Berry Forest.]}}{"Rotation"{int[2]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[2,3,3,1]]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[2,0,3]}}{"TextureID"{str[YoungWoman]}}{"ID"{int[3]}}{"Name"{str[Lass]}}{"Action"{int[0]}}{"AdditionalValue"{str[Let's crush berries!*...That'd be wasting berries?*You can always find~some berries on the~ground in Berry Forest.]}}{"Rotation"{int[2]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[2,3,3,1]]}}]}}

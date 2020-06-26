@@ -31,4 +31,4 @@ Floor:
 {"Floor"{ENT[{"Size"{intArr[14,9]}}{"Position"{intArr[7,0,9]}}{"TexturePath"{str[routes]}}{"Texture"{rec[112,192,16,16]}}]}}
 
 NPCs:
-{"NPC"{NPC[{"Scale"{sngArr[1,1,1]}}{"Position"{sngArr[18,0,13]}}{"TextureID"{str[SeviiIslands\1knot\kolbentower\Omega]}}{"ID"{int[4]}}{"Name"{str[Omega]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[1]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[18,0,13]}}{"TextureID"{str[SeviiIslands\1knot\kolbentower\Omega]}}{"ID"{int[4]}}{"Name"{str[Omega]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[1]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}

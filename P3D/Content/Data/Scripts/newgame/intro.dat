@@ -33,10 +33,10 @@
 @text.show(There are still~many mysteries to solve.*That's why I study~Pokémon every day.)
 @text.show(But let's get~back to you.)
 
-@screen.skinselection(Ethan,Lyra,Hilbert,Hilda,Nate,Rosa)
+@screen.skinselection
 
 @player.wearskin(<screen.selectedskin>)
-@npc.wearskin(1,<screen.selectedskin>)
+@npc.wearskin(1,PlayerSkins\<screen.selectedskin>)
 
 :while:<camera.z><11.5
     @camera.setz(~+0.05)
@@ -92,6 +92,6 @@
 @player.addmoney(3000)
 
 
-@system.endnewgame(Johto\Cities\newbark\YourRoom2f.dat,1,0.1,3,1)
+@system.endnewgame(Johto\Cities\newbark\YourHouse2f.dat,1,0.1,3,1)
 
 :end

@@ -233,7 +233,7 @@ Item:
 	{"Entity"{ENT[{"EntityID"{str[ItemObject]}}{"Position"{sngArr[5,-0.375,-1]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[192,16,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[1,173]}}{"Rotation"{int[0]}}{"Scale"{sngArr[0.25,0.25,0.25]}}]}}
 
 NPC:
-	{"NPC"{NPC[{"Scale"{sngArr[1,1,1]}}{"Position"{sngArr[5,-0.25,11]}}{"TextureID"{str[StaticEntities\ManaphyEgg]}}{"ID"{int[0]}}{"Name"{str[Shellder]}}{"Action"{int[1]}}{"AdditionalValue"{str[SeviiIslands\UnderwaterCave\manaphy]}}{"Rotation"{int[0]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+	{"NPC"{NPC[{"Position"{sngArr[5,-0.25,11]}}{"TextureID"{str[StaticEntities\ManaphyEgg]}}{"ID"{int[0]}}{"Name"{str[Shellder]}}{"Action"{int[1]}}{"AdditionalValue"{str[SeviiIslands\UnderwaterCave\manaphy]}}{"Rotation"{int[0]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
 
 
 
