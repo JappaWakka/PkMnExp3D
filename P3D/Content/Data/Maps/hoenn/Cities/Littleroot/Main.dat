@@ -193,3 +193,4 @@ Route 101
 
 OffsetMaps:
 {"OffsetMap"{MAP[{"Offset"{intArr[0,0,-28]}}{"Map"{str[Hoenn\Routes\101.dat]}}]}}
+{"OffsetMap"{MAP[{"Offset"{intArr[0,0,-43]}}{"Map"{str[Hoenn\Cities\Oldale\Main.dat]}}]}}
