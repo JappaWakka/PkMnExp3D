@@ -336,8 +336,8 @@ Corners:
 NPC:
 {"NPC"{NPC[{"Position"{sngArr[13,-0.24,62]}}{"TextureID"{str[35]}}{"ID"{int[0]}}{"Name"{str[IDlotto]}}{"Action"{int[2]}}{"AdditionalValue"{str[2|trainer\fortune\north\002]}}{"Rotation"{int[1]}}{"Movement"{str[Looking]}}{"MoveRectangles"{recArr[[17,2,2,1]]}}]}}
 {"NPC"{NPC[{"Position"{sngArr[10,-0.24,44]}}{"TextureID"{str[35]}}{"ID"{int[1]}}{"Name"{str[IDlotto]}}{"Action"{int[2]}}{"AdditionalValue"{str[1|trainer\fortune\north\003l]}}{"Rotation"{int[0]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[[17,2,2,1]]}}]}}
-{"NPC"{NPC[{"Position"{sngArr[11,-0.24,44]}}{"TextureID"{str[Swimmer_Male]}}{"ID"{int[2]}}{"Name"{str[IDlotto]}}{"Action"{int[2]}}{"AdditionalValue"{str[1|trainer\fortune\north\003r]}}{"Rotation"{int[0]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[[17,2,2,1]]}}]}}
-{"NPC"{NPC[{"Position"{sngArr[13,-0.24,34]}}{"TextureID"{str[Swimmer_Male]}}{"ID"{int[3]}}{"Name"{str[IDlotto]}}{"Action"{int[2]}}{"AdditionalValue"{str[2|trainer\fortune\north\004]}}{"Rotation"{int[1]}}{"Movement"{str[Looking]}}{"MoveRectangles"{recArr[[17,2,2,1]]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[11,-0.24,44]}}{"TextureID"{str[Swimmer_Male_Water]}}{"ID"{int[2]}}{"Name"{str[IDlotto]}}{"Action"{int[2]}}{"AdditionalValue"{str[1|trainer\fortune\north\003r]}}{"Rotation"{int[0]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[[17,2,2,1]]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[13,-0.24,34]}}{"TextureID"{str[Swimmer_Male_Water]}}{"ID"{int[3]}}{"Name"{str[IDlotto]}}{"Action"{int[2]}}{"AdditionalValue"{str[2|trainer\fortune\north\004]}}{"Rotation"{int[1]}}{"Movement"{str[Looking]}}{"MoveRectangles"{recArr[[17,2,2,1]]}}]}}
 {"NPC"{NPC[{"Position"{sngArr[12,0,15]}}{"TextureID"{str[fisherman]}}{"ID"{int[4]}}{"Name"{str[IDlotto]}}{"Action"{int[2]}}{"AdditionalValue"{str[1|trainer\fortune\north\005]}}{"Rotation"{int[0]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[[17,2,2,1]]}}]}}
 {"NPC"{NPC[{"Position"{sngArr[8,0,24]}}{"TextureID"{str[Grunt_Male]}}{"ID"{int[5]}}{"Name"{str[IDlotto]}}{"Action"{int[2]}}{"AdditionalValue"{str[2|trainer\fortune\north\006]}}{"Rotation"{int[1]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[[17,2,2,1]]}}]}}
 
