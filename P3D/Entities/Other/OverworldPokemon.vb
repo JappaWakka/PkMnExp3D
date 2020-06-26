@@ -45,11 +45,17 @@ Public Class OverworldPokemon
         Dim spriteIndex As Integer = Me.faceRotation - cameraRotation
 
         spriteIndex = Me.faceRotation - cameraRotation
-        If spriteIndex < 0 Then
-            spriteIndex += 4
-        End If
+		If spriteIndex < 0 Then
+			spriteIndex += 4
+		End If
 
-		Dim width As Integer = CInt(Me.Texture.Width / 3)
+		Dim width As Integer
+
+		If Me.Texture.Width = Me.Texture.Height / 2 Then
+			width = CInt(Me.Texture.Width / 2)
+		Else
+			width = CInt(Me.Texture.Width / 3)
+		End If
 
 		Dim x As Integer = 0
 		x = GetAnimationX() * width
@@ -284,17 +290,30 @@ Public Class OverworldPokemon
     End Sub
 
 	Private Function GetAnimationX() As Integer
-		Select Case AnimationX
-			Case 1
-				Return 0
-			Case 2
-				Return 1
-			Case 3
-				Return 0
-			Case 4
-				Return 2
-		End Select
-		Return 1
+		If Me.Texture.Width = Me.Texture.Height / 2 Then
+			Select Case AnimationX
+				Case 1
+					Return 0
+				Case 2
+					Return 1
+				Case 3
+					Return 0
+				Case 4
+					Return 1
+			End Select
+		Else
+			Select Case AnimationX
+				Case 1
+					Return 0
+				Case 2
+					Return 1
+				Case 3
+					Return 0
+				Case 4
+					Return 2
+			End Select
+		End If
+		Return 0
 	End Function
 
 End Class
