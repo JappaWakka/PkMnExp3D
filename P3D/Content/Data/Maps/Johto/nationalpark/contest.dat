@@ -480,9 +480,9 @@ Random:
 {"NPC"{NPC[{"Position"{sngArr[29,0,9]}}{"TextureID"{str[camper]}}{"ID"{int[20]}}{"Name"{str[NPC]}}{"Action"{int[0]}}{"AdditionalValue"{str[Rare Pokémon are~more likely to win*the contest. So~look for them.]}}{"Rotation"{int[0]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[28,8,3,3]]}}]}}
 
 Winners:
-{"NPC"{NPC[{"Position"{sngArr[16,-2,19]}}{"TextureID"{str[Joy]}}{"ID"{int[4]}}{"Name"{str[Winner3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
-{"NPC"{NPC[{"Position"{sngArr[20,-2,19]}}{"TextureID"{str[Joy]}}{"ID"{int[5]}}{"Name"{str[Winner2]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
-{"NPC"{NPC[{"Position"{sngArr[22,-2,19]}}{"TextureID"{str[Joy]}}{"ID"{int[6]}}{"Name"{str[Winner1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[16,-2,19]}}{"TextureID"{str[NurseJoy]}}{"ID"{int[4]}}{"Name"{str[Winner3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[20,-2,19]}}{"TextureID"{str[NurseJoy]}}{"ID"{int[5]}}{"Name"{str[Winner2]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[22,-2,19]}}{"TextureID"{str[NurseJoy]}}{"ID"{int[6]}}{"Name"{str[Winner1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
 
 Gives prize:
 {"NPC"{NPC[{"Position"{sngArr[19,-2,16]}}{"TextureID"{str[GateKeeper]}}{"ID"{int[7]}}{"Name"{str[GateKeeper]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
