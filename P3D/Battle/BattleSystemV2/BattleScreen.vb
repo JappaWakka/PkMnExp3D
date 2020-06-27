@@ -815,7 +815,7 @@
                 BattleMapOffset = New Vector3(0)
             End If
 
-            Level.Load("battle\" & levelfile)
+            Level.Load("BattleMaps\" & levelfile)
             Level.MapName = SavedOverworld.Level.MapName
         End Sub
 
