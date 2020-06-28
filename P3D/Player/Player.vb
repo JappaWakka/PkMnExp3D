@@ -362,11 +362,11 @@
     Public DifficultyMode As Integer = 0
     Public BattleStyle As Integer = 1
     Public ShowModelsInBattle As Boolean = True
-    Public TempSurfSkin As String = "Gold_GBA"
-    Public TempFishSkin As String = "Gold_GBA"
-    Public TempBikeSkin As String = "Gold_GBA"
-    Public TempRideSkin As String = "Gold_GBA"
-    Public Statistics As String = ""
+	Public TempSurfSkin As String = "Ethan"
+	Public TempFishSkin As String = "Ethan"
+	Public TempBikeSkin As String = "Ethan"
+	Public TempRideSkin As String = "Ethan"
+	Public Statistics As String = ""
 
     'Secure fields:
     Private _name As String = "<playername>"

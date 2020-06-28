@@ -1,5 +1,5 @@
 Main:
-{"Level"{LEV[{"Name"{str[Littleroot Town]}}{"MusicLoop"{str[Stop]}}{"WildPokemon"{bool[0]}}{"CurrentRegion"{str[Corna]}}]}}
+{"Level"{LEV[{"Name"{str[Littleroot Town]}}{"MusicLoop"{str[Stop]}}{"WildPokemon"{bool[0]}}{"CurrentRegion"{str[Hoenn]}}]}}
 {"Actions"{LEV[{"CanTeleport"{bool[0]}}{"CanDig"{bool[0]}}{"CanFly"{bool[0]}}{"EnvironmentType"{int[1]}}{"Weather"{int[1]}}{"MapScript"{str[]}}]}}
 
 Floor:
@@ -67,24 +67,24 @@ Cabin:
 
 Boxes:
 {"EntityField"{ENT[{"EntityID"{str[WallBlock]}}{"Size"{intArr[1,1]}}{"Position"{sngArr[0,0,1]}}{"TexturePath"{str[InsideTruck]}}{"Textures"{recArr[[48,32,16,16][48,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[12]}}]}}
-{"EntityField"{ENT[{"EntityID"{str[ScriptBlock]}}{"Size"{intArr[1,1]}}{"Position"{sngArr[1,0,1]}}{"TexturePath"{str[InsideTruck]}}{"Textures"{recArr[[48,32,16,16][48,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[12]}}{"Action"{int[1]}}{"AdditionalValue"{str[12\LittleRootTown\Truck\CE_Truck]}}]}}
+{"EntityField"{ENT[{"EntityID"{str[ScriptBlock]}}{"Size"{intArr[1,1]}}{"Position"{sngArr[1,0,1]}}{"TexturePath"{str[InsideTruck]}}{"Textures"{recArr[[48,32,16,16][48,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[12]}}{"Action"{int[1]}}{"AdditionalValue"{str[hoenn\Cities\Littleroot\MovingTruckBox]}}]}}
 
 {"EntityField"{ENT[{"EntityID"{str[WallBlock]}}{"Size"{intArr[1,1]}}{"Position"{sngArr[0,1,1]}}{"TexturePath"{str[InsideTruck]}}{"Textures"{recArr[[48,32,16,16][48,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[12]}}]}}
 
-{"EntityField"{ENT[{"EntityID"{str[ScriptBlock]}}{"Size"{intArr[1,1]}}{"Position"{sngArr[0,0,2]}}{"TexturePath"{str[InsideTruck]}}{"Textures"{recArr[[48,32,16,16][48,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[12]}}{"Action"{int[1]}}{"AdditionalValue"{str[12\LittleRootTown\Truck\CE_Truck]}}]}}
+{"EntityField"{ENT[{"EntityID"{str[ScriptBlock]}}{"Size"{intArr[1,1]}}{"Position"{sngArr[0,0,2]}}{"TexturePath"{str[InsideTruck]}}{"Textures"{recArr[[48,32,16,16][48,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[12]}}{"Action"{int[1]}}{"AdditionalValue"{str[hoenn\Cities\Littleroot\MovingTruckBox]}}]}}
 
-{"EntityField"{ENT[{"EntityID"{str[ScriptBlock]}}{"Size"{intArr[1,1]}}{"Position"{sngArr[0,0,3]}}{"TexturePath"{str[InsideTruck]}}{"Textures"{recArr[[48,32,16,16][48,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[12]}}{"Action"{int[1]}}{"AdditionalValue"{str[12\LittleRootTown\Truck\CE_Truck]}}]}}
+{"EntityField"{ENT[{"EntityID"{str[ScriptBlock]}}{"Size"{intArr[1,1]}}{"Position"{sngArr[0,0,3]}}{"TexturePath"{str[InsideTruck]}}{"Textures"{recArr[[48,32,16,16][48,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[12]}}{"Action"{int[1]}}{"AdditionalValue"{str[hoenn\Cities\Littleroot\MovingTruckBox]}}]}}
 
 {"EntityField"{ENT[{"EntityID"{str[WallBlock]}}{"Size"{intArr[1,1]}}{"Position"{sngArr[0,0,4]}}{"TexturePath"{str[InsideTruck]}}{"Textures"{recArr[[48,32,16,16][48,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[12]}}]}}
-{"EntityField"{ENT[{"EntityID"{str[ScriptBlock]}}{"Size"{intArr[1,1]}}{"Position"{sngArr[1,0,4]}}{"TexturePath"{str[InsideTruck]}}{"Textures"{recArr[[48,32,16,16][48,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[12]}}{"Action"{int[1]}}{"AdditionalValue"{str[12\LittleRootTown\Truck\CE_Truck]}}]}}
-{"EntityField"{ENT[{"EntityID"{str[ScriptBlock]}}{"Size"{intArr[1,1]}}{"Position"{sngArr[2,0,4]}}{"TexturePath"{str[InsideTruck]}}{"Textures"{recArr[[48,32,16,16][48,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[12]}}{"Action"{int[1]}}{"AdditionalValue"{str[12\LittleRootTown\Truck\CE_Truck]}}]}}
+{"EntityField"{ENT[{"EntityID"{str[ScriptBlock]}}{"Size"{intArr[1,1]}}{"Position"{sngArr[1,0,4]}}{"TexturePath"{str[InsideTruck]}}{"Textures"{recArr[[48,32,16,16][48,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[12]}}{"Action"{int[1]}}{"AdditionalValue"{str[hoenn\Cities\Littleroot\MovingTruckBox]}}]}}
+{"EntityField"{ENT[{"EntityID"{str[ScriptBlock]}}{"Size"{intArr[1,1]}}{"Position"{sngArr[2,0,4]}}{"TexturePath"{str[InsideTruck]}}{"Textures"{recArr[[48,32,16,16][48,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[12]}}{"Action"{int[1]}}{"AdditionalValue"{str[hoenn\Cities\Littleroot\MovingTruckBox]}}]}}
 
 {"EntityField"{ENT[{"EntityID"{str[WallBlock]}}{"Size"{intArr[1,1]}}{"Position"{sngArr[0,1,4]}}{"TexturePath"{str[InsideTruck]}}{"Textures"{recArr[[48,32,16,16][48,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[12]}}]}}
 
 {"EntityField"{ENT[{"EntityID"{str[WallBlock]}}{"Size"{intArr[1,1]}}{"Position"{sngArr[0,0,5]}}{"TexturePath"{str[InsideTruck]}}{"Textures"{recArr[[48,32,16,16][48,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[12]}}]}}
 {"EntityField"{ENT[{"EntityID"{str[WallBlock]}}{"Size"{intArr[1,1]}}{"Position"{sngArr[1,0,5]}}{"TexturePath"{str[InsideTruck]}}{"Textures"{recArr[[48,32,16,16][48,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[12]}}]}}
 {"EntityField"{ENT[{"EntityID"{str[WallBlock]}}{"Size"{intArr[1,1]}}{"Position"{sngArr[2,0,5]}}{"TexturePath"{str[InsideTruck]}}{"Textures"{recArr[[48,32,16,16][48,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[12]}}]}}
-{"EntityField"{ENT[{"EntityID"{str[ScriptBlock]}}{"Size"{intArr[1,1]}}{"Position"{sngArr[3,0,5]}}{"TexturePath"{str[InsideTruck]}}{"Textures"{recArr[[48,32,16,16][48,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[12]}}{"Action"{int[1]}}{"AdditionalValue"{str[12\LittleRootTown\Truck\CE_Truck]}}]}}
+{"EntityField"{ENT[{"EntityID"{str[ScriptBlock]}}{"Size"{intArr[1,1]}}{"Position"{sngArr[3,0,5]}}{"TexturePath"{str[InsideTruck]}}{"Textures"{recArr[[48,32,16,16][48,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[12]}}{"Action"{int[1]}}{"AdditionalValue"{str[hoenn\Cities\Littleroot\MovingTruckBox]}}]}}
 
 {"EntityField"{ENT[{"EntityID"{str[WallBlock]}}{"Size"{intArr[1,1]}}{"Position"{sngArr[0,1,5]}}{"TexturePath"{str[InsideTruck]}}{"Textures"{recArr[[48,32,16,16][48,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[12]}}]}}
 {"EntityField"{ENT[{"EntityID"{str[WallBlock]}}{"Size"{intArr[1,1]}}{"Position"{sngArr[2,1,5]}}{"TexturePath"{str[InsideTruck]}}{"Textures"{recArr[[48,32,16,16][48,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[12]}}]}}

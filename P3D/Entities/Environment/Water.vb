@@ -221,19 +221,19 @@
                 Core.Player.TempSurfSkin = .SkinName
                 Dim pokemonNumber As Integer = Core.Player.Pokemons(Core.Player.SurfPokemon).Number
                 Dim SkinName_Human As String = "[SKIN]"
-                If GameModeManager.ContentFileExists(Core.Player.Skin & "_Surf") = True Then
-                    SkinName_Human = Core.Player.Skin & "_Surf"
-                End If
+				If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Textures\OverworldSprites\PlayerSkins\" & Core.Player.Skin & "_Surf.png") = True Then
+					SkinName_Human = Core.Player.Skin & "_Surf"
+				End If
 
-                Dim SkinName_Pokemon As String = "[POKEMON|N]" & pokemonNumber & PokemonForms.GetOverworldAddition(Core.Player.Pokemons(Core.Player.SurfPokemon))
+				Dim SkinName_Pokemon As String = "[POKEMON|N]" & pokemonNumber & PokemonForms.GetOverworldAddition(Core.Player.Pokemons(Core.Player.SurfPokemon))
                 If Core.Player.Pokemons(Core.Player.SurfPokemon).IsShiny = True Then
                     SkinName_Pokemon = "[POKEMON|S]" & pokemonNumber & PokemonForms.GetOverworldAddition(Core.Player.Pokemons(Core.Player.SurfPokemon))
                 End If
 
-                If GameModeManager.ContentFileExists(Core.Player.Skin & "_Surf") = False Then
-                    .SetTexture(SkinName_Pokemon, False)
-                Else
-                    .SetTexture(SkinName_Human, False)
+				If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Textures\OverworldSprites\PlayerSkins\" & Core.Player.Skin & "_Surf.png") = False Then
+					.SetTexture(SkinName_Pokemon, False)
+				Else
+					.SetTexture(SkinName_Human, False)
                 End If
 
                 SoundManager.PlayPokemonCry(pokemonNumber)

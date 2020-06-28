@@ -1,0 +1,3 @@
+﻿version=2
+@Text.show(<token.InsideTruck_MovingBox>)
+:end

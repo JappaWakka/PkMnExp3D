@@ -14,17 +14,17 @@ Namespace Items.KeyItems
 
         Public Overrides Sub Use()
             If OldRod.IsInfrontOfWater() = True And Screen.Level.Surfing = False And Screen.Level.Biking = False And Screen.Level.Riding = False Then
-                If GameModeManager.ContentFileExists(Core.Player.Skin & "_Fish") = True Then
-                    With Screen.Level.OwnPlayer
-                        Core.Player.TempFishSkin = .SkinName
+				If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Textures\OverworldSprites\PlayerSkins\" & Core.Player.Skin & "_Fish.png") = True Then
+					With Screen.Level.OwnPlayer
+						Core.Player.TempFishSkin = .SkinName
 
-                        Dim SkinName_Fish As String = "[SKIN]"
-                        SkinName_Fish = Core.Player.Skin & "_Fish"
+						Dim SkinName_Fish As String = "[SKIN]"
+						SkinName_Fish = Core.Player.Skin & "_Fish"
 
-                        .SetTexture(SkinName_Fish, False)
-                    End With
-                End If
-                Dim s As String = "version=2"
+						.SetTexture(SkinName_Fish, False)
+					End With
+				End If
+				Dim s As String = "version=2"
 
                 While Core.CurrentScreen.Identification <> Screen.Identifications.OverworldScreen
                     Core.CurrentScreen = Core.CurrentScreen.PreScreen

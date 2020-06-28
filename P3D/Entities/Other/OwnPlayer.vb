@@ -135,9 +135,13 @@
                 End While
             End If
 
-            Dim frameSize As New Size(CInt(Me.Texture.Width / 3), CInt(Me.Texture.Height / 4))
+			Dim frameSize As New Size(CInt(Me.Texture.Width / 3), CInt(Me.Texture.Height / 4))
 
-            Dim x As Integer = 0
+			If Me.Texture.Width = Me.Texture.Height / 2 Then
+				frameSize = New Size(CInt(Me.Texture.Width / 2), CInt(Me.Texture.Height / 4))
+			End If
+
+			Dim x As Integer = 0
             If Screen.Camera.IsMoving() = True Then
                 x = GetAnimationX() * frameSize.Width
             End If

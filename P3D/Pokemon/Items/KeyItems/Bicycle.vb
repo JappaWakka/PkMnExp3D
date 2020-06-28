@@ -26,10 +26,10 @@ Namespace Items.KeyItems
             Else
                 If Screen.Level.Surfing = False And Screen.Level.Biking = False And Screen.Level.Riding = False And Screen.Camera.IsMoving() = False And Screen.Camera.Turning = False And Screen.Level.CanBike() = True Then
 
-                    If GameModeManager.ContentFileExists(Core.Player.Skin & "_Bike") = False Then
-                        Screen.TextBox.Show("Your Player Skin doesn't support this item!", {}, True, False)
-                    Else
-                        If Core.CurrentScreen.Identification = Screen.Identifications.UseItemScreen Then
+					If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Textures\OverworldSprites\PlayerSkins\" & Core.Player.Skin & "_Bike.png") = False Then
+						Screen.TextBox.Show("Your Player Skin doesn't support this item!", {}, True, False)
+					Else
+						If Core.CurrentScreen.Identification = Screen.Identifications.UseItemScreen Then
                             Core.SetScreen(Core.CurrentScreen.PreScreen)
                         End If
 
