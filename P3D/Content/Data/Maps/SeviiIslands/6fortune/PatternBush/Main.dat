@@ -2,7 +2,7 @@
 {"Actions"{LEV[{"CanTeleport"{bool[1]}}{"CanDig"{bool[0]}}{"CanFly"{bool[1]}}{"EnvironmentType"{int[0]}}{"Weather"{int[0]}}{"Lightning"{int[2]}}{"BattleMap"{str[SeviiIslands\6fortune\patternbush\Main.dat,0,0,-0.6]}}]}}
 
 Floors:
-{"Floor"{ENT[{"Size"{intArr[60,30]}}{"Position"{intArr[2,0,2]}}{"TexturePath"{str[berryForest]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[60,30]}}{"Position"{sngArr[2,0,2]}}{"TexturePath"{str[berryForest]}}{"Texture"{rec[0,0,16,16]}}]}}
 
 UpperBlocks:
 {"EntityField"{ENT[{"Size"{intArr[60,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[2,0,32]}}{"TexturePath"{str[berryForest]}}{"Textures"{recArr[[16,16,16,16][0,0,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,1,1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}
@@ -133,7 +133,7 @@ gatee:
 {"Entity"{ENT[{"EntityID"{str[WallBlock]}}{"Position"{sngArr[58,2,30]}}{"TexturePath"{str[berryForest]}}{"Textures"{recArr[[40,48,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 {"Entity"{ENT[{"EntityID"{str[WallBlock]}}{"Position"{sngArr[57,2,30]}}{"TexturePath"{str[berryForest]}}{"Textures"{recArr[[32,48,16,16][48,48,16,16]]}}{"TextureIndex"{intArr[1,1,1,1,0,0,0,0,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 
-{"Floor"{ENT[{"Size"{intArr[5,5]}}{"Position"{intArr[56,3,26]}}{"TexturePath"{str[berryForest]}}{"Texture"{rec[48,32,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[5,5]}}{"Position"{sngArr[56,3,26]}}{"TexturePath"{str[berryForest]}}{"Texture"{rec[48,32,16,16]}}]}}
 
 gatew:
 {"EntityField"{ENT[{"Fill"{bool[0]}}{"Size"{intArr[5,4]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[3,0,27]}}{"TexturePath"{str[berryForest]}}{"Textures"{recArr[[16,48,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
@@ -161,7 +161,7 @@ gatew:
 {"Entity"{ENT[{"EntityID"{str[WallBlock]}}{"Position"{sngArr[5,2,30]}}{"TexturePath"{str[berryForest]}}{"Textures"{recArr[[40,48,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 {"Entity"{ENT[{"EntityID"{str[WallBlock]}}{"Position"{sngArr[4,2,30]}}{"TexturePath"{str[berryForest]}}{"Textures"{recArr[[32,48,16,16][48,48,16,16]]}}{"TextureIndex"{intArr[1,1,1,1,0,0,0,0,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 
-{"Floor"{ENT[{"Size"{intArr[5,5]}}{"Position"{intArr[3,3,26]}}{"TexturePath"{str[berryForest]}}{"Texture"{rec[48,32,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[5,5]}}{"Position"{sngArr[3,3,26]}}{"TexturePath"{str[berryForest]}}{"Texture"{rec[48,32,16,16]}}]}}
 
 NPCs:
 {"NPC"{NPC[{"Position"{sngArr[54,0,21]}}{"TextureID"{str[youngster]}}{"ID"{int[0]}}{"Name"{str[Lostelle]}}{"Action"{int[2]}}{"AdditionalValue"{str[4|trainer\fortune\pattern\001]}}{"Rotation"{int[3]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}

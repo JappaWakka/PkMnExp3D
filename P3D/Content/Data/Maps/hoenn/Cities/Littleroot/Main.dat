@@ -3,12 +3,12 @@
 
 Floors:
 Grass
-{"Floor"{ENT[{"Size"{intArr[28,24]}}{"Position"{intArr[-1,0,0]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[28,24]}}{"Position"{sngArr[-1,0,0]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
 
 Sand
-{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{intArr[8,0,9]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[192,96,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{intArr[17,0,9]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[192,96,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{intArr[10,0,17]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[192,96,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[8,0,9]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[192,96,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[17,0,9]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[192,96,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[10,0,17]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[192,96,16,16]}}]}}
 
 Treewalls:
 Closest to map origin
@@ -256,8 +256,8 @@ Warps:
 Route 101
 {"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[13,0,-1]}}{"TexturePath"{str[Village]}}{"Textures"{recArr[[128,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[Hoenn\Routes\101.dat,10,0.1,10,0]}}{"Rotation"{int[0]}}{"Visible"{bool[0]}}]}}
 {"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[14,0,-1]}}{"TexturePath"{str[Village]}}{"Textures"{recArr[[128,16,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[Hoenn\Routes\101.dat,10,0.1,10,0]}}{"Rotation"{int[0]}}{"Visible"{bool[0]}}]}}
-{"Floor"{ENT[{"Size"{intArr[2,1]}}{"Position"{intArr[13,0,-1]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}{"Visible"{bool[0]}}]}}
+{"Floor"{ENT[{"Size"{intArr[2,1]}}{"Position"{sngArr[13,0,-1]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}{"Visible"{bool[0]}}]}}
 
 OffsetMaps:
-{"OffsetMap"{MAP[{"Offset"{intArr[0,0,-20]}}{"Map"{str[Hoenn\Routes\101.dat]}}]}}
-{"OffsetMap"{MAP[{"Offset"{intArr[0,0,-43]}}{"Map"{str[Hoenn\Cities\Oldale\Main.dat]}}]}}
+{"OffsetMap"{MAP[{"Offset"{sngArr[0,0,-20]}}{"Map"{str[Hoenn\Routes\101.dat]}}]}}
+{"OffsetMap"{MAP[{"Offset"{sngArr[0,0,-43]}}{"Map"{str[Hoenn\Cities\Oldale\Main.dat]}}]}}

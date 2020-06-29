@@ -78,7 +78,6 @@ Public Class MusicManager
 	Private Shared _isPausedForSound As Boolean = False
 
 	' time until the intro of a song plays
-	Private Shared _introStartTime As Date
 	Private Shared _introMuteTime As Date
 	Private Shared _introEndTime As Date
 	Private Shared _isIntroStarted As Boolean = False
@@ -117,11 +116,16 @@ Public Class MusicManager
 					If outputDevice IsNot Nothing Then
 						outputDevice.Pause()
 						_introMuteTime = Date.Now
-						Core.GameMessage.ShowMessage(Localization.GetString("game_message_music_off"), 12, FontManager.MainFontWhite, Color.White)
+						Core.GameMessage.ShowMessage(Localization.GetString("game_message_audio_off"), 12, FontManager.MainFontWhite, Color.White)
 					End If
+
 				Else
-					ResumePlayback()
-					Core.GameMessage.ShowMessage(Localization.GetString("game_message_music_on"), 12, FontManager.MainFontWhite, Color.White)
+					If _isPausedForSound Then
+						_muted = True
+					Else
+						ResumePlayback()
+						Core.GameMessage.ShowMessage(Localization.GetString("game_message_audio_on"), 12, FontManager.MainFontWhite, Color.White)
+					End If
 				End If
 			End If
 		End Set
@@ -182,7 +186,7 @@ Public Class MusicManager
 
 						If _fadeIntoIntro Then
 							_fadeIntoIntro = False
-							_introEndTime = Date.Now.AddSeconds(0) + song.Duration
+							_introEndTime = Date.Now + song.Duration
 							_isIntroStarted = True
 						Else
 							_isLooping = True
@@ -217,14 +221,15 @@ Public Class MusicManager
 
 			' intro
 			If _isIntroStarted Then
-				If Date.Now.AddSeconds(0) >= _introEndTime Then
-					Dim song = GetSong(_introContinueSong)
-					_isLooping = True
-					_isIntroStarted = False
-					Play(song)
+				If Muted = False Then
+					If Date.Now >= _introEndTime Then
+						Dim song = GetSong(_introContinueSong)
+						_isLooping = True
+						_isIntroStarted = False
+						Play(song)
+					End If
 				End If
 			End If
-
 		End If
 
 		If Core.GameInstance.IsActive AndAlso _lastVolume <> (_volume * MasterVolume) Then
@@ -262,17 +267,13 @@ Public Class MusicManager
 		If Not _currentSong Is Nothing Then
 
 			If outputDevice IsNot Nothing Then
-				outputDevice.Play()
-
-				' if an intro was playing while the media player was paused, calc its end time
+				' if an intro was playing while the music player was paused, calculate its end time
 				If outputDevice.PlaybackState = PlaybackState.Paused AndAlso _isIntroStarted Then
 					Dim pauseTime As TimeSpan = Date.Now.Subtract(_introMuteTime)
-					Dim startTime As TimeSpan = Date.Now.Subtract(_introStartTime)
-					Dim playedTime As TimeSpan = startTime - pauseTime
-					_introEndTime = Date.Now + (_currentSong.Duration - playedTime)
+					_introEndTime = _introEndTime + pauseTime
 
 				End If
-
+				outputDevice.Play()
 			End If
 		End If
 
@@ -289,7 +290,7 @@ Public Class MusicManager
 				audioFile = New VorbisWaveReader(song.Song)
 				_loop = New LoopStream(audioFile)
 				outputDevice.Init(_loop)
-				If MusicManager.Muted = False Then
+				If Muted = False Then
 					outputDevice.Play()
 				End If
 				outputDevice.Volume = _volume * MasterVolume
@@ -312,7 +313,7 @@ Public Class MusicManager
 				audioFile = New VorbisWaveReader(song.Song)
 				_loop = New LoopStream(audioFile, False)
 				outputDevice.Init(_loop)
-				If MusicManager.Muted = False Then
+				If Muted = False Then
 					outputDevice.Play()
 				End If
 				outputDevice.Volume = _volume * MasterVolume
@@ -342,7 +343,7 @@ Public Class MusicManager
 		Return Play(song, False, DEFAULT_FADE_SPEED)
 	End Function
 
-	Public Shared Function Play(song As String, playIntro As Boolean) As SongContainer
+	Public Shared Function Play(song As String, playIntro As Boolean, Optional loopSong As Boolean = True) As SongContainer
 		Return Play(song, playIntro, DEFAULT_FADE_SPEED)
 	End Function
 
@@ -374,8 +375,7 @@ Public Class MusicManager
 							FadeInto(introSong, fadeSpeed)
 						Else
 							_isIntroStarted = True
-							_introStartTime = Date.Now
-							_introEndTime = Date.Now.AddSeconds(0) + introSong.Duration
+							_introEndTime = Date.Now + introSong.Duration
 							Play(introSong)
 						End If
 

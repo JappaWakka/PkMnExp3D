@@ -3,61 +3,61 @@
 
 Floor:
 Grass:
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[42,54]}}{"Position"{intArr[0,0,0]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[42,54]}}{"Position"{sngArr[0,0,0]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
 
 Ground:
-{"Floor"{ENT[{"Size"{intArr[12,1]}}{"Position"{intArr[14,0,3]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[14,1]}}{"Position"{intArr[13,0,4]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[19,1]}}{"Position"{intArr[10,0,5]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[12,1]}}{"Position"{sngArr[14,0,3]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[14,1]}}{"Position"{sngArr[13,0,4]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[19,1]}}{"Position"{sngArr[10,0,5]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
 
-{"Floor"{ENT[{"Size"{intArr[22,1]}}{"Position"{intArr[9,0,6]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[24,1]}}{"Position"{intArr[8,0,7]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[26,1]}}{"Position"{intArr[7,0,8]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[28,1]}}{"Position"{intArr[6,0,9]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[30,1]}}{"Position"{intArr[5,0,10]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[32,1]}}{"Position"{intArr[4,0,11]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[22,1]}}{"Position"{sngArr[9,0,6]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[24,1]}}{"Position"{sngArr[8,0,7]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[26,1]}}{"Position"{sngArr[7,0,8]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[28,1]}}{"Position"{sngArr[6,0,9]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[30,1]}}{"Position"{sngArr[5,0,10]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[32,1]}}{"Position"{sngArr[4,0,11]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
 
-{"Floor"{ENT[{"Size"{intArr[34,14]}}{"Position"{intArr[3,0,12]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[34,14]}}{"Position"{sngArr[3,0,12]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
 
-{"Floor"{ENT[{"Size"{intArr[32,1]}}{"Position"{intArr[4,0,26]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[30,1]}}{"Position"{intArr[5,0,27]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[28,1]}}{"Position"{intArr[6,0,28]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[26,1]}}{"Position"{intArr[7,0,29]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[25,1]}}{"Position"{intArr[8,0,30]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[24,1]}}{"Position"{intArr[9,0,31]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[23,1]}}{"Position"{intArr[10,0,32]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[20,1]}}{"Position"{intArr[13,0,33]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[18,1]}}{"Position"{intArr[14,0,34]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[6,4]}}{"Position"{intArr[17,0,35]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[24,1]}}{"Position"{intArr[10,0,39]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[26,6]}}{"Position"{intArr[9,0,40]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[25,1]}}{"Position"{intArr[9,0,46]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[8,1]}}{"Position"{intArr[9,0,47]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[32,1]}}{"Position"{sngArr[4,0,26]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[30,1]}}{"Position"{sngArr[5,0,27]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[28,1]}}{"Position"{sngArr[6,0,28]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[26,1]}}{"Position"{sngArr[7,0,29]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[25,1]}}{"Position"{sngArr[8,0,30]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[24,1]}}{"Position"{sngArr[9,0,31]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[23,1]}}{"Position"{sngArr[10,0,32]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[20,1]}}{"Position"{sngArr[13,0,33]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[18,1]}}{"Position"{sngArr[14,0,34]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[6,4]}}{"Position"{sngArr[17,0,35]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[24,1]}}{"Position"{sngArr[10,0,39]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[26,6]}}{"Position"{sngArr[9,0,40]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[25,1]}}{"Position"{sngArr[9,0,46]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[8,1]}}{"Position"{sngArr[9,0,47]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
 
 Grass2:
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,2]}}{"Position"{intArr[16,0,6]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[16,2]}}{"Position"{intArr[12,0,8]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[20,2]}}{"Position"{intArr[10,0,10]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,2]}}{"Position"{intArr[8,0,12]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,2]}}{"Position"{intArr[6,0,14]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[6,2]}}{"Position"{intArr[6,0,16]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,2]}}{"Position"{intArr[24,0,12]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,2]}}{"Position"{intArr[26,0,14]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[6,2]}}{"Position"{intArr[28,0,16]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,2]}}{"Position"{sngArr[16,0,6]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[16,2]}}{"Position"{sngArr[12,0,8]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[20,2]}}{"Position"{sngArr[10,0,10]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,2]}}{"Position"{sngArr[8,0,12]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,2]}}{"Position"{sngArr[6,0,14]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[6,2]}}{"Position"{sngArr[6,0,16]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,2]}}{"Position"{sngArr[24,0,12]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,2]}}{"Position"{sngArr[26,0,14]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[6,2]}}{"Position"{sngArr[28,0,16]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
 
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,2]}}{"Position"{intArr[16,0,30]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[16,2]}}{"Position"{intArr[12,0,28]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[20,2]}}{"Position"{intArr[10,0,26]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,2]}}{"Position"{intArr[8,0,24]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,2]}}{"Position"{intArr[6,0,22]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[6,2]}}{"Position"{intArr[6,0,20]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,2]}}{"Position"{intArr[24,0,24]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,2]}}{"Position"{intArr[26,0,22]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[6,2]}}{"Position"{intArr[28,0,20]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,2]}}{"Position"{sngArr[16,0,30]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[16,2]}}{"Position"{sngArr[12,0,28]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[20,2]}}{"Position"{sngArr[10,0,26]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,2]}}{"Position"{sngArr[8,0,24]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,2]}}{"Position"{sngArr[6,0,22]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[6,2]}}{"Position"{sngArr[6,0,20]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,2]}}{"Position"{sngArr[24,0,24]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,2]}}{"Position"{sngArr[26,0,22]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[6,2]}}{"Position"{sngArr[28,0,20]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
 
 EntraceFloor:
-{"Floor"{ENT[{"Size"{intArr[2,1]}}{"Position"{intArr[12,0,47]}}{"TexturePath"{str[Park]}}{"Texture"{rec[64,32,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[1,2]}}{"Position"{intArr[35,0,16]}}{"TexturePath"{str[Park]}}{"Texture"{rec[64,32,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[2,1]}}{"Position"{sngArr[12,0,47]}}{"TexturePath"{str[Park]}}{"Texture"{rec[64,32,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,2]}}{"Position"{sngArr[35,0,16]}}{"TexturePath"{str[Park]}}{"Texture"{rec[64,32,16,16]}}]}}
 
 Warps:
 Route 36:
@@ -78,9 +78,9 @@ Water Jet:
 {"Entity"{ENT[{"Scale"{sngArr[1.7,0.7,1.7]}}{"EntityID"{str[AnimatedBlock]}}{"Position"{sngArr[19.5,-0.4,18.5]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[208,160,16,16][192,160,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[1]}}{"AdditionalValue"{str[routes]}}{"Rotation"{int[0]}}{"AnimationData"{intArr2D[[80,176,16,16,1,8,18,0,0]]}}]}}
 
 Water Bottom:
-{"Floor"{ENT[{"Size"{intArr[8,6]}}{"Position"{intArr[16,0,16]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[240,32,16,16]}}{"hasSnow"{bool[0]}}]}}
-{"Floor"{ENT[{"Size"{intArr[12,2]}}{"Position"{intArr[14,0,18]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[240,32,16,16]}}{"hasSnow"{bool[0]}}]}}
-{"Floor"{ENT[{"Size"{intArr[4,10]}}{"Position"{intArr[18,0,14]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[240,32,16,16]}}{"hasSnow"{bool[0]}}]}}
+{"Floor"{ENT[{"Size"{intArr[8,6]}}{"Position"{sngArr[16,0,16]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[240,32,16,16]}}{"hasSnow"{bool[0]}}]}}
+{"Floor"{ENT[{"Size"{intArr[12,2]}}{"Position"{sngArr[14,0,18]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[240,32,16,16]}}{"hasSnow"{bool[0]}}]}}
+{"Floor"{ENT[{"Size"{intArr[4,10]}}{"Position"{sngArr[18,0,14]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[240,32,16,16]}}{"hasSnow"{bool[0]}}]}}
 
 Fountain Corner:
 {"Entity"{ENT[{"Scale"{sngArr[0.5,0.3,0.5]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[13.75,-0.4,17.75]}}{"TexturePath"{str[Park]}}{"Textures"{recArr[[0,16,8,8]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}

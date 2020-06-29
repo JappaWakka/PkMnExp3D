@@ -1,11 +1,11 @@
 {"Actions"{LEV[{"CanTeleport"{bool[0]}}{"CanDig"{bool[1]}}{"CanFly"{bool[0]}}{"EnvironmentType"{int[0]}}{"Weather"{int[0]}}{"Lightning"{int[0]}}{"BattleMap"{str[fortune\patternbush\Main.dat,0,0,-0.6]}}]}}
 
-{"Floor"{ENT[{"Size"{intArr[14,10]}}{"Position"{intArr[5,0,9]}}{"TexturePath"{str[viridianForest]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[14,10]}}{"Position"{sngArr[5,0,9]}}{"TexturePath"{str[viridianForest]}}{"Texture"{rec[0,0,16,16]}}]}}
 
-{"Floor"{ENT[{"Size"{intArr[20,3]}}{"Position"{intArr[2,1,5]}}{"TexturePath"{str[viridianForest]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[20,3]}}{"Position"{intArr[2,1,17]}}{"TexturePath"{str[viridianForest]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[3,9]}}{"Position"{intArr[2,1,8]}}{"TexturePath"{str[viridianForest]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[3,9]}}{"Position"{intArr[19,1,8]}}{"TexturePath"{str[viridianForest]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[20,3]}}{"Position"{sngArr[2,1,5]}}{"TexturePath"{str[viridianForest]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[20,3]}}{"Position"{sngArr[2,1,17]}}{"TexturePath"{str[viridianForest]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[3,9]}}{"Position"{sngArr[2,1,8]}}{"TexturePath"{str[viridianForest]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[3,9]}}{"Position"{sngArr[19,1,8]}}{"TexturePath"{str[viridianForest]}}{"Texture"{rec[0,0,16,16]}}]}}
 
 
 UpperTrees:

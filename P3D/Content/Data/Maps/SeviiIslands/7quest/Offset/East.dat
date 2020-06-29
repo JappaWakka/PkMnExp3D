@@ -2,12 +2,12 @@
 {"Actions"{LEV[{"CanTeleport"{bool[1]}}{"CanDig"{bool[0]}}{"CanFly"{bool[1]}}{"EnvironmentType"{int[0]}}{"Weather"{int[1]}}{"Lightning"{int[0]}}]}}
 
 Mountain:
-{"Floor"{ENT[{"Size"{intArr[1,49]}}{"Position"{intArr[0,7,0]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[64,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[1,27]}}{"Position"{intArr[1,7,0]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[64,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[1,5]}}{"Position"{intArr[2,7,0]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[64,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[3,3]}}{"Position"{intArr[0,3,56]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[64,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[2,3]}}{"Position"{intArr[0,3,59]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[64,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[2,3]}}{"Position"{intArr[0,2,63]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[64,16,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,49]}}{"Position"{sngArr[0,7,0]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[64,16,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,27]}}{"Position"{sngArr[1,7,0]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[64,16,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,5]}}{"Position"{sngArr[2,7,0]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[64,16,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[3,3]}}{"Position"{sngArr[0,3,56]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[64,16,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[2,3]}}{"Position"{sngArr[0,3,59]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[64,16,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[2,3]}}{"Position"{sngArr[0,2,63]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[64,16,16,16]}}]}}
 
 Water:
 {"EntityField"{ENT[{"EntityID"{str[Water]}}{"Position"{sngArr[11,-0.25,0]}}{"Size"{intArr[3,80]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,16,16,16][48,56,16,6]]}}{"TextureIndex"{intArr[0,0,1,1]}}{"Collision"{bool[0]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}
@@ -195,5 +195,5 @@ Corners:
 {"Entity"{ENT[{"Position"{sngArr[2,6,5]}}{"EntityID"{str[WallBlock]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Textures"{recArr[[96,16,16,16]]}}{"TextureIndex"{intArr[-1,-1,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[6]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[3]}}]}}
 {"Entity"{ENT[{"Position"{sngArr[3,6,5]}}{"EntityID"{str[WallBlock]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Textures"{recArr[[96,16,16,16]]}}{"TextureIndex"{intArr[-1,-1,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[5]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[3]}}]}}
 
-{"OffsetMap"{MAP[{"Offset"{intArr[-24,-40]}}{"Map"{str[islands\7quest\offset\north.dat]}}]}}
-{"OffsetMap"{MAP[{"Offset"{intArr[-24,0]}}{"Map"{str[islands\7quest\sevault.dat]}}]}}
+{"OffsetMap"{MAP[{"Offset"{sngArr[-24,-40]}}{"Map"{str[islands\7quest\offset\north.dat]}}]}}
+{"OffsetMap"{MAP[{"Offset"{sngArr[-24,0]}}{"Map"{str[islands\7quest\sevault.dat]}}]}}

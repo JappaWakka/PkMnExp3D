@@ -16,11 +16,11 @@ Floor:
 Dive:
 	To the cave:
 		{"EntityField"{ENT[{"EntityID"{str[DiveTile]}}{"Size"{intArr[3,5]}}{"Position"{sngArr[4,-0.24,3]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[0,240,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[0]}}{"Action"{int[1]}}{"AdditionalValue"{str[SeviiIslands\UnderwaterCave\Main.dat,~+22,0.1,~+1,0]}}{"Rotation"{int[0]}}{"Visible"{bool[0]}}]}}
-		{"Shader"{SHA[{"Shader"{sngArr[1.5,1.5,1.5]}}{"Size"{intArr[3,5]}}{"Position"{intArr[4,3,3]}}{"StopOnContact"{bool[1]}}{"ObjectSize"{sngArr[1,1]}}]}}
+		{"Shader"{SHA[{"Shader"{sngArr[1.5,1.5,1.5]}}{"Size"{intArr[3,5]}}{"Position"{sngArr[4,3,3]}}{"StopOnContact"{bool[1]}}{"ObjectSize"{sngArr[1,1]}}]}}
 		{"EntityField"{ENT[{"EntityID"{str[DiveTile]}}{"Size"{intArr[1,3]}}{"Position"{sngArr[3,-0.24,4]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[0,240,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[0]}}{"Action"{int[1]}}{"AdditionalValue"{str[SeviiIslands\UnderwaterCave\Main.dat,~+22,0.1,~+1,0]}}{"Rotation"{int[0]}}{"Visible"{bool[0]}}]}}
-		{"Shader"{SHA[{"Shader"{sngArr[1.5,1.5,1.5]}}{"Size"{intArr[1,3]}}{"Position"{intArr[3,3,4]}}{"StopOnContact"{bool[1]}}{"ObjectSize"{sngArr[1,1]}}]}}
+		{"Shader"{SHA[{"Shader"{sngArr[1.5,1.5,1.5]}}{"Size"{intArr[1,3]}}{"Position"{sngArr[3,3,4]}}{"StopOnContact"{bool[1]}}{"ObjectSize"{sngArr[1,1]}}]}}
 		{"EntityField"{ENT[{"EntityID"{str[DiveTile]}}{"Size"{intArr[1,3]}}{"Position"{sngArr[7,-0.24,4]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[0,240,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[0]}}{"Action"{int[1]}}{"AdditionalValue"{str[SeviiIslands\UnderwaterCave\Main.dat,~+22,0.1,~+1,0]}}{"Rotation"{int[0]}}{"Visible"{bool[0]}}]}}
-		{"Shader"{SHA[{"Shader"{sngArr[1.5,1.5,1.5]}}{"Size"{intArr[1,3]}}{"Position"{intArr[7,3,4]}}{"StopOnContact"{bool[1]}}{"ObjectSize"{sngArr[1,1]}}]}}
+		{"Shader"{SHA[{"Shader"{sngArr[1.5,1.5,1.5]}}{"Size"{intArr[1,3]}}{"Position"{sngArr[7,3,4]}}{"StopOnContact"{bool[1]}}{"ObjectSize"{sngArr[1,1]}}]}}
 Walls:
 	Normal walls
 		{"EntityField"{ENT[{"EntityID"{str[WallBlock]}}{"Size"{intArr[1,5]}}{"Position"{sngArr[-2,0.75,3]}}{"Rotation"{int[0]}}{"TexturePath"{str[UnderwaterCave]}}{"Textures"{recArr[[16,0,16,16]]}}{"TextureIndex"{intArr[-1,-1,0,0,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}]}}

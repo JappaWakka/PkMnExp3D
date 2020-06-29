@@ -2,19 +2,19 @@
 {"Actions"{LEV[{"CanTeleport"{bool[1]}}{"CanDig"{bool[0]}}{"CanFly"{bool[1]}}{"EnvironmentType"{int[0]}}{"Weather"{int[1]}}{"Lightning"{int[0]}}{"BattleMap"{str[7quest\tanobyruins\Main.dat,106.7,0,3]}}]}}
 
 Floor:
-{"Floor"{ENT[{"Size"{intArr[17,12]}}{"Position"{intArr[112,0,3]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[16,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[15,2]}}{"Position"{intArr[113,0,15]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[16,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[11,1]}}{"Position"{intArr[115,0,17]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[16,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[1,8]}}{"Position"{intArr[111,0,5]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[16,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[1,8]}}{"Position"{intArr[129,0,5]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[16,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[15,1]}}{"Position"{intArr[113,0,2]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[16,16,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[17,12]}}{"Position"{sngArr[112,0,3]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[16,16,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[15,2]}}{"Position"{sngArr[113,0,15]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[16,16,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[11,1]}}{"Position"{sngArr[115,0,17]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[16,16,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,8]}}{"Position"{sngArr[111,0,5]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[16,16,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,8]}}{"Position"{sngArr[129,0,5]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[16,16,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[15,1]}}{"Position"{sngArr[113,0,2]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[16,16,16,16]}}]}}
 
 
 
 Dirt:
-{"Floor"{ENT[{"Size"{intArr[3,1]}}{"Position"{intArr[119,2,11]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[240,128,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[5,1]}}{"Position"{intArr[118,2,10]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[240,128,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[7,3]}}{"Position"{intArr[117,2,7]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[240,128,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[3,1]}}{"Position"{sngArr[119,2,11]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[240,128,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[5,1]}}{"Position"{sngArr[118,2,10]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[240,128,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[7,3]}}{"Position"{sngArr[117,2,7]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[240,128,16,16]}}]}}
 
 
 Beach:

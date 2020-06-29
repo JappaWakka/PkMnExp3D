@@ -2,14 +2,14 @@
 {"Actions"{LEV[{"CanTeleport"{bool[1]}}{"CanDig"{bool[0]}}{"CanFly"{bool[1]}}{"EnvironmentType"{int[5]}}{"Weather"{int[0]}}{"Lightning"{int[2]}}]}}
 
 Floors:
-{"Floor"{ENT[{"Size"{intArr[34,10]}}{"Position"{intArr[0,0,0]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[32,80,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[6,6]}}{"Position"{intArr[0,0,10]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[32,80,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[22,4]}}{"Position"{intArr[12,0,10]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[32,80,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[24,2]}}{"Position"{intArr[10,0,14]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[32,80,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[34,32]}}{"Position"{intArr[0,0,16]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[32,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[34,10]}}{"Position"{sngArr[0,0,0]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[32,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[6,6]}}{"Position"{sngArr[0,0,10]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[32,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[22,4]}}{"Position"{sngArr[12,0,10]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[32,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[24,2]}}{"Position"{sngArr[10,0,14]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[32,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[34,32]}}{"Position"{sngArr[0,0,16]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[32,80,16,16]}}]}}
 
 UpperFloor:
-{"Floor"{ENT[{"Size"{intArr[34,1]}}{"Position"{intArr[0,1,49]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[32,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[34,1]}}{"Position"{sngArr[0,1,49]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[32,80,16,16]}}]}}
 
 UpperBlocks:
 {"EntityField"{ENT[{"Size"{intArr[34,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[0,0,48]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[80,48,16,16][32,80,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}

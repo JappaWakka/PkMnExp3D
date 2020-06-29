@@ -3,25 +3,25 @@
 
 Floors:
 Grass
-{"Floor"{ENT[{"Size"{intArr[26,26]}}{"Position"{intArr[0,0,0]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[26,26]}}{"Position"{sngArr[0,0,0]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
 
 Sand
-{"Floor"{ENT[{"Size"{intArr[3,2]}}{"Position"{intArr[13,0,8]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[64,96,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[3,12]}}{"Position"{intArr[8,0,10]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[64,96,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[10,3]}}{"Position"{intArr[11,0,10]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[64,96,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[3,2]}}{"Position"{intArr[18,0,13]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[64,96,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[8,3]}}{"Position"{intArr[18,0,15]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[64,96,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[3,1]}}{"Position"{intArr[18,0,18]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[64,96,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[10,3]}}{"Position"{intArr[11,0,19]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[64,96,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[3,2]}}{"Position"{sngArr[13,0,8]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[64,96,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[3,12]}}{"Position"{sngArr[8,0,10]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[64,96,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[10,3]}}{"Position"{sngArr[11,0,10]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[64,96,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[3,2]}}{"Position"{sngArr[18,0,13]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[64,96,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[8,3]}}{"Position"{sngArr[18,0,15]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[64,96,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[3,1]}}{"Position"{sngArr[18,0,18]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[64,96,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[10,3]}}{"Position"{sngArr[11,0,19]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[64,96,16,16]}}]}}
 
 PlantDirt
-{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{intArr[12,0,4]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[48,112,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[3,1]}}{"Position"{intArr[13,0,4]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[64,112,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{intArr[16,0,4]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[80,112,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[12,0,4]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[48,112,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[3,1]}}{"Position"{sngArr[13,0,4]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[64,112,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[16,0,4]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[80,112,16,16]}}]}}
 
-{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{intArr[12,0,6]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[48,112,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[3,1]}}{"Position"{intArr[13,0,6]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[64,112,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{intArr[16,0,6]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[80,112,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[12,0,6]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[48,112,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[3,1]}}{"Position"{sngArr[13,0,6]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[64,112,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[16,0,6]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[80,112,16,16]}}]}}
 
 
 Backdrops:

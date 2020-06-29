@@ -2,10 +2,10 @@
 {"Actions"{LEV[{"CanTeleport"{bool[0]}}{"CanDig"{bool[0]}}{"CanFly"{bool[0]}}{"EnvironmentType"{int[3]}}{"MapScript"{str[SeviiIslands\1knot\kolbentower\BSOD]}}{"Weather"{int[1]}}]}}
 
 Floor:
-{"Floor"{ENT[{"Size"{intArr[5,19]}}{"Position"{intArr[7,0,0]}}{"TexturePath"{str[kolben]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[19,5]}}{"Position"{intArr[0,0,7]}}{"TexturePath"{str[kolben]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{intArr[9,0,-1]}}{"TexturePath"{str[kolben]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{intArr[9,0,9]}}{"TexturePath"{str[kolben]}}{"Texture"{rec[84,16,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[5,19]}}{"Position"{sngArr[7,0,0]}}{"TexturePath"{str[kolben]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[19,5]}}{"Position"{sngArr[0,0,7]}}{"TexturePath"{str[kolben]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[9,0,-1]}}{"TexturePath"{str[kolben]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[9,0,9]}}{"TexturePath"{str[kolben]}}{"Texture"{rec[84,16,16,16]}}]}}
 Ceiling:
 {"EntityField"{ENT[{"Size"{intArr[5,19]}}{"EntityID"{str[AllSidesObject]}}{"Position"{sngArr[7,3,0]}}{"TexturePath"{str[kolben]}}{"Textures"{recArr[[0,16,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 {"EntityField"{ENT[{"Size"{intArr[19,5]}}{"EntityID"{str[AllSidesObject]}}{"Position"{sngArr[0,3,7]}}{"TexturePath"{str[kolben]}}{"Textures"{recArr[[0,16,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}

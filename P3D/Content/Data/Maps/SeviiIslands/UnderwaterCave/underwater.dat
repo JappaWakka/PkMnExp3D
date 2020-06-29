@@ -24,11 +24,11 @@ Floor:
 Dive:
 	To the cave:
 		{"EntityField"{ENT[{"EntityID"{str[DiveTile]}}{"Size"{intArr[3,4]}}{"Position"{sngArr[4,-0.24,3]}}{"TexturePath"{str[UnderwaterCave]}}{"Textures"{recArr[[0,240,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[0]}}{"Action"{int[1]}}{"AdditionalValue"{str[SeviiIslands\UnderwaterCave\Main.dat,~+13,5.1,~+33,0]}}{"Rotation"{int[0]}}{"Visible"{bool[0]}}]}}
-		{"Shader"{SHA[{"Shader"{sngArr[1.5,1.5,1.5]}}{"Size"{intArr[3,4]}}{"Position"{intArr[4,3,3]}}{"StopOnContact"{bool[1]}}{"ObjectSize"{sngArr[1,1]}}]}}
+		{"Shader"{SHA[{"Shader"{sngArr[1.5,1.5,1.5]}}{"Size"{intArr[3,4]}}{"Position"{sngArr[4,3,3]}}{"StopOnContact"{bool[1]}}{"ObjectSize"{sngArr[1,1]}}]}}
 		{"EntityField"{ENT[{"EntityID"{str[DiveTile]}}{"Size"{intArr[1,2]}}{"Position"{sngArr[3,-0.24,4]}}{"TexturePath"{str[UnderwaterCave]}}{"Textures"{recArr[[0,240,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[0]}}{"Action"{int[1]}}{"AdditionalValue"{str[SeviiIslands\UnderwaterCave\Main.dat,~+13,5.1,~+33,0]}}{"Rotation"{int[0]}}{"Visible"{bool[0]}}]}}
-		{"Shader"{SHA[{"Shader"{sngArr[1.5,1.5,1.5]}}{"Size"{intArr[1,2]}}{"Position"{intArr[3,3,4]}}{"StopOnContact"{bool[1]}}{"ObjectSize"{sngArr[1,1]}}]}}
+		{"Shader"{SHA[{"Shader"{sngArr[1.5,1.5,1.5]}}{"Size"{intArr[1,2]}}{"Position"{sngArr[3,3,4]}}{"StopOnContact"{bool[1]}}{"ObjectSize"{sngArr[1,1]}}]}}
 		{"EntityField"{ENT[{"EntityID"{str[DiveTile]}}{"Size"{intArr[1,2]}}{"Position"{sngArr[7,-0.24,4]}}{"TexturePath"{str[UnderwaterCave]}}{"Textures"{recArr[[0,240,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[0]}}{"Action"{int[1]}}{"AdditionalValue"{str[SeviiIslands\UnderwaterCave\Main.dat,~+13,5.1,~+33,0]}}{"Rotation"{int[0]}}{"Visible"{bool[0]}}]}}
-		{"Shader"{SHA[{"Shader"{sngArr[1.5,1.5,1.5]}}{"Size"{intArr[1,2]}}{"Position"{intArr[7,3,4]}}{"StopOnContact"{bool[1]}}{"ObjectSize"{sngArr[1,1]}}]}}
+		{"Shader"{SHA[{"Shader"{sngArr[1.5,1.5,1.5]}}{"Size"{intArr[1,2]}}{"Position"{sngArr[7,3,4]}}{"StopOnContact"{bool[1]}}{"ObjectSize"{sngArr[1,1]}}]}}
 	To the boat:
 		{"EntityField"{ENT[{"EntityID"{str[DiveTile]}}{"Size"{intArr[5,2]}}{"Position"{sngArr[3,-0.24,29]}}{"TexturePath"{str[UnderwaterCave]}}{"Textures"{recArr[[0,240,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[0]}}{"Action"{int[2]}}{"AdditionalValue"{str[SeviiIslands\UnderwaterCave\surface.dat,~+5,0.1,~-22,0]}}{"Rotation"{int[0]}}{"Visible"{bool[0]}}]}}
 		{"EntityField"{ENT[{"EntityID"{str[DiveTile]}}{"Size"{intArr[3,1]}}{"Position"{sngArr[4,-0.24,28]}}{"TexturePath"{str[UnderwaterCave]}}{"Textures"{recArr[[0,240,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[0]}}{"Action"{int[2]}}{"AdditionalValue"{str[SeviiIslands\UnderwaterCave\surface.dat,~+5,0.1,~-22,0]}}{"Rotation"{int[0]}}{"Visible"{bool[0]}}]}}
@@ -673,20 +673,20 @@ NPCs:
 			{"NPC"{NPC[{"Position"{sngArr[3,0.95,34]}}{"Scale"{sngArr[1.5,1.5,1.5]}}{"TextureID"{str[[POKEMON|N]222]}}{"ID"{int[0]}}{"Name"{str[Clamperl]}}{"Action"{int[1]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}{"AnimateIdle"{bool[1]}}{"Movement"{str[Looking]}}{"MoveRectangles"{recArr[]}}]}}
 		Frillish:
 			{"NPC"{NPC[{"Position"{sngArr[15,-0.25,24]}}{"TextureID"{str[[POKEMON|N]592]}}{"ID"{int[1]}}{"Name"{str[Frillish]}}{"Action"{int[1]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}{"MoveRectangles"{recArr[[15,24,2,4]]}}{"Movement"{str[Straight]}}]}}
-			{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[2,4]}}{"Position"{intArr[15,-0.25,24]}}{"Visible"{bool[0]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
+			{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[2,4]}}{"Position"{sngArr[15,-0.25,24]}}{"Visible"{bool[0]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
 		Skrelp:
 			{"NPC"{NPC[{"Position"{sngArr[-3,0.75,33]}}{"TextureID"{str[[POKEMON|N]690]}}{"ID"{int[1]}}{"Name"{str[Skrelp]}}{"Action"{int[1]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}{"MoveRectangles"{recArr[[-3,33,4,1]]}}{"Movement"{str[Straight]}}]}}
-			{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[4,1]}}{"Position"{intArr[-3,0.75,33]}}{"Visible"{bool[0]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
+			{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[4,1]}}{"Position"{sngArr[-3,0.75,33]}}{"Visible"{bool[0]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
 		Sharpedo:
 			{"NPC"{NPC[{"Position"{sngArr[1,1.75,33]}}{"Scale"{sngArr[1.8,1.8,1.8]}}{"TextureID"{str[[POKEMON|N]319]}}{"ID"{int[1]}}{"Name"{str[Sharpedo]}}{"Action"{int[1]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}{"MoveRectangles"{recArr[[1,33,14,3]]}}{"Movement"{str[Straight]}}]}}
-			{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[14,3]}}{"Position"{intArr[1,1.75,33]}}{"Visible"{bool[0]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
+			{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[14,3]}}{"Position"{sngArr[1,1.75,33]}}{"Visible"{bool[0]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
 		Lumineon:
 			{"NPC"{NPC[{"Position"{sngArr[14,0.75,28]}}{"TextureID"{str[[POKEMON|N]457]}}{"ID"{int[1]}}{"Name"{str[Lumineon]}}{"Action"{int[1]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}{"MoveRectangles"{recArr[[14,28,2,5]]}}{"Movement"{str[Straight]}}]}}
-			{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[14,3]}}{"Position"{intArr[14,0.75,28]}}{"Visible"{bool[0]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
+			{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[14,3]}}{"Position"{sngArr[14,0.75,28]}}{"Visible"{bool[0]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
 Boat Shader:
-	{"Shader"{SHA[{"Shader"{sngArr[0.5,0.5,0.5]}}{"Size"{intArr[5,2]}}{"Position"{intArr[3,2,29]}}{"StopOnContact"{bool[1]}}{"ObjectSize"{sngArr[1,1]}}]}}
-	{"Shader"{SHA[{"Shader"{sngArr[0.5,0.5,0.5]}}{"Size"{intArr[3,1]}}{"Position"{intArr[4,2,28]}}{"StopOnContact"{bool[1]}}{"ObjectSize"{sngArr[1,1]}}]}}
-	{"Shader"{SHA[{"Shader"{sngArr[0.5,0.5,0.5]}}{"Size"{intArr[3,1]}}{"Position"{intArr[4,2,31]}}{"StopOnContact"{bool[1]}}{"ObjectSize"{sngArr[1,1]}}]}}
+	{"Shader"{SHA[{"Shader"{sngArr[0.5,0.5,0.5]}}{"Size"{intArr[5,2]}}{"Position"{sngArr[3,2,29]}}{"StopOnContact"{bool[1]}}{"ObjectSize"{sngArr[1,1]}}]}}
+	{"Shader"{SHA[{"Shader"{sngArr[0.5,0.5,0.5]}}{"Size"{intArr[3,1]}}{"Position"{sngArr[4,2,28]}}{"StopOnContact"{bool[1]}}{"ObjectSize"{sngArr[1,1]}}]}}
+	{"Shader"{SHA[{"Shader"{sngArr[0.5,0.5,0.5]}}{"Size"{intArr[3,1]}}{"Position"{sngArr[4,2,31]}}{"StopOnContact"{bool[1]}}{"ObjectSize"{sngArr[1,1]}}]}}
 
 
 

@@ -3,7 +3,7 @@
 
 Floors:
 Grass
-{"Floor"{ENT[{"Size"{intArr[28,23]}}{"Position"{intArr[-1,0,0]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[28,23]}}{"Position"{sngArr[-1,0,0]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
 
 Tree walls:
 {"EntityField"{ENT[{"Size"{intArr[1,23]}}{"EntityID"{str[WallBlock]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[27,0.298,0.5]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[3]}}]}}
@@ -78,4 +78,4 @@ Mart:
 
 
 OffsetMaps:
-{"OffsetMap"{MAP[{"Offset"{intArr[0,0,28]}}{"Map"{str[Hoenn\Routes\101.dat]}}]}}
+{"OffsetMap"{MAP[{"Offset"{sngArr[0,0,28]}}{"Map"{str[Hoenn\Routes\101.dat]}}]}}

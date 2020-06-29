@@ -23,15 +23,15 @@ Grass:
 {"EntityField"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[12,1,5]}}{"EntityID"{str[Grass]}}{"Position"{sngArr[8,0.1,11]}}{"Fill"{bool[0]}}{"TexturePath"{str[Safari]}}{"Textures"{recArr[[224,48,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 
 Floor:
-{"Floor"{ENT[{"Size"{intArr[14,9]}}{"Position"{intArr[7,0,9]}}{"TexturePath"{str[safari]}}{"Texture"{rec[272,48,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[14,9]}}{"Position"{sngArr[7,0,9]}}{"TexturePath"{str[safari]}}{"Texture"{rec[272,48,16,16]}}]}}
 
-{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{intArr[7,1,9]}}{"TexturePath"{str[safari]}}{"Texture"{rec[272,48,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{intArr[7,1,17]}}{"TexturePath"{str[safari]}}{"Texture"{rec[272,48,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{intArr[20,1,9]}}{"TexturePath"{str[safari]}}{"Texture"{rec[272,48,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{intArr[20,1,17]}}{"TexturePath"{str[safari]}}{"Texture"{rec[272,48,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[7,1,9]}}{"TexturePath"{str[safari]}}{"Texture"{rec[272,48,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[7,1,17]}}{"TexturePath"{str[safari]}}{"Texture"{rec[272,48,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[20,1,9]}}{"TexturePath"{str[safari]}}{"Texture"{rec[272,48,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[20,1,17]}}{"TexturePath"{str[safari]}}{"Texture"{rec[272,48,16,16]}}]}}
 
-{"Floor"{ENT[{"Size"{intArr[2,1]}}{"Position"{intArr[13,1,9]}}{"TexturePath"{str[safari]}}{"Texture"{rec[272,48,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[2,1]}}{"Position"{intArr[13,1,17]}}{"TexturePath"{str[safari]}}{"Texture"{rec[272,48,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[2,1]}}{"Position"{sngArr[13,1,9]}}{"TexturePath"{str[safari]}}{"Texture"{rec[272,48,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[2,1]}}{"Position"{sngArr[13,1,17]}}{"TexturePath"{str[safari]}}{"Texture"{rec[272,48,16,16]}}]}}
 
 Slope:
 {"EntityField"{ENT[{"EntityID"{str[WallBlock]}}{"Position"{sngArr[12,0,9]}}{"Size"{intArr[1,1]}}{"TexturePath"{str[safari]}}{"Textures"{recArr[[272,48,16,16]]}}{"TextureIndex"{intArr[-1,-1,-1,-1,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[2]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[1]}}]}}

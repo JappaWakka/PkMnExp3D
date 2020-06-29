@@ -394,8 +394,8 @@
 
     Private Sub AddOffsetMap(ByVal Tags As Dictionary(Of String, Object))
         If Core.GameOptions.LoadOffsetMaps > 0 Then
-            Dim OffsetList As List(Of Integer) = CType(GetTag(Tags, "Offset"), List(Of Integer))
-            Dim MapOffset As Vector3 = New Vector3(OffsetList(0), 0, OffsetList(1))
+			Dim OffsetList As List(Of Single) = CType(GetTag(Tags, "Offset"), List(Of Single))
+			Dim MapOffset As Vector3 = New Vector3(OffsetList(0), 0, OffsetList(1))
             If OffsetList.Count >= 3 Then
                 MapOffset = New Vector3(OffsetList(0), OffsetList(1), OffsetList(2))
             End If
@@ -668,8 +668,8 @@
         Dim sizeList As List(Of Integer) = CType(GetTag(Tags, "Size"), List(Of Integer))
         Dim Size As Size = New Size(sizeList(0), sizeList(1))
 
-        Dim PosList As List(Of Integer) = CType(GetTag(Tags, "Position"), List(Of Integer))
-        Dim Position As Vector3 = New Vector3(PosList(0) + Offset.X, PosList(1) + Offset.Y, PosList(2) + Offset.Z)
+		Dim PosList As List(Of Single) = CType(GetTag(Tags, "Position"), List(Of Single))
+		Dim Position As Vector3 = New Vector3(PosList(0) + Offset.X, PosList(1) + Offset.Y, PosList(2) + Offset.Z)
 
         Dim TexturePath As String = CStr(GetTag(Tags, "TexturePath"))
         Dim TextureRectangle As Rectangle = CType(GetTag(Tags, "Texture"), Rectangle)
@@ -1090,8 +1090,8 @@
 
         Dim StopOnContact As Boolean = CBool(GetTag(Tags, "StopOnContact"))
 
-        Dim PosList As List(Of Integer) = CType(GetTag(Tags, "Position"), List(Of Integer))
-        Dim Position As Vector3 = New Vector3(PosList(0) + Offset.X, PosList(1) + Offset.Y, PosList(2) + Offset.Z)
+		Dim PosList As List(Of Single) = CType(GetTag(Tags, "Position"), List(Of Single))
+		Dim Position As Vector3 = New Vector3(PosList(0) + Offset.X, PosList(1) + Offset.Y, PosList(2) + Offset.Z)
 
         Dim ObjectSizeList As List(Of Integer) = CType(GetTag(Tags, "Size"), List(Of Integer))
         Dim ObjectSize As New Size(ObjectSizeList(0), ObjectSizeList(1))

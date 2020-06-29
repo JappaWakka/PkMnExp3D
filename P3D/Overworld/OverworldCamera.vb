@@ -761,11 +761,8 @@ Public Class OverworldCamera
                 Dim walkSteps As Integer = GetIceSteps(GetForwardMovedPosition())
                 Screen.Level.OwnPlayer.DoAnimation = (walkSteps <= 1)
 
-                Move(walkSteps)
-                If _thirdPerson = False Then
-                    _bumpSoundDelay = 35
-                End If
-            Else
+				Move(walkSteps)
+			Else
 				'Walked against something, set player transparent
 				If Screen.Level.Surfing = False Then
 					If _didWalkAgainst = True Then

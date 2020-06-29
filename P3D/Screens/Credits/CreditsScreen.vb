@@ -15,7 +15,7 @@ Public Class CreditsScreen
 
     Public SavedOverworld As OverworldStorage
 
-    Public Sub New(ByVal OverworldScreen As Screen)
+	Public Sub New(ByVal OverworldScreen As Screen)
         SavedOverworld = New OverworldStorage()
         SavedOverworld.SetToCurrentEnvironment()
     End Sub
@@ -44,9 +44,8 @@ Public Class CreditsScreen
 
         ExecuteCameraLevel()
 
-        MusicManager.Play("credits", True)
-        MediaPlayer.IsRepeating = False
-    End Sub
+		MusicManager.Play("credits", True, False)
+	End Sub
 
     ' The text that shows during the credits:
     Private Sub InitializeCreditsPages(ByVal ending As String)
@@ -284,11 +283,11 @@ Public Class CreditsScreen
     End Class
 
     Public Overrides Sub ChangeFrom()
-        MediaPlayer.IsRepeating = True
-    End Sub
+		MusicManager._isLooping = True
+	End Sub
 
     Public Overrides Sub ChangeTo()
-        MediaPlayer.IsRepeating = False
-    End Sub
+		MusicManager._isLooping = False
+	End Sub
 
 End Class

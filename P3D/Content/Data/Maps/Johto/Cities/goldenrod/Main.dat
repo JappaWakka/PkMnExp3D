@@ -2,47 +2,47 @@
 {"Actions"{LEV[{"CanTeleport"{bool[1]}}{"CanDig"{bool[0]}}{"CanFly"{bool[1]}}{"EnvironmentType"{int[0]}}{"Weather"{int[0]}}{"Lightning"{int[0]}}]}}
 
 Brick:
-{"Floor"{ENT[{"Size"{intArr[4,36]}}{"Position"{intArr[18,0,0]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[22,2]}}{"Position"{intArr[8,0,8]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[1,2]}}{"Position"{intArr[28,0,6]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{intArr[29,0,6]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[48,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{intArr[29,0,7]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[48,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[34,2]}}{"Position"{intArr[4,0,16]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[14,2]}}{"Position"{intArr[14,0,28]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,0,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{intArr[24,0,7]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[4,36]}}{"Position"{sngArr[18,0,0]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[22,2]}}{"Position"{sngArr[8,0,8]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,2]}}{"Position"{sngArr[28,0,6]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[29,0,6]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[48,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[29,0,7]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[48,16,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[34,2]}}{"Position"{sngArr[4,0,16]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[14,2]}}{"Position"{sngArr[14,0,28]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[24,0,7]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,0,16,16]}}]}}
 
 sand:
-{"Floor"{ENT[{"Size"{intArr[14,6]}}{"Position"{intArr[4,0,0]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[14,2]}}{"Position"{intArr[4,0,6]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[4,2]}}{"Position"{intArr[4,0,8]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[14,6]}}{"Position"{intArr[4,0,10]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[2,6]}}{"Position"{intArr[2,0,14]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[2,2]}}{"Position"{intArr[4,0,18]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[12,6]}}{"Position"{intArr[6,0,18]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[16,4]}}{"Position"{intArr[2,0,24]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[12,6]}}{"Position"{intArr[2,0,28]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[14,6]}}{"Position"{intArr[4,0,30]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[16,6]}}{"Position"{intArr[22,0,30]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[2,2]}}{"Position"{intArr[38,0,34]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[10,2]}}{"Position"{intArr[28,0,28]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[16,10]}}{"Position"{intArr[22,0,18]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[18,6]}}{"Position"{intArr[22,0,10]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[8,4]}}{"Position"{intArr[30,0,6]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[16,4]}}{"Position"{intArr[22,0,0]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[6,6]}}{"Position"{intArr[22,6,22]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[64,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[4,1]}}{"Position"{intArr[14,0,12]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[16,64,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[4,1]}}{"Position"{intArr[14,0,13]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[16,32,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[2,1]}}{"Position"{intArr[22,0,12]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[16,64,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[2,1]}}{"Position"{intArr[22,0,13]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[16,32,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[4,2]}}{"Position"{intArr[18,0,12]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[14,6]}}{"Position"{sngArr[4,0,0]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[14,2]}}{"Position"{sngArr[4,0,6]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[4,2]}}{"Position"{sngArr[4,0,8]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[14,6]}}{"Position"{sngArr[4,0,10]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[2,6]}}{"Position"{sngArr[2,0,14]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[2,2]}}{"Position"{sngArr[4,0,18]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[12,6]}}{"Position"{sngArr[6,0,18]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[16,4]}}{"Position"{sngArr[2,0,24]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[12,6]}}{"Position"{sngArr[2,0,28]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[14,6]}}{"Position"{sngArr[4,0,30]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[16,6]}}{"Position"{sngArr[22,0,30]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[2,2]}}{"Position"{sngArr[38,0,34]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[10,2]}}{"Position"{sngArr[28,0,28]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[16,10]}}{"Position"{sngArr[22,0,18]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[18,6]}}{"Position"{sngArr[22,0,10]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[8,4]}}{"Position"{sngArr[30,0,6]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[16,4]}}{"Position"{sngArr[22,0,0]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[6,6]}}{"Position"{sngArr[22,6,22]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[64,16,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[4,1]}}{"Position"{sngArr[14,0,12]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[16,64,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[4,1]}}{"Position"{sngArr[14,0,13]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[16,32,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[2,1]}}{"Position"{sngArr[22,0,12]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[16,64,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[2,1]}}{"Position"{sngArr[22,0,13]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[16,32,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[4,2]}}{"Position"{sngArr[18,0,12]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,80,16,16]}}]}}
 
 Grassfloor:
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,4]}}{"Position"{intArr[26,0,2]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[4,2]}}{"Position"{intArr[34,0,4]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[2,2]}}{"Position"{intArr[36,0,6]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[8,4]}}{"Position"{sngArr[26,0,2]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[4,2]}}{"Position"{sngArr[34,0,4]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[2,2]}}{"Position"{sngArr[36,0,6]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
 
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[2,10]}}{"Position"{intArr[38,0,0]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
-{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[2,18]}}{"Position"{intArr[38,0,16]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[2,10]}}{"Position"{sngArr[38,0,0]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
+{"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[2,18]}}{"Position"{sngArr[38,0,16]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
 
 Trees:
 {"EntityField"{ENT[{"SeasonTexture"{str[PlantColoring]}}{"Size"{intArr[2,16]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1,2,1]}}{"Position"{sngArr[38,0.3,0]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[32,0,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
@@ -50,7 +50,7 @@ Trees:
 
 warps:
 floor:
-{"Floor"{ENT[{"Size"{intArr[4,1]}}{"Position"{intArr[18,0,36]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[96,144,16,16]}}{"Visible"{bool[0]}}{"hasSnow"{bool[0]}}]}}
+{"Floor"{ENT[{"Size"{intArr[4,1]}}{"Position"{sngArr[18,0,36]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[96,144,16,16]}}{"Visible"{bool[0]}}{"hasSnow"{bool[0]}}]}}
 Route 34:
 {"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[18,0,36]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Textures"{recArr[[32,64,16,16]]}}{"Visible"{bool[0]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\Routes\34.dat,8,0.1,-1,0]}}{"Rotation"{int[0]}}]}}
 {"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[19,0,36]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Textures"{recArr[[32,64,16,16]]}}{"Visible"{bool[0]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\Routes\34.dat,9,0.1,-1,0]}}{"Rotation"{int[0]}}]}}
@@ -670,5 +670,5 @@ Rockets:
 Backdrops:
 {"Backdrop"{BAC[{"Position"{sngArr[-150.5,-0.76,-60.5]}}{"Size"{intArr[168,170]}}{"Rotation"{sngArr[0,0,0]}}{"Type"{str[Water]}}{"TexturePath"{str[Village]}}{"Texture"{rec[32,48,16,16]}}]}}
 
-{"OffsetMap"{MAP[{"Offset"{intArr[10,36]}}{"Map"{str[Johto\Routes\34.dat]}}]}}
-{"OffsetMap"{MAP[{"Offset"{intArr[10,-36]}}{"Map"{str[Johto\Routes\35.dat]}}]}}
+{"OffsetMap"{MAP[{"Offset"{sngArr[10,36]}}{"Map"{str[Johto\Routes\34.dat]}}]}}
+{"OffsetMap"{MAP[{"Offset"{sngArr[10,-36]}}{"Map"{str[Johto\Routes\35.dat]}}]}}
