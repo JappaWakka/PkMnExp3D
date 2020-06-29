@@ -91,18 +91,18 @@
 
                 Dim textSize As Vector2 = FontManager.GameJoltFont.MeasureString(text)
 
-                GetFontRenderer().DrawString(FontManager.MiniFont, text, New Vector2(Delta_X + 610 - textSize.X / 2.0F,
-                                                                                   Delta_Y + 350 - textSize.Y / 2.0F), Color.DarkBlue)
+				GetFontRenderer().DrawString(FontManager.MainFontBlack, text, New Vector2(Delta_X + 610 - textSize.X / 2.0F,
+																				   Delta_Y + 350 - textSize.Y / 2.0F), Color.White)
 
-                If ControllerHandler.IsConnected() Then
+				If ControllerHandler.IsConnected() Then
                     SpriteBatch.Draw(TextureManager.GetTexture("GUI\GamePad\xboxControllerButtonB"), New Rectangle(CInt(Delta_X + 610 - textSize.X / 2 + FontManager.MiniFont.MeasureString("Press ").X),
                                                                                                                CInt(Delta_Y + 350 - textSize.Y / 2), 20, 20), Color.White)
                 End If
 
             Else
                 If ready = True Then
-                    .DrawString(FontManager.MainFontWhite, "Saved the game.", New Vector2(Delta_X + 90, Delta_Y + 50), Color.DarkBlue)
-                Else
+					.DrawString(FontManager.MainFontBlack, "Saved the game.", New Vector2(Delta_X + 90, Delta_Y + 50), Color.White)
+				Else
                     If SaveGameHelpers.GameJoltSaveDone() = False And savingStarted = True Then
                         If SaveGameHelpers.StartedDownloadCheck = True Then
                             .DrawString(FontManager.MainFontBlack, "Validating data" & LoadingDots.Dots, New Vector2(Delta_X + 90, Delta_Y + 50), Color.White)
@@ -125,8 +125,8 @@
                     End If
                 Next
 
-                .DrawString(FontManager.MiniFont, Localization.GetString("save_screen_name") & ": " & Core.Player.Name & Environment.NewLine & Environment.NewLine & Localization.GetString("save_screen_badges") & ": " & Core.Player.Badges.Count.ToString() & Environment.NewLine & Environment.NewLine & Localization.GetString("save_screen_money") & ": " & Core.Player.Money & Environment.NewLine & Environment.NewLine & Localization.GetString("save_screen_time") & ": " & TimeHelpers.GetDisplayTime(TimeHelpers.GetCurrentPlayTime(), True), New Vector2(Delta_X + 400, Delta_Y + 215), Color.DarkBlue)
-            End If
+				.DrawString(FontManager.MainFontBlack, Localization.GetString("save_screen_name") & ": " & Core.Player.Name & Environment.NewLine & Environment.NewLine & Localization.GetString("save_screen_badges") & ": " & Core.Player.Badges.Count.ToString() & Environment.NewLine & Environment.NewLine & Localization.GetString("save_screen_money") & ": " & Core.Player.Money & Environment.NewLine & Environment.NewLine & Localization.GetString("save_screen_time") & ": " & TimeHelpers.GetDisplayTime(TimeHelpers.GetCurrentPlayTime(), True), New Vector2(Delta_X + 400, Delta_Y + 215), Color.White)
+			End If
         End With
         Screen.ChooseBox.Draw(New Vector2(Delta_X + 115, Delta_Y + 155), False, 1.5F)
     End Sub

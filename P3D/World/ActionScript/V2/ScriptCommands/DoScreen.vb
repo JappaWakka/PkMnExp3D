@@ -232,12 +232,20 @@
                     CanContinue = False
                 Case "skinselection"
                     Dim skins = argument.Split(","c)
-                    If Screens.MainMenu.NewNewGameScreen.CharacterSelectionScreen.SelectedSkin <> "" Then
-                        IsReady = True
-                    Else
+					If Screens.MainMenu.NewNewGameScreen.CharacterSelectionScreen.SelectedSkin <> "" Then
+						IsReady = True
+					Else
 						SetScreen(New Screens.MainMenu.NewNewGameScreen.CharacterSelectionScreen(CurrentScreen))
 					End If
-                Case Else
+				Case "canbepaused"
+					If argument = "" Then
+						CurrentScreen.CanBePaused = Not CurrentScreen.CanBePaused
+					Else
+						CurrentScreen.CanBePaused = CBool(argument)
+					End If
+					IsReady = True
+					CanContinue = True
+				Case Else
                     IsReady = True
             End Select
         End Sub
