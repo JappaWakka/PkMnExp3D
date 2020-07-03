@@ -140,8 +140,8 @@
     Public Overrides Sub ClickFunction()
         If CanInteractWith Then
             RemoveItem(Me)
-            SoundManager.PlaySound("Success", True)
-            Screen.TextBox.TextColor = TextBox.PlayerColor
+			SoundManager.PlaySound("Item_Get", True)
+			Screen.TextBox.TextColor = TextBox.PlayerColor
             Screen.TextBox.Show(Core.Player.Name & " found~" & Me.Item.Name & "!*" & Core.Player.Inventory.GetMessageReceive(Item, 1), {Me})
             Core.Player.Inventory.AddItem(Me.Item.ID, 1)
             PlayerStatistics.Track("Items found", 1)

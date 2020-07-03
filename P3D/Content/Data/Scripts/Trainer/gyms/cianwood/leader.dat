@@ -7,7 +7,7 @@ version=2
 :endif
 
 :if:<register.registered(stormbadge_obtain)>=False
-	@Music.play(trainer_encounter)
+	@Music.play(Johto_Trainer_Encounter)
 	@Text.show(WAHAHAHA!*So you've come~this far!*Let me tell you,~I'm tough!~My Pokémon will~crush stones and~shatter bones!~Watch this!)
 	@npc.turn(0,3)
 	@Level.wait(5)
@@ -38,7 +38,7 @@ version=2
 	@player.turnto(0)
 	@npc.turn(0,2)
 	@battle.starttrainer(Gyms\Cianwood\leader)
-	@Music.play(gym)
+	@Music.play(Johto_Gym)
 	@register.register(stormbadge_obtain)
 	@register.register(trainer_cianwood_gym\001)
 	@register.register(trainer_cianwood_gym\002)

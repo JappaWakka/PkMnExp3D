@@ -1,4 +1,4 @@
-{"Level"{LEV[{"Name"{str[Trainer Tower]}}{"MusicLoop"{str[gym]}}{"CurrentRegion"{str[sevii islands]}}]}}
+{"Level"{LEV[{"Name"{str[Trainer Tower]}}{"MusicLoop"{str[Kanto_Gym]}}{"CurrentRegion"{str[sevii islands]}}]}}
 {"Actions"{LEV[{"CanTeleport"{bool[0]}}{"CanDig"{bool[0]}}{"CanFly"{bool[0]}}{"EnvironmentType"{int[1]}}{"MapScript"{str[SeviiIslands\7quest\TrainerTower\doublesmaps\m005]}}{"Weather"{int[1]}}]}}
 
 Floor:

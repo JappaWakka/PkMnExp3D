@@ -131,14 +131,23 @@ Public Class OverworldScreen
         Level = New Level()
         Level.Load(Core.Player.startMap)
 
-        'Play music depending on the player state in the level (surfing and riding):
-        If Level.Surfing = True Then
-            MusicManager.Play("surf", True) 'Play "surf" when player is surfing.
-        Else
-            If Level.Riding = True Or Level.Biking = True Then
-                MusicManager.Play("ride", True) 'Play "ride" when player is riding.
-            Else
-                MusicManager.Play(Level.MusicLoop, True) 'Play default MusicLoop.
+		'Play music depending on the player state in the level (surfing and riding):
+		If Level.Surfing = True Then
+			If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Level.CurrentRegion & "_Surf.ogg") Then
+				MusicManager.Play(Level.CurrentRegion & "_Surf", True) 'Play surf music when player is surfing.
+			Else
+				MusicManager.Play("Johto_Surf", True) 'Play surf music when player is surfing.
+			End If
+
+		Else
+			If Level.Riding = True Or Level.Biking = True Then
+				If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Level.CurrentRegion & "_Surf.ogg") Then
+					MusicManager.Play(Level.CurrentRegion & "_Bike", True) 'Play bicycle music when player is riding.
+				Else
+					MusicManager.Play("Johto_Bike", True) 'Play bicycle music when player is riding.
+				End If
+			Else
+					MusicManager.Play(Level.MusicLoop, True) 'Play default MusicLoop.
             End If
         End If
 
@@ -421,15 +430,24 @@ Public Class OverworldScreen
             End If
 
             Dim theme As String = Level.MusicLoop
-            If Screen.Level.Surfing = True Then
-                theme = "surf"
-            End If
-            If Screen.Level.Riding = True Or Screen.Level.Biking = True Then
-                theme = "ride"
-            End If
+			If Level.Surfing = True Then
+				If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Level.CurrentRegion & "_Surf.ogg") Then
+					theme = Level.CurrentRegion & "_Surf"
+				Else
+					theme = "Surf"
+				End If
 
-            'If the radio is activated and the station can be played on the current map, play the music.
-            If Level.IsRadioOn = True AndAlso GameJolt.PhoneScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = True Then
+			Else
+				If Level.Riding = True Or Level.Biking = True Then
+					If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Level.CurrentRegion & "_Surf.ogg") Then
+						theme = Level.CurrentRegion & "_bike"
+					Else
+						theme = "bike"
+					End If
+				End If
+
+			'If the radio is activated and the station can be played on the current map, play the music.
+			If Level.IsRadioOn = True AndAlso GameJolt.PhoneScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = True Then
                 theme = Level.SelectedRadioStation.Music
             Else
                 Level.IsRadioOn = False

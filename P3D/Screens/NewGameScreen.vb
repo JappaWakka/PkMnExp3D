@@ -452,46 +452,48 @@
             ot = "0" & ot
         End While
 
-        Dim s As String = "Name|" & Name & Environment.NewLine &
-            "Position|" & Me.startPosition.X.ToString().Replace(GameController.DecSeparator, ".") & "," & Me.startPosition.Y.ToString().Replace(GameController.DecSeparator, ".") & "," & Me.startPosition.Z.ToString().Replace(GameController.DecSeparator, ".") & Environment.NewLine &
-            "MapFile|" & Me.startMap & Environment.NewLine &
-            "Rotation|" & Me.startYaw.ToString() & Environment.NewLine &
-            "RivalName|???" & Environment.NewLine &
-            "Money|3000" & Environment.NewLine &
-            "Badges|0" & Environment.NewLine &
-            "Gender|Male" & Environment.NewLine &
-            "PlayTime|0,0,0" & Environment.NewLine &
-            "OT|" & ot & Environment.NewLine &
-            "Points|0" & Environment.NewLine &
-            "hasPokedex|0" & Environment.NewLine &
-            "hasPhone|0" & Environment.NewLine &
-            "freeCamera|1" & Environment.NewLine &
-            "thirdPerson|0" & Environment.NewLine &
-            "skin|" & skinFiles(SkinIndex) & Environment.NewLine &
-            "location|" & Me.startLocation & Environment.NewLine &
-            "battleAnimations|2" & Environment.NewLine &
-            "BoxAmount|5" & Environment.NewLine &
-            "LastRestPlace|yourroom.dat" & Environment.NewLine &
-            "LastRestPlacePosition|1,0.1,3" & Environment.NewLine &
-            "DiagonalMovement|0" & Environment.NewLine &
-            "RepelSteps|0" & Environment.NewLine &
-            "LastSavePlace|yourroom.dat" & Environment.NewLine &
-            "LastSavePlacePosition|1,0.1,3" & Environment.NewLine &
-            "Difficulty|" & GameModeManager.GetGameRuleValue("Difficulty", "0") & Environment.NewLine &
-            "BattleStyle|0" & Environment.NewLine &
-            "saveCreated|" & GameController.GAMEDEVELOPMENTSTAGE & " " & GameController.GAMEVERSION & Environment.NewLine &
-            "LastPokemonPosition|999,999,999" & Environment.NewLine &
-            "DaycareSteps|0" & Environment.NewLine &
-            "GameMode|" & GameModeManager.ActiveGameMode.DirectoryName & Environment.NewLine &
-            "PokeFiles|" & Environment.NewLine &
-            "VisitedMaps|yourroom.dat" & Environment.NewLine &
-            "TempSurfSkin|Hilbert" & Environment.NewLine &
-            "Surfing|0" & Environment.NewLine &
-            "ShowModels|1" & Environment.NewLine &
-            "GTSStars|4" & Environment.NewLine &
-            "SandBoxMode|0"
+		Dim s As String = "Name|" & Name & Environment.NewLine &
+			"Position|" & Me.startPosition.X.ToString().Replace(GameController.DecSeparator, ".") & "," & Me.startPosition.Y.ToString().Replace(GameController.DecSeparator, ".") & "," & Me.startPosition.Z.ToString().Replace(GameController.DecSeparator, ".") & Environment.NewLine &
+			"MapFile|" & Me.startMap & Environment.NewLine &
+			"Rotation|" & Me.startYaw.ToString() & Environment.NewLine &
+			"RivalName|???" & Environment.NewLine &
+			"Money|3000" & Environment.NewLine &
+			"Badges|0" & Environment.NewLine &
+			"Gender|Male" & Environment.NewLine &
+			"PlayTime|0,0,0" & Environment.NewLine &
+			"OT|" & ot & Environment.NewLine &
+			"Points|0" & Environment.NewLine &
+			"hasPokedex|0" & Environment.NewLine &
+			"hasPhone|0" & Environment.NewLine &
+			"freeCamera|1" & Environment.NewLine &
+			"thirdPerson|0" & Environment.NewLine &
+			"skin|" & skinFiles(SkinIndex) & Environment.NewLine &
+			"location|" & Me.startLocation & Environment.NewLine &
+			"battleAnimations|2" & Environment.NewLine &
+			"BoxAmount|5" & Environment.NewLine &
+			"LastRestPlace|yourroom.dat" & Environment.NewLine &
+			"LastRestPlacePosition|1,0.1,3" & Environment.NewLine &
+			"DiagonalMovement|0" & Environment.NewLine &
+			"RepelSteps|0" & Environment.NewLine &
+			"LastSavePlace|yourroom.dat" & Environment.NewLine &
+			"LastSavePlacePosition|1,0.1,3" & Environment.NewLine &
+			"Difficulty|" & GameModeManager.GetGameRuleValue("Difficulty", "0") & Environment.NewLine &
+			"BattleStyle|0" & Environment.NewLine &
+			"saveCreated|" & GameController.GAMEDEVELOPMENTSTAGE & " " & GameController.GAMEVERSION & Environment.NewLine &
+			"LastPokemonPosition|999,999,999" & Environment.NewLine &
+			"DaycareSteps|0" & Environment.NewLine &
+			"GameMode|" & GameModeManager.ActiveGameMode.DirectoryName & Environment.NewLine &
+			"PokeFiles|" & Environment.NewLine &
+			"VisitedMaps|yourroom.dat" & Environment.NewLine &
+			"TempSurfSkin|Ethan" & Environment.NewLine &
+			"TempFishSkin|Ethan" & Environment.NewLine &
+			"TempBikeSkin|Ethan" & Environment.NewLine &
+			"Surfing|0" & Environment.NewLine &
+			"ShowModels|1" & Environment.NewLine &
+			"GTSStars|4" & Environment.NewLine &
+			"SandBoxMode|0"
 
-        Return s
+		Return s
     End Function
 
     Public Shared Function GetOptionsData() As String

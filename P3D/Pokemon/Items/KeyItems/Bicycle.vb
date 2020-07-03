@@ -24,32 +24,28 @@ Namespace Items.KeyItems
                     MusicManager.Play(Screen.Level.MusicLoop)
                 End If
             Else
-                If Screen.Level.Surfing = False And Screen.Level.Biking = False And Screen.Level.Riding = False And Screen.Camera.IsMoving() = False And Screen.Camera.Turning = False And Screen.Level.CanBike() = True Then
+				If Screen.Level.Surfing = False And Screen.Level.Biking = False And Screen.Level.Riding = False And Screen.Camera.IsMoving() = False And Screen.Camera.Turning = False And Screen.Level.CanBike() = True Then
 
 					If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Textures\OverworldSprites\PlayerSkins\" & Core.Player.Skin & "_Bike.png") = False Then
 						Screen.TextBox.Show("Your Player Skin doesn't support this item!", {}, True, False)
 					Else
 						If Core.CurrentScreen.Identification = Screen.Identifications.UseItemScreen Then
-                            Core.SetScreen(Core.CurrentScreen.PreScreen)
-                        End If
+							Core.SetScreen(Core.CurrentScreen.PreScreen)
+						End If
 
-                        Screen.Level.Biking = True
-                        Core.Player.TempBikeSkin = Core.Player.Skin
+						Screen.Level.Biking = True
+						Core.Player.TempBikeSkin = Core.Player.Skin
 
-                        Dim BikeSkin As String = "[SKIN]"
-                        BikeSkin = Core.Player.Skin & "_Bike"
-                        Screen.Level.OwnPlayer.SetTexture(BikeSkin, False)
-                    End If
-                    If GameModeManager.ContentFileExists("Sounds\Bicycle") Then
-                        SoundManager.PlaySound("bicycle")
-                    End If
-                    PlayerStatistics.Track("Bicycle used", 1)
-
-                    If Screen.Level.IsRadioOn = False OrElse GameJolt.PhoneScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = False Then
-                            MusicManager.Play("bikesong", True)
-                        End If
-                    Else
-                        Screen.TextBox.Show("Now is not the time~to use that.", {}, True, False)
+						Dim BikeSkin As String = "[SKIN]"
+						BikeSkin = Core.Player.Skin & "_Bike"
+						Screen.Level.OwnPlayer.SetTexture(BikeSkin, False)
+					End If
+					If GameModeManager.ContentFileExists("Sounds\Bicycle") Then
+						SoundManager.PlaySound("bicycle")
+					End If
+					PlayerStatistics.Track("Bicycle used", 1)
+				Else
+					Screen.TextBox.Show("Now is not the time~to use that.", {}, True, False)
                 End If
             End If
         End Sub

@@ -144,8 +144,8 @@
 
             Core.Player.Inventory.AddItem(Item.ID, 1)
             PlayerStatistics.Track("[85]Apricorns picked", 1)
-            SoundManager.PlaySound("Success", True)
-            Screen.TextBox.TextColor = Textbox.PlayerColor
+			SoundManager.PlaySound("Item_Get", True)
+			Screen.TextBox.TextColor = Textbox.PlayerColor
             Screen.TextBox.Show(Core.Player.Name & " picked the~" & Item.Name & ".*" & Core.Player.Inventory.GetMessageReceive(Item, 1), {Me})
             AddApriconSave()
             hasApricorn = False

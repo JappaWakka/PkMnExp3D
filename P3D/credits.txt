@@ -1,54 +1,85 @@
 Pokémon created by Nintendo, Game Freak and The Pokémon Company / Creatures Inc.
 
-Pokémon Quartz 3D
+Pokémon Exp3D
 
-	Modifications by JappaWakka
+	Modifications by the Jasper "JappaWakka" Speelman
 	2019 - 2020
-
-	Based on the infamous romhack Pokémon Quartz by TehBaro
+	
+	Based on the official Kolben GameMode
 	
 	Textures
-		Apricorn Plant
+		Apricorn plant
 			spherical-ice
-		Various textures/tiles
-			The-Red-Ex
 		Overworld sprites
-			PlayerSkins
-				TehBaro
-				JappaWakka
-				KisiroKitsune
-				Marnic
-			NPCs
-				aveontrainer
-				Skeizerr
-				Ulithium_Dragon
-				PurlpleZaffre
-				15avaughn
-				spherical-ice
-				Mashirosakura
-				Mimi
-				M.vit
-				Delta231
-				Ulithium_Dragon
-				Lagoon-Sadnes
-	Pokemon
-		Overworld sprites
-			JappaWakka
-
-	Pokédex entries
-		Luis-386/lonedeoxys
-		(https://issuu.com/luis-386)
-
+			KisiroKitsune
+			Marnic
+			aveontrainer
+			Skeizerr
+			Ulithium_Dragon
+			PurlpleZaffre
+			15avaughn
+			sphericalice
+			Mashirosakura
+			Mimi
+			M.vit
+			Delta231
+			Brolunite
+			skatefilter5
+			Lagoon-Sadnes
+			
+	Music
+		Braxton Burks
+		Kamikadze333666
+		SilvaGunner
+		RibMusicVids
+		StevenMix
+		Minako Adachi
+		Shinji Miyazaki
+		Julien Van Egroo
+		GRonnoc
+		Amuza
+		AntiRellik
+		HappyDragonite
+		Nick Oleksiak
+		Salp Fish
+		DoubleJoeSeven
+		PokemonEinstein
+		Xtremethomas
+		Ricelia
+		TeionMusic
+		Posby95
+		Shota Kageyama
+		wojkel
+		Infernapezzz
+		Junichi Masuda
+		Keatonkg360
+		Jfaferrie
+		ferriswheel42
+		Nanashima
+		Bidoofremix
+		Pipevanes
+		Moonboy65
+		salmonPink
+		YoshiDude12
+		Kunning Fox
+		GuildmasterMusic
+		KK Cody
+		Zame
+		Nami Sabet
+		Eclairattack
+		pasukaru14
+		
 	Special thanks to
 		Discord users
 			ReconVirus#7856
+			[LGC] Lyra#2416
 			jianmingyong#4964
 			HampstaPig#8406
 
 Pokémon 3D Legacy
 
 	Created by Kolben Games 
-	2012 - 2019
+	2012 - 2020
 
 	Team Kolben
 		Nils Drescher

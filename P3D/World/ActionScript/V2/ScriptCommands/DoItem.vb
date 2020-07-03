@@ -87,9 +87,9 @@
                             receiveString = "Received " & Amount & "~" & Item.PluralName & ".*"
                         End If
 
-                        SoundManager.PlaySound("Success", True)
+						SoundManager.PlaySound("Item_Get", True)
 
-                        Screen.TextBox.reDelay = 0.0F
+						Screen.TextBox.reDelay = 0.0F
                         Screen.TextBox.TextColor = Textbox.PlayerColor
                         Screen.TextBox.Show(receiveString & Core.Player.Inventory.GetMessageReceive(Item, Amount), {})
 

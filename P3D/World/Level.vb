@@ -1021,12 +1021,21 @@ Public Class Level
 			Else
 				IsRadioOn = False
 				If Me.Surfing = True Then
-					MusicManager.Play("surf", True)
-				Else
-					If Me.Riding = True Then
-						MusicManager.Play("ride", True)
+					If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Me.CurrentRegion & "_Surf.ogg") Then
+						MusicManager.Play(Me.CurrentRegion & "_Surf", True) 'Play surf music when player is surfing.
 					Else
-						MusicManager.Play(MusicLoop, True)
+						MusicManager.Play("Johto_Surf", True) 'Play surf music when player is surfing.
+					End If
+
+				Else
+					If Me.Riding = True Or Me.Biking = True Then
+						If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Me.CurrentRegion & "_Surf.ogg") Then
+							MusicManager.Play(Me.CurrentRegion & "_Bike", True) 'Play bicycle music when player is riding.
+						Else
+							MusicManager.Play("Johto_Bike", True) 'Play bicycle music when player is riding.
+						End If
+					Else
+						MusicManager.Play(Me.MusicLoop, True) 'Play default MusicLoop.
 					End If
 				End If
 			End If

@@ -960,70 +960,74 @@ Public Class PartyScreenV2
     End Sub
 
     Private Sub UseRide()
-        If Screen.Level.Riding = True Then
-            Screen.Level.Riding = False
-            Screen.Level.OwnPlayer.SetTexture(Core.Player.TempRideSkin, True)
-            Core.Player.Skin = Core.Player.TempRideSkin
+		If Screen.Level.Riding = True Then
+			Screen.Level.Riding = False
+			Screen.Level.OwnPlayer.SetTexture(Core.Player.TempRideSkin, True)
+			Core.Player.Skin = Core.Player.TempRideSkin
 
-            ChooseBox.Showing = False
-            Core.SetScreen(Me.PreScreen)
-            If Core.CurrentScreen.Identification = Identifications.MenuScreen Then
-                Core.SetScreen(Core.CurrentScreen.PreScreen)
-            End If
+			ChooseBox.Showing = False
+			Core.SetScreen(Me.PreScreen)
+			If Core.CurrentScreen.Identification = Identifications.MenuScreen Then
+				Core.SetScreen(Core.CurrentScreen.PreScreen)
+			End If
 
-            If Screen.Level.IsRadioOn = False OrElse GameJolt.PhoneScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = False Then
-                MusicManager.Play(Level.MusicLoop)
-            End If
-        Else
-            If Screen.Level.Biking = True Then
-                Screen.Level.Biking = False
-                Screen.Level.OwnPlayer.SetTexture(Core.Player.TempBikeSkin, True)
-                Core.Player.Skin = Core.Player.TempBikeSkin
+			If Screen.Level.IsRadioOn = False OrElse GameJolt.PhoneScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = False Then
+				MusicManager.Play(Level.MusicLoop)
+			End If
+		Else
+			If Screen.Level.Biking = True Then
+				Screen.Level.Biking = False
+				Screen.Level.OwnPlayer.SetTexture(Core.Player.TempBikeSkin, True)
+				Core.Player.Skin = Core.Player.TempBikeSkin
 
-                ChooseBox.Showing = False
-                Core.SetScreen(Me.PreScreen)
-                If Core.CurrentScreen.Identification = Identifications.MenuScreen Then
-                    Core.SetScreen(Core.CurrentScreen.PreScreen)
-                End If
+				ChooseBox.Showing = False
+				Core.SetScreen(Me.PreScreen)
+				If Core.CurrentScreen.Identification = Identifications.MenuScreen Then
+					Core.SetScreen(Core.CurrentScreen.PreScreen)
+				End If
 
-                If Screen.Level.IsRadioOn = False OrElse GameJolt.PhoneScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = False Then
-                    MusicManager.Play(Level.MusicLoop)
-                End If
-            Else
-                If Screen.Level.Surfing = False And Screen.Camera.IsMoving() = False And Screen.Camera.Turning = False And Level.CanRide() = True Then
-                    ChooseBox.Showing = False
-                    Core.SetScreen(Me.PreScreen)
-                    If Core.CurrentScreen.Identification = Identifications.MenuScreen Then
-                        Core.SetScreen(Core.CurrentScreen.PreScreen)
-                    End If
+				If Screen.Level.IsRadioOn = False OrElse GameJolt.PhoneScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = False Then
+					MusicManager.Play(Level.MusicLoop)
+				End If
+			Else
+				If Screen.Level.Surfing = False And Screen.Camera.IsMoving() = False And Screen.Camera.Turning = False And Level.CanRide() = True Then
+					ChooseBox.Showing = False
+					Core.SetScreen(Me.PreScreen)
+					If Core.CurrentScreen.Identification = Identifications.MenuScreen Then
+						Core.SetScreen(Core.CurrentScreen.PreScreen)
+					End If
 
-                    Screen.Level.Riding = True
-                    Core.Player.TempRideSkin = Core.Player.Skin
+					Screen.Level.Riding = True
+					Core.Player.TempRideSkin = Core.Player.Skin
 
-                    Dim skin As String = "[POKEMON|"
-                    If PokemonList(_index).IsShiny = True Then
-                        skin &= "S]"
-                    Else
-                        skin &= "N]"
-                    End If
-                    skin &= PokemonList(_index).Number & PokemonForms.GetOverworldAddition(PokemonList(_index))
+					Dim skin As String = "[POKEMON|"
+					If PokemonList(_index).IsShiny = True Then
+						skin &= "S]"
+					Else
+						skin &= "N]"
+					End If
+					skin &= PokemonList(_index).Number & PokemonForms.GetOverworldAddition(PokemonList(_index))
 
-                    Screen.Level.OwnPlayer.SetTexture(skin, False)
+					Screen.Level.OwnPlayer.SetTexture(skin, False)
 
-                    SoundManager.PlayPokemonCry(PokemonList(_index).Number)
+					SoundManager.PlayPokemonCry(PokemonList(_index).Number)
 
-                    TextBox.Show(PokemonList(_index).GetDisplayName() & " used~Ride!", {}, True, False)
-                    PlayerStatistics.Track("Ride used", 1)
+					TextBox.Show(PokemonList(_index).GetDisplayName() & " used~Ride!", {}, True, False)
+					PlayerStatistics.Track("Ride used", 1)
 
-                    If Screen.Level.IsRadioOn = False OrElse GameJolt.PhoneScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = False Then
-                        MusicManager.Play("ride", True)
-                    End If
-                Else
-                    TextBox.Show("You cannot Ride here!", {}, True, False)
-                End If
-            End If
-        End If
-    End Sub
+					If Screen.Level.IsRadioOn = False OrElse GameJolt.PhoneScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = False Then
+						If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Level.CurrentRegion & "_Surf.ogg") Then
+							MusicManager.Play(Level.CurrentRegion & "_Bike", True) 'Play bicycle music when player is riding.
+						Else
+							MusicManager.Play("Johto_Bike", True) 'Play bicycle music when player is riding.
+						End If
+					Else
+						TextBox.Show("You cannot Ride here!", {}, True, False)
+					End If
+				End If
+			End If
+		End If
+	End Sub
 
     Private Sub UseDig()
         If Screen.Level.CanDig = True Or GameController.IS_DEBUG_ACTIVE = True Or Core.Player.SandBoxMode = True Then
