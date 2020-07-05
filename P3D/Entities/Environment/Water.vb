@@ -239,8 +239,12 @@
                 SoundManager.PlayPokemonCry(pokemonNumber)
 
                 If Screen.Level.IsRadioOn = False OrElse GameJolt.PhoneScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = False Then
-                    MusicManager.Play("surf", True)
-                End If
+					If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Screen.Level.CurrentRegion & "_Surf.ogg") Then
+						MusicManager.Play(Screen.Level.CurrentRegion & "_Surf")
+					Else
+						MusicManager.Play("Johto_Surf")
+					End If
+				End If
             End With
         End If
     End Sub

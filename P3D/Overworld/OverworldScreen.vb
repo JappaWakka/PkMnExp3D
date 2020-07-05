@@ -434,17 +434,18 @@ Public Class OverworldScreen
 				If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Level.CurrentRegion & "_Surf.ogg") Then
 					theme = Level.CurrentRegion & "_Surf"
 				Else
-					theme = "Surf"
+					theme = "Johto_Surf"
 				End If
 
 			Else
 				If Level.Riding = True Or Level.Biking = True Then
 					If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Level.CurrentRegion & "_Surf.ogg") Then
-						theme = Level.CurrentRegion & "_bike"
+						theme = Level.CurrentRegion & "_Bike"
 					Else
-						theme = "bike"
+						theme = "Johto_Bike"
 					End If
 				End If
+			End If
 
 			'If the radio is activated and the station can be played on the current map, play the music.
 			If Level.IsRadioOn = True AndAlso GameJolt.PhoneScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = True Then
