@@ -381,8 +381,8 @@
                 Core.SpriteBatch.Draw(Me.IconUnselected, New Rectangle(Core.ScreenSize.Width - (AllExtended + extraExtended) + 28, 132 + Index * 96, 48, 48), Color.White)
                 If isSelected = True Then
                     Core.SpriteBatch.Draw(Me.IconSelected, New Rectangle(Core.ScreenSize.Width - (AllExtended + extraExtended) + 28, 132 + Index * 96, 48, 48), New Color(255, 255, 255, (SelExtended + AllExtended)))
-                    Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Me.Text, New Vector2(Core.ScreenSize.Width - (AllExtended + extraExtended) + 86, 144 + Index * 96), New Color(0, 0, 0, (SelExtended + AllExtended)))
-                Else
+					Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Me.Text, New Vector2(Core.ScreenSize.Width - (AllExtended + extraExtended) + 86, 144 + Index * 96), New Color(255, 255, 255, (SelExtended + AllExtended)))
+				Else
                     If IconFading > 0 Then
                         Core.SpriteBatch.Draw(Me.IconSelected, New Rectangle(Core.ScreenSize.Width - (AllExtended) + 28, 132 + Index * 96, 48, 48), New Color(255, 255, 255, IconFading))
                     End If
@@ -463,19 +463,20 @@
                 Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\Types", Me.Move.Type.GetElementImage(), ""), New Rectangle(Core.ScreenSize.Width - (AllExtended + extraExtended) + 28, 132 + Index * 96, 48, 16), New Color(255, 255, 255, 255 - deductAlpha))
 
                 If isSelected = True Then
-                    Dim ppColor As Color = GetPPColor()
-                    ppColor.A = CByte((extraExtended + AllExtended - deductAlpha).Clamp(0, 255))
+					Dim ppColor As Color = GetPPColor()
+					Dim ppFont As SpriteFont = GetPPFont()
+					ppColor.A = CByte((extraExtended + AllExtended - deductAlpha).Clamp(0, 255))
 
-                    Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Me.Move.CurrentPP & "/" & Me.Move.MaxPP, New Vector2(Core.ScreenSize.Width - (AllExtended + extraExtended) + 28, 150 + Index * 96), ppColor)
-                    Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Me.Move.Name, New Vector2(Core.ScreenSize.Width - (AllExtended + extraExtended) + 86, 144 + Index * 96), New Color(0, 0, 0, (SelExtended + AllExtended) - deductAlpha))
-                Else
-                    Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Me.Move.Name, New Vector2(Core.ScreenSize.Width - (AllExtended + extraExtended) + 28, 150 + Index * 96), New Color(0, 0, 0, 255 - (extraExtended + AllExtended) - deductAlpha))
-                End If
+					Core.SpriteBatch.DrawString(ppFont, Me.Move.CurrentPP & "/" & Me.Move.MaxPP, New Vector2(Core.ScreenSize.Width - (AllExtended + extraExtended) + 28, 150 + Index * 96), ppColor)
+					Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Me.Move.Name, New Vector2(Core.ScreenSize.Width - (AllExtended + extraExtended) + 86, 144 + Index * 96), New Color(255, 255, 255, (SelExtended + AllExtended) - deductAlpha))
+				Else
+					Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Me.Move.Name, New Vector2(Core.ScreenSize.Width - (AllExtended + extraExtended) + 28, 150 + Index * 96), New Color(255, 255, 255, 255 - (extraExtended + AllExtended) - deductAlpha))
+				End If
             End Sub
 
             Private Function GetPPColor() As Color
-                Dim c As Color = Color.Black
-                Dim per As Integer = CInt((Me.Move.CurrentPP / Me.Move.MaxPP) * 100)
+				Dim c As Color = Color.White
+				Dim per As Integer = CInt((Me.Move.CurrentPP / Me.Move.MaxPP) * 100)
 
                 If per <= 50 And per > 25 Then
                     c = Color.Orange
@@ -486,7 +487,20 @@
                 Return c
             End Function
 
-            Public Sub Update(ByVal BattleScreen As BattleScreen, ByVal AllExtended As Integer, ByVal isSelected As Boolean)
+			Private Function GetPPFont() As SpriteFont
+				Dim c As SpriteFont = FontManager.MainFontBlack
+				Dim per As Integer = CInt((Me.Move.CurrentPP / Me.Move.MaxPP) * 100)
+
+				If per <= 50 And per > 25 Then
+					c = FontManager.MainFontWhite
+				ElseIf per <= 25 Then
+					c = FontManager.MainFontWhite
+				End If
+
+				Return c
+			End Function
+
+			Public Sub Update(ByVal BattleScreen As BattleScreen, ByVal AllExtended As Integer, ByVal isSelected As Boolean)
                 Me.Activate(BattleScreen, AllExtended, isSelected)
             End Sub
 
@@ -721,33 +735,24 @@
             _retractMenu = True
             _nextMenuState = MenuStates.Moves
 
-            BattleScreen.BattleQuery.Clear()
-            Dim q As New CameraQueryObject(New Vector3(11, 0.5F, 14.0F), New Vector3(11, 0.5F, 14.0F), Screen.Camera.Speed, Screen.Camera.Speed, -(CSng(MathHelper.PiOver4) + 0.3F), -(CSng(MathHelper.PiOver4) + 0.3F), -0.3F, -0.3F, 0.04F, 0.04F)
+			BattleScreen.BattleQuery.Clear()
+			Dim q As New CameraQueryObject(New Vector3(11, 0.5F, 14.0F), New Vector3(11, 0.5F, 14.0F), Screen.Camera.Speed, Screen.Camera.Speed, -(CSng(MathHelper.PiOver4) + 0.3F), -(CSng(MathHelper.PiOver4) + 0.3F), -0.3F, -0.3F, 0.04F, 0.04F)
             BattleScreen.BattleQuery.AddRange({q})
         End Sub
 
         Private Sub MainMenuOpenPokemon(ByVal BattleScreen As BattleScreen)
-            TempBattleScreen = BattleScreen
+			TempBattleScreen = BattleScreen
+			Core.SetScreen(New ChoosePokemonScreen(Core.CurrentScreen, Item.GetItemByID(5), AddressOf ShowPokemonMenu, "Choose Pokémon", True))
+			CType(Core.CurrentScreen, ChoosePokemonScreen).index = BattleScreen.OwnPokemonIndex
 
-            Player.Temp.PokemonScreenIndex = BattleScreen.OwnPokemonIndex
-            Dim selScreen = New PartyScreenV2(Core.CurrentScreen, Item.GetItemByID(5), AddressOf ShowPokemonMenu, "Choose Pokémon", True) With {.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection, .CanExit = True}
-            AddHandler selScreen.SelectedObject, AddressOf ShowPokemonMenuHandler
-
-            Core.SetScreen(selScreen)
-
-        End Sub
+		End Sub
 
         Private Sub MainMenuOpenBag(ByVal BattleScreen As BattleScreen)
-            If BattleScreen.CanUseItems = True Then
-                TempBattleScreen = BattleScreen
-                Dim selScreen As New NewInventoryScreen(Core.CurrentScreen)
-                selScreen.Mode = Screens.UI.ISelectionScreen.ScreenMode.Selection
-                selScreen.CanExit = True
-
-                AddHandler selScreen.SelectedObject, AddressOf SelectedItemHandler
-                Core.SetScreen(selScreen)
-            End If
-        End Sub
+			If BattleScreen.CanUseItems = True Then
+				TempBattleScreen = BattleScreen
+				Core.SetScreen(New InventoryScreen(Core.CurrentScreen, {}, AddressOf SelectedItem))
+			End If
+		End Sub
 
         Private Sub MainMenuRun(ByVal BattleScreen As BattleScreen)
             If BattleCalculation.CanRun(True, BattleScreen) = True And BattleScreen.CanRun = True Then

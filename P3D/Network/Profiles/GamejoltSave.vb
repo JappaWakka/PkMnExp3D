@@ -887,7 +887,7 @@ Namespace GameJolt
 				"LastRestPlacePosition|1,0.1,3" & Environment.NewLine &
 				"DiagonalMovement|0" & Environment.NewLine &
 				"RepelSteps|0" & Environment.NewLine &
-				"LastSavePlace|yourroom.dat" & Environment.NewLine &
+				"LastSavePlace|Johto\Cities\NewBark\YourHouse2f.dat" & Environment.NewLine &
 				"LastSavePlacePosition|1,0.1,3" & Environment.NewLine &
 				"Difficulty|" & GameModeManager.GetGameRuleValue("Difficulty", "0") & Environment.NewLine &
 				"BattleStyle|0" & Environment.NewLine &
@@ -907,70 +907,70 @@ Namespace GameJolt
 				"EarnedAchievements|"
 
 			Return s
-        End Function
+		End Function
 
 #End Region
 
-        Public Sub ResetSave()
-            Points = 0
-            Emblem = "trainer"
-            Gender = "0"
+		Public Sub ResetSave()
+			Points = 0
+			Emblem = "trainer"
+			Gender = "0"
 
-            _apricorns = ""
-            _berries = GetBerryData()
-            _box = ""
-            _daycare = ""
-            _itemData = ""
-            _items = ""
-            _NPC = ""
-            _options = GetOptionsData()
-            _party = ""
-            _player = GetPlayerData()
-            _pokedex = ""
-            _register = ""
-            _hallOfFame = ""
-            _secretBase = ""
-            _roamingPokemon = ""
-            _statistics = ""
-        End Sub
+			_apricorns = ""
+			_berries = GetBerryData()
+			_box = ""
+			_daycare = ""
+			_itemData = ""
+			_items = ""
+			_NPC = ""
+			_options = GetOptionsData()
+			_party = ""
+			_player = GetPlayerData()
+			_pokedex = ""
+			_register = ""
+			_hallOfFame = ""
+			_secretBase = ""
+			_roamingPokemon = ""
+			_statistics = ""
+		End Sub
 
-        Public Shared Function GetOptionsData() As String
-            Dim s As String = "FOV|50" & Environment.NewLine &
-                "TextSpeed|2" & Environment.NewLine &
-                "MouseSpeed|12"
+		Public Shared Function GetOptionsData() As String
+			Dim s As String = "FOV|50" & Environment.NewLine &
+				"TextSpeed|2" & Environment.NewLine &
+				"MouseSpeed|12"
 
-            Return s
-        End Function
+			Return s
+		End Function
 
-        Public Shared Function GetBerryData() As String
-            Dim s As String = "{route29.dat|13,0,5|6|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{route29.dat|14,0,5|6|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{route29.dat|15,0,5|6|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{azalea.dat|9,0,3|0|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{azalea.dat|9,0,4|1|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{azalea.dat|9,0,5|0|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{route30.dat|7,0,41|10|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{route30.dat|14,0,5|2|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{route30.dat|15,0,5|6|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{route30.dat|16,0,5|2|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{routes\route35.dat|0,0,4|7|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{routes\route35.dat|1,0,4|8|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{route36.dat|37,0,7|0|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{route36.dat|38,0,7|4|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{route36.dat|39,0,7|3|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{route39.dat|8,0,2|9|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{route39.dat|8,0,3|6|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{route38.dat|13,0,12|16|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{route38.dat|14,0,12|23|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{route38.dat|15,0,12|16|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{routes\route43.dat|13,0,45|23|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{routes\route43.dat|13,0,46|24|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{routes\route43.dat|13,0,47|25|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{safarizone\main.dat|3,0,11|5|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{safarizone\main.dat|4,0,11|0|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
-                "{safarizone\main.dat|5,0,11|6|3|0|2012,9,21,4,0,0|1}"
+		Public Shared Function GetBerryData() As String
+			Dim s As String = "{Johto\Routes\29.dat|13,0,5|6|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Routes\29.dat|14,0,5|6|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Routes\29.dat|15,0,5|6|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Cities\Azalea\Main.dat|9,0,3|0|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Cities\Azalea\Main.dat|9,0,4|1|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Cities\Azalea\Main.dat|9,0,5|0|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Routes\30.dat|7,0,41|10|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Routes\30.dat|14,0,5|2|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Routes\30.dat|15,0,5|6|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Routes\30.dat|16,0,5|2|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Routes\35.dat|0,0,4|7|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Routes\35.dat|1,0,4|8|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Routes\36.dat|37,0,7|0|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Routes\36.dat|38,0,7|4|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Routes\36.dat|39,0,7|3|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Routes\39.dat|8,0,2|9|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Routes\39.dat|8,0,3|6|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Routes\38.dat|13,0,12|16|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Routes\38.dat|14,0,12|23|1|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Routes\38.dat|15,0,12|16|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Routes\43.dat|13,0,45|23|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Routes\43.dat|13,0,46|24|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\Routes\43.dat|13,0,47|25|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\SafariZone\main.dat|3,0,11|5|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\SafariZone\main.dat|4,0,11|0|2|0|2012,9,21,4,0,0|1}" & Environment.NewLine &
+				"{Johto\SafariZone\main.dat|5,0,11|6|3|0|2012,9,21,4,0,0|1}"
 
-            Return s
+			Return s
         End Function
     End Class
 

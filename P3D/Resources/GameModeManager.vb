@@ -210,13 +210,15 @@ start:
             Return GameController.GamePath & GameMode.DefaultPokeFilePath & pokeFile
         End If
 
-        If System.IO.File.Exists(GameController.GamePath & ActiveGameMode.PokeFilePath & pokeFile) = True Then
-            Return GameController.GamePath & ActiveGameMode.PokeFilePath & pokeFile
-        End If
+		If System.IO.File.Exists(GameController.GamePath & ActiveGameMode.PokeFilePath & pokeFile) = True Then
+			Return GameController.GamePath & ActiveGameMode.PokeFilePath & pokeFile
+		Else
+			Logger.Log(Logger.LogTypes.Message, "Poke file: """ & ActiveGameMode.PokeFilePath & pokeFile & """ does not exist.")
+		End If
 
         If GameController.GamePath & GameMode.DefaultPokeFilePath & pokeFile <> GameController.GamePath & ActiveGameMode.PokeFilePath & pokeFile Then
-            Logger.Log(Logger.LogTypes.Message, "Poke file: """ & ActiveGameMode.PokeFilePath & pokeFile & """ does not exist in the GameMode. The game tries to load the normal file at ""\maps\poke\" & pokeFile & """.")
-        End If
+			Logger.Log(Logger.LogTypes.Message, "Poke file: """ & ActiveGameMode.PokeFilePath & pokeFile & """ does not exist in the GameMode. The game tries to load the normal file at ""\System\WildEncounters\" & pokeFile & """.")
+		End If
 
         Return GameController.GamePath & GameMode.DefaultPokeFilePath & pokeFile
     End Function

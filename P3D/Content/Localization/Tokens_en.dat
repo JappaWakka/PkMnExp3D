@@ -56,7 +56,7 @@ gamemode_menu_contentpath,ContentPath
 gamemode_menu_create,Create
 gamemode_menu_back,Back
 ---
-Pausescreen:
+PauseScreen:
 pause_menu_title,Game menu
 pause_menu_back_to_game,Back to game
 pause_menu_disconnect,Disconnect
@@ -108,27 +108,27 @@ pokedex_screen_obtained,Obtained
 pokedex_screen_rare,Rare
 pokedex_screen_backadvice,PRESS E TO GO BACK
 ---
-PokemonScreen:
-pokemon_screen_choose_a_pokemon,Choose a Pokémon
-pokemon_screen_backadvice,Press the E key to go back.
-pokemon_screen_item_give,Give
-pokemon_screen_item_take,Take
-pokemon_screen_item_back,Back
-pokemon_screen_doesnt_hold_item,~doesn't hold an item.
-pokemon_screen_take_item_1,Took 
-pokemon_screen_take_item_2, from~
-pokemon_screen_take_item_3,~and put it into the~
-pokemon_screen_take_item_4, pocket!
-pokemon_screen_give_item_1,Gave 
-pokemon_screen_give_item_2, to~
-pokemon_screen_give_item_3,
-pokemon_screen_give_item_4,~and put 
-pokemon_screen_give_item_5,~back to the inventory.
-pokemon_screen_summary,Summary
-pokemon_screen_switch,Switch
-pokemon_screen_item,Item
-pokemon_screen_back,Back
-pokemon_screen_EMPTY,EMPTY
+PartyScreen:
+party_screen_choose_a_pokemon,Choose a Pokémon
+party_screen_backadvice,Press the E key to go back.
+party_screen_item_give,Give
+party_screen_item_take,Take
+party_screen_item_back,Back
+party_screen_doesnt_hold_item,~doesn't hold an item.
+party_screen_take_item_1,Took 
+party_screen_take_item_2, from~
+party_screen_take_item_3,~and put it into the~
+party_screen_take_item_4, pocket!
+party_screen_give_item_1,Gave 
+party_screen_give_item_2, to~
+party_screen_give_item_3,
+party_screen_give_item_4,~and put 
+party_screen_give_item_5,~back to the inventory.
+party_screen_summary,Summary
+party_screen_switch,Switch
+party_screen_item,Item
+party_screen_back,Back
+party_screen_EMPTY,EMPTY
 ---
 Pokemon Status Screen:
 All pages:
@@ -1570,13 +1570,25 @@ Johto:
 New Bark Town:
 
 Signs:
-NewBark_Main_Sign_ElmsLab,Prof. Elm's Pokémon Lab
+NewBark_Main_Sign_ElmsLab,Elm Pokémon Lab
 NewBark_Main_Sign_PlayersHouse,<player.name>'s House
 NewBark_Main_Sign_Town,New Bark Town*"The town where the winds of a~new beginning blow."
-NewBark_Main_Sign_ElmsHouse,Prof. Elm's House
+NewBark_Main_Sign_ElmsHouse,Elm's House
 
 NPCs:
 NewBark_Main_FatGuy_ElmDiscovery,Yo, <player.name>!*I hear Prof. Elm discovered~some new Pokémon.
+
+NewBark_Main_Mary_PokeGear,Wow, your Pokégear is impressive!*Did your mom get it for you?
+NewBark_Main_Mary_AdorablePokemon,Oh! Your Pokémon is adorable!~I wish I had one!
+NewBark_Main_Mary_TellMomLeaving,Hi, <player.name>!~Leaving again?*You should tell your mom~if you're leaving.
+NewBark_Main_Mary_CallMom,Call your mom on~your Pokégear to*let her know how~you're doing.
+
+NewBark_Main_Mary_NoPokemon1,Wait, <player.name>!
+NewBark_Main_Mary_NoPokemon2,What do you think you're doing?
+NewBark_Main_Mary_NoPokemon3,It's dangerous to go out~without a Pokémon!*Wild Pokémon jump out of~the grass on the way~to the next town.
+
+NewBark_Rival_FamousLab,......*So this is the famous Elm Pokémon Lab.
+NewBark_Rival_Staring,......*What are you staring at?
 
 Hoenn:
 ----------

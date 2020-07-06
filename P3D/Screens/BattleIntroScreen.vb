@@ -22,17 +22,17 @@
     Public MusicLoop As String = ""
 
     Public Sub New(ByVal OldScreen As Screen, ByVal NewScreen As Screen, ByVal IntroType As Integer)
-        Dim musicLoop As String = Screen.Level.CurrentRegion.Split(CChar(","))(0) & "_wild_intro"
+		Dim musicLoop As String = Screen.Level.CurrentRegion.Split(CChar(","))(0) & "_wild_StartBattle"
 
-        If BattleSystem.BattleScreen.RoamingBattle = True Then
+		If BattleSystem.BattleScreen.RoamingBattle = True Then
             If BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop <> "" Then
-                musicLoop = BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop & "_intro"
-            End If
+				musicLoop = BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop & "_StartBattle"
+			End If
         End If
 
         If MusicManager.SongExists(musicLoop) = False Then
-            musicLoop = "johto_wild_intro"
-        End If
+			musicLoop = "johto_wild_StartBattle"
+		End If
         musicLoop = musicLoop
 
         Me.Constructor(OldScreen, NewScreen, Nothing, musicLoop, IntroType)
@@ -40,16 +40,16 @@
 
     Public Sub New(ByVal OldScreen As Screen, ByVal NewScreen As Screen, ByVal IntroType As Integer, ByVal MusicLoop As String)
         If MusicLoop = "" Then
-            MusicLoop = Screen.Level.CurrentRegion.Split(CChar(","))(0) & "_wild_intro"
-            If MusicManager.SongExists(MusicLoop) = False Then
+			MusicLoop = Screen.Level.CurrentRegion.Split(CChar(","))(0) & "_wild_StartBattle"
+			If MusicManager.SongExists(MusicLoop) = False Then
                 If BattleSystem.BattleScreen.RoamingBattle = True Then
                     If BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop <> "" Then
-                        MusicLoop = BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop & "_intro"
-                    End If
+						MusicLoop = BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop & "_StartBattle"
+					End If
                 End If
                 If MusicManager.SongExists(MusicLoop) = False Then
-                    MusicLoop = "johto_wild_intro"
-                End If
+					MusicLoop = "johto_wild_StartBattle"
+				End If
             End If
             MusicLoop = MusicLoop
         Else

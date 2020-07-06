@@ -82,15 +82,15 @@ Public Class CreditsScreen
     Private Sub InitializeCameraLevels(ByVal ending As String)
         Select Case ending.ToLower()
             Case "johto"
-                CameraLevels.Add(New CameraLevel("route29.dat", New Vector3(50, 2, 10), New Vector3(0, 2, 10), 0.04F, MathHelper.Pi * 1.5F, -0.3F))
-                CameraLevels.Add(New CameraLevel("routes\route42.dat", New Vector3(50, 2, 10), New Vector3(0, 2, 10), 0.04F, MathHelper.Pi * 1.5F, -0.3F))
-                CameraLevels.Add(New CameraLevel("route38.dat", New Vector3(34, 2, 10), New Vector3(0, 2, 10), 0.04F, MathHelper.Pi * 1.5F, -0.3F))
-                CameraLevels.Add(New CameraLevel("routes\route45.dat", New Vector3(10, 2, 3), New Vector3(10, 2, 30), 0.04F, 0.0F, -0.3F))
-                CameraLevels.Add(New CameraLevel("Ecruteak.dat", New Vector3(22, 0, 22), New Vector3(36, 14, 8), 0.04F, MathHelper.Pi * 1.7F, 0.3F))
-                CameraLevels.Add(New CameraLevel("routes\route34.dat", New Vector3(10, 2, 3), New Vector3(10, 2, 40), 0.04F, 0.0F, -0.3F))
-                CameraLevels.Add(New CameraLevel("route31.dat", New Vector3(29, 2, 10), New Vector3(0, 2, 10), 0.04F, MathHelper.Pi * 1.5F, -0.3F))
-                CameraLevels.Add(New CameraLevel("routes\route43.dat", New Vector3(10, 2, 3), New Vector3(10, 2, 30), 0.04F, 0.0F, -0.3F))
-                CameraLevels.Add(New CameraLevel("johto\cities\newbark\main.dat", New Vector3(20, 1.5, 14), New Vector3(20, 1.5, 28), 0.04F, 0.0F, -0.1F))
+				CameraLevels.Add(New CameraLevel("Johto\Routes\29.dat", New Vector3(50, 2, 10), New Vector3(0, 2, 10), 0.04F, MathHelper.Pi * 1.5F, -0.3F))
+				CameraLevels.Add(New CameraLevel("Johto\Routes\42.dat", New Vector3(50, 2, 10), New Vector3(0, 2, 10), 0.04F, MathHelper.Pi * 1.5F, -0.3F))
+				CameraLevels.Add(New CameraLevel("Johto\Routes\38.dat", New Vector3(34, 2, 10), New Vector3(0, 2, 10), 0.04F, MathHelper.Pi * 1.5F, -0.3F))
+				CameraLevels.Add(New CameraLevel("Johto\Routes\45.dat", New Vector3(10, 2, 3), New Vector3(10, 2, 30), 0.04F, 0.0F, -0.3F))
+				CameraLevels.Add(New CameraLevel("Johto\Cities\Ecruteak\Main.dat", New Vector3(22, 0, 22), New Vector3(36, 14, 8), 0.04F, MathHelper.Pi * 1.7F, 0.3F))
+				CameraLevels.Add(New CameraLevel("Johto\Routes\34.dat", New Vector3(10, 2, 3), New Vector3(10, 2, 40), 0.04F, 0.0F, -0.3F))
+				CameraLevels.Add(New CameraLevel("Johto\Routes\31.dat", New Vector3(29, 2, 10), New Vector3(0, 2, 10), 0.04F, MathHelper.Pi * 1.5F, -0.3F))
+				CameraLevels.Add(New CameraLevel("Johto\Routes\43.dat", New Vector3(10, 2, 3), New Vector3(10, 2, 30), 0.04F, 0.0F, -0.3F))
+				CameraLevels.Add(New CameraLevel("johto\cities\newbark\main.dat", New Vector3(20, 1.5, 14), New Vector3(20, 1.5, 28), 0.04F, 0.0F, -0.1F))
             Case "kanto"
 
         End Select

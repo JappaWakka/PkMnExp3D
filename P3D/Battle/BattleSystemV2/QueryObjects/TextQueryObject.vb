@@ -67,21 +67,21 @@
         Public Overrides Sub Draw(BV2Screen As BattleScreen)
             Dim rec As New Rectangle(100, Core.windowSize.Height - 250, Core.windowSize.Width - 200, 200)
 
-            Canvas.DrawRectangle(rec, New Color(0, 0, 0, 150))
+			Canvas.DrawRectangle(rec, New Color(0, 0, 0, 150))
 
-            Dim text As String = Me._text.Substring(0, _textIndex)
-            text = text.CropStringToWidth(FontManager.TextFont, 2.0F, Core.windowSize.Width - 300)
+			Dim text As String = Me._text.Substring(0, _textIndex)
+			text = text.CropStringToWidth(FontManager.MainFontWhite, 2.0F, Core.windowSize.Width - 300)
 
-            Core.SpriteBatch.DrawString(FontManager.TextFont, text, New Vector2(rec.X + 20, rec.Y + 20), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
+			Core.SpriteBatch.DrawString(FontManager.MainFontWhite, text, New Vector2(rec.X + 20, rec.Y + 20), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
 
-            If GamePad.GetState(PlayerIndex.One).IsConnected = True And Core.GameOptions.GamePadEnabled = True And BV2Screen.IsCurrentScreen() = True Then
+			If GamePad.GetState(PlayerIndex.One).IsConnected = True And Core.GameOptions.GamePadEnabled = True And BV2Screen.IsCurrentScreen() = True Then
                 Dim d As New Dictionary(Of Buttons, String)
                 d.Add(Buttons.A, Localization.GetString("game_interaction_ok", "OK"))
                 BV2Screen.DrawGamePadControls(d, New Vector2(rec.X + rec.Width - 100, rec.Y + rec.Height - 40))
             Else
                 If TextReady = True Then
-                    Core.SpriteBatch.DrawString(FontManager.TextFont, "OK", New Vector2(rec.X + rec.Width - (FontManager.TextFont.MeasureString("OK").X * 2.0F) - 20, rec.Y + rec.Height - (FontManager.TextFont.MeasureString("OK").Y * 2.0F) - 5), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
-                End If
+					Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "OK", New Vector2(rec.X + rec.Width - (FontManager.MainFontWhite.MeasureString("OK").X * 2.0F) - 20, rec.Y + rec.Height - (FontManager.MainFontWhite.MeasureString("OK").Y * 2.0F) - 5), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
+				End If
             End If
         End Sub
 

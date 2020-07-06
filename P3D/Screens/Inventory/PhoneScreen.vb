@@ -1674,8 +1674,8 @@
                             output = "Welcome to the Pokédex Show! Today, we are going to look at the entry of " & p.GetName() & "! Its entry reads:~""" & p.PokedexEntry.Text & """~Wow, that is interesting! Also, " & p.GetName() & " is " & p.PokedexEntry.Height & "m high and weights " & p.PokedexEntry.Weight & "kg.~Isn't that amazing?~" & p.GetName() & " is part of the " & p.PokedexEntry.Species & " species.~That's all the information we have. Tune in next time!"
                         End If
                     Case "[randompokemon]"
-                        Dim levels() As String = {"route29.dat", "route30.dat", "route31.dat", "route32.dat", "route33.dat", "route36.dat", "route37.dat", "route38.dat", "route39.dat", "routes\route34.dat", "routes\route35.dat", "routes\route42.dat", "routes\route43.dat", "routes\route44.dat", "routes\route45.dat", "routes\route46.dat"}
-                        Dim cLevel As String = levels(Core.Random.Next(0, levels.Count))
+						Dim levels() As String = {"Johto\Routes\29.dat", "Johto\Routes\30.dat", "Johto\Routes\31.dat", "Johto\Routes\32.dat", "Johto\Routes\33.dat", "Johto\Routes\36.dat", "Johto\Routes\37.dat", "Johto\Routes\38.dat", "Johto\Routes\39.dat", "Johto\Routes\34.dat", "Johto\Routes\35.dat", "Johto\Routes\42.dat", "Johto\Routes\43.dat", "Johto\Routes\44.dat", "Johto\Routes\45.dat", "Johto\Routes\46.dat"}
+						Dim cLevel As String = levels(Core.Random.Next(0, levels.Count))
                         Dim p As Pokemon = Spawner.GetPokemon(cLevel, 0, False)
 
                         Dim levelName As String = cLevel
