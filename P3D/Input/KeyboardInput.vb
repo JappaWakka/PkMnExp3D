@@ -221,8 +221,8 @@ Public Class KeyboardInput
 
         'Visuals:
         Private _font As SpriteFont
-        Private _fontColor As Color = Color.Black
-        Private _backColor As Color = Color.White
+		Private _fontColor As SpriteFont = FontManager.MainFontBlack
+		Private _backColor As Color = Color.White
         Private _borderColor As Color = Color.Black
         Private _width As Integer = 120
         Private _height As Integer = -1
@@ -488,10 +488,10 @@ Public Class KeyboardInput
             'Draw content:
             Core.SpriteBatch.DrawRectangle(New Rectangle(Me._position.X + Me._borderWidth, Me._position.X + Me._borderWidth, Me._width, contentHeight), Me._backColor)
 
-            Core.SpriteBatch.DrawString(Me._font, Me._text, New Vector2(Me._position.X + Me._borderWidth, Me._position.Y + Me._borderWidth + 1), Me._fontColor)
+			Core.SpriteBatch.DrawString(Me._font, Me._text, New Vector2(Me._position.X + Me._borderWidth, Me._position.Y + Me._borderWidth + 1), Color.White)
 
-            'Draw carret and selection:
-            Dim carretDrawPosition As Integer = 0
+			'Draw carret and selection:
+			Dim carretDrawPosition As Integer = 0
             If Me._carretPosition = Me._text.Length Then
                 carretDrawPosition = CInt(Me._font.MeasureString(Me._text).X)
             Else

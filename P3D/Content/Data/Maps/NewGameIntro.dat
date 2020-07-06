@@ -11,7 +11,7 @@ Oak:
 {"NPC"{NPC[{"Position"{sngArr[13,0,5]}}{"TextureID"{str[ProfessorOak]}}{"ID"{int[0]}}{"Name"{str[Oak]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[1]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
 
 Player:
-{"NPC"{NPC[{"Position"{sngArr[9,0,9]}}{"TextureID"{str[PlayerSkins\Ethan_GBA]}}{"ID"{int[1]}}{"Name"{str[PLAYER]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[9,0,9]}}{"TextureID"{str[PlayerSkins\Ethan]}}{"ID"{int[1]}}{"Name"{str[PLAYER]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
 
 First route scene:
 {"Floor"{ENT[{"SeasonTexture"{str[Grass]}}{"Size"{intArr[6,6]}}{"Position"{sngArr[20,0,6]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}

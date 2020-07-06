@@ -128,9 +128,11 @@
         Next
 
 		Me.Text = Me.Text.Replace("<playername>", Core.Player.Name)
-        Me.Text = Me.Text.Replace("<rivalname>", Core.Player.RivalName)
+		Me.Text = Me.Text.Replace("<player.name>", Core.Player.Name)
+		Me.Text = Me.Text.Replace("<rivalname>", Core.Player.RivalName)
+		Me.Text = Me.Text.Replace("<rival.name>", Core.Player.RivalName)
 
-        Me.Text = Me.Text.Replace("[POKE]", "Poké")
+		Me.Text = Me.Text.Replace("[POKE]", "Poké")
         Me.Text = Me.Text.Replace("[POKEMON]", "Pokémon")
     End Sub
 

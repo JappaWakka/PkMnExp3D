@@ -1699,12 +1699,14 @@
 		End If
 
 		SpriteBatch.DrawInterfaceString(FontManager.MainFontBlack, tempGameModesDisplay, New Vector2(CInt(ScreenSize.Width / 2) - 252, 468), Color.White)
-
+		Dim fontColor As SpriteFont = FontManager.MainFontBlack
 		For i = 0 To 1
 			If i = gameModeMenuIndex(1) Then
 				CanvasTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 48, 48, 48), "")
+				fontColor = FontManager.MainFontWhite
 			Else
 				CanvasTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 0, 48, 48), "")
+				fontColor = FontManager.MainFontBlack
 			End If
 
 			Dim Text As String = Localization.GetString("gamemode_menu_back")
@@ -1717,7 +1719,7 @@
 			End Select
 
 			Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(ScreenSize.Width / 2) - 180 + (200 * i), 692, 128, 64), True)
-			SpriteBatch.DrawInterfaceString(FontManager.MainFontBlack, Text, New Vector2(CInt(ScreenSize.Width / 2) - 160 + (200 * i), 724), Color.White)
+			SpriteBatch.DrawInterfaceString(fontColor, Text, New Vector2(CInt(ScreenSize.Width / 2) - 160 + (200 * i), 724), Color.White)
 		Next
 	End Sub
 

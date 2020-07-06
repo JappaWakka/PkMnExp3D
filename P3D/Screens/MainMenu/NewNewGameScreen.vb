@@ -204,6 +204,8 @@
             Inherits Screen
 
 			Private _skins As New List(Of String)
+			Private _names As New List(Of String)
+			Private _genders As New List(Of String)
 			Private _sprites As New List(Of Texture2D)
 
             Private _offset As Single = 0F
@@ -237,6 +239,8 @@
 				Next
 
 				_skins = GameModeManager.ActiveGameMode.SkinFiles
+				_names = GameModeManager.ActiveGameMode.SkinNames
+				_genders = GameModeManager.ActiveGameMode.SkinGenders
 			End Sub
 
 			Public Overrides Sub Update()
@@ -306,8 +310,9 @@
                     SpriteBatch.Draw(sprite, New Rectangle(CInt(windowSize.Width / 2 - CInt(outSize / 2) + i * 280 - _index * 280 + _offset), CInt(windowSize.Height / 2 - 128), outSize, outSize), New Rectangle(0, frameSize.Height * 2, frameSize.Width, frameSize.Height), New Color(255, 255, 255, CInt(255 * _fadeIn)))
                 Next
 
-                SpriteBatch.DrawString(FontManager.MainFontWhite, _skins(_index), New Vector2(windowSize.Width / 2.0F - FontManager.MainFontWhite.MeasureString(_skins(_index)).X / 2.0F, windowSize.Height / 2.0F + 200), New Color(255, 255, 255, CInt(255 * _fadeIn)))
-            End Sub
+				SpriteBatch.DrawString(FontManager.MainFontWhite, _names(_index), New Vector2(windowSize.Width / 2.0F - FontManager.MainFontWhite.MeasureString(_names(_index)).X, windowSize.Height / 2.0F + 200), New Color(255, 255, 255, CInt(255 * _fadeIn)), 0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0F)
+				SpriteBatch.DrawString(FontManager.MainFontWhite, _genders(_index), New Vector2(windowSize.Width / 2.0F - FontManager.MainFontWhite.MeasureString(_genders(_index)).X / 2.0F, windowSize.Height / 2.0F + 300), New Color(255, 255, 255, CInt(255 * _fadeIn)), 0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0F)
+			End Sub
 
         End Class
 

@@ -170,9 +170,9 @@
             b.Draw(New Vector2(CSng((Core.windowSize.Width / 2) - ((13 * 64) / 2)), 200), Me.ButtonSelector)
         Next
 
-        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Chars left: " & (MaxChars - Me.CurrentText.Length).ToString(), New Vector2(CInt((Core.windowSize.Width / 2) + 180), 477), Color.Gray)
+		Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Chars left: " & (MaxChars - Me.CurrentText.Length).ToString(), New Vector2(CInt((Core.windowSize.Width / 2) + 180), 477), Color.White)
 
-        Dim d As New Dictionary(Of Buttons, String)
+		Dim d As New Dictionary(Of Buttons, String)
         d.Add(Input.Buttons.A, Localization.GetString("game_interaction_enter", "Enter"))
         d.Add(Input.Buttons.B, "Delete")
         d.Add(Input.Buttons.Y, "Confirm")
@@ -322,28 +322,33 @@
         End Sub
 
         Public Sub Draw(ByVal StartPosition As Vector2, ByVal Selector As Vector2)
-            Dim p As New Vector2(RelPosition.X * RasterSize + StartPosition.X, RelPosition.Y * RasterSize + StartPosition.Y)
-            For i = 0 To Me.Size - 1
-                Dim buttonColor As Color = Color.White
-                Select Case Me.ButtonMode
-                    Case ButtonModes.Key
-                        buttonColor = Color.White
-                    Case ButtonModes.Enter
-                        buttonColor = Color.CadetBlue
-                    Case ButtonModes.Delete
-                        buttonColor = Color.Tomato
-                    Case Else
-                        buttonColor = New Color(100, 100, 100)
-                End Select
+			Dim fontColor As SpriteFont = FontManager.MainFontBlack
+			Dim p As New Vector2(RelPosition.X * RasterSize + StartPosition.X, RelPosition.Y * RasterSize + StartPosition.Y)
+			For i = 0 To Me.Size - 1
+				Dim buttonColor As Color = Color.White
+				Select Case Me.ButtonMode
+					Case ButtonModes.Key
+						buttonColor = Color.White
+						fontColor = FontManager.MainFontBlack
+					Case ButtonModes.Enter
+						buttonColor = Color.CadetBlue
+						fontColor = FontManager.MainFontWhite
+					Case ButtonModes.Delete
+						buttonColor = Color.Tomato
+						fontColor = FontManager.MainFontWhite
+					Case Else
+						buttonColor = New Color(100, 100, 100)
+						fontColor = FontManager.MainFontWhite
+				End Select
 
-                If Selector = Me.RelPosition Then
-                    Core.SpriteBatch.Draw(T, New Rectangle(CInt(p.X) + i, CInt(p.Y), 1, RasterSize), Nothing, buttonColor, 0.0F, Vector2.Zero, SpriteEffects.FlipVertically, 0.0F)
-                Else
-                    Core.SpriteBatch.Draw(T, New Rectangle(CInt(p.X) + i, CInt(p.Y), 1, RasterSize), buttonColor)
-                End If
-            Next
+				If Selector = Me.RelPosition Then
+					Core.SpriteBatch.Draw(T, New Rectangle(CInt(p.X) + i, CInt(p.Y), 1, RasterSize), Nothing, buttonColor, 0.0F, Vector2.Zero, SpriteEffects.FlipVertically, 0.0F)
+				Else
+					Core.SpriteBatch.Draw(T, New Rectangle(CInt(p.X) + i, CInt(p.Y), 1, RasterSize), buttonColor)
+				End If
+			Next
 
-            If Selector = Me.RelPosition Then
+			If Selector = Me.RelPosition Then
                 Canvas.DrawBorder(2, New Rectangle(CInt(p.X), CInt(p.Y), Size, RasterSize), New Color(255, 0, 0, 100))
             Else
                 Canvas.DrawBorder(1, New Rectangle(CInt(p.X), CInt(p.Y), Size, RasterSize), Color.Gray)
@@ -358,15 +363,15 @@
                 End If
             End If
 
-            Dim fontColor As Color = Color.Black
-            If Me.ButtonMode <> ButtonModes.Key Then
-                fontColor = Color.White
-            End If
+
+			If Me.ButtonMode <> ButtonModes.Key Then
+				fontColor = FontManager.MainFontWhite
+			End If
 
             Dim middelPoint As New Vector2(CSng(Me.Size / 2) + p.X, CSng(RasterSize / 2) + p.Y)
-            Dim f As SpriteFont = FontManager.MainFontWhite
-            Core.SpriteBatch.DrawString(f, text, New Vector2(middelPoint.X - CSng(f.MeasureString(text).X / 2), middelPoint.Y - CSng(f.MeasureString(text).Y / 2)), fontColor)
-        End Sub
+
+			Core.SpriteBatch.DrawString(fontColor, text, New Vector2(middelPoint.X - CSng(fontColor.MeasureString(text).X / 2), middelPoint.Y - CSng(fontColor.MeasureString(text).Y / 2)), Color.White)
+		End Sub
 
         Public Sub Update(ByVal StartPosition As Vector2, ByRef Selector As Vector2, ByVal s As InputScreen)
             Dim p As New Vector2(RelPosition.X * RasterSize + StartPosition.X, RelPosition.Y * RasterSize + StartPosition.Y)

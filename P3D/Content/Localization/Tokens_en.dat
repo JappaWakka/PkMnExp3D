@@ -1553,6 +1553,31 @@ pokemon_name_Celebi,Celebi
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 Story:
 
+NewGameIntro:
+----------
+
+NewGame_Oak_Intro1,Hello, sorry to keep you waiting!*Welcome to the world of Pokémon!*My name is Oak.~People call me the Pokémon Professor.*This world is inhabited by~creatures that we call...
+NewGame_Oak_Intro2,...Pokémon.*People and Pokémon live together~by supporting each other.
+NewGame_Oak_Intro3,Some people play with Pokémon,~some battle with them.*But we don't know everything~about Pokémon yet.
+NewGame_Oak_Intro4,There are still many mysteries to solve.*That's why I study Pokémon every day.*But let's get back to you.
+NewGame_Oak_YourName,Now, what did you say your name was?
+NewGame_Oak_ConfirmName,Alright, nice to meet you,~<player.name>!
+NewGame_Oak_Intro5,This is your home in New Bark Town.*You live there with your mother~right next to Professor Elm.
+NewGame_Oak_Intro6,<player.name>, are you ready?*Your very own Pokémon story is~about to unfold.*You'll face fun times and~tough challenges.*A world of dreams and adventures~with Pokémon awaits!*Let's go!~I'll be seeing you later!
+
+Johto:
+----------
+New Bark Town:
+
+Signs:
+NewBark_Main_Sign_ElmsLab,Prof. Elm's Pokémon Lab
+NewBark_Main_Sign_PlayersHouse,<player.name>'s House
+NewBark_Main_Sign_Town,New Bark Town*"The town where the winds of a~new beginning blow."
+NewBark_Main_Sign_ElmsHouse,Prof. Elm's House
+
+NPCs:
+NewBark_Main_FatGuy_ElmDiscovery,Yo, <player.name>!*I hear Prof. Elm discovered~some new Pokémon.
+
 Hoenn:
 ----------
 Inside Truck:
@@ -1563,7 +1588,7 @@ Littleroot Town:
 
 Signs:
 
-Littleroot_Main_Sign_Town,Littleroot Town~"A town that can't be shaded any hue."
+Littleroot_Main_Sign_Town,Littleroot Town*"A town that can't be shaded any hue."
 Littleroot_Main_Sign_PlayersHouse,<player.name>'s House
 Littleroot_Main_Sign_BirchsHouse,Prof. Birch's House
 Littleroot_Main_Sign_BirchsLab,Prof. Birch's Pokémon Lab
