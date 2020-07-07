@@ -29,6 +29,11 @@
 			Else
 				MusicManager.Muted = True
 			End If
+			If SoundManager.Muted Then
+				SoundManager.Muted = False
+			Else
+				SoundManager.Muted = True
+			End If
 			Core.GameOptions.SaveOptions()
             Core.CurrentScreen.ToggledMute()
         End If

@@ -2,20 +2,20 @@
 {"Actions"{LEV[{"CanTeleport"{bool[1]}}{"CanDig"{bool[0]}}{"CanFly"{bool[1]}}{"EnvironmentType"{int[0]}}{"Weather"{int[1]}}{"Lightning"{int[0]}}]}}
 
 Floor:
-{"Floor"{ENT[{"Size"{intArr[12,8]}}{"Position"{sngArr[4,0,-13]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}{"Rotation"{int[1]}}]}}
-{"Floor"{ENT[{"Size"{intArr[3,5]}}{"Position"{sngArr[32,0,-8]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}{"Rotation"{int[1]}}]}}
-{"Floor"{ENT[{"Size"{intArr[13,9]}}{"Position"{sngArr[19,0,-17]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}{"Rotation"{int[1]}}]}}
+{"Floor"{ENT[{"Size"{intArr[12,8]}}{"Position"{sngArr[4,0,-13]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,0,16,16]]}}{"Rotation"{int[1]}}]}}
+{"Floor"{ENT[{"Size"{intArr[3,5]}}{"Position"{sngArr[32,0,-8]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,0,16,16]]}}{"Rotation"{int[1]}}]}}
+{"Floor"{ENT[{"Size"{intArr[13,9]}}{"Position"{sngArr[19,0,-17]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,0,16,16]]}}{"Rotation"{int[1]}}]}}
 
-{"Floor"{ENT[{"Size"{intArr[3,6]}}{"Position"{sngArr[10,1,-17]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}{"Rotation"{int[1]}}]}}
-{"Floor"{ENT[{"Size"{intArr[4,3]}}{"Position"{sngArr[13,1,-17]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}{"Rotation"{int[1]}}]}}
-{"Floor"{ENT[{"Size"{intArr[2,11]}}{"Position"{sngArr[17,1,-17]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}{"Rotation"{int[1]}}]}}
-{"Floor"{ENT[{"Size"{intArr[3,6]}}{"Position"{sngArr[20,1,-10]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}{"Rotation"{int[1]}}]}}
-{"Floor"{ENT[{"Size"{intArr[7,3]}}{"Position"{sngArr[23,1,-7]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}{"Rotation"{int[1]}}]}}
-{"Floor"{ENT[{"Size"{intArr[2,5]}}{"Position"{sngArr[30,1,-9]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}{"Rotation"{int[1]}}]}}
-{"Floor"{ENT[{"Size"{intArr[3,2]}}{"Position"{sngArr[26,1,-20]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}{"Rotation"{int[1]}}]}}
-{"Floor"{ENT[{"Size"{intArr[4,5]}}{"Position"{sngArr[29,1,-23]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}{"Rotation"{int[1]}}]}}
+{"Floor"{ENT[{"Size"{intArr[3,6]}}{"Position"{sngArr[10,1,-17]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,0,16,16]]}}{"Rotation"{int[1]}}]}}
+{"Floor"{ENT[{"Size"{intArr[4,3]}}{"Position"{sngArr[13,1,-17]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,0,16,16]]}}{"Rotation"{int[1]}}]}}
+{"Floor"{ENT[{"Size"{intArr[2,11]}}{"Position"{sngArr[17,1,-17]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,0,16,16]]}}{"Rotation"{int[1]}}]}}
+{"Floor"{ENT[{"Size"{intArr[3,6]}}{"Position"{sngArr[20,1,-10]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,0,16,16]]}}{"Rotation"{int[1]}}]}}
+{"Floor"{ENT[{"Size"{intArr[7,3]}}{"Position"{sngArr[23,1,-7]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,0,16,16]]}}{"Rotation"{int[1]}}]}}
+{"Floor"{ENT[{"Size"{intArr[2,5]}}{"Position"{sngArr[30,1,-9]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,0,16,16]]}}{"Rotation"{int[1]}}]}}
+{"Floor"{ENT[{"Size"{intArr[3,2]}}{"Position"{sngArr[26,1,-20]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,0,16,16]]}}{"Rotation"{int[1]}}]}}
+{"Floor"{ENT[{"Size"{intArr[4,5]}}{"Position"{sngArr[29,1,-23]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,0,16,16]]}}{"Rotation"{int[1]}}]}}
 
-{"Floor"{ENT[{"Size"{intArr[2,3]}}{"Position"{sngArr[28,2,-24]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}{"Rotation"{int[1]}}]}}
+{"Floor"{ENT[{"Size"{intArr[2,3]}}{"Position"{sngArr[28,2,-24]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,0,16,16]]}}{"Rotation"{int[1]}}]}}
 
 {"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[28,2,-23]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[240,128,16,16]}}{"Rotation"{int[1]}}]}}
 {"Floor"{ENT[{"Size"{intArr[2,2]}}{"Position"{sngArr[28,2,-25]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[240,128,16,16]}}{"Rotation"{int[1]}}]}}

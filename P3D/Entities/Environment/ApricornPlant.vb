@@ -18,35 +18,34 @@
     Public Overrides Sub Initialize()
         MyBase.Initialize()
 
-        CreateWorldEveryFrame = True
-
-        ApricornColor = GetApricornColor(CInt(AdditionalValue))
-        CheckHasApricorn()
+		CreateWorldEveryFrame = True
+		ApricornColor = GetApricornColor(CInt(AdditionalValue))
+		CheckHasApricorn()
         ChangeTexture()
     End Sub
 
     Private Sub ChangeTexture()
 		Dim _texture As Texture2D = TextureManager.GetTexture("Textures\TextureSheets\Apricorn")
-		Dim xOffset As Integer = 2
-        Dim yOffset As Integer = 2
-        Dim width As Integer = 16
-        Dim height As Integer = 32
-        width = CInt(_texture.Width / 3)
-        height = CInt(_texture.Width / 3)
-        Dim r As New Rectangle(xOffset * width, yOffset * height, width, height)
+		Dim xOffset As Integer = 1
+		Dim yOffset As Integer = 2
+		Dim width As Integer = CInt(_texture.Width / 3)
+		Dim height As Integer = CInt(_texture.Height / 3)
+		Dim r As New Rectangle(xOffset * width, yOffset * height, width, height)
 
-        If hasApricorn = True Then
-            xOffset = GetColorCode(ApricornColor)
-            yOffset = 0
-            While xOffset > 2
-                xOffset -= 3
-                yOffset += 1
-            End While
+		If hasApricorn = True Then
+			xOffset = GetColorCode(ApricornColor)
+			yOffset = 0
+			While xOffset > 2
+				xOffset -= 3
+				yOffset += 1
+			End While
 
-            r = New Rectangle(xOffset * width, yOffset * height, width, height)
-        End If
+			r = New Rectangle(xOffset * width, yOffset * height, width, height)
+		End If
 
-        Textures(0) = TextureManager.GetTexture("TextureSheets\Apricorn", r)
+		MyBase.Scale = New Vector3(CSng(_texture.Width / 3 / 16 * MyBase.Scale.X * 0.75), CSng(_texture.Height / 3 / 16 * MyBase.Scale.Y * 0.75), CSng(_texture.Width / 3 / 16 * MyBase.Scale.Z * 0.75))
+
+		Textures(0) = TextureManager.GetTexture("TextureSheets\Apricorn", r)
     End Sub
 
     Private Sub CheckHasApricorn()
@@ -144,7 +143,7 @@
 
             Core.Player.Inventory.AddItem(Item.ID, 1)
             PlayerStatistics.Track("[85]Apricorns picked", 1)
-			SoundManager.PlaySound("Item_Get", True)
+			SoundManager.PlaySound("Receive_Berry", True)
 			Screen.TextBox.TextColor = Textbox.PlayerColor
             Screen.TextBox.Show(Core.Player.Name & " picked the~" & Item.Name & ".*" & Core.Player.Inventory.GetMessageReceive(Item, 1), {Me})
             AddApriconSave()

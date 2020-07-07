@@ -2,12 +2,12 @@
 {"Actions"{LEV[{"CanTeleport"{bool[1]}}{"CanDig"{bool[0]}}{"CanFly"{bool[1]}}{"EnvironmentType"{int[0]}}{"Weather"{int[0]}}{"Lightning"{int[0]}}{"BattleMap"{str[SeviiIslands\6fortune\green.dat,-10.7,0,-11]}}]}}
 
 Floor:
-{"Floor"{ENT[{"Size"{intArr[4,4]}}{"Position"{sngArr[38,1,9]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[1,11]}}{"Position"{sngArr[42,1,5]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[24,13]}}{"Position"{sngArr[43,1,4]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[6,11]}}{"Position"{sngArr[67,1,6]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[4,4]}}{"Position"{sngArr[38,1,9]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,11]}}{"Position"{sngArr[42,1,5]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[24,13]}}{"Position"{sngArr[43,1,4]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[6,11]}}{"Position"{sngArr[67,1,6]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
 
-{"Floor"{ENT[{"Size"{intArr[4,4]}}{"Position"{sngArr[37,0,13]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[4,4]}}{"Position"{sngArr[37,0,13]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
 
 Sand:
 {"Floor"{ENT[{"Size"{intArr[5,1]}}{"Position"{sngArr[11,0,6]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[16,16,16,16]}}]}}

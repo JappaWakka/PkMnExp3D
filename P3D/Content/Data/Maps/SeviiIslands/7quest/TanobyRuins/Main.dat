@@ -26,7 +26,7 @@ Floor:
 {"Floor"{ENT[{"Size"{intArr[1,6]}}{"Position"{sngArr[48,0,6]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[16,16,16,16]}}]}}
 
 Grass:
-{"Floor"{ENT[{"Size"{intArr[6,6]}}{"Position"{sngArr[61,0,-1]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[6,6]}}{"Position"{sngArr[61,0,-1]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
 
 Dirt:
 {"Floor"{ENT[{"Size"{intArr[3,1]}}{"Position"{sngArr[119,2,11]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[240,128,16,16]}}]}}

@@ -2,18 +2,18 @@
 {"Actions"{LEV[{"CanTeleport"{bool[1]}}{"CanDig"{bool[0]}}{"CanFly"{bool[1]}}{"EnvironmentType"{int[0]}}{"MapScript"{str[fortune\dot\door]}}{"Weather"{int[0]}}{"Lightning"{int[0]}}{"BattleMap"{str[fortune\valley.dat,13,0,-5.7]}}]}}
 
 Floor:
-{"Floor"{ENT[{"Size"{intArr[7,3]}}{"Position"{sngArr[15,1,28]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[5,9]}}{"Position"{sngArr[14,1,19]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[10,4]}}{"Position"{sngArr[9,1,15]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[11,3]}}{"Position"{sngArr[19,1,14]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[10,2]}}{"Position"{sngArr[27,1,28]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[7,2]}}{"Position"{sngArr[30,1,26]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[7,3]}}{"Position"{sngArr[15,1,28]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[5,9]}}{"Position"{sngArr[14,1,19]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[10,4]}}{"Position"{sngArr[9,1,15]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[11,3]}}{"Position"{sngArr[19,1,14]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[10,2]}}{"Position"{sngArr[27,1,28]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[7,2]}}{"Position"{sngArr[30,1,26]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
 
-{"Floor"{ENT[{"Size"{intArr[44,13]}}{"Position"{sngArr[5,0,5]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[38,12]}}{"Position"{sngArr[6,0,25]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[8,7]}}{"Position"{sngArr[5,0,18]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[4,7]}}{"Position"{sngArr[37,0,18]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
-{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[24,0,24]}}{"TexturePath"{str[Cities\Cherrygrove]}}{"Texture"{rec[0,16,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[44,13]}}{"Position"{sngArr[5,0,5]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[38,12]}}{"Position"{sngArr[6,0,25]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[8,7]}}{"Position"{sngArr[5,0,18]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[4,7]}}{"Position"{sngArr[37,0,18]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[24,0,24]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
 
 {"Floor"{ENT[{"Size"{intArr[3,5]}}{"Position"{sngArr[5,0,30]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[240,128,16,16]}}]}}
 {"Floor"{ENT[{"Size"{intArr[2,1]}}{"Position"{sngArr[10,2,14]}}{"TexturePath"{str[Routes]}}{"Texture"{rec[240,128,16,16]}}]}}
