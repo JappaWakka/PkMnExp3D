@@ -2,9 +2,9 @@
 
     Inherits Entity
 
-	Public Shared ReadOnly AllowedSkins() As String = {"Ethan", "Lyra"}
+	Public Shared ReadOnly AllowedSkins() As String = {"Ethan", "Lyra", "Brendan"}
 
-    Public Texture As Texture2D
+	Public Texture As Texture2D
     Public SkinName As String = "Ethan"
 
     Public HasPokemonTexture As Boolean = False

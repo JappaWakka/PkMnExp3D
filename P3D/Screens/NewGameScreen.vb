@@ -2,10 +2,10 @@
 
     Inherits Screen
 
-    Dim skinFiles() As String = {"Ethan", "Rande", "Ethan_GBA", "Lyra_GBA"}
-    Dim skinNames() As String = {"J. Akira", "Rande", "Ethan (GBA)", "Lyra (GBA)"}
-    Dim skinGenders() As String = {"Male", "Female", "Male", "Female"}
-    Dim backColors() As Color = {New Color(248, 176, 32), New Color(248, 216, 88), New Color(56, 88, 200), New Color(216, 96, 112)}
+	Dim skinFiles() As String = {"Ethan", "Lyra", "Brendan"}
+	Dim skinNames() As String = {"Ethan", "Lyra", "Brendan"}
+	Dim skinGenders() As String = {"Male", "Female", "Male"}
+	Dim backColors() As Color = {New Color(248, 176, 32), New Color(248, 216, 88), New Color(56, 88, 200), New Color(216, 96, 112)}
 
     Public Index As Integer = 0
     Dim pokeIndex As Integer = 0
@@ -37,9 +37,9 @@
     Dim pokemonRange() As Integer = {1, 252}
     Dim introMusic As String = "welcome"
 	'Dim startMap As String = "Johto\Cities\NewBark\YourHouse2f.dat"
-	Dim startMap As String = "Johto\Cities\NewBark\Main.dat"
+	Dim startMap As String = "Johto\Cities\NewBark\YourHouse2f.dat"
 	Dim startPosition As Vector3 = New Vector3(9, 0.1F, 10)
-	Dim startLocation As String = "Breeze Town"
+	Dim startLocation As String = "Your Room"
 	Dim startYaw As Single = MathHelper.PiOver2
 
 	Dim Dialogues As New List(Of String)
