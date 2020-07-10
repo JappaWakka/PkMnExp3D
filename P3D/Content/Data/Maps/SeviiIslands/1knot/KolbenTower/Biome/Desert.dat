@@ -66,4 +66,4 @@ Corner:
 {"Entity"{ENT[{"Position"{sngArr[8,0,16]}}{"EntityID"{str[WallBlock]}}{"TexturePath"{str[safari]}}{"Textures"{recArr[[272,48,16,16]]}}{"TextureIndex"{intArr[0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[5]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 
 NPCs:
-{"NPC"{NPC[{"Position"{sngArr[18,0,13]}}{"TextureID"{str[SeviiIslands\1knot\kolbentower\Omega]}}{"ID"{int[4]}}{"Name"{str[Omega]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[1]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[18,0,13]}}{"TextureID"{str[Kolben\Omega]}}{"ID"{int[4]}}{"Name"{str[Omega]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[1]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}

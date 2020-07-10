@@ -210,9 +210,9 @@ NPCs:
 {"NPC"{NPC[{"Scale"{sngArr[0,0,0]}}{"Position"{sngArr[12,0,3]}}{"TextureID"{str[]}}{"ID"{int[1]}}{"Name"{str[Window]}}{"Action"{int[0]}}{"AdditionalValue"{str[You can see some sort~of fiery pit outside!]}}{"Rotation"{int[0]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
 {"NPC"{NPC[{"Scale"{sngArr[0,0,0]}}{"Position"{sngArr[15,0,6]}}{"TextureID"{str[]}}{"ID"{int[96]}}{"Name"{str[BRB]}}{"Action"{int[0]}}{"AdditionalValue"{str[It's a big, intimidating~red button.*Better not press it!]}}{"Rotation"{int[0]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
 
-{"NPC"{NPC[{"Position"{sngArr[9,0,17]}}{"TextureID"{str[SeviiIslands\1knot\kolbentower\Omega]}}{"ID"{int[4]}}{"Name"{str[Omega]}}{"Action"{int[1]}}{"AdditionalValue"{str[SeviiIslands\1knot\kolbentower\omega]}}{"Rotation"{int[2]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
-{"NPC"{NPC[{"Position"{sngArr[1,0,9]}}{"TextureID"{str[Segis]}}{"ID"{int[5]}}{"Name"{str[Segis]}}{"Action"{int[1]}}{"AdditionalValue"{str[SeviiIslands\1knot\kolbentower\segis]}}{"Rotation"{int[1]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
-{"NPC"{NPC[{"Position"{sngArr[17,0,9]}}{"TextureID"{str[SeviiIslands\1knot\kolbentower\Aragas]}}{"ID"{int[6]}}{"Name"{str[Aragas]}}{"Action"{int[0]}}{"AdditionalValue"{str[Hmmm...*Now to hijack another~country's elections.]}}{"Rotation"{int[3]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[9,0,17]}}{"TextureID"{str[Kolben\Omega]}}{"ID"{int[4]}}{"Name"{str[Omega]}}{"Action"{int[1]}}{"AdditionalValue"{str[SeviiIslands\1knot\kolbentower\omega]}}{"Rotation"{int[2]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[1,0,9]}}{"TextureID"{str[Kolben\Segis]}}{"ID"{int[5]}}{"Name"{str[Segis]}}{"Action"{int[1]}}{"AdditionalValue"{str[SeviiIslands\1knot\kolbentower\segis]}}{"Rotation"{int[1]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[17,0,9]}}{"TextureID"{str[Kolben\Aragas]}}{"ID"{int[6]}}{"Name"{str[Aragas]}}{"Action"{int[0]}}{"AdditionalValue"{str[Hmmm...*Now to hijack another~country's elections.]}}{"Rotation"{int[3]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
 
 {"NPC"{NPC[{"Position"{sngArr[3,-0.05,11]}}{"TextureID"{str[[POKEMON|S]196]}}{"ID"{int[2]}}{"Name"{str[Espeon]}}{"Action"{int[1]}}{"AdditionalValue"{str[SeviiIslands\1knot\kolbentower\chachamaru]}}{"RotationXYZ"{sngArr[1.57,2.61,3.14]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[2,10,4,11]]}}]}}
 
