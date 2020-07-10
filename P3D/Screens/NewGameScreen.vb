@@ -2,9 +2,9 @@
 
     Inherits Screen
 
-	Dim skinFiles() As String = {"Ethan", "Lyra", "Brendan"}
-	Dim skinNames() As String = {"Ethan", "Lyra", "Brendan"}
-	Dim skinGenders() As String = {"Male", "Female", "Male"}
+	Dim skinFiles() As String = {GameModeManager.ActiveGameMode.SkinFiles.ToString}
+	Dim skinNames() As String = {GameModeManager.ActiveGameMode.SkinNames.ToString}
+	Dim skinGenders() As String = {GameModeManager.ActiveGameMode.SkinGenders.ToString}
 	Dim backColors() As Color = {New Color(248, 176, 32), New Color(248, 216, 88), New Color(56, 88, 200), New Color(216, 96, 112)}
 
     Public Index As Integer = 0

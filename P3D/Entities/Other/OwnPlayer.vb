@@ -2,7 +2,7 @@
 
     Inherits Entity
 
-	Public Shared ReadOnly AllowedSkins() As String = {"Ethan", "Lyra", "Brendan"}
+	Public Shared ReadOnly AllowedSkins() As String = {GameModeManager.ActiveGameMode.SkinFiles.ToString}
 
 	Public Texture As Texture2D
     Public SkinName As String = "Ethan"
