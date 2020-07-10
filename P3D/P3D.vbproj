@@ -8991,13 +8991,13 @@
     <Content Include="Content\Sounds\Enter.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\battlefactory.png">
+    <Content Include="Content\Textures\BattleFactory.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\BattleFrontier.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\battletower.png">
+    <Content Include="Content\Textures\BattleTower.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Battle\Cloud.png">
@@ -9063,13 +9063,13 @@
     <Content Include="Content\Textures\Berries.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\berryForest.png">
+    <Content Include="Content\Textures\BerryForest.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Center.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\chess.png">
+    <Content Include="Content\Textures\Chess.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Cities\Azalea.png">
@@ -9114,16 +9114,16 @@
     <Content Include="Content\Textures\Cities\Violet.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\club.png">
+    <Content Include="Content\Textures\Club.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\cyclingroad.png">
+    <Content Include="Content\Textures\CyclingRoad.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\DiglettCave.png">
+    <Content Include="Content\Textures\DiglettsCave.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\dungeon.png">
+    <Content Include="Content\Textures\AncientRuins.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\EmbeddedTower.png">
@@ -9150,7 +9150,7 @@
     <Content Include="Content\Textures\House4.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\indigo.png">
+    <Content Include="Content\Textures\IndigoPlateau.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\InsideTruck.png">
@@ -9168,22 +9168,19 @@
     <Content Include="Content\Textures\Interior.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\intro.png">
+    <Content Include="Content\Textures\Intro.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\kantogates.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Textures\kolben.png">
+    <Content Include="Content\Textures\Kolben.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Lab.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\Lakeofrage.png">
+    <Content Include="Content\Textures\LakeOfRage.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\mtsilver.png">
+    <Content Include="Content\Textures\MtSilver.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\OverworldSprites\AceTrainerSnow_Female.png">
@@ -9606,10 +9603,7 @@
     <Content Include="Content\Textures\Emblem\zephyr.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\emoticons.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Textures\frontier.png">
+    <Content Include="Content\Textures\Emoticons.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Mart.png">
@@ -10053,13 +10047,13 @@
     <Content Include="Content\Textures\Park.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\portraits.png">
+    <Content Include="Content\Textures\Portraits.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\rocketbase.png">
+    <Content Include="Content\Textures\RocketBase.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\Rotomroom.png">
+    <Content Include="Content\Textures\RotomRoom.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Routes.png">
@@ -10089,19 +10083,19 @@
     <Content Include="Content\Textures\SecretBase.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\sevii.png">
+    <Content Include="Content\Textures\SeviiIslands.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Shrine.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\shuttle.png">
+    <Content Include="Content\Textures\Shuttle.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\SparkleAnimation.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\switch.png">
+    <Content Include="Content\Textures\Switch.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\TextureSheets\Apricorn.png">
@@ -10122,10 +10116,10 @@
     <Content Include="Content\Textures\TextureSheets\Whirlpool.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\train.png">
+    <Content Include="Content\Textures\Train.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\trainertower.png">
+    <Content Include="Content\Textures\TrainerTower.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\TVs\Anime.png">
@@ -10326,7 +10320,7 @@
     <Content Include="Content\Textures\Village.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\viridianForest.png">
+    <Content Include="Content\Textures\ViridianForest.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\Weather\ash.png">
