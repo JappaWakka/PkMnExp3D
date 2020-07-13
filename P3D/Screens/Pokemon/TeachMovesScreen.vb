@@ -197,8 +197,9 @@
             If Me.MovesList.Count = 0 Then
                 Core.SetScreen(Me.PreScreen)
             Else
-                LearnMove(MovesList(index))
-            End If
+				LearnMove(MovesList(index))
+				SoundManager.PlaySound("Select")
+			End If
         End If
 
         If Controls.Dismiss(True, True, True) = True Then

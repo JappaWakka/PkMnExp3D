@@ -18,9 +18,9 @@
                         End If
                     End If
 
-                    Dim Options() As String = argument.Split(CChar(","))
+					Dim Options() As String = argument.Split(CChar(","))
 
-                    For i = 0 To Options.Count - 1
+					For i = 0 To Options.Count - 1
                         If i <= Options.Count - 1 Then
                             Dim flag = Options(i)
                             Dim removeFlag As Boolean = False

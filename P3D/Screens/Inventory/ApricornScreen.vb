@@ -107,8 +107,9 @@
 
             If Me.Buttons.Count > 0 Then
                 If Controls.Accept(False, True, True) = True Then
-                    Me.Buttons(Me.CursorIndex).Click()
-                End If
+					Me.Buttons(Me.CursorIndex).Click()
+					SoundManager.PlaySound("Select")
+				End If
             End If
 
             For Each B As ButtonIcon In Buttons

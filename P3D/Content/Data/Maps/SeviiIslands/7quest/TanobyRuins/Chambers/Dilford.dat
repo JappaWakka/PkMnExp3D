@@ -1,5 +1,5 @@
 {"Level"{LEV[{"Name"{str[Dilford Chamber]}}{"MusicLoop"{str[ruinsofalph]}}{"CurrentRegion"{str[SeviiIslands]}}{"RegionalForm"{str[alola]}}{"WildPokemon"{bool[0]}}]}}
-{"Actions"{LEV[{"RadioChannels"{str[13.5]}}{"CanTeleport"{bool[0]}}{"CanDig"{bool[0]}}{"CanFly"{bool[0]}}{"EnvironmentType"{int[3]}}{"MapScript"{str[7quest\tanobyruins\chambermap]}}{"Weather"{int[1]}}{"Lightning"{int[1]}}]}}
+{"Actions"{LEV[{"RadioChannels"{str[13.5]}}{"CanTeleport"{bool[0]}}{"CanDig"{bool[0]}}{"CanFly"{bool[0]}}{"EnvironmentType"{int[3]}}{"MapScript"{str[7quest\tanobyruins\chambermap]}}{"Weather"{int[1]}}{"Lighting"{int[1]}}]}}
 
 floors:
 {"Floor"{ENT[{"Size"{intArr[21,15]}}{"Position"{sngArr[0,0,0]}}{"TexturePath"{str[SeviiIslands]}}{"Texture"{rec[16,176,16,16]}}]}}

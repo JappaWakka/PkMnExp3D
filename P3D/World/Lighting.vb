@@ -46,16 +46,16 @@ Public Class Lighting
 
             Select Case GetLightingType()
                 Case 0 ' Night
-                    refEffect.AmbientLightColor = New Vector3(0.8F)
+					refEffect.AmbientLightColor = New Vector3(1.0F)
 
-                    refEffect.DirectionalLight0.DiffuseColor = New Vector3(0.4F, 0.4F, 0.6F)
+					refEffect.DirectionalLight0.DiffuseColor = New Vector3(0.4F, 0.4F, 0.6F)
                     refEffect.DirectionalLight0.Direction = Vector3.Normalize(New Vector3(-1.0F, 0.0F, 1.0F))
                     refEffect.DirectionalLight0.SpecularColor = New Vector3(0.0F)
                     refEffect.DirectionalLight0.Enabled = True
                 Case 1 ' Morning
-                    refEffect.AmbientLightColor = New Vector3(0.7F)
+					refEffect.AmbientLightColor = New Vector3(1.0F)
 
-                    refEffect.DirectionalLight0.DiffuseColor = Color.Orange.ToVector3()
+					refEffect.DirectionalLight0.DiffuseColor = Color.Orange.ToVector3()
                     refEffect.DirectionalLight0.Direction = Vector3.Normalize(New Vector3(1.0F, -1.0F, 1.0F))
                     refEffect.DirectionalLight0.SpecularColor = New Vector3(0.0F)
                     refEffect.DirectionalLight0.Enabled = True
@@ -102,20 +102,7 @@ Public Class Lighting
 
         Return LightType
     End Function
-
-    Public Shared Function GetLightingColor(ByVal LightType As Integer) As Vector3
-        Select Case LightType
-            Case 0
-                Return New Vector3(0.4F, 0.4F, 0.6F)
-            Case 1
-                Return Color.Orange.ToVector3()
-            Case 2
-                Return New Vector3(-0.3F)
-            Case 3
-                Return New Vector3(-0.45F)
-        End Select
-    End Function
-
+	
 #End Region
 
 End Class

@@ -219,8 +219,9 @@
 
             If Controls.Accept(True, True, True) = True Then
                 If Me.selectIndex = 0 Then
-                    Core.SetScreen(New InventoryScreen(Me, {5}, 5, AddressOf Me.ChosenMail))
-                Else
+					Core.SetScreen(New InventoryScreen(Me, {5}, 5, AddressOf Me.ChosenMail))
+					SoundManager.PlaySound("Select")
+				Else
                     If Me.index = Me.selectIndex Then
                         Me.index = -1
                     Else
@@ -272,12 +273,13 @@
             If Controls.Accept(True, True, True) = True Then
                 Select Case EditMailIndex
                     Case 3
-                        If TempNewMail.MailHeader = "" Or TempNewMail.MailText = "" Or TempNewMail.MailSignature = "" Then
-                            message = "Please fill in the Header, the Message and the Signature."
-                        Else
-                            Core.SetScreen(New ChoosePokemonScreen(Me, Item.GetItemByID(TempNewMail.MailID), AddressOf Me.ChosenPokemon, "Give mail to:", True))
-                        End If
-                    Case 4
+						If TempNewMail.MailHeader = "" Or TempNewMail.MailText = "" Or TempNewMail.MailSignature = "" Then
+							message = "Please fill in the Header, the Message and the Signature."
+						Else
+							Core.SetScreen(New ChoosePokemonScreen(Me, Item.GetItemByID(TempNewMail.MailID), AddressOf Me.ChosenPokemon, "Give mail to:", True))
+						End If
+						SoundManager.PlaySound("Select")
+					Case 4
                         Me.index = -1
                 End Select
             End If

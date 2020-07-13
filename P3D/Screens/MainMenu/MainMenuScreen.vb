@@ -414,6 +414,7 @@
 						mainmenuIndex = i
 						If MouseHandler.ButtonPressed(MouseHandler.MouseButtons.LeftButton) = True Then
 							LoadGameJoltButton()
+							SoundManager.PlaySound("Select")
 						End If
 					End If
 				ElseIf i = 4 Then
@@ -422,6 +423,7 @@
 
 						If MouseHandler.ButtonPressed(MouseHandler.MouseButtons.LeftButton) = True Then
 							LanguageButton()
+							SoundManager.PlaySound("Select")
 						End If
 					End If
 				ElseIf i = 5 Then
@@ -430,6 +432,7 @@
 
 						If MouseHandler.ButtonPressed(MouseHandler.MouseButtons.LeftButton) = True Then
 							PacksButton()
+							SoundManager.PlaySound("Select")
 						End If
 					End If
 				ElseIf i = 6 Then
@@ -443,6 +446,7 @@
 
 						If MouseHandler.ButtonPressed(MouseHandler.MouseButtons.LeftButton) = True Then
 							GameJoltButton()
+							SoundManager.PlaySound("Select")
 						End If
 					End If
 				ElseIf i = 1 And GameJolt.API.LoggedIn = True Then
@@ -450,6 +454,7 @@
 						mainmenuIndex = i
 						If MouseHandler.ButtonPressed(MouseHandler.MouseButtons.LeftButton) = True Then
 							LoadGameButton()
+							SoundManager.PlaySound("Select")
 						End If
 					End If
 				Else
@@ -467,6 +472,7 @@
 								Case 3
 									CloseGameButton()
 							End Select
+							SoundManager.PlaySound("Select")
 						End If
 					End If
 				End If
@@ -500,6 +506,7 @@
 				Case 6
 					GameJoltButton()
 			End Select
+			SoundManager.PlaySound("Select")
 		End If
 	End Sub
 
@@ -700,6 +707,7 @@
 								Core.Player.LoadGame(IO.Path.GetFileName(Saves(loadMenuIndex(0))))
 
 								SetScreen(New JoinServerScreen(Me))
+								SoundManager.PlaySound("Select")
 							Case 1
 								menuIndex = 2
 							Case 2
@@ -747,6 +755,7 @@
 
 					tempLoadDisplay = ""
 			End Select
+			SoundManager.PlaySound("Select")
 		End If
 
 		If Controls.Dismiss() = True Then
@@ -865,6 +874,7 @@
 				If GameInstance.IsMouseVisible = False And loadGameJoltIndex = 4 Or ScaleScreenRec(New Rectangle(r.X + 32 + r.Width, r.Y + 48 + 48 + 48, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Then
 					ButtonResetSave()
 				End If
+				SoundManager.PlaySound("Select")
 			End If
 		End If
 
@@ -998,6 +1008,7 @@
 							Case 0
 								currentLanguage = Languages(languageMenuIndex(0))
 								Core.GameOptions.SaveOptions()
+								SoundManager.PlaySound("Select")
 								menuIndex = 0
 							Case 1
 								Localization.Load(currentLanguage)
@@ -1042,6 +1053,7 @@
 					Localization.Load(currentLanguage)
 					menuIndex = 0
 			End Select
+			SoundManager.PlaySound("Select")
 		End If
 
 		If Controls.Dismiss() = True Then
@@ -1176,6 +1188,7 @@
 						Select Case packsMenuIndex(1)
 							Case 0
 								ButtonApplyPacks()
+								SoundManager.PlaySound("Select")
 							Case 1
 								menuIndex = 0
 						End Select
@@ -1200,6 +1213,9 @@
 							Case 5 'packinformation
 								ButtonPackInformation()
 						End Select
+						If PackNames.Count > 0 Then
+							SoundManager.PlaySound("Select")
+						End If
 					End If
 				End If
 			Next
@@ -1242,9 +1258,12 @@
 				Case 5
 					ButtonPackInformation()
 			End Select
+			If PackNames.Count > 0 Then
+				SoundManager.PlaySound("Select")
+			End If
 		End If
 
-		If Controls.Dismiss() = True Then
+			If Controls.Dismiss() = True Then
 			menuIndex = 0
 		End If
 	End Sub
@@ -1272,22 +1291,14 @@
 
 		Dim contentPackPath As String = GameController.GamePath & "\ContentPacks\" & packName & "\"
 		If IO.Directory.Exists(contentPackPath & "Songs") = True Then
-			Dim hasWMA As Boolean = False
-			Dim hasXNB As Boolean = False
-			Dim hasMP3 As Boolean = False
+			Dim hasOGG As Boolean = False
 			For Each file As String In IO.Directory.GetFiles(contentPackPath & "Songs")
-				If IO.Path.GetExtension(file).ToLower() = ".xnb" Then
-					hasXNB = True
-				End If
-				If IO.Path.GetExtension(file).ToLower() = ".wma" Then
-					hasWMA = True
-				End If
-				If IO.Path.GetExtension(file).ToLower() = ".mp3" Then
-					hasMP3 = True
+				If IO.Path.GetExtension(file).ToLower() = ".ogg" Then
+					hasOGG = True
 				End If
 			Next
 
-			If hasMP3 = True Or hasWMA = True And hasXNB = True Then
+			If hasOGG = True Then
 				PInfoContent = Localization.GetString("pack_menu_songs")
 			End If
 		End If
@@ -1418,6 +1429,7 @@
 						Select Case i
 							Case 0
 								ButtonToggle(packName)
+								SoundManager.PlaySound("Select")
 							Case 1
 								menuIndex = 4
 						End Select
@@ -1442,6 +1454,7 @@
 				Case 1
 					menuIndex = 4
 			End Select
+			SoundManager.PlaySound("Select")
 		End If
 
 		If Controls.Dismiss(False) = True Then
@@ -1555,6 +1568,7 @@
 						Select Case deleteIndex
 							Case 0
 								Delete()
+								SoundManager.PlaySound("Select")
 							Case 1
 								menuIndex = 1
 						End Select
@@ -1570,6 +1584,7 @@
 				Case 1
 					menuIndex = 1
 			End Select
+			SoundManager.PlaySound("Select")
 		End If
 	End Sub
 
@@ -1755,6 +1770,7 @@
 
 								tempGameModesDisplay = ""
 						End Select
+						SoundManager.PlaySound("Select")
 					End If
 				End If
 			Next
@@ -1791,6 +1807,7 @@
 
 					tempGameModesDisplay = ""
 			End Select
+			SoundManager.PlaySound("Select")
 		End If
 
 		If GameModeSplash Is Nothing Then

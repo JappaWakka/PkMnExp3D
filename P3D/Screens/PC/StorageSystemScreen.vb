@@ -230,14 +230,16 @@ Public Class StorageSystemScreen
                 PressNumberButtons()
 
                 If GetRelativeMousePosition() <> New Vector2(-1) AndAlso GetRelativeMousePosition() = CursorPosition AndAlso Controls.Accept(True, False, False) = True Then
-                    ChooseObject()
-                End If
+					ChooseObject()
+					SoundManager.PlaySound("Select")
+				End If
 
                 ControlCursor()
 
                 If Controls.Accept(False, True, True) = True Then
-                    ChooseObject()
-                End If
+					ChooseObject()
+					SoundManager.PlaySound("Select")
+				End If
 
                 If Controls.Dismiss(True, True, True) = True Then
                     CloseScreen()
@@ -591,8 +593,9 @@ Public Class StorageSystemScreen
             Me.CursorMovePosition = GetAbsoluteCursorPosition(Me.CursorPosition)
             Me.CursorPosition = GetRelativeMousePosition()
             Me.CursorMoving = True
-            Me.ClickedObject = True
-        End If
+			Me.ClickedObject = True
+			SoundManager.PlaySound("Select")
+		End If
 
         Dim XRange() As Integer = {0, 6}
 
@@ -1720,10 +1723,11 @@ Public Class StorageSystemScreen
             If Controls.Accept(True, False, False) = True And s.MenuCursor = Me.Index And New Rectangle(Core.windowSize.Width - 270, 66 * Index, 256, 64).Contains(MouseHandler.MousePosition) = True Or
                 Controls.Accept(False, True, True) = True And s.MenuCursor = Me.Index Or Controls.Dismiss(True, True, True) = True And Me.IsBack = True Then
                 s.MenuVisible = False
-                If Not ClickHandler Is Nothing Then
-                    ClickHandler(Me)
-                End If
-            End If
+				If Not ClickHandler Is Nothing Then
+					ClickHandler(Me)
+				End If
+				SoundManager.PlaySound("Select")
+			End If
             If New Rectangle(Core.windowSize.Width - 270, 66 * Index, 256, 64).Contains(MouseHandler.MousePosition) = True And Controls.Accept(True, False, False) = True Then
                 s.MenuCursor = Me.Index
             End If
@@ -1856,15 +1860,16 @@ Public Class StorageSystemFilterScreen
 
                 For i = Scroll To Me.Scroll + 8
                     If i <= Me.Items.Count - 1 Then
-                        If Controls.Accept(True, False, False) = True And i = Me.Index And New Rectangle(Core.windowSize.Width - 270, 66 * ((i + 1) - Scroll), 256, 64).Contains(MouseHandler.MousePosition) = True Or
-                            Controls.Accept(False, True, True) = True And i = Me.Index Or Controls.Dismiss(True, True, True) = True And Me.BackIndex = Me.Index Then
+						If Controls.Accept(True, False, False) = True And i = Me.Index And New Rectangle(Core.windowSize.Width - 270, 66 * ((i + 1) - Scroll), 256, 64).Contains(MouseHandler.MousePosition) = True Or
+							Controls.Accept(False, True, True) = True And i = Me.Index Or Controls.Dismiss(True, True, True) = True And Me.BackIndex = Me.Index Then
 
-                            If Not ClickHandler Is Nothing Then
-                                ClickHandler(Me)
-                            End If
-                            Me.Visible = False
-                        End If
-                        If Controls.Dismiss(True, True, True) = True Then
+							If Not ClickHandler Is Nothing Then
+								ClickHandler(Me)
+							End If
+							Me.Visible = False
+							SoundManager.PlaySound("Select")
+						End If
+						If Controls.Dismiss(True, True, True) = True Then
                             Me.Index = Me.BackIndex
                             If Not ClickHandler Is Nothing Then
                                 ClickHandler(Me)
@@ -2062,8 +2067,9 @@ Public Class StorageSystemFilterScreen
                         If i <= Me.mainMenuItems.Count - 1 Then
                             If New Rectangle(100, 100 + (i - Scroll) * 96, 640, 64).Contains(MouseHandler.MousePosition) = True Then
                                 If i = Cursor + Scroll Then
-                                    SelectFilter()
-                                Else
+									SelectFilter()
+									SoundManager.PlaySound("Select")
+								Else
                                     Cursor = i - Scroll
                                 End If
                             End If
@@ -2072,8 +2078,9 @@ Public Class StorageSystemFilterScreen
                 End If
 
                 If Controls.Accept(False, True, True) = True Then
-                    SelectFilter()
-                End If
+					SelectFilter()
+					SoundManager.PlaySound("Select")
+				End If
             End If
 
             If Controls.Dismiss(True, True, True) = True Then

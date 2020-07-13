@@ -5,7 +5,7 @@ version=2
 	:when:Yes
 		@screen.fadeout
 		@pokemon.heal
-		@sound.play(healing,false)
+		@sound.play(Heal_Party,false)
 		@level.wait(180)
 		@screen.fadein
 		@text.show(Keep up the good work and~stop their raid!)
@@ -16,7 +16,7 @@ version=2
 	:when:Yes
 		@screen.fadeout
 		@pokemon.heal
-		@sound.play(healing,false)
+		@sound.play(Heal_Party,false)
 		@level.wait(180)
 		@screen.fadein
 		@text.show(Thanks for your help!)	

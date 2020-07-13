@@ -98,8 +98,9 @@
                         End If
                     End If
                     If Controls.Accept() = True Then
-                        ShowMenu()
-                    End If
+						ShowMenu()
+						SoundManager.PlaySound("Select")
+					End If
 
                     If Controls.Right(True, False) Then
                         index += 1
@@ -121,8 +122,9 @@
                         ChooseBox.Showing = False
                     End If
                     If Controls.Accept() = True Then
-                        AcceptMenu()
-                    End If
+						AcceptMenu()
+						SoundManager.PlaySound("Select")
+					End If
                 End If
             End If
         End If

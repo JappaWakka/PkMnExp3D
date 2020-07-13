@@ -135,18 +135,19 @@
             End If
 
             If Controls.Accept() = True Then
-                Select Case MenuItems(index)
-                    Case Localization.GetString("item_detail_screen_use")
-                        Item.Use()
-                    Case Localization.GetString("item_detail_screen_give")
-                        Dim selScreen = New ChoosePokemonScreen(Core.CurrentScreen, Me.Item, AddressOf GiveItem, Localization.GetString("item_detail_screen_give_item") & Me.Item.Name, True) With {.canExit = True}
-                        Core.SetScreen(selScreen)
-                    Case Localization.GetString("item_detail_screen_trash")
-                        Core.Player.Inventory.RemoveItem(Me.Item.ID, trashValue)
-                    Case Localization.GetString("item_detail_screen_back")
-                        Core.SetScreen(Me.PreScreen)
-                End Select
-            End If
+				Select Case MenuItems(index)
+					Case Localization.GetString("item_detail_screen_use")
+						Item.Use()
+					Case Localization.GetString("item_detail_screen_give")
+						Dim selScreen = New ChoosePokemonScreen(Core.CurrentScreen, Me.Item, AddressOf GiveItem, Localization.GetString("item_detail_screen_give_item") & Me.Item.Name, True) With {.canExit = True}
+						Core.SetScreen(selScreen)
+					Case Localization.GetString("item_detail_screen_trash")
+						Core.Player.Inventory.RemoveItem(Me.Item.ID, trashValue)
+					Case Localization.GetString("item_detail_screen_back")
+						Core.SetScreen(Me.PreScreen)
+				End Select
+				SoundManager.PlaySound("Select")
+			End If
 
             If Controls.Dismiss() = True Then
                 Core.SetScreen(Me.PreScreen)

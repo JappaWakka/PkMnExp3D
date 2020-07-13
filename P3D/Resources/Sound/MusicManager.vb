@@ -116,7 +116,7 @@ Public Class MusicManager
 				If _muted = True Then
 					If outputDevice IsNot Nothing Then
 						Volume = 0.0F
-						Core.GameMessage.ShowMessage(Localization.GetString("game_message_music_off"), 12, FontManager.MainFontWhite, Color.White)
+						Core.GameMessage.ShowMessage(Localization.GetString("game_message_audio_off"), 12, FontManager.MainFontWhite, Color.White)
 					End If
 
 				Else
@@ -126,7 +126,7 @@ Public Class MusicManager
 							Volume = 0.0F
 						Else
 							Volume = 1.0F
-							Core.GameMessage.ShowMessage(Localization.GetString("game_message_music_on"), 12, FontManager.MainFontWhite, Color.White)
+							Core.GameMessage.ShowMessage(Localization.GetString("game_message_audio_on"), 12, FontManager.MainFontWhite, Color.White)
 						End If
 					End If
 				End If
@@ -303,8 +303,8 @@ Public Class MusicManager
 				If outputDevice.PlaybackState = PlaybackState.Paused AndAlso _isIntroStarted Then
 					Dim pauseTime As TimeSpan = Date.Now.Subtract(_introMuteTime)
 					_introEndTime = _introEndTime + pauseTime
-
 				End If
+				Paused = False
 				outputDevice.Play()
 			End If
 		End If
@@ -312,26 +312,50 @@ Public Class MusicManager
 	End Sub
 
 	Private Shared Sub Play(song As SongContainer)
-		If Not song Is Nothing Then
-			Logger.Debug($"Play song [{song.Name}]")
-			If Not outputDevice Is Nothing Then
-				outputDevice.Dispose()
+		If _isLooping = True Then
+			If Not song Is Nothing Then
+				Logger.Debug($"Play song [{song.Name}]")
+				If Not outputDevice Is Nothing Then
+					outputDevice.Dispose()
+				End If
+				outputDevice = New WaveOutEvent()
+				audioFile = New VorbisWaveReader(song.Song)
+				_loop = New LoopStream(audioFile)
+				outputDevice.Init(_loop)
+				If Paused = False Then
+					outputDevice.Play()
+				End If
+				outputDevice.Volume = Volume * MasterVolume
+				_currentSongExists = True
+				_currentSongName = song.Name
+				_currentSong = song
+			Else
+				_currentSongExists = False
+				_currentSongName = NO_MUSIC
+				_currentSong = Nothing
 			End If
-			outputDevice = New WaveOutEvent()
-			audioFile = New VorbisWaveReader(song.Song)
-			_loop = New LoopStream(audioFile)
-			outputDevice.Init(_loop)
-			If Paused = False Then
-				outputDevice.Play()
-			End If
-			outputDevice.Volume = Volume * MasterVolume
-			_currentSongExists = True
-			_currentSongName = song.Name
-			_currentSong = song
 		Else
-			_currentSongExists = False
-			_currentSongName = NO_MUSIC
-			_currentSong = Nothing
+			If Not song Is Nothing Then
+				Logger.Debug($"Play song [{song.Name}]")
+				If Not outputDevice Is Nothing Then
+					outputDevice.Dispose()
+				End If
+				outputDevice = New WaveOutEvent()
+				audioFile = New VorbisWaveReader(song.Song)
+				_loop = New LoopStream(audioFile, False)
+				outputDevice.Init(_loop)
+				If Paused = False Then
+					outputDevice.Play()
+				End If
+				outputDevice.Volume = Volume * MasterVolume
+				_currentSongExists = True
+				_currentSongName = song.Name
+				_currentSong = song
+			Else
+				_currentSongExists = False
+				_currentSongName = NO_MUSIC
+				_currentSong = Nothing
+			End If
 		End If
 
 	End Sub
@@ -578,12 +602,12 @@ Public Class MusicManager
 			{
 				{"welcome", "RouteMusic1"},
 				{"battle", "johto_wild"},
-				{"batleintro", "battle_startbattle"},
+				{"batleintro", "battle_intro"},
 				{"johto_battle_intro", "battle_intro"},
 				{"darkcave", "dark_cave"},
 				{"showmearound", "show_me_around"},
 				{"sprouttower", "sprout_tower"},
-				{"johto_rival_intro", "johto_rival_startbattle"},
+				{"johto_rival_intro", "johto_rivalintro"},
 				{"johto_rival_appear", "johto_rival_encounter"},
 				{"ilex_forest", "IlexForest"},
 				{"union_cave", "IlexForest"},

@@ -1,5 +1,5 @@
 {"Level"{LEV[{"Name"{str[Pattern Bush]}}{"MusicLoop"{str[ViridianForest]}}{"CurrentRegion"{str[SeviiIslands]}}{"RegionalForm"{str[alola]}}]}}
-{"Actions"{LEV[{"CanTeleport"{bool[1]}}{"CanDig"{bool[0]}}{"CanFly"{bool[1]}}{"EnvironmentType"{int[0]}}{"Weather"{int[0]}}{"Lightning"{int[2]}}{"BattleMap"{str[SeviiIslands\6fortune\patternbush\Main.dat,0,0,-0.6]}}]}}
+{"Actions"{LEV[{"CanTeleport"{bool[1]}}{"CanDig"{bool[0]}}{"CanFly"{bool[1]}}{"EnvironmentType"{int[0]}}{"Weather"{int[0]}}{"Lighting"{int[2]}}{"BattleMap"{str[SeviiIslands\6fortune\patternbush\Main.dat,0,0,-0.6]}}]}}
 
 Floors:
 {"Floor"{ENT[{"Size"{intArr[60,30]}}{"Position"{sngArr[2,0,2]}}{"TexturePath"{str[berryForest]}}{"Texture"{rec[0,0,16,16]}}]}}
@@ -164,11 +164,11 @@ gatew:
 {"Floor"{ENT[{"Size"{intArr[5,5]}}{"Position"{sngArr[3,3,26]}}{"TexturePath"{str[berryForest]}}{"Texture"{rec[48,32,16,16]}}]}}
 
 NPCs:
-{"NPC"{NPC[{"Position"{sngArr[54,0,21]}}{"TextureID"{str[youngster]}}{"ID"{int[0]}}{"Name"{str[Lostelle]}}{"Action"{int[2]}}{"AdditionalValue"{str[4|trainer\fortune\pattern\001]}}{"Rotation"{int[3]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[54,0,21]}}{"TextureID"{str[Youngster]}}{"ID"{int[0]}}{"Name"{str[Lostelle]}}{"Action"{int[2]}}{"AdditionalValue"{str[4|trainer\fortune\pattern\001]}}{"Rotation"{int[3]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
 {"NPC"{NPC[{"Position"{sngArr[50,0,16]}}{"TextureID"{str[YoungWoman]}}{"ID"{int[1]}}{"Name"{str[Lostelle]}}{"Action"{int[2]}}{"AdditionalValue"{str[3|trainer\fortune\pattern\002]}}{"Rotation"{int[3]}}{"Movement"{str[Looking]}}{"MoveRectangles"{recArr[]}}]}}
 {"NPC"{NPC[{"Position"{sngArr[53,0,7]}}{"TextureID"{str[bugcatcher]}}{"ID"{int[2]}}{"Name"{str[Lostelle]}}{"Action"{int[2]}}{"AdditionalValue"{str[4|trainer\fortune\pattern\003]}}{"Rotation"{int[2]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
 {"NPC"{NPC[{"Position"{sngArr[40,0,6]}}{"TextureID"{str[YoungGirl]}}{"ID"{int[3]}}{"Name"{str[Lostelle]}}{"Action"{int[2]}}{"AdditionalValue"{str[3|trainer\fortune\pattern\004]}}{"Rotation"{int[3]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[40,6,3,3]]}}]}}
-{"NPC"{NPC[{"Position"{sngArr[34,0,6]}}{"TextureID"{str[youngster]}}{"ID"{int[4]}}{"Name"{str[Lostelle]}}{"Action"{int[2]}}{"AdditionalValue"{str[4|trainer\fortune\pattern\005]}}{"Rotation"{int[2]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[34,0,6]}}{"TextureID"{str[Youngster]}}{"ID"{int[4]}}{"Name"{str[Lostelle]}}{"Action"{int[2]}}{"AdditionalValue"{str[4|trainer\fortune\pattern\005]}}{"Rotation"{int[2]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
 {"NPC"{NPC[{"Position"{sngArr[37,0,19]}}{"TextureID"{str[bugcatcher]}}{"ID"{int[5]}}{"Name"{str[Lostelle]}}{"Action"{int[2]}}{"AdditionalValue"{str[3|trainer\fortune\pattern\006]}}{"Rotation"{int[3]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[37,19,3,6]]}}]}}
 {"NPC"{NPC[{"Position"{sngArr[32,0,20]}}{"TextureID"{str[hiker]}}{"ID"{int[6]}}{"Name"{str[Lostelle]}}{"Action"{int[2]}}{"AdditionalValue"{str[4|trainer\fortune\pattern\007]}}{"Rotation"{int[0]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
 {"NPC"{NPC[{"Position"{sngArr[21,0,25]}}{"TextureID"{str[picknicker]}}{"ID"{int[7]}}{"Name"{str[Lostelle]}}{"Action"{int[2]}}{"AdditionalValue"{str[3|trainer\fortune\pattern\008]}}{"Rotation"{int[3]}}{"Movement"{str[Straight]}}{"MoveRectangles"{recArr[[21,25,6,1]]}}]}}

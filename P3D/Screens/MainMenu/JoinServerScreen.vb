@@ -196,21 +196,22 @@ Public Class JoinServerScreen
                     Me.buttonIndex = i
 
                     If MouseHandler.ButtonPressed(MouseHandler.MouseButtons.LeftButton) = True AndAlso MouseHandler.ButtonPressed(MouseHandler.MouseButtons.RightButton) = False Then
-                        Select Case Me.buttonIndex
-                            Case 0
-                                JoinButton()
-                            Case 1
-                                RefreshButton()
-                            Case 2
-                                AddServerButton()
-                            Case 3
-                                EditServerButton()
-                            Case 4
-                                RemoveServerButton()
-                            Case 5
-                                CancelButton()
-                        End Select
-                    End If
+						Select Case Me.buttonIndex
+							Case 0
+								JoinButton()
+							Case 1
+								RefreshButton()
+							Case 2
+								AddServerButton()
+							Case 3
+								EditServerButton()
+							Case 4
+								RemoveServerButton()
+							Case 5
+								CancelButton()
+						End Select
+						SoundManager.PlaySound("Select")
+					End If
                 End If
             Next
         End If
@@ -233,21 +234,22 @@ Public Class JoinServerScreen
         Me.buttonIndex = CInt(MathHelper.Clamp(Me.buttonIndex, 0, 5))
 
         If Controls.Accept(False, True) = True Then
-            Select Case Me.buttonIndex
-                Case 0
-                    JoinButton()
-                Case 1
-                    RefreshButton()
-                Case 2
-                    AddServerButton()
-                Case 3
-                    EditServerButton()
-                Case 4
-                    RemoveServerButton()
-                Case 5
-                    CancelButton()
-            End Select
-        End If
+			Select Case Me.buttonIndex
+				Case 0
+					JoinButton()
+				Case 1
+					RefreshButton()
+				Case 2
+					AddServerButton()
+				Case 3
+					EditServerButton()
+				Case 4
+					RemoveServerButton()
+				Case 5
+					CancelButton()
+			End Select
+			SoundManager.PlaySound("Select")
+		End If
 
         If Controls.Dismiss() = True Then
             ''CType(Me.PreScreen, NewMainMenuScreen)._menuIndex = 0

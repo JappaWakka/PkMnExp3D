@@ -1,5 +1,5 @@
 {"Level"{LEV[{"Name"{str[Liberty Garden]}}{"MusicLoop"{str[routemusic7]}}]}}
-{"Actions"{LEV[{"CanTeleport"{bool[0]}}{"CanDig"{bool[0]}}{"CanFly"{bool[0]}}{"EnvironmentType"{int[0]}}{"Weather"{int[0]}}{"Lightning"{int[0]}}]}}
+{"Actions"{LEV[{"CanTeleport"{bool[0]}}{"CanDig"{bool[0]}}{"CanFly"{bool[0]}}{"EnvironmentType"{int[0]}}{"Weather"{int[0]}}{"Lighting"{int[0]}}]}}
 
 Grass:
 {"Floor"{ENT[{"Size"{intArr[1,3]}}{"Position"{sngArr[15,1,2]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}

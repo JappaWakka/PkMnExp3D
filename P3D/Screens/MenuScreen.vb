@@ -74,8 +74,8 @@
                         Case Localization.GetString("game_menu_bag")
                             Core.SetScreen(New InventoryScreen(Me))
                         Case Localization.GetString("game_menu_trainer_card")
-                            Core.SetScreen(New NewTrainerScreen(Me))
-                        Case Localization.GetString("game_menu_phone")
+							Core.SetScreen(New TrainerScreen(Me))
+						Case Localization.GetString("game_menu_phone")
                             Core.SetScreen(New GameJolt.PhoneScreen(Me, GameJolt.PhoneScreen.EntryModes.MainMenu, {}))
                         Case Localization.GetString("game_menu_save")
                             Core.SetScreen(New SaveScreen(Me))
@@ -114,11 +114,12 @@
                         drawRight = True
                     End If
 
-                    If Controls.Accept() = True Then
-                        drawRight = True
-                        nextAction = Options(index)
-                    End If
-                End If
+					If Controls.Accept() = True Then
+						SoundManager.PlaySound("Select")
+						drawRight = True
+						nextAction = Options(index)
+					End If
+				End If
             End If
 
             Player.Temp.MenuIndex = Me.index

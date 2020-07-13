@@ -65,43 +65,40 @@
         PlaySound(soundFile, 0.0F, 0.0F, Volume, False)
     End Sub
 
-    Public Shared Sub PlaySound(soundFile As String, stopMusic As Boolean)
-        PlaySound(soundFile, 0.0F, 0.0F, Volume, stopMusic)
-    End Sub
+	Public Shared Sub PlaySound(soundFile As String, stopMusic As Boolean)
+		PlaySound(soundFile, 0.0F, 0.0F, Volume, stopMusic)
+	End Sub
 
-    Public Shared Sub PlaySound(soundFile As String, pitch As Single, pan As Single, volume As Single, stopMusic As Boolean)
+	Public Shared Sub PlaySound(soundFile As String, pitch As Single, pan As Single, volume As Single, stopMusic As Boolean)
 
-        If Not Muted Then
+		If Not Muted Then
 
-            Dim key = soundFile.ToLowerInvariant()
+			Dim key = soundFile.ToLowerInvariant()
 			Dim sound As SoundContainer = Nothing
 			sound = GetSoundEffect(key)
 
 			If sound IsNot Nothing Then
 
-                If HasOutputDeviceAvailable() Then
-
-                    Logger.Debug("SoundEffect [" & soundFile & "]")
+				If HasOutputDeviceAvailable() Then
+					Logger.Debug("SoundEffect [" & soundFile & "]")
 
 					sound.Sound.Play(volume, pitch, pan)
 
 					If stopMusic = True Then
 						MusicManager.PauseForSound(sound.Sound)
 					End If
+				End If
+			Else
 
-                Else
+				Logger.Log(Logger.LogTypes.ErrorMessage, "Failed to play sound: no audio device available.")
+			End If
 
-                    Logger.Log(Logger.LogTypes.ErrorMessage, "Failed to play sound: no audio device available.")
+		End If
 
-                End If
 
-            End If
+	End Sub
 
-        End If
-
-    End Sub
-
-    Public Shared Sub PlayPokemonCry(pokemonId As Integer)
+	Public Shared Sub PlayPokemonCry(pokemonId As Integer)
         PlaySound("Cries\" + pokemonId.ToString(), 0F, 0F, Volume * POKEMON_CRY_VOLUME_MULTIPLIER, False)
     End Sub
 

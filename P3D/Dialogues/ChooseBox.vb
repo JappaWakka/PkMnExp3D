@@ -32,9 +32,9 @@
         Me.Subs = DoSubs
         Me.ActionScript = False
         Me.DoDelegate = True
-        Me.TextFont = FontManager.GetFontContainer("textfont")
+		Me.TextFont = FontManager.GetFontContainer("MainFontBlack")
 
-        SetupOptions()
+		SetupOptions()
     End Sub
 
     Public Sub Show(ByVal Options() As String, ByVal ID As Integer, ByVal ActionScript As Boolean)
@@ -45,9 +45,9 @@
         Me.Showing = True
         Me.ActionScript = ActionScript
         Me.DoDelegate = False
-        Me.TextFont = FontManager.GetFontContainer("textfont")
+		Me.TextFont = FontManager.GetFontContainer("MainFontBlack")
 
-        SetupOptions()
+		SetupOptions()
     End Sub
 
     Public Sub Show(ByVal Options() As String, ByVal ID As Integer, ByVal UpdateEntities() As Entity)
@@ -59,16 +59,19 @@
         Me.UpdateEntities = UpdateEntities
         Me.ActionScript = False
         Me.DoDelegate = False
-        Me.TextFont = FontManager.GetFontContainer("textfont")
+		Me.TextFont = FontManager.GetFontContainer("MainFontBlack")
 
-        SetupOptions()
+		SetupOptions()
     End Sub
 
     Private Sub SetupOptions()
-        For i = 0 To Options.Count - 1
-            Options(i) = Options(i).Replace("<playername>", Core.Player.Name)
-        Next
-    End Sub
+		For i = 0 To Options.Count - 1
+			Options(i) = Options(i).Replace("Yes", Localization.GetString("choice_yes", "Yes"))
+			Options(i) = Options(i).Replace("No", Localization.GetString("choice_no", "No"))
+			Options(i) = Options(i).Replace("<playername>", Core.Player.Name)
+			Options(i) = Options(i).Replace("<player.name>", Core.Player.Name)
+		Next
+	End Sub
 
     Public Function getResult(ByVal ID As Integer) As Integer
         If Me.readyForResult = True Then

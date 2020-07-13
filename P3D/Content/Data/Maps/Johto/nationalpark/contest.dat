@@ -1,5 +1,5 @@
 {"Level"{LEV[{"Name"{str[National Park]}}{"MusicLoop"{str[bugcontest]}}]}}
-{"Actions"{LEV[{"CanTeleport"{bool[0]}}{"CanDig"{bool[0]}}{"CanFly"{bool[0]}}{"EnvironmentType"{int[0]}}{"Weather"{int[0]}}{"Lightning"{int[0]}}{"BugCatchingContest"{str[NationalPark\end_contest_menu,NationalPark\sport_balls,Sport Balls]}}]}}
+{"Actions"{LEV[{"CanTeleport"{bool[0]}}{"CanDig"{bool[0]}}{"CanFly"{bool[0]}}{"EnvironmentType"{int[0]}}{"Weather"{int[0]}}{"Lighting"{int[0]}}{"BugCatchingContest"{str[NationalPark\end_contest_menu,NationalPark\sport_balls,Sport Balls]}}]}}
 
 Floor:
 Grass:
@@ -467,7 +467,7 @@ Signs:
 
 NPCs:
 Random:
-{"NPC"{NPC[{"Position"{sngArr[19,0,34]}}{"TextureID"{str[youngster]}}{"ID"{int[10]}}{"Name"{str[NPC]}}{"Action"{int[0]}}{"AdditionalValue"{str[I've studied~about bug Pokémon~a lot.*I'm going to win~for sure.]}}{"Rotation"{int[0]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[18,33,3,3]]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[19,0,34]}}{"TextureID"{str[Youngster]}}{"ID"{int[10]}}{"Name"{str[NPC]}}{"Action"{int[0]}}{"AdditionalValue"{str[I've studied~about bug Pokémon~a lot.*I'm going to win~for sure.]}}{"Rotation"{int[0]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[18,33,3,3]]}}]}}
 {"NPC"{NPC[{"Position"{sngArr[25,0,31]}}{"TextureID"{str[bugcatcher]}}{"ID"{int[11]}}{"Name"{str[NPC]}}{"Action"{int[0]}}{"AdditionalValue"{str[I've been~collecting bug*Pokémon since I~was just a baby.*There's no way I'm~going to lose!]}}{"Rotation"{int[0]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[24,30,3,3]]}}]}}
 {"NPC"{NPC[{"Position"{sngArr[30,0,28]}}{"TextureID"{str[AceTrainerSnow_Male]}}{"ID"{int[12]}}{"Name"{str[NPC]}}{"Action"{int[0]}}{"AdditionalValue"{str[I'm going to~win! Don't bother me.]}}{"Rotation"{int[0]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[29,27,3,3]]}}]}}
 {"NPC"{NPC[{"Position"{sngArr[29,0,22]}}{"TextureID"{str[BaldingMan]}}{"ID"{int[13]}}{"Name"{str[NPC]}}{"Action"{int[0]}}{"AdditionalValue"{str[My Parasect~puts Pokémon to~sleep with Spore.]}}{"Rotation"{int[0]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[28,21,3,3]]}}]}}

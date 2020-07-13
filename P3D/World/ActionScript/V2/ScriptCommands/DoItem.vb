@@ -87,7 +87,7 @@
                             receiveString = "Received " & Amount & "~" & Item.PluralName & ".*"
                         End If
 
-						SoundManager.PlaySound("Item_Get", True)
+						SoundManager.PlaySound("Receive_Item", True)
 
 						Screen.TextBox.reDelay = 0.0F
                         Screen.TextBox.TextColor = Textbox.PlayerColor

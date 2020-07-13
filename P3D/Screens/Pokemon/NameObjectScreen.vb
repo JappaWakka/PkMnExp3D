@@ -181,11 +181,13 @@ Public Class NameObjectScreen
         If Controls.Accept(True, False, True) = True Or KeyBoardHandler.KeyPressed(KeyBindings.EnterKey1) = True Then
             Select Case _index
                 Case 0
-                    ClickYes()
-                Case 1
+					ClickYes()
+					SoundManager.PlaySound("Select")
+				Case 1
                     If _canChooseNo = True Then
-                        ClickNo()
-                    End If
+						ClickNo()
+						SoundManager.PlaySound("Select")
+					End If
             End Select
         End If
 

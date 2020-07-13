@@ -524,8 +524,9 @@
             If r.Contains(MouseHandler.MousePosition) = True Then
                 If P3D.Controls.Accept(True, False, False) = True Then
                     Me._toggled = Not Me._toggled
-                    OnToggleTrigger(Me)
-                End If
+					OnToggleTrigger(Me)
+					SoundManager.PlaySound("Select")
+				End If
             End If
         End Sub
     End Class
@@ -596,8 +597,9 @@
 
             If r.Contains(MouseHandler.MousePosition) = True Then
                 If P3D.Controls.Accept(True, False, False) = True Then
-                    OnClickTrigger(Me)
-                End If
+					OnClickTrigger(Me)
+					SoundManager.PlaySound("Select")
+				End If
             End If
         End Sub
     End Class

@@ -707,12 +707,14 @@
                         GetPokemon().Attacks.Insert(_moveIndex, switchingMove)
 
                         _switchingMoves = False
-                        _switchMoveIndex = -1
-                    Else
+						_switchMoveIndex = -1
+						SoundManager.PlaySound("Select")
+					Else
                         If GetPokemon().Attacks.Count > 1 Then
                             _switchingMoves = True
-                            _switchMoveIndex = _moveIndex
-                        End If
+							_switchMoveIndex = _moveIndex
+							SoundManager.PlaySound("Select")
+						End If
                     End If
                 End If
                 If Controls.Dismiss() = True Then

@@ -84,8 +84,9 @@
 
                 If Controls.Accept() Then
                     mPressed = True
-                    AcceptKeyPressed()
-                End If
+					AcceptKeyPressed()
+					SoundManager.PlaySound("Select")
+				End If
             Else
                 If mState.LeftButton = ButtonState.Released And MouseHandler.ButtonUp(MouseHandler.MouseButtons.LeftButton) = True Then
                     mPressed = False

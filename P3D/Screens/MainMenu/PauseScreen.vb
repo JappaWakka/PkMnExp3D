@@ -120,13 +120,14 @@
                     Me.mainIndex = i
 
                     If Controls.Accept(True, False) = True Then
-                        Select Case Me.mainIndex
-                            Case 0
-                                ClickContinue()
-                            Case 1
-                                ClickQuit()
-                        End Select
-                    End If
+						Select Case Me.mainIndex
+							Case 0
+								ClickContinue()
+							Case 1
+								ClickQuit()
+						End Select
+						SoundManager.PlaySound("Select")
+					End If
                 End If
             Next
         End If
@@ -134,13 +135,14 @@
         Me.mainIndex = CInt(MathHelper.Clamp(Me.mainIndex, 0, 1))
 
         If Controls.Accept(False, True) = True Then
-            Select Case Me.mainIndex
-                Case 0
-                    ClickContinue()
-                Case 1
-                    ClickQuit()
-            End Select
-        End If
+			Select Case Me.mainIndex
+				Case 0
+					ClickContinue()
+				Case 1
+					ClickQuit()
+			End Select
+			SoundManager.PlaySound("Select")
+		End If
 
         If Controls.Dismiss() = True Or KeyBoardHandler.KeyPressed(KeyBindings.EscapeKey) = True And leftEscapeKey = True Or ControllerHandler.ButtonPressed(Buttons.Start) = True Then
             ClickContinue()
@@ -215,13 +217,14 @@
                     Me.quitIndex = i
 
                     If Controls.Accept(True, False) = True Then
-                        Select Case Me.quitIndex
-                            Case 0
-                                ClickBack()
-                            Case 1
-                                ClickConfirmationQuit()
-                        End Select
-                    End If
+						Select Case Me.quitIndex
+							Case 0
+								ClickBack()
+							Case 1
+								ClickConfirmationQuit()
+						End Select
+						SoundManager.PlaySound("Select")
+					End If
                 End If
             Next
         End If
@@ -229,13 +232,14 @@
         Me.quitIndex = CInt(MathHelper.Clamp(Me.quitIndex, 0, 1))
 
         If Controls.Accept(False, True) = True Then
-            Select Case Me.quitIndex
-                Case 0
-                    ClickBack()
-                Case 1
-                    ClickConfirmationQuit()
-            End Select
-        End If
+			Select Case Me.quitIndex
+				Case 0
+					ClickBack()
+				Case 1
+					ClickConfirmationQuit()
+			End Select
+			SoundManager.PlaySound("Select")
+		End If
 
         If Controls.Dismiss(False, True) = True Then
             ClickBack()

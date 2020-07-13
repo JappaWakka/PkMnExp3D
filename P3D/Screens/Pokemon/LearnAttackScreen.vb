@@ -58,8 +58,9 @@
                 End If
 
                 If Controls.Accept() = True Then
-                    chosen = True
-                End If
+					chosen = True
+					SoundManager.PlaySound("Select")
+				End If
             Else
                 Core.GameInstance.IsMouseVisible = True
 
@@ -88,10 +89,12 @@
                 If Controls.Accept(False, True) = True Then
                     Select Case index
                         Case 0
-                            ClickNo()
-                        Case 1
-                            ClickYes()
-                    End Select
+							ClickNo()
+							SoundManager.PlaySound("Select")
+						Case 1
+							ClickYes()
+							SoundManager.PlaySound("Select")
+					End Select
                 End If
             End If
         End If

@@ -1,5 +1,5 @@
 {"Level"{LEV[{"Name"{str[Goldenrod City]}}{"MusicLoop"{str[Goldenrod]}}]}}
-{"Actions"{LEV[{"CanTeleport"{bool[1]}}{"CanDig"{bool[0]}}{"CanFly"{bool[1]}}{"EnvironmentType"{int[0]}}{"Weather"{int[0]}}{"Lightning"{int[0]}}]}}
+{"Actions"{LEV[{"CanTeleport"{bool[1]}}{"CanDig"{bool[0]}}{"CanFly"{bool[1]}}{"EnvironmentType"{int[0]}}{"Weather"{int[0]}}{"Lighting"{int[0]}}]}}
 
 Brick:
 {"Floor"{ENT[{"Size"{intArr[4,36]}}{"Position"{sngArr[18,0,0]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Texture"{rec[0,0,16,16]}}]}}
@@ -651,7 +651,7 @@ NPCs:
 {"NPC"{NPC[{"Position"{sngArr[25,6,25]}}{"TextureID"{str[SchoolKid]}}{"ID"{int[0]}}{"Name"{str[random]}}{"Action"{int[0]}}{"AdditionalValue"{str[Do you listen to~Lucky Channel?*If you want to~win, trade Pokémon*with as many people as~possible to get~different ID numbers.]}}{"Rotation"{int[1]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
 
 {"NPC"{NPC[{"Position"{sngArr[20,0,26]}}{"TextureID"{str[YoungGirl]}}{"ID"{int[1]}}{"Name"{str[random]}}{"Action"{int[0]}}{"AdditionalValue"{str[The Radio Tower in~Goldenrod City is~a landmark.*They're running a~promotional campaign right now.*They'll modify~your Pokégear,*so it can also~serve as a radio.]}}{"Rotation"{int[1]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[18,26,4,2]]}}]}}
-{"NPC"{NPC[{"Position"{sngArr[19,0,16]}}{"TextureID"{str[youngster]}}{"ID"{int[2]}}{"Name"{str[random]}}{"Action"{int[0]}}{"AdditionalValue"{str[E-he-he-he...*I got in trouble~for playing in the*basement of the~Dept. Store.]}}{"Rotation"{int[2]}}{"Movement"{str[Looking]}}{"MoveRectangles"{recArr[]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[19,0,16]}}{"TextureID"{str[Youngster]}}{"ID"{int[2]}}{"Name"{str[random]}}{"Action"{int[0]}}{"AdditionalValue"{str[E-he-he-he...*I got in trouble~for playing in the*basement of the~Dept. Store.]}}{"Rotation"{int[2]}}{"Movement"{str[Looking]}}{"MoveRectangles"{recArr[]}}]}}
 {"NPC"{NPC[{"Position"{sngArr[11,0,27]}}{"TextureID"{str[oldman]}}{"ID"{int[3]}}{"Name"{str[random]}}{"Action"{int[0]}}{"AdditionalValue"{str[Whew! This is one~big town. I don't*know where anything is.]}}{"Rotation"{int[0]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
 {"NPC"{NPC[{"Position"{sngArr[7,0,18]}}{"TextureID"{str[BaldingMan]}}{"ID"{int[4]}}{"Name"{str[random]}}{"Action"{int[0]}}{"AdditionalValue"{str[They built the new~Radio Tower to*replace the old,~creaky one.]}}{"Rotation"{int[0]}}{"Movement"{str[Looking]}}{"MoveRectangles"{recArr[]}}]}}
 {"NPC"{NPC[{"Position"{sngArr[12,0,16]}}{"TextureID"{str[PigtailGirl]}}{"ID"{int[5]}}{"Name"{str[random]}}{"Action"{int[0]}}{"AdditionalValue"{str[Is that man in~black dressed up*like a Team Rocket~member? How silly!]}}{"Rotation"{int[1]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}

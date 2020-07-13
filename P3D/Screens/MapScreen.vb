@@ -323,8 +323,9 @@
             For Each Place As Place In places
                 If Place.getRectangle(mapOffset).Contains(cursorPoint) = True Then
                     If Controls.Accept(True, True, True) = True Then
-                        Place.Click(flag)
-                    End If
+						Place.Click(flag)
+						SoundManager.PlaySound("Select")
+					End If
                     hoverText = Place.Name
                     Exit For
                 End If
@@ -334,8 +335,9 @@
             For Each City As City In cities
                 If City.getRectangle(mapOffset).Contains(cursorPoint) = True Then
                     If Controls.Accept(True, True, True) = True Then
-                        City.Click(flag)
-                    End If
+						City.Click(flag)
+						SoundManager.PlaySound("Select")
+					End If
                     hoverText = City.Name
                     Exit For
                 End If
@@ -345,8 +347,9 @@
             For Each Route As Route In routes
                 If Route.getRectangle(mapOffset).Contains(cursorPoint) = True Then
                     If Controls.Accept(True, True, True) = True Then
-                        Route.Click(flag)
-                    End If
+						Route.Click(flag)
+						SoundManager.PlaySound("Select")
+					End If
                     hoverText = Route.Name
                 End If
             Next

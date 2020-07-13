@@ -1,5 +1,5 @@
 {"Level"{LEV[{"Name"{str[Dotted Hole]}}{"MusicLoop"{str[diglettscave]}}{"CurrentRegion"{str[SeviiIslands]}}{"RegionalForm"{str[alola]}}]}}
-{"Actions"{LEV[{"CanTeleport"{bool[1]}}{"CanDig"{bool[1]}}{"CanFly"{bool[0]}}{"EnvironmentType"{int[2]}}{"Weather"{int[1]}}{"Lightning"{int[1]}}]}}
+{"Actions"{LEV[{"CanTeleport"{bool[1]}}{"CanDig"{bool[1]}}{"CanFly"{bool[0]}}{"EnvironmentType"{int[2]}}{"Weather"{int[1]}}{"Lighting"{int[1]}}]}}
 
 Floor:
 {"Floor"{ENT[{"Size"{intArr[14,10]}}{"Position"{sngArr[0,0,0]}}{"TexturePath"{str[SeviiIslands]}}{"Texture"{rec[32,128,16,16]}}]}}

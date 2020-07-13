@@ -17,12 +17,10 @@
             Screen.Camera.AddToPlannedMovement(New Vector3(0, 0.15F, 0))
             Screen.Camera.Move(1.0F)
             Screen.Level.OverworldPokemon.Visible = False
-            Screen.Level.OverworldPokemon.warped = True
-
-            SoundManager.PlaySound("jump_ledge", False)
-
-            Return False
-        End If
+			Screen.Level.OverworldPokemon.warped = True
+			SoundManager.PlaySound("jump_ledge", False)
+			Return False
+		End If
         Return True
     End Function
 

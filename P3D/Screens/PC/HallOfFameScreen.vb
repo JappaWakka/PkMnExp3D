@@ -345,8 +345,9 @@
                     If i <= Me.Entries.Count - 1 Then
                         If New Rectangle(100, 100 + (i - Scroll) * 96, 640, 64).Contains(MouseHandler.MousePosition) = True Then
                             If i = Cursor + Scroll Then
-                                SelectEntry(Me.Scroll + Me.Cursor)
-                            Else
+								SelectEntry(Me.Scroll + Me.Cursor)
+								SoundManager.PlaySound("Select")
+							Else
                                 Cursor = i - Scroll
                             End If
                         End If
@@ -355,8 +356,9 @@
             End If
 
             If Controls.Accept(False, True, True) = True Then
-                SelectEntry(Me.Scroll + Me.Cursor)
-            End If
+				SelectEntry(Me.Scroll + Me.Cursor)
+				SoundManager.PlaySound("Select")
+			End If
         End If
 
         If Controls.Dismiss(True, True, True) = True Then

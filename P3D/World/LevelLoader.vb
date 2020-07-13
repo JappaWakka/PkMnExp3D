@@ -998,18 +998,10 @@
             Screen.Level.WeatherType = 0
         End If
 
-        ' It's not my fault, I swear. The keyboard was slippy, I was partly sick, and there was fog on the road and I couldn't see.
-        Dim lightningExists As Boolean = TagExists(Tags, "Lightning")
-        Dim lightingExists As Boolean = TagExists(Tags, "Lighting")
-
-        If lightningExists = True And lightingExists = True Then
-            Screen.Level.LightingType = CInt(GetTag(Tags, "Lighting"))
-        ElseIf lightingExists = True Then
-            Screen.Level.LightingType = CInt(GetTag(Tags, "Lighting"))
-        ElseIf lightningExists = True Then
-            Screen.Level.LightingType = CInt(GetTag(Tags, "Lightning"))
-        Else
-            Screen.Level.LightingType = 1
+		If TagExists(Tags, "Lighting") = True Then
+			Screen.Level.LightingType = CInt(GetTag(Tags, "Lighting"))
+		Else
+			Screen.Level.LightingType = 1
         End If
 
         If TagExists(Tags, "IsDark") = True Then

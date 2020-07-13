@@ -148,8 +148,9 @@
         Player.Temp.BagSelectIndex = Me.index(bagIndex)
 
         If Controls.Accept() = True Then
-            Me.ChooseItem()
-        End If
+			Me.ChooseItem()
+			SoundManager.PlaySound("Select")
+		End If
 
         If Controls.Dismiss() Then
             Core.SetScreen(Me.PreScreen)
@@ -267,20 +268,20 @@
                         FontColor = FontManager.MainFontBlack
                     End If
 
-                    Canvas.DrawImageBorder(BorderTexture, 1, New Rectangle(CInt(p.X), CInt(p.Y + (i + scrollIndex(bagIndex)) * 70), 320, 32))
+					Canvas.DrawImageBorder(BorderTexture, 2, New Rectangle(CInt(p.X), CInt(p.Y + (i + scrollIndex(bagIndex)) * 67), 320, 32))
 
-                    .Draw(Item.Texture, New Rectangle(CInt(p.X), CInt(p.Y + (i + scrollIndex(bagIndex)) * 70), 48, 48), Color.White)
-                    .DrawString(FontColor, Item.Name, New Vector2(CInt(p.X + 74), CInt(p.Y + (i + scrollIndex(bagIndex)) * 70) + 13), Color.White)
+					.Draw(Item.Texture, New Rectangle(CInt(p.X) + 8, CInt(p.Y + (i + scrollIndex(bagIndex)) * 67) + 8, 48, 48), Color.White)
+					.DrawString(FontColor, Item.Name, New Vector2(CInt(p.X + 74), CInt(p.Y + (i + scrollIndex(bagIndex)) * 67) + 16), Color.White)
 
-                    If Me.bagIndex <> 7 Then
+					If Me.bagIndex <> 7 Then
                         Dim length As String = ""
                         If cItems.Values(i).ToString().Length < 3 Then
                             For n = 1 To 3 - cItems.Values(i).ToString().Length
                                 length &= " "
                             Next
                         End If
-                        .DrawString(FontColor, "x" & length & cItems.Values(i).ToString(), New Vector2(CInt(p.X + 280), CInt(p.Y + (i + scrollIndex(bagIndex)) * 70) + 13), Color.White)
-                    End If
+						.DrawString(FontColor, "x" & length & cItems.Values(i).ToString(), New Vector2(CInt(p.X + 280), CInt(p.Y + (i + scrollIndex(bagIndex)) * 67) + 16), Color.White)
+					End If
 
                     If i = index(bagIndex) Then
                         .DrawString(FontManager.MainFontBlack, Item.GetDescription().CropStringToWidth(FontManager.MainFontBlack, 450), New Vector2(80, 532), Color.White)

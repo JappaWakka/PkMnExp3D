@@ -418,113 +418,113 @@ endsub:
     Public CurrentMapWeather As Weathers = Weathers.Clear
 
     Public EnvironmentType As EnvironmentTypes = EnvironmentTypes.Outside
-    Public UseLightning As Boolean = False
+	Public UseLighting As Boolean = False
 
-    Public Sub New(ByVal EnvironmentType As Integer, ByVal WeatherType As Integer, Optional ByVal IsMainMenu As Integer = 0)
-        Initialize(EnvironmentType, WeatherType, IsMainMenu)
-    End Sub
+	Public Sub New(ByVal EnvironmentType As Integer, ByVal WeatherType As Integer, Optional ByVal IsMainMenu As Integer = 0)
+		Initialize(EnvironmentType, WeatherType, IsMainMenu)
+	End Sub
 
-    Public Shared Function GetWeatherFromWeatherType(ByVal WeatherType As Integer) As Weathers
-        If IsMainMenu Then
-            Return Weathers.Clear
-        End If
+	Public Shared Function GetWeatherFromWeatherType(ByVal WeatherType As Integer) As Weathers
+		If IsMainMenu Then
+			Return Weathers.Clear
+		End If
 
-        Select Case WeatherType
-            Case 0 ' Region Weather
-                Return World.GetCurrentRegionWeather()
-            Case 1 ' Clear
-                Return Weathers.Clear
-            Case 2 ' Rain
-                Return Weathers.Rain
-            Case 3 ' Snow
-                Return Weathers.Snow
-            Case 4 ' Underwater
-                Return Weathers.Underwater
-            Case 5 ' Sunny
-                Return Weathers.Sunny
-            Case 6 ' Fog
-                Return Weathers.Fog
-            Case 7 ' Sandstorm
-                Return Weathers.Sandstorm
-            Case 8 ' Ash
-                Return Weathers.Ash
-            Case 9 ' Blizzard
-                Return Weathers.Blizzard
-            Case 10 ' Thunderstorm
-                Return Weathers.Thunderstorm
-        End Select
-        Return Weathers.Clear
-    End Function
+		Select Case WeatherType
+			Case 0 ' Region Weather
+				Return World.GetCurrentRegionWeather()
+			Case 1 ' Clear
+				Return Weathers.Clear
+			Case 2 ' Rain
+				Return Weathers.Rain
+			Case 3 ' Snow
+				Return Weathers.Snow
+			Case 4 ' Underwater
+				Return Weathers.Underwater
+			Case 5 ' Sunny
+				Return Weathers.Sunny
+			Case 6 ' Fog
+				Return Weathers.Fog
+			Case 7 ' Sandstorm
+				Return Weathers.Sandstorm
+			Case 8 ' Ash
+				Return Weathers.Ash
+			Case 9 ' Blizzard
+				Return Weathers.Blizzard
+			Case 10 ' Thunderstorm
+				Return Weathers.Thunderstorm
+		End Select
+		Return Weathers.Clear
+	End Function
 
-    Public Shared Function GetWeatherTypeFromWeather(ByVal Weather As Weathers) As Integer
-        If IsMainMenu Then
-            Return 1
-        End If
+	Public Shared Function GetWeatherTypeFromWeather(ByVal Weather As Weathers) As Integer
+		If IsMainMenu Then
+			Return 1
+		End If
 
-        Select Case Weather
-            Case Weathers.Clear
-                Return 1
-            Case Weathers.Rain
-                Return 2
-            Case Weathers.Snow
-                Return 3
-            Case Weathers.Underwater
-                Return 4
-            Case Weathers.Sunny
-                Return 5
-            Case Weathers.Fog
-                Return 6
-            Case Weathers.Sandstorm
-                Return 7
-            Case Weathers.Ash
-                Return 8
-            Case Weathers.Blizzard
-                Return 9
-            Case Weathers.Thunderstorm
-                Return 10
-            Case Else
-                Return 0
-        End Select
-    End Function
+		Select Case Weather
+			Case Weathers.Clear
+				Return 1
+			Case Weathers.Rain
+				Return 2
+			Case Weathers.Snow
+				Return 3
+			Case Weathers.Underwater
+				Return 4
+			Case Weathers.Sunny
+				Return 5
+			Case Weathers.Fog
+				Return 6
+			Case Weathers.Sandstorm
+				Return 7
+			Case Weathers.Ash
+				Return 8
+			Case Weathers.Blizzard
+				Return 9
+			Case Weathers.Thunderstorm
+				Return 10
+			Case Else
+				Return 0
+		End Select
+	End Function
 
-    Public Sub Initialize(ByVal EnvironmentType As Integer, ByVal WeatherType As Integer, Optional ByVal MainMenu As Integer = 0)
-        IsMainMenu = CBool(MainMenu)
-        If _regionWeatherSet = False Then
-            World._regionWeather = World.GetRegionWeather(World.CurrentSeason)
-            World._regionWeatherSet = True
-        End If
+	Public Sub Initialize(ByVal EnvironmentType As Integer, ByVal WeatherType As Integer, Optional ByVal MainMenu As Integer = 0)
+		IsMainMenu = CBool(MainMenu)
+		If _regionWeatherSet = False Then
+			World._regionWeather = World.GetRegionWeather(World.CurrentSeason)
+			World._regionWeatherSet = True
+		End If
 
-        Me.CurrentMapWeather = GetWeatherFromWeatherType(WeatherType)
+		Me.CurrentMapWeather = GetWeatherFromWeatherType(WeatherType)
 
-        Select Case EnvironmentType
-            Case 0 ' Overworld
-                Me.EnvironmentType = EnvironmentTypes.Outside
-                Me.UseLightning = True
-            Case 1 ' Permanent Day
-                Me.EnvironmentType = EnvironmentTypes.Inside
-                Me.UseLightning = False
-            Case 2 ' Cave
-                Me.EnvironmentType = EnvironmentTypes.Cave
-                If WeatherType = 0 Then
-                    Me.CurrentMapWeather = Weathers.Clear
-                End If
-                Me.UseLightning = False
-            Case 3 ' Permanent Night
-                Me.EnvironmentType = EnvironmentTypes.Dark
-                If WeatherType = 0 Then
-                    Me.CurrentMapWeather = Weathers.Clear
-                End If
-                Me.UseLightning = False
-            Case 4 ' Underwater
-                Me.EnvironmentType = EnvironmentTypes.Underwater
-                If WeatherType = 0 Then
-                    Me.CurrentMapWeather = Weathers.Underwater
-                End If
-                Me.UseLightning = True
-            Case 5 ' Forest
-                Me.EnvironmentType = EnvironmentTypes.Forest
-                Me.UseLightning = True
-        End Select
+		Select Case EnvironmentType
+			Case 0 ' Overworld
+				Me.EnvironmentType = EnvironmentTypes.Outside
+				Me.UseLighting = True
+			Case 1 ' Permanent Day
+				Me.EnvironmentType = EnvironmentTypes.Inside
+				Me.UseLighting = False
+			Case 2 ' Cave
+				Me.EnvironmentType = EnvironmentTypes.Cave
+				If WeatherType = 0 Then
+					Me.CurrentMapWeather = Weathers.Clear
+				End If
+				Me.UseLighting = False
+			Case 3 ' Permanent Night
+				Me.EnvironmentType = EnvironmentTypes.Dark
+				If WeatherType = 0 Then
+					Me.CurrentMapWeather = Weathers.Clear
+				End If
+				Me.UseLighting = False
+			Case 4 ' Underwater
+				Me.EnvironmentType = EnvironmentTypes.Underwater
+				If WeatherType = 0 Then
+					Me.CurrentMapWeather = Weathers.Underwater
+				End If
+				Me.UseLighting = True
+			Case 5 ' Forest
+				Me.EnvironmentType = EnvironmentTypes.Forest
+				Me.UseLighting = True
+		End Select
 
         SetWeatherLevelColor()
         ChangeEnvironment()

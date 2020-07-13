@@ -787,16 +787,16 @@
                 If P3D.Controls.Accept(True, False, False) = True Then
                     Me._toggled = Not Me._toggled
                     OnToggleTrigger(Me)
-                    ' SoundManager.PlaySound("select")
-                End If
+					SoundManager.PlaySound("select")
+				End If
             End If
 
             If Controls.Accept(False, True, True) Then
                 If Position = s._cursorDestPosition Then
                     Me._toggled = Not Me._toggled
                     OnToggleTrigger(Me)
-                    'SoundManager.PlaySound("select")
-                End If
+					SoundManager.PlaySound("select")
+				End If
             End If
         End Sub
     End Class
@@ -884,8 +884,9 @@
 
             If r.Contains(MouseHandler.MousePosition) = True Then
                 If P3D.Controls.Accept(True, False, False) = True Then
-                    OnClickTrigger(Me)
-                End If
+					OnClickTrigger(Me)
+					SoundManager.PlaySound("Select")
+				End If
             End If
 
             If Controls.Accept(False, True, True) Then
