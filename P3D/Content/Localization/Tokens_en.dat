@@ -858,6 +858,12 @@ Johto:
 ----------
 New Bark Town:
 
+Objects:
+NewBark_YourHouse2f_Bookshelf,A whole collection of Pokémon~picture books!
+NewBark_YourHouse2f_Note_Donators,It's a note on the wall about~the donators of this game.
+NewBark_YourHouse2f_Note_Controls,It's a note on the wall about~the controls.*Do you want to read it?
+NewBark_YourHouse2f_GameControls,The controls in Pokemon:~Move: [W]~Watch: [A][S][D]~Change camera: [C]~Open menu: [E]~Mute music: [M]~Hide GUI: [F1]~Take screenshot: [F2]~Change camera mode: [F5]
+
 Signs:
 NewBark_Main_Sign_ElmsLab,Elm Pokémon Lab
 NewBark_Main_Sign_PlayersHouse,<player.name>'s House

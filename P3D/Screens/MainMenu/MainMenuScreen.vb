@@ -68,7 +68,7 @@
 
 		mainTexture = TextureManager.GetTexture("GUI\Menus\Menu")
 
-		Level.World.Initialize(Level.EnvironmentType, Level.WeatherType)
+		Level.World.Initialize(Level.EnvironmentType, Level.WeatherType, 1)
 
 		If IO.Directory.Exists(GameController.GamePath & "\Save\") = False Then
 			IO.Directory.CreateDirectory(GameController.GamePath & "\Save\")
@@ -225,12 +225,11 @@
 	End Sub
 
 	Public Overrides Sub Update()
+		SkyDome.Update()
 		Lighting.UpdateLighting(Effect)
-
 		Camera.Update()
 		Level.Update()
-		SkyDome.Update()
-		Level.World.Initialize(Level.EnvironmentType, Level.WeatherType)
+		Level.World.Initialize(Level.EnvironmentType, Level.WeatherType, 1)
 
 		If GameInstance.IsActive = True Then
 			Select Case menuIndex
@@ -274,7 +273,7 @@
 
 		'Core.GraphicsDevice.Clear(Core.BackgroundColor)
 
-		SkyDome.Draw(45.0F)
+		SkyDome.Draw(Camera.FOV)
 		Level.Draw()
 		World.DrawWeather(Level.World.CurrentMapWeather)
 
@@ -639,6 +638,11 @@
 			If GameModeManager.ActiveGameMode.DirectoryName <> dispGameMode Then
 				GameModeManager.SetGameModePointer(dispGameMode)
 				ChangeLevel()
+				If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "GUI\Logos\GameModeLogo.png") Then
+					Logo = "GUI\Logos\GameModeLogo"
+				Else
+					Logo = "GUI\Logos\PkMnExp3D"
+				End If
 				Localization.ReloadGameModeTokens()
 			End If
 			tempLoadDisplay = Localization.GetString("load_menu_name") & ": " & dispName & Environment.NewLine &
@@ -710,10 +714,12 @@
 								SoundManager.PlaySound("Select")
 							Case 1
 								menuIndex = 2
+								SoundManager.PlaySound("Select")
 							Case 2
 								menuIndex = 0
 
 								tempLoadDisplay = ""
+								SoundManager.PlaySound("Select")
 						End Select
 					End If
 				End If
@@ -748,14 +754,16 @@
 					Core.Player.LoadGame(IO.Path.GetFileName(Saves(loadMenuIndex(0))))
 
 					SetScreen(New JoinServerScreen(Me))
+					SoundManager.PlaySound("Select")
 				Case 1
 					menuIndex = 2
+					SoundManager.PlaySound("Select")
 				Case 2
 					menuIndex = 0
 
 					tempLoadDisplay = ""
+					SoundManager.PlaySound("Select")
 			End Select
-			SoundManager.PlaySound("Select")
 		End If
 
 		If Controls.Dismiss() = True Then
@@ -1508,7 +1516,7 @@
 		If PackNames.Count > 0 Then
 			Core.GameOptions.ContentPackNames = EnabledPackNames.ToArray()
 			Core.GameOptions.SaveOptions()
-			MediaPlayer.Stop()
+			MusicManager.Stop()
 			ContentPackManager.Clear()
 			For Each s As String In Core.GameOptions.ContentPackNames
 				ContentPackManager.Load(GameController.GamePath & "\ContentPacks\" & s & "\exceptions.dat")
@@ -1694,15 +1702,15 @@
 			Dim dispVersion As String = GameMode.Version
 			Dim dispAuthor As String = GameMode.Author
 			Dim dispContentPath As String = GameMode.ContentPath
-			If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "GUI\Logos\GameModeLogo.png") Then
-				Logo = "GUI\Logos\GameModeLogo"
-			Else
-				Logo = "GUI\Logos\PkMnExp3D"
-			End If
 
 			If GameModeManager.ActiveGameMode.DirectoryName <> GameMode.DirectoryName Then
 				GameModeManager.SetGameModePointer(GameMode.DirectoryName)
 				ChangeLevel()
+				If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "GUI\Logos\GameModeLogo.png") Then
+					Logo = "GUI\Logos\GameModeLogo"
+				Else
+					Logo = "GUI\Logos\PkMnExp3D"
+				End If
 				Localization.ReloadGameModeTokens()
 			End If
 

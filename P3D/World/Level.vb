@@ -41,6 +41,7 @@ Public Class Level
 	Private _canFly As Boolean = False
 	Private _rideType As Integer = 0
 	Private _weatherType As Integer = 0
+	Private _DayTime As World.DayTime = World.DayTime.Day
 	Private _environmentType As Integer = 0
 	Private _wildPokemonGrass As Boolean = True
 	Private _wildPokemonFloor As Boolean = False
@@ -366,6 +367,42 @@ Public Class Level
 		End Get
 		Set(value As Integer)
 			Me._weatherType = value
+		End Set
+	End Property
+	''' <summary>
+	''' The DayTime on this map.
+	''' </summary>
+	''' <remarks>For the day time, look at the DayTime enumeration in World.vb</remarks>
+	Public Property DayTime As Integer
+		Get
+			If World.IsMainMenu Then
+				Return 1
+			End If
+			Select Case Me._DayTime
+				Case World.DayTime.Day
+					Return 1
+				Case World.DayTime.Night
+					Return 2
+				Case World.DayTime.Morning
+					Return 3
+				Case World.DayTime.Evening
+					Return 4
+			End Select
+			Return 0
+		End Get
+		Set(value As Integer)
+			Select Case value
+				Case 1
+					Me._DayTime = World.DayTime.Day
+				Case 2
+					Me._DayTime = World.DayTime.Night
+				Case 3
+					Me._DayTime = World.DayTime.Morning
+				Case 4
+					Me._DayTime = World.DayTime.Evening
+				Case Else
+					Me._DayTime = World.GetTime
+			End Select
 		End Set
 	End Property
 

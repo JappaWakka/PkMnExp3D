@@ -75,13 +75,9 @@ Public Class World
 
     Public Shared ReadOnly Property GetTime() As DayTime
         Get
-            If IsMainMenu Then
-                Return DayTime.Day
-            End If
+			Dim time As DayTime = DayTime.Day
 
-            Dim time As DayTime = DayTime.Day
-
-            Dim Hour As Integer = My.Computer.Clock.LocalTime.Hour
+			Dim Hour As Integer = My.Computer.Clock.LocalTime.Hour
             If NeedServerObject() = True Then
                 Dim data() As String = ServerTimeData.Split(CChar(","))
                 Hour = CInt(data(0))
@@ -500,7 +496,7 @@ endsub:
 			Case 0 ' Overworld
 				Me.EnvironmentType = EnvironmentTypes.Outside
 				Me.UseLighting = True
-			Case 1 ' Permanent Day
+			Case 1 ' Interior
 				Me.EnvironmentType = EnvironmentTypes.Inside
 				Me.UseLighting = False
 			Case 2 ' Cave
@@ -509,7 +505,7 @@ endsub:
 					Me.CurrentMapWeather = Weathers.Clear
 				End If
 				Me.UseLighting = False
-			Case 3 ' Permanent Night
+			Case 3 ' Darkness
 				Me.EnvironmentType = EnvironmentTypes.Dark
 				If WeatherType = 0 Then
 					Me.CurrentMapWeather = Weathers.Clear
@@ -523,6 +519,9 @@ endsub:
 				Me.UseLighting = True
 			Case 5 ' Forest
 				Me.EnvironmentType = EnvironmentTypes.Forest
+				Me.UseLighting = True
+			Case 6 ' Day
+				Me.EnvironmentType = EnvironmentTypes.Outside
 				Me.UseLighting = True
 		End Select
 
@@ -586,36 +585,31 @@ endsub:
         Select Case Me.EnvironmentType
             Case EnvironmentTypes.Outside
                 Core.BackgroundColor = GetWeatherBackgroundColor(SkyDome.GetDaytimeColor(False))
-                Screen.Effect.FogColor = Core.BackgroundColor.ToVector3()
-                If IsAurora = True Then
-                    Screen.SkyDome.TextureUp = TextureManager.GetTexture("SkyDomeResource\AuroraBoralis")
-                Else
-                    Screen.SkyDome.TextureUp = TextureManager.GetTexture("SkyDomeResource\Clouds1")
-                End If
-                Screen.SkyDome.TextureDown = TextureManager.GetTexture("SkyDomeResource\Stars")
-            Case EnvironmentTypes.Inside
-                Core.BackgroundColor = GetWeatherBackgroundColor(New Color(173, 216, 255))
-                Screen.Effect.FogColor = Core.BackgroundColor.ToVector3()
-                Screen.SkyDome.TextureUp = TextureManager.GetTexture("SkyDomeResource\Clouds")
-                Screen.SkyDome.TextureDown = Nothing
-            Case EnvironmentTypes.Dark
-                Core.BackgroundColor = GetWeatherBackgroundColor(New Color(29, 29, 50))
-                Screen.Effect.FogColor = Core.BackgroundColor.ToVector3()
+				Screen.Effect.FogColor = Core.BackgroundColor.ToVector3()
+				Screen.SkyDome.TextureDown = TextureManager.GetTexture("SkyDomeResource\Stars")
+			Case EnvironmentTypes.Inside
+				Core.BackgroundColor = GetWeatherBackgroundColor(New Color(80, 80, 104))
+				Screen.Effect.FogColor = Core.BackgroundColor.ToVector3()
+				Screen.SkyDome.TextureUp = Nothing
+				Screen.SkyDome.TextureDown = Nothing
+			Case EnvironmentTypes.Dark
+				Core.BackgroundColor = GetWeatherBackgroundColor(New Color(31, 31, 59))
+				Screen.Effect.FogColor = Core.BackgroundColor.ToVector3()
                 Screen.SkyDome.TextureUp = TextureManager.GetTexture("SkyDomeResource\Dark")
                 Screen.SkyDome.TextureDown = Nothing
             Case EnvironmentTypes.Cave
-                Core.BackgroundColor = GetWeatherBackgroundColor(New Color(34, 19, 12))
-                Screen.Effect.FogColor = Core.BackgroundColor.ToVector3()
+				Core.BackgroundColor = GetWeatherBackgroundColor(New Color(96, 64, 80))
+				Screen.Effect.FogColor = Core.BackgroundColor.ToVector3()
                 Screen.SkyDome.TextureUp = TextureManager.GetTexture("SkyDomeResource\Cave")
                 Screen.SkyDome.TextureDown = Nothing
             Case EnvironmentTypes.Underwater
-                Core.BackgroundColor = GetWeatherBackgroundColor(New Color(19, 54, 117))
-                Screen.Effect.FogColor = Core.BackgroundColor.ToVector3()
+				Core.BackgroundColor = GetWeatherBackgroundColor(New Color(18, 71, 140))
+				Screen.Effect.FogColor = Core.BackgroundColor.ToVector3()
                 Screen.SkyDome.TextureUp = TextureManager.GetTexture("SkyDomeResource\Underwater")
                 Screen.SkyDome.TextureDown = TextureManager.GetTexture("SkyDomeResource\UnderwaterGround")
             Case EnvironmentTypes.Forest
-                Core.BackgroundColor = GetWeatherBackgroundColor(New Color(30, 66, 21))
-                Screen.Effect.FogColor = Core.BackgroundColor.ToVector3()
+				Core.BackgroundColor = GetWeatherBackgroundColor(New Color(56, 80, 0))
+				Screen.Effect.FogColor = Core.BackgroundColor.ToVector3()
                 Screen.SkyDome.TextureUp = TextureManager.GetTexture("SkyDomeResource\Forest")
                 Screen.SkyDome.TextureDown = Nothing
         End Select

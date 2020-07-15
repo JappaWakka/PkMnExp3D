@@ -67,8 +67,10 @@
                     Screen.Level.WarpData.CorrectCameraYaw = Screen.Camera.Yaw
                     IsReady = True
                 Case "setsafari"
-                    Screen.Level.IsSafariZone = CBool(argument)
-            End Select
+					Screen.Level.IsSafariZone = CBool(argument)
+				Case "setdaytime"
+					Screen.Level.DayTime = CInt(argument)
+			End Select
         End Sub
 
     End Class

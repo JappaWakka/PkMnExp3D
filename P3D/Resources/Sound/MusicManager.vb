@@ -280,10 +280,6 @@ Public Class MusicManager
 	Public Shared Sub PauseForSound(ByVal sound As SoundEffect)
 		_isPausedForSound = True
 		_pausedUntil = Date.Now + sound.Duration
-		MusicManager.Pause()
-	End Sub
-
-	Public Shared Sub Pause()
 		MusicManager.Paused = True
 	End Sub
 
@@ -312,51 +308,28 @@ Public Class MusicManager
 	End Sub
 
 	Private Shared Sub Play(song As SongContainer)
-		If _isLooping = True Then
-			If Not song Is Nothing Then
-				Logger.Debug($"Play song [{song.Name}]")
-				If Not outputDevice Is Nothing Then
-					outputDevice.Dispose()
-				End If
-				outputDevice = New WaveOutEvent()
-				audioFile = New VorbisWaveReader(song.Song)
-				_loop = New LoopStream(audioFile)
-				outputDevice.Init(_loop)
-				If Paused = False Then
-					outputDevice.Play()
-				End If
-				outputDevice.Volume = Volume * MasterVolume
-				_currentSongExists = True
-				_currentSongName = song.Name
-				_currentSong = song
-			Else
-				_currentSongExists = False
-				_currentSongName = NO_MUSIC
-				_currentSong = Nothing
+		If Not song Is Nothing Then
+			Logger.Debug($"Play song [{song.Name}]")
+			If Not outputDevice Is Nothing Then
+				outputDevice.Dispose()
 			End If
+			outputDevice = New WaveOutEvent()
+			audioFile = New VorbisWaveReader(song.Song)
+			_loop = New LoopStream(audioFile, _isLooping)
+			outputDevice.Init(_loop)
+			If Paused = False Then
+				outputDevice.Play()
+			End If
+			outputDevice.Volume = Volume * MasterVolume
+			_currentSongExists = True
+			_currentSongName = song.Name
+			_currentSong = song
 		Else
-			If Not song Is Nothing Then
-				Logger.Debug($"Play song [{song.Name}]")
-				If Not outputDevice Is Nothing Then
-					outputDevice.Dispose()
-				End If
-				outputDevice = New WaveOutEvent()
-				audioFile = New VorbisWaveReader(song.Song)
-				_loop = New LoopStream(audioFile, False)
-				outputDevice.Init(_loop)
-				If Paused = False Then
-					outputDevice.Play()
-				End If
-				outputDevice.Volume = Volume * MasterVolume
-				_currentSongExists = True
-				_currentSongName = song.Name
-				_currentSong = song
-			Else
-				_currentSongExists = False
-				_currentSongName = NO_MUSIC
-				_currentSong = Nothing
-			End If
+			_currentSongExists = False
+			_currentSongName = NO_MUSIC
+			_currentSong = Nothing
 		End If
+
 
 	End Sub
 

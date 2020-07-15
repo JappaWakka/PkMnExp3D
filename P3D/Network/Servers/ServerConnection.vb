@@ -53,14 +53,16 @@ Namespace Servers
             Try
                 Dim connectIP As IPAddress = Nothing
 
-                For Each IPAddress In System.Net.Dns.GetHostEntry(Server.IP).AddressList
-                    If IPAddress.AddressFamily = AddressFamily.InterNetwork Then
-                        connectIP = IPAddress
-                        Exit For
-                    End If
-                Next
+				If Not IPAddress.TryParse(Server.IP, connectIP) Then
+					For Each IPAddress In Dns.GetHostEntry(Server.IP).AddressList
+						If IPAddress.AddressFamily = AddressFamily.InterNetwork Then
+							connectIP = IPAddress
+							Exit For
+						End If
+					Next
+				End If
 
-                Me._client.Connect(connectIP.ToString, CInt(Server.Port))
+				Me._client.Connect(connectIP.ToString, CInt(Server.Port))
 
                 If Me._client.Connected = True Then
                     'Send GameData package first:

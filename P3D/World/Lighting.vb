@@ -46,7 +46,7 @@ Public Class Lighting
 
             Select Case GetLightingType()
                 Case 0 ' Night
-					refEffect.AmbientLightColor = New Vector3(1.0F)
+					refEffect.AmbientLightColor = New Vector3(0.6F)
 
 					refEffect.DirectionalLight0.DiffuseColor = New Vector3(0.4F, 0.4F, 0.6F)
                     refEffect.DirectionalLight0.Direction = Vector3.Normalize(New Vector3(-1.0F, 0.0F, 1.0F))
@@ -55,8 +55,8 @@ Public Class Lighting
                 Case 1 ' Morning
 					refEffect.AmbientLightColor = New Vector3(1.0F)
 
-					refEffect.DirectionalLight0.DiffuseColor = Color.Orange.ToVector3()
-                    refEffect.DirectionalLight0.Direction = Vector3.Normalize(New Vector3(1.0F, -1.0F, 1.0F))
+					refEffect.DirectionalLight0.DiffuseColor = New Vector3(-0.45F)
+					refEffect.DirectionalLight0.Direction = Vector3.Normalize(New Vector3(1.0F, -1.0F, 1.0F))
                     refEffect.DirectionalLight0.SpecularColor = New Vector3(0.0F)
                     refEffect.DirectionalLight0.Enabled = True
                 Case 2 ' Day
@@ -85,22 +85,33 @@ Public Class Lighting
     Public Shared Function GetLightingType() As Integer
         Dim LightType As Integer = CInt(World.GetTime()) ' Determine default lighting type by the world time.
 
-        ' Level's lighttype values:
-        ' 0 = Get lighting from the current time of day.
-        ' 1 = Disable lighting
-        ' 2 = Always Night
-        ' 3 = Always Morning
-        ' 4 = Always Day
-        ' 5 = Always Evening
+		' Level's lighttype values:
+		' 0 = Get lighting from the current time of day.
+		' 1 = Disable lighting
+		' 2 = Always Night
+		' 3 = Always Morning
+		' 4 = Always Day
+		' 5 = Always Evening
 
-        If Screen.Level.LightingType = 1 Then ' If the level lighting type is 1, disable lighting (set index to 99).
-            LightType = 99
-        End If
-        If Screen.Level.LightingType > 1 And Screen.Level.LightingType < 6 Then ' If the level's lighting type is 2, 3, 4 or 5, set to the respective LightType (set time of day).
+		If Screen.Level.LightingType = 1 Or Screen.Level.World.EnvironmentType = World.EnvironmentTypes.Inside Then ' If the level lighting type is 1, disable lighting (set index to 99).
+			LightType = 99
+		End If
+		If Screen.Level.LightingType > 1 And Screen.Level.LightingType < 6 Then ' If the level's lighting type is 2, 3, 4 or 5, set to the respective LightType (set time of day).
             LightType = Screen.Level.LightingType - 2
         End If
 
-        Return LightType
+		Select Case Screen.Level.DayTime
+			Case 1
+				LightType = 2
+			Case 2
+				LightType = 0
+			Case 3
+				LightType = 1
+			Case 4
+				LightType = 3
+		End Select
+
+		Return LightType
     End Function
 	
 #End Region

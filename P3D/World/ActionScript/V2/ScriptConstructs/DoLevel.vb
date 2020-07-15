@@ -24,8 +24,10 @@
                     Return ReturnBoolean(Screen.Level.Biking)
                 Case "musicloop"
                     Dim musicloop As String = System.IO.Path.GetFileNameWithoutExtension(Screen.Level.MusicLoop)
-                    Return musicloop
-            End Select
+					Return musicloop
+				Case "daytime"
+					Return Screen.Level.DayTime
+			End Select
 
             Return DEFAULTNULL
         End Function

@@ -992,11 +992,17 @@
 			Screen.Level.EnvironmentType = 0
         End If
 
-        If TagExists(Tags, "Weather") = True Then
-            Screen.Level.WeatherType = CInt(GetTag(Tags, "Weather"))
-        Else
-            Screen.Level.WeatherType = 0
-        End If
+		If TagExists(Tags, "Weather") = True Then
+			Screen.Level.WeatherType = CInt(GetTag(Tags, "Weather"))
+		Else
+			Screen.Level.WeatherType = 0
+		End If
+
+		If TagExists(Tags, "DayTime") = True Then
+			Screen.Level.DayTime = CInt(GetTag(Tags, "DayTime"))
+		Else
+			Screen.Level.DayTime = 0
+		End If
 
 		If TagExists(Tags, "Lighting") = True Then
 			Screen.Level.LightingType = CInt(GetTag(Tags, "Lighting"))
