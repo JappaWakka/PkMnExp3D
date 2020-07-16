@@ -463,7 +463,9 @@ Public Class MusicManager
 					Return _songs(key)
 				End If
 			Else
-				Logger.Log(Logger.LogTypes.Warning, "MusicManager.vb: Cannot find music file """ & songName & """. Return nothing.")
+				If defaultSongFilePath.Contains("intro\") = False And songFilePath.Contains("intro\") = False Then
+					Logger.Log(Logger.LogTypes.Warning, "MusicManager.vb: Cannot find music file """ & songName & """. Return nothing.")
+				End If
 			End If
 			Return Nothing
 		End If

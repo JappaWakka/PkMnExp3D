@@ -230,10 +230,9 @@
         p.SetCatchInfos(Me.Ball, "caught at")
 
         SoundManager.PlaySound("Battle\Pokeball\catch", False)
-        MusicManager.Stop()
-        MusicManager.Play("wild_defeat", False, 0.2F)
-        SoundManager.PlaySound("success", True)
-        TextBox.Show(s, {}, False, False)
+		SoundManager.PlaySound("success", True)
+		MusicManager.Play("wild_defeat", False, 0.2F)
+		TextBox.Show(s, {}, False, False)
     End Sub
 
     Private Sub StorePokemon()

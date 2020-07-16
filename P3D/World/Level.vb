@@ -41,7 +41,7 @@ Public Class Level
 	Private _canFly As Boolean = False
 	Private _rideType As Integer = 0
 	Private _weatherType As Integer = 0
-	Private _DayTime As World.DayTime = World.DayTime.Day
+	Public _DayTime As World.DayTime = World.DayTime.Day
 	Private _environmentType As Integer = 0
 	Private _wildPokemonGrass As Boolean = True
 	Private _wildPokemonFloor As Boolean = False
@@ -375,9 +375,6 @@ Public Class Level
 	''' <remarks>For the day time, look at the DayTime enumeration in World.vb</remarks>
 	Public Property DayTime As Integer
 		Get
-			If World.IsMainMenu Then
-				Return 1
-			End If
 			Select Case Me._DayTime
 				Case World.DayTime.Day
 					Return 1

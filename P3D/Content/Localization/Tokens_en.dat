@@ -854,6 +854,12 @@ NewGame_Oak_ConfirmName,Alright, nice to meet you,~<player.name>!
 NewGame_Oak_Intro5,This is your home in New Bark Town.*You live there with your mother~right next to Professor Elm.
 NewGame_Oak_Intro6,<player.name>, are you ready?*Your very own Pokémon story is~about to unfold.*You'll face fun times and~tough challenges.*A world of dreams and adventures~with Pokémon awaits!*Let's go!~I'll be seeing you later!
 
+---
+MysteryEvents:
+
+MysteryEvents_Question,Do you want to view the Mystery Events?
+MysteryEvents_ComeBackLater,Come back later.
+---
 Johto:
 ----------
 New Bark Town:
@@ -863,12 +869,15 @@ NewBark_YourHouse2f_Bookshelf,A whole collection of Pokémon~picture books!
 NewBark_YourHouse2f_Note_Donators,It's a note on the wall about~the donators of this game.
 NewBark_YourHouse2f_Note_Controls,It's a note on the wall about~the controls.*Do you want to read it?
 NewBark_YourHouse2f_GameControls,The controls in Pokemon:~Move: [W]~Watch: [A][S][D]~Change camera: [C]~Open menu: [E]~Mute music: [M]~Hide GUI: [F1]~Take screenshot: [F2]~Change camera mode: [F5]
+NewBark_YourHouse2f_TownMap,It's a Town Map. Let's take a look.
+NewBark_YourHouse2f_TV,It's a TV.~A Nintendo Wii is connected~to it via Wifi.
 
 Signs:
 NewBark_Main_Sign_ElmsLab,Elm Pokémon Lab
 NewBark_Main_Sign_PlayersHouse,<player.name>'s House
 NewBark_Main_Sign_Town,New Bark Town*"The town where the winds of a~new beginning blow."
 NewBark_Main_Sign_ElmsHouse,Elm's House
+token.NewBark_Main_Sign_LargeHouse,FOR SALE!
 
 NPCs:
 NewBark_Main_FatGuy_ElmDiscovery,Yo, <player.name>!*I hear Prof. Elm discovered~some new Pokémon.

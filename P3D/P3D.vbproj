@@ -17061,9 +17061,6 @@
     <Content Include="Content\Data\Scripts\furniture\yourroom\note.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\furniture\yourroom\townmap.dat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Data\Scripts\furniture\yourroom\tv.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -17247,511 +17244,511 @@
     <Content Include="Content\Data\Scripts\Johto\Cities\Azalea\slowpoke_talk.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\dden_guard.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\dden_guard.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\dragonair_trade.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\dragonair_trade.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\DragonsDenGuard.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\DragonsDenGuard.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\dragonsden\clairtmget.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\dragonsden\clairtmget.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\dragonsden\dracotutor.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\dragonsden\dracotutor.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\dragonsden\master.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\dragonsden\master.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\dragonsden\questions.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\dragonsden\questions.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\dragonsden\torch1.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\dragonsden\torch1.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\dragonsden\torch2.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\dragonsden\torch2.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\dratini.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\dratini.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\gym\GymGuy.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\gym\GymGuy.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\gym\puzzlerocks.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\gym\puzzlerocks.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\gym\rock_0.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\gym\rock_0.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\gym\rock_1.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\gym\rock_1.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\gym\rock_2.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\gym\rock_2.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\gym\warp_0.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\gym\warp_0.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\gym\warp_1.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\gym\warp_1.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\gym\warp_2.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\gym\warp_2.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\movedeleter.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\movedeleter.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\moverelearner.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\moverelearner.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\santos.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\santos.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\blackthorn\santos_map.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Blackthorn\santos_map.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\cherrygrove\mystic_water.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Cherrygrove\mystic_water.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\cherrygrove\oldguide.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Cherrygrove\oldguide.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\cherrygrove\steve.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Cherrygrove\steve.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\cianwood\Fly.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Cianwood\Fly.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\cianwood\GymGuy.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Cianwood\GymGuy.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\cianwood\gymmap.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Cianwood\gymmap.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\cianwood\PotionGuy.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Cianwood\PotionGuy.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\cianwood\potion_guy.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Cianwood\potion_guy.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\cianwood\seer.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Cianwood\seer.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\cianwood\Shuckle.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Cianwood\Shuckle.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\bill_encounter.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\bill_encounter.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\gymmap.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\gymmap.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\gymwarp.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\gymwarp.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\item_finder.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\item_finder.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\rhydon.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\rhydon.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\rumor_lighthouse.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\rumor_lighthouse.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\suicune_encounter.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\suicune_encounter.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\surf_man.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\surf_man.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintowersage1.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintowersage1.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintowersage2.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintowersage2.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintowersage3.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintowersage3.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintower\7-1.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintower\7-1.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintower\7-2.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintower\7-2.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintower\7-3.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintower\7-3.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintower\7-4.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintower\7-4.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintower\8-1.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintower\8-1.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintower\8-2.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintower\8-2.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintower\8-3.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintower\8-3.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintower\8-4.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintower\8-4.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintower\8-5.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintower\8-5.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintower\8-6.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintower\8-6.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintower\9-1.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintower\9-1.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintower\9-2.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintower\9-2.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintower\9-3.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintower\9-3.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintower\9-4.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintower\9-4.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintower\9-5.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintower\9-5.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintower\9-6.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintower\9-6.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintower\hooh.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintower\hooh.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintower\Ho_oh.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintower\Ho_oh.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintower\ho_oh_appear.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintower\ho_oh_appear.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tintower\sage.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tintower\sage.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\ecruteak\tower_story.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Ecruteak\tower_story.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\bill_eevee.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\bill_eevee.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\bill_sister.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\bill_sister.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\clubmap.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\clubmap.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\flowershop0.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\flowershop0.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\flowershop1.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\flowershop1.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\gate_spearow.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\gate_spearow.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\get_ride.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\get_ride.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\GymGuy.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\GymGuy.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\gymmap.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\gymmap.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\leader_badge.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\leader_badge.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\machop_trade.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\machop_trade.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\namerater.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\namerater.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\PokeMart\BasementElevator.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\PokeMart\BasementElevator.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\PokeMart\BasementMove.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\PokeMart\BasementMove.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\PokeMart\Elevator.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\PokeMart\Elevator.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\PokeMart\Information.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\PokeMart\Information.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\PokeMart\Machoke.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\PokeMart\Machoke.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\PokeMart\sundaytm.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\PokeMart\sundaytm.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\PokeMart\sunmap.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\PokeMart\sunmap.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\radiotower\info_board.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\radiotower\info_board.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\radiotower\info_board_1.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\radiotower\info_board_1.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\radiotower\jigglypuff.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\radiotower\jigglypuff.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\radiotower\lotto.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\radiotower\lotto.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\radiotower\meowth.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\radiotower\meowth.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\radiotower\people\1.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\radiotower\people\1.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\radiotower\people\2.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\radiotower\people\2.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\radiotower\people\3.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\radiotower\people\3.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\radiotower\people\Buena.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\radiotower\people\Buena.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\radiotower\people\Guard.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\radiotower\people\Guard.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\radiotower\people\Mary.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\radiotower\people\Mary.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\radiotower\people\Tradepts.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\radiotower\people\Tradepts.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\radiotower\petrel_start.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\radiotower\petrel_start.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\radiotower\radiocard_quiz.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\radiotower\radiocard_quiz.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\radiotower\radioshutters.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\radiotower\radioshutters.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\radiotower\rocketinvasionmusic.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\radiotower\rocketinvasionmusic.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\radiotower\rocketinvasionmusic3f.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\radiotower\rocketinvasionmusic3f.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\radiotower\rocketinvasionmusic5f.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\radiotower\rocketinvasionmusic5f.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\radiotower\welcome.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\radiotower\welcome.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\rapidash_tameshop.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\rapidash_tameshop.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\trainman.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\trainman.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\trainsaffron.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\trainsaffron.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\underground_barbershop_1.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\underground_barbershop_1.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\underground_barbershop_2.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\underground_barbershop_2.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\underground_bargainshop.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\underground_bargainshop.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\underground_herbshop.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\underground_herbshop.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\goldenrod\underground_unlock.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Goldenrod\underground_unlock.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\Candy.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\Candy.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\GymGuy.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\GymGuy.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\gymmap.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\gymmap.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\computer.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\computer.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\elec1.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\elec1.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\elec2.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\elec2.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\elec3.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\elec3.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\electrodedefeat.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\electrodedefeat.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\gate1.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\gate1.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\gate2.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\gate2.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\gates.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\gates.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\generator.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\generator.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\generator_on.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\generator_on.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\lanceheal.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\lanceheal.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\murkrow.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\murkrow.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\passtel.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\passtel.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\PasswordTell.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\PasswordTell.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\pokemon.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\pokemon.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\switch.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\switch.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\trap1.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\trap1.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\trap2.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\trap2.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\trap3.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\trap3.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\trap4.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\trap4.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\trap5.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\trap5.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\rocketbase\warp.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\rocketbase\warp.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\shop\1.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\shop\1.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\shop\findstairs.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\shop\findstairs.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\shop\Shop.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\shop\Shop.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\mahogany\shop\Shop2.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Mahogany\shop\Shop2.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\newbark\elmslab\chikorita.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\NewBark\elmslab\chikorita.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\newbark\elmslab\cyndaquil.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\NewBark\elmslab\cyndaquil.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\newbark\elmslab\door.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\NewBark\elmslab\door.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\newbark\elmslab\door0.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\NewBark\elmslab\door0.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\newbark\elmslab\elm.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\NewBark\elmslab\elm.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\newbark\elmslab\heal_machine.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\NewBark\elmslab\heal_machine.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\newbark\elmslab\totodile.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\NewBark\elmslab\totodile.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\newbark\mapscript.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\NewBark\mapscript.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\newbark\mary.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\NewBark\mary.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\newbark\no_pokemon.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\NewBark\no_pokemon.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\olivine\butterfree.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Olivine\butterfree.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\olivine\dockhand.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Olivine\dockhand.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\olivine\get_goodrod.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Olivine\get_goodrod.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\olivine\GymGuy.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Olivine\GymGuy.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\olivine\gymmap.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Olivine\gymmap.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\olivine\lighthouse\ampharos.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Olivine\lighthouse\ampharos.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\olivine\lighthouse\drop.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Olivine\lighthouse\drop.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\olivine\lighthouse\lighthousetop.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Olivine\lighthouse\lighthousetop.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\olivine\Strength.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Olivine\Strength.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\olivine\voltorb_trade.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Olivine\voltorb_trade.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\violet\elmcall.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Violet\elmcall.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\violet\Elm_Call.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Violet\Elm_Call.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\violet\GymGuy.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Violet\GymGuy.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\violet\gymmap.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Violet\gymmap.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\violet\onix_trade.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Violet\onix_trade.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\violet\school_teacher.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Violet\school_teacher.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\violet\strawberry.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Violet\strawberry.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\violet\teacher.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Violet\teacher.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\violet\togepi_egg.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Violet\togepi_egg.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\violet\towertopmap.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\Violet\towertopmap.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Data\Scripts\Johto\darkcave\black_glasses.dat">
@@ -23526,13 +23523,10 @@
     <Content Include="Content\Data\Scripts\worldmap\hoenn.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\newbark\yourhouse\mom.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\NewBark\yourhouse\mom.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\newbark\yourhouse\momdoor.dat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Data\Scripts\Johto\Cities\newbark\yourhouse\yourroom.dat">
+    <Content Include="Content\Data\Scripts\Johto\Cities\NewBark\yourhouse\momdoor.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Data\System\WildEncounters\ancientruins\Automatons\0.poke">
@@ -24403,6 +24397,18 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Data\Maps\Structures\interior\Monitor.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Content\Data\Scripts\furniture\townmap.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="Content\Data\Scripts\Johto\Cities\NewBark\yourhousesign.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Johto\Cities\NewBark\yourhouse\yourhouse1f_mapscript.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Johto\Cities\NewBark\yourhouse\yourhouse2f_mapscript.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="LICENSE" />

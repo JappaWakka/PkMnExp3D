@@ -213,9 +213,9 @@ Public Class World
                         Screen.Camera.FarPlane = 100
                 End Select
             Case EnvironmentTypes.Outside
-                Select Case World.GetTime
-                    Case DayTime.Night
-                        Select Case Core.GameOptions.RenderDistance
+                Select Case Screen.Level.DayTime
+					Case 2 'Night
+						Select Case Core.GameOptions.RenderDistance
                             Case 0
                                 Screen.Effect.FogStart = -2
                                 Screen.Effect.FogEnd = 19
@@ -242,8 +242,8 @@ Public Class World
 
                                 Screen.Camera.FarPlane = 100
                         End Select
-                    Case DayTime.Morning
-                        Select Case Core.GameOptions.RenderDistance
+					Case 3 'Morning
+						Select Case Core.GameOptions.RenderDistance
                             Case 0
                                 Screen.Effect.FogStart = 16
                                 Screen.Effect.FogEnd = 19
@@ -270,8 +270,8 @@ Public Class World
 
                                 Screen.Camera.FarPlane = 100
                         End Select
-                    Case DayTime.Day
-                        Select Case Core.GameOptions.RenderDistance
+					Case 1 'Day
+						Select Case Core.GameOptions.RenderDistance
                             Case 0
                                 Screen.Effect.FogStart = 16
                                 Screen.Effect.FogEnd = 19
@@ -298,8 +298,8 @@ Public Class World
 
                                 Screen.Camera.FarPlane = 100
                         End Select
-                    Case DayTime.Evening
-                        Select Case Core.GameOptions.RenderDistance
+					Case 4 'Evening
+						Select Case Core.GameOptions.RenderDistance
                             Case 0
                                 Screen.Effect.FogStart = 0
                                 Screen.Effect.FogEnd = 19
@@ -588,7 +588,7 @@ endsub:
 				Screen.Effect.FogColor = Core.BackgroundColor.ToVector3()
 				Screen.SkyDome.TextureDown = TextureManager.GetTexture("SkyDomeResource\Stars")
 			Case EnvironmentTypes.Inside
-				Core.BackgroundColor = GetWeatherBackgroundColor(New Color(80, 80, 104))
+				Core.BackgroundColor = GetWeatherBackgroundColor(New Color(0, 0, 0))
 				Screen.Effect.FogColor = Core.BackgroundColor.ToVector3()
 				Screen.SkyDome.TextureUp = Nothing
 				Screen.SkyDome.TextureDown = Nothing

@@ -1,0 +1,7 @@
+version=2
+:if:<register.registered(hoenn_moved)>=True
+	@text.show(<token.NewBark_Main_Sign_LargeHouse>)
+:else
+	@text.show(<token.NewBark_Main_Sign_PlayersHouse>)
+:endif
+:end
