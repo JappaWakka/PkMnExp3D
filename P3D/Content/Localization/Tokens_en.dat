@@ -872,6 +872,13 @@ NewBark_YourHouse2f_GameControls,The controls in Pokemon:~Move: [W]~Watch: [A][S
 NewBark_YourHouse2f_TownMap,It's a Town Map. Let's take a look.
 NewBark_YourHouse2f_TV,It's a TV.~A Nintendo Wii is connected~to it via Wifi.
 
+NewBark_YourHouse1f_Stove,Mom's specialty!*Cinnabar Volcano Burger!
+NewBark_YourHouse1f_Sink,The sink is spot-less.~Mom likes it clean.
+NewBark_YourHouse1f_Fridge,Let's see what's in the fridge...*Fresh Water and tasty Lemonade!
+
+LivingRoom_TV,There's a movie on TV:~Stars dot the sky as two boys~ride on a train...*I'd better get rolling, too!
+TrashCan_Empty,This trash can is empty.
+
 Signs:
 NewBark_Main_Sign_ElmsLab,Elm Pokémon Lab
 NewBark_Main_Sign_PlayersHouse,<player.name>'s House
