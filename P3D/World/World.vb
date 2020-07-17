@@ -51,27 +51,23 @@ Public Class World
     End Property
 
     Public Shared ReadOnly Property CurrentSeason() As Seasons
-        Get
-            If IsMainMenu Then
-                Return Seasons.Summer
-            End If
-
-            If NeedServerObject() = True Then
-                Return ServerSeason
-            End If
-            Select Case WeekOfYear Mod 4
-                Case 1
-                    Return Seasons.Winter
-                Case 2
-                    Return Seasons.Spring
-                Case 3
-                    Return Seasons.Summer
-                Case 0
-                    Return Seasons.Fall
-            End Select
-            Return Seasons.Summer
-        End Get
-    End Property
+		Get
+			If NeedServerObject() = True Then
+				Return ServerSeason
+			End If
+			Select Case WeekOfYear Mod 4
+				Case 1
+					Return Seasons.Winter
+				Case 2
+					Return Seasons.Spring
+				Case 3
+					Return Seasons.Summer
+				Case 0
+					Return Seasons.Fall
+			End Select
+			Return Seasons.Summer
+		End Get
+	End Property
 
     Public Shared ReadOnly Property GetTime() As DayTime
         Get

@@ -210,7 +210,6 @@ Public Class JoinServerScreen
 							Case 5
 								CancelButton()
 						End Select
-						SoundManager.PlaySound("Select")
 					End If
                 End If
             Next
@@ -233,7 +232,7 @@ Public Class JoinServerScreen
 
         Me.buttonIndex = CInt(MathHelper.Clamp(Me.buttonIndex, 0, 5))
 
-        If Controls.Accept(False, True) = True Then
+		If Controls.Accept(False, True) = True Then
 			Select Case Me.buttonIndex
 				Case 0
 					JoinButton()
@@ -248,10 +247,9 @@ Public Class JoinServerScreen
 				Case 5
 					CancelButton()
 			End Select
-			SoundManager.PlaySound("Select")
 		End If
 
-        If Controls.Dismiss() = True Then
+		If Controls.Dismiss() = True Then
             ''CType(Me.PreScreen, NewMainMenuScreen)._menuIndex = 0
             Core.Player.Unload()
             Core.SetScreen(Me.PreScreen)
@@ -269,24 +267,26 @@ Public Class JoinServerScreen
 #Region "Buttons"
 
     Private Sub JoinButton()
-        If Me.selectIndex = 0 Then
-            Online = False
-            SelectedServer = Nothing
-            Core.SetScreen(New OverworldScreen())
-        Else
-            If ServerList(selectIndex).CanJoin() = True Then
-                SelectedServer = Me.ServerList(selectIndex)
-                ServerList.Move(selectIndex, 1)
-                SaveServerlist()
-                Core.SetScreen(New OverworldScreen())
-                Core.SetScreen(New ConnectScreen(ConnectScreen.Modes.Connect, "Connecting to server", "Please wait...", Core.CurrentScreen))
-            End If
-        End If
-    End Sub
+		If Me.selectIndex = 0 Then
+			Online = False
+			SelectedServer = Nothing
+			Core.SetScreen(New OverworldScreen())
+		Else
+			If ServerList(selectIndex).CanJoin() = True Then
+				SelectedServer = Me.ServerList(selectIndex)
+				ServerList.Move(selectIndex, 1)
+				SaveServerlist()
+				Core.SetScreen(New OverworldScreen())
+				Core.SetScreen(New ConnectScreen(ConnectScreen.Modes.Connect, "Connecting to server", "Please wait...", Core.CurrentScreen))
+			End If
+		End If
+		SoundManager.PlaySound("Select")
+	End Sub
 
     Private Sub AddServerButton()
-        Core.SetScreen(New AddServerScreen(Me, Me.ServerList, True, Nothing))
-    End Sub
+		Core.SetScreen(New AddServerScreen(Me, Me.ServerList, True, Nothing))
+		SoundManager.PlaySound("Select")
+	End Sub
 
     Private Sub EditServerButton()
         Dim s As Server = ServerList(selectIndex)
@@ -294,8 +294,9 @@ Public Class JoinServerScreen
         If s.IsLocal = False Then
             ServerList.RemoveAt(selectIndex)
             SaveServerlist()
-            Core.SetScreen(New AddServerScreen(Me, Me.ServerList, False, s))
-        End If
+			Core.SetScreen(New AddServerScreen(Me, Me.ServerList, False, s))
+			SoundManager.PlaySound("Select")
+		End If
     End Sub
 
     Private Sub RemoveServerButton()
@@ -304,19 +305,22 @@ Public Class JoinServerScreen
         If s.IsLocal = False Then
             ServerList.RemoveAt(selectIndex)
             SaveServerlist()
-            LoadServers()
-        End If
+			LoadServers()
+			SoundManager.PlaySound("Select")
+		End If
     End Sub
 
     Private Sub CancelButton()
-        Core.SetScreen(Me.PreScreen)
-    End Sub
+		Core.SetScreen(Me.PreScreen)
+		SoundManager.PlaySound("Select")
+	End Sub
 
     Private Sub RefreshButton()
-        For Each Server As Server In ServerList
-            Server.Refresh()
-        Next
-    End Sub
+		For Each Server As Server In ServerList
+			Server.Refresh()
+		Next
+		SoundManager.PlaySound("Select")
+	End Sub
 
 #End Region
 

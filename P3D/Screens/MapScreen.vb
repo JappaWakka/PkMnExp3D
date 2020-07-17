@@ -3,9 +3,9 @@
     Inherits Screen
 
     Public Const RasterSize As Integer = 32
-    Public Shared mapOffsetX As Integer = 100
-    Public Shared mapOffsetY As Integer = 75
-    Const MapMoveSpeed As Integer = 3
+	Public Shared mapOffsetX As Integer
+	Public Shared mapOffsetY As Integer
+	Const MapMoveSpeed As Integer = 3
 
     Dim flag() As Object = {}
 
@@ -18,516 +18,568 @@
     Dim places As New List(Of Place)
     Dim RoamingPoke As New List(Of Roaming)
 
-    Dim objectsTexture As Texture2D
-    Dim mapTexture As Texture2D
-    Dim texture As Texture2D
+	Public waterAnimation As Animation
+	Public currentRectangle As New Rectangle(0, 0, 0, 0)
+	Public backgroundTexture As Texture2D
 
-    Dim hoverText As String = ""
-    Dim pokehoverText As String = ""
-    Dim drawObjects(3) As Boolean
-    Dim backgroundOffset As Single = 0.0F
+	Dim objectsTexture As Texture2D
+	Public mapTexture As Texture2D
+	Dim texture As Texture2D
 
-    Dim CursorPosition As New Vector2(0)
-    Dim lastMousePosition As Vector2
+	Dim hoverText As String = ""
+	Dim pokehoverText As String = ""
+	Dim drawObjects(3) As Boolean
+	Dim backgroundOffset As Single = 0.0F
 
-    Public Sub New(ByVal currentScreen As Screen, ByVal regions As List(Of String), ByVal startIndex As Integer, ByVal flag() As Object)
-        Me.Identification = Identifications.MapScreen
+	Dim CursorTextureRectangle As New Rectangle(32, 32, 16, 16)
+	Dim CursorPosition As New Vector2(0)
+	Dim lastMousePosition As Vector2
 
-        Me.PreScreen = currentScreen
-        Me.flag = flag
-        Me.currentRegion = regions(startIndex)
-        Me.regions = regions
-        Me.regionPointer = startIndex
+	Public Sub New(ByVal currentScreen As Screen, ByVal regions As List(Of String), ByVal startIndex As Integer, ByVal flag() As Object)
+		Me.Identification = Identifications.MapScreen
 
-        Me.drawObjects = Player.Temp.MapSwitch
+		Me.PreScreen = currentScreen
+		Me.flag = flag
+		Me.currentRegion = regions(startIndex)
+		Me.regions = regions
+		Me.regionPointer = startIndex
 
-        Me.MouseVisible = False
+		Me.drawObjects = Player.Temp.MapSwitch
 
-        Me.objectsTexture = TextureManager.GetTexture("GUI\Map\map_objects")
-        LoadMapTexture()
+		Me.MouseVisible = False
 
-        Me.texture = TextureManager.GetTexture("GUI\Menus\General")
+		Me.objectsTexture = TextureManager.GetTexture("GUI\Map\map_objects")
+		LoadMapTexture()
+		Me.waterAnimation = New Animation(TextureManager.GetTexture("Textures\TextureSheets\Water"), 1, 4, 16, 16, 4, 0, 0)
+		backgroundTexture = waterAnimation.Texture
+		Me.texture = TextureManager.GetTexture("GUI\Menus\General")
 
-        Me.FillMap()
+		Me.FillMap()
 
-        Dim v As Vector2 = GetPlayerPosition()
-        If v.X <> 0 Or v.Y <> 0 Then
-            Me.CursorPosition = Me.GetPlayerPosition() + New Vector2(mapOffsetX, mapOffsetY)
-        Else
-            Me.CursorPosition = New Vector2(MouseHandler.MousePosition.X, MouseHandler.MousePosition.Y)
-        End If
+		Dim v As Vector2 = GetPlayerPosition()
+		If v.X <> 0 Or v.Y <> 0 Then
+			Me.CursorPosition = Me.GetPlayerPosition() + New Vector2(mapOffsetX, mapOffsetY)
+		Else
+			Me.CursorPosition = New Vector2(MouseHandler.MousePosition.X, MouseHandler.MousePosition.Y)
+		End If
 
-        Me.lastMousePosition = Me.CursorPosition
-        Mouse.SetPosition(CInt(CursorPosition.X), CInt(CursorPosition.Y))
-    End Sub
+		Me.lastMousePosition = Me.CursorPosition
+		Mouse.SetPosition(CInt(CursorPosition.X), CInt(CursorPosition.Y))
+	End Sub
 
-    Public Sub New(ByVal currentScreen As Screen, ByVal startRegion As String, ByVal flag() As Object)
-        Me.New(currentScreen, {startRegion}.ToList(), 0, flag)
-    End Sub
+	Public Sub New(ByVal currentScreen As Screen, ByVal startRegion As String, ByVal flag() As Object)
+		Me.New(currentScreen, {startRegion}.ToList(), 0, flag)
+	End Sub
 
-    Private Sub LoadMapTexture()
-        Me.mapTexture = TextureManager.GetTexture("GUI\Map\" & Me.currentRegion & "_map")
-    End Sub
+	Private Sub LoadMapTexture()
+		Me.mapTexture = TextureManager.GetTexture("GUI\Map\" & Me.currentRegion & "_map")
+	End Sub
 
-    Private Sub ResetScreen()
-        mapOffsetX = 100
-        mapOffsetY = 75
+	Private Sub ResetScreen()
+		mapOffsetX = CInt(Core.windowSize.Width / 2 - mapTexture.Width * 2)
+		mapOffsetY = CInt(Core.windowSize.Height / 2 - mapTexture.Height * 2)
 
-        For i = 0 To 3
-            Me.drawObjects(i) = True
-        Next
-    End Sub
+		For i = 0 To 3
+			Me.drawObjects(i) = True
+		Next
+	End Sub
 
-    Private Sub FillMap()
-        mapOffsetX = 100
-        mapOffsetY = 75
+	Private Sub FillMap()
+		mapOffsetX = CInt(Core.windowSize.Width / 2 - mapTexture.Width * 2)
+		mapOffsetY = CInt(Core.windowSize.Height / 2 - mapTexture.Height * 2)
 
-        Me.routes.Clear()
-        Me.places.Clear()
-        Me.cities.Clear()
-        Me.RoamingPoke.Clear()
+		Me.routes.Clear()
+		Me.places.Clear()
+		Me.cities.Clear()
+		Me.RoamingPoke.Clear()
 
-        Dim TempPoke As New List(Of Roaming)
-        Dim RoamingPokeName As New List(Of String)
+		Dim TempPoke As New List(Of Roaming)
+		Dim RoamingPokeName As New List(Of String)
 
-        Dim path As String = GameModeManager.GetScriptPath("worldmap\" & Me.currentRegion & ".dat")
-        Security.FileValidation.CheckFileValid(path, False, "MapScreen.vb")
+		Dim path As String = GameModeManager.GetScriptPath("worldmap\" & Me.currentRegion & ".dat")
+		Security.FileValidation.CheckFileValid(path, False, "MapScreen.vb")
 
-        Dim InputData() As String = System.IO.File.ReadAllLines(path)
+		Dim InputData() As String = System.IO.File.ReadAllLines(path)
 
-        For Each line As String In InputData
-            If line <> "" And line.StartsWith("{""") = True Then
-                Dim Tags As New Dictionary(Of String, String)
-                Dim Data() As String = line.Split(CChar("}"))
-                For Each Tag As String In Data
-                    If Tag.Contains("{") = True And Tag.Contains("[") = True Then
-                        Dim TagName As String = Tag.Remove(0, 2)
-                        TagName = TagName.Remove(TagName.IndexOf(""""))
+		For Each line As String In InputData
+			If line <> "" And line.StartsWith("{""") = True Then
+				Dim Tags As New Dictionary(Of String, String)
+				Dim Data() As String = line.Split(CChar("}"))
+				For Each Tag As String In Data
+					If Tag.Contains("{") = True And Tag.Contains("[") = True Then
+						Dim TagName As String = Tag.Remove(0, 2)
+						TagName = TagName.Remove(TagName.IndexOf(""""))
 
-                        Dim TagContent As String = Tag.Remove(0, Tag.IndexOf("[") + 1)
-                        TagContent = TagContent.Remove(TagContent.IndexOf("]"))
+						Dim TagContent As String = Tag.Remove(0, Tag.IndexOf("[") + 1)
+						TagContent = TagContent.Remove(TagContent.IndexOf("]"))
 
-                        Tags.Add(TagName.ToLower(), TagContent)
-                    End If
-                Next
+						Tags.Add(TagName.ToLower(), TagContent)
+					End If
+				Next
 
-                Select Case Tags("placetype").ToLower()
-                    Case "city"
-                        Dim Name As String = Tags("name")
-                        Dim MapFiles() As String = Tags("mapfiles").Split(CChar(","))
-                        Dim PositionList As List(Of String) = Tags("position").Split(CChar(",")).ToList()
-                        Dim Size As String = Tags("size")
+				Select Case Tags("placetype").ToLower()
+					Case "city"
+						Dim Name As String = Tags("name")
+						Dim MapFiles() As String = Tags("mapfiles").Split(CChar(","))
+						Dim PositionList As List(Of String) = Tags("position").Split(CChar(",")).ToList()
+						Dim Size As String = Tags("size")
 
-                        Dim CitySize As City.CitySize = City.CitySize.Small
+						Dim CitySize As City.CitySize = City.CitySize.Small
 
-                        Select Case Size.ToLower()
-                            Case "small", "0"
-                                CitySize = City.CitySize.Small
-                            Case "vertical", "1"
-                                CitySize = City.CitySize.Vertical
-                            Case "horizontal", "2"
-                                CitySize = City.CitySize.Horizontal
-                            Case "big", "3"
-                                CitySize = City.CitySize.Big
-                            Case "large", "4"
-                                CitySize = City.CitySize.Large
-                        End Select
+						Select Case Size.ToLower()
+							Case "small", "0"
+								CitySize = City.CitySize.Small
+							Case "vertical", "1"
+								CitySize = City.CitySize.Vertical
+							Case "horizontal", "2"
+								CitySize = City.CitySize.Horizontal
+							Case "big", "3"
+								CitySize = City.CitySize.Big
+							Case "large", "4"
+								CitySize = City.CitySize.Large
+						End Select
 
-                        If Tags.ContainsKey("flyto") = True Then
-                            Dim FlyTo As New List(Of String)
-                            FlyTo = Tags("flyto").Split(CChar(",")).ToList()
-                            cities.Add(New City(Name, MapFiles, CInt(PositionList(0)), CInt(PositionList(1)), CitySize, FlyTo(0), New Vector3(CSng(FlyTo(1)), CSng(FlyTo(2)), CSng(FlyTo(3)))))
-                        Else
-                            cities.Add(New City(Name, MapFiles, CInt(PositionList(0)), CInt(PositionList(1)), CitySize, "", Nothing))
-                        End If
-                    Case "route"
-                        Dim Name As String = Tags("name")
-                        Dim MapFiles() As String = Tags("mapfiles").Split(CChar(","))
-                        Dim PositionList As List(Of String) = Tags("position").Split(CChar(",")).ToList()
+						If Tags.ContainsKey("flyto") = True Then
+							Dim FlyTo As New List(Of String)
+							FlyTo = Tags("flyto").Split(CChar(",")).ToList()
+							cities.Add(New City(Name, MapFiles, CInt(PositionList(0)), CInt(PositionList(1)), CitySize, FlyTo(0), New Vector3(CSng(FlyTo(1)), CSng(FlyTo(2)), CSng(FlyTo(3)))))
+						Else
+							cities.Add(New City(Name, MapFiles, CInt(PositionList(0)), CInt(PositionList(1)), CitySize, "", Nothing))
+						End If
+					Case "route"
+						Dim Name As String = Tags("name")
+						Dim MapFiles() As String = Tags("mapfiles").Split(CChar(","))
+						Dim PositionList As List(Of String) = Tags("position").Split(CChar(",")).ToList()
 
-                        Dim RouteDirection As Route.RouteDirections = Route.RouteDirections.Horizontal
+						Dim RouteDirection As Route.RouteDirections = Route.RouteDirections.Horizontal
 
-                        Select Case Tags("direction").ToLower()
-                            Case "horizontal", "0"
-                                RouteDirection = Route.RouteDirections.Horizontal
-                            Case "vertical", "1"
-                                RouteDirection = Route.RouteDirections.Vertical
-                            Case "horizontalendright", "2"
-                                RouteDirection = Route.RouteDirections.HorizontalEndRight
-                            Case "horizontalendleft", "3"
-                                RouteDirection = Route.RouteDirections.HorizontalEndLeft
-                            Case "verticalendup", "4"
-                                RouteDirection = Route.RouteDirections.VerticalEndUp
-                            Case "verticalenddown", "5"
-                                RouteDirection = Route.RouteDirections.VerticalEndDown
-                            Case "curvedownright", "6"
-                                RouteDirection = Route.RouteDirections.CurveDownRight
-                            Case "curvedownleft", "7"
-                                RouteDirection = Route.RouteDirections.CurveDownLeft
-                            Case "curveupleft", "8"
-                                RouteDirection = Route.RouteDirections.CurveUpLeft
-                            Case "curveupright", "9"
-                                RouteDirection = Route.RouteDirections.CurveUpRight
-                            Case "tup", "10"
-                                RouteDirection = Route.RouteDirections.TUp
-                            Case "tdown", "13"
-                                RouteDirection = Route.RouteDirections.TDown
-                            Case "tleft", "14"
-                                RouteDirection = Route.RouteDirections.TLeft
-                            Case "tright", "15"
-                                RouteDirection = Route.RouteDirections.TRight
-                            Case "horizontalconnection", "11"
-                                RouteDirection = Route.RouteDirections.HorizontalConnection
-                            Case "verticalconnection", "12"
-                                RouteDirection = Route.RouteDirections.VerticalConnection
-                        End Select
+						Select Case Tags("direction").ToLower()
+							Case "horizontal", "0"
+								RouteDirection = Route.RouteDirections.Horizontal
+							Case "vertical", "1"
+								RouteDirection = Route.RouteDirections.Vertical
+							Case "horizontalendright", "2"
+								RouteDirection = Route.RouteDirections.HorizontalEndRight
+							Case "horizontalendleft", "3"
+								RouteDirection = Route.RouteDirections.HorizontalEndLeft
+							Case "verticalendup", "4"
+								RouteDirection = Route.RouteDirections.VerticalEndUp
+							Case "verticalenddown", "5"
+								RouteDirection = Route.RouteDirections.VerticalEndDown
+							Case "curvedownright", "6"
+								RouteDirection = Route.RouteDirections.CurveDownRight
+							Case "curvedownleft", "7"
+								RouteDirection = Route.RouteDirections.CurveDownLeft
+							Case "curveupleft", "8"
+								RouteDirection = Route.RouteDirections.CurveUpLeft
+							Case "curveupright", "9"
+								RouteDirection = Route.RouteDirections.CurveUpRight
+							Case "tup", "10"
+								RouteDirection = Route.RouteDirections.TUp
+							Case "tdown", "13"
+								RouteDirection = Route.RouteDirections.TDown
+							Case "tleft", "14"
+								RouteDirection = Route.RouteDirections.TLeft
+							Case "tright", "15"
+								RouteDirection = Route.RouteDirections.TRight
+							Case "horizontalconnection", "11"
+								RouteDirection = Route.RouteDirections.HorizontalConnection
+							Case "verticalconnection", "12"
+								RouteDirection = Route.RouteDirections.VerticalConnection
+						End Select
 
-                        Dim RouteType As Route.RouteTypes = Route.RouteTypes.Land
+						Dim RouteType As Route.RouteTypes = Route.RouteTypes.Land
 
-                        Select Case Tags("routetype").ToLower()
-                            Case "land", "0"
-                                RouteType = Route.RouteTypes.Land
-                            Case "water", "1"
-                                RouteType = Route.RouteTypes.Water
-                        End Select
+						Select Case Tags("routetype").ToLower()
+							Case "land", "0"
+								RouteType = Route.RouteTypes.Land
+							Case "water", "1"
+								RouteType = Route.RouteTypes.Water
+						End Select
 
-                        If Tags.ContainsKey("flyto") = True Then
-                            Dim FlyTo As New List(Of String)
-                            FlyTo = Tags("flyto").Split(CChar(",")).ToList()
-                            routes.Add(New Route(Name, MapFiles, CInt(PositionList(0)), CInt(PositionList(1)), RouteDirection, RouteType, FlyTo(0), New Vector3(CSng(FlyTo(1)), CSng(FlyTo(2)), CSng(FlyTo(3)))))
-                        Else
-                            routes.Add(New Route(Name, MapFiles, CInt(PositionList(0)), CInt(PositionList(1)), RouteDirection, RouteType, "", Nothing))
-                        End If
-                    Case "place"
-                        Dim Name As String = Tags("name")
-                        Dim MapFiles() As String = Tags("mapfiles").Split(CChar(","))
-                        Dim PositionList As List(Of String) = Tags("position").Split(CChar(",")).ToList()
-                        Dim Size As String = Tags("size")
+						If Tags.ContainsKey("flyto") = True Then
+							Dim FlyTo As New List(Of String)
+							FlyTo = Tags("flyto").Split(CChar(",")).ToList()
+							routes.Add(New Route(Name, MapFiles, CInt(PositionList(0)), CInt(PositionList(1)), RouteDirection, RouteType, FlyTo(0), New Vector3(CSng(FlyTo(1)), CSng(FlyTo(2)), CSng(FlyTo(3)))))
+						Else
+							routes.Add(New Route(Name, MapFiles, CInt(PositionList(0)), CInt(PositionList(1)), RouteDirection, RouteType, "", Nothing))
+						End If
+					Case "place"
+						Dim Name As String = Tags("name")
+						Dim MapFiles() As String = Tags("mapfiles").Split(CChar(","))
+						Dim PositionList As List(Of String) = Tags("position").Split(CChar(",")).ToList()
+						Dim Size As String = Tags("size")
 
-                        Dim PlaceSize As Place.PlaceSizes = Place.PlaceSizes.Small
+						Dim PlaceSize As Place.PlaceSizes = Place.PlaceSizes.Small
 
-                        Select Case Size.ToLower()
-                            Case "small", "0"
-                                PlaceSize = Place.PlaceSizes.Small
-                            Case "vertical", "1"
-                                PlaceSize = Place.PlaceSizes.Vertical
-                            Case "round", "2"
-                                PlaceSize = Place.PlaceSizes.Round
-                            Case "square", "3"
-                                PlaceSize = Place.PlaceSizes.Square
-                            Case "verticalbig", "4"
-                                PlaceSize = Place.PlaceSizes.VerticalBig
-                            Case "large", "5"
-                                PlaceSize = Place.PlaceSizes.Large
-                        End Select
+						Select Case Size.ToLower()
+							Case "small", "0"
+								PlaceSize = Place.PlaceSizes.Small
+							Case "vertical", "1"
+								PlaceSize = Place.PlaceSizes.Vertical
+							Case "round", "2"
+								PlaceSize = Place.PlaceSizes.Round
+							Case "square", "3"
+								PlaceSize = Place.PlaceSizes.Square
+							Case "verticalbig", "4"
+								PlaceSize = Place.PlaceSizes.VerticalBig
+							Case "large", "5"
+								PlaceSize = Place.PlaceSizes.Large
+						End Select
 
-                        If Tags.ContainsKey("flyto") = True Then
-                            Dim FlyTo As New List(Of String)
-                            FlyTo = Tags("flyto").Split(CChar(",")).ToList()
-                            places.Add(New Place(Name, MapFiles, CInt(PositionList(0)), CInt(PositionList(1)), PlaceSize, FlyTo(0), New Vector3(CSng(FlyTo(1)), CSng(FlyTo(2)), CSng(FlyTo(3)))))
-                        Else
-                            places.Add(New Place(Name, MapFiles, CInt(PositionList(0)), CInt(PositionList(1)), PlaceSize, "", Nothing))
-                        End If
-                End Select
+						If Tags.ContainsKey("flyto") = True Then
+							Dim FlyTo As New List(Of String)
+							FlyTo = Tags("flyto").Split(CChar(",")).ToList()
+							places.Add(New Place(Name, MapFiles, CInt(PositionList(0)), CInt(PositionList(1)), PlaceSize, FlyTo(0), New Vector3(CSng(FlyTo(1)), CSng(FlyTo(2)), CSng(FlyTo(3)))))
+						Else
+							places.Add(New Place(Name, MapFiles, CInt(PositionList(0)), CInt(PositionList(1)), PlaceSize, "", Nothing))
+						End If
+				End Select
 
-                If Not String.IsNullOrWhiteSpace(Core.Player.RoamingPokemonData) Then
-                    If Core.Player.RoamingPokemonData.Length > 0 AndAlso Core.Player.RoamingPokemonData.Contains("|") Then
-                        For Each Pokes As String In Core.Player.RoamingPokemonData.SplitAtNewline
-                            ' PokémonID,Level,regionID,startLevelFile,MusicLoop,PokemonData
-                            Dim TempData() As String = Pokes.Split("|")
-                            Dim MapFiles() As String = Tags("mapfiles").Split(",")
-                            Dim PokeCurrentLocation As String = TempData(3)
-                            If MapFiles.Contains(PokeCurrentLocation) Then
-                                TempPoke.Add(New Roaming(CInt(TempData(0)), CInt(Tags("position").Split(",")(0)), CInt(Tags("position").Split(",")(1)), Tags("name")))
-                            End If
-                            If RoamingPokeName Is Nothing OrElse Not RoamingPokeName.Contains(Pokemon.GetPokemonByID(CInt(TempData(0))).GetName) Then
-                                RoamingPokeName.Add(Pokemon.GetPokemonByID(CInt(TempData(0))).GetName)
-                            End If
-                        Next
-                    End If
-                End If
-            End If
-        Next
+				If Not String.IsNullOrWhiteSpace(Core.Player.RoamingPokemonData) Then
+					If Core.Player.RoamingPokemonData.Length > 0 AndAlso Core.Player.RoamingPokemonData.Contains("|") Then
+						For Each Pokes As String In Core.Player.RoamingPokemonData.SplitAtNewline
+							' PokémonID,Level,regionID,startLevelFile,MusicLoop,PokemonData
+							Dim TempData() As String = Pokes.Split("|")
+							Dim MapFiles() As String = Tags("mapfiles").Split(",")
+							Dim PokeCurrentLocation As String = TempData(3)
+							If MapFiles.Contains(PokeCurrentLocation) Then
+								TempPoke.Add(New Roaming(CInt(TempData(0)), CInt(Tags("position").Split(",")(0)), CInt(Tags("position").Split(",")(1)), Tags("name")))
+							End If
+							If RoamingPokeName Is Nothing OrElse Not RoamingPokeName.Contains(Pokemon.GetPokemonByID(CInt(TempData(0))).GetName) Then
+								RoamingPokeName.Add(Pokemon.GetPokemonByID(CInt(TempData(0))).GetName)
+							End If
+						Next
+					End If
+				End If
+			End If
+		Next
 
-        If TempPoke.Count > 0 And RoamingPokeName.Count > 0 Then
-            For Each Pokes As String In RoamingPokeName
-                Dim MapObject As List(Of Roaming) = (From p As Roaming In TempPoke Where p.Name = Pokes Order By p.Distance Ascending).ToList()
-                If MapObject IsNot Nothing AndAlso Not MapObject.Count = 0 Then
-                    RoamingPoke.Add(MapObject.ElementAt(MapObject(0).getSkipIndex))
-                End If
-            Next
-        End If
-    End Sub
+		If TempPoke.Count > 0 And RoamingPokeName.Count > 0 Then
+			For Each Pokes As String In RoamingPokeName
+				Dim MapObject As List(Of Roaming) = (From p As Roaming In TempPoke Where p.Name = Pokes Order By p.Distance Ascending).ToList()
+				If MapObject IsNot Nothing AndAlso Not MapObject.Count = 0 Then
+					RoamingPoke.Add(MapObject.ElementAt(MapObject(0).getSkipIndex))
+				End If
+			Next
+		End If
+	End Sub
 
-    Public Overrides Sub Update()
-        If lastMousePosition <> New Vector2(MouseHandler.MousePosition.X, MouseHandler.MousePosition.Y) Then
-            Me.CursorPosition = New Vector2(MouseHandler.MousePosition.X, MouseHandler.MousePosition.Y)
-            Me.lastMousePosition = New Vector2(MouseHandler.MousePosition.X, MouseHandler.MousePosition.Y)
-        End If
+	Public Overrides Sub Update()
+		If lastMousePosition <> New Vector2(MouseHandler.MousePosition.X, MouseHandler.MousePosition.Y) Then
+			Me.CursorPosition = New Vector2(MouseHandler.MousePosition.X, MouseHandler.MousePosition.Y)
+			Me.lastMousePosition = New Vector2(MouseHandler.MousePosition.X, MouseHandler.MousePosition.Y)
+		End If
 
-        If Controls.Dismiss() = True Then
-            Player.Temp.MapSwitch = Me.drawObjects
-            Core.SetScreen(New TransitionScreen(Me, Me.PreScreen, Color.Black, False))
-        End If
+		If Controls.Dismiss() = True Then
+			Player.Temp.MapSwitch = Me.drawObjects
+			Core.SetScreen(New TransitionScreen(Me, Me.PreScreen, Color.Black, False))
+		End If
 
-        If Controls.Up(False, True, False, True, True, True) = True Then
-            CursorPosition.Y -= MapMoveSpeed * 2.0F
-            Mouse.SetPosition(CInt(CursorPosition.X), CInt(CursorPosition.Y))
-            Me.lastMousePosition = New Vector2(MouseHandler.MousePosition.X, MouseHandler.MousePosition.Y)
-        End If
-        If Controls.Down(False, True, False, True, True, True) = True Then
-            CursorPosition.Y += MapMoveSpeed * 2.0F
-            Mouse.SetPosition(CInt(CursorPosition.X), CInt(CursorPosition.Y))
-            Me.lastMousePosition = New Vector2(MouseHandler.MousePosition.X, MouseHandler.MousePosition.Y)
-        End If
-        If Controls.Left(False, True, False, True, True, True) = True Then
-            CursorPosition.X -= MapMoveSpeed * 2.0F
-            Mouse.SetPosition(CInt(CursorPosition.X), CInt(CursorPosition.Y))
-            Me.lastMousePosition = New Vector2(MouseHandler.MousePosition.X, MouseHandler.MousePosition.Y)
-        End If
-        If Controls.Right(False, True, False, True, True, True) = True Then
-            CursorPosition.X += MapMoveSpeed * 2.0F
-            Mouse.SetPosition(CInt(CursorPosition.X), CInt(CursorPosition.Y))
-            Me.lastMousePosition = New Vector2(MouseHandler.MousePosition.X, MouseHandler.MousePosition.Y)
-        End If
+		If Controls.Up(False, True, False, True, True, True) = True Then
+			CursorPosition.Y -= MapMoveSpeed * 2.0F
+			Mouse.SetPosition(CInt(CursorPosition.X), CInt(CursorPosition.Y))
+			Me.lastMousePosition = New Vector2(MouseHandler.MousePosition.X, MouseHandler.MousePosition.Y)
+		End If
+		If Controls.Down(False, True, False, True, True, True) = True Then
+			CursorPosition.Y += MapMoveSpeed * 2.0F
+			Mouse.SetPosition(CInt(CursorPosition.X), CInt(CursorPosition.Y))
+			Me.lastMousePosition = New Vector2(MouseHandler.MousePosition.X, MouseHandler.MousePosition.Y)
+		End If
+		If Controls.Left(False, True, False, True, True, True) = True Then
+			CursorPosition.X -= MapMoveSpeed * 2.0F
+			Mouse.SetPosition(CInt(CursorPosition.X), CInt(CursorPosition.Y))
+			Me.lastMousePosition = New Vector2(MouseHandler.MousePosition.X, MouseHandler.MousePosition.Y)
+		End If
+		If Controls.Right(False, True, False, True, True, True) = True Then
+			CursorPosition.X += MapMoveSpeed * 2.0F
+			Mouse.SetPosition(CInt(CursorPosition.X), CInt(CursorPosition.Y))
+			Me.lastMousePosition = New Vector2(MouseHandler.MousePosition.X, MouseHandler.MousePosition.Y)
+		End If
 
-        'If New Rectangle(0, 0, 50, Core.windowSize.Height).Contains(New Point(CInt(CursorPosition.X), CInt(CursorPosition.Y))) = True Then
-        '    mapOffsetX += MapMoveSpeed
-        'End If
-        'If New Rectangle(0, 0, Core.windowSize.Width, 50).Contains(New Point(CInt(CursorPosition.X), CInt(CursorPosition.Y))) = True Then
-        '    mapOffsetY += MapMoveSpeed
-        'End If
-        'If New Rectangle(Core.windowSize.Width - 50, 0, 50, Core.windowSize.Height).Contains(New Point(CInt(CursorPosition.X), CInt(CursorPosition.Y))) = True Then
-        '    mapOffsetX -= MapMoveSpeed
-        'End If
-        'If New Rectangle(0, Core.windowSize.Height - 50, Core.windowSize.Width, 50).Contains(New Point(CInt(CursorPosition.X), CInt(CursorPosition.Y))) = True Then
-        '    mapOffsetY -= MapMoveSpeed
-        'End If
+		If Not waterAnimation Is Nothing Then
+			waterAnimation.Update(0.01)
+			If currentRectangle <> waterAnimation.TextureRectangle Then
+				currentRectangle = waterAnimation.TextureRectangle
+			End If
+		End If
 
-        Dim mapOffset As New Vector2(MapScreen.mapOffsetX, MapScreen.mapOffsetY)
-        Dim cursorPoint As New Point(CInt(CursorPosition.X), CInt(CursorPosition.Y))
+		'If New Rectangle(0, 0, 50, Core.windowSize.Height).Contains(New Point(CInt(CursorPosition.X), CInt(CursorPosition.Y))) = True Then
+		'    mapOffsetX += MapMoveSpeed
+		'End If
+		'If New Rectangle(0, 0, Core.windowSize.Width, 50).Contains(New Point(CInt(CursorPosition.X), CInt(CursorPosition.Y))) = True Then
+		'    mapOffsetY += MapMoveSpeed
+		'End If
+		'If New Rectangle(Core.windowSize.Width - 50, 0, 50, Core.windowSize.Height).Contains(New Point(CInt(CursorPosition.X), CInt(CursorPosition.Y))) = True Then
+		'    mapOffsetX -= MapMoveSpeed
+		'End If
+		'If New Rectangle(0, Core.windowSize.Height - 50, Core.windowSize.Width, 50).Contains(New Point(CInt(CursorPosition.X), CInt(CursorPosition.Y))) = True Then
+		'    mapOffsetY -= MapMoveSpeed
+		'End If
 
-        Me.hoverText = ""
-        Me.pokehoverText = ""
+		Dim mapOffset As New Vector2(MapScreen.mapOffsetX, MapScreen.mapOffsetY)
+		Dim cursorPoint As New Point(CInt(CursorPosition.X), CInt(CursorPosition.Y))
+		Dim isHovering As Boolean = False
 
-        If hoverText = "" And pokehoverText = "" And drawObjects(3) = True Then
-            For Each Poke As Roaming In RoamingPoke
-                If Poke.getRectangle(mapOffset).Contains(cursorPoint) = True Then
-                    pokehoverText = Poke.Name
-                    hoverText = Poke.Location
-                    Exit For
-                End If
-            Next
-        End If
-        If hoverText = "" And pokehoverText = "" And drawObjects(2) = True Then
-            For Each Place As Place In places
-                If Place.getRectangle(mapOffset).Contains(cursorPoint) = True Then
-                    If Controls.Accept(True, True, True) = True Then
+		Me.hoverText = ""
+		Me.pokehoverText = ""
+
+		If hoverText = "" And pokehoverText = "" And drawObjects(3) = True Then
+			For Each Poke As Roaming In RoamingPoke
+				If Poke.getRectangle(mapOffset).Contains(cursorPoint) = True Then
+					pokehoverText = Poke.Name
+					hoverText = Poke.Location
+					Exit For
+				End If
+			Next
+		End If
+		If hoverText = "" And pokehoverText = "" And drawObjects(2) = True Then
+			For Each Place As Place In places
+				If Place.getRectangle(mapOffset).Contains(cursorPoint) = True Then
+					If Place.CanFlyTo(flag) = True Then
+						isHovering = True
+					Else
+						isHovering = False
+					End If
+					If Controls.Accept(True, True, True) = True Then
 						Place.Click(flag)
 						SoundManager.PlaySound("Select")
 					End If
-                    hoverText = Place.Name
-                    Exit For
-                End If
-            Next
-        End If
-        If hoverText = "" And pokehoverText = "" And drawObjects(0) = True Then
-            For Each City As City In cities
-                If City.getRectangle(mapOffset).Contains(cursorPoint) = True Then
-                    If Controls.Accept(True, True, True) = True Then
+					hoverText = Place.Name
+					Exit For
+				End If
+			Next
+		End If
+		If hoverText = "" And pokehoverText = "" And drawObjects(0) = True Then
+			For Each City As City In cities
+				If City.getRectangle(mapOffset).Contains(cursorPoint) = True Then
+					If City.CanFlyTo(flag) = True Then
+						isHovering = True
+					Else
+						isHovering = False
+					End If
+					If Controls.Accept(True, True, True) = True Then
 						City.Click(flag)
 						SoundManager.PlaySound("Select")
 					End If
-                    hoverText = City.Name
-                    Exit For
-                End If
-            Next
-        End If
-        If hoverText = "" And pokehoverText = "" And drawObjects(1) = True Then
-            For Each Route As Route In routes
-                If Route.getRectangle(mapOffset).Contains(cursorPoint) = True Then
-                    If Controls.Accept(True, True, True) = True Then
+					hoverText = City.Name
+					Exit For
+				End If
+			Next
+		End If
+		If hoverText = "" And pokehoverText = "" And drawObjects(1) = True Then
+			For Each Route As Route In routes
+				If Route.getRectangle(mapOffset).Contains(cursorPoint) = True Then
+					If Route.CanFlyTo(flag) = True Then
+						isHovering = True
+					Else
+						isHovering = False
+					End If
+					If Controls.Accept(True, True, True) = True Then
 						Route.Click(flag)
 						SoundManager.PlaySound("Select")
 					End If
-                    hoverText = Route.Name
-                End If
-            Next
-        End If
+					hoverText = Route.Name
+				End If
+			Next
+		End If
 
-        backgroundOffset += 1.0F
-        If backgroundOffset >= 64.0F Then
-            backgroundOffset = 0.0F
-        End If
+		If isHovering = True Then
+			CursorTextureRectangle = New Rectangle(32, 48, 16, 16)
+		Else
+			CursorTextureRectangle = New Rectangle(32, 32, 16, 16)
+		End If
 
-        UpdateSwitch()
 
-        Dim cPointer As Integer = Me.regionPointer
-        If KeyBoardHandler.KeyPressed(Keys.LeftShift) = True Or ControllerHandler.ButtonPressed(Buttons.LeftTrigger) = True Then
-            regionPointer -= 1
-        End If
-        If KeyBoardHandler.KeyPressed(Keys.RightShift) = True Or ControllerHandler.ButtonPressed(Buttons.RightTrigger) = True Then
-            regionPointer += 1
-        End If
 
-        If regionPointer < 0 Then
-            regionPointer = Me.regions.Count - 1
-        ElseIf regionPointer > Me.regions.Count - 1 Then
-            regionPointer = 0
-        End If
+		'backgroundOffset += 1.0F
+		'If backgroundOffset >= 64.0F Then
+		'backgroundOffset = 0.0F
+		'End If
 
-        ' regionPointer = regionPointer.Clamp(0, Me.regions.Count - 1)
+		UpdateSwitch()
 
-        If regionPointer <> cPointer Then
-            Me.currentRegion = regions(regionPointer)
+		Dim cPointer As Integer = Me.regionPointer
+		If KeyBoardHandler.KeyPressed(Keys.LeftShift) = True Or ControllerHandler.ButtonPressed(Buttons.LeftTrigger) = True Then
+			regionPointer -= 1
+		End If
+		If KeyBoardHandler.KeyPressed(Keys.RightShift) = True Or ControllerHandler.ButtonPressed(Buttons.RightTrigger) = True Then
+			regionPointer += 1
+		End If
 
-            LoadMapTexture()
+		If regionPointer < 0 Then
+			regionPointer = Me.regions.Count - 1
+		ElseIf regionPointer > Me.regions.Count - 1 Then
+			regionPointer = 0
+		End If
 
-            Me.FillMap()
-        End If
-    End Sub
+		' regionPointer = regionPointer.Clamp(0, Me.regions.Count - 1)
 
-    Private Sub UpdateSwitch()
-        For i = 0 To 3
-            Dim r As New Rectangle(Core.windowSize.Width - 170, 100 + i * 30, 90, 30)
-            If Controls.Accept(True, True, True) = True Then
-                If r.Contains(New Point(CInt(MouseHandler.MousePosition.X), CInt(MouseHandler.MousePosition.Y))) = True Then
-                    Me.drawObjects(i) = Not Me.drawObjects(i)
-                End If
-            End If
-        Next
-    End Sub
+		If regionPointer <> cPointer Then
+			Me.currentRegion = regions(regionPointer)
 
-    Public Overrides Sub Draw()
-        Canvas.DrawRectangle(Core.windowSize, New Color(84, 198, 216))
+			LoadMapTexture()
+			Me.FillMap()
+		End If
+	End Sub
 
-        For y = 0 To Core.windowSize.Height Step 64
-            Core.SpriteBatch.Draw(Me.texture, New Rectangle(Core.windowSize.Width - 128, y, 128, 64), New Rectangle(48, 0, 16, 16), Color.White)
-        Next
+	Private Sub UpdateSwitch()
+		For i = 0 To 3
+			Dim r As New Rectangle(Core.windowSize.Width - 224, 100 + i * 32, 90, 30)
+			If Controls.Accept(True, True, True) = True Then
+				If r.Contains(New Point(CInt(MouseHandler.MousePosition.X), CInt(MouseHandler.MousePosition.Y))) = True Then
+					Me.drawObjects(i) = Not Me.drawObjects(i)
+				End If
+			End If
+		Next
+	End Sub
 
-        Core.SpriteBatch.Draw(Me.objectsTexture, New Rectangle(mapOffsetX + 15, mapOffsetY + 15, CInt(mapTexture.Width / 16) * MapScreen.RasterSize * 2, CInt(mapTexture.Height / 16) * MapScreen.RasterSize * 2), New Rectangle(96, 40, 16, 16), New Color(0, 0, 0, 100))
+	Public Overrides Sub Draw()
+		For x = 0 To Core.ScreenSize.Width Step 32
+			For y = 0 To Core.ScreenSize.Height Step 32
+				Core.SpriteBatch.DrawInterface(backgroundTexture, New Rectangle(x, y, 32, 32), currentRectangle, Color.White)
+			Next
+		Next
+		If mapTexture.Width / mapTexture.Height >= 1.6 Then
+			Canvas.DrawRectangle(New Rectangle(mapOffsetX + 16, mapOffsetY + 16, mapTexture.Width * 4 - 32, mapTexture.Height * 4), New Color(0, 0, 0, 100))
+		Else
+			Canvas.DrawRectangle(New Rectangle(mapOffsetX + 16, mapOffsetY + 16, mapTexture.Width * 4, mapTexture.Height * 4), New Color(0, 0, 0, 100))
+		End If
+		Dim mapOffset As New Vector2(MapScreen.mapOffsetX, MapScreen.mapOffsetY)
 
-        Dim mapOffset As New Vector2(MapScreen.mapOffsetX, MapScreen.mapOffsetY)
+		For x = 0 To mapTexture.Width / 16
+			If x * 16 <= mapTexture.Width - 16 Then
+				For y = 0 To mapTexture.Height / 16
+					If y * 16 <= mapTexture.Height - 16 Then
+						Core.SpriteBatch.Draw(Me.mapTexture, New Rectangle(CInt(x * MapScreen.RasterSize * 2 + mapOffset.X), CInt(y * MapScreen.RasterSize * 2 + mapOffset.Y), MapScreen.RasterSize * 2, MapScreen.RasterSize * 2), New Rectangle(CInt(x * 16), CInt(y * 16), 16, 16), Color.White)
+					End If
+				Next
+			End If
+		Next
 
-        For x = 0 To mapTexture.Width / 16
-            If x * 16 <= mapTexture.Width - 16 Then
-                For y = 0 To mapTexture.Height / 16
-                    If y * 16 <= mapTexture.Height - 16 Then
-                        Core.SpriteBatch.Draw(Me.mapTexture, New Rectangle(CInt(x * MapScreen.RasterSize * 2 + mapOffset.X), CInt(y * MapScreen.RasterSize * 2 + mapOffset.Y), MapScreen.RasterSize * 2, MapScreen.RasterSize * 2), New Rectangle(CInt(x * 16), CInt(y * 16), 16, 16), Color.White)
-                    End If
-                Next
-            End If
-        Next
+		
+		If drawObjects(1) = True Then
+			For Each Route As Route In routes
+				Dim isSelected As Boolean = False
 
-        If drawObjects(1) = True Then
-            For Each Route As Route In routes
-                Dim isSelected As Boolean = False
-                If Route.ContainFiles.Contains(Level.LevelFile.ToLower()) = True Then
-                    isSelected = True
-                End If
+				If Route.ContainFiles.Contains(Level.LevelFile.ToLower()) = True Then
+					isSelected = True
+				End If
 
-                Dim c As Color = Color.White
-                If flag(0).ToString().ToLower() = "fly" And Route.CanFlyTo(flag) = False Then
-                    c = Color.Gray
-                End If
+				Dim c As Color = Color.White
+				If flag(0).ToString().ToLower() = "fly" And Route.CanFlyTo(flag) = False Then
+					c = Color.Gray
+				End If
 
-                Core.SpriteBatch.Draw(Route.getTexture(objectsTexture, isSelected), Route.getRectangle(mapOffset), c)
-            Next
-        End If
+				Core.SpriteBatch.Draw(Route.getTexture(objectsTexture, isSelected), Route.getRectangle(mapOffset), c)
+			Next
+		End If
 
-        If drawObjects(0) = True Then
-            For Each City As City In Me.cities
-                Dim isSelected As Boolean = False
-                If City.ContainFiles.Contains(Level.LevelFile.ToLower()) = True Then
-                    isSelected = True
-                End If
+		If drawObjects(0) = True Then
+			For Each City As City In Me.cities
+				Dim isSelected As Boolean = False
 
-                Dim c As Color = Color.White
-                If flag(0).ToString().ToLower() = "fly" And City.CanFlyTo(flag) = False Then
-                    c = Color.Gray
-                End If
+				If City.ContainFiles.Contains(Level.LevelFile.ToLower()) = True Then
+					isSelected = True
+				End If
 
-                Core.SpriteBatch.Draw(City.getTexture(objectsTexture, isSelected), City.getRectangle(mapOffset), c)
-            Next
-        End If
+				Dim c As Color = Color.White
+				If flag(0).ToString().ToLower() = "fly" And City.CanFlyTo(flag) = False Then
+					c = Color.Gray
+				End If
 
-        If drawObjects(2) = True Then
-            For Each Place As Place In places
-                Dim isSelected As Boolean = False
-                If Place.ContainFiles.Contains(Level.LevelFile.ToLower()) = True Then
-                    isSelected = True
-                End If
+				Core.SpriteBatch.Draw(City.getTexture(objectsTexture, isSelected), City.getRectangle(mapOffset), c)
+			Next
+		End If
 
-                Dim c As Color = Color.White
-                If flag(0).ToString().ToLower() = "fly" And Place.CanFlyTo(flag) = False Then
-                    c = Color.Gray
-                End If
+		If drawObjects(2) = True Then
+			For Each Place As Place In places
+				Dim isSelected As Boolean = False
 
-                Core.SpriteBatch.Draw(Place.getTexture(objectsTexture, isSelected), Place.getRectangle(mapOffset), c)
-            Next
-        End If
+				If Place.ContainFiles.Contains(Level.LevelFile.ToLower()) = True Then
+					isSelected = True
+				End If
 
-        If drawObjects(3) = True Then
-            For Each Pokes As Roaming In RoamingPoke
-                Core.SpriteBatch.Draw(Pokes.getTexture(), Pokes.getRectangle(mapOffset), Color.White)
-            Next
-        End If
+				Dim c As Color = Color.White
+				If flag(0).ToString().ToLower() = "fly" And Place.CanFlyTo(flag) = False Then
+					c = Color.Gray
+				End If
 
-        If Me.hoverText <> "" And Me.pokehoverText <> "" Then
-            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("pokemon_name_" & Me.pokehoverText) & " at " & Localization.GetString("Places_" & Me.hoverText), New Vector2(Me.CursorPosition.X + 29, Me.CursorPosition.Y - 32), Color.White)
-        ElseIf Me.hoverText <> "" And Me.pokehoverText = "" Then
-            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("Places_" & Me.hoverText), New Vector2(Me.CursorPosition.X + 29, Me.CursorPosition.Y - 32), Color.White)
-        End If
+				Core.SpriteBatch.Draw(Place.getTexture(objectsTexture, isSelected), Place.getRectangle(mapOffset), c)
+			Next
+		End If
 
-        Dim regionString As String = Localization.GetString(Me.currentRegion(0).ToString().ToUpper() & Me.currentRegion.Remove(0, 1))
-        If Me.regions.Count > 1 Then
-            regionString &= " (Press the Shift/Shoulder Buttons to switch between regions.)"
-        End If
+		If drawObjects(3) = True Then
+			For Each Pokes As Roaming In RoamingPoke
+				Core.SpriteBatch.Draw(Pokes.getTexture(), Pokes.getRectangle(mapOffset), Color.White)
+			Next
+		End If
 
-        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, regionString, New Vector2(MapScreen.mapOffsetX, MapScreen.mapOffsetY - 33), Color.White)
+		Dim PlayerTexture As Texture2D = TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins\" & Core.Player.Skin)
 
-        DrawSwitch()
-        DrawCursor()
-    End Sub
+		If Screen.Level.Surfing Then
+			PlayerTexture = TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins\" & Core.Player.Skin & "_Surf")
+		ElseIf Screen.Level.Biking Then
+			PlayerTexture = TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins\" & Core.Player.Skin & "_Bike")
+		End If
 
-    Private Sub DrawSwitch()
-        ' Cities:
-        Dim r As New Rectangle(104, 0, 12, 12)
-        If drawObjects(0) = False Then
-            r = New Rectangle(116, 0, 12, 12)
-        End If
-        Core.SpriteBatch.Draw(Me.objectsTexture, New Rectangle(Core.windowSize.Width - 170, 100, 24, 24), r, New Color(255, 255, 255, 220))
-        Core.SpriteBatch.DrawString(FontManager.MiniFont, Localization.GetString("map_screen_cities"), New Vector2(Core.windowSize.Width - 139, 101), Color.Black)
-        Core.SpriteBatch.DrawString(FontManager.MiniFont, Localization.GetString("map_screen_cities"), New Vector2(Core.windowSize.Width - 140, 100), Color.White)
-        ' Routes:
-        r = New Rectangle(104, 12, 12, 12)
-        If drawObjects(1) = False Then
-            r = New Rectangle(116, 12, 12, 12)
-        End If
-        Core.SpriteBatch.Draw(Me.objectsTexture, New Rectangle(Core.windowSize.Width - 170, 130, 24, 24), r, New Color(255, 255, 255, 220))
-        Core.SpriteBatch.DrawString(FontManager.MiniFont, Localization.GetString("map_screen_routes"), New Vector2(Core.windowSize.Width - 139, 131), Color.Black)
-        Core.SpriteBatch.DrawString(FontManager.MiniFont, Localization.GetString("map_screen_routes"), New Vector2(Core.windowSize.Width - 140, 130), Color.White)
-        ' Places:
-        r = New Rectangle(104, 24, 12, 12)
-        If drawObjects(2) = False Then
-            r = New Rectangle(116, 24, 12, 12)
-        End If
-        Core.SpriteBatch.Draw(Me.objectsTexture, New Rectangle(Core.windowSize.Width - 170, 160, 24, 24), r, New Color(255, 255, 255, 220))
-        Core.SpriteBatch.DrawString(FontManager.MiniFont, Localization.GetString("map_screen_places"), New Vector2(Core.windowSize.Width - 139, 161), Color.Black)
-        Core.SpriteBatch.DrawString(FontManager.MiniFont, Localization.GetString("map_screen_places"), New Vector2(Core.windowSize.Width - 140, 160), Color.White)
-        ' Roaming:
-        r = New Rectangle(113, 65, 14, 14)
-        If drawObjects(3) = False Then
-            r = New Rectangle(113, 81, 14, 14)
-        End If
-        Core.SpriteBatch.Draw(Me.objectsTexture, New Rectangle(Core.windowSize.Width - 172, 187, 28, 28), r, New Color(255, 255, 255, 220))
-        Core.SpriteBatch.DrawString(FontManager.MiniFont, Localization.GetString("map_screen_roaming"), New Vector2(Core.windowSize.Width - 139, 191), Color.Black)
-        Core.SpriteBatch.DrawString(FontManager.MiniFont, Localization.GetString("map_screen_roaming"), New Vector2(Core.windowSize.Width - 140, 190), Color.White)
-    End Sub
+		Dim PlayerTextureRectangle As Rectangle = New Rectangle(0, CInt(PlayerTexture.Height / 4 * 2), CInt(PlayerTexture.Width / 3), CInt(PlayerTexture.Height / 4))
 
-    Private Sub DrawCursor()
-        Dim t As Texture2D = TextureManager.GetTexture("GUI\Menus\General", New Rectangle(0, 0, 16, 16), "")
-        Core.SpriteBatch.Draw(t, New Rectangle(CInt(CursorPosition.X), CInt(CursorPosition.Y) - 30, 32, 32), Color.White)
+		Dim v As Vector2 = GetPlayerPosition()
+		If v.X <> 0 Or v.Y <> 0 Then
+			Core.SpriteBatch.Draw(PlayerTexture, New Rectangle(CInt(GetPlayerPosition.X + mapOffsetX - PlayerTexture.Width / 3), CInt(GetPlayerPosition.Y + mapOffsetY - PlayerTexture.Height / 3), CInt(PlayerTexture.Width / 3 * 2), CInt(PlayerTexture.Height / 4 * 2)), PlayerTextureRectangle, Color.White)
+		End If
+		If Me.hoverText <> "" And Me.pokehoverText <> "" Then
+			Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("pokemon_name_" & Me.pokehoverText) & " at " & Localization.GetString("Places_" & Me.hoverText), New Vector2(Me.CursorPosition.X + 29, Me.CursorPosition.Y - 32), Color.White)
+		ElseIf Me.hoverText <> "" And Me.pokehoverText = "" Then
+			Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("Places_" & Me.hoverText), New Vector2(Me.CursorPosition.X + 29, Me.CursorPosition.Y - 32), Color.White)
+		End If
+
+		Dim regionString As String = Localization.GetString(Me.currentRegion(0).ToString().ToUpper() & Me.currentRegion.Remove(0, 1))
+		If Me.regions.Count > 1 Then
+			regionString &= " (Press the Shift/Shoulder Buttons to switch between regions.)"
+		End If
+
+		Core.SpriteBatch.DrawString(FontManager.MainFontWhite, regionString, New Vector2(MapScreen.mapOffsetX, MapScreen.mapOffsetY - 33), Color.White)
+
+		DrawSwitch()
+		DrawCursor()
+	End Sub
+
+	Private Sub DrawSwitch()
+		' Cities:
+		Dim r As New Rectangle(104, 0, 12, 12)
+		If drawObjects(0) = False Then
+			r = New Rectangle(116, 0, 12, 12)
+		End If
+		Core.SpriteBatch.Draw(Me.objectsTexture, New Rectangle(Core.windowSize.Width - 224, 96, 24, 24), r, New Color(255, 255, 255, 220))
+		Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("map_screen_cities"), New Vector2(Core.windowSize.Width - 192, 96), Color.White)
+		' Routes:
+		r = New Rectangle(104, 12, 12, 12)
+		If drawObjects(1) = False Then
+			r = New Rectangle(116, 12, 12, 12)
+		End If
+		Core.SpriteBatch.Draw(Me.objectsTexture, New Rectangle(Core.windowSize.Width - 224, 128, 24, 24), r, New Color(255, 255, 255, 220))
+		Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("map_screen_routes"), New Vector2(Core.windowSize.Width - 192, 128), Color.White)
+		' Places:
+		r = New Rectangle(104, 24, 12, 12)
+		If drawObjects(2) = False Then
+			r = New Rectangle(116, 24, 12, 12)
+		End If
+		Core.SpriteBatch.Draw(Me.objectsTexture, New Rectangle(Core.windowSize.Width - 224, 160, 24, 24), r, New Color(255, 255, 255, 220))
+		Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("map_screen_places"), New Vector2(Core.windowSize.Width - 192, 160), Color.White)
+		' Roaming:
+		r = New Rectangle(113, 65, 14, 14)
+		If drawObjects(3) = False Then
+			r = New Rectangle(113, 81, 14, 14)
+		End If
+		Core.SpriteBatch.Draw(Me.objectsTexture, New Rectangle(Core.windowSize.Width - 226, 190, 28, 28), r, New Color(255, 255, 255, 220))
+		Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("map_screen_roaming"), New Vector2(Core.windowSize.Width - 192, 192), Color.White)
+	End Sub
+
+	Private Sub DrawCursor()
+		Dim t As Texture2D = TextureManager.GetTexture("GUI\Menus\General", CursorTextureRectangle, "")
+		Core.SpriteBatch.Draw(t, New Rectangle(CInt(CursorPosition.X), CInt(CursorPosition.Y) - 30, 32, 32), Color.White)
     End Sub
 
     Public Shared Sub UseFly(ByVal FlyToFile As String, ByVal FlyToPosition As Vector3, ByVal flag() As Object)
@@ -710,28 +762,28 @@
         Public Function getTexture(ByVal FullTexture As Texture2D, ByVal isSelected As Boolean) As Texture2D
             If Me.T Is Nothing Or isSelected = True Then
                 Dim r As Rectangle
+				Dim modX As Integer = 0
+				If isSelected = True Then
+					modX = 36
+				Else
+					modX = 0
+				End If
+				Select Case Me.Size
+						Case CitySize.Small
+							r = New Rectangle(0 + modX, 0, 12, 12)
+						Case CitySize.Vertical
+							r = New Rectangle(0 + modX, 12, 12, 24)
+						Case CitySize.Horizontal
+							r = New Rectangle(12 + modX, 0, 24, 12)
+						Case CitySize.Big
+							r = New Rectangle(12 + modX, 12, 24, 24)
+						Case CitySize.Large
+							r = New Rectangle(0 + modX, 36, 36, 24)
+					End Select
+					Me.T = TextureManager.GetTexture(FullTexture, r)
+				End If
 
-                Dim modX As Integer = 0
-                If isSelected = True Then
-                    modX = 36
-                End If
-
-                Select Case Me.Size
-                    Case CitySize.Small
-                        r = New Rectangle(0 + modX, 0, 12, 12)
-                    Case CitySize.Vertical
-                        r = New Rectangle(0 + modX, 12, 12, 24)
-                    Case CitySize.Horizontal
-                        r = New Rectangle(12 + modX, 0, 24, 12)
-                    Case CitySize.Big
-                        r = New Rectangle(12 + modX, 12, 24, 24)
-                    Case CitySize.Large
-                        r = New Rectangle(0 + modX, 36, 36, 24)
-                End Select
-                Me.T = TextureManager.GetTexture(FullTexture, r)
-            End If
-
-            Return Me.T
+				Return Me.T
         End Function
 
         Public Sub Click(ByVal flag() As Object)
@@ -756,181 +808,181 @@
 
     End Class
 
-    Public Class Route
+	Public Class Route
 
-        Public Enum RouteTypes
-            Land
-            Water
-        End Enum
+		Public Enum RouteTypes
+			Land
+			Water
+		End Enum
 
-        Public Enum RouteDirections
-            Horizontal
-            Vertical
+		Public Enum RouteDirections
+			Horizontal
+			Vertical
 
-            HorizontalEndRight
-            HorizontalEndLeft
+			HorizontalEndRight
+			HorizontalEndLeft
 
-            VerticalEndUp
-            VerticalEndDown
+			VerticalEndUp
+			VerticalEndDown
 
-            CurveDownRight
-            CurveDownLeft
-            CurveUpLeft
-            CurveUpRight
+			CurveDownRight
+			CurveDownLeft
+			CurveUpLeft
+			CurveUpRight
 
-            TUp
-            TDown
-            TRight
-            TLeft
+			TUp
+			TDown
+			TRight
+			TLeft
 
-            HorizontalConnection
-            VerticalConnection
-        End Enum
+			HorizontalConnection
+			VerticalConnection
+		End Enum
 
-        Public Name As String = ""
-        Public PositionX As Integer = 0
-        Public PositionY As Integer = 0
-        Public ContainFiles As New List(Of String)
-        Public FlyToFile As String = ""
-        Public FlyToPosition As Vector3 = New Vector3(0)
+		Public Name As String = ""
+		Public PositionX As Integer = 0
+		Public PositionY As Integer = 0
+		Public ContainFiles As New List(Of String)
+		Public FlyToFile As String = ""
+		Public FlyToPosition As Vector3 = New Vector3(0)
 
-        Public RouteDirection As RouteDirections = RouteDirections.Horizontal
-        Public RouteType As RouteTypes = RouteTypes.Land
+		Public RouteDirection As RouteDirections = RouteDirections.Horizontal
+		Public RouteType As RouteTypes = RouteTypes.Land
 
-        Dim T As Texture2D = Nothing
+		Dim T As Texture2D = Nothing
 
-        Public Sub New(ByVal Name As String, ByVal ContainFiles() As String, ByVal PositionX As Integer, ByVal PositionY As Integer, ByVal RouteDirection As RouteDirections, ByVal RouteType As RouteTypes, Optional ByVal FlyToFile As String = "", Optional ByVal FlyToPosition As Vector3 = Nothing)
-            Me.Name = Name
-            Me.PositionX = PositionX
-            Me.PositionY = PositionY
-            Me.RouteDirection = RouteDirection
-            Me.RouteType = RouteType
+		Public Sub New(ByVal Name As String, ByVal ContainFiles() As String, ByVal PositionX As Integer, ByVal PositionY As Integer, ByVal RouteDirection As RouteDirections, ByVal RouteType As RouteTypes, Optional ByVal FlyToFile As String = "", Optional ByVal FlyToPosition As Vector3 = Nothing)
+			Me.Name = Name
+			Me.PositionX = PositionX
+			Me.PositionY = PositionY
+			Me.RouteDirection = RouteDirection
+			Me.RouteType = RouteType
 
-            For Each file As String In ContainFiles
-                Me.ContainFiles.Add(file.ToLower())
-            Next
+			For Each file As String In ContainFiles
+				Me.ContainFiles.Add(file.ToLower())
+			Next
 
-            Me.FlyToFile = FlyToFile
-            Me.FlyToPosition = FlyToPosition
-        End Sub
+			Me.FlyToFile = FlyToFile
+			Me.FlyToPosition = FlyToPosition
+		End Sub
 
-        Public Function getPosition() As Vector2
-            Return New Vector2(Me.PositionX * MapScreen.RasterSize, Me.PositionY * MapScreen.RasterSize)
-        End Function
+		Public Function getPosition() As Vector2
+			Return New Vector2(Me.PositionX * MapScreen.RasterSize, Me.PositionY * MapScreen.RasterSize)
+		End Function
 
-        Public Function getRectangle(ByVal offset As Vector2) As Rectangle
-            Dim sizeX As Single = 1.0F
-            Dim sizeY As Single = 1.0F
+		Public Function getRectangle(ByVal offset As Vector2) As Rectangle
+			Dim sizeX As Single = 1.0F
+			Dim sizeY As Single = 1.0F
 
-            Select Case Me.RouteDirection
-                Case RouteDirections.Horizontal
-                    sizeX = 1.25F
-                    sizeY = 0.75F
-                Case RouteDirections.Vertical
-                    sizeX = 0.75F
-                    sizeY = 1.25F
-                Case RouteDirections.CurveDownLeft, RouteDirections.CurveDownRight, RouteDirections.CurveUpLeft, RouteDirections.CurveUpRight, RouteDirections.TUp, RouteDirections.TDown, RouteDirections.TRight, RouteDirections.TLeft
-                    sizeX = 0.75F
-                    sizeY = 0.75F
-                Case RouteDirections.HorizontalConnection
-                    sizeX = 1.0F
-                    sizeY = 0.75F
-                Case RouteDirections.VerticalConnection
-                    sizeX = 0.75F
-                    sizeY = 1.0F
-                Case RouteDirections.HorizontalEndRight, RouteDirections.HorizontalEndLeft, RouteDirections.VerticalEndDown, RouteDirections.VerticalEndUp
-                    sizeX = 0.75F
-                    sizeY = 0.75F
-            End Select
+			Select Case Me.RouteDirection
+				Case RouteDirections.Horizontal
+					sizeX = 1.25F
+					sizeY = 0.75F
+				Case RouteDirections.Vertical
+					sizeX = 0.75F
+					sizeY = 1.25F
+				Case RouteDirections.CurveDownLeft, RouteDirections.CurveDownRight, RouteDirections.CurveUpLeft, RouteDirections.CurveUpRight, RouteDirections.TUp, RouteDirections.TDown, RouteDirections.TRight, RouteDirections.TLeft
+					sizeX = 0.75F
+					sizeY = 0.75F
+				Case RouteDirections.HorizontalConnection
+					sizeX = 1.0F
+					sizeY = 0.75F
+				Case RouteDirections.VerticalConnection
+					sizeX = 0.75F
+					sizeY = 1.0F
+				Case RouteDirections.HorizontalEndRight, RouteDirections.HorizontalEndLeft, RouteDirections.VerticalEndDown, RouteDirections.VerticalEndUp
+					sizeX = 0.75F
+					sizeY = 0.75F
+			End Select
 
-            Dim PositionOffset As New Vector2(((1 - sizeX) * MapScreen.RasterSize) / 2, ((1 - sizeY) * MapScreen.RasterSize) / 2)
+			Dim PositionOffset As New Vector2(((1 - sizeX) * MapScreen.RasterSize) / 2, ((1 - sizeY) * MapScreen.RasterSize) / 2)
 
-            If Me.RouteDirection = RouteDirections.HorizontalConnection Then
-                PositionOffset.X += 0.5F * MapScreen.RasterSize
-            End If
-            If Me.RouteDirection = RouteDirections.VerticalConnection Then
-                PositionOffset.Y += 0.5F * MapScreen.RasterSize
-            End If
+			If Me.RouteDirection = RouteDirections.HorizontalConnection Then
+				PositionOffset.X += 0.5F * MapScreen.RasterSize
+			End If
+			If Me.RouteDirection = RouteDirections.VerticalConnection Then
+				PositionOffset.Y += 0.5F * MapScreen.RasterSize
+			End If
 
-            sizeX *= MapScreen.RasterSize
-            sizeY *= MapScreen.RasterSize
+			sizeX *= MapScreen.RasterSize
+			sizeY *= MapScreen.RasterSize
 
-            Return New Rectangle(CInt(Me.getPosition().X + PositionOffset.X + offset.X), CInt(Me.getPosition().Y + PositionOffset.Y + offset.Y), CInt(sizeX), CInt(sizeY))
-        End Function
+			Return New Rectangle(CInt(Me.getPosition().X + PositionOffset.X + offset.X), CInt(Me.getPosition().Y + PositionOffset.Y + offset.Y), CInt(sizeX), CInt(sizeY))
+		End Function
 
-        Public Function getTexture(ByVal FullTexture As Texture2D, ByVal isSelected As Boolean) As Texture2D
-            If Me.T Is Nothing Or isSelected = True Then
-                Dim r As Rectangle
+		Public Function getTexture(ByVal FullTexture As Texture2D, ByVal isSelected As Boolean) As Texture2D
+			If Me.T Is Nothing Or isSelected = True Then
+				Dim r As Rectangle
 
-                Dim modX As Integer = 0
-                If Me.RouteType = RouteTypes.Water Then
-                    modX = 32
-                End If
-                If isSelected = True Then
-                    modX = 64
-                End If
-                Dim y As Integer = 64
+				Dim modX As Integer = 0
+				If Me.RouteType = RouteTypes.Water Then
+					modX = 32
+				End If
+				If isSelected = True Then
+					modX = 64
+				End If
+				Dim y As Integer = 64
 
-                Select Case Me.RouteDirection
-                    Case RouteDirections.Horizontal, RouteDirections.HorizontalConnection
-                        r = New Rectangle(0 + modX, 0 + y, 8, 8)
-                    Case RouteDirections.TUp
-                        r = New Rectangle(8 + modX, 0 + y, 8, 8)
-                    Case RouteDirections.TDown
-                        r = New Rectangle(8 + modX, 24 + y, 8, 8)
-                    Case RouteDirections.TRight
-                        r = New Rectangle(0 + modX, 24 + y, 8, 8)
-                    Case RouteDirections.TLeft
-                        r = New Rectangle(24 + modX, 16 + y, 8, 8)
-                    Case RouteDirections.Vertical, RouteDirections.VerticalConnection
-                        r = New Rectangle(16 + modX, 0 + y, 8, 8)
-                    Case RouteDirections.HorizontalEndRight
-                        r = New Rectangle(24 + modX, 0 + y, 8, 8)
-                    Case RouteDirections.CurveUpLeft
-                        r = New Rectangle(0 + modX, 8 + y, 8, 8)
-                    Case RouteDirections.CurveDownRight
-                        r = New Rectangle(8 + modX, 8 + y, 8, 8)
-                    Case RouteDirections.CurveUpRight
-                        r = New Rectangle(16 + modX, 8 + y, 8, 8)
-                    Case RouteDirections.CurveDownLeft
-                        r = New Rectangle(24 + modX, 8 + y, 8, 8)
-                    Case RouteDirections.HorizontalEndLeft
-                        r = New Rectangle(0 + modX, 16 + y, 8, 8)
-                    Case RouteDirections.VerticalEndDown
-                        r = New Rectangle(8 + modX, 16 + y, 8, 8)
-                    Case RouteDirections.VerticalEndUp
-                        r = New Rectangle(16 + modX, 16 + y, 8, 8)
-                End Select
+				Select Case Me.RouteDirection
+					Case RouteDirections.Horizontal, RouteDirections.HorizontalConnection
+						r = New Rectangle(0 + modX, 0 + y, 8, 8)
+					Case RouteDirections.TUp
+						r = New Rectangle(8 + modX, 0 + y, 8, 8)
+					Case RouteDirections.TDown
+						r = New Rectangle(8 + modX, 24 + y, 8, 8)
+					Case RouteDirections.TRight
+						r = New Rectangle(0 + modX, 24 + y, 8, 8)
+					Case RouteDirections.TLeft
+						r = New Rectangle(24 + modX, 16 + y, 8, 8)
+					Case RouteDirections.Vertical, RouteDirections.VerticalConnection
+						r = New Rectangle(16 + modX, 0 + y, 8, 8)
+					Case RouteDirections.HorizontalEndRight
+						r = New Rectangle(24 + modX, 0 + y, 8, 8)
+					Case RouteDirections.CurveUpLeft
+						r = New Rectangle(0 + modX, 8 + y, 8, 8)
+					Case RouteDirections.CurveDownRight
+						r = New Rectangle(8 + modX, 8 + y, 8, 8)
+					Case RouteDirections.CurveUpRight
+						r = New Rectangle(16 + modX, 8 + y, 8, 8)
+					Case RouteDirections.CurveDownLeft
+						r = New Rectangle(24 + modX, 8 + y, 8, 8)
+					Case RouteDirections.HorizontalEndLeft
+						r = New Rectangle(0 + modX, 16 + y, 8, 8)
+					Case RouteDirections.VerticalEndDown
+						r = New Rectangle(8 + modX, 16 + y, 8, 8)
+					Case RouteDirections.VerticalEndUp
+						r = New Rectangle(16 + modX, 16 + y, 8, 8)
+				End Select
 
-                Me.T = TextureManager.GetTexture(FullTexture, r)
-            End If
+				Me.T = TextureManager.GetTexture(FullTexture, r)
+			End If
 
-            Return Me.T
-        End Function
+			Return Me.T
+		End Function
 
-        Public Sub Click(ByVal flag() As Object)
-            Select Case flag(0).ToString().ToLower()
-                Case "fly"
-                    If CanFlyTo(flag) = True Then
-                        MapScreen.UseFly(FlyToFile, FlyToPosition, flag)
-                    End If
-            End Select
-        End Sub
+		Public Sub Click(ByVal flag() As Object)
+			Select Case flag(0).ToString().ToLower()
+				Case "fly"
+					If CanFlyTo(flag) = True Then
+						MapScreen.UseFly(FlyToFile, FlyToPosition, flag)
+					End If
+			End Select
+		End Sub
 
-        Public Function CanFlyTo(ByVal flag() As Object) As Boolean
-            If flag(0).ToString().ToLower() = "fly" Then
-                If FlyToPosition <> Nothing And FlyToFile <> "" Then
-                    If Core.Player.VisitedMaps.Split(CChar(",")).Contains(FlyToFile) = True Or GameController.IS_DEBUG_ACTIVE = True Or Core.Player.SandBoxMode = True Then
-                        Return True
-                    End If
-                End If
-            End If
-            Return False
-        End Function
+		Public Function CanFlyTo(ByVal flag() As Object) As Boolean
+			If flag(0).ToString().ToLower() = "fly" Then
+				If FlyToPosition <> Nothing And FlyToFile <> "" Then
+					If Core.Player.VisitedMaps.Split(CChar(",")).Contains(FlyToFile) = True Or GameController.IS_DEBUG_ACTIVE = True Or Core.Player.SandBoxMode = True Then
+						Return True
+					End If
+				End If
+			End If
+			Return False
+		End Function
 
-    End Class
+	End Class
 
-    Public Class Place
+	Public Class Place
 
         Public Enum PlaceSizes
             Small

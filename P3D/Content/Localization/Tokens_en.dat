@@ -100,7 +100,7 @@ MapScreen:
 map_screen_cities,Cities
 map_screen_routes,Routes
 map_screen_places,Places
-map_screen_roaming,Roaming Pokes
+map_screen_roaming,Roaming Pokémon
 ---
 PokedexScreen:
 pokedex_screen_seen,Seen
@@ -338,7 +338,7 @@ badge_Rising,Rising
 Regions:
 Johto,Johto
 Kanto,Kanto
-Sevii Islands,Sevii Islands
+SeviiIslands,Sevii Islands
 ---
 Places:
 Places_???,???
@@ -889,7 +889,7 @@ NewBark_Main_Mary_CallMom,Call your mom on~your Pokégear to*let her know how~yo
 
 NewBark_Main_Mary_NoPokemon1,Wait, <player.name>!
 NewBark_Main_Mary_NoPokemon2,What do you think you're doing?
-NewBark_Main_Mary_NoPokemon3,It's dangerous to go out~without a Pokémon!*Wild Pokémon jump out of~the grass on the way~to the next town.
+NewBark_Main_Mary_NoPokemon3,It's dangerous to go out~without a Pokémon!*Wild Pokémon jump out of the grass~on the way to the next town.
 
 NewBark_Main_Rival_FamousLab,......*So this is the famous Elm Pokémon Lab.
 NewBark_Main_Rival_Staring,......*What are you staring at?
