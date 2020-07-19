@@ -126,7 +126,7 @@ townmap:
 
 NPCs:
 {"NPC"{NPC[{"Position"{sngArr[7,0.2,1]}}{"TextureID"{str[NurseJoy]}}{"ID"{int[0]}}{"Name"{str[NurseJoy]}}{"Action"{int[0]}}{"AdditionalValue"{str[center_script]}}{"Rotation"{int[2]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
-{"NPC"{NPC[{"Position"{sngArr[1,0.2,7]}}{"TextureID"{str[shopkeeper]}}{"ID"{int[1]}}{"Name"{str[SellMan]}}{"Action"{int[0]}}{"AdditionalValue"{str[center_script]}}{"Rotation"{int[3]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[1,0.2,7]}}{"TextureID"{str[Clerk]}}{"ID"{int[1]}}{"Name"{str[SellMan]}}{"Action"{int[0]}}{"AdditionalValue"{str[center_script]}}{"Rotation"{int[3]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
 
 {"NPC"{NPC[{"Position"{sngArr[8,0.2,1]}}{"TextureID"{str[[POKEMON|N]113]}}{"ID"{int[4]}}{"Name"{str[Chansey]}}{"Action"{int[1]}}{"AdditionalValue"{str[gts\information]}}{"Rotation"{int[2]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
 

@@ -294,14 +294,16 @@ Public Class MusicManager
 	Public Shared Sub ResumePlayback()
 		If Not _currentSong Is Nothing Then
 
-			If outputDevice IsNot Nothing Then
+			If Not outputDevice Is Nothing Then
 				' if an intro was playing while the music player was paused, calculate its end time
-				If outputDevice.PlaybackState = PlaybackState.Paused AndAlso _isIntroStarted Then
-					Dim pauseTime As TimeSpan = Date.Now.Subtract(_introMuteTime)
-					_introEndTime = _introEndTime + pauseTime
+				If outputDevice.PlaybackState = PlaybackState.Paused Then
+					If _isIntroStarted Then
+						Dim pauseTime As TimeSpan = Date.Now.Subtract(_introMuteTime)
+						_introEndTime = _introEndTime + pauseTime
+					End If
+					Paused = False
+					outputDevice.Play()
 				End If
-				Paused = False
-				outputDevice.Play()
 			End If
 		End If
 

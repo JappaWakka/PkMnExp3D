@@ -3,7 +3,7 @@ version=2
 @player.move(1)
 @player.turnto(2)
 @text.show(Which floor would~you like to go to?)
-@Options.show(1F - Pokémon Center,2F - Lounge,3F - Staff Offices,4F - Assistant Offices,5F - Developer Offices,B1F - Basement)
+@Options.show(1F - Pokémon Center,2F - Lounge,3F - Staff Offices,4F - Assistant Offices,5F - Developer Offices,Bf1 - Basement)
 	:when:1F - Pokémon Center
 		@text.show(...)
 		@player.move(1)
@@ -39,7 +39,7 @@ version=2
 		@level.update
 		@player.move(1)
 		:end
-	:when:B1F - Basement
+	:when:Bf1 - Basement
 		@text.show(...)
 		@player.move(1)
 		@player.warp(SeviiIslands\1knot\kolbentower\basement.dat,9,0.1,-1,0)
