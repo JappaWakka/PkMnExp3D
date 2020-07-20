@@ -12,7 +12,7 @@ version=2
 		:when:Yes
 			@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
 			@script.start(vermilion\fastshipleaving)
-			@player.warp(Hoenn\FarawayIsland\exterior.dat,16,2.1,32)
+			@player.warp(Hoenn\FarawayIsland\Main.dat,16,2.1,32)
 			@level.update
 			@player.turnto(2)
 			@screen.fadein
@@ -65,7 +65,7 @@ version=2
 			:when:Faraway Island
 				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
 				@script.start(vermilion\fastshipleaving)
-				@player.warp(Hoenn\FarawayIsland\exterior.dat,16,2.1,32)
+				@player.warp(Hoenn\FarawayIsland\Main.dat,16,2.1,32)
 				@level.update
 				@player.turnto(2)
 				@screen.fadein
@@ -106,7 +106,7 @@ version=2
 			:when:Faraway Island
 				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
 				@script.start(vermilion\fastshipleaving)
-				@player.warp(Hoenn\FarawayIsland\exterior.dat,16,2.1,32)
+				@player.warp(Hoenn\FarawayIsland\Main.dat,16,2.1,32)
 				@level.update
 				@player.turnto(2)
 				@screen.fadein
@@ -149,7 +149,7 @@ version=2
 			:when:Faraway Island
 				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
 				@script.start(vermilion\fastshipleaving)
-				@player.warp(Hoenn\FarawayIsland\exterior.dat,16,2.1,32)
+				@player.warp(Hoenn\FarawayIsland\Main.dat,16,2.1,32)
 				@level.update
 				@player.turnto(2)
 				@screen.fadein
@@ -170,7 +170,7 @@ version=2
 			:when:Faraway Island
 				@text.show(All right!*All aboard the~Seagallop Hi-Speed 11!)
 				@script.start(vermilion\fastshipleaving)
-				@player.warp(Hoenn\FarawayIsland\exterior.dat,16,2.1,32)
+				@player.warp(Hoenn\FarawayIsland\Main.dat,16,2.1,32)
 				@level.update
 				@player.turnto(2)
 				@screen.fadein

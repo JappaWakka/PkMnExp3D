@@ -11,105 +11,105 @@
         ''' The names of male trainer types.
         ''' </summary>
         Public Enum MaleEmblemSpriteType
-            Preschooler = 0
-            SchoolKid = 1
-            Youngster = 2
-            Waiter = 3
-            Backpacker = 4
-            Pokefan = 5
-            Butler = 6
-            Cheerleader = 7
-            Clerk = 8
-            PokemonBreeder = 9
-            Drummer = 10
-            Cyclist = 11
-            RichBoy = 12
-            Ranger = 13
-            Athlete = 14
-            Scientist = 15
-            Doctor = 16
-            Gentleman = 17
-            AceTrainer = 18
-            Veteran = 19
-        End Enum
+			Unique = 0
+			Carefree = 1
+			Learning = 2
+			Exploring = 3
+			Traveling = 4
+			Musical = 5
+			Hardworking = 6
+			Humble = 7
+			Precise = 8
+			Responsible = 9
+			Energetic = 10
+			Joyful = 11
+			Powerful = 12
+			Protecting = 13
+			Determined = 14
+			Smart = 15
+			Skilled = 16
+			Peaceful = 17
+			Caring = 18
+			Experienced = 19
+		End Enum
 
         ''' <summary>
         ''' The names of female trainer types.
         ''' </summary>
         Public Enum FemaleEmblemSpriteType
-            Preschooler = 0
-            SchoolKid = 1
-            Lass = 2
-            Waitress = 3
-            Backpacker = 4
-            Pokefan = 5
-            Maid = 6
-            Cheerleader = 7
-            Clerk = 8
-            PokemonBreeder = 9
-            Guitarist = 10
-            Cyclist = 11
-            Lady = 12
-            Ranger = 13
-            Athlete = 14
-            Scientist = 15
-            Nurse = 16
-            Socialite = 17
-            AceTrainer = 18
-            Veteran = 19
-        End Enum
+			Unique = 0
+			Learning = 1
+			Carefree = 2
+			Curious = 3
+			Exploring = 4
+			Traveling = 5
+			Hardworking = 6
+			Beautiful = 7
+			Admired = 8
+			Energetic = 9
+			Powerful = 10
+			Important = 11
+			Humble = 12
+			Protecting = 13
+			Determined = 14
+			Smart = 15
+			Skilled = 16
+			Caring = 17
+			Respectable = 18
+			Experienced = 19
+		End Enum
 
         ''' <summary>
         ''' The sprites of male trainers.
         ''' </summary>
         Public Enum MaleEmblemSprites
             NNLittleBoy = 0
-            NNSchoolKid = 1
-            NNYoungster = 2
-            NN46 = 3
-            NN48 = 4
-            NN51 = 5
-            NN74 = 6
-            NN76 = 7
-            NN53 = 8
-            NN55 = 9
-            NN80 = 10
-            NN72 = 11
-            NN57 = 12
-            NN59 = 13
-            NN78 = 14
-            NN64 = 15
-            NN66 = 16
-            NN68 = 17
-            NN70 = 18
-            NN38 = 19
-        End Enum
+			NNYoungster = 1
+			NNSchoolkid = 2
+			NNCamper = 3
+			NNBackpacker_Male = 4
+			NNGuitarist = 5
+			NNClerk = 6
+			NNWaiter = 7
+			NNJuggler = 8
+			NNBreeder_Male = 9
+			NNJogger = 10
+			NNPokeFan_Male = 11
+			NNRichBoy = 12
+			NNRanger_Male = 13
+			NNAceTrainer_Male = 14
+			NNScientist = 15
+			NNDoctor = 16
+			NNGentleman = 17
+			NNButler = 18
+			NNOldMan = 19
+		End Enum
 
         ''' <summary>
         ''' The sprites of female trainers.
         ''' </summary>
         Public Enum FemaleEmblemSprites
             NNLittleGirl = 0
-            NN43 = 1
-            NN45 = 2
-            NN47 = 3
-            NN50 = 4
-            NN52 = 5
-            NN75 = 6
-            NN77 = 7
-            NN54 = 8
-            NN56 = 9
-            NN81 = 10
-            NN73 = 11
-            NN58 = 12
-            NN60 = 13
-            NN79 = 14
-            NN65 = 15
-            NN67 = 16
-            NN69 = 17
-            NN71 = 18
-            NN39 = 19
-        End Enum
+			NNSchoolGirl = 1
+			NNLass = 2
+			NNYoungGirl = 3
+			NNPicknicker = 4
+			NNBackpacker_Female = 5
+			NNWaitress = 6
+			NNBeauty = 7
+			NNIdol = 8
+			NNSmasher = 9
+			NNBattleGirl = 10
+			NNRanger_Female = 11
+			NNLady = 12
+			NNBreeder = 13
+			NNAceTrainer_Female = 14
+			NNPsychic_Female = 15
+			NNNurse = 16
+			NNPokeFan_Female = 17
+			NNSocialite = 18
+			NNOldWoman = 19
+		End Enum
 
 #End Region
 
