@@ -16,7 +16,7 @@ Pokémon Exp3D
 			aveontrainer
 			Skeizerr
 			Ulithium_Dragon
-			PurlpleZaffre
+			PurpleZaffre
 			15avaughn
 			sphericalice
 			Mashirosakura
@@ -26,7 +26,11 @@ Pokémon Exp3D
 			Brolunite
 			skatefilter5
 			Lagoon-Sadnes
-			
+			UltimaxLugia2020
+			Starsparkless
+			MrDollSteak
+			kalerie
+
 	Music
 		Braxton Burks
 		Kunning Fox
