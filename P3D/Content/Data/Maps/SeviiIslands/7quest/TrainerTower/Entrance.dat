@@ -150,7 +150,7 @@ Start:
 {"Entity"{ENT[{"EntityID"{str[ScriptBlock]}}{"Position"{sngArr[9,0,5]}}{"TexturePath"{str[Center]}}{"Textures"{recArr[[0,48,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[SeviiIslands\7quest\TrainerTower\start]}}{"Rotation"{int[0]}}]}}
 
 NPCs:
-{"NPC"{NPC[{"Position"{sngArr[4,0.2,8]}}{"TextureID"{str[0]}}{"ID"{int[0]}}{"Name"{str[NurseJoy]}}{"Action"{int[0]}}{"AdditionalValue"{str[center_script]}}{"Rotation"{int[2]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[4,0.2,8]}}{"TextureID"{str[0]}}{"ID"{int[0]}}{"Name"{str[Joy]}}{"Action"{int[0]}}{"AdditionalValue"{str[center_script]}}{"Rotation"{int[2]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
 {"NPC"{NPC[{"Position"{sngArr[14,0.2,8]}}{"TextureID"{str[12]}}{"ID"{int[1]}}{"Name"{str[SellMan]}}{"Action"{int[0]}}{"AdditionalValue"{str[center_script]}}{"Rotation"{int[2]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
 {"NPC"{NPC[{"Position"{sngArr[11,0.2,5]}}{"TextureID"{str[83]}}{"ID"{int[2]}}{"Name"{str[SellMan]}}{"Action"{int[0]}}{"AdditionalValue"{str[center_script]}}{"Rotation"{int[1]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
 
