@@ -57,12 +57,10 @@ Walls:
 {"EntityField"{ENT[{"Size"{intArr[3,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[8,0,6]}}{"TexturePath"{str[Mart]}}{"Textures"{recArr[[0,80,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 {"EntityField"{ENT[{"Size"{intArr[3,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[8,1,6]}}{"TexturePath"{str[Mart]}}{"Textures"{recArr[[0,64,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[4,0,6]}}{"TexturePath"{str[Center]}}{"Textures"{recArr[[80,64,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[SeviiIslands\7quest\town.dat,4,1.1,9,0]}}{"Rotation"{int[0]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[4,0,6]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[176,160,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[SeviiIslands\7quest\town.dat,4,1.1,9,0]}}{"Rotation"{int[0]}}]}}
 
 Plants:
-{"EntityField"{ENT[{"Size"{intArr[1,1]}}{"EntityID"{str[WallBill]}}{"Position"{sngArr[1,-0.1,0]}}{"TexturePath"{str[Center]}}{"Textures"{recArr[[112,16,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
-{"EntityField"{ENT[{"Size"{intArr[1,1]}}{"EntityID"{str[WallBill]}}{"Position"{sngArr[1,0.9,0]}}{"TexturePath"{str[Center]}}{"Textures"{recArr[[112,0,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
-
+{"EntityField"{ENT[{"Size"{intArr[1,1]}}{"EntityID"{str[WallBill]}}{"Position"{sngArr[1,0,0]}}{"Scale"{sngArr[0.5,1,0.5]}}{"TexturePath"{str[Interior]}}{"Textures"{recArr[[32,128,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 GlassTable:
 {"Entity"{ENT[{"Scale"{sngArr[1,0.4,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[0,-0.3,2]}}{"TexturePath"{str[Mart]}}{"Textures"{recArr[[0,29,16,9][0,16,16,13][16,38,16,9]]}}{"TextureIndex"{intArr[0,0,2,2,0,0,0,0,1,1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 {"Entity"{ENT[{"Scale"{sngArr[1,0.4,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[1,-0.3,2]}}{"TexturePath"{str[Mart]}}{"Textures"{recArr[[16,29,16,9][16,16,16,13][16,38,16,9]]}}{"TextureIndex"{intArr[0,0,2,2,2,2,0,0,1,1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}

@@ -869,7 +869,7 @@ Public Class OverworldCamera
     Public Overrides Function GetMoveDirection() As Vector3
         Dim v As Vector3 = PlannedMovement
 
-        Select Case GetPlayerFacingDirection()
+		Select Case GetPlayerFacingDirection()
             Case 0 'North
                 If v.Z = 0F Then
                     v.Z = -1.0F

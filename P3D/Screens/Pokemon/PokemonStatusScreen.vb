@@ -243,8 +243,8 @@
 
         ' Portray:
         Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(60, 196, 128, 128))
-        Core.SpriteBatch.Draw(Pokemon.GetTexture(FrontView), New Rectangle(74, 208, 124, 124), Color.White)
-        Core.SpriteBatch.Draw(Pokemon.CatchBall.Texture, New Rectangle(74, 318, 24, 24), Color.White)
+		Core.SpriteBatch.Draw(Pokemon.GetTexture(FrontView), New Rectangle(72, 208, 128, 128), Color.White)
+		Core.SpriteBatch.Draw(Pokemon.CatchBall.Texture, New Rectangle(74, 318, 24, 24), Color.White)
         If Me.Pokemon.IsShiny = True And Me.Pokemon.IsEgg() = False Then
             Core.SpriteBatch.Draw(MainTexture, New Rectangle(78, 218, 18, 18), New Rectangle(118, 4, 9, 9), Color.White)
         End If
@@ -265,9 +265,9 @@
                 Core.SpriteBatch.Draw(MainTexture, New Rectangle(180, 376, 12, 20), r, Color.White)
             End If
 
-            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("Level") & ": " & Me.Pokemon.Level & Environment.NewLine & Localization.GetString("poke_status_screen_number") & Pokemon.Number & Environment.NewLine & Environment.NewLine & Localization.GetString("poke_status_screen_nature") & ":" & Environment.NewLine & Me.Pokemon.Nature.ToString(), New Vector2(76, 410), Color.White)
+			Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("Level") & ": " & Me.Pokemon.Level & Environment.NewLine & Localization.GetString("poke_status_screen_number") & Pokemon.Number & Environment.NewLine & Localization.GetString("poke_status_screen_nature") & ":" & Environment.NewLine & Me.Pokemon.Nature.ToString(), New Vector2(76, 410), Color.White)
 
-            Dim StatusTexture As Texture2D = BattleStats.GetStatImage(Pokemon.Status)
+			Dim StatusTexture As Texture2D = BattleStats.GetStatImage(Pokemon.Status)
             If Not StatusTexture Is Nothing Then
                 Dim Y As Integer = 139
                 If Pokemon.GetDisplayName() <> Pokemon.GetName() Then
@@ -308,53 +308,53 @@
             .Draw(MainTexture, New Rectangle(CInt(p.X + 100), CInt(p.Y + 44), 4, 16), New Rectangle(112, 0, 1, 4), Color.White)
             .Draw(MainTexture, New Rectangle(CInt(p.X + 406), CInt(p.Y + 44), 4, 16), New Rectangle(112, 0, 1, 4), Color.White)
 
-            Dim redText As String = Environment.NewLine & Environment.NewLine
-            Dim blueText As String = Environment.NewLine & Environment.NewLine
-            Dim blackText As String = Localization.GetString("HP") & Environment.NewLine & Environment.NewLine
-            For i = 0 To 4
-                Dim statText As String = ""
-                Dim stat As String = ""
-                Select Case i
-                    Case 0
-                        statText = Localization.GetString("Attack")
-                        stat = "Attack"
-                    Case 1
-                        statText = Localization.GetString("Defense")
-                        stat = "Defense"
-                    Case 2
-                        statText = Localization.GetString("Special_Attack")
-                        stat = "SpAttack"
-                    Case 3
-                        statText = Localization.GetString("Special_Defense")
-                        stat = "SpDefense"
-                    Case 4
-                        statText = Localization.GetString("Speed")
-                        stat = "Speed"
-                End Select
+			Dim redText As String = Environment.NewLine
+			Dim blueText As String = Environment.NewLine
+			Dim blackText As String = Localization.GetString("HP") & Environment.NewLine
+			For i = 0 To 4
+				Dim statText As String = ""
+				Dim stat As String = ""
+				Select Case i
+					Case 0
+						statText = Localization.GetString("Attack")
+						stat = "Attack"
+					Case 1
+						statText = Localization.GetString("Defense")
+						stat = "Defense"
+					Case 2
+						statText = Localization.GetString("Special_Attack")
+						stat = "SpAttack"
+					Case 3
+						statText = Localization.GetString("Special_Defense")
+						stat = "SpDefense"
+					Case 4
+						statText = Localization.GetString("Speed")
+						stat = "Speed"
+				End Select
 
-                Dim m As Single = Nature.GetMultiplier(Pokemon.Nature, stat)
-                If m > 1.0F Then
-                    redText &= statText & Environment.NewLine
-                    blueText &= Environment.NewLine & Environment.NewLine
-                    blackText &= Environment.NewLine & Environment.NewLine
-                ElseIf m < 1.0F Then
-                    redText &= Environment.NewLine & Environment.NewLine
-                    blueText &= statText & Environment.NewLine
-                    blackText &= Environment.NewLine & Environment.NewLine
-                Else
-                    redText &= Environment.NewLine & Environment.NewLine
-                    blueText &= Environment.NewLine & Environment.NewLine
-                    blackText &= statText & Environment.NewLine & Environment.NewLine
-                End If
-            Next
+				Dim m As Single = Nature.GetMultiplier(Pokemon.Nature, stat)
+				If m > 1.0F Then
+					redText &= statText & Environment.NewLine
+					blueText &= Environment.NewLine
+					blackText &= Environment.NewLine
+				ElseIf m < 1.0F Then
+					redText &= Environment.NewLine
+					blueText &= statText & Environment.NewLine
+					blackText &= Environment.NewLine
+				Else
+					redText &= Environment.NewLine
+					blueText &= Environment.NewLine
+					blackText &= statText & Environment.NewLine
+				End If
+			Next
 
-            .DrawString(FontManager.MainFontBlack, blackText, New Vector2(CInt(p.X + 100), CInt(p.Y + 32)), Color.White)
-            .DrawString(FontManager.MainFontWhite, redText, New Vector2(CInt(p.X + 100), CInt(p.Y + 32)), New Color(255, 0, 0, 200))
-            .DrawString(FontManager.MainFontWhite, blueText, New Vector2(CInt(p.X + 100), CInt(p.Y + 32)), Color.RoyalBlue)
-            .DrawString(FontManager.MainFontBlack, Pokemon.HP & " / " & Pokemon.MaxHP & Environment.NewLine & Environment.NewLine & Pokemon.Attack & Environment.NewLine & Environment.NewLine & Pokemon.Defense & Environment.NewLine & Environment.NewLine & Pokemon.SpAttack & Environment.NewLine & Environment.NewLine & Pokemon.SpDefense & Environment.NewLine & Environment.NewLine & Pokemon.Speed, New Vector2(CInt(p.X + 280), CInt(p.Y + 32)), Color.White)
+			.DrawString(FontManager.MainFontBlack, blackText, New Vector2(CInt(p.X + 100), CInt(p.Y + 32)), Color.White)
+			.DrawString(FontManager.MainFontWhite, redText, New Vector2(CInt(p.X + 100), CInt(p.Y + 32)), New Color(226, 84, 65))
+			.DrawString(FontManager.MainFontWhite, blueText, New Vector2(CInt(p.X + 100), CInt(p.Y + 32)), New Color(62, 116, 195))
+			.DrawString(FontManager.MainFontBlack, Pokemon.HP & " / " & Pokemon.MaxHP & Environment.NewLine & Pokemon.Attack & Environment.NewLine & Pokemon.Defense & Environment.NewLine & Pokemon.SpAttack & Environment.NewLine & Pokemon.SpDefense & Environment.NewLine & Pokemon.Speed, New Vector2(CInt(p.X + 280), CInt(p.Y + 32)), Color.White)
 
-            ' Experience Points:
-            If Pokemon.Level < CInt(GameModeManager.GetGameRuleValue("MaxLevel", "100")) Then
+			' Experience Points:
+			If Pokemon.Level < CInt(GameModeManager.GetGameRuleValue("MaxLevel", "100")) Then
                 Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(220, 484, 320, 96))
 
                 Dim NextLvExp As Integer = Pokemon.NeedExperience(Me.Pokemon.Level + 1) - Pokemon.NeedExperience(Me.Pokemon.Level)
@@ -394,8 +394,8 @@
                     barPercentage -= 1
                 End If
 
-                .DrawString(FontManager.MainFontWhite, barPercentage & " %", New Vector2(250, 575), Color.DarkBlue)
-            End If
+				.DrawString(FontManager.MainFontColor, barPercentage & " %", New Vector2(240, 568), New Color(62, 116, 195))
+			End If
         End With
 
     End Sub
@@ -414,10 +414,10 @@
         Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(220, 324, 320, 128))
         If Me.Pokemon.EggSteps = 0 Then
             If Not Pokemon.Item Is Nothing Then
-                Core.SpriteBatch.Draw(Pokemon.Item.Texture, New Rectangle(232, 338, 24, 24), Color.White)
-                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("poke_status_screen_Item") & ": " & Pokemon.Item.Name, New Vector2(262, 342), Color.White)
-                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Pokemon.Item.GetDescription().CropStringToWidth(FontManager.MainFontBlack, 300), New Vector2(234, 360), Color.White)
-            Else
+				Core.SpriteBatch.Draw(Pokemon.Item.Texture, New Rectangle(232, 344, 24, 24), Color.White)
+				Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("poke_status_screen_Item") & ": " & Pokemon.Item.Name, New Vector2(256, 336), Color.White)
+				Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Pokemon.Item.GetDescription().CropStringToWidth(FontManager.MainFontBlack, 320), New Vector2(236, 368), Color.White)
+			Else
                 Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("poke_status_screen_Item") & ": " & Localization.GetString("poke_status_screen_no_item"), New Vector2(234, 342), Color.White)
             End If
         End If
@@ -485,8 +485,8 @@
                     acc = "-"
                 End If
 
-                .DrawString(FontManager.MainFontBlack, Localization.GetString("poke_status_screen_power") & ": " & power & Environment.NewLine & Localization.GetString("poke_status_screen_accuracy") & ": " & acc & Environment.NewLine & Environment.NewLine & t, New Vector2(CInt(552 - 300 + AttackPos), 218), Color.White)
-                .Draw(A.GetDamageCategoryImage(), New Rectangle(CInt(552 - 150 + AttackPos), 222, 56, 28), Color.White)
+				.DrawString(FontManager.MainFontBlack, Localization.GetString("poke_status_screen_power") & ": " & power & Environment.NewLine & Localization.GetString("poke_status_screen_accuracy") & ": " & acc & Environment.NewLine & t, New Vector2(CInt(552 - 300 + AttackPos), 218), Color.White)
+				.Draw(A.GetDamageCategoryImage(), New Rectangle(CInt(552 - 150 + AttackPos), 222, 56, 28), Color.White)
             End With
 
             Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(220, 196, 320, 384))

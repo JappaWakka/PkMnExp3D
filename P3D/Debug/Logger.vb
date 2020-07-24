@@ -309,37 +309,37 @@ Public Class Logger
     End Sub
 
     Public Shared Sub DrawLog()
-        If DisplayLog = True And History.Count > 0 And Not FontManager.ChatFont Is Nothing Then
-            Dim items As New List(Of String)
-            Dim max As Integer = History.Count - 1
+		If DisplayLog = True And History.Count > 0 And Not FontManager.MainFontWhite Is Nothing Then
+			Dim items As New List(Of String)
+			Dim max As Integer = History.Count - 1
 
-            Dim itemCount As Integer = 10
-            If windowSize.Height > 680 Then
-                itemCount += CInt(Math.Floor((windowSize.Height - 680) / 16))
-            End If
+			Dim itemCount As Integer = 10
+			If windowSize.Height > 680 Then
+				itemCount += CInt(Math.Floor((windowSize.Height - 680) / 16))
+			End If
 
-            Dim min As Integer = max - itemCount
-            If min < 0 Then
-                min = 0
-            End If
+			Dim min As Integer = max - itemCount
+			If min < 0 Then
+				min = 0
+			End If
 
-            Dim maxWidth As Integer = 0
-            For i = min To max
-                Dim s As Single = FontManager.ChatFont.MeasureString(History(i)).X * 0.51F
-                If CInt(s) > maxWidth Then
-                    maxWidth = CInt(s)
-                End If
-            Next
+			Dim maxWidth As Integer = 0
+			For i = min To max
+				Dim s As Single = FontManager.MainFontWhite.MeasureString(History(i)).X * 0.51F
+				If CInt(s) > maxWidth Then
+					maxWidth = CInt(s)
+				End If
+			Next
 
-            Canvas.DrawRectangle(New Rectangle(0, 0, maxWidth + 10, (itemCount + 1) * 16 + 2), New Color(0, 0, 0, 150))
+			Canvas.DrawRectangle(New Rectangle(0, 0, maxWidth + 10, (itemCount + 1) * 16 + 2), New Color(0, 0, 0, 150))
 
-            Dim c As Integer = 0
-            For i = min To max
-                SpriteBatch.DrawString(FontManager.ChatFont, History(i), New Vector2(5, 2 + c * 16), Color.White, 0F, Vector2.Zero, 0.51F, SpriteEffects.None, 0F)
-                c += 1
-            Next
-        End If
-    End Sub
+			Dim c As Integer = 0
+			For i = min To max
+				SpriteBatch.DrawString(FontManager.MainFontWhite, History(i), New Vector2(5, 2 + c * 16), Color.White, 0F, Vector2.Zero, 0.51F, SpriteEffects.None, 0F)
+				c += 1
+			Next
+		End If
+	End Sub
 
     Private Shared Function GetLogTime(ByVal d As Date) As String
         Dim hour As String = d.Hour.ToString()

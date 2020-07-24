@@ -112,7 +112,7 @@ Front
 {"EntityField"{ENT[{"Size"{intArr[1,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[31,1,31]}}{"TexturePath"{str[Cities\NewBark]}}{"Textures"{recArr[[16,0,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 
 Door:
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[29,0,31]}}{"TexturePath"{str[Cities\NewBark]}}{"Textures"{recArr[[144,16,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\Cities\NewBark\yourhouse1f.dat,7,0.1,7,0]}}{"Rotation"{int[0]}}{"EnterType"{int[1]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[29,0,31]}}{"TexturePath"{str[Cities\NewBark]}}{"Textures"{recArr[[144,16,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\Cities\NewBark\yourhouse1f.dat,7,0.1,7,0]}}{"Rotation"{int[0]}}]}}
 
 Roof:
 Back

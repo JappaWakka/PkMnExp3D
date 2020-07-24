@@ -101,7 +101,7 @@
 
             Else
                 If ready = True Then
-					.DrawString(FontManager.MainFontBlack, "Saved the game.", New Vector2(Delta_X + 90, Delta_Y + 50), Color.White)
+					.DrawString(FontManager.MainFontColor, "Saved the game.", New Vector2(Delta_X + 90, Delta_Y + 50), New Color(62, 116, 195))
 				Else
                     If SaveGameHelpers.GameJoltSaveDone() = False And savingStarted = True Then
                         If SaveGameHelpers.StartedDownloadCheck = True Then

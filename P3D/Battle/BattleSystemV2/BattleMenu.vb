@@ -492,9 +492,9 @@
 				Dim per As Integer = CInt((Me.Move.CurrentPP / Me.Move.MaxPP) * 100)
 
 				If per <= 50 And per > 25 Then
-					c = FontManager.MainFontWhite
+					c = FontManager.MainFontColor
 				ElseIf per <= 25 Then
-					c = FontManager.MainFontWhite
+					c = FontManager.MainFontColor
 				End If
 
 				Return c

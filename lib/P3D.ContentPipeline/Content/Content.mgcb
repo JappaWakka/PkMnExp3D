@@ -52,6 +52,14 @@
 /processorParam:TextureFormat=Color
 /build:Fonts/BMP/MainFontBlack.png
 
+#begin Fonts/BMP/MainFontColor.png
+/importer:TextureImporter
+/processor:FontTextureProcessor
+/processorParam:FirstCharacter= 
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Color
+/build:Fonts/BMP/MainFontColor.png
+
 #begin Fonts/BMP/MainFontWhite.png
 /importer:TextureImporter
 /processor:FontTextureProcessor

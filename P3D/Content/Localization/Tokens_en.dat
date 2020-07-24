@@ -384,8 +384,8 @@ Special Houses:
 Places_Gate,Gate
 Places_Pokemon Center,Pokémon Center
 Places_Pokemon Mart,Pokémon Mart
-Places_Elms lab,Elm's Lab
-Places_Oak's lab,Oak's Lab
+Places_Elms Lab,Elm's Lab
+Places_Oaks Lab,Oak's Lab
 Places_Azalea Town Gym,Azalea Town Gym
 Places_Violet City Gym,Violet City Gym
 Places_Goldenrod City Gym,Goldenrod City Gym
@@ -839,148 +839,6 @@ pokemon_name_Tyranitar,Tyranitar
 pokemon_name_Lugia,Lugia
 pokemon_name_Ho-Oh,Ho-Oh
 pokemon_name_Celebi,Celebi
------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Story:
-
-NewGameIntro:
-----------
-
-NewGame_Oak_Intro1,Hello, sorry to keep you waiting!*Welcome to the world of Pokémon!*My name is Oak.~People call me the Pokémon Professor.*This world is inhabited by~creatures that we call...
-NewGame_Oak_Intro2,...Pokémon.*People and Pokémon live together~by supporting each other.
-NewGame_Oak_Intro3,Some people play with Pokémon,~some battle with them.*But we don't know everything~about Pokémon yet.
-NewGame_Oak_Intro4,There are still many mysteries to solve.*That's why I study Pokémon every day.*But let's get back to you.
-NewGame_Oak_YourName,Now, what did you say your name was?
-NewGame_Oak_ConfirmName,Alright, nice to meet you,~<player.name>!
-NewGame_Oak_Intro5,This is your home in New Bark Town.*You live there with your mother~right next to Professor Elm.
-NewGame_Oak_Intro6,<player.name>, are you ready?*Your very own Pokémon story is~about to unfold.*You'll face fun times and~tough challenges.*A world of dreams and adventures~with Pokémon awaits!*Let's go!~I'll be seeing you later!
-
----
-MysteryEvents:
-
-MysteryEvents_Question,Do you want to view the Mystery Events?
-MysteryEvents_ComeBackLater,Come back later.
----
-Johto:
-----------
-New Bark Town:
-
-Objects:
-NewBark_YourHouse2f_Bookshelf,A whole collection of Pokémon~picture books!
-NewBark_YourHouse2f_Note_Donators,It's a note on the wall about~the donators of this game.
-NewBark_YourHouse2f_Note_Controls,It's a note on the wall about~the controls.*Do you want to read it?
-NewBark_YourHouse2f_GameControls,The controls in Pokemon:~Move: [W]~Watch: [A][S][D]~Change camera: [C]~Open menu: [E]~Mute music: [M]~Hide GUI: [F1]~Take screenshot: [F2]~Change camera mode: [F5]
-NewBark_YourHouse2f_TownMap,It's a Town Map. Let's take a look.
-NewBark_YourHouse2f_TV,It's a TV.~A Nintendo Wii is connected~to it via Wifi.
-
-NewBark_YourHouse1f_Stove,Mom's specialty!*Cinnabar Volcano Burger!
-NewBark_YourHouse1f_Sink,The sink is spot-less.~Mom likes it clean.
-NewBark_YourHouse1f_Fridge,Let's see what's in the fridge...*Fresh Water and tasty Lemonade!
-
-LivingRoom_TV,There's a movie on TV:~Stars dot the sky as two boys~ride on a train...*I'd better get rolling, too!
-TrashCan_Empty,This trash can is empty.
-
-Signs:
-NewBark_Main_Sign_ElmsLab,Elm Pokémon Lab
-NewBark_Main_Sign_PlayersHouse,<player.name>'s House
-NewBark_Main_Sign_Town,New Bark Town*"The town where the winds of a~new beginning blow."
-NewBark_Main_Sign_ElmsHouse,Elm's House
-token.NewBark_Main_Sign_LargeHouse,FOR SALE!
-
-NPCs:
-NewBark_Main_FatGuy_ElmDiscovery,Yo, <player.name>!*I hear Prof. Elm discovered~some new Pokémon.
-
-NewBark_Main_Mary_PokeGear,Wow, your Pokégear is impressive!*Did your mom get it for you?
-NewBark_Main_Mary_AdorablePokemon,Oh! Your Pokémon is adorable!~I wish I had one!
-NewBark_Main_Mary_TellMomLeaving,Hi, <player.name>!~Leaving again?*You should tell your mom~if you're leaving.
-NewBark_Main_Mary_CallMom,Call your mom on~your Pokégear to*let her know how~you're doing.
-
-NewBark_Main_Mary_NoPokemon1,Wait, <player.name>!
-NewBark_Main_Mary_NoPokemon2,What do you think you're doing?
-NewBark_Main_Mary_NoPokemon3,It's dangerous to go out~without a Pokémon!*Wild Pokémon jump out of the grass~on the way to the next town.
-
-NewBark_Main_Rival_FamousLab,......*So this is the famous Elm Pokémon Lab.
-NewBark_Main_Rival_Staring,......*What are you staring at?
-
-NewBark_YourHouse1f_Mom_ProfElm,Oh, <player.name>! Our neighbor,~Prof. Elm, was looking for you.*He said he wanted you to do~something for him.*Oh! I almost forgot! Your Pokémon~Gear is back from the repair shop.*Here you go!
-NewBark_YourHouse1f_ReceivePokegear,<player.name> received a Pokégear.
-NewBark_YourHouse1f_Mom_Pokegear,Pokémon Gear, or just Pokégear.*It's essential if you want to~be a good trainer.*By the way, do you know how~to use the Phone?
-NewBark_YourHouse1f_Mom_HowToUse_Yes,I'm sure you know that you can~open it by pressing Q.*Phone numbers are stored in memory.*Just choose a name you want to call.*Gee, isn't that convenient?
-NewBark_YourHouse1f_Mom_HowToUse_No,Don't you just turn the Pokégear on by~pressing Q and switch over to Phone?*Phone numbers are stored in memory.*Just choose a name you want to call.*Gee, isn't that convenient?
-NewBark_YourHouse1f_Mom_GiveNumber,Also, here is my number!
-NewBark_YourHouse1f_Mom_RegisterNumber,<player.name>~registered Mom's number.
-----------
-
-Hoenn:
-----------
-Inside Truck:
-
-InsideTruck_MovingBox,The box is printed with a Pokémon logo.*It's a Pokémon brand moving and~delivery service.
-
-Littleroot Town:
-
-Signs:
-
-Littleroot_Main_Sign_Town,Littleroot Town*"A town that can't be shaded any hue."
-Littleroot_Main_Sign_PlayersHouse,<player.name>'s House
-Littleroot_Main_Sign_BirchsHouse,Prof. Birch's House
-Littleroot_Main_Sign_BirchsLab,Prof. Birch's Pokémon Lab
-
-NPCs:
-
-Littleroot_Main_Mom_OutsideMovingTruck,Mom: <player.name>, we're here, honey!*It must be tiring riding with our things~in the moving truck.*Well, this is Littleroot Town.*How do you like it?~This is our new home!*It has a quaint feel, but it seems to be~an easy place to live, don't you think?*And, you get your own room, <player.name>!~Let's go inside.
-Littleroot_PlayersHouse_Mom_Inside,Mom: See, <player.name>?~Isn't it nice in here, too?
-Littleroot_PlayersHouse_Mom_MoversPokemon,The mover's Pokémon do all the work~of moving us in and cleaning up after.*This is so convenient!*<player.name>, your room is upstairs.~Go check it out, dear!
-Littleroot_PlayersHouse_Mom_SeeYourRoom,Mom: Well, <player.name>?*Aren't you interested in seeing your~very own room?
-
-Littleroot_PlayersHouse_Mom_ComeQuickly,Mom: Oh! <player.name>, <player.name>!~Quick! Come quickly!
-Littleroot_PlayersHouse_Mom_PetalburgGym,Mom: Look! It's Petalburg Gym!~Maybe Dad will be on!
-Littleroot_PlayersHouse_TV_Interviewer,Interviewer: ...We brought you this~report from in front of Petalburg Gym.
-Littleroot_PlayersHouse_Mom_MissedDad,Mom: Oh... It's over.*I think Dad was on, but we missed him.~Too bad.
-Littleroot_PlayersHouse_Mom_ProfessorBirch,Oh, yes.~One of Dad's friends lives in town.*Prof. Birch is his name.*He lives right next door, so you should~go over and introduce yourself.
-
-Littleroot_PlayersHouse_Mom_IntroduceYet,Mom: Did you introduce yourself to~Prof. Birch?
-Littleroot_PlayersHouse_Mom_SeeYouHoney,Mom: See you, honey!
-Littleroot_PlayersHouse_Mom_HealPokemon,Mom: How are you doing, <player.name>?~You look a little tired.*I think you should rest a bit.
-Littleroot_PlayersHouse_Mom_AfterHeal,Mom: Take care, honey!
-Littleroot_PlayersHouse_Mom_DadBadge,Mom: Oh? Did Dad give you that Badge?*Then here's something from your Mom!
-Littleroot_PlayersHouse_Mom_DontPushYourself,Don't push yourself too hard, dear.~You can always come home.*Go for it, honey!
-
-Littleroot_PlayersHouse_Machoke_WatchingTV,Fugiiiiih!
-Littleroot_PlayersHouse_Machoke_Walking,Huggoh, uggo uggo...
-
-Littleroot_Main_Mom_Wait,Mom: Wait, <player.name>!
-Littleroot_Main_Mom_IntroducedToProfBirch,Mom: <player.name>! Did you~introduce yourself to Prof. Birch?*Oh! What an adorable Pokémon!~You got it from Prof. Birch? How nice!*You're your father's child, all right.~You look good together with Pokémon!
-Littleroot_Main_Mom_FatherWillBeOverjoyed,Your father will be overjoyed to hear you have your own Pokémon now!*...But please be careful.~If anything happens, you can come home.*Go on, go get them, honey!
-
-
-Littleroot_Main_FatGuy_Technology,If you use a PC, you can store items~and Pokémon.*The power of technology is staggering!
-
-Littleroot_Main_LittleBoy_DontGoOutside,Um, um, um!*If you go outside and go in the grass,~wild Pokémon will jump out!*It's dangerous if you don't have~your own Pokémon.
-Littleroot_Main_LittleBoy_PokemonCries,Um, hi!*There are scary Pokémon outside!~I can hear their cries!*I want to go see what's going on,~but I don't have any Pokémon...*Can you go see what's happening~for me?
-Littleroot_Main_LittleBoy_SavedProfBirch,You saved Prof. Birch!~I'm so glad!
-Littleroot_Main_LittleBoy_GoodLuck,Are you going to catch Pokémon?~Good luck!
-
-Littleroot_BirchsLab_Assistant_ProfBirch,Prof. Birch spends days in his Lab~studying, then he'll suddenly go out in*the wild to do more research...*When does Prof. Birch spend time~at home?
-
------
-Route 101:
-
-Signs:
-
-Route 101 - Oldale Town
-
-NPCs:
-
-Route101_ProfBirch_Help,H-help me!
-Route101_ProfBirch_PokeBallInBag,Hello! You over there!~Please! Help!*In my Bag!~There's a Poké Ball!
-Route101_ProfBirch_DontLeave,Wh-Where are you going?!~Don't leave me like this!
-Route101_ProfBirch_Saved,Prof. Birch: Whew...*I was in the tall grass studying wild~Pokémon when I was jumped.*You saved me.~Thanks a lot!*Oh?*Hi, you're <player.name>{05}!*This is not the place to chat, so come~by my Pokémon Lab later, okay?
-
-Route101_Boy_PokeCenter,If Pokémon get tired, take them to~a Pokémon Center.*There's a Pokémon Center in Oldale~Town right close by.
-Route101_Girl_TallGrass,Wild Pokémon will jump out at you in~tall grass.*If you want to catch Pokémon, you have~to go into the tall grass and search.
-
-
-
 
 --------------
 Item categories:
@@ -1698,3 +1556,159 @@ item_name_674,Rock Memory
 item_name_675,Steel Memory
 item_name_676,Water Memory
 ---
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Story:
+
+NewGameIntro:
+----------
+
+NewGame_Oak_Intro1,Hello, sorry to keep you waiting!*Welcome to the world of Pokémon!*My name is Oak.~People call me the Pokémon Professor.*This world is inhabited by~creatures that we call...
+NewGame_Oak_Intro2,...Pokémon.*People and Pokémon live together~by supporting each other.
+NewGame_Oak_Intro3,Some people play with Pokémon,~some battle with them.*But we don't know everything~about Pokémon yet.
+NewGame_Oak_Intro4,There are still many mysteries to solve.*That's why I study Pokémon every day.*But let's get back to you.
+NewGame_Oak_YourName,Now, what did you say your name was?
+NewGame_Oak_ConfirmName,Alright, nice to meet you,~<player.name>!
+NewGame_Oak_Intro5,This is your home in New Bark Town.*You live there with your mother~right next to Professor Elm.
+NewGame_Oak_Intro6,<player.name>, are you ready?*Your very own Pokémon story is~about to unfold.*You'll face fun times and~tough challenges.*A world of dreams and adventures~with Pokémon awaits!*Let's go!~I'll be seeing you later!
+
+---
+MysteryEvents:
+
+MysteryEvents_Question,Do you want to view the Mystery Events?
+MysteryEvents_ComeBackLater,Come back later.
+---
+Johto:
+----------
+New Bark Town:
+
+Objects:
+NewBark_YourHouse2f_Bookshelf,A whole collection of Pokémon~picture books!
+NewBark_YourHouse2f_Note_Donators,It's a note on the wall about~the donators of this game.
+NewBark_YourHouse2f_Note_Controls,It's a note on the wall about~the controls.*Do you want to read it?
+NewBark_YourHouse2f_GameControls,The controls in Pokemon:~Move: [W]~Watch: [A][S][D]~Change camera: [C]~Open menu: [E]~Mute music: [M]~Hide GUI: [F1]~Take screenshot: [F2]~Change camera mode: [F5]
+NewBark_YourHouse2f_TownMap,It's a Town Map. Let's take a look.
+NewBark_YourHouse2f_TV,It's a TV.~A Nintendo Wii is connected~to it via Wifi.
+
+NewBark_YourHouse1f_Stove,Mom's specialty!*Cinnabar Volcano Burger!
+NewBark_YourHouse1f_Sink,The sink is spot-less.~Mom likes it clean.
+NewBark_YourHouse1f_Fridge,Let's see what's in the fridge...*Fresh Water and tasty Lemonade!
+
+NewBark_ElmsLab_HealMachine_Explanation,This is a machine for~healing injured Pokémon.
+NewBark_ElmsLab_HealMachine_Question,Do you want to heal your Pokémon?
+NewBark_ElmsLab_HealMachine_Restored,Your Pokémon are fully restored.
+
+LivingRoom_TV,There's a movie on TV:~Stars dot the sky as two boys~ride on a train...*I'd better get rolling, too!
+TrashCan_Empty,This trash can is empty.
+
+Signs:
+NewBark_Main_Sign_ElmsLab,Elm Pokémon Lab
+NewBark_Main_Sign_PlayersHouse,<player.name>'s House
+NewBark_Main_Sign_Town,New Bark Town*"The town where the winds of a~new beginning blow."
+NewBark_Main_Sign_ElmsHouse,Elm's House
+NewBark_Main_Sign_LargeHouse,FOR SALE!
+
+NPCs:
+NewBark_Main_FatGuy_ElmDiscovery,Yo, <player.name>!*I hear Prof. Elm discovered~some new Pokémon.
+
+NewBark_Main_Mary_PokeGear,Wow, your Pokégear is impressive!*Did your mom get it for you?
+NewBark_Main_Mary_AdorablePokemon,Oh! Your Pokémon is adorable!~I wish I had one!
+NewBark_Main_Mary_TellMomLeaving,Hi, <player.name>!~Leaving again?*You should tell your mom~if you're leaving.
+NewBark_Main_Mary_CallMom,Call your mom on~your Pokégear to*let her know how~you're doing.
+
+NewBark_Main_Mary_NoPokemon1,Wait, <player.name>!
+NewBark_Main_Mary_NoPokemon2,What do you think you're doing?
+NewBark_Main_Mary_NoPokemon3,It's dangerous to go out~without a Pokémon!*Wild Pokémon jump out of the grass~on the way to the next town.
+
+NewBark_Main_Rival_FamousLab,......*So this is the famous Elm Pokémon Lab.
+NewBark_Main_Rival_Staring,......*What are you staring at?
+
+NewBark_YourHouse1f_Mom_ProfElm,Oh, <player.name>! Our neighbor,~Prof. Elm, was looking for you.*He said he wanted you to do~something for him.*Oh! I almost forgot! Your Pokémon~Gear is back from the repair shop.*Here you go!
+NewBark_YourHouse1f_ReceivePokegear,<player.name> received a Pokégear.
+NewBark_YourHouse1f_Mom_Pokegear,Pokémon Gear, or just Pokégear.*It's essential if you want to~be a good trainer.*By the way, do you know how~to use the Phone?
+NewBark_YourHouse1f_Mom_HowToUse_Yes,I'm sure you know that you can~open it by pressing Q.*Phone numbers are stored in memory.*Just choose a name you want to call.*Gee, isn't that convenient?
+NewBark_YourHouse1f_Mom_HowToUse_No,Don't you just turn the Pokégear on by~pressing Q and switch over to Phone?*Phone numbers are stored in memory.*Just choose a name you want to call.*Gee, isn't that convenient?
+NewBark_YourHouse1f_Mom_GiveNumber,Also, here is my number!
+NewBark_YourHouse1f_Mom_RegisterNumber,<player.name>~registered Mom's number.
+
+NewBark_ElmsLab_Elm_WhereAreYouGoing,Elm: Wait! Where are you going?
+NewBark_ElmsLab_Elm_Favor,Elm: <player.name>! There you are!~I needed to ask you a favor.*I have an acquaintance~called Mr. Pokémon.*He keeps finding weird things and~raving about his discoveries.*Anyway, I just got an e-mail from him~saying that this time it's real.*It is intriguing, but we're busy~with our Pokémon research.*Could you look into it for us?*I'll give you a Pokémon for a partner.
+NewBark_ElmsLab_Elm_PickAPokemon,They're all rare Pokémon that~we just found.*Go on. Pick one!
+NewBark_ElmsLab_Assistant_TakeThisForErrand,<player.name>, I want you to have this~for your errand.
+NewBark_ElmsLab_Assistant_AlwaysBusy,There are only two of us,~so we're always busy.
+NewBark_ElmsLab_Assistant_UseTheseOnQuest,<player.name>!*Use these on your Pokédex quest!
+NewBark_ElmsLab_Assistant_ThrowPokeBalls,To add to your Pokédex,~you have to catch Pokémon.*Throw Pokéballs at wild Pokémon to get them.
+NewBark_ElmsLab_Police_StolenPokemon,I heard a Pokémon was stolen here...*I was just getting some~information from Prof. Elm.*Apparently, it was a young male~with long, red hair...*What?*You battled a trainer like that?*Did you happen to get his name?
+NewBark_ElmsLab_Police_RivalName,OK! So <rival.name> was his name.*Thanks for helping my investigation!
+
+----------
+
+Hoenn:
+----------
+Inside Truck:
+
+InsideTruck_MovingBox,The box is printed with a Pokémon logo.*It's a Pokémon brand moving and~delivery service.
+
+Littleroot Town:
+
+Signs:
+
+Littleroot_Main_Sign_Town,Littleroot Town*"A town that can't be shaded any hue."
+Littleroot_Main_Sign_PlayersHouse,<player.name>'s House
+Littleroot_Main_Sign_BirchsHouse,Prof. Birch's House
+Littleroot_Main_Sign_BirchsLab,Prof. Birch's Pokémon Lab
+
+NPCs:
+
+Littleroot_Main_Mom_OutsideMovingTruck,Mom: <player.name>, we're here, honey!*It must be tiring riding with our things~in the moving truck.*Well, this is Littleroot Town.*How do you like it?~This is our new home!*It has a quaint feel, but it seems to be~an easy place to live, don't you think?*And, you get your own room, <player.name>!~Let's go inside.
+Littleroot_PlayersHouse_Mom_Inside,Mom: See, <player.name>?~Isn't it nice in here, too?
+Littleroot_PlayersHouse_Mom_MoversPokemon,The mover's Pokémon do all the work~of moving us in and cleaning up after.*This is so convenient!*<player.name>, your room is upstairs.~Go check it out, dear!
+Littleroot_PlayersHouse_Mom_SeeYourRoom,Mom: Well, <player.name>?*Aren't you interested in seeing your~very own room?
+
+Littleroot_PlayersHouse_Mom_ComeQuickly,Mom: Oh! <player.name>, <player.name>!~Quick! Come quickly!
+Littleroot_PlayersHouse_Mom_PetalburgGym,Mom: Look! It's Petalburg Gym!~Maybe Dad will be on!
+Littleroot_PlayersHouse_TV_Interviewer,Interviewer: ...We brought you this~report from in front of Petalburg Gym.
+Littleroot_PlayersHouse_Mom_MissedDad,Mom: Oh... It's over.*I think Dad was on, but we missed him.~Too bad.
+Littleroot_PlayersHouse_Mom_ProfessorBirch,Oh, yes.~One of Dad's friends lives in town.*Prof. Birch is his name.*He lives right next door, so you should~go over and introduce yourself.
+
+Littleroot_PlayersHouse_Mom_IntroduceYet,Mom: Did you introduce yourself to~Prof. Birch?
+Littleroot_PlayersHouse_Mom_SeeYouHoney,Mom: See you, honey!
+Littleroot_PlayersHouse_Mom_HealPokemon,Mom: How are you doing, <player.name>?~You look a little tired.*I think you should rest a bit.
+Littleroot_PlayersHouse_Mom_AfterHeal,Mom: Take care, honey!
+Littleroot_PlayersHouse_Mom_DadBadge,Mom: Oh? Did Dad give you that Badge?*Then here's something from your Mom!
+Littleroot_PlayersHouse_Mom_DontPushYourself,Don't push yourself too hard, dear.~You can always come home.*Go for it, honey!
+
+Littleroot_PlayersHouse_Machoke_WatchingTV,Fugiiiiih!
+Littleroot_PlayersHouse_Machoke_Walking,Huggoh, uggo uggo...
+
+Littleroot_Main_Mom_Wait,Mom: Wait, <player.name>!
+Littleroot_Main_Mom_IntroducedToProfBirch,Mom: <player.name>! Did you~introduce yourself to Prof. Birch?*Oh! What an adorable Pokémon!~You got it from Prof. Birch? How nice!*You're your father's child, all right.~You look good together with Pokémon!
+Littleroot_Main_Mom_FatherWillBeOverjoyed,Your father will be overjoyed to hear you have your own Pokémon now!*...But please be careful.~If anything happens, you can come home.*Go on, go get them, honey!
+
+
+Littleroot_Main_FatGuy_Technology,If you use a PC, you can store items~and Pokémon.*The power of technology is staggering!
+
+Littleroot_Main_LittleBoy_DontGoOutside,Um, um, um!*If you go outside and go in the grass,~wild Pokémon will jump out!*It's dangerous if you don't have~your own Pokémon.
+Littleroot_Main_LittleBoy_PokemonCries,Um, hi!*There are scary Pokémon outside!~I can hear their cries!*I want to go see what's going on,~but I don't have any Pokémon...*Can you go see what's happening~for me?
+Littleroot_Main_LittleBoy_SavedProfBirch,You saved Prof. Birch!~I'm so glad!
+Littleroot_Main_LittleBoy_GoodLuck,Are you going to catch Pokémon?~Good luck!
+
+Littleroot_BirchsLab_Assistant_ProfBirch,Prof. Birch spends days in his Lab~studying, then he'll suddenly go out in*the wild to do more research...*When does Prof. Birch spend time~at home?
+
+-----
+Route 101:
+
+Signs:
+
+Route101_Sign,Route 101~Littleroot Town - Oldale Town
+
+NPCs:
+
+Route101_ProfBirch_Help,H-help me!
+Route101_ProfBirch_PokeBallInBag,Hello! You over there!~Please! Help!*In my Bag!~There's a Poké Ball!
+Route101_ProfBirch_DontLeave,Wh-Where are you going?!~Don't leave me like this!
+Route101_ProfBirch_Saved,Prof. Birch: Whew...*I was in the tall grass studying wild~Pokémon when I was jumped.*You saved me.~Thanks a lot!*Oh?*Hi, you're <player.name>{05}!*This is not the place to chat, so come~by my Pokémon Lab later, okay?
+
+Route101_Boy_PokeCenter,If Pokémon get tired, take them to~a Pokémon Center.*There's a Pokémon Center in Oldale~Town right close by.
+Route101_Girl_TallGrass,Wild Pokémon will jump out at you in~tall grass.*If you want to catch Pokémon, you have~to go into the tall grass and search.
+

@@ -122,8 +122,8 @@
 			Me.FrameSize = New Vector2(CInt(Me.Texture.Width / 3), CInt(Me.Texture.Height / 4))
 		End If
 		If Me.Movement = Movements.Pokeball Then
-            Me.FrameSize = New Vector2(32, 32)
-        End If
+			Me.FrameSize = New Vector2(Me.Texture.Width, Me.Texture.Height)
+		End If
 
         lastRectangle = New Rectangle(0, 0, 0, 0)
 
@@ -464,8 +464,8 @@
         Dim state = GraphicsDevice.DepthStencilState
         GraphicsDevice.DepthStencilState = DepthStencilState.DepthRead
         Draw(Me.Model, Me.Textures, True)
-        GraphicsDevice.DepthStencilState = state
-    End Sub
+		GraphicsDevice.DepthStencilState = state
+	End Sub
 
 #Region "Movement and Camera"
 

@@ -86,7 +86,13 @@ Public Class FontManager
         End Get
     End Property
 
-    Public Shared ReadOnly Property TextFont() As SpriteFont
+	Public Shared ReadOnly Property MainFontColor() As SpriteFont
+		Get
+			Return GetFont("mainfontcolor")
+		End Get
+	End Property
+
+	Public Shared ReadOnly Property TextFont() As SpriteFont
         Get
             Return GetFont("textfont")
         End Get
@@ -98,19 +104,13 @@ Public Class FontManager
         End Get
     End Property
 
-    Public Shared ReadOnly Property ChatFont() As SpriteFont
-        Get
-            Return GetFont("chatfont")
-        End Get
-    End Property
+	Public Shared ReadOnly Property UnownFont() As SpriteFont
+		Get
+			Return GetFont("unown")
+		End Get
+	End Property
 
-    Public Shared ReadOnly Property UnownFont() As SpriteFont
-        Get
-            Return GetFont("unown")
-        End Get
-    End Property
-
-    Public Shared ReadOnly Property BrailleFont() As SpriteFont
+	Public Shared ReadOnly Property BrailleFont() As SpriteFont
         Get
             Return GetFont("braille")
         End Get

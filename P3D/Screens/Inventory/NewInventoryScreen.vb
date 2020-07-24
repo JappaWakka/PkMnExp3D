@@ -244,11 +244,11 @@ Public Class NewInventoryScreen
 
             Canvas.DrawRectangle(New Rectangle(CInt(Core.windowSize.Width / 2 - 150), CInt(Core.windowSize.Height - 200), 300, 100), New Color(0, 0, 0, CInt(150 * textFade * _interfaceFade)))
 
-            Dim text As String = _messageText.CropStringToWidth(FontManager.ChatFont, 250)
-            Dim size As Vector2 = FontManager.ChatFont.MeasureString(text)
+			Dim text As String = _messageText.CropStringToWidth(FontManager.MainFontWhite, 250)
+			Dim size As Vector2 = FontManager.MainFontWhite.MeasureString(text)
 
-            SpriteBatch.DrawString(FontManager.ChatFont, text, New Vector2(CSng(Core.windowSize.Width / 2 - size.X / 2), CSng(Core.windowSize.Height - 150 - size.Y / 2)), New Color(255, 255, 255, CInt(255 * textFade * _interfaceFade)))
-        End If
+			SpriteBatch.DrawString(FontManager.MainFontWhite, text, New Vector2(CSng(Core.windowSize.Width / 2 - size.X / 2), CSng(Core.windowSize.Height - 150 - size.Y / 2)), New Color(255, 255, 255, CInt(255 * textFade * _interfaceFade)))
+		End If
     End Sub
 
     ''' <summary>
@@ -309,9 +309,9 @@ Public Class NewInventoryScreen
         If _closing Then
             gColor = New Color(gColor.R, gColor.G, gColor.B, CInt(CInt(gColor.A) * _interfaceFade))
         End If
-        Dim fontWidth As Integer = CInt(FontManager.ChatFont.MeasureString(TabName).X)
-        SpriteBatch.DrawString(FontManager.ChatFont, TabName, New Vector2(halfWidth - 400 + 384 + CInt((TabDesriptionWidth - fontWidth) * 0.5), halfHeight - 200 + 12), gColor)
-    End Sub
+		Dim fontWidth As Integer = CInt(FontManager.MainFontColor.MeasureString(TabName).X)
+		SpriteBatch.DrawString(FontManager.MainFontColor, TabName, New Vector2(halfWidth - 400 + 384 + CInt((TabDesriptionWidth - fontWidth) * 0.5), halfHeight - 200 + 12), gColor)
+	End Sub
 
     ''' <summary>
     ''' Draws the main content.
@@ -332,10 +332,10 @@ Public Class NewInventoryScreen
         SpriteBatch.Draw(_texture, New Rectangle(halfWidth - 140, halfHeight - 232, 16, 16), New Rectangle(80, 0, 16, 16), mainBackgroundColor)
         SpriteBatch.Draw(_texture, New Rectangle(halfWidth - 124, halfHeight - 216, 16, 16), New Rectangle(80, 0, 16, 16), mainBackgroundColor)
 
-        SpriteBatch.DrawString(FontManager.ChatFont, "Inventory", New Vector2(halfWidth - 390, halfHeight - 228), mainBackgroundColor)
+		SpriteBatch.DrawString(FontManager.MainFontWhite, "Inventory", New Vector2(halfWidth - 390, halfHeight - 228), mainBackgroundColor)
 
-        'Draw background pattern:
-        For y = 0 To CInt(_enrollY) Step 16
+		'Draw background pattern:
+		For y = 0 To CInt(_enrollY) Step 16
             For x = 0 To 800 Step 16
                 SpriteBatch.Draw(_texture, New Rectangle(halfWidth - 400 + x, halfHeight - 200 + y, 16, 16), New Rectangle(64, 0, 4, 4), mainBackgroundColor)
             Next

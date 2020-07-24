@@ -248,11 +248,10 @@
     Private Sub DrawMapDisplays()
         For Each des As MapDisplay In Me.TextDisplays
             Dim p As Vector2 = des.Position.ProjectPoint(Screen.Camera.View, Screen.Camera.Projection)
-            p.X -= FontManager.ChatFont.MeasureString(des.Text).X / 2.0F
+			p.X -= FontManager.MainFontColor.MeasureString(des.Text).X / 2.0F
 
-            SpriteBatch.DrawString(FontManager.ChatFont, des.Text, New Vector2(p.X + 2, p.Y + 2), New Color(0, 0, 0, 128), 0.0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0.0F)
-            SpriteBatch.DrawString(FontManager.ChatFont, des.Text, p, des.Color, 0.0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0.0F)
-        Next
+			SpriteBatch.DrawString(FontManager.MainFontColor, des.Text, p, des.Color, 0.0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0.0F)
+		Next
     End Sub
 
     Public Shared Sub DetectMapPath(ByVal arg As String)

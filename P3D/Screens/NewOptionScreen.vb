@@ -123,9 +123,9 @@
         SpriteBatch.Draw(_texture, New Rectangle(halfWidth - 140, halfHeight - 232, 16, 16), New Rectangle(80, 0, 16, 16), mainBackgroundColor)
         SpriteBatch.Draw(_texture, New Rectangle(halfWidth - 124, halfHeight - 216, 16, 16), New Rectangle(80, 0, 16, 16), mainBackgroundColor)
 
-        SpriteBatch.DrawString(FontManager.ChatFont, "Options", New Vector2(halfWidth - 390, halfHeight - 228), mainBackgroundColor)
+		SpriteBatch.DrawString(FontManager.MainFontWhite, "Options", New Vector2(halfWidth - 390, halfHeight - 228), mainBackgroundColor)
 
-        For y = 0 To CInt(_enrollY) Step 16
+		For y = 0 To CInt(_enrollY) Step 16
             For x = 0 To 800 Step 16
                 SpriteBatch.Draw(_texture, New Rectangle(halfWidth - 400 + x, halfHeight - 200 + y, 16, 16), New Rectangle(64, 0, 4, 4), mainBackgroundColor)
             Next

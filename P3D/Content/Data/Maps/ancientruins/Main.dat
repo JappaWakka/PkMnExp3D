@@ -90,7 +90,7 @@ Tunnel:
 
 Crystal:
 {"EntityField"{ENT[{"Size"{intArr[1,1]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1,1,1]}}{"Position"{sngArr[4,0,13]}}{"TexturePath"{str[AncientRuins]}}{"Textures"{recArr[[64,0,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
-{"Entity"{ENT[{"EntityID"{str[ScriptBlock]}}{"Position"{sngArr[4,0,13]}}{"TexturePath"{str[AncientRuins]}}{"Visible"{bool[0]}}{"Textures"{recArr[[32,48,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[0]}}{"Action"{int[1]}}{"AdditionalValue"{str[AncientRuins\blue]}}{"Rotation"{int[0]}}]}}
+{"Entity"{ENT[{"EntityID"{str[ScriptBlock]}}{"Position"{sngArr[4,0,13]}}{"TexturePath"{str[AncientRuins]}}{"Visible"{bool[0]}}{"Textures"{recArr[[32,48,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[0]}}{"Action"{int[1]}}{"AdditionalValue"{str[AncientRuins\BlueGem]}}{"Rotation"{int[0]}}]}}
 
 Warps:
 {"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[17,0,21]}}{"TexturePath"{str[AncientRuins]}}{"Visible"{bool[0]}}{"Textures"{recArr[[32,0,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[AncientRuins\Maze\0.dat,7,0.1,8,2]}}{"Rotation"{int[0]}}]}}
