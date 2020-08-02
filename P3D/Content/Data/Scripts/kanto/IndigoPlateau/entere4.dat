@@ -4,12 +4,12 @@
 
 :when:4,0,15
 @player.move(3)
-@register.unregister(trainer_Kanto\league\<register.registered(leagueupgrade)>\<level.filename>)
+@register.unregister(trainer_league\<register.registered(leagueupgrade)>\<level.filename>)
 @register.unregister(defeat<level.filename>)
 
 :when:5,0,15
 @player.move(3)
-@register.unregister(trainer_Kanto\league\<register.registered(leagueupgrade)>\<level.filename>)
+@register.unregister(trainer_league\<register.registered(leagueupgrade)>\<level.filename>)
 @register.unregister(defeat<level.filename>)
 :endwhen
 

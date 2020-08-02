@@ -6,11 +6,11 @@
     '3 = shiny + caught + seen
 
     Public Shared AutoDetect As Boolean = True
-    Public Const POKEMONCOUNT As Integer = 721
+	Public Const POKEMONCOUNT As Integer = 893
 
 #Region "PlayerData"
 
-    Public Shared Function CountEntries(ByVal Data As String, ByVal Type() As Integer) As Integer
+	Public Shared Function CountEntries(ByVal Data As String, ByVal Type() As Integer) As Integer
         Dim counts As Integer = 0
 
         Dim pData() As String = Data.Split(CChar(Environment.NewLine))

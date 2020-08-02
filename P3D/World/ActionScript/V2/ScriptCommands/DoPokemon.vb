@@ -85,7 +85,12 @@
                             heldItem = CInt(argument.GetSplit(7))
                         End If
 
-                        Dim Pokemon As Pokemon = Pokemon.GetPokemonByID(PokemonID)
+						Dim isShiny As Boolean = False
+						If commas > 7 Then
+							isShiny = CBool(argument.GetSplit(8))
+						End If
+
+						Dim Pokemon As Pokemon = Pokemon.GetPokemonByID(PokemonID)
                         Pokemon.Generate(Level, True)
 
                         Pokemon.CatchTrainerName = catchTrainer

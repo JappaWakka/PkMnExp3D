@@ -81,10 +81,10 @@
                 If size < 3.5F Then
                     size += 0.08F
                 Else
-                    MusicManager.Play("wild_defeat")
-                    cPokemon.PlayCry()
-                    SoundManager.PlaySound("success", True)
-                    Stage = 7
+					cPokemon.PlayCry()
+					SoundManager.PlaySound("success", True)
+					MusicManager.Play("wild_defeat")
+					Stage = 7
                     TextBox.Show("Congratulations!~Your egg hatched into~a " & cPokemon.GetName() & "!*Do you want to give~a nickname to the freshly~hatched " & cPokemon.GetName() & "?%Yes|No%", AddressOf Me.ResultFunction, False, False, TextBox.DefaultColor)
                 End If
             ElseIf Stage = 7 Then

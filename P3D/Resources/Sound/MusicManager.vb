@@ -189,7 +189,7 @@ Public Class MusicManager
 			If Date.Now >= _pausedUntil Then
 				If MusicManager.Paused = True Then
 					_isPausedForSound = False
-					ResumePlayback()
+					Paused = False
 				End If
 			End If
 		Else
@@ -301,7 +301,6 @@ Public Class MusicManager
 						Dim pauseTime As TimeSpan = Date.Now.Subtract(_introMuteTime)
 						_introEndTime = _introEndTime + pauseTime
 					End If
-					Paused = False
 					outputDevice.Play()
 				End If
 			End If

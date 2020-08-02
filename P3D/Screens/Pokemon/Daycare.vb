@@ -82,24 +82,25 @@
                 male = 1
             End If
             If male > -1 Then
-                Dim cParent As Pokemon = Nothing
-                Select Case male
-                    Case 0
-                        cParent = parent1
-                    Case 1
-                        cParent = parent2
-                End Select
-                For Each BreedMove As Integer In p.EggMoves
-                    For Each m1 As BattleSystem.Attack In cParent.Attacks
-                        If m1.ID = BreedMove Then
-                            GameJolt.Emblem.AchieveEmblem("eggsplosion")
+				For Each BreedMove As Integer In p.EggMoves
+					For Each m1 As BattleSystem.Attack In parent1.Attacks
+						If m1.ID = BreedMove Then
+							GameJolt.Emblem.AchieveEmblem("eggsplosion")
 
-                            Dim newAttack As BattleSystem.Attack = BattleSystem.Attack.GetAttackByID(m1.ID)
-                            EggMoves.Add(newAttack)
-                        End If
-                    Next
-                Next
-            End If
+							Dim newAttack As BattleSystem.Attack = BattleSystem.Attack.GetAttackByID(m1.ID)
+							EggMoves.Add(newAttack)
+						End If
+					Next
+					For Each m1 As BattleSystem.Attack In parent2.Attacks
+						If m1.ID = BreedMove Then
+							GameJolt.Emblem.AchieveEmblem("eggsplosion")
+
+							Dim newAttack As BattleSystem.Attack = BattleSystem.Attack.GetAttackByID(m1.ID)
+							EggMoves.Add(newAttack)
+						End If
+					Next
+				Next
+			End If
             ' Volt Tackle for Pikachu:
             If (parent1.Item IsNot Nothing AndAlso parent1.Item.Name.ToLower = "light ball") OrElse (parent2.Item IsNot Nothing AndAlso parent2.Item.Name.ToLower = "light ball") Then
                 Dim newAttack As BattleSystem.Attack = BattleSystem.Attack.GetAttackByID(344)
