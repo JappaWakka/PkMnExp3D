@@ -61,21 +61,21 @@ TrainStation:
 Market:
 {"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[24,0,27]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[16,0,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\Cities\Goldenrod\Mart.dat,7,0.1,7,0]}}{"Rotation"{int[0]}}]}}
 Tame-Shop:
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[29,0,29]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[16,0,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\Cities\Goldenrod\taming_shop.dat,3,0.1,8,0]}}{"Rotation"{int[0]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[29,0,29]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[16,0,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\Cities\Goldenrod\TamingShop.dat,3,0.1,8,0]}}{"Rotation"{int[0]}}]}}
 Radio Tower:
 {"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[5,0,15]}}{"TexturePath"{str[Cities\Goldenrod]}}{"Textures"{recArr[[80,64,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\Cities\Goldenrod\radiotower\1f.dat,4,0.1,10,0]}}{"Rotation"{int[0]}}]}}
 Name changer:
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[15,0,7]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[16,0,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[NameRater.dat,2,0.1,7,0]}}{"Rotation"{int[0]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[15,0,7]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[16,0,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\Cities\Goldenrod\NameRatersHouse.dat,2,0.1,7,0]}}{"Rotation"{int[0]}}]}}
 Route 35:
 {"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[19,0,1]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[16,0,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Gates\goldenrod-route35.dat,10,0.1,4,1]}}{"Rotation"{int[0]}}]}}
 Flowers:
 {"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[29,0,5]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[16,0,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\Cities\Goldenrod\flowershop.dat,2,0.1,7,0]}}{"Rotation"{int[0]}}]}}
 House1:
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[33,0,9]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[16,0,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\Cities\Goldenrod\002.dat,2,0.1,7,0]}}{"Rotation"{int[0]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[33,0,9]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[16,0,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\Cities\Goldenrod\House2.dat,2,0.1,7,0]}}{"Rotation"{int[0]}}]}}
 House2:
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[31,0,21]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[16,0,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\Cities\Goldenrod\001.dat,2,0.1,7,0]}}{"Rotation"{int[0]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[31,0,21]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[16,0,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\Cities\Goldenrod\House1.dat,2,0.1,7,0]}}{"Rotation"{int[0]}}]}}
 House3:
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[5,0,25]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[16,0,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\Cities\Goldenrod\bill.dat,2,0.1,7,0]}}{"Rotation"{int[0]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[5,0,25]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[16,0,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\Cities\Goldenrod\BillsHouse.dat,2,0.1,7,0]}}{"Rotation"{int[0]}}]}}
 Underground1:
 {"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[9,0,5]}}{"TexturePath"{str[Routes]}}{"Textures"{recArr[[16,0,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\Cities\Goldenrod\underground0.dat,-1,2.1,6,0]}}{"Rotation"{int[0]}}]}}
 Underground2:
@@ -138,7 +138,7 @@ club:
 
 {"EntityField"{ENT[{"Size"{intArr[6,4]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[12,4,18]}}{"TexturePath"{str[Club]}}{"Textures"{recArr[[48,48,16,16]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1]}}{"Collision"{bool[1]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[15,0,21]}}{"TexturePath"{str[Club]}}{"Textures"{recArr[[32,48,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\Cities\Goldenrod\club.dat,7,0.1,15,0]}}{"Rotation"{int[0]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[15,0,21]}}{"TexturePath"{str[Club]}}{"Textures"{recArr[[32,48,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Johto\Cities\Goldenrod\BattleBar.dat,7,0.1,15,0]}}{"Rotation"{int[0]}}]}}
 
 {"Entity"{ENT[{"Scale"{sngArr[0.25,1,0.25]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[17.625,0,21.375]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[20,112,4,16][20,128,4,4]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,-1,-1]}}{"Collision"{bool[0]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 {"Entity"{ENT[{"Scale"{sngArr[0.25,1,0.25]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[17.625,1,21.375]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[20,112,4,16][20,128,4,4]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
