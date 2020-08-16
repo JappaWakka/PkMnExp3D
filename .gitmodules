@@ -4,5 +4,4 @@
 	branch = master
 [submodule "lib/game-dev-common"]
 	path = lib/game-dev-common
-url=https://github.com/JappaWakka/Game-Dev-Common.git
-	branch = master
+	url = https://github.com/JappaWakka/Game-Dev-Common.git
