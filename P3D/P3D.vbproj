@@ -11382,7 +11382,10 @@
     <Content Include="Content\Textures\OverworldSprites\misty.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\OverworldSprites\Mom.png">
+    <Content Include="Content\Textures\OverworldSprites\Mom_Hoenn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\OverworldSprites\Mom_Johto.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\OverworldSprites\Morty.png">
@@ -14857,6 +14860,7 @@
     <Compile Include="Pokemon\Items\Berries\MarangaBerry.vb" />
     <Compile Include="Pokemon\Items\Berries\KeeBerry.vb" />
     <Compile Include="Pokemon\Items\Berries\RoseliBerry.vb" />
+    <Compile Include="Pokemon\Items\FossilItem.vb" />
     <Compile Include="Pokemon\Items\Gems\BugGem.vb" />
     <Compile Include="Pokemon\Items\Gems\DarkGem.vb" />
     <Compile Include="Pokemon\Items\Gems\DragonGem.vb" />
@@ -27184,6 +27188,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Data\Scripts\Johto\lakeofrage\OldMan.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\mom.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="LICENSE" />

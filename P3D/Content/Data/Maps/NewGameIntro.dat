@@ -129,5 +129,5 @@ Front
 {"EntityField"{ENT[{"Size"{intArr[1,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[31,2,31]}}{"TexturePath"{str[Cities\NewBark]}}{"Textures"{recArr[[80,32,16,16][96,32,16,16]]}}{"TextureIndex"{intArr[-1,-1,-1,1,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[2]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}
 
 
-{"NPC"{NPC[{"Position"{sngArr[27,0,33]}}{"TextureID"{str[Mom]}}{"ID"{int[3]}}{"Name"{str[Mom]}}{"Action"{int[1]}}{"AdditionalValue"{str[]}}{"Rotation"{int[1]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[27,0,33]}}{"TextureID"{str[Mom_Johto]}}{"ID"{int[3]}}{"Name"{str[Mom]}}{"Action"{int[1]}}{"AdditionalValue"{str[]}}{"Rotation"{int[1]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
 {"NPC"{NPC[{"Position"{sngArr[23,0,33]}}{"TextureID"{str[GateKeeper]}}{"ID"{int[4]}}{"Name"{str[Postman Pat]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[3]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
