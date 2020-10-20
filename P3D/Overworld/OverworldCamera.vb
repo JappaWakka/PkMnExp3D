@@ -555,10 +555,10 @@ Public Class OverworldCamera
         If Core.GameOptions.ViewBobbing = False Then
             Return 0.0F
         End If
-        If Screen.Level?.Riding = True Then
-            Return CSng(Math.Sin(_bobbingTemp) * 0.012)
-        Else
-            If Core.Player.IsRunning() = True Then
+		If Screen.Level.Riding = True Then
+			Return CSng(Math.Sin(_bobbingTemp) * 0.012)
+		Else
+			If Core.Player.IsRunning() = True Then
                 Return CSng(Math.Sin(_bobbingTemp) * 0.008)
             Else
                 Return CSng(Math.Sin(_bobbingTemp) * 0.004)
@@ -790,41 +790,38 @@ Public Class OverworldCamera
             End If
         Next
 
-        If cannotWalk = False Then
-            For Each Entity As Entity In Screen.Level.Entities
-                If Entity.boundingBox.Contains(newPosition) = ContainmentType.Contains Then
-                    If cannotWalk = False Then
-                        If Entity.Collision = True Then
-                            cannotWalk = Entity.WalkAgainstFunction()
-                        Else
-                            cannotWalk = Entity.WalkIntoFunction()
-                        End If
-                    End If
-                ElseIf Entity.boundingBox.Contains(New Vector3(newPosition.X, newPosition.Y - 1, newPosition.Z)) = ContainmentType.Contains Then
-                    Entity.WalkOntoFunction()
-                End If
-            Next
-        Else
-            For Each Entity As Entity In Screen.Level.Entities
-                If Entity.boundingBox.Contains(New Vector3(newPosition.X, newPosition.Y - 1, newPosition.Z)) = ContainmentType.Contains Then
-                    Entity.WalkOntoFunction()
-                End If
-                If Screen.Level.Surfing = True Then
-                    If Entity.boundingBox.Contains(newPosition) = ContainmentType.Contains Then
-                        If Entity.Collision = True Then
-                            Entity.WalkAgainstFunction()
-                        Else
-                            Entity.WalkIntoFunction()
-                        End If
-                    End If
-                End If
-            Next
-        End If
-        If GameModeManager.ContentFileExists(Core.Player.Skin & "_Bike") = False And Screen.Level.Biking = True Then
-            Screen.Level.OwnPlayer.SetTexture(Core.Player.TempBikeSkin, True)
-            Core.Player.Skin = Core.Player.TempBikeSkin
-        End If
-        If cannotWalk = False And setSurfFalse = True Then
+		If cannotWalk = False Then
+			For Each Entity As Entity In Screen.Level.Entities
+				If Entity.boundingBox.Contains(newPosition) = ContainmentType.Contains Then
+					If cannotWalk = False Then
+						If Entity.Collision = True Then
+							cannotWalk = Entity.WalkAgainstFunction()
+						Else
+							cannotWalk = Entity.WalkIntoFunction()
+						End If
+					End If
+				ElseIf Entity.boundingBox.Contains(New Vector3(newPosition.X, newPosition.Y - 1, newPosition.Z)) = ContainmentType.Contains Then
+					Entity.WalkOntoFunction()
+				End If
+			Next
+		Else
+			For Each Entity As Entity In Screen.Level.Entities
+				If Entity.boundingBox.Contains(New Vector3(newPosition.X, newPosition.Y - 1, newPosition.Z)) = ContainmentType.Contains Then
+					Entity.WalkOntoFunction()
+				End If
+				If Screen.Level.Surfing = True Then
+					If Entity.boundingBox.Contains(newPosition) = ContainmentType.Contains Then
+						If Entity.Collision = True Then
+							Entity.WalkAgainstFunction()
+						Else
+							Entity.WalkIntoFunction()
+						End If
+					End If
+				End If
+			Next
+		End If
+
+		If cannotWalk = False And setSurfFalse = True Then
             If Screen.Level.Surfing = True Then
                 Screen.Level.Surfing = False
                 Screen.Level.OwnPlayer.SetTexture(Core.Player.TempSurfSkin, True)

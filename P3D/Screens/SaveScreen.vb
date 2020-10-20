@@ -46,9 +46,9 @@
             .Draw(menuTexture, New Rectangle(Delta_X, Delta_Y, 700, 440), Color.White)
 
             If saveSessionFailed = True Then
-                .DrawString(FontManager.MainFontWhite, "Saving failed!", New Vector2(Delta_X + 90, Delta_Y + 50), Color.Red)
+				.DrawString(FontManager.MainFontWhite, Localization.GetString("save_screen_error"), New Vector2(Delta_X + 90, Delta_Y + 50), Color.Red)
 
-                If Core.GameOptions.Extras.Contains("Backup Save Feature") Then
+				If Core.GameOptions.Extras.Contains("Backup Save Feature") Then
                     .DrawString(FontManager.MiniFont,
                         "Press Dismiss to close this" & Environment.NewLine &
                         "screen and try to save again" & Environment.NewLine &
@@ -101,18 +101,18 @@
 
             Else
                 If ready = True Then
-					.DrawString(FontManager.MainFontColor, "Saved the game.", New Vector2(Delta_X + 90, Delta_Y + 50), New Color(62, 116, 195))
+					.DrawString(FontManager.MainFontColor, Localization.GetString("save_screen_success"), New Vector2(Delta_X + 90, Delta_Y + 50), New Color(62, 116, 195))
 				Else
                     If SaveGameHelpers.GameJoltSaveDone() = False And savingStarted = True Then
                         If SaveGameHelpers.StartedDownloadCheck = True Then
-                            .DrawString(FontManager.MainFontBlack, "Validating data" & LoadingDots.Dots, New Vector2(Delta_X + 90, Delta_Y + 50), Color.White)
-                        Else
-                            .DrawString(FontManager.MainFontBlack, "Saving, please wait" & LoadingDots.Dots, New Vector2(Delta_X + 77, Delta_Y + 50), Color.White)
-                        End If
+							.DrawString(FontManager.MainFontBlack, Localization.GetString("save_screen_validating") & LoadingDots.Dots, New Vector2(Delta_X + 90, Delta_Y + 50), Color.White)
+						Else
+							.DrawString(FontManager.MainFontBlack, Localization.GetString("save_screen_saving") & LoadingDots.Dots, New Vector2(Delta_X + 77, Delta_Y + 50), Color.White)
+						End If
                     Else
-                        .DrawString(FontManager.MainFontBlack, "Would you like to", New Vector2(Delta_X + 90, Delta_Y + 50), Color.White)
-                        .DrawString(FontManager.MainFontBlack, "save the game?", New Vector2(Delta_X + 90, Delta_Y + 80), Color.White)
-                    End If
+						.DrawString(FontManager.MainFontBlack, Localization.GetString("save_screen_question1"), New Vector2(Delta_X + 90, Delta_Y + 50), Color.White)
+						.DrawString(FontManager.MainFontBlack, Localization.GetString("save the game?"), New Vector2(Delta_X + 90, Delta_Y + 80), Color.White)
+					End If
                 End If
 
                 For i = 0 To Core.Player.Pokemons.Count - 1

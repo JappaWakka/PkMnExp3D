@@ -31,7 +31,7 @@
         End If
 
         If MusicManager.SongExists(musicLoop) = False Then
-			musicLoop = "johto_wild_StartBattle"
+			musicLoop = "hoenn_wild_StartBattle"
 		End If
         musicLoop = musicLoop
 
@@ -48,7 +48,7 @@
 					End If
                 End If
                 If MusicManager.SongExists(MusicLoop) = False Then
-					MusicLoop = "johto_wild_StartBattle"
+					MusicLoop = "hoenn_wild_StartBattle"
 				End If
             End If
             MusicLoop = MusicLoop

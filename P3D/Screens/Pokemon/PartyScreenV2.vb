@@ -1019,7 +1019,7 @@ Public Class PartyScreenV2
 						If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Level.CurrentRegion & "_Surf.ogg") Then
 							MusicManager.Play(Level.CurrentRegion & "_Bike", True) 'Play bicycle music when player is riding.
 						Else
-							MusicManager.Play("Johto_Bike", True) 'Play bicycle music when player is riding.
+							MusicManager.Play("Hoenn_Bike", True) 'Play bicycle music when player is riding.
 						End If
 					Else
 						TextBox.Show("You cannot Ride here!", {}, True, False)

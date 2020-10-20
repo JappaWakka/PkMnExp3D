@@ -38,6 +38,7 @@ Public Class Level
 	Private _levelFile As String = ""
 	Private _canTeleport As Boolean = True
 	Private _canDig As Boolean = False
+	Private _canBike As Boolean = False
 	Private _canFly As Boolean = False
 	Private _rideType As Integer = 0
 	Private _weatherType As Integer = 0
@@ -47,7 +48,7 @@ Public Class Level
 	Private _wildPokemonFloor As Boolean = False
 	Private _wildPokemonWater As Boolean = True
 	Private _showOverworldPokemon As Boolean = True
-	Private _currentRegion As String = "Johto"
+	Private _currentRegion As String = "Hoenn"
 	Private _hiddenabilitychance As Integer = 0
 	Private _lightingType As Integer = 0
 	Private _isSafariZone As Boolean = False
@@ -333,6 +334,18 @@ Public Class Level
 	End Property
 
 	''' <summary>
+	''' Determines whether the player can use ride a Bike on this map.
+	''' </summary>
+	Public Property CanBike As Boolean
+		Get
+			Return Me._canBike
+		End Get
+		Set(value As Boolean)
+			Me._canBike = value
+		End Set
+	End Property
+
+	''' <summary>
 	''' Whether the player can use the move Fly.
 	''' </summary>
 	Public Property CanFly As Boolean
@@ -490,7 +503,7 @@ Public Class Level
 	''' <summary>
 	''' The region this map is assigned to.
 	''' </summary>
-	''' <remarks>The default is "Johto".</remarks>
+	''' <remarks>The default is "Hoenn".</remarks>
 	Public Property CurrentRegion As String
 		Get
 			Return Me._currentRegion
@@ -1058,7 +1071,7 @@ Public Class Level
 					If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Me.CurrentRegion & "_Surf.ogg") Then
 						MusicManager.Play(Me.CurrentRegion & "_Surf", True) 'Play surf music when player is surfing.
 					Else
-						MusicManager.Play("Johto_Surf", True) 'Play surf music when player is surfing.
+						MusicManager.Play("Hoenn_Surf", True) 'Play surf music when player is surfing.
 					End If
 
 				Else
@@ -1066,7 +1079,7 @@ Public Class Level
 						If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Me.CurrentRegion & "_Surf.ogg") Then
 							MusicManager.Play(Me.CurrentRegion & "_Bike", True) 'Play bicycle music when player is riding.
 						Else
-							MusicManager.Play("Johto_Bike", True) 'Play bicycle music when player is riding.
+							MusicManager.Play("Hoenn_Bike", True) 'Play bicycle music when player is riding.
 						End If
 					Else
 						MusicManager.Play(Me.MusicLoop, True) 'Play default MusicLoop.
@@ -1201,20 +1214,6 @@ Public Class Level
 			End Select
 		End If
 		If Screen.Level.CanDig = False And Screen.Level.CanFly = False Then
-			Return False
-		Else
-			Return True
-		End If
-	End Function
-
-	''' <summary>
-	''' Determines whether the player can use ride a Bike on this map.
-	''' </summary>
-	Public Function CanBike() As Boolean
-		If GameController.IS_DEBUG_ACTIVE = True Or Core.Player.SandBoxMode = True Then 'Always true for Sandboxmode and Debug mode.
-			Return True
-		End If
-		If Screen.Level.CanBike = False Then
 			Return False
 		Else
 			Return True

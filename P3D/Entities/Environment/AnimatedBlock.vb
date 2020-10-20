@@ -224,7 +224,7 @@
 					If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Screen.Level.CurrentRegion & "_Surf.ogg") Then
 						MusicManager.Play(Screen.Level.CurrentRegion & "_Surf")
 					Else
-						MusicManager.Play("Johto_Surf")
+						MusicManager.Play("Hoenn_Surf")
 					End If
 				End If
             End With

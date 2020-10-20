@@ -974,7 +974,13 @@
             Screen.Level.CanDig = False
         End If
 
-        If TagExists(Tags, "CanFly") = True Then
+		If TagExists(Tags, "CanBike") = True Then
+			Screen.Level.CanBike = CBool(GetTag(Tags, "CanDig"))
+		Else
+			Screen.Level.CanBike = True
+		End If
+
+		If TagExists(Tags, "CanFly") = True Then
             Screen.Level.CanFly = CBool(GetTag(Tags, "CanFly"))
         Else
             Screen.Level.CanFly = False

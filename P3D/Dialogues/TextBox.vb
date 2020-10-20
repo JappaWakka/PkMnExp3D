@@ -131,10 +131,12 @@
 		Me.Text = Me.Text.Replace("<player.name>", Core.Player.Name)
 		Me.Text = Me.Text.Replace("<rivalname>", Core.Player.RivalName)
 		Me.Text = Me.Text.Replace("<rival.name>", Core.Player.RivalName)
-
 		Me.Text = Me.Text.Replace("[POKE]", "Poké")
-        Me.Text = Me.Text.Replace("[POKEMON]", "Pokémon")
-    End Sub
+		Me.Text = Me.Text.Replace("[POKEMON]", "Pokémon")
+
+		Dim ClockTime = New DateTime(My.Computer.Clock.LocalTime.Year, My.Computer.Clock.LocalTime.Month, My.Computer.Clock.LocalTime.Day, My.Computer.Clock.LocalTime.Hour, My.Computer.Clock.LocalTime.Minute, My.Computer.Clock.LocalTime.Second)
+		Me.Text = Me.Text.Replace("<clocktime>", ClockTime.ToString("t", New System.Globalization.CultureInfo("en-US")))
+	End Sub
 
     Public Sub Update()
         If Showing = True Then

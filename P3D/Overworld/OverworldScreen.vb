@@ -136,7 +136,7 @@ Public Class OverworldScreen
 			If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Level.CurrentRegion & "_Surf.ogg") Then
 				MusicManager.Play(Level.CurrentRegion & "_Surf", True) 'Play surf music when player is surfing.
 			Else
-				MusicManager.Play("Johto_Surf", True) 'Play surf music when player is surfing.
+				MusicManager.Play("Hoenn_Surf", True) 'Play surf music when player is surfing.
 			End If
 
 		Else
@@ -144,7 +144,7 @@ Public Class OverworldScreen
 				If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Level.CurrentRegion & "_Surf.ogg") Then
 					MusicManager.Play(Level.CurrentRegion & "_Bike", True) 'Play bicycle music when player is riding.
 				Else
-					MusicManager.Play("Johto_Bike", True) 'Play bicycle music when player is riding.
+					MusicManager.Play("Hoenn_Bike", True) 'Play bicycle music when player is riding.
 				End If
 			Else
 					MusicManager.Play(Level.MusicLoop, True) 'Play default MusicLoop.
@@ -434,7 +434,7 @@ Public Class OverworldScreen
 				If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Level.CurrentRegion & "_Surf.ogg") Then
 					theme = Level.CurrentRegion & "_Surf"
 				Else
-					theme = "Johto_Surf"
+					theme = "Hoenn_Surf"
 				End If
 
 			Else
@@ -442,7 +442,7 @@ Public Class OverworldScreen
 					If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Level.CurrentRegion & "_Surf.ogg") Then
 						theme = Level.CurrentRegion & "_Bike"
 					Else
-						theme = "Johto_Bike"
+						theme = "Hoenn_Bike"
 					End If
 				End If
 			End If

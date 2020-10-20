@@ -7932,9 +7932,6 @@
     <Content Include="Content\Songs\intro\tao_legend_battle.ogg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Songs\intro\Title.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Songs\intro\trainerschool.ogg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -14909,6 +14906,21 @@
     <Compile Include="Pokemon\Items\Berries\KeeBerry.vb" />
     <Compile Include="Pokemon\Items\Berries\RoseliBerry.vb" />
     <Compile Include="Pokemon\Items\FossilItem.vb" />
+    <Compile Include="Pokemon\Items\Fossils\ArmorFossil.vb" />
+    <Compile Include="Pokemon\Items\Fossils\ClawFossil.vb" />
+    <Compile Include="Pokemon\Items\Fossils\CoverFossil.vb" />
+    <Compile Include="Pokemon\Items\Fossils\DomeFossil.vb" />
+    <Compile Include="Pokemon\Items\Fossils\FossilizedBird.vb" />
+    <Compile Include="Pokemon\Items\Fossils\FossilizedDino.vb" />
+    <Compile Include="Pokemon\Items\Fossils\FossilizedDrake.vb" />
+    <Compile Include="Pokemon\Items\Fossils\FossilizedFish.vb" />
+    <Compile Include="Pokemon\Items\Fossils\HelixFossil.vb" />
+    <Compile Include="Pokemon\Items\Fossils\JawFossil.vb" />
+    <Compile Include="Pokemon\Items\Fossils\OldAmber.vb" />
+    <Compile Include="Pokemon\Items\Fossils\PlumeFossil.vb" />
+    <Compile Include="Pokemon\Items\Fossils\RootFossil.vb" />
+    <Compile Include="Pokemon\Items\Fossils\SailFossil.vb" />
+    <Compile Include="Pokemon\Items\Fossils\SkullFossil.vb" />
     <Compile Include="Pokemon\Items\Gems\BugGem.vb" />
     <Compile Include="Pokemon\Items\Gems\DarkGem.vb" />
     <Compile Include="Pokemon\Items\Gems\DragonGem.vb" />
@@ -25945,6 +25957,12 @@
     <Content Include="Content\Data\Maps\AncientRuins\MillennialStarTower\TowerBf1.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Data\Scripts\Furniture\clock.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Maps\Structures\HealingMachine.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Content\Data\Scripts\Furniture\townmap.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -27239,6 +27257,30 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\mom.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\LivingRoom\fridge.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\LivingRoom\sink.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\LivingRoom\stove.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\LivingRoom\tv.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\YourRoom\gamecube.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\YourRoom\notebook.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\YourRoom\tv.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\MovingTruckMapScript.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="LICENSE" />

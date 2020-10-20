@@ -1346,8 +1346,8 @@
 			"VisitedMaps|" & VisitedMaps & Environment.NewLine &
 			"TempSurfSkin|" & TempSurfSkin & Environment.NewLine &
 			"TempFishSkin|" & TempFishSkin & Environment.NewLine &
-			"TempBikeSkin|" & TempFishSkin & Environment.NewLine &
-			"TempRideSkin|" & TempFishSkin & Environment.NewLine &
+			"TempBikeSkin|" & TempBikeSkin & Environment.NewLine &
+			"TempRideSkin|" & TempRideSkin & Environment.NewLine &
 			"Surfing|" & Screen.Level.Surfing.ToNumberString() & Environment.NewLine &
 			"BP|" & BP & Environment.NewLine &
 			"ShowModels|" & ShowModelsInBattle.ToNumberString() & Environment.NewLine &

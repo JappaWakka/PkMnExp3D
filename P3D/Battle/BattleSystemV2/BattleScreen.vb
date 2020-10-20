@@ -195,8 +195,8 @@
                     If MusicManager.SongExists(SavedOverworld.Level.CurrentRegion.Split(CChar(","))(0) & "_wild") = True Then
                         MusicManager.Play(SavedOverworld.Level.CurrentRegion.Split(CChar(","))(0) & "_wild", True, 0.0F)
                     Else
-                        MusicManager.Play("johto_wild", True, 0.0F)
-                    End If
+						MusicManager.Play("hoenn_wild", True, 0.0F)
+					End If
                 End If
             Else
                 MusicManager.Play(CustomBattleMusic, True, 0.0F)
@@ -493,8 +493,8 @@
             If MusicManager.SongExists(SavedOverworld.Level.CurrentRegion.Split(CChar(","))(0) & "_wild") = True Then
                 MusicManager.Play(SavedOverworld.Level.CurrentRegion.Split(CChar(","))(0) & "_wild", True, 0.0F)
             Else
-                MusicManager.Play("johto_wild", True, 0.0F)
-            End If
+				MusicManager.Play("hoenn_wild", True, 0.0F)
+			End If
 
             Me.defaultMapType = defaultMapType
 
@@ -616,8 +616,8 @@
             If MusicManager.SongExists(SavedOverworld.Level.CurrentRegion.Split(CChar(","))(0) & "_wild") = True Then
                 MusicManager.Play(SavedOverworld.Level.CurrentRegion.Split(CChar(","))(0) & "_wild", True, 0.0F)
             Else
-                MusicManager.Play("johto_wild", True, 0.0F)
-            End If
+				MusicManager.Play("hoenn_wild", True, 0.0F)
+			End If
 
             Me.defaultMapType = defaultMapType
 

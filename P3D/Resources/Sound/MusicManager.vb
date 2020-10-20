@@ -573,24 +573,14 @@ Public Class MusicManager
 
     Private Shared ReadOnly Property SongAliasMap As Dictionary(Of String, String)
         Get
-            Return New Dictionary(Of String, String)() From
-            {
-                {"welcome", "RouteMusic1"},
-                {"battle", "johto_wild"},
-                {"batleintro", "battle_intro"},
-                {"johto_battle_intro", "battle_intro"},
-                {"darkcave", "dark_cave"},
-                {"showmearound", "show_me_around"},
-                {"sprouttower", "sprout_tower"},
-                {"johto_rival_intro", "johto_rivalintro"},
-                {"johto_rival_appear", "johto_rival_encounter"},
-                {"ilex_forest", "IlexForest"},
-                {"union_cave", "IlexForest"},
-                {"mt_mortar", "IlexForest"},
-                {"whirlpool_islands", "IlexForest"},
-                {"tohjo_falls", "IlexForest"}
-            }
-        End Get
+			Return New Dictionary(Of String, String)() From
+			{
+				{"welcome", "RouteMusic1"},
+				{"battle", "hoenn_wild"},
+				{"battle_intro", "hoenn_wild_startbattle"},
+				{"showmearound", "show_me_around"}
+			}
+		End Get
     End Property
 
 End Class

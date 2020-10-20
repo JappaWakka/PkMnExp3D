@@ -164,14 +164,18 @@ trainer_screen_backadvice,PRESS E TO GO BACK
 trainer_screen_empty_badge,???
 ---
 Save Screen:
-save_screen_title,Do you want to save the game?
+save_screen_question1,Would you like to
+save_screen_question2,save the game?
 save_screen_name,Name
 save_screen_badges,Badges
 save_screen_money,Money
 save_screen_time,Time
 save_screen_yes,Yes
 save_screen_no,No
+save_screen_validating,Validating data
+save_screen_saving,Saving, please wait
 save_screen_success,Saved the game.
+save_screen_error,Saving failed!
 ---
 Options Screen:
 option_screen_title,Options
@@ -515,6 +519,8 @@ Places_Route 45,Route 45
 Places_Route 46,Route 46
 Places_Route 47,Route 47
 Places_Route 48,Route 48
+
+Places_Route 101,Route 101
 
 Places_Treasure Beach,Treasure Beach
 Places_Kindle Road,Kindle Road
@@ -879,7 +885,7 @@ item_name_186,Heal Ball
 item_name_188,Nest Ball
 
 Key Items:
-item_name_6,Skates
+item_name_6,Bicycle
 item_name_41,S.S. Ticket
 item_name_54,Coin Case
 item_name_55,Item Finder
@@ -1556,21 +1562,21 @@ item_name_674,Rock Memory
 item_name_675,Steel Memory
 item_name_676,Water Memory
 ---
+Item Descriptions:
+item_desc_6,A folding bicycle that is faster than the Running Shoes.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 Story:
 
 NewGameIntro:
 ----------
-
-NewGame_Oak_Intro1,Hello, sorry to keep you waiting!*Welcome to the world of Pokémon!*My name is Oak.~People call me the Pokémon Professor.*This world is inhabited by~creatures that we call...
-NewGame_Oak_Intro2,...Pokémon.*People and Pokémon live together~by supporting each other.
-NewGame_Oak_Intro3,Some people play with Pokémon,~some battle with them.*But we don't know everything~about Pokémon yet.
-NewGame_Oak_Intro4,There are still many mysteries to solve.*That's why I study Pokémon every day.*But let's get back to you.
-NewGame_Oak_YourName,Now, what did you say your name was?
-NewGame_Oak_ConfirmName,Alright, nice to meet you,~<player.name>!
-NewGame_Oak_Intro5,This is your home in New Bark Town.*You live there with your mother~right next to Professor Elm.
-NewGame_Oak_Intro6,<player.name>, are you ready?*Your very own Pokémon story is~about to unfold.*You'll face fun times and~tough challenges.*A world of dreams and adventures~with Pokémon awaits!*Let's go!~I'll be seeing you later!
+NewGame_Birch_Intro1,Hi! Sorry to keep you waiting!*Welcome to the world of Pokémon!*My name is Birch.*But everyone calls me the Pokémon~Professor.*These are what we call...
+NewGame_Birch_Intro2,"Pokémon".*This world is widely inhabited by~creatures known as Pokémon.
+NewGame_Birch_Intro3,We humans live alongside Pokémon,~at times as friendly playmates, and~at times as cooperative workmates.*And sometimes, we band together~and battle others like us.
+NewGame_Birch_Intro4,But despite our closeness, we don't~know everything about Pokémon.*In fact, there are many, many~secrets surrounding Pokémon.*To unravel Pokémon mysteries,~I've been undertaking research.~That's what I do.*But let's get back to you.
+NewGame_Birch_YourName,What is your name?
+NewGame_Birch_Intro5,Ah, okay!*You're <player.name> who's moving to my~hometown of Littleroot.~I get it now!
+NewGame_Birch_Intro6,All right, are you ready?*Your very own adventure is about~to unfold.*Take courage, and leap into the~world of Pokémon where dreams,~adventure and friendships await!*Well, I'll be expecting you later.~Come see me in my Pokémon Lab.
 
 ---
 MysteryEvents:
@@ -1645,6 +1651,11 @@ NewBark_ElmsLab_Police_RivalName,OK! So <rival.name> was his name.*Thanks for he
 
 Hoenn:
 ----------
+General Objects:
+
+General_TownMap,<player.name> took a closer look at the~Hoenn region map.
+General_Clock,It's a clock. Right now it's <clocktime>.
+
 Inside Truck:
 
 InsideTruck_MovingBox,The box is printed with a Pokémon logo.*It's a Pokémon brand moving and~delivery service.
@@ -1658,12 +1669,20 @@ Littleroot_Main_Sign_PlayersHouse,<player.name>'s House
 Littleroot_Main_Sign_BirchsHouse,Prof. Birch's House
 Littleroot_Main_Sign_BirchsLab,Prof. Birch's Pokémon Lab
 
+Objects:
+Littleroot_YourHouse2f_NoteBook,It's a note book showing the controls.*Do you want to read it?
+Littleroot_YourHouse2f_GameControls,These are the controls:~Move Forward: [W]~Look Around: [A][S][D]~Fixed or Free Camera: [C]~Open Start Menu: [E]~Mute Music: [M]~Hide Interface: [F1]~Take Screenshot: [F2]~First Person or Third Person: [F5]
+Littleroot_YourHouse2f_TV,It's a TV.~A Nintendo Gamecube is connected to it.
+Littleroot_YourHouse2f_GameCube,It's a Nintendo Gamecube.*You can connect a Game Boy Advance~to serve as the Controller.
+Littleroot_YourHouse2f_ClockStopped,The clock hasn't been set yet.~Let's do that right now.
+
 NPCs:
 
 Littleroot_Main_Mom_OutsideMovingTruck,Mom: <player.name>, we're here, honey!*It must be tiring riding with our things~in the moving truck.*Well, this is Littleroot Town.*How do you like it?~This is our new home!*It has a quaint feel, but it seems to be~an easy place to live, don't you think?*And, you get your own room, <player.name>!~Let's go inside.
 Littleroot_PlayersHouse_Mom_Inside,Mom: See, <player.name>?~Isn't it nice in here, too?
-Littleroot_PlayersHouse_Mom_MoversPokemon,The mover's Pokémon do all the work~of moving us in and cleaning up after.*This is so convenient!*<player.name>, your room is upstairs.~Go check it out, dear!
+Littleroot_PlayersHouse_Mom_MoversPokemon,The mover's Pokémon do all the work~of moving us in and cleaning up after.*This is so convenient!*<player.name>, your room is upstairs.~Go check it out, dear!*Dad bought you a new clock to mark~our move here.~Don't forget to set it!
 Littleroot_PlayersHouse_Mom_SeeYourRoom,Mom: Well, <player.name>?*Aren't you interested in seeing your~very own room?
+Littleroot_PlayersHouse_Mom_AfterClockSet,Mom: <player.name>, how do you like your~new room?*Good! Everything's put away neatly!*They finished moving everything in~downstairs, too.*Pokémon movers are so convenient!*Oh, you should make sure that~everything's all there on your desk.
 
 Littleroot_PlayersHouse_Mom_ComeQuickly,Mom: Oh! <player.name>, <player.name>!~Quick! Come quickly!
 Littleroot_PlayersHouse_Mom_PetalburgGym,Mom: Look! It's Petalburg Gym!~Maybe Dad will be on!
