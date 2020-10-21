@@ -79,50 +79,17 @@ Public Class World
                 Hour = CInt(data(0))
             End If
 
-            Select Case CurrentSeason
-                Case Seasons.Winter
-                    If Hour > 18 Or Hour < 7 Then
-                        time = DayTime.Night
-                    ElseIf Hour > 6 And Hour < 11 Then
-                        time = DayTime.Morning
-                    ElseIf Hour > 10 And Hour < 17 Then
-                        time = DayTime.Day
-                    ElseIf Hour > 16 And Hour < 19 Then
-                        time = DayTime.Evening
-                    End If
-                Case Seasons.Spring
-                    If Hour > 19 Or Hour < 5 Then
-                        time = DayTime.Night
-                    ElseIf Hour > 4 And Hour < 10 Then
-                        time = DayTime.Morning
-                    ElseIf Hour > 9 And Hour < 17 Then
-                        time = DayTime.Day
-                    ElseIf Hour > 16 And Hour < 20 Then
-                        time = DayTime.Evening
-                    End If
-                Case Seasons.Summer
-                    If Hour > 20 Or Hour < 4 Then
-                        time = DayTime.Night
-                    ElseIf Hour > 3 And Hour < 9 Then
-                        time = DayTime.Morning
-                    ElseIf Hour > 8 And Hour < 19 Then
-                        time = DayTime.Day
-                    ElseIf Hour > 18 And Hour < 21 Then
-                        time = DayTime.Evening
-                    End If
-                Case Seasons.Fall
-                    If Hour > 19 Or Hour < 6 Then
-                        time = DayTime.Night
-                    ElseIf Hour > 5 And Hour < 10 Then
-                        time = DayTime.Morning
-                    ElseIf Hour > 9 And Hour < 18 Then
-                        time = DayTime.Day
-                    ElseIf Hour > 17 And Hour < 20 Then
-                        time = DayTime.Evening
-                    End If
-            End Select
+			If Hour >= 24 Or Hour < 6 Then
+				time = DayTime.Night
+			ElseIf Hour >= 6 And Hour < 12 Then
+				time = DayTime.Morning
+			ElseIf Hour >= 12 And Hour < 18 Then
+				time = DayTime.Day
+			ElseIf Hour >= 18 And Hour < 24 Then
+				time = DayTime.Evening
+			End If
 
-            Return time
+			Return time
         End Get
     End Property
 
