@@ -7896,9 +7896,6 @@
     <Content Include="Content\Songs\intro\RouteMusic2.ogg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Songs\intro\RouteMusic3.ogg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Songs\intro\RouteMusic4.ogg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -14974,9 +14971,6 @@
     <Compile Include="Pokemon\Items\Standard\ExpertBelt.vb" />
     <Compile Include="Pokemon\Items\Stones\IceStone.vb" />
     <Compile Include="Resources\Blur\BlurHandler.vb" />
-    <Content Include="Content\Data\Scripts\center_script.dat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Data\Scripts\computer.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -17611,9 +17605,6 @@
     <Content Include="Content\Data\Maps\MagnetTrain\fromsaffron.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Maps\MainMenu\cubetest.dat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Data\Maps\MainMenu\mainmenu1.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -17621,9 +17612,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Data\Maps\MainMenu\mainmenu3.dat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Data\Maps\MainMenu\_mainmenu3.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Data\Maps\NewGameIntro.dat">
@@ -25963,6 +25951,18 @@
     <Content Include="Content\Data\Maps\Structures\HealingMachine.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Data\Maps\Hoenn\Cities\Oldale\PokeCenter.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Maps\Hoenn\Cities\Oldale\PokeMart.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Maps\Structures\PokeCenter_Exterior.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Maps\Structures\PokeMart_Exterior.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Content\Data\Scripts\Furniture\townmap.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -27281,6 +27281,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\MovingTruckMapScript.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\PokeCenter_script.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="LICENSE" />
