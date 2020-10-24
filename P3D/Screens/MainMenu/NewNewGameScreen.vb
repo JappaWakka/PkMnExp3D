@@ -137,10 +137,9 @@
             'IO.Directory.CreateDirectory(savePath & folderPath)
 
             Core.Player.filePrefix = folderPath
-            Core.Player.GameStart = Date.Now
-
-            Core.Player.startFOV = 60
-            Core.Player.startFreeCameraMode = True
+			Core.Player.GameStart = Date.Now
+			Core.Player.startFOV = 60
+			Core.Player.startFreeCameraMode = True
             Core.Player.startPosition = New Vector3(x, y, z)
             Core.Player.startMap = map
             Core.Player.startRotationSpeed = 12
@@ -272,15 +271,17 @@
                     End If
 
                     If Controls.Accept(False, True, True) Then
-                        _selectedSkin = _skins(_index)
-                        SetScreen(PreScreen)
+						_selectedSkin = _skins(_index)
+						Core.Player.Skin = _selectedSkin
+						SetScreen(PreScreen)
                     End If
                     If Controls.Accept(True, False, False) Then
                         For i = 0 To _skins.Count - 1
                             If New Rectangle(CInt(windowSize.Width / 2 - 128 + i * 280 - _index * 280 + _offset), CInt(windowSize.Height / 2 - 128), 256, 256).Contains(MouseHandler.MousePosition) Then
                                 If i = _index Then
-                                    _selectedSkin = _skins(_index)
-                                    SetScreen(PreScreen)
+									_selectedSkin = _skins(_index)
+									Core.Player.Skin = _selectedSkin
+									SetScreen(PreScreen)
                                 Else
                                     _offset += (i - _index) * 280
                                     _index = i
@@ -299,9 +300,9 @@
 
                 DrawGradients(255)
 
-                SpriteBatch.DrawString(FontManager.MainFontWhite, "Select your appearance", New Vector2(windowSize.Width / 2.0F - FontManager.MainFontWhite.MeasureString("Select your appearance").X, 100), New Color(255, 255, 255, CInt(255 * _fadeIn)), 0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0F)
+				SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("new_game_select_skin"), New Vector2(windowSize.Width / 2.0F - FontManager.MainFontWhite.MeasureString("Select your appearance").X, 100), New Color(255, 255, 255, CInt(255 * _fadeIn)), 0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0F)
 
-                For i = 0 To _sprites.Count - 1
+				For i = 0 To _sprites.Count - 1
                     Dim sprite As Texture2D = _sprites(i)
                     Dim frameSize As New Size(CInt(sprite.Width / 3), CInt(sprite.Height / 4))
 

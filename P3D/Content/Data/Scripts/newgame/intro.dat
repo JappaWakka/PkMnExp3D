@@ -3,15 +3,12 @@
 @camera.set(9,0.5,9,0,0-0.1)
 @camera.update
 
-@screen.fadein
-
-@music.play(RouteMusic1)
 @npc.move(0,4)
 @npc.turn(0,2)
 
 @text.show(<token.NewGame_Birch_Intro1>)
 @screen.fadeout(20)
-@camera.set(20,3,4,3.36,-0.59)
+@camera.set(25,2,42,6.45,-0.59)
 @camera.update
 @level.update
 @screen.fadein(20)
@@ -74,6 +71,20 @@
 
 @camera.setyaw(-4.72)
 @camera.setpitch(0)
+
+:if:<player.gender>="Female"
+	@player.setrivalname(Brendan)
+	@player.setrivalskin(PlayerSkins\Brendan)
+:else
+	:if<player.gender>="Male"
+	@player.setrivalname(May)
+	@player.setrivalskin(PlayerSkins\May)
+	:else
+		@player.setrivalname(May)
+		@player.setrivalskin(PlayerSkins\May)
+	:endif
+:endif
+	
 
 @system.endnewgame(Hoenn\Cities\Littleroot\InsideTruck.dat,3,0.1,3,1)
 

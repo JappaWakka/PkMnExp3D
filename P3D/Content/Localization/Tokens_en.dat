@@ -67,7 +67,7 @@ pause_menu_no,No
 pause_menu_confirmation,Do you really want to quit? Unsaved progress will be lost.
 ---
 IngameMenu:
-game_menu_phone,Pokégear
+game_menu_phone,PokéNav
 game_menu_pokedex,Pokédex
 game_menu_party,Pokémon
 game_menu_bag,Bag
@@ -92,7 +92,7 @@ game_interaction_edit,Edit
 game_interaction_clear,Clear
 game_interaction_interact,Interact
 game_interaction_menu,Menu
-game_interaction_phone,Pokégear
+game_interaction_phone,PokéNav
 ---
 new_game_select_skin,What do you look like?
 ---
@@ -919,7 +919,7 @@ item_name_592,Liberty Sea Map
 item_name_576,Mega Bracelet
 item_name_651,Light Stone
 item_name_652,Dark Stone
-item_name_653,PokéGear
+item_name_653,PokéNav
 
 Technical Machines:
 item_name_191,TM01
@@ -1610,7 +1610,7 @@ TrashCan_Empty,This trash can is empty.
 
 Signs:
 NewBark_Main_Sign_ElmsLab,Elm Pokémon Lab
-NewBark_Main_Sign_PlayersHouse,<player.name>'s House
+NewBark_Main_Sign_YourHouse1f,<player.name>'s House
 NewBark_Main_Sign_Town,New Bark Town*"The town where the winds of a~new beginning blow."
 NewBark_Main_Sign_ElmsHouse,Elm's House
 NewBark_Main_Sign_LargeHouse,FOR SALE!
@@ -1655,7 +1655,8 @@ Hoenn:
 General Objects:
 
 General_TownMap,<player.name> took a closer look at the~Hoenn region map.
-General_Clock,It's a clock. Right now it's <clocktime>.
+General_Clock,It's a clock. Right now it's <clocktime>, so it's <daytime>.
+General_TV,Mom might like this program.~... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ...*Better get going!
 
 Inside Truck:
 
@@ -1666,7 +1667,7 @@ Littleroot Town:
 Signs:
 
 Littleroot_Main_Sign_Town,Littleroot Town*"A town that can't be shaded any hue."
-Littleroot_Main_Sign_PlayersHouse,<player.name>'s House
+Littleroot_Main_Sign_YourHouse,<player.name>'s House
 Littleroot_Main_Sign_BirchsHouse,Prof. Birch's House
 Littleroot_Main_Sign_BirchsLab,Prof. Birch's Pokémon Lab
 
@@ -1677,44 +1678,67 @@ Littleroot_YourHouse2f_TV,It's a TV.~A Nintendo Gamecube is connected to it.
 Littleroot_YourHouse2f_GameCube,It's a Nintendo Gamecube.*You can connect a Game Boy Advance~to serve as the Controller.
 Littleroot_YourHouse2f_ClockStopped,The clock hasn't been set yet.~Let's do that right now.
 
+Littleroot_BirchsLab_SeriousMachine,It's a serious-looking machine.~The Prof must use this for research.
+Littleroot_BirchsLab_ResearchPC,It's a PC used for research.~Better not mess around with it.
+Littleroot_BirchsLab_Bookshelf_It's crammed with books on Pokémon.
+Littleroot_BirchsLab_BookOnTable,It's a book that's too hard to read.
+
+Littleroot_BirchsHouse2f_RivalsPC,There's an e-mail from Pokémon Trainer~School.*... ... ... ... ... ...*A Pokémon may learn up to four moves.*A Trainer's expertise is tested on the~move sets chosen for Pokémon.*... ... ... ... ... ...
+Littleroot_BirchsHouse2f_RivalsPokeBall,It's <rival.name>'s Poké Ball!*Better leave it right where it is.
+
 NPCs:
 
 Littleroot_Main_Mom_OutsideMovingTruck,Mom: <player.name>, we're here, honey!*It must be tiring riding with our things~in the moving truck.*Well, this is Littleroot Town.*How do you like it?~This is our new home!*It has a quaint feel, but it seems to be~an easy place to live, don't you think?*And, you get your own room, <player.name>!~Let's go inside.
-Littleroot_PlayersHouse_Mom_Inside,Mom: See, <player.name>?~Isn't it nice in here, too?
-Littleroot_PlayersHouse_Mom_MoversPokemon,The mover's Pokémon do all the work~of moving us in and cleaning up after.*This is so convenient!*<player.name>, your room is upstairs.~Go check it out, dear!*Dad bought you a new clock to mark~our move here.~Don't forget to set it!
-Littleroot_PlayersHouse_Mom_SeeYourRoom,Mom: Well, <player.name>?*Aren't you interested in seeing your~very own room?
-Littleroot_PlayersHouse_Mom_AfterClockSet,Mom: <player.name>, how do you like your~new room?*Good! Everything's put away neatly!*They finished moving everything in~downstairs, too.*Pokémon movers are so convenient!*Oh, you should make sure that~everything's all there on your desk.
+Littleroot_YourHouse1f_Mom_Inside,Mom: See, <player.name>?~Isn't it nice in here, too?
+Littleroot_YourHouse1f_Mom_MoversPokemon,The mover's Pokémon do all the work~of moving us in and cleaning up after.*This is so convenient!*<player.name>, your room is upstairs.~Go check it out, dear!*Dad bought you a new clock to mark~our move here.~Don't forget to set it!
+Littleroot_YourHouse1f_Mom_SeeYourRoom,Mom: Well, <player.name>?*Aren't you interested in seeing your~very own room?
+Littleroot_YourHouse1f_Mom_DownstairsBeforeClock,Mom: <player.name>.*Go set the clock in your room, honey.
+Littleroot_YourHouse1f_Mom_AfterClockSet,Mom: <player.name>, how do you like your~new room?*Good! Everything's put away neatly!*They finished moving everything in~downstairs, too.*Pokémon movers are so convenient!*Oh, you should make sure that~everything's all there on your desk.
 
-Littleroot_PlayersHouse_Mom_ComeQuickly,Mom: Oh! <player.name>, <player.name>!~Quick! Come quickly!
-Littleroot_PlayersHouse_Mom_PetalburgGym,Mom: Look! It's Petalburg Gym!~Maybe Dad will be on!
-Littleroot_PlayersHouse_TV_Interviewer,Interviewer: ...We brought you this~report from in front of Petalburg Gym.
-Littleroot_PlayersHouse_Mom_MissedDad,Mom: Oh... It's over.*I think Dad was on, but we missed him.~Too bad.
-Littleroot_PlayersHouse_Mom_ProfessorBirch,Oh, yes.~One of Dad's friends lives in town.*Prof. Birch is his name.*He lives right next door, so you should~go over and introduce yourself.
+Littleroot_YourHouse1f_Mom_ComeQuickly,Mom: Oh! <player.name>, <player.name>!~Quick! Come quickly!
+Littleroot_YourHouse1f_Mom_PetalburgGym,Mom: Look! It's Petalburg Gym!~Maybe Dad will be on!
+Littleroot_YourHouse1f_TV_Interviewer,Interviewer: ...We brought you this~report from in front of Petalburg Gym.
+Littleroot_YourHouse1f_Mom_MissedDad,Mom: Oh... It's over.*I think Dad was on, but we missed him.~Too bad.
+Littleroot_YourHouse1f_Mom_ProfessorBirch,Oh, yes.~One of Dad's friends lives in town.*Prof. Birch is his name.*He lives right next door, so you should~go over and introduce yourself.
 
-Littleroot_PlayersHouse_Mom_IntroducedYet,Mom: Did you introduce yourself to~Prof. Birch?
-Littleroot_PlayersHouse_Mom_SeeYouHoney,Mom: See you, honey!
-Littleroot_PlayersHouse_Mom_HealPokemon,Mom: How are you doing, <player.name>?~You look a little tired.*I think you should rest a bit.
-Littleroot_PlayersHouse_Mom_AfterHeal,Mom: Take care, honey!
-Littleroot_PlayersHouse_Mom_DadBadge,Mom: Oh? Did Dad give you that Badge?*Then here's something from your Mom!
-Littleroot_PlayersHouse_ReceivedAmuletCoin,<player.name> received an Amulet Coin!
-Littleroot_PlayersHouse_Mom_DontPushYourself,Don't push yourself too hard, dear.~You can always come home.*Go for it, honey!
+Littleroot_YourHouse1f_Mom_IntroducedYet,Mom: Did you introduce yourself to~Prof. Birch?
+Littleroot_YourHouse1f_Mom_SeeYouHoney,Mom: See you, honey!
+Littleroot_YourHouse1f_Mom_HealPokemon,Mom: How are you doing, <player.name>?~You look a little tired.*I think you should rest a bit.
+Littleroot_YourHouse1f_Mom_AfterHeal,Mom: Take care, honey!
+Littleroot_YourHouse1f_Mom_DadBadge,Mom: Oh? Did Dad give you that Badge?*Then here's something from your Mom!
+Littleroot_YourHouse1f_ReceivedAmuletCoin,<player.name> received an Amulet Coin!
+Littleroot_YourHouse1f_Mom_DontPushYourself,Don't push yourself too hard, dear.~You can always come home.*Go for it, honey!
 
-Littleroot_PlayersHouse_Machoke_WatchingTV,Fugiiiiih!
-Littleroot_PlayersHouse_Machoke_Walking,Huggoh, uggo uggo...
+Littleroot_YourHouse1f_Machoke_WatchingTV,Fugiiiiih!
+Littleroot_YourHouse1f_Machoke_Walking,Huggoh, uggo uggo...
+
+Littleroot_BirchsHouse1f_MsBirch_Introduction_MaleRival,Oh, hello. And you are?*... ... ... ... ... ... ... ... ...~... ... ... ... ... ... ... ... ...*Oh, you're <player.name>, our new next-door~neighbor! Hi!*We have a son about the same~age as you.*Our son was excited about making~a new friend.*Our son is upstairs, I think.
+Littleroot_BirchsHouse1f_MsBirch_Introduction_FemaleRival,Oh, hello. And you are?*... ... ... ... ... ... ... ... ...~... ... ... ... ... ... ... ... ...*Oh, you're <player.name>, our new next-door~neighbor! Hi!*We have a daughter about the same~age as you.*Our daughter was excited about making~a new friend.*Our daughter is upstairs, I think.
+
+Littleroot_BirchsHouse1f_RivalsBrother,Hi, neighbor!*Do you already have your~own Pokémon?
+
+Littleroot_BirchsHouse2f_FemaleRival_Introduction,Huh?~Who... Who are you?*... ... ... ... ... ... ... ...~... ... ... ... ... ... ... ...*Oh, you're <player.name>.~So your move was today.*Um... I'm <rival.name>.~Glad to meet you!*I...~I have this dream of becoming friends*with Pokémon all over the world.*I... I heard about you, <player.name>, from~my dad, Prof. Birch.*I was hoping that you would be nice,~<player.name>, and that we could be friends.*Oh, this is silly, isn't it?~I... I've just met you, <player.name>.*Eheheh...*Oh, no! I forgot!*I was supposed to go help Dad catch~some wild Pokémon!*<player.name>, I'll catch you later!
+Littleroot_BirchsHouse2f_FemaleRival_AfterIntroduction,Pokémon fully restored!~Items ready, and...
+
+Littleroot_BirchsHouse2f_MaleRival_Introduction,Hey!~You...*Who are you?*Oh, you're <player.name>, aren't you?~Moved in next door, right?*I didn't know that you're a girl.*Dad, Prof. Birch, said that our new~next-door neighbor is a Gym Leader's*kid, so I assumed you'd be a guy.*My name's Brendan.~So, hi, neighbor!*Huh? Hey, <player.name>, don't you have~a Pokémon?*Do you want me to go catch you one?*Aw, darn, I forgot...*I'm supposed to go help my dad catch~some wild Pokémon.*Some other time, okay?
+Littleroot_BirchsHouse2f_MaleRival_AfterIntroduction,Pokémon fully restored...~Items all packed, and...
 
 Littleroot_Main_Mom_Wait,Mom: Wait, <player.name>!
 Littleroot_Main_Mom_IntroducedToProfBirch,Mom: <player.name>! Did you~introduce yourself to Prof. Birch?*Oh! What an adorable Pokémon!~You got it from Prof. Birch? How nice!*You're your father's child, all right.~You look good together with Pokémon!
 Littleroot_Main_Mom_FatherWillBeOverjoyed,Your father will be overjoyed to hear you have your own Pokémon now!*...But please be careful.~If anything happens, you can come home.*Go on, go get them, honey!
 
-
 Littleroot_Main_FatGuy_Technology,If you use a PC, you can store items~and Pokémon.*The power of technology is staggering!
 
-Littleroot_Main_LittleBoy_DontGoOutside,Um, um, um!*If you go outside and go in the grass,~wild Pokémon will jump out!*It's dangerous if you don't have~your own Pokémon.
-Littleroot_Main_LittleBoy_PokemonCries,Um, hi!*There are scary Pokémon outside!~I can hear their cries!*I want to go see what's going on,~but I don't have any Pokémon...*Can you go see what's happening~for me?
-Littleroot_Main_LittleBoy_SavedProfBirch,You saved Prof. Birch!~I'm so glad!
-Littleroot_Main_LittleBoy_GoodLuck,Are you going to catch Pokémon?~Good luck!
+Littleroot_Main_LittleGirl_DontGoOutside,Um, um, um!*If you go outside and go in the grass,~wild Pokémon will jump out!*It's dangerous if you don't have~your own Pokémon.
+Littleroot_Main_LittleGirl_PokemonCries,Um, hi!*There are scary Pokémon outside!~I can hear their cries!*I want to go see what's going on,~but I don't have any Pokémon...*Can you go see what's happening~for me?
+Littleroot_Main_LittleGirl_SavedProfBirch,You saved Prof. Birch!~I'm so glad!
+Littleroot_Main_LittleGirl_GoodLuck,Are you going to catch Pokémon?~Good luck!
 
-Littleroot_BirchsLab_Assistant_ProfBirch,Prof. Birch spends days in his Lab~studying, then he'll suddenly go out in*the wild to do more research...*When does Prof. Birch spend time~at home?
+Littleroot_Main_YoungGuy,Prof. Birch spends days in his Lab~studying, then he'll suddenly go out in*the wild to do more research...*When does Prof. Birch spend time~at home?
+
+Littleroot_BirchsLab_Assistant_BirchFieldwork_FirstTime,Hunh? Prof. Birch?*The Prof's away on fieldwork.~Ergo, he isn't here.*Oh, let me explain what fieldwork is.*It is to study things in the natural~environment, like fields and mountains,*instead of a laboratory.*The Prof isn't one for doing desk work.~He's the type of person who would*rather go outside and experience*things than read about them here.
+Littleroot_BirchsLab_Assistant_BirchFieldwork_SecondTime,The Prof isn't one for doing desk work.~He's the type of person who would*rather go outside and experience*things than read about them here.
+Littleroot_BirchsLab_Assistant_BirchIsStudying,Prof. Birch is studying the habitats~and distribution of Pokémon.*The Prof enjoys <rival.name>'s help, too.~There's a lot of love there.
 
 -----
 Route 101:

@@ -15,16 +15,24 @@
         End Set
     End Property
 
-    Public Property RivalName() As String
-        Get
-            Return _rivalName
-        End Get
-        Set(value As String)
-            _rivalName = value
-        End Set
-    End Property
+	Public Property RivalName() As String
+		Get
+			Return _rivalName
+		End Get
+		Set(value As String)
+			_rivalName = value
+		End Set
+	End Property
+	Public Property RivalSkin() As String
+		Get
+			Return _rivalSkin
+		End Get
+		Set(value As String)
+			_rivalSkin = value
+		End Set
+	End Property
 
-    Public Property Gender() As String
+	Public Property Gender() As String
         Get
             Return _gender
         End Get
@@ -370,8 +378,9 @@
 
     'Secure fields:
     Private _name As String = "<playername>"
-    Private _rivalName As String = ""
-    Private _gender As String = "Male"
+	Private _rivalName As String = ""
+	Private _rivalSkin As String = ""
+	Private _gender As String = "Male"
     Private _money As Integer = 0
     Private _OT As String = "00000"
     Private _points As Integer = 0
@@ -761,6 +770,8 @@
 						startMap = Value
 					Case "rivalname"
 						RivalName = Value
+					Case "rivalskin"
+						RivalSkin = Value
 					Case "money"
 						Money = CInt(Value)
 					Case "badges"
@@ -1316,6 +1327,7 @@
 			"MapFile|" & Screen.Level.LevelFile & Environment.NewLine &
 			"Rotation|" & c.Yaw.ToString.Replace(GameController.DecSeparator, ".") & Environment.NewLine &
 			"RivalName|" & RivalName & Environment.NewLine &
+			"RivalSkin|" & RivalSkin & Environment.NewLine &
 			"Money|" & Money & Environment.NewLine &
 			"Badges|" & badgeString & Environment.NewLine &
 			"Gender|" & GenderString & Environment.NewLine &
@@ -2051,6 +2063,7 @@
 			'Restore default values:
 			Name = "<playername>"
 			RivalName = ""
+			RivalSkin = ""
 			Gender = "Male"
 			Money = 0
 			PlayTime = TimeSpan.Zero

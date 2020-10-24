@@ -25,37 +25,18 @@
                     Core.Player.HasPhone = True
                     IsReady = True
                 Case "renamerival"
-                    Dim RivalTexture As String
-                    Dim RivalName As String
-					If Core.Player.Gender = "Male" Then
-						If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Textures\OverworldSprites\Rival_Female.png") Then
-							RivalTexture = "OverworldSprites\Rival_Female"
-							RivalName = "Rival"
-						Else
-							RivalTexture = "OverworldSprites\Rival"
-							RivalName = "Rival"
-						End If
-					ElseIf Core.Player.Gender = "Female" Then
-						If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Textures\OverworldSprites\Rival_Male.png") Then
-							RivalTexture = "OverworldSprites\Rival_Male"
-							RivalName = "Rival"
-						Else
-							RivalTexture = "OverworldSprites\Rival"
-							RivalName = "Rival"
-						End If
-					Else
-						If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Textures\OverworldSprites\Rival_Other.png") Then
-							RivalTexture = "OverworldSprites\Rival_Other"
-							RivalName = "Rival"
-						Else
-							RivalTexture = "OverworldSprites\Rival"
-							RivalName = "Rival"
-						End If
-					End If
-					Core.SetScreen(New NameObjectScreen(Core.CurrentScreen, TextureManager.GetTexture(RivalTexture, New Rectangle(0, 64, 32, 32)), False, False, "rival", RivalName, AddressOf Script.NameRival))
-                    IsReady = True
-                    CanContinue = False
-                Case "wearskin"
+					Dim RivalTexture As String = Core.Player.RivalSkin
+					Dim RivalName As String
+					RivalName = "???"
+					Core.SetScreen(New NameObjectScreen(Core.CurrentScreen, TextureManager.GetTexture(RivalTexture, New Rectangle(0, 64, 32, 32)), False, False, RivalName, "???", AddressOf Script.NameRival))
+					IsReady = True
+					CanContinue = False
+				Case "setrivalskin"
+					Dim RivalTexture As String = Core.Player.RivalSkin
+					Dim NewTexture As String = argument
+					RivalTexture = NewTexture
+					IsReady = True
+				Case "wearskin"
                     With Screen.Level.OwnPlayer
                         Dim TextureID As String = argument
                         .SetTexture(TextureID, False)

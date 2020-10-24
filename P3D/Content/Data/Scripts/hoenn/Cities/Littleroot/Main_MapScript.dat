@@ -1,0 +1,7 @@
+version=2
+
+:if:<register.registered(dad_on_tv)>=true <and> <register.registered(littleroot_went_outside)>=false
+	@register.register(str[littleroot_went_outside])
+:endif
+:end
+	

@@ -101,7 +101,15 @@
             HasPokemonTexture = True
         End If
 
-        Dim PokemonAddition As String = ""
+		If Me.TextureID = "<player.skin>" Then
+			Me.TextureID = "Textures\OverworldSprites\Playerskins\" & Core.Player.Skin
+		End If
+
+		If Me.TextureID = "<rival.skin>" Then
+			Me.TextureID = Core.Player.RivalSkin
+		End If
+
+		Dim PokemonAddition As String = ""
 
         If UseTextureID.StartsWith("Pokemon\Overworld\") = True Then
             texturePath = ""

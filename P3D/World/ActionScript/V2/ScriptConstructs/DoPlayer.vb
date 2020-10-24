@@ -76,8 +76,10 @@
                 Case "thirdperson"
                     Return ReturnBoolean(CType(Screen.Camera, OverworldCamera).ThirdPerson)
                 Case "rival", "rivalname"
-                    Return Core.Player.RivalName
-                Case "ot"
+					Return Core.Player.RivalName
+				Case "rivalskin"
+					Return Core.Player.RivalSkin
+				Case "ot"
                     Return Core.Player.OT
                 Case "gamejoltid"
                     Return Core.GameJoltSave.GameJoltID

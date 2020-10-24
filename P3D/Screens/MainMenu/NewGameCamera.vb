@@ -5,13 +5,13 @@
     Public Sub New()
         Me.Name = "New Game"
         Core.Player.startThirdPerson = False
-        Me.Position = New Vector3(13, 2, 14)
-        Me.Speed = 0.0008F
+		Me.Position = New Vector3(9, 0.5, 9)
+		Me.Speed = 0.0008F
 
-        Yaw = CSng(Core.Random.NextDouble() * MathHelper.TwoPi)
-        Pitch = -0.2F
+		Yaw = 0
+		Pitch = -0.1F
 
-        View = Matrix.CreateLookAt(Position, Vector3.Zero, Vector3.Up)
+		View = Matrix.CreateLookAt(Position, Vector3.Zero, Vector3.Up)
         Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0), Core.GraphicsDevice.Viewport.AspectRatio, 0.01, 16)
         FOV = 45
 

@@ -1,5 +1,5 @@
 {"Level"{LEV[{"Name"{str[Littleroot Town]}}{"MusicLoop"{str[Littleroot]}}{"WildPokemon"{bool[0]}}{"CurrentRegion"{str[Hoenn]}}]}}
-{"Actions"{LEV[{"CanTeleport"{bool[1]}}{"CanDig"{bool[0]}}{"CanFly"{bool[1]}}{"EnvironmentType"{int[0]}}{"Weather"{int[1]}}]}}
+{"Actions"{LEV[{"CanTeleport"{bool[1]}}{"CanDig"{bool[1]}}{"CanFly"{bool[1]}}{"EnvironmentType"{int[0]}}{"Weather"{int[1]}}{"MapScript"{str[Hoenn\Cities\Littleroot\Main_Mapscript]}}]}}
 
 Floors:
 Grass
@@ -132,7 +132,7 @@ Front
 {"EntityField"{ENT[{"Size"{intArr[1,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[19,0,8]}}{"TexturePath"{str[Cities\Littleroot]}}{"Textures"{recArr[[32,16,16,16]]}}{"TextureIndex"{intArr[-1,-1,-1,-1,-1,-1,0,0,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}
 {"EntityField"{ENT[{"Size"{intArr[1,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[20,0,8]}}{"TexturePath"{str[Cities\Littleroot]}}{"Textures"{recArr[[48,16,16,16]]}}{"TextureIndex"{intArr[-1,-1,-1,-1,-1,-1,0,0,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}
 Door
-{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[17,0,8]}}{"TexturePath"{str[Cities\Littleroot]}}{"Textures"{recArr[[64,16,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Hoenn\Cities\Littleroot\RivalsHouse1f.dat,2,0.1,7,0]}}{"Rotation"{int[0]}}]}}
+{"Entity"{ENT[{"EntityID"{str[WarpBlock]}}{"Position"{sngArr[17,0,8]}}{"TexturePath"{str[Cities\Littleroot]}}{"Textures"{recArr[[64,16,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[Hoenn\Cities\Littleroot\BirchsHouse1f.dat,2,0.1,7,0]}}{"Rotation"{int[0]}}]}}
 
 Height 0.75
 Roof
@@ -230,7 +230,7 @@ Signs:
 Town Sign
 {"Entity"{ENT[{"EntityID"{str[SignBlock]}}{"Position"{sngArr[18,0,13]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,80,16,16][4,96,4,16]]}}{"TextureIndex"{intArr[0,0,1,1,1,1,0,0,1,1]}}{"Collision"{bool[1]}}{"ModelID"{int[4]}}{"Action"{int[0]}}{"AdditionalValue"{str[<token.Littleroot_Main_Sign_Town>]}}{"Rotation"{int[2]}}]}}
 Player's House
-{"Entity"{ENT[{"EntityID"{str[SignBlock]}}{"Position"{sngArr[10,0,8]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,80,16,16][4,96,4,16]]}}{"TextureIndex"{intArr[0,0,1,1,1,1,0,0,1,1]}}{"Collision"{bool[1]}}{"ModelID"{int[4]}}{"Action"{int[0]}}{"AdditionalValue"{str[<token.Littleroot_Main_Sign_PlayersHouse>]}}{"Rotation"{int[2]}}]}}
+{"Entity"{ENT[{"EntityID"{str[SignBlock]}}{"Position"{sngArr[10,0,8]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,80,16,16][4,96,4,16]]}}{"TextureIndex"{intArr[0,0,1,1,1,1,0,0,1,1]}}{"Collision"{bool[1]}}{"ModelID"{int[4]}}{"Action"{int[0]}}{"AdditionalValue"{str[<token.Littleroot_Main_Sign_YourHouse>]}}{"Rotation"{int[2]}}]}}
 Rival's House
 {"Entity"{ENT[{"EntityID"{str[SignBlock]}}{"Position"{sngArr[15,0,8]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,80,16,16][4,96,4,16]]}}{"TextureIndex"{intArr[0,0,1,1,1,1,0,0,1,1]}}{"Collision"{bool[1]}}{"ModelID"{int[4]}}{"Action"{int[0]}}{"AdditionalValue"{str[<token.Littleroot_Main_Sign_BirchsHouse>]}}{"Rotation"{int[2]}}]}}
 Birch's Lab
@@ -251,6 +251,10 @@ Flowers:
 {"EntityField"{ENT[{"Size"{intArr[1,1]}}{"EntityID"{str[WallBill]}}{"Position"{sngArr[21,-0.125,10]}}{"Scale"{sngArr[0.75,0.75,0.75]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[16,16,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 
 {"EntityField"{ENT[{"Size"{intArr[3,2]}}{"EntityID"{str[WallBill]}}{"Position"{sngArr[6,-0.125,17]}}{"Scale"{sngArr[0.75,0.75,0.75]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[16,16,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+
+NPCs:
+{"NPC"{NPC[{"Position"{sngArr[16,0,12]}}{"TextureID"{str[FatGuy]}}{"ID"{int[1]}}{"Name"{str[TechnologyFatman]}}{"Action"{int[0]}}{"AdditionalValue"{str[<token.Littleroot_Main_FatGuy_Technology>]}}{"Rotation"{int[2]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[15,11,2,2]]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[17,0,16]}}{"TextureID"{str[BlueShirtGuy]}}{"ID"{int[1]}}{"Name"{str[YoungGuy]}}{"Action"{int[0]}}{"AdditionalValue"{str[<token.Littleroot_Main_YoungGuy>]}}{"Rotation"{int[2]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[16,15,3,3]]}}]}}
 
 Warps:
 Route 101

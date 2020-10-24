@@ -4,7 +4,7 @@ Version=2
 @sound.play(MovingTruck,0)
 @level.wait(100)
 @screen.fadein
-@level.wait(300)
+@level.wait(350)
 @environment.setisdark(0)
 @screen.canbepaused(1)
 :end
