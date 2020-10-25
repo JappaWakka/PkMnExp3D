@@ -27076,6 +27076,9 @@
     <Content Include="Content\Data\Scripts\PokeCenter_script.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\Main_MapScript.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="LICENSE" />
     <None Include="meta">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
