@@ -389,6 +389,9 @@ Special Houses:
 Places_Gate,Gate
 Places_Pokemon Center,Pokémon Center
 Places_Pokemon Mart,Pokémon Mart
+Places_Your House,<player.name>'s House
+Places_Birch's House,Birch's House
+Places_Birch's Lab,Birch's Lab
 Places_Elms Lab,Elm's Lab
 Places_Oaks Lab,Oak's Lab
 Places_Azalea Town Gym,Azalea Town Gym
@@ -399,8 +402,6 @@ Places_Cianwood City Gym,Cianwood City Gym
 Places_Olivine City Gym,Olivine City Gym
 Places_Mahogany City Gym,Mahogany City Gym
 Places_Blackthorn City Gym,Blackthorn City Gym
-Places_Your House,Your House
-Places_Your Room,Your Room
 Places_Daycare,Daycare
 Places_Pewter City Gym,Pewter City Gym
 Places_Cerulean City Gym,Cerulean City Gym
