@@ -94,8 +94,8 @@ Public Class MusicManager
     Private Shared _isFadingIn As Boolean = False
     ' NAudio properties
     Public Shared outputDevice As WaveOutEvent
-    Public Shared audioFile As VorbisWaveReader
-    Public Shared _loop As WaveStream
+	Public Shared audioFile As WaveChannel32
+	Public Shared _loop As WaveStream
 
     Public Shared Property MasterVolume As Single = 1.0F
     Public Shared ReadOnly Property CurrentSong As SongContainer
@@ -271,10 +271,10 @@ Public Class MusicManager
 
     Public Shared Sub UpdateVolume()
         _lastVolume = Volume * MasterVolume
-        If Not outputDevice Is Nothing Then
-            outputDevice.Volume = Volume * MasterVolume
-        End If
-    End Sub
+		If Not audioFile Is Nothing Then
+			audioFile.Volume = Volume * MasterVolume
+		End If
+	End Sub
 
     Public Shared Sub PauseForSound(ByVal sound As SoundEffect)
         _isPausedForSound = True
@@ -317,14 +317,14 @@ Public Class MusicManager
                 outputDevice.Dispose()
             End If
             outputDevice = New WaveOutEvent()
-            audioFile = New VorbisWaveReader(song.Song)
-            _loop = New LoopStream(audioFile, _isLooping)
+			audioFile = New NAudio.Wave.WaveChannel32(New VorbisWaveReader(song.Song))
+			_loop = New LoopStream(audioFile, _isLooping)
             outputDevice.Init(_loop)
             If Paused = False Then
                 outputDevice.Play()
             End If
-            outputDevice.Volume = Volume * MasterVolume
-            _currentSongExists = True
+			audioFile.Volume = Volume * MasterVolume
+			_currentSongExists = True
             _currentSongName = song.Name
             _currentSong = song
         Else

@@ -1,6 +1,4 @@
-﻿' Created because Song.Name is not what it is being set to.
-' also because when loading songs from uris, it doesn't calculate its duration
-Public Class SongContainer
+﻿Public Class SongContainer
 
 	Public Song As String
 	Public Name As String
