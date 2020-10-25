@@ -770,52 +770,52 @@
                     End Select
                 End If
 
-                If File.Exists(GameController.GamePath & "\Content\Data\System\BattleMaps\" & levelfile) = False And File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "\Data\System\BattleMaps\" & levelfile) = False Then
-                    Select Case Me.defaultMapType
-                        Case 0
-                            levelfile = cRegion & "0.dat"
-                        Case 2
-                            levelfile = cRegion & "1.dat"
-                        Case Else
-                            levelfile = cRegion & "0.dat"
-                    End Select
-                    BattleMapOffset = New Vector3(0)
-                End If
+				If File.Exists(GameController.GamePath & "\Content\Data\Maps\BattleMaps\" & levelfile) = False And File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "\Data\System\BattleMaps\" & levelfile) = False Then
+					Select Case Me.defaultMapType
+						Case 0
+							levelfile = cRegion & "0.dat"
+						Case 2
+							levelfile = cRegion & "1.dat"
+						Case Else
+							levelfile = cRegion & "0.dat"
+					End Select
+					BattleMapOffset = New Vector3(0)
+				End If
 
-                If SavedOverworld.Level.Surfing = True Then
-                    If SavedOverworld.Level.SurfingBattleMapData <> "" Then
-                        Select Case surfingBattleMapData.Length
-                            Case 1
-                                levelfile = surfingBattleMapData(0)
-                            Case 4
-                                levelfile = surfingBattleMapData(0)
-                                BattleMapOffset = New Vector3(CSng(surfingBattleMapData(1).Replace(".", GameController.DecSeparator)), CSng(surfingBattleMapData(2).Replace(".", GameController.DecSeparator)), CSng(surfingBattleMapData(3).Replace(".", GameController.DecSeparator)))
-                            Case Else
-                                levelfile = cRegion & "1.dat"
-                                BattleMapOffset = New Vector3(0)
-                        End Select
-                        DiveBattle = True
-                    Else
-                        levelfile = cRegion & "1.dat"
-                        DiveBattle = True
-                        BattleMapOffset = New Vector3(0)
-                    End If
-                End If
-            End If
+				If SavedOverworld.Level.Surfing = True Then
+					If SavedOverworld.Level.SurfingBattleMapData <> "" Then
+						Select Case surfingBattleMapData.Length
+							Case 1
+								levelfile = surfingBattleMapData(0)
+							Case 4
+								levelfile = surfingBattleMapData(0)
+								BattleMapOffset = New Vector3(CSng(surfingBattleMapData(1).Replace(".", GameController.DecSeparator)), CSng(surfingBattleMapData(2).Replace(".", GameController.DecSeparator)), CSng(surfingBattleMapData(3).Replace(".", GameController.DecSeparator)))
+							Case Else
+								levelfile = cRegion & "1.dat"
+								BattleMapOffset = New Vector3(0)
+						End Select
+						DiveBattle = True
+					Else
+						levelfile = cRegion & "1.dat"
+						DiveBattle = True
+						BattleMapOffset = New Vector3(0)
+					End If
+				End If
+			End If
 
-            If File.Exists(GameController.GamePath & "\Content\Data\System\BattleMaps\" & levelfile) = False And File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "\Data\System\BattleMaps\" & levelfile) = False Then
-                Select Case Me.defaultMapType
-                    Case 0
-                        levelfile = "battle0.dat"
-                    Case 2
-                        levelfile = "battle1.dat"
-                    Case Else
-                        levelfile = "battle0.dat"
-                End Select
-                BattleMapOffset = New Vector3(0)
-            End If
+			If File.Exists(GameController.GamePath & "\Content\Data\Maps\BattleMaps\" & levelfile) = False And File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "\Data\System\BattleMaps\" & levelfile) = False Then
+				Select Case Me.defaultMapType
+					Case 0
+						levelfile = "battle0.dat"
+					Case 2
+						levelfile = "battle1.dat"
+					Case Else
+						levelfile = "battle0.dat"
+				End Select
+				BattleMapOffset = New Vector3(0)
+			End If
 
-            Level.Load("BattleMaps\" & levelfile)
+			Level.Load("BattleMaps\" & levelfile)
             Level.MapName = SavedOverworld.Level.MapName
         End Sub
 
