@@ -1539,13 +1539,14 @@
 	Private Sub DrawDeleteMenu()
 		Dim CanvasTexture As Texture2D = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 0, 48, 48), "")
 
-		Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(ScreenSize.Width / 2 - 352), 172, 704, 96), Color.White, True)
+		Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(ScreenSize.Width / 2 - 352), 240, 704, 96), Color.White, True)
 
-		SpriteBatch.DrawInterfaceString(FontManager.MainFontBlack, Localization.GetString("delete_menu_delete_confirm"), New Vector2(CInt(ScreenSize.Width / 2) - CInt(FontManager.MainFontBlack.MeasureString(Localization.GetString("delete_menu_delete_confirm")).X / 2), 200), Color.White)
+		SpriteBatch.DrawInterfaceString(FontManager.MainFontBlack, Localization.GetString("delete_menu_delete_confirm"), New Vector2(CInt(ScreenSize.Width / 2) - CInt(FontManager.MainFontBlack.MeasureString(Localization.GetString("delete_menu_delete_confirm")).X / 2), 268), Color.White)
 
-		SpriteBatch.DrawInterfaceString(FontManager.MainFontBlack, """" & SaveNames(loadMenuIndex(0)) & """ ?", New Vector2(CInt(ScreenSize.Width / 2) - CInt(FontManager.MainFontBlack.MeasureString("""" & SaveNames(loadMenuIndex(0)) & """ ?").X / 2), 240), Color.White)
+		SpriteBatch.DrawInterfaceString(FontManager.MainFontBlack, """" & SaveNames(loadMenuIndex(0)) & """ ?", New Vector2(CInt(ScreenSize.Width / 2) - CInt(FontManager.MainFontBlack.MeasureString("""" & SaveNames(loadMenuIndex(0)) & """ ?").X / 2), 308), Color.White)
 
 		For i = 0 To 1
+			Dim FontColor As SpriteFont = FontManager.MainFontBlack
 			Dim Text As String = Localization.GetString("delete_menu_delete")
 
 			If i = 1 Then
@@ -1553,13 +1554,15 @@
 			End If
 
 			If i = deleteIndex Then
+				FontColor = FontManager.MainFontWhite
 				CanvasTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 48, 48, 48), "")
 			Else
+				FontColor = FontManager.MainFontBlack
 				CanvasTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 0, 48, 48), "")
 			End If
 
-			Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(ScreenSize.Width / 2) - 182 + i * 192, 370, 128, 64), True)
-			SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, Text, New Vector2(CInt(ScreenSize.Width / 2) - 164 + i * 192, 402), Color.White)
+			Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(ScreenSize.Width / 2) - 182 + i * 192, 438, 128, 64), True)
+			SpriteBatch.DrawInterfaceString(FontColor, Text, New Vector2(CInt(ScreenSize.Width / 2) - 164 + i * 192, 470), Color.White)
 		Next
 	End Sub
 
@@ -1573,7 +1576,7 @@
 
 		If GameInstance.IsMouseVisible = True Then
 			For i = 0 To 1
-				If ScaleScreenRec(New Rectangle(CInt(ScreenSize.Width / 2) - 182 + i * 192, 370, 128 + 32, 64 + 32)).Contains(MouseHandler.MousePosition) = True Then
+				If ScaleScreenRec(New Rectangle(CInt(ScreenSize.Width / 2) - 182 + i * 192, 438, 128 + 32, 64 + 32)).Contains(MouseHandler.MousePosition) = True Then
 					deleteIndex = i
 
 					If MouseHandler.ButtonPressed(MouseHandler.MouseButtons.LeftButton) = True Then

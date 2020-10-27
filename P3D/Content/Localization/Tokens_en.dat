@@ -385,13 +385,15 @@ Hoenn:
 Places_Littleroot Town,Littleroot Town
 Places_Oldale Town,Oldale Town
 
-Special Houses:
-Places_Gate,Gate
+Special Locations:
 Places_Pokemon Center,Pokémon Center
 Places_Pokemon Mart,Pokémon Mart
-Places_Your House,<player.name>'s House
+Places_Your House,Your House
 Places_Birch's House,Birch's House
 Places_Birch's Lab,Birch's Lab
+Places_Inside Truck,Inside Truck
+
+Places_Gate,Gate
 Places_Elms Lab,Elm's Lab
 Places_Oaks Lab,Oak's Lab
 Places_Azalea Town Gym,Azalea Town Gym
