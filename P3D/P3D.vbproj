@@ -10842,7 +10842,7 @@
     <Content Include="Content\Textures\OverworldSprites\Beauty.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\OverworldSprites\biker.png">
+    <Content Include="Content\Textures\OverworldSprites\Biker.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\OverworldSprites\BirdKeeper.png">
@@ -10860,7 +10860,7 @@
     <Content Include="Content\Textures\OverworldSprites\BlueShirtGuy.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\OverworldSprites\boarder.png">
+    <Content Include="Content\Textures\OverworldSprites\Boarder.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\OverworldSprites\Bouncer.png">
@@ -10878,13 +10878,13 @@
     <Content Include="Content\Textures\OverworldSprites\BugManiac.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\OverworldSprites\burglar.png">
+    <Content Include="Content\Textures\OverworldSprites\Burglar.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\OverworldSprites\Cameraman.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\OverworldSprites\camper.png">
+    <Content Include="Content\Textures\OverworldSprites\Camper.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\OverworldSprites\Captain.png">
@@ -10950,7 +10950,7 @@
     <Content Include="Content\Textures\OverworldSprites\FatGuy.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\OverworldSprites\firebreather.png">
+    <Content Include="Content\Textures\OverworldSprites\Firebreather.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\OverworldSprites\Fisherman.png">
@@ -11271,13 +11271,7 @@
     <Content Include="Content\Textures\OverworldSprites\Medium.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\OverworldSprites\misty.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Textures\OverworldSprites\Mom.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Textures\OverworldSprites\Morty.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\OverworldSprites\MrStone.png">

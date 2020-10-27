@@ -594,8 +594,8 @@ Public Class OverworldScreen
 
             'If the text is centered, set the draw position to the center of the screen, then add the position.
             If Me._isCentered = True Then
-                Dim v As Vector2 = FontManager.TextFont.MeasureString(Me._text) * Me._scale
-                p = New Vector2(CSng(Core.windowSize.Width / 2 - v.X / 2), CSng(Core.windowSize.Height / 2 - v.Y / 2))
+				Dim v As Vector2 = FontManager.MainFontWhite.MeasureString(Me._text) * Me._scale
+				p = New Vector2(CSng(Core.windowSize.Width / 2 - v.X / 2), CSng(Core.windowSize.Height / 2 - v.Y / 2))
             End If
             p += Me._position
 
@@ -605,8 +605,8 @@ Public Class OverworldScreen
                 A = CInt(255 * (1 / 3 * Me._delay))
             End If
 
-            Core.SpriteBatch.DrawString(FontManager.TextFont, Me._text, p, New Color(Me._textColor.R, Me._textColor.G, Me._textColor.B, A), 0.0F, Vector2.Zero, Me._scale, SpriteEffects.None, 0.0F)
-        End Sub
+			Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Me._text, p, New Color(Me._textColor.R, Me._textColor.G, Me._textColor.B, A), 0.0F, Vector2.Zero, Me._scale, SpriteEffects.None, 0.0F)
+		End Sub
 
         ''' <summary>
         ''' Updates the Title object.

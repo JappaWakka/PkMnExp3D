@@ -570,8 +570,8 @@ Public Class GameMode
 		Dim SkinNames As List(Of String) = {"Ethan", "Lyra", "Brendan", "May"}.ToList()
 		Dim SkinGenders As List(Of String) = {"Male", "Female", "Male", "Female"}.ToList()
 
-		Dim gameMode As New GameMode("Pokémon Exp3D", "The default GameMode based~on the GBC Pokémon games.", GameController.GAMEVERSION, "Pokémon Exp3D Team", "\Content\Data\Maps\", "\Content\Data\Scripts\", "\Content\Data\System\WildEncounters\", "\Content\Pokemon\Data\", "\Content\", "\Content\Localization\", New List(Of GameRule),
-									 "NewGameIntro.dat", New Vector3(1.0F, 0.1F, 3.0F), MathHelper.PiOver2, "Your Room", "", New Color(59, 123, 165), "0", "welcome", "0", SkinColors, SkinFiles, SkinNames, SkinGenders)
+		Dim gameMode As New GameMode("Pokémon Exp3D", "The default GameMode based~on Pokémon Ruby/Sapphire/Emerald.", GameController.GAMEVERSION, "Pokémon Exp3D Team", "\Content\Data\Maps\", "\Content\Data\Scripts\", "\Content\Data\System\WildEncounters\", "\Content\Pokemon\Data\", "\Content\", "\Content\Localization\", New List(Of GameRule),
+									 "NewGameIntro.dat", New Vector3(1.0F, 0.1F, 3.0F), MathHelper.PiOver2, "Inside Truck", "", New Color(59, 123, 165), "0", "welcome", "0", SkinColors, SkinFiles, SkinNames, SkinGenders)
 
 		Dim gameRules As New List(Of GameRule)
 		gameRules.Add(New GameRule("MaxLevel", "100"))

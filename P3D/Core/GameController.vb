@@ -22,7 +22,7 @@ Public Class GameController
 	''' <summary>
 	''' The development stage the game is in.
 	''' </summary>
-	Public Const GAMEDEVELOPMENTSTAGE As String = "Expanded"
+	Public Const GAMEDEVELOPMENTSTAGE As String = "Beta"
 
 	''' <summary>
 	''' The name of the game.

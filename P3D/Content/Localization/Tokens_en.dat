@@ -1,7 +1,7 @@
 language_name,English
 ---
 MainMenuScreen:
-main_menu_continue_online,Continue (Online)
+main_menu_online_game,Online Game
 main_menu_load_game,Load Game
 main_menu_new_game,New Game
 main_menu_quit_game,Quit Game
@@ -1668,7 +1668,7 @@ Littleroot Town:
 Signs:
 
 Littleroot_Main_Sign_Town,Littleroot Town*"A town that can't be shaded any hue."
-Littleroot_Main_Sign_YourHouse,<player.name>'s House
+Littleroot_Main_Sign_YourHouse,Your House
 Littleroot_Main_Sign_BirchsHouse,Prof. Birch's House
 Littleroot_Main_Sign_BirchsLab,Prof. Birch's Pokémon Lab
 

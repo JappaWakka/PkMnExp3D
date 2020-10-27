@@ -36,8 +36,8 @@
 
     Dim pokemonRange() As Integer = {1, 252}
     Dim introMusic As String = "welcome"
-	'Dim startMap As String = "Johto\Cities\NewBark\YourHouse2f.dat"
-	Dim startMap As String = "Johto\Cities\NewBark\YourHouse2f.dat"
+	'Dim startMap As String = "Hoenn\Cities\Littleroot\InsideTruck.dat"
+	Dim startMap As String = "Hoenn\Cities\Littleroot\InsideTruck.dat"
 	Dim startPosition As Vector3 = New Vector3(9, 0.1F, 10)
 	Dim startLocation As String = "Your Room"
 	Dim startYaw As Single = MathHelper.PiOver2
@@ -471,12 +471,12 @@
 			"location|" & Me.startLocation & Environment.NewLine &
 			"battleAnimations|2" & Environment.NewLine &
 			"BoxAmount|5" & Environment.NewLine &
-			"LastRestPlace|Johto\Cities\NewBark\YourHouse2f.dat" & Environment.NewLine &
-			"LastRestPlacePosition|1,0.1,3" & Environment.NewLine &
+			"LastRestPlace|Hoenn\Cities\Littleroot\InsideTruck.dat" & Environment.NewLine &
+			"LastRestPlacePosition|3,0.1,3" & Environment.NewLine &
 			"DiagonalMovement|0" & Environment.NewLine &
 			"RepelSteps|0" & Environment.NewLine &
-			"LastSavePlace|Johto\Cities\NewBark\YourHouse2f.dat" & Environment.NewLine &
-			"LastSavePlacePosition|1,0.1,3" & Environment.NewLine &
+			"LastSavePlace|Hoenn\Cities\Littleroot\InsideTruck.dat" & Environment.NewLine &
+			"LastSavePlacePosition|3,0.1,3" & Environment.NewLine &
 			"Difficulty|" & GameModeManager.GetGameRuleValue("Difficulty", "0") & Environment.NewLine &
 			"BattleStyle|0" & Environment.NewLine &
 			"saveCreated|" & GameController.GAMEDEVELOPMENTSTAGE & " " & GameController.GAMEVERSION & Environment.NewLine &
@@ -484,7 +484,7 @@
 			"DaycareSteps|0" & Environment.NewLine &
 			"GameMode|" & GameModeManager.ActiveGameMode.DirectoryName & Environment.NewLine &
 			"PokeFiles|" & Environment.NewLine &
-			"VisitedMaps|Johto\Cities\NewBark\YourHouse2f.dat" & Environment.NewLine &
+			"VisitedMaps|Hoenn\Cities\Littleroot\InsideTruck.dat" & Environment.NewLine &
 			"TempSurfSkin|Ethan" & Environment.NewLine &
 			"TempFishSkin|Ethan" & Environment.NewLine &
 			"TempBikeSkin|Ethan" & Environment.NewLine &

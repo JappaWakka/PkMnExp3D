@@ -7,8 +7,8 @@
     Public Sub New(ByVal currentScreen As Screen)
         MyBase.New(currentScreen, Identifications.BerryScreen, "TestScreen")
 
-        t = New KeyboardInput.Textbox(FontManager.TextFont)
-    End Sub
+		t = New KeyboardInput.Textbox(FontManager.MainFontBlack)
+	End Sub
 
     Public Overrides Sub Update()
         MyBase.Update()

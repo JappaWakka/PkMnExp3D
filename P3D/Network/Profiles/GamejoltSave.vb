@@ -865,8 +865,8 @@ Namespace GameJolt
             End While
 
 			Dim s As String = "Name|" & GameJolt.API.username & Environment.NewLine &
-				"Position|1,0.1,3" & Environment.NewLine &
-				"MapFile|johto\cities\newbark\yourhousef2.dat" & Environment.NewLine &
+				"Position|3,0.1,3" & Environment.NewLine &
+				"MapFile|Hoenn\Cities\Littleroot\InsideTruck.dat" & Environment.NewLine &
 				"Rotation|1.570796" & Environment.NewLine &
 				"RivalName|???" & Environment.NewLine &
 				"Money|3000" & Environment.NewLine &
@@ -884,11 +884,11 @@ Namespace GameJolt
 				"battleAnimations|2" & Environment.NewLine &
 				"BoxAmount|5" & Environment.NewLine &
 				"LastRestPlace|johto\cities\newbark\yourhousef2.dat" & Environment.NewLine &
-				"LastRestPlacePosition|1,0.1,3" & Environment.NewLine &
+				"LastRestPlacePosition|3,0.1,3" & Environment.NewLine &
 				"DiagonalMovement|0" & Environment.NewLine &
 				"RepelSteps|0" & Environment.NewLine &
-				"LastSavePlace|Johto\Cities\NewBark\YourHouse2f.dat" & Environment.NewLine &
-				"LastSavePlacePosition|1,0.1,3" & Environment.NewLine &
+				"LastSavePlace|Hoenn\Cities\Littleroot\InsideTruck.dat" & Environment.NewLine &
+				"LastSavePlacePosition|3,0.1,3" & Environment.NewLine &
 				"Difficulty|" & GameModeManager.GetGameRuleValue("Difficulty", "0") & Environment.NewLine &
 				"BattleStyle|0" & Environment.NewLine &
 				"saveCreated|" & GameController.GAMEDEVELOPMENTSTAGE & " " & GameController.GAMEVERSION & Environment.NewLine &
@@ -896,7 +896,7 @@ Namespace GameJolt
 				"DaycareSteps|0" & Environment.NewLine &
 				"GameMode|PkMnExp3D" & Environment.NewLine &
 				"PokeFiles|" & Environment.NewLine &
-				"VisitedMaps|johto\cities\newbark\yourhousef2.dat" & Environment.NewLine &
+				"VisitedMaps|Hoenn\Cities\Littleroot\InsideTruck.dat" & Environment.NewLine &
 				"TempSurfSkin|Ethan" & Environment.NewLine &
 				"TempBikeSkin|Ethan" & Environment.NewLine &
 				"TempFishSkin|Ethan" & Environment.NewLine &

@@ -2,8 +2,8 @@
 
     Inherits Entity
 
-    Shared ReadOnly FallbackSkins() As String = {"0", "1", "2", "5", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "32", "49", "61", "63", "oldhatman", "PinkShirtGirl", "bugcatcher"}
-    Shared FallBack As New Dictionary(Of Integer, String)
+	Shared ReadOnly FallbackSkins() As String = {"Birdkeeper", "Painter", "Nurse", "OldLady", "OldMan", "Lady", "Lass", "Doctor", "Fisherman", "CuteGirl", "Captain", "Cameraman", "BlueShirtGuy", "Breeder_Female", "Breeder_Male", "BlackBelt", "BattleGirl", "AromaLady", "Youngster", "YoungCouple_Female", "YoungCouple_Male", "SuperNerd", "SchoolGirl", "SchoolKid", "RichBoy", "Smasher", "Jogger", "Rancher", "Cowgirl", "Picknicker", "Camper", "Gentleman", "PinkShirtGirl", "BugCatcher"}
+	Shared FallBack As New Dictionary(Of Integer, String)
 
     Public Name As String = ""
 
@@ -111,8 +111,11 @@
 
     Public Shared Function GetTexturePath(ByVal TextureID As String) As String
         Dim texturePath As String = "Textures\OverworldSprites\"
-        Dim isPokemon As Boolean = False
-        If TextureID.StartsWith("[POKEMON|N]") = True Or TextureID.StartsWith("[Pokémon|N]") = True Then
+		Dim isPokemon As Boolean = False
+		If TextureManager.TextureExist(texturePath & "PlayerSkins\" & TextureID) Then
+			texturePath = "Textures\OverworldSprites\PlayerSkins\"
+		End If
+		If TextureID.StartsWith("[POKEMON|N]") = True Or TextureID.StartsWith("[Pokémon|N]") = True Then
             TextureID = TextureID.Remove(0, 11)
             isPokemon = True
             texturePath = "Pokemon\Overworld\Normal\"

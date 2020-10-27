@@ -33,14 +33,6 @@
 /processorParam:TextureFormat=Color
 /build:Fonts/BMP/Braille.png
 
-#begin Fonts/BMP/chatFont.png
-/importer:TextureImporter
-/processor:FontTextureProcessor
-/processorParam:FirstCharacter= 
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Color
-/build:Fonts/BMP/chatFont.png
-
 #begin Fonts/BMP/GameJolt.xnb
 /copy:Fonts/BMP/GameJolt.xnb
 

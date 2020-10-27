@@ -293,9 +293,9 @@ Public Class CoreSpriteBatch
     Public Sub DrawInterfaceString(ByVal Font As SpriteFont, ByVal Text As System.Text.StringBuilder, ByVal Position As Vector2, ByVal Color As Color, ByVal Rotation As Single, ByVal Origin As Vector2, ByVal Scale As Vector2, ByVal Effects As SpriteEffects, ByVal LayerDepth As Single, ByVal TransformPosition As Boolean)
         Dim x As Double = InterfaceScale()
         If TransformPosition = True Then
-            Position = New Vector2(CSng(Position.X * x), CSng(Position.Y * x))
-        End If
-        Scale = New Vector2(CSng(Scale.X * x), CSng(Scale.Y * x))
+			Position = New Vector2(CSng(CInt(Position.X * x)), CSng(CInt(Position.Y * x)))
+		End If
+		Scale = New Vector2(CSng(Scale.X * x), CSng(Scale.Y * x))
 
         DrawString(Font, Text, Position, Color, Rotation, Origin, Scale, Effects, LayerDepth)
     End Sub

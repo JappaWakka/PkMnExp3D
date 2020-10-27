@@ -328,7 +328,7 @@
 			Dim Text As String = ""
 			Select Case i
 				Case 0
-					Text = Localization.GetString("main_menu_continue_online")
+					Text = Localization.GetString("main_menu_online_game")
 				Case 1
 					Text = Localization.GetString("main_menu_load_game")
 				Case 2
@@ -409,7 +409,7 @@
 		If GameInstance.IsMouseVisible = True Then
 			For i = 0 To 6
 				If i = 0 Then
-					If ScaleScreenRec(New Rectangle(CInt(ScreenSize.Width / 2), 160, 320 + 32, 64 + 32)).Contains(MouseHandler.MousePosition) = True Then
+					If ScaleScreenRec(New Rectangle(CInt(ScreenSize.Width / 2) - 180, 240, 320 + 32, 64 + 32)).Contains(MouseHandler.MousePosition) = True Then
 						mainmenuIndex = i
 						If MouseHandler.ButtonPressed(MouseHandler.MouseButtons.LeftButton) = True Then
 							LoadGameJoltButton()
@@ -449,7 +449,7 @@
 						End If
 					End If
 				ElseIf i = 1 And GameJolt.API.LoggedIn = True Then
-					If ScaleScreenRec(New Rectangle(CInt(ScreenSize.Width / 2) - 180 - 160 - 20, 240 + i * 128, 320 + 32, 64 + 32)).Contains(MouseHandler.MousePosition) = True Then
+					If ScaleScreenRec(New Rectangle(CInt(ScreenSize.Width / 2) - 180, 240 + i * 128, 320 + 32, 64 + 32)).Contains(MouseHandler.MousePosition) = True Then
 						mainmenuIndex = i
 						If MouseHandler.ButtonPressed(MouseHandler.MouseButtons.LeftButton) = True Then
 							LoadGameButton()
@@ -537,7 +537,10 @@
 	Private Sub LoadGameJoltButton()
 		If Security.FileValidation.IsValid(False) = True Then
 			If GameJolt.API.LoggedIn = True Then
-				GameJoltSave.DownloadSave(GameJolt.LogInScreen.LoadedGameJoltID, True)
+				Core.Player.IsGameJoltSave = True
+				Core.Player.LoadGame("GAMEJOLTSAVE")
+
+				SetScreen(New JoinServerScreen(Me))
 			End If
 		End If
 	End Sub
@@ -778,69 +781,73 @@
 	Private Sub DrawLoadGameJoltSaveMenu()
 		If GameJoltSave.DownloadFailed = False Then
 			Dim downloaded As Boolean = GameJoltSave.DownloadFinished
-
+			Dim opacity As Integer = 128
 			If downloaded = True Then
-				Dim r As New Rectangle(CInt(ScreenSize.Width / 2) - 256, 240, 512, 128)
-				If ScaleScreenRec(r).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Or GameInstance.IsMouseVisible = False And loadGameJoltIndex = 0 Then
-					Canvas.DrawRectangle(ScaleScreenRec(New Rectangle(CInt(ScreenSize.Width / 2) - 264, 292, 528, 144)), New Color(255, 255, 255, 150))
-				End If
+				Dim r As New Rectangle(CInt(ScreenSize.Width / 2) + 256, 240, 512, 128)
 
 				If GameJolt.LogInScreen.UserBanned(GameJoltSave.GameJoltID) = True Then
 					Dim reason As String = GameJolt.LogInScreen.GetBanReasonByID(GameJolt.LogInScreen.BanReasonIDForUser(GameJoltSave.GameJoltID))
 					SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, reason, New Vector2(CSng(ScreenSize.Width / 2 - FontManager.MainFontWhite.MeasureString(reason).X / 2), 260), Color.Red)
 				End If
 
-				GameJolt.Emblem.Draw(GameJolt.API.username, GameJoltSave.GameJoltID, GameJoltSave.Points, GameJoltSave.Gender, GameJoltSave.Emblem, ScaleScreenVec(New Vector2(CSng(ScreenSize.Width / 2) - 256, 240)), CSng(4 * SpriteBatch.InterfaceScale), GameJoltSave.DownloadedSprite)
+				GameJolt.Emblem.Draw(GameJolt.API.username, GameJoltSave.GameJoltID, GameJoltSave.Points, GameJoltSave.Gender, GameJoltSave.Emblem, ScaleScreenVec(New Vector2(CSng(ScreenSize.Width / 2) + 256, 240)), CSng(4 * SpriteBatch.InterfaceScale), GameJoltSave.DownloadedSprite)
 
 				Dim y As Integer = 0
-				If ScaleScreenRec(New Rectangle(r.X + 32 + r.Width, r.Y, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Or GameInstance.IsMouseVisible = False And loadGameJoltIndex = 1 Then
+				If ScaleScreenRec(New Rectangle(r.X, r.Y + 32 + r.Height, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Or GameInstance.IsMouseVisible = False And loadGameJoltIndex = 1 Then
 					y = 16
-
-					SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, "Change to Male.", New Vector2(r.X + 64 + 4 + r.Width, r.Y + 4), Color.White)
+					opacity = 255
 				End If
-				SpriteBatch.DrawInterface(mainTexture, New Rectangle(r.X + 32 + r.Width, r.Y, 32, 32), New Rectangle(144, 32 + y, 16, 16), Color.White)
+				SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, "Change to Male", New Vector2(r.X + 32 + 4, r.Y + 32 + r.Height), New Color(Color.White, opacity))
+				SpriteBatch.DrawInterface(mainTexture, New Rectangle(r.X, r.Y + 32 + r.Height, 32, 32), New Rectangle(144, 32 + y, 16, 16), Color.White)
 
+				opacity = 128
 				y = 0
-				If ScaleScreenRec(New Rectangle(r.X + 32 + r.Width, r.Y + 48, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Or GameInstance.IsMouseVisible = False And loadGameJoltIndex = 2 Then
+
+				If ScaleScreenRec(New Rectangle(r.X, r.Y + 64 + 16 + r.Height, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Or GameInstance.IsMouseVisible = False And loadGameJoltIndex = 2 Then
 					y = 16
-
-					SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, "Change to Female.", New Vector2(r.X + 64 + 4 + r.Width, r.Y + 4 + 48), Color.White)
+					opacity = 255
 				End If
-				SpriteBatch.DrawInterface(mainTexture, New Rectangle(r.X + 32 + r.Width, r.Y + 48, 32, 32), New Rectangle(160, 32 + y, 16, 16), Color.White)
+				SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, "Change to Female", New Vector2(r.X + 32 + 4, r.Y + 64 + 16 + r.Height), New Color(Color.White, opacity))
+				SpriteBatch.DrawInterface(mainTexture, New Rectangle(r.X, r.Y + 64 + 16 + r.Height, 32, 32), New Rectangle(160, 32 + y, 16, 16), Color.White)
 
-				If ScaleScreenRec(New Rectangle(r.X + 32 + r.Width, r.Y + 48 + 48, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Or GameInstance.IsMouseVisible = False And loadGameJoltIndex = 3 Then
-					y = 16
-
-					SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, "Change to Other.", New Vector2(r.X + 64 + 4 + r.Width, r.Y + 4 + 48), Color.White)
-				End If
-				SpriteBatch.DrawInterface(mainTexture, New Rectangle(r.X + 32 + r.Width, r.Y + 48 + 48, 32, 32), New Rectangle(160, 32 + y, 16, 16), Color.White)
-
+				opacity = 128
 				y = 0
-				If ScaleScreenRec(New Rectangle(r.X + 32 + r.Width, r.Y + 48 + 48 + 48, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Or GameInstance.IsMouseVisible = False And loadGameJoltIndex = 4 Then
+				If ScaleScreenRec(New Rectangle(r.X, r.Y + 96 + 32 + r.Height, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Or GameInstance.IsMouseVisible = False And loadGameJoltIndex = 3 Then
 					y = 16
-
-					SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, "Reset save.", New Vector2(r.X + 64 + 4 + r.Width, r.Y + 4 + 48 + 48), Color.White)
+					opacity = 255
 				End If
-				SpriteBatch.DrawInterface(mainTexture, New Rectangle(r.X + 32 + r.Width, r.Y + 48 + 48, 32, 32), New Rectangle(176, 32 + y, 16, 16), Color.White)
+				SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, "Change to Other", New Vector2(r.X + 32 + 4, r.Y + 96 + 32 + r.Height), New Color(Color.White, opacity))
+				SpriteBatch.DrawInterface(mainTexture, New Rectangle(r.X, r.Y + 96 + 32 + r.Height, 32, 32), New Rectangle(112, 32 + y, 16, 16), Color.White)
+
+				opacity = 128
+				y = 0
+				If ScaleScreenRec(New Rectangle(r.X, r.Y + 128 + 48 + r.Height, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Or GameInstance.IsMouseVisible = False And loadGameJoltIndex = 4 Then
+					y = 16
+					opacity = 255
+				End If
+				SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, "Reset save", New Vector2(r.X + 32 + 4, r.Y + 128 + 48 + r.Height), New Color(Color.White, opacity))
+				SpriteBatch.DrawInterface(mainTexture, New Rectangle(r.X, r.Y + 128 + 48 + r.Height, 32, 32), New Rectangle(176, 32 + y, 16, 16), Color.White)
 			Else
+				If Security.FileValidation.IsValid(False) = True Then
+					If GameJolt.API.LoggedIn = True Then
+						GameJoltSave.DownloadSave(GameJolt.LogInScreen.LoadedGameJoltID, True)
+					End If
+				End If
+
 				Dim downloadProgress As Integer = GameJoltSave.DownloadProgress
-				Dim total As Integer = GameJoltSave.TotalDownloadItems
+						Dim total As Integer = GameJoltSave.TotalDownloadItems
 
-				Dim downloadtext As String = "Downloading profile"
-				SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, downloadtext & LoadingDots.Dots, New Vector2(CSng(ScreenSize.Width / 2 - FontManager.MainFontWhite.MeasureString(downloadtext).X / 2), 320), Color.White)
+						Dim downloadtext As String = "Downloading profile"
+				SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, downloadtext & LoadingDots.Dots, New Vector2(CSng(ScreenSize.Width / 2 + 512 - FontManager.MainFontWhite.MeasureString(downloadtext).X / 2), 320), Color.White)
 
-				Canvas.DrawScrollBar(New Vector2(CInt(ScreenSize.Width / 2) - 256, 400), total, downloadProgress, 0, New Size(512, 8), True, Color.Black, Color.White, True)
-			End If
-		Else
+				Canvas.DrawScrollBar(New Vector2(CInt(ScreenSize.Width / 2) + 256, 400), total, downloadProgress, 0, New Size(512, 8), True, Color.Black, Color.White, True)
+					End If
+				Else
 			Dim failText As String = "The download failed! Please try again."
 
 			SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, failText, New Vector2(CSng(ScreenSize.Width / 2 - FontManager.MainFontWhite.MeasureString(failText).X / 2), 320), Color.DarkRed)
 		End If
 
-		If ControllerHandler.IsConnected() = False Then
-			Dim text As String = "Right-Click to quit to the main menu"
-			SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, text, New Vector2(CSng(ScreenSize.Width / 2 - FontManager.MainFontWhite.MeasureString(text).X / 2), 500), Color.White)
-		End If
 
 		Dim d As New Dictionary(Of Buttons, String)
 		d.Add(Buttons.A, "Select")
@@ -862,24 +869,21 @@
 			loadGameJoltIndex = loadGameJoltIndex.Clamp(0, 4)
 
 			If Controls.Accept(True, True) = True Then
-				If GameInstance.IsMouseVisible = False And loadGameJoltIndex = 0 Or ScaleScreenRec(New Rectangle(CInt(ScreenSize.Width / 2) - 256, 240, 512, 128)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Then
-					Core.Player.IsGameJoltSave = True
-					Core.Player.LoadGame("GAMEJOLTSAVE")
-
-					SetScreen(New JoinServerScreen(Me))
+				If GameInstance.IsMouseVisible = False And loadGameJoltIndex = 0 Or ScaleScreenRec(New Rectangle(CInt(ScreenSize.Width / 2) + 256, 240, 512, 128)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Then
+					LoadGameJoltButton()
 				End If
 
-				Dim r As Rectangle = ScaleScreenRec(New Rectangle(CInt(ScreenSize.Width / 2) - 256, 240, 512, 128))
-				If GameInstance.IsMouseVisible = False And loadGameJoltIndex = 1 Or ScaleScreenRec(New Rectangle(r.X + 32 + r.Width, r.Y, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Then
+				Dim r As Rectangle = ScaleScreenRec(New Rectangle(CInt(ScreenSize.Width / 2) + 256, 240, 512, 128))
+				If GameInstance.IsMouseVisible = False And loadGameJoltIndex = 1 Or ScaleScreenRec(New Rectangle(r.X, r.Y + 32 + r.Height, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Then
 					ButtonChangeMale()
 				End If
-				If GameInstance.IsMouseVisible = False And loadGameJoltIndex = 2 Or ScaleScreenRec(New Rectangle(r.X + 32 + r.Width, r.Y + 48, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Then
+				If GameInstance.IsMouseVisible = False And loadGameJoltIndex = 2 Or ScaleScreenRec(New Rectangle(r.X, r.Y + 64 + 16 + r.Height, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Then
 					ButtonChangeFemale()
 				End If
-				If GameInstance.IsMouseVisible = False And loadGameJoltIndex = 3 Or ScaleScreenRec(New Rectangle(r.X + 32 + r.Width, r.Y + 48 + 48, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Then
+				If GameInstance.IsMouseVisible = False And loadGameJoltIndex = 3 Or ScaleScreenRec(New Rectangle(r.X, r.Y + 96 + 32 + r.Height, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Then
 					ButtonChangeOther()
 				End If
-				If GameInstance.IsMouseVisible = False And loadGameJoltIndex = 4 Or ScaleScreenRec(New Rectangle(r.X + 32 + r.Width, r.Y + 48 + 48 + 48, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Then
+				If GameInstance.IsMouseVisible = False And loadGameJoltIndex = 4 Or ScaleScreenRec(New Rectangle(r.X, r.Y + 128 + 48 + r.Height, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Then
 					ButtonResetSave()
 				End If
 				SoundManager.PlaySound("Select")

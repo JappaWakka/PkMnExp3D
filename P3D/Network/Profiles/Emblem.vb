@@ -65,7 +65,7 @@
         Public Enum MaleEmblemSprites
             NNLittleBoy = 0
 			NNYoungster = 1
-			NNSchoolkid = 2
+			NNSchoolKid = 2
 			NNCamper = 3
 			NNBackpacker_Male = 4
 			NNGuitarist = 5
@@ -81,7 +81,7 @@
 			NNScientist = 15
 			NNDoctor = 16
 			NNGentleman = 17
-			NNButler = 18
+			NNJanitor = 18
 			NNOldMan = 19
 		End Enum
 
@@ -108,7 +108,7 @@
 			NNNurse = 16
 			NNPokeFan_Female = 17
 			NNSocialite = 18
-			NNOldWoman = 19
+			NNOldLady = 19
 		End Enum
 
 #End Region
@@ -181,17 +181,17 @@
             Core.SpriteBatch.Draw(PlayerTexture, New Rectangle(CInt(Position.X), CInt(Position.Y), CInt(32 * Scale), CInt(32 * Scale)), New Rectangle(0, frameSize.Height * 2, frameSize.Width, frameSize.Height), Color.White)
 
             If PokemonList Is Nothing OrElse PokemonList.Count = 0 Then
-                Core.SpriteBatch.DrawString(EmblemFontColor, PlayerName & Environment.NewLine & PlayerTitle & Environment.NewLine & Environment.NewLine & "Level: " & PlayerLevel & Environment.NewLine & "(Points: " & PlayerPoints & ")", New Vector2(32 * Scale + 10 + Position.X, 10 + Position.Y), Color.White, 0.0F, Vector2.Zero, CSng(Scale / 4), SpriteEffects.None, 0.0F)
-            Else
-                Core.SpriteBatch.DrawString(EmblemFontColor, PlayerName & Environment.NewLine & PlayerTitle & Environment.NewLine & "Level: " & PlayerLevel & Environment.NewLine & "(Points: " & PlayerPoints & ")", New Vector2(32 * Scale + 10 + Position.X, 6 + Position.Y), Color.White, 0.0F, Vector2.Zero, CSng(Scale / 4), SpriteEffects.None, 0.0F)
+				Core.SpriteBatch.DrawString(EmblemFontColor, PlayerName & Environment.NewLine & PlayerTitle & Environment.NewLine & "Level: " & PlayerLevel & Environment.NewLine & "(Points: " & PlayerPoints & ")", New Vector2(CInt(32 * Scale + 10 + Position.X), Position.Y), Color.White, 0.0F, Vector2.Zero, CSng(Scale / 4), SpriteEffects.None, 0.0F)
+			Else
+				Core.SpriteBatch.DrawString(EmblemFontColor, PlayerName & Environment.NewLine & PlayerTitle & Environment.NewLine & "Level: " & PlayerLevel & Environment.NewLine & "(Points: " & PlayerPoints & ")", New Vector2(CInt(32 * Scale + 10 + Position.X), Position.Y), Color.White, 0.0F, Vector2.Zero, CSng(Scale / 4), SpriteEffects.None, 0.0F)
 
-                For i = 0 To 5
-                    Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(192, 0, 32, 32), ""), New Rectangle(CInt(32 * Scale + (10 / 4) * Scale + Position.X + i * (10 * Scale)), CInt(Position.Y + 22.5F * Scale), CInt(Scale * 8), CInt(Scale * 8)), Color.White)
+				For i = 0 To 5
+					Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(192, 0, 32, 32), ""), New Rectangle(CInt(32 * Scale + (10 / 4) * Scale + Position.X + i * (10 * Scale)), CInt(Position.Y + 22.5F * Scale), CInt(Scale * 8), CInt(Scale * 8)), Color.White)
 
-                    If PokemonList.Count - 1 >= i Then
-                        Dim p As Pokemon = PokemonList(i)
-                        Core.SpriteBatch.Draw(p.GetMenuTexture(), New Rectangle(CInt(32 * Scale + (10 / 4) * Scale + Position.X + i * (10 * Scale)), CInt(Position.Y + 22.5F * Scale), CInt(Scale * 8), CInt(Scale * 8)), Color.White)
-                    End If
+					If PokemonList.Count - 1 >= i Then
+						Dim p As Pokemon = PokemonList(i)
+						Core.SpriteBatch.Draw(p.GetMenuTexture(), New Rectangle(CInt(32 * Scale + (10 / 4) * Scale + Position.X + i * (10 * Scale)), CInt(Position.Y + EmblemBackgroundTexture.Height * Scale), CInt(Scale * 8), CInt(Scale * 8)), Color.White)
+					End If
                 Next
             End If
 

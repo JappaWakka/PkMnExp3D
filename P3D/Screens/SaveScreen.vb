@@ -89,7 +89,7 @@
                     text = "Press " & KeyBindings.BackKey1.ToString() & " to continue"
                 End If
 
-                Dim textSize As Vector2 = FontManager.GameJoltFont.MeasureString(text)
+				Dim textSize As Vector2 = FontManager.MainFontBlack.MeasureString(text)
 
 				GetFontRenderer().DrawString(FontManager.MainFontBlack, text, New Vector2(Delta_X + 610 - textSize.X / 2.0F,
 																				   Delta_Y + 350 - textSize.Y / 2.0F), Color.White)
@@ -111,7 +111,7 @@
 						End If
                     Else
 						.DrawString(FontManager.MainFontBlack, Localization.GetString("save_screen_question1"), New Vector2(Delta_X + 90, Delta_Y + 50), Color.White)
-						.DrawString(FontManager.MainFontBlack, Localization.GetString("save the game?"), New Vector2(Delta_X + 90, Delta_Y + 80), Color.White)
+						.DrawString(FontManager.MainFontBlack, Localization.GetString("save_screen_question2"), New Vector2(Delta_X + 90, Delta_Y + 80), Color.White)
 					End If
                 End If
 

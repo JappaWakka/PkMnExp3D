@@ -12,8 +12,8 @@ Public Class Trainer
     Public Money As Integer = 84
     Public SpriteName As String = "14"
     Public SpriteName2 As String = "14"
-    Public Region As String = "Corna"
-    Public Music As String = "Trainer"
+	Public Region As String = "Hoenn"
+	Public Music As String = "Trainer"
     Public TrainerFile As String = ""
     Public DoubleTrainer As Boolean = False
     Public Items As New List(Of Item)
