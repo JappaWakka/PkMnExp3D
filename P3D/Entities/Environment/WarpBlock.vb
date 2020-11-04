@@ -13,7 +13,6 @@
 	Public Function Warp(ByVal MapViewMode As Boolean) As Boolean
 		If IsValidLink(Me.AdditionalValue) = True And ScriptBlock.TriggeredScriptBlock = False Then
 			Dim destination As String = Me.AdditionalValue.GetSplit(0)
-
 			Dim link As String = Me.AdditionalValue
 			Dim c As Integer = 0
 			For e = 0 To link.Length - 1
@@ -21,10 +20,26 @@
 					c += 1
 				End If
 			Next
-			If c >= 5 Then
+			Dim WarpSoundName As String = "Warp_Exit"
+			If c = 5 Then
+				Dim WarpSoundData As Integer = CInt(Me.AdditionalValue.GetSplit(5))
+				Select Case WarpSoundData
+					Case 0
+						WarpSoundName = "Warp_Exit"
+					Case 1
+						WarpSoundName = "Warp_RegularDoor"
+					Case 2
+						WarpSoundName = "Warp_SlideDoor"
+					Case 3
+						WarpSoundName = ""
+					Case Else
+						WarpSoundName = "Exit"
+				End Select
+			End If
+			If c > 5 Then
 				Dim validRotations As New List(Of Integer)
 
-				Dim rotationData() As String = link.GetSplit(5, ",").Split(CChar("|"))
+				Dim rotationData() As String = link.GetSplit(6, ",").Split(CChar("|"))
 				For Each Element As String In rotationData
 					validRotations.Add(CInt(Element))
 				Next
@@ -32,6 +47,7 @@
 					Return True
 				End If
 			End If
+
 
 			If System.IO.File.Exists(GameController.GamePath & "\" & GameModeManager.ActiveGameMode.MapPath & destination) = True Or System.IO.File.Exists(GameController.GamePath & "\Content\Data\maps\" & destination) = True Then
 				If MapViewMode = False Then
@@ -41,10 +57,17 @@
 					Screen.Level.WarpData.DoWarpInNextTick = True
 					Screen.Level.WarpData.CorrectCameraYaw = Screen.Camera.Yaw
 					Screen.Level.WarpData.IsWarpBlock = True
+					If GameModeManager.ContentFileExists("Sounds\" & WarpSoundName & ".wav") = True Or GameModeManager.ContentFileExists("Sounds\" & WarpSoundName & ".xnb") = True Then
+						Screen.Level.WarpData.WarpSound = WarpSoundName
+					ElseIf WarpSoundName = "" Then
+						Screen.Level.WarpData.WarpSound = Nothing
+					Else
+						Screen.Level.WarpData.WarpSound = "Warp_Exit"
+					End If
 					Logger.Debug("Lock Camera")
-					CType(Screen.Camera, OverworldCamera).YawLocked = True
-				Else
-					Screen.Level = New Level()
+						CType(Screen.Camera, OverworldCamera).YawLocked = True
+					Else
+						Screen.Level = New Level()
 					Screen.Level.Load(Me.AdditionalValue.GetSplit(0))
 					Screen.Level.World.Initialize(Screen.Level.EnvironmentType, Screen.Level.WeatherType)
 
@@ -73,15 +96,15 @@
                         Dim x As String = link.GetSplit(1)
                         Dim y As String = link.GetSplit(2).Replace(".", GameController.DecSeparator)
                         Dim z As String = link.GetSplit(3)
-                        Dim l As String = link.GetSplit(4)
+						Dim r As String = link.GetSplit(4)
 
-                        If StringHelper.IsNumeric(x) = True And
-                           StringHelper.IsNumeric(y) = True And
-                           StringHelper.IsNumeric(z) = True And
-                           StringHelper.IsNumeric(l) = True Then
-                            Return True
-                        Else
-                            CallError("Position values are not numeric.")
+						If StringHelper.IsNumeric(x) = True And
+						   StringHelper.IsNumeric(y) = True And
+						   StringHelper.IsNumeric(z) = True And
+						   StringHelper.IsNumeric(r) = True Then
+							Return True
+						Else
+							CallError("Position values are not numeric.")
                             Return False
                         End If
                     Else

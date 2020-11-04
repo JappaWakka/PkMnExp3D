@@ -982,15 +982,16 @@
 				Case 1
 					Text = Localization.GetString("language_menu_back")
 			End Select
-
+			Dim fontColor As SpriteFont = FontManager.MainFontBlack
 			If i = languageMenuIndex(1) Then
+				fontColor = FontManager.MainFontWhite
 				CanvasTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 48, 48, 48), "")
 			Else
 				CanvasTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 0, 48, 48), "")
 			End If
 
 			Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(ScreenSize.Width / 2) - 208 + i * 192, 550, 128, 64), True)
-			SpriteBatch.DrawInterfaceString(FontManager.MainFontBlack, Text, New Vector2(CInt(ScreenSize.Width / 2) - 190 + i * 192, 582), Color.White)
+			SpriteBatch.DrawInterfaceString(fontColor, Text, New Vector2(CInt(ScreenSize.Width / 2) - 190 + i * 192, 582), Color.White)
 		Next
 	End Sub
 
@@ -1025,6 +1026,7 @@
 							Case 1
 								Localization.Load(currentLanguage)
 								menuIndex = 0
+								SoundManager.PlaySound("Select")
 						End Select
 					End If
 				End If
@@ -1075,7 +1077,7 @@
 
 #End Region
 
-#Region "PackMenu"
+#Region "PacksMenu"
 
 	Private Sub DrawPacksMenu()
 		Dim CanvasTexture As Texture2D
@@ -1104,17 +1106,19 @@
 		If PackNames.Count > 0 Then
 			For i = 0 To x
 				Dim Name As String = PackNames(i + packsMenuIndex(2))
+				Dim fontColor As SpriteFont = FontManager.MainFontColor
 				Dim textColor As Color = Color.Gray
 
 				If EnabledPackNames.Contains(Name) = True Then
 					Name &= " (" & Localization.GetString("pack_menu_enabled") & ")"
-					textColor = Color.Black
+					textColor = Color.White
+					fontColor = FontManager.MainFontBlack
 				End If
 
 				If i + packsMenuIndex(2) = packsMenuIndex(0) Then
-					SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, Name, New Vector2(CInt(ScreenSize.Width / 2) - 248, 308 + i * 50), Color.White)
+					SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, Name, New Vector2(CInt(ScreenSize.Width / 2) - 248, 248 + i * 50), Color.White)
 				Else
-					SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, Name, New Vector2(CInt(ScreenSize.Width / 2) - 248, 308 + i * 50), textColor)
+					SpriteBatch.DrawInterfaceString(fontColor, Name, New Vector2(CInt(ScreenSize.Width / 2) - 248, 248 + i * 50), textColor)
 				End If
 			Next
 		End If
@@ -1123,6 +1127,7 @@
 
 		For i = 0 To 1
 			Dim Text As String = ""
+			Dim fontColor As SpriteFont = FontManager.MainFontBlack
 			Select Case i
 				Case 0
 					Text = Localization.GetString("pack_menu_apply")
@@ -1131,13 +1136,15 @@
 			End Select
 
 			If i = packsMenuIndex(1) Then
+				fontColor = FontManager.MainFontWhite
 				CanvasTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 48, 48, 48), "")
 			Else
+				fontColor = FontManager.MainFontBlack
 				CanvasTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 0, 48, 48), "")
 			End If
 
 			Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(ScreenSize.Width / 2) - 208 + i * 192, 550, 128, 64), True)
-			SpriteBatch.DrawInterfaceString(FontManager.MainFontBlack, Text, New Vector2(CInt(ScreenSize.Width / 2) - 190 + i * 192, 582), Color.White)
+			SpriteBatch.DrawInterfaceString(fontColor, Text, New Vector2(CInt(ScreenSize.Width / 2) - 190 + i * 192, 582), Color.White)
 		Next
 		For i = 2 To 5
 			Dim Text As String = ""
@@ -1155,23 +1162,29 @@
 				Case 5
 					Text = Localization.GetString("pack_menu_information")
 			End Select
-
+			Dim fontColor As SpriteFont = FontManager.MainFontBlack
+			Dim textColor As Color = Color.White
 			If i = packsMenuIndex(1) Then
 				If i = 2 Or i = 3 Or PackNames.Count = 0 Then
 					If isSelectedEnabled = True Then
+						fontColor = FontManager.MainFontWhite
 						CanvasTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 48, 48, 48), "")
 					Else
+						fontColor = FontManager.MainFontColor
+						textColor = Color.Gray
 						CanvasTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(48, 0, 48, 48), "")
 					End If
 				Else
+					fontColor = FontManager.MainFontWhite
 					CanvasTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 48, 48, 48), "")
 				End If
 			Else
+				fontColor = FontManager.MainFontBlack
 				CanvasTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 0, 48, 48), "")
 			End If
 
 			Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt((ScreenSize.Width / 2) + 280), ((i - 2) * 64) + 240, 160, 32), True)
-			SpriteBatch.DrawInterfaceString(FontManager.MainFontBlack, Text, New Vector2(CInt((ScreenSize.Width / 2) + 280) + 15, ((i - 2) * 64) + 16 + 240), Color.White)
+			SpriteBatch.DrawInterfaceString(fontColor, Text, New Vector2(CInt((ScreenSize.Width / 2) + 280) + 15, ((i - 2) * 64) + 16 + 240), textColor)
 		Next
 	End Sub
 
@@ -1203,6 +1216,7 @@
 								SoundManager.PlaySound("Select")
 							Case 1
 								menuIndex = 0
+								SoundManager.PlaySound("Select")
 						End Select
 					End If
 				End If
@@ -1398,14 +1412,16 @@
 
 		Dim CanvasTexture As Texture2D = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 0, 48, 48), "")
 
-		Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(ScreenSize.Width / 2) - 256, 160, 480, 64), True)
-		SpriteBatch.DrawInterfaceString(FontManager.MainFontBlack, Localization.GetString("pack_menu_name") & ": " & PInfoName, New Vector2(CInt(ScreenSize.Width / 2) - CInt(FontManager.MainFontBlack.MeasureString(Localization.GetString("pack_menu_name") & ": " & PInfoName).X / 2), 195), Color.White)
+		Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(ScreenSize.Width / 2) - 256, 240, 480, 64), True)
+		SpriteBatch.DrawInterfaceString(FontManager.MainFontBlack, Localization.GetString("pack_menu_name") & ": " & PInfoName, New Vector2(CInt(ScreenSize.Width / 2) - CInt(FontManager.MainFontBlack.MeasureString(Localization.GetString("pack_menu_name") & ": " & PInfoName).X / 2), 272), Color.White)
 
-		Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(ScreenSize.Width / 2) - 256, 288, 480, 224), True)
-		SpriteBatch.DrawInterfaceString(FontManager.MainFontBlack, Localization.GetString("pack_menu_version") & ": " & PInfoVersion & Environment.NewLine & Localization.GetString("pack_menu_by") & ": " & PInfoAuthor & Environment.NewLine & Localization.GetString("pack_menu_content") & ": " & PInfoContent & Environment.NewLine & Localization.GetString("pack_menu_description") & ": " & PInfoDescription.Replace("<br>", Environment.NewLine), New Vector2(CInt(ScreenSize.Width / 2) - 220, 323), Color.White)
+		Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(ScreenSize.Width / 2) - 288, 368, 544, 256), True)
+		SpriteBatch.DrawInterfaceString(FontManager.MainFontBlack, Localization.GetString("pack_menu_version") & ": " & PInfoVersion & Environment.NewLine & Localization.GetString("pack_menu_by") & ": " & PInfoAuthor & Environment.NewLine & Localization.GetString("pack_menu_content") & ": " & PInfoContent & Environment.NewLine & Localization.GetString("pack_menu_description") & ": " & PInfoDescription.Replace("<br>", Environment.NewLine), New Vector2(CInt(ScreenSize.Width / 2) - 260, 384), Color.White)
 
+		Dim fontColor As SpriteFont = FontManager.MainFontBlack
 		For i = 0 To 1
 			If i = packInfoIndex Then
+				fontColor = FontManager.MainFontWhite
 				CanvasTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 48, 48, 48), "")
 			Else
 				CanvasTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 0, 48, 48), "")
@@ -1424,8 +1440,8 @@
 					Text = Localization.GetString("pack_menu_back")
 			End Select
 
-			Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(ScreenSize.Width / 2) - 180 + (200 * i), 550, 128, 64), True)
-			SpriteBatch.DrawInterfaceString(FontManager.MainFontBlack, Text, New Vector2(CInt(ScreenSize.Width / 2) - 160 + (200 * i), 582), Color.White)
+			Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(ScreenSize.Width / 2) - 180 + (200 * i), 688, 128, 64), True)
+			SpriteBatch.DrawInterfaceString(fontColor, Text, New Vector2(CInt(ScreenSize.Width / 2) - 160 + (200 * i), 720), Color.White)
 		Next
 	End Sub
 
@@ -1434,7 +1450,7 @@
 
 		If GameInstance.IsMouseVisible = True Then
 			For i = 0 To 1
-				If ScaleScreenRec(New Rectangle(CInt(ScreenSize.Width / 2) - 180 + (200 * i), 550, 160, 96)).Contains(MouseHandler.MousePosition) = True Then
+				If ScaleScreenRec(New Rectangle(CInt(ScreenSize.Width / 2) - 180 + (200 * i), 680, 160, 96)).Contains(MouseHandler.MousePosition) = True Then
 					packInfoIndex = i
 
 					If MouseHandler.ButtonPressed(MouseHandler.MouseButtons.LeftButton) = True Then
@@ -1444,6 +1460,7 @@
 								SoundManager.PlaySound("Select")
 							Case 1
 								menuIndex = 4
+								SoundManager.PlaySound("Select")
 						End Select
 					End If
 				End If

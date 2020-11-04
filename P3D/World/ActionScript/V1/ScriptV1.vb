@@ -817,8 +817,8 @@
 
                 Select Case Me.Value.ToLower()
                     Case "standard"
-                        Screen.TextBox.TextFont = FontManager.GetFontContainer("textfont")
-                    Case "unown"
+						Screen.TextBox.TextFont = FontManager.GetFontContainer("MainFontBlack")
+					Case "unown"
                         Screen.TextBox.TextFont = FontManager.GetFontContainer("unown")
                 End Select
             Case Me.Value.ToLower().StartsWith("setrenderdistance(")
