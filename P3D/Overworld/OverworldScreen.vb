@@ -224,18 +224,18 @@ Public Class OverworldScreen
                 End If
             End If
 
-            'Open the MenuScreen:
-            If KeyBoardHandler.KeyPressed(KeyBindings.OpenInventoryKey) = True Or ControllerHandler.ButtonPressed(Buttons.X) = True Then
-                If Screen.Camera.IsMoving() = False And ActionScript.IsReady = True Then
-                    Level.RouteSign.Hide()
+			'Open the MenuScreen:
+			If KeyBoardHandler.KeyPressed(KeyBindings.OpenMenuKey) = True Or ControllerHandler.ButtonPressed(Buttons.X) = True Then
+				If Screen.Camera.IsMoving() = False And ActionScript.IsReady = True Then
+					Level.RouteSign.Hide()
 
-                    SoundManager.PlaySound("menu_open")
-                    Core.SetScreen(New MenuScreen(Me))
-                End If
-            End If
+					SoundManager.PlaySound("menu_open")
+					Core.SetScreen(New MenuScreen(Me))
+				End If
+			End If
 
-            'Open the PokégearScreen:
-            If KeyBoardHandler.KeyPressed(KeyBindings.SpecialKey) = True Or ControllerHandler.ButtonPressed(Buttons.Y) = True Then
+			'Open the PokégearScreen:
+			If KeyBoardHandler.KeyPressed(KeyBindings.SpecialKey) = True Or ControllerHandler.ButtonPressed(Buttons.Y) = True Then
                 If Core.Player.HasPhone = True Or GameController.IS_DEBUG_ACTIVE = True Then
                     If Screen.Camera.IsMoving() = False And ActionScript.IsReady = True Then
                         Core.SetScreen(New GameJolt.PhoneScreen(Me, GameJolt.PhoneScreen.EntryModes.MainMenu, {}))

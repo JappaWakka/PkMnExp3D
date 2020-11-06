@@ -5,293 +5,293 @@ Public Class KeyBindings
     Public Shared BackwardMoveKey As Keys = Keys.S
     Public Shared RightMoveKey As Keys = Keys.D
 
-    Public Shared OpenInventoryKey As Keys = Keys.E
-    Public Shared ChatKey As Keys = Keys.T
-    Public Shared SpecialKey As Keys = Keys.Q
+	Public Shared OpenMenuKey As Keys = Keys.E
+	Public Shared ChatKey As Keys = Keys.T
+	Public Shared SpecialKey As Keys = Keys.Q
 
-    Public Shared UpKey As Keys = Keys.Up
-    Public Shared DownKey As Keys = Keys.Down
-    Public Shared RightKey As Keys = Keys.Right
-    Public Shared LeftKey As Keys = Keys.Left
+	Public Shared UpKey As Keys = Keys.Up
+	Public Shared DownKey As Keys = Keys.Down
+	Public Shared RightKey As Keys = Keys.Right
+	Public Shared LeftKey As Keys = Keys.Left
 
-    Public Shared CameraLockKey As Keys = Keys.C
-    Public Shared MuteMusicKey As Keys = Keys.M
-    Public Shared OnlineStatusKey As Keys = Keys.Tab
+	Public Shared CameraLockKey As Keys = Keys.C
+	Public Shared MuteMusicKey As Keys = Keys.M
+	Public Shared OnlineStatusKey As Keys = Keys.Tab
 
-    Public Shared GUIControlKey As Keys = Keys.F1
-    Public Shared ScreenshotKey As Keys = Keys.F2
-    Public Shared DebugKey As Keys = Keys.F3
-    Public Shared LightKey As Keys = Keys.F4
-    Public Shared PerspectiveSwitchKey As Keys = Keys.F5
-    Public Shared FullScreenKey As Keys = Keys.F11
+	Public Shared GUIControlKey As Keys = Keys.F1
+	Public Shared ScreenshotKey As Keys = Keys.F2
+	Public Shared DebugKey As Keys = Keys.F3
+	Public Shared LightKey As Keys = Keys.F4
+	Public Shared PerspectiveSwitchKey As Keys = Keys.F5
+	Public Shared FullScreenKey As Keys = Keys.F11
 
-    Public Shared EnterKey1 As Keys = Keys.Enter
-    Public Shared EnterKey2 As Keys = Keys.Space
-    Public Shared BackKey1 As Keys = Keys.E
-    Public Shared BackKey2 As Keys = Keys.E
-    Public Shared EscapeKey As Keys = Keys.Escape
+	Public Shared EnterKey1 As Keys = Keys.Enter
+	Public Shared EnterKey2 As Keys = Keys.Space
+	Public Shared BackKey1 As Keys = Keys.E
+	Public Shared BackKey2 As Keys = Keys.E
+	Public Shared EscapeKey As Keys = Keys.Escape
 
-    Public Shared Sub LoadKeys()
-        'Check if the Keyboard.dat file exists in the save folder:
-        If IO.File.Exists(GameController.GamePath & "\Save\Keyboard.dat") = True Then
-            'Read lines from the file and try to assign the key to the correct Key field.
-            Dim Lines() As String = IO.File.ReadAllLines(GameController.GamePath & "\Save\Keyboard.dat")
+	Public Shared Sub LoadKeys()
+		'Check if the Keyboard.dat file exists in the save folder:
+		If IO.File.Exists(GameController.GamePath & "\Save\Keyboard.dat") = True Then
+			'Read lines from the file and try to assign the key to the correct Key field.
+			Dim Lines() As String = IO.File.ReadAllLines(GameController.GamePath & "\Save\Keyboard.dat")
 
-            For Each line As String In Lines
-                If line.StartsWith("[") = True Then
-                    Dim key As String = line.GetSplit(0, "=")
-                    Dim binding As Keys = GetKey(line.GetSplit(1, "="))
+			For Each line As String In Lines
+				If line.StartsWith("[") = True Then
+					Dim key As String = line.GetSplit(0, "=")
+					Dim binding As Keys = GetKey(line.GetSplit(1, "="))
 
-                    key = key.Remove(0, 1)
-                    key = key.Remove(key.Length - 1, 1)
+					key = key.Remove(0, 1)
+					key = key.Remove(key.Length - 1, 1)
 
-                    Select Case key.ToLower()
-                        Case "forwardmove"
-                            ForwardMoveKey = binding
-                        Case "leftmove"
-                            LeftMoveKey = binding
-                        Case "backwardmove"
-                            BackwardMoveKey = binding
-                        Case "rightmove"
-                            RightMoveKey = binding
-                        Case "inventory"
-                            OpenInventoryKey = binding
-                        Case "chat"
-                            ChatKey = binding
-                        Case "special", "phone"
-                            SpecialKey = binding
-                        Case "mutemusic"
-                            MuteMusicKey = binding
-                        Case "cameraleft"
-                            LeftKey = binding
-                        Case "cameraright"
-                            RightKey = binding
-                        Case "cameraup"
-                            UpKey = binding
-                        Case "cameradown"
-                            DownKey = binding
-                        Case "cameralock"
-                            CameraLockKey = binding
-                        Case "guicontrol"
-                            GUIControlKey = binding
-                        Case "screenshot"
-                            ScreenshotKey = binding
-                        Case "debugcontrol"
-                            DebugKey = binding
-                        Case "perspectiveswitch"
-                            PerspectiveSwitchKey = binding
-                        Case "fullscreen"
-                            FullScreenKey = binding
-                        Case "enter1"
-                            EnterKey1 = binding
-                        Case "enter2"
-                            EnterKey2 = binding
-                        Case "back1"
-                            BackKey1 = binding
-                        Case "back2"
-                            BackKey2 = binding
-                        Case "escape", "esc"
-                            EscapeKey = binding
-                        Case "onlinestatus"
-                            OnlineStatusKey = binding
+					Select Case key.ToLower()
+						Case "forwardmove"
+							ForwardMoveKey = binding
+						Case "leftmove"
+							LeftMoveKey = binding
+						Case "backwardmove"
+							BackwardMoveKey = binding
+						Case "rightmove"
+							RightMoveKey = binding
+						Case "openmenu"
+							OpenMenuKey = binding
+						Case "chat"
+							ChatKey = binding
+						Case "special", "phone"
+							SpecialKey = binding
+						Case "mutemusic"
+							MuteMusicKey = binding
+						Case "cameraleft"
+							LeftKey = binding
+						Case "cameraright"
+							RightKey = binding
+						Case "cameraup"
+							UpKey = binding
+						Case "cameradown"
+							DownKey = binding
+						Case "cameralock"
+							CameraLockKey = binding
+						Case "guicontrol"
+							GUIControlKey = binding
+						Case "screenshot"
+							ScreenshotKey = binding
+						Case "debugcontrol"
+							DebugKey = binding
+						Case "perspectiveswitch"
+							PerspectiveSwitchKey = binding
+						Case "fullscreen"
+							FullScreenKey = binding
+						Case "enter1"
+							EnterKey1 = binding
+						Case "enter2"
+							EnterKey2 = binding
+						Case "back1"
+							BackKey1 = binding
+						Case "back2"
+							BackKey2 = binding
+						Case "escape", "esc"
+							EscapeKey = binding
+						Case "onlinestatus"
+							OnlineStatusKey = binding
 						Case "lighting"
 							LightKey = binding
-                    End Select
-                End If
-            Next
-        End If
-    End Sub
+					End Select
+				End If
+			Next
+		End If
+	End Sub
 
-    ''' <summary>
-    ''' Converts the name of a key to the actual Key class.
-    ''' </summary>
-    ''' <param name="keyStr">The key name to convert.</param>
-    ''' <remarks>The default is Keys.None.</remarks>
-    Public Shared Function GetKey(ByVal keyStr As String) As Keys
-        For Each k As Keys In [Enum].GetValues(GetType(Keys))
-            If k.ToString().ToLower() = keyStr.ToLower() Then
-                Return k
-            End If
-        Next
+	''' <summary>
+	''' Converts the name of a key to the actual Key class.
+	''' </summary>
+	''' <param name="keyStr">The key name to convert.</param>
+	''' <remarks>The default is Keys.None.</remarks>
+	Public Shared Function GetKey(ByVal keyStr As String) As Keys
+		For Each k As Keys In [Enum].GetValues(GetType(Keys))
+			If k.ToString().ToLower() = keyStr.ToLower() Then
+				Return k
+			End If
+		Next
 
-        Return Keys.None
-    End Function
+		Return Keys.None
+	End Function
 
-    ''' <summary>
-    ''' Returns the name of a key.
-    ''' </summary>
-    ''' <param name="key">The key to get the name for.</param>
-    ''' <remarks>Returns String.Empty by default.</remarks>
-    Public Shared Function GetKeyName(ByVal key As Keys) As String
-        Return key.ToString()
+	''' <summary>
+	''' Returns the name of a key.
+	''' </summary>
+	''' <param name="key">The key to get the name for.</param>
+	''' <remarks>Returns String.Empty by default.</remarks>
+	Public Shared Function GetKeyName(ByVal key As Keys) As String
+		Return key.ToString()
 
-        Select Case key
-            Case Keys.A
-                Return "A"
-            Case Keys.B
-                Return "B"
-            Case Keys.C
-                Return "C"
-            Case Keys.D
-                Return "D"
-            Case Keys.E
-                Return "E"
-            Case Keys.F
-                Return "F"
-            Case Keys.G
-                Return "G"
-            Case Keys.H
-                Return "H"
-            Case Keys.I
-                Return "I"
-            Case Keys.J
-                Return "J"
-            Case Keys.K
-                Return "K"
-            Case Keys.L
-                Return "L"
-            Case Keys.M
-                Return "M"
-            Case Keys.N
-                Return "N"
-            Case Keys.O
-                Return "O"
-            Case Keys.P
-                Return "P"
-            Case Keys.Q
-                Return "Q"
-            Case Keys.R
-                Return "R"
-            Case Keys.S
-                Return "S"
-            Case Keys.T
-                Return "T"
-            Case Keys.U
-                Return "U"
-            Case Keys.V
-                Return "V"
-            Case Keys.W
-                Return "W"
-            Case Keys.X
-                Return "X"
-            Case Keys.Y
-                Return "Y"
-            Case Keys.Z
-                Return "Z"
-            Case Keys.F1
-                Return "F1"
-            Case Keys.F2
-                Return "F2"
-            Case Keys.F3
-                Return "F3"
-            Case Keys.F4
-                Return "F4"
-            Case Keys.F5
-                Return "F5"
-            Case Keys.F6
-                Return "F6"
-            Case Keys.F7
-                Return "F7"
-            Case Keys.F8
-                Return "F8"
-            Case Keys.F9
-                Return "F9"
-            Case Keys.F10
-                Return "F10"
-            Case Keys.F11
-                Return "F11"
-            Case Keys.F12
-                Return "F12"
-            Case Keys.Enter
-                Return "Enter"
-            Case Keys.Space
-                Return "Space"
-            Case Keys.Escape
-                Return "Escape"
-            Case Keys.Back
-                Return "Back"
-            Case Keys.Tab
-                Return "Tab"
-            Case Keys.Up
-                Return "Up"
-            Case Keys.Down
-                Return "Down"
-            Case Keys.Left
-                Return "Left"
-            Case Keys.Right
-                Return "Right"
-        End Select
+		Select Case key
+			Case Keys.A
+				Return "A"
+			Case Keys.B
+				Return "B"
+			Case Keys.C
+				Return "C"
+			Case Keys.D
+				Return "D"
+			Case Keys.E
+				Return "E"
+			Case Keys.F
+				Return "F"
+			Case Keys.G
+				Return "G"
+			Case Keys.H
+				Return "H"
+			Case Keys.I
+				Return "I"
+			Case Keys.J
+				Return "J"
+			Case Keys.K
+				Return "K"
+			Case Keys.L
+				Return "L"
+			Case Keys.M
+				Return "M"
+			Case Keys.N
+				Return "N"
+			Case Keys.O
+				Return "O"
+			Case Keys.P
+				Return "P"
+			Case Keys.Q
+				Return "Q"
+			Case Keys.R
+				Return "R"
+			Case Keys.S
+				Return "S"
+			Case Keys.T
+				Return "T"
+			Case Keys.U
+				Return "U"
+			Case Keys.V
+				Return "V"
+			Case Keys.W
+				Return "W"
+			Case Keys.X
+				Return "X"
+			Case Keys.Y
+				Return "Y"
+			Case Keys.Z
+				Return "Z"
+			Case Keys.F1
+				Return "F1"
+			Case Keys.F2
+				Return "F2"
+			Case Keys.F3
+				Return "F3"
+			Case Keys.F4
+				Return "F4"
+			Case Keys.F5
+				Return "F5"
+			Case Keys.F6
+				Return "F6"
+			Case Keys.F7
+				Return "F7"
+			Case Keys.F8
+				Return "F8"
+			Case Keys.F9
+				Return "F9"
+			Case Keys.F10
+				Return "F10"
+			Case Keys.F11
+				Return "F11"
+			Case Keys.F12
+				Return "F12"
+			Case Keys.Enter
+				Return "Enter"
+			Case Keys.Space
+				Return "Space"
+			Case Keys.Escape
+				Return "Escape"
+			Case Keys.Back
+				Return "Back"
+			Case Keys.Tab
+				Return "Tab"
+			Case Keys.Up
+				Return "Up"
+			Case Keys.Down
+				Return "Down"
+			Case Keys.Left
+				Return "Left"
+			Case Keys.Right
+				Return "Right"
+		End Select
 
-        Return ""
-    End Function
+		Return ""
+	End Function
 
-    ''' <summary>
-    ''' Creates the default keyboard.dat file.
-    ''' </summary>
-    Public Shared Sub CreateKeySave(ByVal force As Boolean)
-        If IO.Directory.Exists(GameController.GamePath & "\Save") = True Then
-            If IO.File.Exists(GameController.GamePath & "\Save\Keyboard.dat") = False Or force = True Then
-                Dim s As String = "[ForwardMove]=W" & Environment.NewLine &
-                "[LeftMove]=" & GetKeyName(Keys.A) & Environment.NewLine &
-                "[BackwardMove]=" & GetKeyName(Keys.S) & Environment.NewLine &
-                "[RightMove]=" & GetKeyName(Keys.D) & Environment.NewLine &
-                "[Inventory]=" & GetKeyName(Keys.E) & Environment.NewLine &
-                "[Chat]=" & GetKeyName(Keys.T) & Environment.NewLine &
-                "[Special]=" & GetKeyName(Keys.Q) & Environment.NewLine &
-                "[MuteMusic]=" & GetKeyName(Keys.M) & Environment.NewLine &
-                "[Up]=" & GetKeyName(Keys.Up) & Environment.NewLine &
-                "[Down]=" & GetKeyName(Keys.Down) & Environment.NewLine &
-                "[Left]=" & GetKeyName(Keys.Left) & Environment.NewLine &
-                "[Right]=" & GetKeyName(Keys.Right) & Environment.NewLine &
-                "[CameraLock]=" & GetKeyName(Keys.C) & Environment.NewLine &
-                "[GUIControl]=" & GetKeyName(Keys.F1) & Environment.NewLine &
-                "[ScreenShot]=" & GetKeyName(Keys.F2) & Environment.NewLine &
-                "[DebugControl]=" & GetKeyName(Keys.F3) & Environment.NewLine &
-                "[LightKey]=" & GetKeyName(Keys.F4) & Environment.NewLine &
-                "[PerspectiveSwitch]=" & GetKeyName(Keys.F5) & Environment.NewLine &
-                "[FullScreen]=" & GetKeyName(Keys.F11) & Environment.NewLine &
-                "[Enter1]=" & GetKeyName(Keys.Enter) & Environment.NewLine &
-                "[Enter2]=" & GetKeyName(Keys.Space) & Environment.NewLine &
-                "[Back1]=" & GetKeyName(Keys.E) & Environment.NewLine &
-                "[Back2]=" & GetKeyName(Keys.E) & Environment.NewLine &
-                "[Escape]=" & GetKeyName(Keys.Escape) & Environment.NewLine &
-                "[OnlineStatus]=" & GetKeyName(Keys.Tab)
-                IO.File.WriteAllText(GameController.GamePath & "\Save\Keyboard.dat", s)
-            End If
-        End If
-    End Sub
+	''' <summary>
+	''' Creates the default keyboard.dat file.
+	''' </summary>
+	Public Shared Sub CreateKeySave(ByVal force As Boolean)
+		If IO.Directory.Exists(GameController.GamePath & "\Save") = True Then
+			If IO.File.Exists(GameController.GamePath & "\Save\Keyboard.dat") = False Or force = True Then
+				Dim s As String = "[ForwardMove]=W" & Environment.NewLine &
+				"[LeftMove]=" & GetKeyName(Keys.A) & Environment.NewLine &
+				"[BackwardMove]=" & GetKeyName(Keys.S) & Environment.NewLine &
+				"[RightMove]=" & GetKeyName(Keys.D) & Environment.NewLine &
+				"[OpenMenu]=" & GetKeyName(Keys.E) & Environment.NewLine &
+				"[Chat]=" & GetKeyName(Keys.T) & Environment.NewLine &
+				"[Special]=" & GetKeyName(Keys.Q) & Environment.NewLine &
+				"[MuteMusic]=" & GetKeyName(Keys.M) & Environment.NewLine &
+				"[Up]=" & GetKeyName(Keys.Up) & Environment.NewLine &
+				"[Down]=" & GetKeyName(Keys.Down) & Environment.NewLine &
+				"[Left]=" & GetKeyName(Keys.Left) & Environment.NewLine &
+				"[Right]=" & GetKeyName(Keys.Right) & Environment.NewLine &
+				"[CameraLock]=" & GetKeyName(Keys.C) & Environment.NewLine &
+				"[GUIControl]=" & GetKeyName(Keys.F1) & Environment.NewLine &
+				"[ScreenShot]=" & GetKeyName(Keys.F2) & Environment.NewLine &
+				"[DebugControl]=" & GetKeyName(Keys.F3) & Environment.NewLine &
+				"[LightKey]=" & GetKeyName(Keys.F4) & Environment.NewLine &
+				"[PerspectiveSwitch]=" & GetKeyName(Keys.F5) & Environment.NewLine &
+				"[FullScreen]=" & GetKeyName(Keys.F11) & Environment.NewLine &
+				"[Enter1]=" & GetKeyName(Keys.Enter) & Environment.NewLine &
+				"[Enter2]=" & GetKeyName(Keys.Space) & Environment.NewLine &
+				"[Back1]=" & GetKeyName(Keys.E) & Environment.NewLine &
+				"[Back2]=" & GetKeyName(Keys.E) & Environment.NewLine &
+				"[Escape]=" & GetKeyName(Keys.Escape) & Environment.NewLine &
+				"[OnlineStatus]=" & GetKeyName(Keys.Tab)
+				IO.File.WriteAllText(GameController.GamePath & "\Save\Keyboard.dat", s)
+			End If
+		End If
+	End Sub
 
-    ''' <summary>
-    ''' Saves the current keyboard configuration to the keyboard.dat file.
-    ''' </summary>
-    Public Shared Sub SaveKeys()
-        If IO.Directory.Exists(GameController.GamePath & "\Save") = True Then
-            Dim s As String = "[ForwardMove]=" & GetKeyName(ForwardMoveKey) & Environment.NewLine &
-                "[LeftMove]=" & GetKeyName(LeftMoveKey) & Environment.NewLine &
-                "[BackwardMove]=" & GetKeyName(BackwardMoveKey) & Environment.NewLine &
-                "[RightMove]=" & GetKeyName(RightMoveKey) & Environment.NewLine &
-                "[Inventory]=" & GetKeyName(OpenInventoryKey) & Environment.NewLine &
-                "[Chat]=" & GetKeyName(ChatKey) & Environment.NewLine &
-                "[Special]=" & GetKeyName(SpecialKey) & Environment.NewLine &
-                "[MuteMusic]=" & GetKeyName(MuteMusicKey) & Environment.NewLine &
-                "[Up]=" & GetKeyName(UpKey) & Environment.NewLine &
-                "[Down]=" & GetKeyName(DownKey) & Environment.NewLine &
-                "[Left]=" & GetKeyName(LeftKey) & Environment.NewLine &
-                "[Right]=" & GetKeyName(RightKey) & Environment.NewLine &
-                "[CameraLock]=" & GetKeyName(CameraLockKey) & Environment.NewLine &
-                "[GUIControl]=" & GetKeyName(GUIControlKey) & Environment.NewLine &
-                "[ScreenShot]=" & GetKeyName(ScreenshotKey) & Environment.NewLine &
-                "[DebugControl]=" & GetKeyName(DebugKey) & Environment.NewLine &
-                "[LightKey]=" & GetKeyName(LightKey) & Environment.NewLine &
-                "[PerspectiveSwitch]=" & GetKeyName(PerspectiveSwitchKey) & Environment.NewLine &
-                "[FullScreen]=" & GetKeyName(FullScreenKey) & Environment.NewLine &
-                "[Enter1]=" & GetKeyName(EnterKey1) & Environment.NewLine &
-                "[Enter2]=" & GetKeyName(EnterKey2) & Environment.NewLine &
-                "[Back1]=" & GetKeyName(BackKey1) & Environment.NewLine &
-                "[Back2]=" & GetKeyName(BackKey2) & Environment.NewLine &
-                "[Escape]=" & GetKeyName(EscapeKey) & Environment.NewLine &
-                "[OnlineStatus]=" & GetKeyName(OnlineStatusKey)
-            IO.File.WriteAllText(GameController.GamePath & "\Save\Keyboard.dat", s)
+	''' <summary>
+	''' Saves the current keyboard configuration to the keyboard.dat file.
+	''' </summary>
+	Public Shared Sub SaveKeys()
+		If IO.Directory.Exists(GameController.GamePath & "\Save") = True Then
+			Dim s As String = "[ForwardMove]=" & GetKeyName(ForwardMoveKey) & Environment.NewLine &
+				"[LeftMove]=" & GetKeyName(LeftMoveKey) & Environment.NewLine &
+				"[BackwardMove]=" & GetKeyName(BackwardMoveKey) & Environment.NewLine &
+				"[RightMove]=" & GetKeyName(RightMoveKey) & Environment.NewLine &
+				"[Inventory]=" & GetKeyName(OpenMenuKey) & Environment.NewLine &
+				"[Chat]=" & GetKeyName(ChatKey) & Environment.NewLine &
+				"[Special]=" & GetKeyName(SpecialKey) & Environment.NewLine &
+				"[MuteMusic]=" & GetKeyName(MuteMusicKey) & Environment.NewLine &
+				"[Up]=" & GetKeyName(UpKey) & Environment.NewLine &
+				"[Down]=" & GetKeyName(DownKey) & Environment.NewLine &
+				"[Left]=" & GetKeyName(LeftKey) & Environment.NewLine &
+				"[Right]=" & GetKeyName(RightKey) & Environment.NewLine &
+				"[CameraLock]=" & GetKeyName(CameraLockKey) & Environment.NewLine &
+				"[GUIControl]=" & GetKeyName(GUIControlKey) & Environment.NewLine &
+				"[ScreenShot]=" & GetKeyName(ScreenshotKey) & Environment.NewLine &
+				"[DebugControl]=" & GetKeyName(DebugKey) & Environment.NewLine &
+				"[LightKey]=" & GetKeyName(LightKey) & Environment.NewLine &
+				"[PerspectiveSwitch]=" & GetKeyName(PerspectiveSwitchKey) & Environment.NewLine &
+				"[FullScreen]=" & GetKeyName(FullScreenKey) & Environment.NewLine &
+				"[Enter1]=" & GetKeyName(EnterKey1) & Environment.NewLine &
+				"[Enter2]=" & GetKeyName(EnterKey2) & Environment.NewLine &
+				"[Back1]=" & GetKeyName(BackKey1) & Environment.NewLine &
+				"[Back2]=" & GetKeyName(BackKey2) & Environment.NewLine &
+				"[Escape]=" & GetKeyName(EscapeKey) & Environment.NewLine &
+				"[OnlineStatus]=" & GetKeyName(OnlineStatusKey)
+			IO.File.WriteAllText(GameController.GamePath & "\Save\Keyboard.dat", s)
 
             Logger.Debug("---Saved Keybindings---")
         End If
