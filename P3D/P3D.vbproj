@@ -10539,6 +10539,9 @@
     <Content Include="Content\Sounds\itemfinder.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Sounds\jump_from_truck.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Sounds\jump_ledge.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -27097,27 +27100,6 @@
     <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\mom.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\LivingRoom\fridge.dat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\LivingRoom\sink.dat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\LivingRoom\stove.dat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\LivingRoom\tv.dat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\YourRoom\gamecube.dat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\YourRoom\notebook.dat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\YourRoom\tv.dat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\MovingTruckMapScript.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -27125,6 +27107,18 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\Main_MapScript.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\YourHouse2f\clock.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\YourHouse2f\gamecube.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\YourHouse2f\notebook.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\YourHouse2f\tv.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="LICENSE" />
@@ -28831,6 +28825,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Data\Maps\Hoenn\Gyms\" />
+    <Folder Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\YourHouse1f\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Condition=" '$(Configuration)' != 'DebugNoContent' Or '$(Configuration)' != 'ReleaseNoContent' " Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />

@@ -236,9 +236,6 @@ Rival's House
 Birch's Lab
 {"Entity"{ENT[{"EntityID"{str[SignBlock]}}{"Position"{sngArr[9,0,17]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,80,16,16][4,96,4,16]]}}{"TextureIndex"{intArr[0,0,1,1,1,1,0,0,1,1]}}{"Collision"{bool[1]}}{"ModelID"{int[4]}}{"Action"{int[0]}}{"AdditionalValue"{str[<token.Littleroot_Main_Sign_BirchsLab>]}}{"Rotation"{int[2]}}]}}
 
-Moving Truck:
-{"EntityField"{ENT[{"ID"{int[0]}}{"Size"{intArr[1,1]}}{"Scale"{sngArr[0.12,0.12,0.12]}}{"RotationXYZ"{sngArr[0,-1.55,0]}}{"EntityID"{str[ModelEntity]}}{"Position"{sngArr[6,0,10]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,0,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[Models\MovingTruck\MovingTruck]}}]}}
-
 Flowers:
 {"EntityField"{ENT[{"Size"{intArr[1,1]}}{"EntityID"{str[WallBill]}}{"Position"{sngArr[3,-0.125,8]}}{"Scale"{sngArr[0.75,0.75,0.75]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[16,16,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 {"EntityField"{ENT[{"Size"{intArr[1,1]}}{"EntityID"{str[WallBill]}}{"Position"{sngArr[4,-0.125,9]}}{"Scale"{sngArr[0.75,0.75,0.75]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[16,16,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
@@ -253,8 +250,12 @@ Flowers:
 {"EntityField"{ENT[{"Size"{intArr[3,2]}}{"EntityID"{str[WallBill]}}{"Position"{sngArr[6,-0.125,17]}}{"Scale"{sngArr[0.75,0.75,0.75]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[16,16,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
 
 NPCs:
-{"NPC"{NPC[{"Position"{sngArr[16,0,12]}}{"TextureID"{str[FatGuy]}}{"ID"{int[1]}}{"Name"{str[TechnologyFatman]}}{"Action"{int[0]}}{"AdditionalValue"{str[<token.Littleroot_Main_FatGuy_Technology>]}}{"Rotation"{int[2]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[15,11,2,2]]}}]}}
-{"NPC"{NPC[{"Position"{sngArr[17,0,16]}}{"TextureID"{str[YoungGuy1]}}{"ID"{int[1]}}{"Name"{str[YoungGuy]}}{"Action"{int[0]}}{"AdditionalValue"{str[<token.Littleroot_Main_YoungGuy>]}}{"Rotation"{int[2]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[16,15,3,3]]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[16,0,12]}}{"TextureID"{str[FatGuy]}}{"ID"{int[1]}}{"Name"{str[Technology Fatman]}}{"Action"{int[0]}}{"AdditionalValue"{str[<token.Littleroot_Main_FatGuy_Technology>]}}{"Rotation"{int[2]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[15,11,2,2]]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[17,0,16]}}{"TextureID"{str[YoungGuy1]}}{"ID"{int[2]}}{"Name"{str[Young Guy]}}{"Action"{int[0]}}{"AdditionalValue"{str[<token.Littleroot_Main_YoungGuy>]}}{"Rotation"{int[2]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[16,15,3,3]]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[12,0,1]}}{"TextureID"{str[LittleBoy1]}}{"ID"{int[3]}}{"Name"{str[Little Boy]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}{"Movement"{str[Looking]}}]}}
+
+Moving Truck:
+{"EntityField"{ENT[{"ID"{int[0]}}{"Size"{intArr[1,1]}}{"Scale"{sngArr[0.12,0.12,0.12]}}{"RotationXYZ"{sngArr[0,-1.55,0]}}{"EntityID"{str[ModelEntity]}}{"Position"{sngArr[6,0,10]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,0,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[Models\MovingTruck\MovingTruck]}}]}}
 
 Warps:
 Route 101
