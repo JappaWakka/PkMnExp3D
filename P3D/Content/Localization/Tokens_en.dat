@@ -1608,7 +1608,7 @@ NewBark_ElmsLab_HealMachine_Explanation,This is a machine for~healing injured Po
 NewBark_ElmsLab_HealMachine_Question,Do you want to heal your Pokémon?
 NewBark_ElmsLab_HealMachine_Restored,Your Pokémon are fully restored.
 
-LivingRoom_TV,There's a movie on TV:~Stars dot the sky as two boys~ride on a train...*I'd better get rolling, too!
+
 TrashCan_Empty,This trash can is empty.
 
 Signs:
@@ -1659,7 +1659,11 @@ General Objects:
 
 General_TownMap,<player.name> took a closer look at the~Hoenn region map.
 General_Clock,It's a clock. Right now it's <clocktime>,~so it's <daytime>.
-General_TV,Mom might like this program.~... ... ... ... ... ... ... ...~... ... ... ... ... ... ... ...*Better get going!
+General_TV_MomMightLikeProgram,Mom might like this program.~... ... ... ... ... ... ... ...~... ... ... ... ... ... ... ...*Better get going!
+General_TV_DadMightLikeProgram,Dad might like this program.~... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ...*Better get going!
+General_TV_MovieBoysRideTrain,There's a movie on TV:~Stars dot the sky as two boys~ride on a train...*I'd better get rolling, too!
+General_TV_DancingOnKeyboard,There is a movie on TV.*Two men are dancing on a big piano~keyboard.*Better get going!
+
 
 Inside Truck:
 
@@ -1681,6 +1685,8 @@ Littleroot_YourHouse2f_TV,It's a TV.~A Nintendo Gamecube is connected to it.
 Littleroot_YourHouse2f_GameCube,It's a Nintendo Gamecube.*You can connect a Game Boy Advance~to serve as the Controller.
 Littleroot_YourHouse2f_ClockStopped,The clock hasn't been set yet.~Let's do that right now.
 
+
+
 Littleroot_BirchsLab_SeriousMachine,It's a serious-looking machine.~The Prof must use this for research.
 Littleroot_BirchsLab_ResearchPC,It's a PC used for research.~Better not mess around with it.
 Littleroot_BirchsLab_Bookshelf_It's crammed with books on Pokémon.
@@ -1695,7 +1701,7 @@ Littleroot_Main_Mom_OutsideMovingTruck,Mom: <player.name>, we're here, honey!*It
 Littleroot_YourHouse1f_Mom_Inside,Mom: See, <player.name>?~Isn't it nice in here, too?
 Littleroot_YourHouse1f_Mom_MoversPokemon,The mover's Pokémon do all the work~of moving us in and cleaning up after.*This is so convenient!*<player.name>, your room is upstairs.~Go check it out, dear!*Dad bought you a new clock to mark~our move here.~Don't forget to set it!
 Littleroot_YourHouse1f_Mom_SeeYourRoom,Mom: Well, <player.name>?*Aren't you interested in seeing your~very own room?
-Littleroot_YourHouse1f_Mom_DownstairsBeforeClock,Mom: <player.name>.*Go set the clock in your room, honey.
+Littleroot_YourHouse1f_Mom_SetYourClock,Mom: <player.name>.*Go set the clock in your room, honey.
 
 Littleroot_YourHouse1f_Mom_ComeQuickly,Mom: Oh! <player.name>, <player.name>!~Quick! Come quickly!
 Littleroot_YourHouse1f_Mom_PetalburgGym,Mom: Look! It's Petalburg Gym!~Maybe Dad will be on!

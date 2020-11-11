@@ -1,7 +1,7 @@
 version=2
 
-:if:<register.registered(littleroot_left_truck)>=false
-	@register.register(littleroot_left_truck)
+:if:<register.registered(storyline_progress)>=false
+	#after exiting the moving truck
 	@sound.play(jump_from_truck)
 	@player.stopmovement
 	@player.move(1)
@@ -21,12 +21,14 @@ version=2
 	@npc.remove(4)
 	@player.warp(Hoenn\Cities\Littleroot\YourHouse1f.dat,8,0.1,7,0,1)
 	@level.update
-	@register.register(playerhouse_went_inside)
+	@register.register(storyline_progress,int,1)
 :endif
-:if:<register.registered(dad_on_tv)>=true <and> <register.registered(playerhouse_went_outside)>=false
-	@register.register(playerhouse_went_outside)
+:if:<register.value(storyline_progress)>=5
+	#first time going outside
+	@register.change(storyline_progress,6)
 :endif
-:if:<register.registered(playerhouse_went_inside)>=true
+:if:<register.value(storyline_progress)>=>5
+	#remove the moving truck entity
 	@entity.remove(0)
 :endif
 :end

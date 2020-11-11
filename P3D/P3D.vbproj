@@ -10500,6 +10500,9 @@
     <Content Include="Content\Sounds\Elevator_Stop.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Sounds\Emote_Exclamation.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Sounds\Evolved.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -10851,7 +10854,13 @@
     <Content Include="Content\Textures\OverworldSprites\Backpacker_Male.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\OverworldSprites\BaldingMan.png">
+    <Content Include="Content\Textures\OverworldSprites\DevonEmployee.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\OverworldSprites\Flannery.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\OverworldSprites\Man1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\OverworldSprites\Bard.png">
@@ -11469,7 +11478,10 @@
     <Content Include="Content\Textures\OverworldSprites\SchoolKid.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\OverworldSprites\Scientist.png">
+    <Content Include="Content\Textures\OverworldSprites\Scientist1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\OverworldSprites\Scientist2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\OverworldSprites\Skier.png">
@@ -11541,9 +11553,6 @@
     <Content Include="Content\Textures\OverworldSprites\Twin.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\OverworldSprites\veteran.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Textures\OverworldSprites\VideoGameKid.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -11562,16 +11571,16 @@
     <Content Include="Content\Textures\OverworldSprites\YoungCouple_Male.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\OverworldSprites\YoungGirl1.png">
+    <Content Include="Content\Textures\OverworldSprites\Girl2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\OverworldSprites\YoungGirl2.png">
+    <Content Include="Content\Textures\OverworldSprites\Woman1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\OverworldSprites\YoungGirl3.png">
+    <Content Include="Content\Textures\OverworldSprites\Girl1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\OverworldSprites\YoungGuy1.png">
+    <Content Include="Content\Textures\OverworldSprites\Man3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Textures\OverworldSprites\Youngster.png">
@@ -27097,9 +27106,6 @@
     <Content Include="Content\Data\Scripts\Johto\lakeofrage\OldMan.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\mom.dat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\MovingTruckMapScript.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -27109,16 +27115,34 @@
     <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\Main_MapScript.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\YourHouse2f\clock.dat">
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\BirchsHouse\BirchsHouse1f\tv.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\YourHouse2f\gamecube.dat">
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse1f\Mom.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\YourHouse2f\notebook.dat">
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse1f\TV.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\YourHouse2f\tv.dat">
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse1f\YourHouse1f_MapScript.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse2f\clock.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse2f\gamecube.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse2f\MoveMom.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse2f\notebook.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse2f\tv.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse2f\YourHouse2f_MapScript.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="LICENSE" />
@@ -28825,7 +28849,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Data\Maps\Hoenn\Gyms\" />
-    <Folder Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse\YourHouse1f\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Condition=" '$(Configuration)' != 'DebugNoContent' Or '$(Configuration)' != 'ReleaseNoContent' " Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />

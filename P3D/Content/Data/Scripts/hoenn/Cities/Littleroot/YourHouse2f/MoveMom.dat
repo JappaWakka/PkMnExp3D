@@ -1,0 +1,11 @@
+version=2
+:if:<register.value(storyline_progress)>=2
+	#went upstairs
+	:if:<npc.exists(0)>=false
+		@npc.spawn(6,-3,3,0,,Mom,0,0,Mom,0,Still)
+	:else
+		@npc.warp(0,6,-3,3)
+	:endif
+	@register.change(storyline_progress,3)
+:endif
+:end

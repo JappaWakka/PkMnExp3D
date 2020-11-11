@@ -1,0 +1,83 @@
+version=2
+:if:<register.value(storyline_progress)>=1
+	:if:<npc.exists(0)>=false
+		@npc.spawn(8,0,6,0,<token.Littleroot_YourHouse1f_Mom_SeeYourRoom>,Mom,0,0,Mom,0,Still)
+	:endif
+	:if:<npc.exists(1)>=false
+		@npc.spawn(4,0,3,0,<token.Littleroot_YourHouse1f_Machoke_WatchingTV>,[POKEMON|N]67,1,0,Machoke,1,Still)
+	:endif
+	:if:<npc.exists(2)>=false
+		@npc.spawn(2,0,1,0,<token.Littleroot_YourHouse1f_Machoke_Walking>,[POKEMON|N]67,1,1,Machoke,2,Straight,[0,1,2,1])
+	:endif
+	@player.stopmovement
+	@npc.turn(0,3)
+	@npc.moveasync(0,1)
+	@player.move(1)
+	@npc.turn(0,0)
+	@text.show(<token.Littleroot_YourHouse1f_Mom_Inside>)
+	@player.turnto(3)
+	@npc.turn(0,1)
+	@text.show(<token.Littleroot_YourHouse1f_Mom_MoversPokemon>)
+	@player.turnto(0)
+	@player.move(1)
+	@npc.turn(0,0)
+	@register.change(storyline_progress,2)
+	:end
+:endif
+:if:<register.value(storyline_progress)>=2
+	:if:<npc.exists(0)>=false
+		@npc.spawn(9,0,7,0,<token.Littleroot_YourHouse1f_Mom_SeeYourRoom>,Mom,0,0,Mom,0,Still)
+	:endif
+:endif
+:if:<register.value(storyline_progress)>=3
+	:if:<npc.exists(0)>=false
+		@npc.spawn(8,0,2,0,,Mom,0,0,Mom,0,Still)
+	:endif
+	:if:<player.position>=8,0,0 <and> <player.facing>=2
+		@player.stopmovement
+		@player.move(1)
+		@text.show(<token.Littleroot_YourHouse1f_Mom_SetYourClock>)
+		@player.turnto(0)
+		@player.move(1)
+		@player.warp(Hoenn\Cities\Littleroot\YourHouse2f.dat,6,-2.9,2,0,3)
+		@level.update
+	:endif
+	:end
+:endif
+:if:<register.value(storyline_progress)>=4
+	:if:<npc.exists(0)>=false
+		@npc.spawn(4,0,3,1,Hoenn\Cities\Littleroot\YourHouse1f\mom,Mom,0,0,Mom,0,Still)
+	:endif
+	@sound.play(Emote_Exclamation)
+	@entity.showmessagebulb(1|4|0.8|3)
+	@text.show(<token.Littleroot_YourHouse1f_Mom_ComeQuickly>)
+	@player.move(2)
+	@npc.turn(0,3)
+	@player.turnto(1)
+	@player.move(3)
+	@music.play(Hoenn_Reporter_Encounter)
+	@text.show(<token.Littleroot_YourHouse1f_Mom_PetalburgGym>)
+	@npc.turn(0,1)
+	@npc.move(0,1)
+	@npc.turn(0,3)
+	@player.move(1)
+	@player.turnto(0)
+	@text.show(<token.Littleroot_YourHouse1f_TV_Interviewer>)
+	@music.play(Littleroot)
+	@player.turnto(1)
+	@text.show(<token.Littleroot_YourHouse1f_Mom_MissedDad>*<token.Littleroot_YourHouse1f_Mom_ProfessorBirch>)
+	@npc.turn(0,1)
+	@npc.move(0,1)
+	@npc.turn(0,2)
+	@npc.move(0,1)
+	@npc.turn(0,3)
+	@register.change(storyline_progress,5)
+	:end
+:endif
+:if:<register.value(storyline_progress)>=>5
+	:if:<npc.exists(0)>=false
+		@npc.spawn(2,0,5,1,Hoenn\Cities\Littleroot\YourHouse\mom,Mom,false,3,Mom,0,Still)
+	:endif
+	:end
+:endif
+:end
