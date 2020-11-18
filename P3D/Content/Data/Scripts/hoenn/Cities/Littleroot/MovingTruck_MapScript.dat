@@ -1,12 +1,15 @@
 Version=2
+@screen.setfade(255)
 @camera.update
 @screen.canbepaused(0)
 @music.stop
-@sound.play(MovingTruck,0)
+@sound.play(MovingTruck_Drive,0)
 @level.wait(100)
 @screen.fadein
 @camera.update
-@level.wait(350)
+@level.wait(275)
+@sound.play(MovingTruck_OpenDoor)
+@level.wait(30)
 @environment.setisdark(0)
 @screen.canbepaused(1)
 :end

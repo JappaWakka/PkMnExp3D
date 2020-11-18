@@ -440,12 +440,11 @@
         If newHeading < 0 Then
             newHeading += 4
         End If
-        Me.faceRotation = newHeading
-
-        If Me.Moved = 0.0F Then
-            ActivateScript()
-        End If
-    End Sub
+		If Me.Moved = 0.0F Then
+			Me.faceRotation = newHeading
+			ActivateScript()
+		End If
+	End Sub
 
     Public Overrides Sub Update()
         NPCMovement()
@@ -483,121 +482,194 @@
                 Exit Sub
             End If
         End If
-        Select Case Me.Movement
-            Case Movements.Still, Movements.Pokeball
-                'do nothing
-            Case Movements.Turning
-                If Me.TurningDelay > 0.0F Then
-                    TurningDelay -= 0.1F
-                    If TurningDelay <= 0.0F Then
-                        Me.TurningDelay = 3.0F
+		Select Case Me.Movement
+			Case Movements.Still, Movements.Pokeball
+				'do nothing
+			Case Movements.Turning
+				If Me.TurningDelay > 0.0F Then
+					TurningDelay -= 0.1F
+					If TurningDelay <= 0.0F Then
+						Me.TurningDelay = 3.0F
 
-                        Me.faceRotation += 1
-                        If Me.faceRotation = 4 Then
-                            Me.faceRotation = 0
-                        End If
-                        If Me.IsTrainer = True Then
-                            CheckInSight()
-                        End If
-                    End If
-                End If
-            Case Movements.Looking
-                If Me.Moved = 0.0F Then
-                    If Core.Random.Next(0, 220) = 0 Then
-                        Dim newRotation As Integer = Me.faceRotation
-                        While newRotation = Me.faceRotation
-                            newRotation = Core.Random.Next(0, 4)
-                        End While
-                        Me.faceRotation = newRotation
-                        If Me.IsTrainer = True Then
-                            CheckInSight()
-                        End If
-                    End If
-                End If
-            Case Movements.FacePlayer
-                If Me.Moved = 0.0F Then
-                    Dim oldRotation As Integer = Me.faceRotation
+						Me.faceRotation += 1
+						If Me.faceRotation = 4 Then
+							Me.faceRotation = 0
+						End If
+						If Me.IsTrainer = True Then
+							CheckInSight()
+						End If
+					End If
+				End If
+			Case Movements.Looking
+				If Me.Moved = 0.0F Then
+					If Core.Random.Next(0, 220) = 0 Then
+						Dim newRotation As Integer = Me.faceRotation
+						While newRotation = Me.faceRotation
+							newRotation = Core.Random.Next(0, 4)
+						End While
+						Me.faceRotation = newRotation
+						If Me.IsTrainer = True Then
+							CheckInSight()
+						End If
+					End If
+				End If
+			Case Movements.FacePlayer
+				If Me.Moved = 0.0F Then
+					Dim oldRotation As Integer = Me.faceRotation
 
-                    If Screen.Camera.Position.X = Me.Position.X Or Screen.Camera.Position.Z = Me.Position.Z Then
-                        If Me.Position.X < Screen.Camera.Position.X Then
-                            Me.faceRotation = 3
-                        ElseIf Me.Position.X > Screen.Camera.Position.X Then
-                            Me.faceRotation = 1
-                        End If
-                        If Me.Position.Z < Screen.Camera.Position.Z Then
-                            Me.faceRotation = 2
-                        ElseIf Me.Position.Z > Screen.Camera.Position.Z Then
-                            Me.faceRotation = 0
-                        End If
-                    End If
+					If Screen.Camera.Position.X = Me.Position.X Or Screen.Camera.Position.Z = Me.Position.Z Then
+						If Me.Position.X < Screen.Camera.Position.X Then
+							Me.faceRotation = 3
+						ElseIf Me.Position.X > Screen.Camera.Position.X Then
+							Me.faceRotation = 1
+						End If
+						If Me.Position.Z < Screen.Camera.Position.Z Then
+							Me.faceRotation = 2
+						ElseIf Me.Position.Z > Screen.Camera.Position.Z Then
+							Me.faceRotation = 0
+						End If
+					End If
 
-                    If oldRotation <> Me.faceRotation And Me.IsTrainer = True Then
-                        CheckInSight()
-                    End If
-                End If
-            Case Movements.Walk
-                If Me.Moved = 0.0F Then
-                    If Core.Random.Next(0, 120) = 0 Then
-                        If Core.Random.Next(0, 3) = 0 Then
-                            Dim newRotation As Integer = Me.faceRotation
-                            While newRotation = Me.faceRotation
-                                newRotation = Core.Random.Next(0, 4)
-                            End While
-                            Me.faceRotation = newRotation
-                        End If
-                        Dim contains As Boolean = False
-                        Dim newPosition As Vector3 = (GetMove() / Speed) + Me.Position
-                        If CheckCollision(newPosition) = True Then
-                            For Each r As Rectangle In Me.MoveRectangles
-                                If r.Contains(New Point(CInt(newPosition.X), CInt(newPosition.Z))) = True Then
-                                    contains = True
-                                    Exit For
-                                End If
-                            Next
-                            If contains = True Then
-                                Moved = 1.0F
-                            End If
-                        End If
-                    End If
-                End If
-            Case Movements.Straight
-                If Me.Moved = 0.0F Then
-                    If Core.Random.Next(0, 15) = 0 Then
-                        Dim newRotation As Integer = Me.faceRotation
-                        While newRotation = Me.faceRotation
-                            newRotation = Core.Random.Next(0, 4)
-                        End While
-                        Me.faceRotation = newRotation
-                    End If
-                    Dim contains As Boolean = False
-                    Dim newPosition As Vector3 = (GetMove() / Speed) + Me.Position
-                    If CheckCollision(newPosition) = True Then
-                        For Each r As Rectangle In Me.MoveRectangles
-                            If r.Contains(New Point(CInt(newPosition.X), CInt(newPosition.Z))) = True Then
-                                contains = True
-                                Exit For
-                            End If
-                        Next
-                        If contains = True Then
-                            Moved = 1.0F
-                        End If
-                    End If
-                End If
-        End Select
-    End Sub
+					If oldRotation <> Me.faceRotation And Me.IsTrainer = True Then
+						CheckInSight()
+					End If
+				End If
+			Case Movements.Walk
+				If Me.Moved = 0.0F Then
+					If Core.Random.Next(0, 120) = 0 Then
+						If Core.Random.Next(0, 3) = 0 Then
+							Dim newRotation As Integer = Me.faceRotation
+							While newRotation = Me.faceRotation
+								newRotation = Core.Random.Next(0, 4)
+							End While
+							Me.faceRotation = newRotation
+						End If
+						Dim contains As Boolean = False
+						Dim newPosition As Vector3 = (GetMove() / Speed) + Me.Position
+						If CheckCollision(newPosition) = True Then
+							For Each r As Rectangle In Me.MoveRectangles
+								If r.Contains(New Point(CInt(newPosition.X), CInt(newPosition.Z))) = True Then
+									contains = True
+									Exit For
+								End If
+							Next
+							If contains = True Then
+								Moved = 1.0F
+							End If
+						End If
+					End If
+				End If
+			Case Movements.Straight
+				If Me.Moved = 0.0F Then
+					''newRotation = rotation that is used for checking a possible position and for setting the new faceRotation
+					Dim newRotation As Integer = Me.faceRotation
+					''frontRotation = original faceRotation
+					Dim frontRotation As Integer = Me.faceRotation
+
+					Dim contains As Boolean = False
+					Dim newPosition As Vector3 = (GetMove(newRotation) / Speed) + Me.Position
+					'' check if player is not in the way
+					If CInt(Screen.Camera.Position.X) <> newPosition.X Or CInt(Screen.Camera.Position.Z) <> newPosition.Z Then
+						If CheckCollision(newPosition) = True Then
+							For Each r As Rectangle In Me.MoveRectangles
+								If r.Contains(New Point(CInt(newPosition.X), CInt(newPosition.Z))) = True Then
+									contains = True
+									Exit For
+								End If
+							Next
+						End If
+						If contains = True Then
+							'' Only change faceRotation when it's possible to move
+							Me.faceRotation = newRotation
+							Moved = 1.0F
+						Else
+							'' If not possible to move forward, check right
+							newRotation = frontRotation + 1
+							If newRotation > 3 Then
+								newRotation = newRotation - 4
+							End If
+							newPosition = (GetMove(newRotation) / Speed) + Me.Position
+							If CheckCollision(newPosition) = True Then
+								For Each r As Rectangle In Me.MoveRectangles
+									If r.Contains(New Point(CInt(newPosition.X), CInt(newPosition.Z))) = True Then
+										contains = True
+										Exit For
+									End If
+								Next
+							End If
+							If contains = True Then
+								'' Only change faceRotation when it's possible to move
+								Me.faceRotation = newRotation
+								Moved = 1.0F
+							Else
+								'' If not possible to move to the right, check left
+								newRotation = frontRotation - 1
+								If newRotation < 0 Then
+									newRotation = newRotation + 4
+								End If
+								newPosition = (GetMove(newRotation) / Speed) + Me.Position
+								If CheckCollision(newPosition) = True Then
+									For Each r As Rectangle In Me.MoveRectangles
+										If r.Contains(New Point(CInt(newPosition.X), CInt(newPosition.Z))) = True Then
+											contains = True
+											Exit For
+										End If
+									Next
+								End If
+								If contains = True Then
+									'' Only change faceRotation when it's possible to move
+									Me.faceRotation = newRotation
+									Moved = 1.0F
+								Else
+									'' If not possible to move to the left, check behind
+									newRotation = frontRotation + 2
+									If newRotation > 3 Then
+										newRotation = newRotation - 4
+									End If
+									newPosition = (GetMove(newRotation) / Speed) + Me.Position
+
+									If CheckCollision(newPosition) = True Then
+										For Each r As Rectangle In Me.MoveRectangles
+											If r.Contains(New Point(CInt(newPosition.X), CInt(newPosition.Z))) = True Then
+												contains = True
+												Exit For
+											End If
+										Next
+									End If
+									If contains = True Then
+										'' Only change faceRotation when it's possible to move
+										Me.faceRotation = newRotation
+										Moved = 1.0F
+									End If
+								End If
+							End If
+						End If
+					End If
+				End If
+		End Select
+	End Sub
 
     Private Function CheckCollision(ByVal newPosition As Vector3) As Boolean
-        newPosition = New Vector3(CInt(newPosition.X), CInt(newPosition.Y), CInt(newPosition.Z))
+		newPosition = New Vector3(CInt(newPosition.X), CInt(newPosition.Y), CInt(newPosition.Z))
+		Dim oldPosition As Vector3 = Me.Position
 
-        Dim interactPlayer As Boolean = True
+		Dim interactPlayer As Boolean = True
 
-        If Screen.Camera.IsMoving() = False Then
-            If CInt(Screen.Camera.Position.X) <> newPosition.X Or CInt(Screen.Camera.Position.Z) <> newPosition.Z Then
-                If CInt(Screen.Level.OverworldPokemon.Position.X) <> newPosition.X Or CInt(Screen.Level.OverworldPokemon.Position.Z) <> newPosition.Z Then
-                    interactPlayer = False
-                End If
-            End If
-        End If
+		If Screen.Camera.IsMoving() = False Then
+			If CInt(Screen.Camera.Position.X) <> newPosition.X Or CInt(Screen.Camera.Position.Z) <> newPosition.Z Then
+				If CInt(Screen.Level.OverworldPokemon.Position.X) <> newPosition.X Or CInt(Screen.Level.OverworldPokemon.Position.Z) <> newPosition.Z Then
+					interactPlayer = False
+				End If
+			End If
+		Else
+			Dim cameraNewPosition As Vector3 = Screen.Camera.GetForwardMovedPosition()
+			Dim cameraOldPosition As Vector3 = Screen.Camera.GetForwardMovedPosition() - Screen.Camera.GetMoveDirection()
+			If CInt(cameraNewPosition.X) <> newPosition.X And CInt(cameraOldPosition.X) <> newPosition.X Or CInt(cameraNewPosition.Z) <> newPosition.Z And CInt(cameraOldPosition.Z) <> newPosition.Z Then
+				If CInt(Screen.Level.OverworldPokemon.Position.X) <> newPosition.X Or CInt(Screen.Level.OverworldPokemon.Position.Z) <> newPosition.Z Then
+					interactPlayer = False
+				End If
+			End If
+		End If
 
         If interactPlayer = True Then
             Return False
@@ -685,33 +757,39 @@
         End If
     End Sub
 
-    Private Function GetMove() As Vector3
-        Dim moveVector As Vector3
-        Select Case Me.faceRotation
-            Case 0
-                moveVector = New Vector3(0, 0, -1) * Speed
-            Case 1
-                moveVector = New Vector3(-1, 0, 0) * Speed
-            Case 2
-                moveVector = New Vector3(0, 0, 1) * Speed
-            Case 3
-                moveVector = New Vector3(1, 0, 0) * Speed
-        End Select
-        If MoveY <> 0.0F Then
-            Dim multi As Single = Me.Speed
-            If multi < 0.0F Then
-                multi *= -1
-            End If
-            If MoveY > 0 Then
-                moveVector.Y = multi * 1
-            Else
-                moveVector.Y = multi * -1
-            End If
-        End If
-        Return moveVector
-    End Function
+	Private Function GetMove(Optional ByVal rotation As Integer = 6) As Vector3
+		Dim moveVector As Vector3
+		Dim functionRotation As Integer
+		If rotation = 6 Then
+			functionRotation = Me.faceRotation
+		Else
+			functionRotation = rotation
+		End If
+		Select Case functionRotation
+			Case 0
+				moveVector = New Vector3(0, 0, -1) * Speed
+			Case 1
+				moveVector = New Vector3(-1, 0, 0) * Speed
+			Case 2
+				moveVector = New Vector3(0, 0, 1) * Speed
+			Case 3
+				moveVector = New Vector3(1, 0, 0) * Speed
+		End Select
+		If MoveY <> 0.0F Then
+			Dim multi As Single = Me.Speed
+			If multi < 0.0F Then
+				multi *= -1
+			End If
+			If MoveY > 0 Then
+				moveVector.Y = multi * 1
+			Else
+				moveVector.Y = multi * -1
+			End If
+		End If
+		Return moveVector
+	End Function
 
-    Private Function getCameraRotation() As Integer
+	Private Function getCameraRotation() As Integer
         Dim cameraRotation As Integer = 0
         Dim c As Camera = Screen.Camera
 

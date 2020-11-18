@@ -1,7 +1,13 @@
 version=2
 :if:<register.value(storyline_progress)>=2
 		:if:<npc.exists(0)>=false
-			@npc.spawn(7,-3,8,0,,Mom,0,0,Mom,0,Still)
+			@npc.spawn(7,-3,7,0,,Mom,0,0,Mom,0,Still)
+		:endif
+		:if:<npc.exists(1)>=false
+			@npc.spawn(2,-3,4,1,Hoenn\Cities\Littleroot\YourHouse1f\Machoke_TV,[POKEMON|N]67,1,0,Machoke,1,Still)
+		:endif
+		:if:<npc.exists(2)>=false
+			@npc.spawn(0,-3,2,1,Hoenn\Cities\Littleroot\YourHouse1f\Machoke_Walking,[POKEMON|N]67,1,1,Machoke,2,Straight,[[-2,2,4,1]])
 		:endif
 :endif
 :if:<register.value(storyline_progress)>=3
@@ -10,5 +16,24 @@ version=2
 	:else
 		@npc.warp(0,6,-3,3)
 	:endif
+	:if:<npc.exists(1)>=false
+		@npc.spawn(2,-3,4,1,Hoenn\Cities\Littleroot\YourHouse1f\Machoke_TV,[POKEMON|N]67,1,0,Machoke,1,Still)
+	:endif
+	:if:<npc.exists(2)>=false
+		@npc.spawn(0,-3,2,1,Hoenn\Cities\Littleroot\YourHouse1f\Machoke_Walking,[POKEMON|N]67,1,1,Machoke,2,Straight,[[-2,2,4,1]])
+	:endif
+:endif
+:if:<register.value(storyline_progress)>=4
+	:if:<npc.exists(0)>=false
+		@npc.spawn(2,-3,4,0,,Mom,0,0,Mom,0,Still)
+	:else
+		@npc.warp(0,2,-3,4)
+	:endif
+:endif
+:if:<register.value(storyline_progress)>>4
+	:if:<npc.exists(0)>=false
+		@npc.spawn(0,-3,6,1,Hoenn\Cities\Littleroot\YourHouse1f\mom,Mom,false,3,Mom,0,Still)
+	:endif
+	:end
 :endif
 :end

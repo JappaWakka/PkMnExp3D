@@ -263,17 +263,18 @@
 
             Screen.Camera.PlannedMovement = New Vector3(0, 1, 0)
 
-            s = "version=2" & Environment.NewLine &
-                "@pokemon.cry(" & pNumber & ")" & Environment.NewLine &
-                "@sound.play(select)" & Environment.NewLine &
-                "@text.show(" & pName & " used~Waterfall.)" & Environment.NewLine &
-                "@player.move(" & Steps & ")" & Environment.NewLine &
-                "@pokemon.hide" & Environment.NewLine &
-                "@player.move(2)" & Environment.NewLine &
-                "@pokemon.hide" & Environment.NewLine &
-                ":end"
+			s = "version=2" & Environment.NewLine &
+				"@player.stopmovement" & Environment.NewLine &
+				"@pokemon.cry(" & pNumber & ")" & Environment.NewLine &
+				"@sound.play(select)" & Environment.NewLine &
+				"@text.show(" & pName & " used~Waterfall.)" & Environment.NewLine &
+				"@player.move(" & Steps & ")" & Environment.NewLine &
+				"@pokemon.hide" & Environment.NewLine &
+				"@player.move(2)" & Environment.NewLine &
+				"@pokemon.hide" & Environment.NewLine &
+				":end"
 
-            PlayerStatistics.Track("Waterfall used", 1)
+			PlayerStatistics.Track("Waterfall used", 1)
             CType(Core.CurrentScreen, OverworldScreen).ActionScript.StartScript(s, 2)
 
             Return False

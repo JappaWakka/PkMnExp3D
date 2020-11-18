@@ -224,7 +224,8 @@
 												If args.Count >= 11 Then
 													Movement = args(10)
 													If args.Count >= 12 Then
-														Dim rectangles As String = argument.Remove(0, argument.IndexOf("[") + 1)
+														Dim rectangles As String = argument.Remove(0, argument.IndexOf("[[") + 1)
+														rectangles = rectangles.Remove(rectangles.Length - 1, 1)
 														Dim values As String() = rectangles.Split(CChar("]"))
 														Dim arr As New List(Of Rectangle)
 														For Each value As String In values

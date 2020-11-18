@@ -45,8 +45,8 @@
         End Set
     End Property
 
-    Public boundingBoxScale As Vector3 = New Vector3(1.25F)
-    Public boundingBox As BoundingBox
+	Public boundingBoxScale As Vector3 = New Vector3(1.5F)
+	Public boundingBox As BoundingBox
 
     Public ViewBox As BoundingBox
     Public viewBoxScale As Vector3 = New Vector3(1.0F)
