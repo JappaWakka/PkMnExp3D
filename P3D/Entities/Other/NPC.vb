@@ -568,8 +568,39 @@
 
 					Dim contains As Boolean = False
 					Dim newPosition As Vector3 = (GetMove(newRotation) / Speed) + Me.Position
+					Dim blocked As Boolean = False
+
 					'' check if player is not in the way
-					If CInt(Screen.Camera.Position.X) <> newPosition.X Or CInt(Screen.Camera.Position.Z) <> newPosition.Z Then
+					If CInt(Screen.Camera.Position.X) = newPosition.X And CInt(Screen.Camera.Position.Z) = newPosition.Z Then
+						blocked = True
+					End If
+					'' check if a following Pokémon is not in the way
+					If CInt(Screen.Level.OverworldPokemon.Position.X) = newPosition.X And CInt(Screen.Level.OverworldPokemon.Position.Z) = newPosition.Z Then
+						blocked = True
+					End If
+					'' check if an NPC is not in the way
+					For Each NPC As NPC In Screen.Level.GetNPCs()
+						If CInt(NPC.Position.X) = newPosition.X And CInt(NPC.Position.Z) = newPosition.Z And NPC.NPCID <> Me.NPCID Then
+							blocked = True
+							Exit For
+						End If
+					Next
+					'' check if a NetworkPlayer is not in the way
+					For Each Player As NetworkPlayer In Screen.Level.NetworkPlayers
+						If CInt(Player.Position.X) = newPosition.X And CInt(Player.Position.Z) = newPosition.Z Then
+							blocked = True
+							Exit For
+						End If
+					Next
+					'' check if a NetworkPokémon is not in the way
+					For Each Pokemon As NetworkPokemon In Screen.Level.NetworkPokemon
+						If CInt(Pokemon.Position.X) = newPosition.X And CInt(Pokemon.Position.Z) = newPosition.Z Then
+							blocked = True
+							Exit For
+						End If
+					Next
+
+					If blocked = False Then
 						If CheckCollision(newPosition) = True Then
 							For Each r As Rectangle In Me.MoveRectangles
 								If r.Contains(New Point(CInt(newPosition.X), CInt(newPosition.Z))) = True Then
