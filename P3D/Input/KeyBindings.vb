@@ -313,11 +313,11 @@ Public Class KeyBindings
         Dim Keys() As Keys = KeyBoardHandler.GetPressedKeys()
         For Each Key As Keys In Keys
             If Key = Input.Keys.V And KeyBoardHandler.KeyPressed(Input.Keys.V) = True And (KeyBoardHandler.KeyDown(Input.Keys.LeftControl) = True Or KeyBoardHandler.KeyDown(Input.Keys.RightControl) = True) = True Then
-                If Windows.Forms.Clipboard.ContainsText() = True Then
-                    Dim t As String = Windows.Forms.Clipboard.GetText().Replace(Environment.NewLine, " ")
+				If System.Windows.Forms.Clipboard.ContainsText() = True Then
+					Dim t As String = System.Windows.Forms.Clipboard.GetText().Replace(Environment.NewLine, " ")
 
-                    Text &= Windows.Forms.Clipboard.GetText()
-                End If
+					Text &= System.Windows.Forms.Clipboard.GetText()
+				End If
             Else
                 If Key <> Input.Keys.Back Then
                     If KeyBlocked(WhiteKeys, BlackKeys, Key) = False Then

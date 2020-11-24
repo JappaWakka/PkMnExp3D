@@ -104,7 +104,7 @@ Public Class KeyboardInput
                 Else
                     'Dont paste strings, try to append normal char input:
                     If _ignoreKeys.Contains(k) = False Then
-                        Dim pressedChar As Char? = KeyCharConverter.GetCharFromKey(CType(k, Windows.Forms.Keys))
+                        Dim pressedChar As Char? = KeyCharConverter.GetCharFromKey(CType(k, System.Windows.Forms.Keys))
 
                         If pressedChar.HasValue = True Then
                             Dim charString = CStr(pressedChar)
