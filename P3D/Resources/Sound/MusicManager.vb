@@ -573,14 +573,14 @@ Public Class MusicManager
 
     Private Shared ReadOnly Property SongAliasMap As Dictionary(Of String, String)
         Get
-			Return New Dictionary(Of String, String)() From
-			{
-				{"welcome", "RouteMusic1"},
-				{"battle", "hoenn_wild"},
-				{"battle_intro", "hoenn_wild_startbattle"},
-				{"showmearound", "show_me_around"}
-			}
-		End Get
+            Return New Dictionary(Of String, String)() From
+            {
+                {"welcome", "RouteMusic2"},
+                {"battle", "hoenn_wild"},
+                {"battle_intro", "hoenn_wild_startbattle"},
+                {"showmearound", "show_me_around"}
+            }
+        End Get
     End Property
 
 End Class

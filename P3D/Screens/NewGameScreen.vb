@@ -36,7 +36,6 @@
 
     Dim pokemonRange() As Integer = {1, 252}
     Dim introMusic As String = "welcome"
-	'Dim startMap As String = "Hoenn\Cities\Littleroot\InsideTruck.dat"
 	Dim startMap As String = "Hoenn\Cities\Littleroot\InsideTruck.dat"
 	Dim startPosition As Vector3 = New Vector3(9, 0.1F, 10)
 	Dim startLocation As String = "Your Room"
@@ -485,9 +484,9 @@
 			"GameMode|" & GameModeManager.ActiveGameMode.DirectoryName & Environment.NewLine &
 			"PokeFiles|" & Environment.NewLine &
 			"VisitedMaps|Hoenn\Cities\Littleroot\InsideTruck.dat" & Environment.NewLine &
-			"TempSurfSkin|Ethan" & Environment.NewLine &
-			"TempFishSkin|Ethan" & Environment.NewLine &
-			"TempBikeSkin|Ethan" & Environment.NewLine &
+			"TempSurfSkin|Brendan" & Environment.NewLine &
+			"TempFishSkin|Brendan" & Environment.NewLine &
+			"TempBikeSkin|Brendan" & Environment.NewLine &
 			"Surfing|0" & Environment.NewLine &
 			"ShowModels|1" & Environment.NewLine &
 			"GTSStars|4" & Environment.NewLine &

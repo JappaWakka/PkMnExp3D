@@ -864,49 +864,49 @@ Namespace GameJolt
                 ot = "0" & ot
             End While
 
-			Dim s As String = "Name|" & GameJolt.API.username & Environment.NewLine &
-				"Position|3,0.1,3" & Environment.NewLine &
-				"MapFile|Hoenn\Cities\Littleroot\InsideTruck.dat" & Environment.NewLine &
-				"Rotation|1.570796" & Environment.NewLine &
-				"RivalName|???" & Environment.NewLine &
-				"Money|3000" & Environment.NewLine &
-				"Badges|0" & Environment.NewLine &
-				"Gender|Male" & Environment.NewLine &
-				"PlayTime|0,0,0,0" & Environment.NewLine &
-				"OT|" & ot & Environment.NewLine &
-				"Points|0" & Environment.NewLine &
-				"hasPokedex|0" & Environment.NewLine &
-				"hasPhone|0" & Environment.NewLine &
-				"freeCamera|1" & Environment.NewLine &
-				"thirdPerson|0" & Environment.NewLine &
-				"skin|" & GameJolt.Emblem.GetPlayerSpriteFile(1, Core.GameJoltSave.GameJoltID, Core.GameJoltSave.Gender) & Environment.NewLine &
-				"location|Your Room" & Environment.NewLine &
-				"battleAnimations|2" & Environment.NewLine &
-				"BoxAmount|5" & Environment.NewLine &
-				"LastRestPlace|johto\cities\newbark\yourhousef2.dat" & Environment.NewLine &
-				"LastRestPlacePosition|3,0.1,3" & Environment.NewLine &
-				"DiagonalMovement|0" & Environment.NewLine &
-				"RepelSteps|0" & Environment.NewLine &
-				"LastSavePlace|Hoenn\Cities\Littleroot\InsideTruck.dat" & Environment.NewLine &
-				"LastSavePlacePosition|3,0.1,3" & Environment.NewLine &
-				"Difficulty|" & GameModeManager.GetGameRuleValue("Difficulty", "0") & Environment.NewLine &
-				"BattleStyle|0" & Environment.NewLine &
-				"saveCreated|" & GameController.GAMEDEVELOPMENTSTAGE & " " & GameController.GAMEVERSION & Environment.NewLine &
-				"LastPokemonPosition|999,999,999" & Environment.NewLine &
-				"DaycareSteps|0" & Environment.NewLine &
-				"GameMode|PkMnExp3D" & Environment.NewLine &
-				"PokeFiles|" & Environment.NewLine &
-				"VisitedMaps|Hoenn\Cities\Littleroot\InsideTruck.dat" & Environment.NewLine &
-				"TempSurfSkin|Ethan" & Environment.NewLine &
-				"TempBikeSkin|Ethan" & Environment.NewLine &
-				"TempFishSkin|Ethan" & Environment.NewLine &
-				"Surfing|0" & Environment.NewLine &
-				"ShowModels|1" & Environment.NewLine &
-				"GTSStars|4" & Environment.NewLine &
-				"SandBoxMode|0" & Environment.NewLine &
-				"EarnedAchievements|"
+            Dim s As String = "Name|" & GameJolt.API.username & Environment.NewLine &
+                "Position|3,0.1,3" & Environment.NewLine &
+                "MapFile|Hoenn\Cities\Littleroot\InsideTruck.dat" & Environment.NewLine &
+                "Rotation|1.570796" & Environment.NewLine &
+                "RivalName|???" & Environment.NewLine &
+                "Money|3000" & Environment.NewLine &
+                "Badges|0" & Environment.NewLine &
+                "Gender|Male" & Environment.NewLine &
+                "PlayTime|0,0,0,0" & Environment.NewLine &
+                "OT|" & ot & Environment.NewLine &
+                "Points|0" & Environment.NewLine &
+                "hasPokedex|0" & Environment.NewLine &
+                "hasPhone|0" & Environment.NewLine &
+                "freeCamera|1" & Environment.NewLine &
+                "thirdPerson|0" & Environment.NewLine &
+                "skin|" & GameJolt.Emblem.GetPlayerSpriteFile(1, Core.GameJoltSave.GameJoltID, Core.GameJoltSave.Gender) & Environment.NewLine &
+                "location|Your Room" & Environment.NewLine &
+                "battleAnimations|2" & Environment.NewLine &
+                "BoxAmount|5" & Environment.NewLine &
+                "LastRestPlace|johto\cities\newbark\yourhousef2.dat" & Environment.NewLine &
+                "LastRestPlacePosition|3,0.1,3" & Environment.NewLine &
+                "DiagonalMovement|0" & Environment.NewLine &
+                "RepelSteps|0" & Environment.NewLine &
+                "LastSavePlace|Hoenn\Cities\Littleroot\InsideTruck.dat" & Environment.NewLine &
+                "LastSavePlacePosition|3,0.1,3" & Environment.NewLine &
+                "Difficulty|" & GameModeManager.GetGameRuleValue("Difficulty", "0") & Environment.NewLine &
+                "BattleStyle|0" & Environment.NewLine &
+                "saveCreated|" & GameController.GAMEDEVELOPMENTSTAGE & " " & GameController.GAMEVERSION & Environment.NewLine &
+                "LastPokemonPosition|999,999,999" & Environment.NewLine &
+                "DaycareSteps|0" & Environment.NewLine &
+                "GameMode|PkMnExp3D" & Environment.NewLine &
+                "PokeFiles|" & Environment.NewLine &
+                "VisitedMaps|Hoenn\Cities\Littleroot\InsideTruck.dat" & Environment.NewLine &
+                "TempSurfSkin|Brendan" & Environment.NewLine &
+                "TempBikeSkin|Brendan" & Environment.NewLine &
+                "TempFishSkin|Brendan" & Environment.NewLine &
+                "Surfing|0" & Environment.NewLine &
+                "ShowModels|1" & Environment.NewLine &
+                "GTSStars|4" & Environment.NewLine &
+                "SandBoxMode|0" & Environment.NewLine &
+                "EarnedAchievements|"
 
-			Return s
+            Return s
 		End Function
 
 #End Region

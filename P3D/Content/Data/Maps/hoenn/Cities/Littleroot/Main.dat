@@ -252,7 +252,7 @@ Flowers:
 NPCs:
 {"NPC"{NPC[{"Position"{sngArr[16,0,12]}}{"TextureID"{str[FatGuy]}}{"ID"{int[1]}}{"Name"{str[Technology Fatman]}}{"Action"{int[0]}}{"AdditionalValue"{str[<token.Littleroot_Main_FatGuy_Technology>]}}{"Rotation"{int[2]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[15,11,2,2]]}}]}}
 {"NPC"{NPC[{"Position"{sngArr[17,0,16]}}{"TextureID"{str[Man3]}}{"ID"{int[2]}}{"Name"{str[Young Man]}}{"Action"{int[0]}}{"AdditionalValue"{str[<token.Littleroot_Main_YoungGuy>]}}{"Rotation"{int[2]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[16,15,3,3]]}}]}}
-{"NPC"{NPC[{"Position"{sngArr[12,0,2]}}{"TextureID"{str[LittleBoy1]}}{"ID"{int[3]}}{"Name"{str[Little Boy]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}{"Movement"{str[Looking]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[12,0,2]}}{"TextureID"{str[LittlerootKid]}}{"ID"{int[3]}}{"Name"{str[Little Boy]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}{"Movement"{str[Looking]}}]}}
 
 Moving Truck:
 {"EntityField"{ENT[{"ID"{int[0]}}{"Size"{intArr[1,1]}}{"Scale"{sngArr[0.12,0.12,0.12]}}{"RotationXYZ"{sngArr[0,-1.55,0]}}{"EntityID"{str[ModelEntity]}}{"Position"{sngArr[6,0,10]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,0,16,16]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[0]}}{"Action"{int[0]}}{"AdditionalValue"{str[Models\MovingTruck\MovingTruck]}}]}}
