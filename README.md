@@ -3,14 +3,14 @@ The game is not in active development by nilllzz anymore, but few people from th
 Build instructions (game)
 =========================
 
-The game is written in Visual Basic and was compiled targeting the .Net Framework 4.5 for my public builds.
+The game is written in Visual Basic and was compiled targeting the .Net Framework 4.7.2 for my public builds.
 
 It is built using the MonoGame framework as graphics middleware.
 
 In order to build the game's solution, you need the following:
 * Microsoft Windows operating system (XP and up)
-* [Microsoft Visual Studio](https://www.visualstudio.com/) (2010 and up)
-* [MonoGame 3.6](http://www.monogame.net/downloads/)
+* [Microsoft Visual Studio](https://www.visualstudio.com/) (2019 and up)
+* [MonoGame 3.8](https://docs.monogame.net/articles/getting_started/1_setting_up_your_development_environment_windows.html)
 
 To run the game after a successful build, you also need an applicable graphics card that supports DirectX (version 9 minimum).
 
