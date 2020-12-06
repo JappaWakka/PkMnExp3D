@@ -22,14 +22,16 @@ version=2
 	@player.warp(Hoenn\Cities\Littleroot\YourHouse1f.dat,8,0.1,7,0,1)
 	@level.update
 	@register.register(storyline_progress,int,1)
+	:end
 :endif
 :if:<register.value(storyline_progress)>=5
 	#first time going outside
 	@register.change(storyline_progress,6)
 :endif
-:if:<register.value(storyline_progress)>=>5
+:if:<register.value(storyline_progress)>>5
 	#remove the moving truck entity
 	@entity.remove(0)
+	:end
 :endif
 :end
 	

@@ -578,7 +578,7 @@
         t.Name = tempPlayer.Name
         t.Money = 0
         t.SpriteName = tPath
-        t.Region = "Johto"
+        t.Region = "Hoenn"
         t.TrainerFile = ""
         t.Items = New List(Of Item)
         t.Gender = 0

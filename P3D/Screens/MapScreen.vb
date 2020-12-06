@@ -579,8 +579,8 @@
 
 	Private Sub DrawCursor()
 		Dim t As Texture2D = TextureManager.GetTexture("GUI\Menus\General", CursorTextureRectangle, "")
-		Core.SpriteBatch.Draw(t, New Rectangle(CInt(CursorPosition.X), CInt(CursorPosition.Y) - 30, 32, 32), Color.White)
-    End Sub
+		Core.SpriteBatch.Draw(t, New Rectangle(CInt(CursorPosition.X) - 16, CInt(CursorPosition.Y) - 16, 32, 32), Color.White)
+	End Sub
 
     Public Shared Sub UseFly(ByVal FlyToFile As String, ByVal FlyToPosition As Vector3, ByVal flag() As Object)
         Screen.Camera.PlannedMovement = New Vector3(0, 2, 0)

@@ -603,7 +603,7 @@
                 t.Name = OppEmblem.Username
                 t.Money = 0
                 t.SpriteName = Emblem.GetPlayerSpriteFile(Emblem.GetPlayerLevel(OppEmblem.Points), OppEmblem.GameJoltID, OppEmblem.Gender)
-                t.Region = "Johto"
+                t.Region = "Hoenn"
                 t.TrainerFile = ""
                 t.Items = New List(Of Item)
                 t.Gender = CInt(OppEmblem.Gender)

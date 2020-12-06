@@ -947,7 +947,7 @@
         If TagExists(Tags, "CurrentRegion") = True Then
             Screen.Level.CurrentRegion = CStr(GetTag(Tags, "CurrentRegion"))
         Else
-            Screen.Level.CurrentRegion = "Johto"
+            Screen.Level.CurrentRegion = "Hoenn"
         End If
 
         If TagExists(Tags, "HiddenAbility") Then

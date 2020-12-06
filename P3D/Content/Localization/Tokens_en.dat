@@ -347,7 +347,7 @@ SeviiIslands,Sevii Islands
 Places:
 Places_???,???
 
-Towns:
+Towns and Cities:
 Johto:
 Places_New Bark Town,New Bark Town
 Places_Cherrygrove City,Cherrygrove City
@@ -384,7 +384,23 @@ Places_Seven Island,Seven Island
 Hoenn:
 Places_Littleroot Town,Littleroot Town
 Places_Oldale Town,Oldale Town
-
+Places_Littleroot Town,Littleroot Town
+Places_Oldale Town,Oldale Town
+Places_Petalburg City,Petalburg City
+Places_Rustboro City,Rustboro City
+Places_Dewford Town,Dewford Town
+Places_Slateport City,Slateport City
+Places_Mauville City,Mauville City
+Places_Verdanturf Town,Verdanturf Town
+Places_Lavaridge Town,Lavaridge Town
+Places_Fallarbor Town,Fallarbor Town
+Places_Fortree City,Fortree City
+Places_Pacifidlog Town,Pacifidlog Town
+Places_Lilycove City,Lilycove City
+Places_Sootopolis City,Sootopolis City
+Places_Mossdeep City,Mossdeep City
+Places_Ever Grande City,Ever Grande City
+ 
 Special Locations:
 Places_Pokemon Center,Pokémon Center
 Places_Pokemon Mart,Pokémon Mart
@@ -392,6 +408,7 @@ Places_Your House,Your House
 Places_Birch's House,Birch's House
 Places_Birch's Lab,Birch's Lab
 Places_Inside Truck,Inside Truck
+Places_Petalburg Woods,Petalburg Woods
 
 Places_Gate,Gate
 Places_Elms Lab,Elm's Lab
@@ -525,6 +542,39 @@ Places_Route 47,Route 47
 Places_Route 48,Route 48
 
 Places_Route 101,Route 101
+Places_Route 102,Route 102
+Places_Route 103,Route 103
+Places_Route 104,Route 104
+Places_Route 105,Route 105
+Places_Route 106,Route 106
+Places_Route 107,Route 107
+Places_Route 108,Route 108
+Places_Route 109,Route 109
+Places_Route 110,Route 110
+Places_Route 111,Route 111
+Places_Route 112,Route 112
+Places_Route 113,Route 113
+Places_Route 114,Route 114
+Places_Route 115,Route 115
+Places_Route 116,Route 116
+Places_Route 117,Route 117
+Places_Route 118,Route 118
+Places_Route 119,Route 119
+Places_Route 120,Route 120
+Places_Route 121,Route 121
+Places_Route 122,Route 122
+Places_Route 123,Route 123
+Places_Route 124,Route 124
+Places_Route 125,Route 125
+Places_Route 126,Route 126
+Places_Route 127,Route 127
+Places_Route 128,Route 128
+Places_Route 129,Route 129
+Places_Route 130,Route 130
+Places_Route 131,Route 131
+Places_Route 132,Route 132
+Places_Route 133,Route 133
+Places_Route 134,Route 134
 
 Places_Treasure Beach,Treasure Beach
 Places_Kindle Road,Kindle Road
@@ -1684,8 +1734,6 @@ Littleroot_YourHouse2f_GameControls,These are the controls:~Move Forward: [W]~Lo
 Littleroot_YourHouse2f_TV,It's a TV.~A Nintendo Gamecube is connected to it.
 Littleroot_YourHouse2f_GameCube,It's a Nintendo Gamecube.*You can connect a Game Boy Advance~to serve as the Controller.
 Littleroot_YourHouse2f_ClockStopped,The clock hasn't been set yet.~Let's do that right now.
-
-
 
 Littleroot_BirchsLab_SeriousMachine,It's a serious-looking machine.~The Prof must use this for research.
 Littleroot_BirchsLab_ResearchPC,It's a PC used for research.~Better not mess around with it.

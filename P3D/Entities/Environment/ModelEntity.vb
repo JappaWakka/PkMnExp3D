@@ -31,7 +31,6 @@
                     If part.Effect.GetType().Name.ToLower() = Screen.Effect.GetType().Name.ToLower() Then
                         With CType(part.Effect, BasicEffect)
                             Lighting.UpdateLighting(CType(part.Effect, BasicEffect), True)
-
                             .DiffuseColor = Screen.Effect.DiffuseColor
 
                             If Not Screen.Level.World Is Nothing Then
@@ -61,6 +60,8 @@
 
     Public Overrides Sub Render()
         If Visible = True Then
+            Dim OldRasterizerState As RasterizerState = Core.GraphicsDevice.RasterizerState
+            Core.GraphicsDevice.RasterizerState = RasterizerState.CullNone
             If Not _model Is Nothing Then
                 _model.Draw(Me.World, Screen.Camera.View, Screen.Camera.Projection)
             End If
@@ -68,6 +69,7 @@
             If drawViewBox = True Then
                 BoundingBoxRenderer.Render(ViewBox, Core.GraphicsDevice, Screen.Camera.View, Screen.Camera.Projection, Color.Red)
             End If
+            Core.GraphicsDevice.RasterizerState = OldRasterizerState
         End If
     End Sub
 
