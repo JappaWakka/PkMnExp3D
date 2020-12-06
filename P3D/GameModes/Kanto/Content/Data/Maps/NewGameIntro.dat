@@ -1,0 +1,63 @@
+{"Level"{LEV[{"Name"{str[Intro Map]}}{"MusicLoop"{str[RouteMusic2]}}]}}
+{"Actions"{LEV[{"CanTeleport"{bool[0]}}{"CanDig"{bool[0]}}{"CanFly"{bool[1]}}{"EnvironmentType"{int[1]}}{"Weather"{int[1]}}{"Lighting"{int[1]}}]}}
+
+BlackFloor:
+{"Floor"{ENT[{"Size"{intArr[50,50]}}{"Position"{sngArr[0,-0.1,0]}}{"TexturePath"{str[intro]}}{"Texture"{rec[0,0,16,16]}}{"Visible"{bool[1]}}]}}
+LightSpot:
+{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[8.5,0,4.5]}}{"TexturePath"{str[intro]}}{"Texture"{rec[0,16,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[9.5,0,4.5]}}{"TexturePath"{str[intro]}}{"Texture"{rec[0,16,16,16]}}{"Rotation"{int[3]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[8.5,0,5.5]}}{"TexturePath"{str[intro]}}{"Texture"{rec[0,16,16,16]}}{"Rotation"{int[1]}}]}}
+{"Floor"{ENT[{"Size"{intArr[1,1]}}{"Position"{sngArr[9.5,0,5.5]}}{"TexturePath"{str[intro]}}{"Texture"{rec[0,16,16,16]}}{"Rotation"{int[2]}}]}}
+Background:
+{"EntityField"{ENT[{"Size"{intArr[50,2,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[0,0,-1]}}{"TexturePath"{str[intro]}}{"Textures"{recArr[[0,0,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+{"EntityField"{ENT[{"Size"{intArr[50,1,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[0,2,-1]}}{"TexturePath"{str[intro]}}{"Textures"{recArr[[16,16,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+{"EntityField"{ENT[{"Size"{intArr[50,1,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[0,3,-1]}}{"TexturePath"{str[intro]}}{"Textures"{recArr[[16,0,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+{"EntityField"{ENT[{"Size"{intArr[50,6,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[0,4,-1]}}{"TexturePath"{str[intro]}}{"Textures"{recArr[[16,32,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+
+Professor Birch:
+{"NPC"{NPC[{"Position"{sngArr[13,0,5]}}{"TextureID"{str[ProfessorBirch]}}{"ID"{int[0]}}{"Name"{str[Birch]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[1]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+
+Player:
+{"NPC"{NPC[{"Position"{sngArr[9,0,9]}}{"TextureID"{str[PlayerSkins\Brendan]}}{"ID"{int[1]}}{"Name"{str[PLAYER]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+
+Route 101:
+{"OffsetMap"{MAP[{"Offset"{sngArr[15,0,27]}}{"Map"{str[Hoenn\Routes\101.dat]}}]}}
+
+{"NPC"{NPC[{"Position"{sngArr[25,0,40]}}{"TextureID"{str[[POKEMON|N]270]}}{"AnimateIdle"{bool[1]}}{"ID"{int[2]}}{"Name"{str[Lotad]}}{"Action"{int[1]}}{"AdditionalValue"{str[]}}{"Rotation"{int[1]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[23,37,4,4]]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[25,0,37]}}{"TextureID"{str[[POKEMON|N]263]}}{"AnimateIdle"{bool[1]}}{"ID"{int[2]}}{"Name"{str[Zigzagoon]}}{"Action"{int[1]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[25,36,3,3]]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[24,0,38]}}{"TextureID"{str[[POKEMON|N]298]}}{"AnimateIdle"{bool[1]}}{"ID"{int[2]}}{"Name"{str[Azurill]}}{"Action"{int[1]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}{"Movement"{str[Walk]}}{"MoveRectangles"{recArr[[24,37,3,3]]}}]}}
+
+Second scene:
+{"Floor"{ENT[{"Size"{intArr[14,8]}}{"Position"{sngArr[30,0,4]}}{"TexturePath"{str[Outside]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[10,2]}}{"Position"{sngArr[32,0,8]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+{"Floor"{ENT[{"Size"{intArr[2,3]}}{"Position"{sngArr[32,0,5]}}{"TexturePath"{str[Park]}}{"Texture"{rec[0,0,16,16]}}]}}
+
+{"EntityField"{ENT[{"SeasonTexture"{str[PlantColoring]}}{"Size"{intArr[3,3]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1.1,1.1,1.1]}}{"Position"{sngArr[37,-0.1,4]}}{"TexturePath"{str[Park]}}{"Textures"{recArr[[32,0,32,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+{"EntityField"{ENT[{"SeasonTexture"{str[PlantColoring]}}{"Size"{intArr[2,6]}}{"EntityID"{str[WallBill]}}{"Scale"{sngArr[1.1,1.1,1.1]}}{"Position"{sngArr[30,-0.1,4]}}{"TexturePath"{str[Park]}}{"Textures"{recArr[[32,0,32,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+
+{"EntityField"{ENT[{"Size"{intArr[4,1]}}{"EntityID"{str[Grass]}}{"Position"{sngArr[40,0,5]}}{"Scale"{sngArr[1,2,1]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,32,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+{"EntityField"{ENT[{"Size"{intArr[3,1]}}{"EntityID"{str[Grass]}}{"Position"{sngArr[41,0,6]}}{"Scale"{sngArr[1,2,1]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,32,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+{"EntityField"{ENT[{"Size"{intArr[2,1]}}{"EntityID"{str[Grass]}}{"Position"{sngArr[42,0,7]}}{"Scale"{sngArr[1,2,1]}}{"TexturePath"{str[Outside]}}{"Textures"{recArr[[0,32,16,32]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+
+{"EntityField"{ENT[{"Size"{intArr[10,1]}}{"EntityID"{str[Cube]}}{"Scale"{sngArr[1,0.5,1]}}{"Position"{sngArr[31,-0.25,10.7]}}{"TexturePath"{str[Park]}}{"Textures"{recArr[[16,16,16,8]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+{"EntityField"{ENT[{"Size"{intArr[10,1]}}{"EntityID"{str[Cube]}}{"Scale"{sngArr[1,0.2,0.2]}}{"Position"{sngArr[31,-0.4,11]}}{"TexturePath"{str[Park]}}{"Textures"{recArr[[0,24,16,6]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,0,0]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+
+{"Entity"{ENT[{"EntityID"{str[Cube]}}{"Scale"{sngArr[2,0.4,1]}}{"Position"{sngArr[35.5,-0.1,6.725]}}{"TexturePath"{str[Park]}}{"Textures"{recArr[[16,32,32,8]]}}{"TextureIndex"{intArr[0,0]}}{"Collision"{bool[0]}}{"ModelID"{int[3]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}
+{"Entity"{ENT[{"EntityID"{str[Cube]}}{"Scale"{sngArr[1,0.2,0.55]}}{"Position"{sngArr[35,-0.4,7]}}{"TexturePath"{str[Park]}}{"Textures"{recArr[[48,49,9,3][16,49,16,3][32,49,16,3][16,40,16,9][57,49,1,1]]}}{"TextureIndex"{intArr[1,1,4,4,0,0,2,2,3,3]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+{"Entity"{ENT[{"EntityID"{str[Cube]}}{"Scale"{sngArr[1,0.2,0.55]}}{"Position"{sngArr[36,-0.4,7]}}{"TexturePath"{str[Park]}}{"Textures"{recArr[[48,49,9,3][16,49,16,3][32,49,16,3][32,40,16,9][57,49,1,1]]}}{"TextureIndex"{intArr[1,1,4,4,0,0,2,2,3,3]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[2]}}]}}
+
+{"Entity"{ENT[{"Scale"{sngArr[0.3,0.4,0.3]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[34,-0.3,7]}}{"TexturePath"{str[Park]}}{"Textures"{recArr[[16,69,8,11][16,61,8,8]]}}{"TextureIndex"{intArr[0,0,0,0,0,0,0,0,1,1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}
+
+{"NPC"{NPC[{"Position"{sngArr[39,0,9]}}{"TextureID"{str[YoungWoman]}}{"ID"{int[2]}}{"Name"{str[Lady2]}}{"Action"{int[0]}}{"AdditionalValue"{str[This is Mail I got~from my daughter.~It cheers me up.]}}{"Rotation"{int[3]}}{"Movement"{str[Looking]}}{"MoveRectangles"{recArr[]}}]}}
+
+{"NPC"{NPC[{"Position"{sngArr[35,0,8]}}{"TextureID"{str[[POKEMON|N]53]}}{"ID"{int[2]}}{"AnimateIdle"{bool[1]}}{"Name"{str[Persian]}}{"Action"{int[1]}}{"AdditionalValue"{str[Johto\NationalPark\persian]}}{"Rotation"{int[2]}}{"Movement"{str[Looking]}}{"MoveRectangles"{recArr[]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[36,0,8]}}{"TextureID"{str[beauty]}}{"ID"{int[2]}}{"Name"{str[Lady1]}}{"Action"{int[1]}}{"AdditionalValue"{str[Johto\NationalPark\QuickClaw]}}{"Rotation"{int[2]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+
+{"NPC"{NPC[{"Position"{sngArr[33,0,5]}}{"TextureID"{str[VideoGameKid]}}{"ID"{int[2]}}{"Name"{str[Guy2]}}{"Action"{int[0]}}{"AdditionalValue"{str[I'm printing out~my Pokédex.*You can also print~out stuff like*Mail and your PC~Boxes.]}}{"Rotation"{int[3]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+{"NPC"{NPC[{"Position"{sngArr[34,0,5]}}{"TextureID"{str[[POKEMON|N]137]}}{"ID"{int[2]}}{"AnimateIdle"{bool[1]}}{"Name"{str[Persian]}}{"Action"{int[1]}}{"AdditionalValue"{str[Johto\NationalPark\persian]}}{"Rotation"{int[1]}}{"Movement"{str[Still]}}{"MoveRectangles"{recArr[]}}]}}
+
+{"NPC"{NPC[{"Position"{sngArr[40,0,6]}}{"TextureID"{str[[POKEMON|N]167]}}{"ID"{int[2]}}{"AnimateIdle"{bool[1]}}{"Name"{str[Persian]}}{"Action"{int[1]}}{"AdditionalValue"{str[Johto\NationalPark\persian]}}{"Rotation"{int[2]}}{"Movement"{str[Looking]}}{"MoveRectangles"{recArr[]}}]}}
+
+
+
+{"EntityField"{ENT[{"Size"{intArr[50,10,1]}}{"EntityID"{str[WallBlock]}}{"Position"{sngArr[0,0,24]}}{"TexturePath"{str[intro]}}{"Textures"{recArr[[0,0,16,16]]}}{"TextureIndex"{intArr[0,0,-1,-1,-1,-1,-1,-1,-1,-1]}}{"Collision"{bool[1]}}{"ModelID"{int[1]}}{"Action"{int[0]}}{"AdditionalValue"{str[]}}{"Rotation"{int[0]}}]}}

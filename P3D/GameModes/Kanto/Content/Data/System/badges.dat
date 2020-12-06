@@ -1,0 +1,8 @@
+1|Boulder|HM=Flash|Texture=GUI\Badges,0,0,50,50|Region=Kanto
+2|Cascade|HM=Cut|level=30|Texture=GUI\Badges,50,0,50,50|Region=Kanto
+3|Thunder|HM=Fly|Texture=GUI\Badges,100,0,50,50|Region=Kanto
+4|Rainbow|HM=Strength|level=50|Texture=GUI\Badges,150,0,50,50|Region=Kanto
+5|Soul|HM=Surf|Texture=GUI\Badges,200,0,50,50|Region=Kanto
+6|Marsh|level=70|Texture=GUI\Badges,250,0,50,50|Region=Kanto
+7|Volcano|Texture=GUI\Badges,300,0,50,50|Region=Kanto
+8|Earth|level=100|Texture=GUI\Badges,350,0,50,50|Region=Kanto
