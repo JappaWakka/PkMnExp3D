@@ -9,7 +9,7 @@
 
         Enum MenuScreens As Integer
             Main = 0
-            PSS = 1
+            Network = 1
             UserView = 2
             PhoneList = 3
             Frontier = 4
@@ -49,7 +49,7 @@
             End If
 
             If Me.UserBanned = False Then
-                FunctionList.Add("PSS")
+                FunctionList.Add("Network")
                 If API.LoggedIn = True And Core.Player.IsGameJoltSave = True And Core.Player.Pokemons.Count > 0 Then
                     FunctionList.Add("Battle Spot")
                 End If
@@ -138,8 +138,8 @@
             Select Case Me.menuIndex
                 Case MenuScreens.Main
                     DrawMainMenu()
-                Case MenuScreens.PSS
-                    DrawPSS()
+                Case MenuScreens.Network
+                    DrawNetwork()
                 Case MenuScreens.UserView
                     DrawUserView()
                 Case MenuScreens.PhoneList
@@ -161,8 +161,8 @@
             Select Case Me.menuIndex
                 Case MenuScreens.Main
                     UpdateMainMenu()
-                Case MenuScreens.PSS
-                    UpdatePSS()
+                Case MenuScreens.Network
+                    UpdateNetwork()
                 Case MenuScreens.UserView
                     UpdateUserView()
                 Case MenuScreens.PhoneList
@@ -199,8 +199,8 @@
             Dim t As String = TimeHelpers.GetDisplayTime(Date.Now, True)
             Dim t2 As String = Localization.GetString("game_menu_phone")
 
-            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(startPos.X + width - FontManager.MainFontWhite.MeasureString(t).X - 5, startPos.Y + 4), Color.White)
-            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t2, New Vector2(startPos.X + 5, startPos.Y + 4), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(startPos.X + width - FontManager.MainFontWhite.MeasureString(t).X - 5, startPos.Y), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t2, New Vector2(startPos.X + 5, startPos.Y), Color.White)
 
             If API.LoggedIn = True Then
                 Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 10 + FontManager.MainFontWhite.MeasureString(t2).X), CInt(startPos.Y + 8), 16, 16), New Rectangle(80, 112, 16, 16), Color.White)
@@ -234,9 +234,9 @@
                 Dim displayText As String = ""
 
                 Select Case f
-                    Case "PSS"
+                    Case "Network"
                         t = TextureManager.GetTexture("GUI\Menus\phone", New Rectangle(64, 32, 32, 32), "")
-                        displayText = "PSS"
+                        displayText = "Network"
                     Case "Wondertrade"
                         t = TextureManager.GetTexture("GUI\Menus\phone", New Rectangle(0, 64, 32, 32), "")
                         displayText = "Wondertrade"
@@ -268,7 +268,7 @@
 
                 Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + (x * 96) + 124), CInt(startPos.Y + 80 + (y * 100)), 64, 64), New Rectangle(0, 0, 32, 32), Color.White)
                 Core.SpriteBatch.Draw(t, New Rectangle(CInt(startPos.X + (x * 96) + 124), CInt(startPos.Y + 80 + (y * 100)), 64, 64), New Rectangle(0, 0, 32, 32), Color.White)
-                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, displayText, New Vector2(CInt(startPos.X + (x * 96) + 124) + 32 - FontManager.MiniFont.MeasureString(displayText).X / 2.0F, CInt(startPos.Y + 150 + (y * 100))), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, displayText, New Vector2(CInt(startPos.X + (x * 96) + 124 + 32 - FontManager.MainFontBlack.MeasureString(displayText).X / 2.0F), CInt(startPos.Y + 150 + (y * 100))), Color.White)
 
                 If Cursors(0) = i Then
                     Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + (x * 96) + 124), CInt(startPos.Y + 80 + (y * 100)), 64, 64), New Rectangle(0, 32, 32, 32), Color.White)
@@ -332,8 +332,8 @@
 
         Private Sub PressedMainMenuButton()
             Select Case FunctionList(Cursors(0))
-                Case "PSS"
-                    Me.menuIndex = MenuScreens.PSS
+                Case "Network"
+                    Me.menuIndex = MenuScreens.Network
                 Case "Battle Spot"
                     Core.SetScreen(New TransitionScreen(Core.CurrentScreen, New RegisterBattleScreen(Core.CurrentScreen), Color.White, False))
                 Case "Phone"
@@ -364,45 +364,45 @@
 
 #End Region
 
-#Region "PSS"
+#Region "Network"
 
-        Dim PSSmenuIndex As Integer = 0
+        Dim NetworkmenuIndex As Integer = 0
 
         Dim UserBanned As Boolean = False
 
-        Private Sub DrawPSS()
-            Select Case PSSmenuIndex
+        Private Sub DrawNetwork()
+            Select Case NetworkmenuIndex
                 Case 0
-                    DrawRanklist()
+                    DrawLocalList()
                 Case 1
                     DrawFriendList()
                 Case 2
-                    DrawLocalList()
+                    DrawRanklist()
             End Select
         End Sub
 
-        Private Sub UpdatePSS()
-            Select Case Me.PSSmenuIndex
+        Private Sub UpdateNetwork()
+            Select Case Me.NetworkmenuIndex
                 Case 0
-                    UpdateRanklist()
+                    UpdateLocalList()
                 Case 1
                     UpdateFriendList()
                 Case 2
-                    UpdateLocalList()
+                    UpdateRanklist()
             End Select
 
             If Controls.Right(True, True, False, True, True, True) = True Then
-                PSSmenuIndex += 1
+                NetworkmenuIndex += 1
             End If
             If Controls.Left(True, True, False, True, True, True) = True Then
-                PSSmenuIndex -= 1
+                NetworkmenuIndex -= 1
             End If
 
-            If PSSmenuIndex > 2 Then
-                PSSmenuIndex = 0
+            If NetworkmenuIndex > 2 Then
+                NetworkmenuIndex = 0
             End If
-            If PSSmenuIndex < 0 Then
-                PSSmenuIndex = 2
+            If NetworkmenuIndex < 0 Then
+                NetworkmenuIndex = 2
             End If
 
             If Controls.Dismiss(True, True, True) = True Then
@@ -422,10 +422,10 @@
             Dim startPos As Vector2 = GetStartPosition()
 
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45), CInt(startPos.Y + 40), 16, 32), New Rectangle(96, 112, 8, 16), Color.White)
-            Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16), CInt(startPos.Y + 40), 128, 32), New Rectangle(102, 112, 4, 16), Color.White)
-            Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16 + 128), CInt(startPos.Y + 40), 16, 32), New Rectangle(104, 112, 8, 16), Color.White)
+            Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16), CInt(startPos.Y + 40), 160, 32), New Rectangle(102, 112, 4, 16), Color.White)
+            Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16 + 160), CInt(startPos.Y + 40), 16, 32), New Rectangle(104, 112, 8, 16), Color.White)
 
-            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "PSS Ranklist", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 45)), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Network Ranklist", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 40)), Color.White)
 
             If Core.Player.IsGameJoltSave = True Then
                 ' Draw own information:
@@ -436,10 +436,10 @@
                 Dim ownE As New Emblem(Core.Player.Name, Core.GameJoltSave.GameJoltID, Core.GameJoltSave.Points, Core.GameJoltSave.Gender, Core.GameJoltSave.Emblem)
 
                 Core.SpriteBatch.Draw(ownE.SpriteTexture, New Rectangle(CInt(startPos.X + 225), CInt(startPos.Y + 40), 32, 32), New Rectangle(0, 64, 32, 32), Color.White)
-                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, ownE.Username, New Vector2(CInt(startPos.X + 265), CInt(startPos.Y + 45)), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, ownE.Username, New Vector2(CInt(startPos.X + 265), CInt(startPos.Y + 40)), Color.White)
 
                 If OwnRank > -1 Then
-                    Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Rank " & OwnRank.ToString(), New Vector2(CInt(startPos.X + 380), CInt(startPos.Y + 45)), Color.White)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Rank " & OwnRank.ToString(), New Vector2(CInt(startPos.X + 380), CInt(startPos.Y + 40)), Color.White)
                 End If
 
                 If UserBanned = False Then
@@ -524,7 +524,7 @@
                             Dim r As New Rectangle(CInt(startPos.X + 45), CInt(startPos.Y + 80 + i * 35), 510, 32)
                             If r.Contains(MouseHandler.MousePosition) Then
                                 If RankListSelect = i + RankListScroll Then
-                                    PSSRanklistDisplayUser()
+                                    NetworkRanklistDisplayUser()
                                 Else
                                     RankListSelect = i + RankListScroll
                                 End If
@@ -544,7 +544,7 @@
                     RankListSelect = RankListSelect.Clamp(0, RankingList.Count - 1)
 
                     If Controls.Accept(False, True, True) = True Then
-                        PSSRanklistDisplayUser()
+                        NetworkRanklistDisplayUser()
                     End If
                 End If
             End If
@@ -586,7 +586,7 @@
             Next
         End Sub
 
-        Private Sub PSSRanklistDisplayUser()
+        Private Sub NetworkRanklistDisplayUser()
             UserEmblem = RankingList(RankListSelect)
             UserSprite = UserEmblem.SpriteTexture
             UserName = UserEmblem.Username
@@ -600,7 +600,7 @@
                 End If
             Next
             menuIndex = MenuScreens.UserView
-            UserViewPreMenu = MenuScreens.PSS
+            UserViewPreMenu = MenuScreens.Network
         End Sub
 
 #End Region
@@ -616,10 +616,10 @@
             Dim startPos As Vector2 = GetStartPosition()
 
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45), CInt(startPos.Y + 40), 16, 32), New Rectangle(96, 112, 8, 16), Color.White)
-            Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16), CInt(startPos.Y + 40), 128, 32), New Rectangle(102, 112, 4, 16), Color.White)
-            Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16 + 128), CInt(startPos.Y + 40), 16, 32), New Rectangle(104, 112, 8, 16), Color.White)
+            Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16), CInt(startPos.Y + 40), 160, 32), New Rectangle(102, 112, 4, 16), Color.White)
+            Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16 + 160), CInt(startPos.Y + 40), 16, 32), New Rectangle(104, 112, 8, 16), Color.White)
 
-            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "PSS Friendlist", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 45)), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Network Friendlist", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 40)), Color.White)
 
             If Core.Player.IsGameJoltSave = True Then
                 ' Draw own information:
@@ -630,10 +630,10 @@
                 Dim ownE As New Emblem(Core.Player.Name, Core.GameJoltSave.GameJoltID, Core.GameJoltSave.Points, Core.GameJoltSave.Gender, Core.GameJoltSave.Emblem)
 
                 Core.SpriteBatch.Draw(ownE.SpriteTexture, New Rectangle(CInt(startPos.X + 225), CInt(startPos.Y + 40), 32, 32), New Rectangle(0, 64, 32, 32), Color.White)
-                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, ownE.Username, New Vector2(CInt(startPos.X + 265), CInt(startPos.Y + 45)), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, ownE.Username, New Vector2(CInt(startPos.X + 265), CInt(startPos.Y + 40)), Color.White)
 
                 If OwnRank > -1 Then
-                    Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Rank " & OwnRank.ToString(), New Vector2(CInt(startPos.X + 380), CInt(startPos.Y + 45)), Color.White)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Rank " & OwnRank.ToString(), New Vector2(CInt(startPos.X + 380), CInt(startPos.Y + 40)), Color.White)
                 End If
 
                 If UserBanned = False Then
@@ -718,7 +718,7 @@
                             Dim r As New Rectangle(CInt(startPos.X + 45), CInt(startPos.Y + 80 + i * 35), 510, 32)
                             If r.Contains(MouseHandler.MousePosition) Then
                                 If FriendListSelect = i + FriendListScroll Then
-                                    PSSFriendlistDisplayUser()
+                                    NetworkFriendlistDisplayUser()
                                 Else
                                     FriendListSelect = i + FriendListScroll
                                 End If
@@ -738,7 +738,7 @@
                     FriendListSelect = FriendListSelect.Clamp(0, FriendList.Count - 1)
 
                     If Controls.Accept(False, True, True) = True Then
-                        PSSFriendlistDisplayUser()
+                        NetworkFriendlistDisplayUser()
                     End If
                 End If
             End If
@@ -773,7 +773,7 @@
             Next
         End Sub
 
-        Private Sub PSSFriendlistDisplayUser()
+        Private Sub NetworkFriendlistDisplayUser()
             UserEmblem = FriendList(FriendListSelect)
             UserSprite = UserEmblem.SpriteTexture
             UserName = UserEmblem.Username
@@ -786,7 +786,7 @@
                 End If
             Next
             menuIndex = MenuScreens.UserView
-            UserViewPreMenu = MenuScreens.PSS
+            UserViewPreMenu = MenuScreens.Network
         End Sub
 
 #End Region
@@ -855,10 +855,10 @@
             Dim startPos As Vector2 = GetStartPosition()
 
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45), CInt(startPos.Y + 40), 16, 32), New Rectangle(96, 112, 8, 16), Color.White)
-            Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16), CInt(startPos.Y + 40), 128, 32), New Rectangle(102, 112, 4, 16), Color.White)
-            Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16 + 128), CInt(startPos.Y + 40), 16, 32), New Rectangle(104, 112, 8, 16), Color.White)
+            Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16), CInt(startPos.Y + 40), 160, 32), New Rectangle(102, 112, 4, 16), Color.White)
+            Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16 + 160), CInt(startPos.Y + 40), 16, 32), New Rectangle(104, 112, 8, 16), Color.White)
 
-            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "PSS Passby", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 45)), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Network Passby", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 40)), Color.White)
 
             If InitializedLocals = True Then
                 If LocalList.Count > 0 Then
@@ -932,7 +932,7 @@
                             Dim r As New Rectangle(CInt(startPos.X + 45), CInt(startPos.Y + 80 + i * 35), 510, 32)
                             If r.Contains(MouseHandler.MousePosition) Then
                                 If LocalSelect = i + LocalScroll Then
-                                    PSSLocallistDisplayUser()
+                                    NetworkLocallistDisplayUser()
                                 Else
                                     LocalSelect = i + LocalScroll
                                 End If
@@ -952,13 +952,13 @@
                     LocalSelect = LocalSelect.Clamp(0, LocalList.Count - 1)
 
                     If Controls.Accept(False, True, True) = True Then
-                        PSSLocallistDisplayUser()
+                        NetworkLocallistDisplayUser()
                     End If
                 End If
             End If
         End Sub
 
-        Private Sub PSSLocallistDisplayUser()
+        Private Sub NetworkLocallistDisplayUser()
             If LocalList(LocalSelect).GamejoltID <> "" Then
                 UserEmblem = New Emblem(LocalList(LocalSelect).GamejoltID, 0)
             Else
@@ -971,7 +971,7 @@
             UserNetworkID = LocalList(LocalSelect).NetworkID
 
             menuIndex = MenuScreens.UserView
-            UserViewPreMenu = MenuScreens.PSS
+            UserViewPreMenu = MenuScreens.Network
         End Sub
 
 #End Region
@@ -997,7 +997,7 @@
 
             Dim frameSize As New Size(CInt(UserSprite.Width / 3), CInt(UserSprite.Height / 4))
             Core.SpriteBatch.Draw(UserSprite, New Rectangle(CInt(startPos.X + 50), CInt(startPos.Y + 40), 32, 32), New Rectangle(0, frameSize.Height * 2, frameSize.Width, frameSize.Height), Color.White)
-            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, UserName, New Vector2(CInt(startPos.X + 90), CInt(startPos.Y + 45)), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, UserName, New Vector2(CInt(startPos.X + 90), CInt(startPos.Y + 40)), Color.White)
 
             If UserOrigin.Contains("GJ") = True Then
                 Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 284), CInt(startPos.Y + 48), 16, 16), New Rectangle(80, 112, 16, 16), Color.White)
@@ -1067,7 +1067,7 @@
                 If Cursors(1) = x Then
                     Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + (x * 96) + 76), CInt(startPos.Y + 100), 64, 64), New Rectangle(0, 32, 32, 32), Color.White)
                 End If
-                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, t, New Vector2(CInt(startPos.X + (x * 96) + 76) + 32 - FontManager.MiniFont.MeasureString(t).X / 2.0F, CInt(startPos.Y + 170)), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, t, New Vector2(CInt(startPos.X + (x * 96) + 76 + 32 - FontManager.MainFontBlack.MeasureString(t).X / 2.0F), CInt(startPos.Y + 170)), Color.White)
             Next
 
             If Not UserEmblem Is Nothing Then
@@ -1150,7 +1150,7 @@
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16), CInt(startPos.Y + 40), 128, 32), New Rectangle(102, 112, 4, 16), Color.White)
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16 + 128), CInt(startPos.Y + 40), 16, 32), New Rectangle(104, 112, 8, 16), Color.White)
 
-            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Phone", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 45)), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Phone", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 40)), Color.White)
 
             If PhoneContacts.Count > 0 Then
                 For i = 0 To 8
@@ -1417,7 +1417,7 @@
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16), CInt(startPos.Y + 40), 128, 32), New Rectangle(102, 112, 4, 16), Color.White)
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16 + 128), CInt(startPos.Y + 40), 16, 32), New Rectangle(104, 112, 8, 16), Color.White)
 
-            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Frontier Emblems", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 45)), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Frontier Emblems", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 40)), Color.White)
 
             If FrontierList.Count > 0 Then
                 For x = 0 To FrontierList.Count - 1
@@ -1494,7 +1494,7 @@
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 365 + 16), CInt(startPos.Y + 40), 128, 32), New Rectangle(102, 112, 4, 16), Color.White)
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 365 + 16 + 128), CInt(startPos.Y + 40), 16, 32), New Rectangle(104, 112, 8, 16), Color.White)
 
-            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Minimap", New Vector2(CInt(startPos.X + 372), CInt(startPos.Y + 45)), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Minimap", New Vector2(CInt(startPos.X + 372), CInt(startPos.Y + 40)), Color.White)
 
             If InitializedMinimap = True Then
                 Canvas.DrawBorder(1, New Rectangle(CInt(startPos.X + 49 - 32), CInt(startPos.Y + 79 - 32), 21 * 16 + 2, 21 * 16 + 2), Color.Black)
@@ -1940,7 +1940,7 @@
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16), CInt(startPos.Y + 40), 128, 32), New Rectangle(102, 112, 4, 16), Color.White)
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16 + 128), CInt(startPos.Y + 40), 16, 32), New Rectangle(104, 112, 8, 16), Color.White)
 
-            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Trade", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 45)), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Trade", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 40)), Color.White)
 
             If Not TradeRequestTexture Is Nothing Then
                 Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "The player """ & TradeRequestName & """ wants to trade with you.", New Vector2(CInt(startPos.X + 84), CInt(startPos.Y + 80)), Color.White)
@@ -2072,7 +2072,7 @@
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16), CInt(startPos.Y + 40), 128, 32), New Rectangle(102, 112, 4, 16), Color.White)
             Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\phone"), New Rectangle(CInt(startPos.X + 45 + 16 + 128), CInt(startPos.Y + 40), 16, 32), New Rectangle(104, 112, 8, 16), Color.White)
 
-            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Battle", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 45)), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Battle", New Vector2(CInt(startPos.X + 50), CInt(startPos.Y + 40)), Color.White)
 
             If Not BattleRequestTexture Is Nothing Then
                 Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "The player """ & BattleRequestName & """ wants to battle with you.", New Vector2(CInt(startPos.X + 84), CInt(startPos.Y + 80)), Color.White)

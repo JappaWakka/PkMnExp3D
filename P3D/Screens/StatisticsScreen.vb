@@ -71,47 +71,41 @@
 
             If ItemID <> "" Then
                 Dim Item As Item = Item.GetItemByID(CInt(ItemID))
-                Core.SpriteBatch.Draw(Item.Texture, New Rectangle(150, 160 + i * 50 + Scroll, 32, 32), Color.White)
+                Core.SpriteBatch.Draw(Item.Texture, New Rectangle(150, 192 + i * 64 + Scroll, 32, 32), Color.White)
             End If
 
-            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, name, New Vector2(150 + ItemIDX, 160 + i * 50 + Scroll), Color.White, 0.0F, Vector2.Zero, 1.2F, SpriteEffects.None, 0.0F)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, name, New Vector2(150 + ItemIDX, 200 + i * 64 + Scroll), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
 
             If GJStatistics.ContainsKey(Me.Statistics.Keys(i)) = True Then
-                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, GJStatistics(Me.Statistics.Keys(i)).ToString(), New Vector2(Core.windowSize.Width - 418, 178 + i * 50 + Scroll), Color.White, 0.0F, Vector2.Zero, 0.8F, SpriteEffects.None, 0.0F)
-                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, value.ToString(), New Vector2(Core.windowSize.Width - 420, 150 + i * 50 + Scroll), Color.White, 0.0F, Vector2.Zero, 1.2F, SpriteEffects.None, 0.0F)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, GJStatistics(Me.Statistics.Keys(i)).ToString(), New Vector2(Core.windowSize.Width - 418, 200 + i * 64 + Scroll), Color.White, 0.0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0.0F)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, value.ToString(), New Vector2(Core.windowSize.Width - 420, 200 + i * 64 + Scroll), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
             Else
-                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, value.ToString(), New Vector2(Core.windowSize.Width - 420, 160 + i * 50 + Scroll), Color.White, 0.0F, Vector2.Zero, 1.2F, SpriteEffects.None, 0.0F)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, value.ToString(), New Vector2(Core.windowSize.Width - 420, 200 + i * 64 + Scroll), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
             End If
 
-            Canvas.DrawRectangle(New Rectangle(130, 200 + i * 50 + Scroll, Core.windowSize.Width - 360, 1), Color.White)
+            Canvas.DrawRectangle(New Rectangle(130, 200 + i * 64 + Scroll, Core.windowSize.Width - 360, 2), Color.White)
         Next
 
         Canvas.DrawRectangle(New Rectangle(0, 0, Core.windowSize.Width, 150), New Color(84, 198, 216))
         Canvas.DrawRectangle(New Rectangle(0, Core.windowSize.Height - 100, Core.windowSize.Width, 100), New Color(84, 198, 216))
 
-        Canvas.DrawGradient(New Rectangle(50, 150, 50, 2), New Color(255, 255, 255, 0), Color.White, True, -1)
-        Canvas.DrawRectangle(New Rectangle(100, 150, Core.windowSize.Width - 300, 2), Color.White)
-        Canvas.DrawGradient(New Rectangle(Core.windowSize.Width - 200, 150, 50, 2), Color.White, New Color(255, 255, 255, 0), True, -1)
+        Canvas.DrawGradient(New Rectangle(50, 150, 50, 4), New Color(255, 255, 255, 0), Color.White, True, -1)
+        Canvas.DrawRectangle(New Rectangle(100, 150, Core.windowSize.Width - 300, 4), Color.White)
+        Canvas.DrawGradient(New Rectangle(Core.windowSize.Width - 200, 150, 50, 4), Color.White, New Color(255, 255, 255, 0), True, -1)
 
         Canvas.DrawGradient(New Rectangle(Core.windowSize.Width - 450, 100, 2, 50), New Color(255, 255, 255, 0), Color.White, False, -1)
         Canvas.DrawRectangle(New Rectangle(Core.windowSize.Width - 450, 150, 2, Core.windowSize.Height - 250), Color.White)
         Canvas.DrawGradient(New Rectangle(Core.windowSize.Width - 450, Core.windowSize.Height - 100, 2, 50), Color.White, New Color(255, 255, 255, 0), False, -1)
 
-        Canvas.DrawGradient(New Rectangle(50, Core.windowSize.Height - 100, 50, 2), New Color(255, 255, 255, 0), Color.White, True, -1)
-        Canvas.DrawRectangle(New Rectangle(100, Core.windowSize.Height - 100, Core.windowSize.Width - 300, 2), Color.White)
-        Canvas.DrawGradient(New Rectangle(Core.windowSize.Width - 200, Core.windowSize.Height - 100, 50, 2), Color.White, New Color(255, 255, 255, 0), True, -1)
+        Canvas.DrawGradient(New Rectangle(50, Core.windowSize.Height - 100, 50, 4), New Color(255, 255, 255, 0), Color.White, True, -1)
+        Canvas.DrawRectangle(New Rectangle(100, Core.windowSize.Height - 100, Core.windowSize.Width - 300, 4), Color.White)
+        Canvas.DrawGradient(New Rectangle(Core.windowSize.Width - 200, Core.windowSize.Height - 100, 50, 4), Color.White, New Color(255, 255, 255, 0), True, -1)
 
-        For y = -64 To Core.windowSize.Height Step 64
-            Core.SpriteBatch.Draw(Me.texture, New Rectangle(Core.windowSize.Width - 128, y + TileOffset, 128, 64), New Rectangle(48, 0, 16, 16), Color.White)
-        Next
 
-        Canvas.DrawGradient(New Rectangle(0, 0, CInt(Core.windowSize.Width), 200), New Color(42, 167, 198), New Color(42, 167, 198, 0), False, -1)
-        Canvas.DrawGradient(New Rectangle(0, CInt(Core.windowSize.Height - 200), CInt(Core.windowSize.Width), 200), New Color(42, 167, 198, 0), New Color(42, 167, 198), False, -1)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Name", New Vector2(150, 144), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Value", New Vector2(Core.windowSize.Width - 420, 144), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
 
-        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Name", New Vector2(150, 110), Color.White, 0.0F, Vector2.Zero, 1.2F, SpriteEffects.None, 0.0F)
-        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Value", New Vector2(Core.windowSize.Width - 420, 110), Color.White, 0.0F, Vector2.Zero, 1.2F, SpriteEffects.None, 0.0F)
-
-        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Statistics", New Vector2(100, 24), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Statistics", New Vector2(100, 48), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
     End Sub
 
     Public Overrides Sub Update()
