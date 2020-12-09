@@ -51,16 +51,17 @@ Public Class OverworldPokemon
 
 		Dim width As Integer
 
-		If Me.Texture.Width = Me.Texture.Height / 2 Then
-			width = CInt(Me.Texture.Width / 2)
-		Else
-			width = CInt(Me.Texture.Width / 3)
+        If Me.Texture.Width = Me.Texture.Height / 2 Then
+            width = CInt(Me.Texture.Width / 2)
+        ElseIf Me.Texture.Width = Me.Texture.Height Then
+            width = CInt(Me.Texture.Width / 4)
+        Else
+            width = CInt(Me.Texture.Width / 3)
 		End If
 
-		Dim x As Integer = 0
-		x = GetAnimationX() * width
+        Dim x As Integer = GetAnimationX() * width
 
-		Dim height As Integer = CInt(Me.Texture.Height / 4)
+        Dim height As Integer = CInt(Me.Texture.Height / 4)
 
         Dim y As Integer = height * spriteIndex
 
@@ -93,14 +94,24 @@ Public Class OverworldPokemon
             Me.ChangeTexture()
 			If Moving = True Then
 				Me.AnimationDelay -= 0.1F
-				If AnimationDelay <= 0.0F Then
-					AnimationDelay = AnimationDelayLength
-					AnimationX += 1
-					If AnimationX > 4 Then
-						AnimationX = 1
-					End If
-				End If
-			Else
+                If AnimationDelay <= 0.0F Then
+                    AnimationX += 1
+                    AnimationDelay = AnimationDelayLength
+                    If Me.Texture.Width = Me.Texture.Height / 2 Then
+                        If AnimationX > 2 Then
+                            AnimationX = 1
+                        End If
+                    ElseIf Me.Texture.Width = Me.Texture.Height Then
+                        If AnimationX > 4 Then
+                            AnimationX = 1
+                        End If
+                    Else
+                        If AnimationX > 3 Then
+                            AnimationX = 1
+                        End If
+                    End If
+                End If
+            Else
 				AnimationX = 1
 			End If
 
@@ -290,29 +301,34 @@ Public Class OverworldPokemon
     End Sub
 
 	Private Function GetAnimationX() As Integer
-		If Me.Texture.Width = Me.Texture.Height / 2 Then
-			Select Case AnimationX
-				Case 1
-					Return 0
-				Case 2
-					Return 1
-				Case 3
-					Return 0
-				Case 4
-					Return 1
-			End Select
-		Else
-			Select Case AnimationX
-				Case 1
-					Return 0
-				Case 2
-					Return 1
-				Case 3
-					Return 0
-				Case 4
-					Return 2
-			End Select
-		End If
+        If Me.Texture.Width = Me.Texture.Height / 2 Then
+            Select Case AnimationX
+                Case 1
+                    Return 0
+                Case 2
+                    Return 1
+            End Select
+        ElseIf Me.Texture.Width = Me.Texture.Height Then
+            Select Case AnimationX
+                Case 1
+                    Return 0
+                Case 2
+                    Return 1
+                Case 3
+                    Return 2
+                Case 4
+                    Return 3
+            End Select
+        Else
+            Select Case AnimationX
+                Case 1
+                    Return 0
+                Case 2
+                    Return 1
+                Case 3
+                    Return 2
+            End Select
+        End If
 		Return 0
 	End Function
 

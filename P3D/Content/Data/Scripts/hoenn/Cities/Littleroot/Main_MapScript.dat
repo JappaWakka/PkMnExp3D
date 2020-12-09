@@ -1,6 +1,6 @@
 version=2
 
-:if:<register.registered(storyline_progress)>=false
+:if:<register.registered(storyline_progress)>=0
 	#after exiting the moving truck
 	@sound.play(jump_from_truck)
 	@player.stopmovement
@@ -26,8 +26,21 @@ version=2
 :endif
 :if:<register.value(storyline_progress)>=5
 	#first time going outside
+	:if:<npc.exists(3)>=false
+		@npc.spawn(11,0,2,1,Hoenn\Cities\Littleroot\Main_LittleBoy,LittlerootKid,3,0,Little Boy,0,Still)
+	:else
+		@npc.warp(3,11,0,2)
+	:endif
 	@register.change(storyline_progress,6)
 :endif
+:if:<register.value(storyline_progress)>=6
+	:if:<npc.exists(3)>=false
+		@npc.spawn(11,0,2,1,Hoenn\Cities\Littleroot\Main_LittleBoy,LittlerootKid,3,0,Little Boy,0,Still)
+	:else
+		@npc.warp(3,11,0,2)
+	:endif
+:endif
+
 :if:<register.value(storyline_progress)>>5
 	#remove the moving truck entity
 	@entity.remove(0)

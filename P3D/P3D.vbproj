@@ -27249,6 +27249,9 @@
     <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse2f\YourHouse2f_MapScript.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\Main_LittleBoy.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\MovingTruck_Box.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
