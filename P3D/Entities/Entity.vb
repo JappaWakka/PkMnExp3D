@@ -469,7 +469,7 @@
             End If
         End If
 
-        If Not Screen.Level.World Is Nothing Then
+        If Screen.Level.World IsNot Nothing Then
             Select Case Screen.Level.World.EnvironmentType
                 Case P3D.World.EnvironmentTypes.Outside
                     Me.Shader = SkyDome.GetDaytimeColor(True).ToVector3()

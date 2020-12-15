@@ -27,7 +27,7 @@ version=2
 :if:<register.value(storyline_progress)>=5
 	#first time going outside
 	:if:<npc.exists(3)>=false
-		@npc.spawn(11,0,2,1,Hoenn\Cities\Littleroot\Main_LittleBoy,LittlerootKid,3,0,Little Boy,0,Still)
+		@npc.spawn(11,0,2,1,Hoenn\Cities\Littleroot\Main_LittleBoy,LittlerootKid,0,2,Little Boy,3,Still)
 	:else
 		@npc.warp(3,11,0,2)
 	:endif
@@ -35,7 +35,7 @@ version=2
 :endif
 :if:<register.value(storyline_progress)>=6
 	:if:<npc.exists(3)>=false
-		@npc.spawn(11,0,2,1,Hoenn\Cities\Littleroot\Main_LittleBoy,LittlerootKid,3,0,Little Boy,0,Still)
+		@npc.spawn(11,0,2,1,Hoenn\Cities\Littleroot\Main_LittleBoy,LittlerootKid,0,2,Little Boy,3,Still)
 	:else
 		@npc.warp(3,11,0,2)
 	:endif
@@ -44,7 +44,6 @@ version=2
 :if:<register.value(storyline_progress)>>5
 	#remove the moving truck entity
 	@entity.remove(0)
-	:end
 :endif
 :end
 	

@@ -27249,15 +27249,21 @@
     <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse2f\YourHouse2f_MapScript.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\Main_LittleBoy.dat">
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\Main_LittleBoy.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\MovingTruck_Box.dat">
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\Main_RouteLeft.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\MovingTruck_MapScript.dat">
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\Main_RouteRight.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\MovingTruck_Box.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\MovingTruck_MapScript.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse1f\InFrontOfDoor.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -28973,7 +28979,6 @@
     <Folder Include="Content\Data\Maps\Hoenn\Gyms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
-  <Import Condition=" '$(Configuration)' != 'DebugNoContent' Or '$(Configuration)' != 'ReleaseNoContent' " Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <PropertyGroup>
     <PostBuildEvent>$(SolutionDir)lib\tools\PostBuild.exe</PostBuildEvent>
   </PropertyGroup>

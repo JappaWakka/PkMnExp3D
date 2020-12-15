@@ -48,7 +48,7 @@
 
         Canvas.DrawRectangle(New Rectangle(0, 0, Core.ScreenSize.Width, Core.ScreenSize.Height), New Color(0, 0, 0, 150))
         Dim pX As Integer = CInt(Core.ScreenSize.Width / 2) - CInt(FontManager.MainFontWhite.MeasureString(Localization.GetString("pause_menu_title")).X / 2)
-        Core.SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, Localization.GetString("pause_menu_title"), New Vector2(pX - 10, CInt(Core.ScreenSize.Height / 6.8)), Color.White)
+        Core.SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, Localization.GetString("pause_menu_title"), New Vector2(pX - 10, CInt(Core.ScreenSize.Height / 8)), Color.White)
 
         If Me.menuIndex = 0 Then
             DrawMenu()
@@ -96,11 +96,11 @@
             End Select
 
             If i = mainIndex Then
-                Canvas.DrawImageBorder(TextureManager.GetTexture(mainTexture, New Rectangle(0, 48, 48, 48)), 2, New Rectangle(CInt(Core.ScreenSize.Width / 2) - 180, 220 + i * 128, 320, 64), True)
-                Core.SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, Text, New Vector2(CInt(Core.ScreenSize.Width / 2) - (FontManager.MainFontWhite.MeasureString(Text).X / 2) - 10, 256 + i * 128), Color.White)
+                Canvas.DrawImageBorder(TextureManager.GetTexture(mainTexture, New Rectangle(0, 48, 48, 48)), 2, New Rectangle(CInt(Core.ScreenSize.Width / 2) - 180, CInt(Core.ScreenSize.Height / 8) + 48 + i * 128, 320, 64), True)
+                Core.SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, Text, New Vector2(CInt(Core.ScreenSize.Width / 2) - (FontManager.MainFontWhite.MeasureString(Text).X / 2) - 10, CInt(Core.ScreenSize.Height / 8) + 48 + 32 + i * 128), Color.White)
             Else
-                Canvas.DrawImageBorder(TextureManager.GetTexture(mainTexture, New Rectangle(0, 0, 48, 48)), 2, New Rectangle(CInt(Core.ScreenSize.Width / 2) - 180, 220 + i * 128, 320, 64), True)
-                Core.SpriteBatch.DrawInterfaceString(FontManager.MainFontBlack, Text, New Vector2(CInt(Core.ScreenSize.Width / 2) - (FontManager.MainFontBlack.MeasureString(Text).X / 2) - 10, 256 + i * 128), Color.White)
+                Canvas.DrawImageBorder(TextureManager.GetTexture(mainTexture, New Rectangle(0, 0, 48, 48)), 2, New Rectangle(CInt(Core.ScreenSize.Width / 2) - 180, CInt(Core.ScreenSize.Height / 8) + 48 + i * 128, 320, 64), True)
+                Core.SpriteBatch.DrawInterfaceString(FontManager.MainFontBlack, Text, New Vector2(CInt(Core.ScreenSize.Width / 2) - (FontManager.MainFontBlack.MeasureString(Text).X / 2) - 10, CInt(Core.ScreenSize.Height / 8) + 48 + 32 + i * 128), Color.White)
             End If
 
         Next
@@ -172,7 +172,7 @@
 
     Private Sub DrawQuit()
         Dim pX As Integer = CInt(Core.ScreenSize.Width / 2) - CInt(FontManager.MainFontWhite.MeasureString(Localization.GetString("pause_menu_confirmation")).X / 2)
-                Core.SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, Localization.GetString("pause_menu_confirmation"), New Vector2(pX - 10, CInt(Core.ScreenSize.Height / 6.8) + 110), Color.White)
+        Core.SpriteBatch.DrawInterfaceString(FontManager.MainFontWhite, Localization.GetString("pause_menu_confirmation"), New Vector2(pX - 10, CInt(Core.ScreenSize.Height / 8) + 48 + 32), Color.White)
 
         For i = 0 To 1
             Dim Text As String = ""

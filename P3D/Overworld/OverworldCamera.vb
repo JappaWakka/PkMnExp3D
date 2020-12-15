@@ -498,7 +498,7 @@ Public Class OverworldCamera
 
             If clockwise = True Then
                 ClampYaw()
-                Yaw -= RotationSpeed * 35.0F
+                Yaw -= RotationSpeed * 40.0F
                 If Yaw <= yawAim Then
                     Turning = False
                     _aimDirection = -1
@@ -507,7 +507,7 @@ Public Class OverworldCamera
                 End If
             Else
                 ClampYaw()
-                Yaw += RotationSpeed * 35.0F
+                Yaw += RotationSpeed * 40.0F
                 If Yaw >= yawAim Then
                     Turning = False
                     _aimDirection = -1
