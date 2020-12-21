@@ -1,0 +1,14 @@
+version=2
+
+:if:<register.value(storyline_progress)>>5 <and> <register.value(storyline_progress)><10
+	:if:<register.registered(BirchsLab_TalkedToAssistant)>=false
+		@text.show(<token.Littleroot_BirchsLab_Assistant_BirchFieldwork_FirstTime>)
+		@register.register(BirchsLab_TalkedToAssistant)
+	:else
+		@text.show(<token.Littleroot_BirchsLab_Assistant_BirchFieldwork_SecondTime>)
+	:endif
+:else
+	@text.show(<token.Littleroot_BirchsLab_Assistant_BirchIsStudying>)
+:endif
+:end
+	

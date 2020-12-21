@@ -1794,8 +1794,8 @@ Littleroot_Main_LittleBoy_GoodLuck,Are you going to catch Pokémon?~Good luck!
 
 Littleroot_Main_YoungGuy,Prof. Birch spends days in his Lab~studying, then he'll suddenly go out in*the wild to do more research...*When does Prof. Birch spend time~at home?
 
-Littleroot_BirchsLab_Assistant_BirchFieldwork_FirstTime,Hunh? Prof. Birch?*The Prof's away on fieldwork.~Ergo, he isn't here.*Oh, let me explain what fieldwork is.*It is to study things in the natural~environment, like fields and mountains,*instead of a laboratory.*The Prof isn't one for doing desk work.~He's the type of person who would*rather go outside and experience*things than read about them here.
-Littleroot_BirchsLab_Assistant_BirchFieldwork_SecondTime,The Prof isn't one for doing desk work.~He's the type of person who would*rather go outside and experience*things than read about them here.
+Littleroot_BirchsLab_Assistant_BirchFieldwork_FirstTime,Hunh? Prof. Birch?*The Prof's away on fieldwork.~Ergo, he isn't here.*Oh, let me explain what fieldwork is.*It is to study things in the natural~environment, like fields and mountains,*instead of a laboratory.*The Prof isn't one for doing desk work.~He's the type of person who would*rather go outside and experience~things than read about them here.
+Littleroot_BirchsLab_Assistant_BirchFieldwork_SecondTime,The Prof isn't one for doing desk work.~He's the type of person who would*rather go outside and experience~things than read about them here.
 Littleroot_BirchsLab_Assistant_BirchIsStudying,Prof. Birch is studying the habitats~and distribution of Pokémon.*The Prof enjoys <rival.name>'s help, too.~There's a lot of love there.
 
 -----

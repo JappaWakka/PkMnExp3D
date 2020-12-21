@@ -1,6 +1,6 @@
 version=2
 
-:if:<register.registered(storyline_progress)>=0
+:if:<register.value(storyline_progress)>=0
 	#after exiting the moving truck
 	@sound.play(jump_from_truck)
 	@player.stopmovement

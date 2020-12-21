@@ -68,8 +68,7 @@
     <Content Include="Content\Fonts\BMP\MainFontBlack.png" />
     <Content Include="Content\Fonts\BMP\MainFontColor.png" />
     <Content Include="Content\Fonts\BMP\MainFontWhite.png" />
-    <Content Include="Content\Models\LabMachine\Machine.png" />
-    <Content Include="Content\Models\LabMachine\Map.png" />
+    <Content Include="Content\Models\LabMachine\labmachine.png" />
     <Content Include="Content\Models\MovingTruck\MovingTruck.FBX" />
     <None Include="Content\Models\LabMachine\LabMachine.fbx" />
     <None Include="Content\Models\Snorlax\Normal.mtl" />
