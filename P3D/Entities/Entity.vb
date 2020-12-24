@@ -513,9 +513,13 @@
                     Core.GraphicsDevice.RasterizerState = newRasterizerState
                 End If
 
+                If Model.ID = 12 Then
+                    Core.GraphicsDevice.RasterizerState = RasterizerState.CullNone
+                End If
+
                 Model.Draw(Me, Textures)
 
-                If setRasterizerState = True Then
+                If setRasterizerState = True Or Model.ID = 12 Then
                     Core.GraphicsDevice.RasterizerState = oldRasterizerState
                 End If
 
