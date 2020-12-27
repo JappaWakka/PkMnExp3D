@@ -34,7 +34,7 @@
 		lastTexture = Me.SkinName
 		HasPokemonTexture = False
 
-		Dim texturePath As String = "Textures\OverworldSprites\PlayerSkins\"
+        Dim texturePath As String = "Textures\OverworldSprites\PlayerSkins\"
         Dim isPokemon As Boolean = False
         If TextureID.StartsWith("[POKEMON|N]") Or TextureID.StartsWith("[Pokémon|N]") Then
             TextureID = TextureID.Remove(0, 11)
@@ -46,6 +46,10 @@
             isPokemon = True
             texturePath = "Pokemon\Overworld\Shiny\"
             HasPokemonTexture = True
+        End If
+
+        If Core.Player.IsGameJoltSave Then
+            texturePath = "Textures\OverworldSprites\"
         End If
 
         Dim PokemonAddition As String = ""
@@ -131,10 +135,9 @@
             Dim cameraRotation As Integer = 0
             Dim spriteIndex As Integer = 0
 
-            spriteIndex = 0
 
             If Screen.Camera.Name = "Overworld" Then
-                spriteIndex = Screen.Camera.GetPlayerFacingDirection() - Screen.Camera.GetFacingDirection()
+                spriteIndex = Screen.Camera.PlayerFacing - Screen.Camera.GetFacingDirection()
                 While spriteIndex > 3
                     spriteIndex -= 4
                 End While

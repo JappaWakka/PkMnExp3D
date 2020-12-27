@@ -1,8 +1,12 @@
-Version=2
-
+version=2
 :if:<register.registered(storyline_progress)>=false
+	@camera.update
+	@level.update
+	@camera.setyaw(-4.72)
+	@camera.setpitch(0)
 	@screen.setfade(255)
 	@camera.update
+	@level.update
 	@screen.canbepaused(0)
 	@music.stop
 	@sound.play(MovingTruck_Drive,0)
@@ -15,5 +19,7 @@ Version=2
 	@environment.setisdark(0)
 	@screen.canbepaused(1)
 	@register.register(storyline_progress,int,0)
+:else
+	@environment.setisdark(0)
 :endif
 :end

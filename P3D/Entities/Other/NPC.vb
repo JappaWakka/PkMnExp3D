@@ -436,15 +436,21 @@
     End Sub
 
     Public Overrides Sub ClickFunction()
-        Dim newHeading As Integer = Screen.Camera.GetPlayerFacingDirection() - 2
+        Dim newHeading As Integer
+        If OverworldCamera._thirdPerson = False Then
+            newHeading = Screen.Camera.GetPlayerFacingDirection() - 2
+        Else
+            newHeading = Screen.Camera.PlayerFacing - 2
+        End If
+
         If newHeading < 0 Then
             newHeading += 4
         End If
-		If Me.Moved = 0.0F Then
-			Me.faceRotation = newHeading
-			ActivateScript()
-		End If
-	End Sub
+        If Me.Moved = 0.0F Then
+            Me.faceRotation = newHeading
+            ActivateScript()
+        End If
+    End Sub
 
     Public Overrides Sub Update()
         NPCMovement()

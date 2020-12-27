@@ -22,17 +22,29 @@
     Public Overrides Sub ClickFunction()
         Dim canRead As Boolean = False
 
-        Select Case Screen.Camera.GetPlayerFacingDirection()
-            Case 1, 3
-                If Me.Rotation.Y = MathHelper.Pi * 1.5F Or Me.Rotation.Y = MathHelper.Pi * 0.5F Then
-                    canRead = True
-                End If
-            Case 0, 2
-                If Me.Rotation.Y = MathHelper.Pi Or Me.Rotation.Y = MathHelper.TwoPi Or Me.Rotation.Y = 0 Then
-                    canRead = True
-                End If
-        End Select
-
+        If Screen.Camera.PlayerFacing() <> Screen.Camera.GetPlayerFacingDirection() And OverworldCamera._thirdPerson = False Then
+            Select Case Screen.Camera.GetPlayerFacingDirection()
+                Case 1, 3
+                    If Me.Rotation.Y = MathHelper.Pi * 1.5F Or Me.Rotation.Y = MathHelper.Pi * 0.5F Then
+                        canRead = True
+                    End If
+                Case 0, 2
+                    If Me.Rotation.Y = MathHelper.Pi Or Me.Rotation.Y = MathHelper.TwoPi Or Me.Rotation.Y = 0 Then
+                        canRead = True
+                    End If
+            End Select
+        Else
+            Select Case Screen.Camera.PlayerFacing()
+                Case 1, 3
+                    If Me.Rotation.Y = MathHelper.Pi * 1.5F Or Me.Rotation.Y = MathHelper.Pi * 0.5F Then
+                        canRead = True
+                    End If
+                Case 0, 2
+                    If Me.Rotation.Y = MathHelper.Pi Or Me.Rotation.Y = MathHelper.TwoPi Or Me.Rotation.Y = 0 Then
+                        canRead = True
+                    End If
+            End Select
+        End If
         If canRead = True Then
             Dim oScreen As OverworldScreen = CType(Core.CurrentScreen, OverworldScreen)
             If oScreen.ActionScript.IsReady = True Then

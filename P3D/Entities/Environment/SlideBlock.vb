@@ -13,7 +13,7 @@
 
         Screen.Camera.PlannedMovement = Vector3.Zero
 
-        If Screen.Camera.GetPlayerFacingDirection() = facing And Screen.Camera.IsMoving() = False Then
+        If Screen.Camera.PlayerFacing = facing And Screen.Camera.IsMoving() = False Then
             CType(Screen.Camera, OverworldCamera).DidWalkAgainst = False
 
             Dim Steps As Integer = 0
@@ -98,7 +98,7 @@
 
         Screen.Camera.PlannedMovement = Vector3.Zero
 
-        If Screen.Camera.GetPlayerFacingDirection() = facing Then
+        If Screen.Camera.PlayerFacing = facing Then
             CType(Screen.Camera, OverworldCamera).DidWalkAgainst = False
 
             Dim Steps As Integer = 0

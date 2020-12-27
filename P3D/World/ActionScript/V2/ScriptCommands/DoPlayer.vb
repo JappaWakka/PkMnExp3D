@@ -46,18 +46,24 @@
                     IsReady = True
                 Case "move"
                     If Started = False Then
+                        If OverworldCamera._thirdPerson = False Then
+                            Screen.Camera.PlayerFacing = Screen.Camera.GetPlayerFacingDirection()
+                        End If
                         Screen.Camera.Move(sng(argument))
-                        Started = True
-                        Screen.Level.OverworldPokemon.Visible = False
-                    Else
-                        Screen.Level.UpdateEntities()
+                            Started = True
+                            Screen.Level.OverworldPokemon.Visible = False
+                        Else
+                            Screen.Level.UpdateEntities()
                         Screen.Camera.Update()
                         If Screen.Camera.IsMoving() = False Then
                             IsReady = True
                             Screen.Level.OverworldPokemon.Visible = False
                         End If
                     End If
-                Case "moveasnyc", "moveasync"
+                Case "moveasync"
+                    If OverworldCamera._thirdPerson = False Then
+                        Screen.Camera.PlayerFacing = Screen.Camera.GetPlayerFacingDirection()
+                    End If
                     Screen.Camera.Move(sng(argument))
                     IsReady = True
                     Screen.Level.OverworldPokemon.Visible = False
@@ -286,7 +292,14 @@
                     Core.Player.Name = argument
                     IsReady = True
                 Case "setgender"
-                    Core.Player.Gender = argument
+                    Select Case argument
+                        Case "0", "Male", "male"
+                            Core.Player.Gender = "Male"
+                        Case "1", "Female", "female"
+                            Core.Player.Gender = "Female"
+                        Case Else
+                            Core.Player.Gender = "Other"
+                    End Select
                     IsReady = True
                 Case "setrivalname"
                     Core.Player.RivalName = argument

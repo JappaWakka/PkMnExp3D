@@ -6,9 +6,8 @@ Public Class OverworldCamera
 
     Public oldX, oldY As Single
 
-    Private _thirdPerson As Boolean = False
+    Public Shared _thirdPerson As Boolean = False
     Public _canToggleThirdPerson As Boolean = True
-    Private _playerFacing As Integer = 0 'relative to the world, 0 means the player faces north, the camera might face in a different direction.
 
     Private _freeCameraMode As Boolean = False
     Private _cPosition As Vector3 = Vector3.Zero 'Actual camera position.
@@ -29,6 +28,8 @@ Public Class OverworldCamera
     Public LastStepPosition As Vector3 = New Vector3(0, -2, 0)
     Public YawLocked As Boolean = False
     Public ThirdPersonOffset As Vector3 = New Vector3(0F, 0.3F, 1.5F)
+
+    Private CameraDiffersFromPlayerFacing As Boolean = False
 
     'Debug variables
     Public oldDate As Date = Date.Now
@@ -337,7 +338,7 @@ Public Class OverworldCamera
     Public Sub SetThirdPerson(ByVal isThirdPerson As Boolean, ByVal showMessage As Boolean)
         If _thirdPerson <> isThirdPerson Then
             If isThirdPerson = True And _thirdPerson = False Then
-                _playerFacing = GetFacingDirection()
+                Me.PlayerFacing = GetFacingDirection()
             End If
 
             _thirdPerson = isThirdPerson
@@ -348,7 +349,7 @@ Public Class OverworldCamera
                     Core.GameMessage.ShowMessage(Localization.GetString("game_message_third_person_on"), 12, FontManager.MainFontWhite, Color.White)
                 End If
             Else
-                Yaw = GetAimYawFromDirection(_playerFacing)
+                Yaw = GetAimYawFromDirection(Me.PlayerFacing)
                 If showMessage = True Then
                     Core.GameMessage.ShowMessage(Localization.GetString("game_message_third_person_off"), 12, FontManager.MainFontWhite, Color.White)
                 End If
@@ -539,12 +540,12 @@ Public Class OverworldCamera
         End If
 
         If Pitch > aim Then
-            Pitch -= RotationSpeed * 35.0F
+            Pitch -= RotationSpeed * 40.0F
             If Pitch < aim Then
                 Pitch = aim
             End If
         ElseIf Pitch < aim Then
-            Pitch += RotationSpeed * 35.0F
+            Pitch += RotationSpeed * 40.0F
             If Pitch > aim Then
                 Pitch = aim
             End If
@@ -555,10 +556,10 @@ Public Class OverworldCamera
         If Core.GameOptions.ViewBobbing = False Then
             Return 0.0F
         End If
-		If Screen.Level.Riding = True Then
-			Return CSng(Math.Sin(_bobbingTemp) * 0.012)
-		Else
-			If Core.Player.IsRunning() = True Then
+        If Screen.Level.Riding = True Then
+            Return CSng(Math.Sin(_bobbingTemp) * 0.012)
+        Else
+            If Core.Player.IsRunning() = True Then
                 Return CSng(Math.Sin(_bobbingTemp) * 0.008)
             Else
                 Return CSng(Math.Sin(_bobbingTemp) * 0.004)
@@ -642,27 +643,19 @@ Public Class OverworldCamera
     Private Sub FirstPersonMovement()
         Dim pressedDirection As Integer = -1
         If YawLocked = False And Turning = False Then
-            If (KeyBoardHandler.KeyDown(KeyBindings.LeftMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.RightThumbstickLeft) = True) And Turning = False Then
+            If (KeyBoardHandler.KeyDown(KeyBindings.LeftKey) = True Or ControllerHandler.ButtonDown(Buttons.RightThumbstickLeft) = True) And Turning = False Then
                 If _freeCameraMode = True Then
-                    Yaw += RotationSpeed * 35.0F
+                    Yaw += RotationSpeed * 40.0F
 
                     ClampYaw()
                 Else
                     pressedDirection = 1
                 End If
             End If
-            If (KeyBoardHandler.KeyDown(KeyBindings.BackwardMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickDown) = True) And Turning = False Then
+
+            If (KeyBoardHandler.KeyDown(KeyBindings.RightKey) = True Or ControllerHandler.ButtonDown(Buttons.RightThumbstickRight) = True) And Turning = False Then
                 If _freeCameraMode = True Then
-                    If _moved <= 0F Then
-                        Turn(2)
-                    End If
-                Else
-                    pressedDirection = 2
-                End If
-            End If
-            If (KeyBoardHandler.KeyDown(KeyBindings.RightMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.RightThumbstickRight) = True) And Turning = False Then
-                If _freeCameraMode = True Then
-                    Yaw -= RotationSpeed * 35.0F
+                    Yaw -= RotationSpeed * 40.0F
 
                     ClampYaw()
                 Else
@@ -680,9 +673,38 @@ Public Class OverworldCamera
 
             ClampYaw()
 
-            If (KeyBoardHandler.KeyDown(KeyBindings.ForwardMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickUp) = True) And Turning = False Then
+            If (KeyBoardHandler.KeyDown(KeyBindings.LeftMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickLeft) = True) And Turning = False Then
+                Dim newPlayerFacing As Integer = GetFacingDirection() + 1
+                While newPlayerFacing > 3
+                    newPlayerFacing -= 4
+                End While
+                Me.PlayerFacing = newPlayerFacing
                 MoveForward()
             End If
+
+            If (KeyBoardHandler.KeyDown(KeyBindings.RightMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickRight) = True) And Turning = False Then
+                Dim newPlayerFacing As Integer = GetFacingDirection() + 3
+                While newPlayerFacing > 3
+                    newPlayerFacing -= 4
+                End While
+                Me.PlayerFacing = newPlayerFacing
+                MoveForward()
+            End If
+
+            If (KeyBoardHandler.KeyDown(KeyBindings.ForwardMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickUp) = True) And Turning = False Then
+                Me.PlayerFacing = GetFacingDirection()
+                MoveForward()
+            End If
+
+            If (KeyBoardHandler.KeyDown(KeyBindings.BackwardMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickDown) = True) And Turning = False Then
+                Dim newPlayerFacing As Integer = GetFacingDirection() + 2
+                While newPlayerFacing > 3
+                    newPlayerFacing -= 4
+                End While
+                Me.PlayerFacing = newPlayerFacing
+                MoveForward()
+            End If
+
         End If
     End Sub
 
@@ -710,11 +732,11 @@ Public Class OverworldCamera
             End While
 
             If doMove = True Then
-                If newPlayerFacing <> _playerFacing Then
-                    If IsThirdPersonMoveButtonDown(_playerFacing) = False And Core.Player.IsRunning() = False And _notPressedThirdPersonDirectionButton >= 3 Then
+                If newPlayerFacing <> Me.PlayerFacing Then
+                    If IsThirdPersonMoveButtonDown(Me.PlayerFacing) = False And Core.Player.IsRunning() = False And _notPressedThirdPersonDirectionButton >= 3 Then
                         _waitForThirdPersonTurning = 5
                     End If
-                    _playerFacing = newPlayerFacing
+                    Me.PlayerFacing = newPlayerFacing
                     Screen.Level.OwnPlayer.Opacity = 1.0F
                 Else
                     If _waitForThirdPersonTurning > 0 Then
@@ -761,21 +783,21 @@ Public Class OverworldCamera
                 Dim walkSteps As Integer = GetIceSteps(GetForwardMovedPosition())
                 Screen.Level.OwnPlayer.DoAnimation = (walkSteps <= 1)
 
-				Move(walkSteps)
-			Else
-				'Walked against something, set player transparent
-				If Screen.Level.Surfing = False Then
-					If _didWalkAgainst = True Then
-						Screen.Level.OwnPlayer.Opacity = 0.5F
-					End If
-					If _bumpSoundDelay = 0 Then
-						If _didWalkAgainst = True Then
-							SoundManager.PlaySound("bump")
-						End If
-						_bumpSoundDelay = 35
-					End If
-				End If
-			End If
+                Move(walkSteps)
+            Else
+                'Walked against something, set player transparent
+                If Screen.Level.Surfing = False Then
+                    If _didWalkAgainst = True Then
+                        Screen.Level.OwnPlayer.Opacity = 0.5F
+                    End If
+                    If _bumpSoundDelay = 0 Then
+                        If _didWalkAgainst = True Then
+                            SoundManager.PlaySound("bump")
+                        End If
+                        _bumpSoundDelay = 35
+                    End If
+                End If
+            End If
         End If
     End Sub
 
@@ -790,38 +812,38 @@ Public Class OverworldCamera
             End If
         Next
 
-		If cannotWalk = False Then
-			For Each Entity As Entity In Screen.Level.Entities
-				If Entity.boundingBox.Contains(newPosition) = ContainmentType.Contains Then
-					If cannotWalk = False Then
-						If Entity.Collision = True Then
-							cannotWalk = Entity.WalkAgainstFunction()
-						Else
-							cannotWalk = Entity.WalkIntoFunction()
-						End If
-					End If
-				ElseIf Entity.boundingBox.Contains(New Vector3(newPosition.X, newPosition.Y - 1, newPosition.Z)) = ContainmentType.Contains Then
-					Entity.WalkOntoFunction()
-				End If
-			Next
-		Else
-			For Each Entity As Entity In Screen.Level.Entities
-				If Entity.boundingBox.Contains(New Vector3(newPosition.X, newPosition.Y - 1, newPosition.Z)) = ContainmentType.Contains Then
-					Entity.WalkOntoFunction()
-				End If
-				If Screen.Level.Surfing = True Then
-					If Entity.boundingBox.Contains(newPosition) = ContainmentType.Contains Then
-						If Entity.Collision = True Then
-							Entity.WalkAgainstFunction()
-						Else
-							Entity.WalkIntoFunction()
-						End If
-					End If
-				End If
-			Next
-		End If
+        If cannotWalk = False Then
+            For Each Entity As Entity In Screen.Level.Entities
+                If Entity.boundingBox.Contains(newPosition) = ContainmentType.Contains Then
+                    If cannotWalk = False Then
+                        If Entity.Collision = True Then
+                            cannotWalk = Entity.WalkAgainstFunction()
+                        Else
+                            cannotWalk = Entity.WalkIntoFunction()
+                        End If
+                    End If
+                ElseIf Entity.boundingBox.Contains(New Vector3(newPosition.X, newPosition.Y - 1, newPosition.Z)) = ContainmentType.Contains Then
+                    Entity.WalkOntoFunction()
+                End If
+            Next
+        Else
+            For Each Entity As Entity In Screen.Level.Entities
+                If Entity.boundingBox.Contains(New Vector3(newPosition.X, newPosition.Y - 1, newPosition.Z)) = ContainmentType.Contains Then
+                    Entity.WalkOntoFunction()
+                End If
+                If Screen.Level.Surfing = True Then
+                    If Entity.boundingBox.Contains(newPosition) = ContainmentType.Contains Then
+                        If Entity.Collision = True Then
+                            Entity.WalkAgainstFunction()
+                        Else
+                            Entity.WalkIntoFunction()
+                        End If
+                    End If
+                End If
+            Next
+        End If
 
-		If cannotWalk = False And setSurfFalse = True Then
+        If cannotWalk = False And setSurfFalse = True Then
             If Screen.Level.Surfing = True Then
                 Screen.Level.Surfing = False
                 Screen.Level.OwnPlayer.SetTexture(Core.Player.TempSurfSkin, True)
@@ -865,26 +887,46 @@ Public Class OverworldCamera
 
     Public Overrides Function GetMoveDirection() As Vector3
         Dim v As Vector3 = PlannedMovement
+        If CameraDiffersFromPlayerFacing = True And _thirdPerson = False Then
+            Select Case GetPlayerFacingDirection()
+                Case 0 'North
+                    If v.Z = 0F Then
+                        v.Z = -1.0F
+                    End If
+                Case 1 'West
+                    If v.X = 0F Then
+                        v.X = -1.0F
+                    End If
+                Case 2 'South
+                    If v.Z = 0F Then
+                        v.Z = 1.0F
+                    End If
+                Case 3 'East
+                    If v.X = 0F Then
+                        v.X = 1.0F
+                    End If
+            End Select
 
-		Select Case GetPlayerFacingDirection()
-            Case 0 'North
-                If v.Z = 0F Then
-                    v.Z = -1.0F
-                End If
-            Case 1 'West
-                If v.X = 0F Then
-                    v.X = -1.0F
-                End If
-            Case 2 'South
-                If v.Z = 0F Then
-                    v.Z = 1.0F
-                End If
-            Case 3 'East
-                If v.X = 0F Then
-                    v.X = 1.0F
-                End If
-        End Select
-
+        Else
+            Select Case Me.PlayerFacing
+                Case 0 'North
+                    If v.Z = 0F Then
+                        v.Z = -1.0F
+                    End If
+                Case 1 'West
+                    If v.X = 0F Then
+                        v.X = -1.0F
+                    End If
+                Case 2 'South
+                    If v.Z = 0F Then
+                        v.Z = 1.0F
+                    End If
+                Case 3 'East
+                    If v.X = 0F Then
+                        v.X = 1.0F
+                    End If
+            End Select
+        End If
         'DebugFeature:
         If GameController.IS_DEBUG_ACTIVE = True Or Core.Player.SandBoxMode = True Then
             If KeyBoardHandler.KeyDown(Keys.LeftAlt) Then
@@ -899,16 +941,12 @@ Public Class OverworldCamera
                 End If
             End If
         End If
-
+        CameraDiffersFromPlayerFacing = False
         Return v
     End Function
 
     Public Overrides Function GetPlayerFacingDirection() As Integer
-        If _thirdPerson = False And _cameraFocusType = CameraFocusTypes.Player Then
-            Return GetFacingDirection()
-        Else
-            Return _playerFacing
-        End If
+        Return GetFacingDirection()
     End Function
 
     Public Function GetAimYawFromDirection(ByVal direction As Integer) As Single
@@ -928,9 +966,9 @@ Public Class OverworldCamera
     Public Overrides Sub Turn(ByVal turns As Integer)
         If turns > 0 Then
             If _thirdPerson = True Then
-                _playerFacing += turns
-                While _playerFacing > 3
-                    _playerFacing -= 4
+                Me.PlayerFacing += turns
+                While Me.PlayerFacing > 3
+                    Me.PlayerFacing -= 4
                 End While
                 Screen.Level.OwnPlayer.Opacity = 1.0F
             Else
@@ -954,9 +992,9 @@ Public Class OverworldCamera
                 Yaw += GetAimYawFromDirection(turns)
                 ClampYaw()
 
-                _playerFacing += turns
-                While _playerFacing > 3
-                    _playerFacing -= 4
+                Me.PlayerFacing += turns
+                While Me.PlayerFacing > 3
+                    Me.PlayerFacing -= 4
                 End While
                 Screen.Level.OwnPlayer.Opacity = 1.0F
             Else
@@ -971,23 +1009,32 @@ Public Class OverworldCamera
 
     Private Sub CheckEntities()
         If Controls.Accept() = True Then
+            Dim checkPosition As Vector3
             If _moved = 0F And Turning = False Then
-                Dim checkPosition As Vector3 = GetForwardMovedPosition()
+                If _thirdPerson = False Then
+                    If GetPlayerFacingDirection() <> Me.PlayerFacing Then
+                        CameraDiffersFromPlayerFacing = True
+                    End If
+                End If
+
+                checkPosition = GetForwardMovedPosition()
+
                 checkPosition.Y -= 0.1F
 
                 For i = 0 To Screen.Level.Entities.Count - 1
                     If i <= Screen.Level.Entities.Count - 1 Then
                         Dim result As Single? = Screen.Level.Entities(i).boundingBox.Intersects(Ray)
-                        Dim RayIntersects As Boolean = True
+                        Dim RayIntersects As Boolean = False
                         If result.HasValue = True Then
                             Dim minValue As Single = 1.3F
-                            If _thirdPerson = True Then
-                                minValue += 1.8F
-                            End If
 
                             If result.Value < minValue Then
                                 RayIntersects = True
                             End If
+                        End If
+
+                        If _thirdPerson = True Then
+                            RayIntersects = True
                         End If
 
                         If RayIntersects = True And Screen.Level.Entities(i).boundingBox.Contains(checkPosition) = ContainmentType.Contains Then

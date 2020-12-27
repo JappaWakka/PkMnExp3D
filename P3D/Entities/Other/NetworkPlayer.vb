@@ -2,8 +2,8 @@
 
     Inherits Entity
 
-	Shared ReadOnly FallbackSkins() As String = {"Birdkeeper", "Painter", "Nurse", "OldLady", "OldMan", "Lady", "Lass", "Doctor", "Fisherman", "CuteGirl", "Captain", "Cameraman", "BlueShirtGuy", "Breeder_Female", "Breeder_Male", "BlackBelt", "BattleGirl", "AromaLady", "Youngster", "YoungCouple_Female", "YoungCouple_Male", "SuperNerd", "SchoolGirl", "SchoolKid", "RichBoy", "Smasher", "Jogger", "Rancher", "Cowgirl", "Picknicker", "Camper", "Gentleman", "PinkShirtGirl", "BugCatcher"}
-	Shared FallBack As New Dictionary(Of Integer, String)
+    Shared ReadOnly FallbackSkins() As String = {"Birdkeeper", "Artist", "Nurse1", "OldWoman", "OldMan", "Lady", "Lass", "Doctor", "Fisherman", "Captain", "Cameraman", "BlueShirtGuy", "Breeder_Female", "Breeder_Male", "BlackBelt", "BattleGirl", "AromaLady", "Youngster", "YoungCouple_Female", "YoungCouple_Male", "SuperNerd", "SchoolGirl", "SchoolKid", "RichBoy", "Smasher", "Jogger", "Rancher", "Cowgirl", "Picknicker", "Camper", "Gentleman", "PinkShirtGirl", "BugCatcher"}
+    Shared FallBack As New Dictionary(Of Integer, String)
 
     Public Name As String = ""
 

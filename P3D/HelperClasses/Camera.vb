@@ -3,7 +3,7 @@
     Public BoundingFrustum As BoundingFrustum
     Public View, Projection As Matrix
     Public Position As Vector3
-
+    Private _playerFacing As Integer = 0 'relative to the world, 0 means the player faces north, the camera might face in a different direction.
     Public Yaw, Pitch As Single
 
     Protected _plannedMovement As New Vector3(0F)
@@ -16,6 +16,15 @@
         Set(value As Vector3)
             Me._plannedMovement = value
             Me._setPlannedMovement = (value <> Vector3.Zero)
+        End Set
+    End Property
+
+    Public Property PlayerFacing As Integer
+        Get
+            Return _playerFacing
+        End Get
+        Set(value As Integer)
+            _playerFacing = value
         End Set
     End Property
 

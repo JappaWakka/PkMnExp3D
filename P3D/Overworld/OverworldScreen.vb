@@ -180,6 +180,16 @@ Public Class OverworldScreen
             GlobalGameModeScriptStarted = True
         End If
 
+        If LevelLoader.MapScript = "" And ActionScript.IsReady = True And FadeValue > 0 Then
+            Dim fadeSpeed As Integer = 5
+            If FadeValue > 0 Then
+                FadeValue -= fadeSpeed
+                If FadeValue <= 0 Then
+                    FadeValue = 0
+                End If
+            End If
+        End If
+
         'If the MapScript has a value loaded from the MapScript map tag and there is no script running, start that script:
         If LevelLoader.MapScript <> "" And ActionScript.IsReady = True Then
             ActionScript.reDelay = 0.0F

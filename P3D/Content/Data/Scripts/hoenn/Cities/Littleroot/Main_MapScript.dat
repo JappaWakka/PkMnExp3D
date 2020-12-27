@@ -19,23 +19,23 @@ version=2
 	@npc.moveasync(4,1)
 	@player.move(1)
 	@npc.remove(4)
+	@register.change(storyline_progress,1)
 	@player.warp(Hoenn\Cities\Littleroot\YourHouse1f.dat,8,0.1,7,0,1)
 	@level.update
-	@register.register(storyline_progress,int,1)
 	:end
 :endif
 :if:<register.value(storyline_progress)>=5
 	#first time going outside
 	:if:<npc.exists(3)>=false
-		@npc.spawn(11,0,2,1,Hoenn\Cities\Littleroot\Main_LittleBoy,LittlerootKid,0,2,Little Boy,3,Still)
+		@npc.spawn(11,0,2,1,Hoenn\Cities\Littleroot\Main_LittleBoy,LittleBoy2,0,2,Little Boy,3,Still)
 	:else
 		@npc.warp(3,11,0,2)
 	:endif
 	@register.change(storyline_progress,6)
 :endif
-:if:<register.value(storyline_progress)>=6
+:if:<register.value(storyline_progress)>>5 <and> <register.value(storyline_progress)><10
 	:if:<npc.exists(3)>=false
-		@npc.spawn(11,0,2,1,Hoenn\Cities\Littleroot\Main_LittleBoy,LittlerootKid,0,2,Little Boy,3,Still)
+		@npc.spawn(11,0,2,1,Hoenn\Cities\Littleroot\Main_LittleBoy,LittleBoy2,0,2,Little Boy,3,Still)
 	:else
 		@npc.warp(3,11,0,2)
 	:endif

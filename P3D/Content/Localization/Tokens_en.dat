@@ -1730,14 +1730,14 @@ Littleroot_Main_Sign_BirchsLab,Prof. Birch's Pokémon Lab
 
 Objects:
 Littleroot_YourHouse2f_NoteBook,It's a note book showing the controls.*Do you want to read it?
-Littleroot_YourHouse2f_GameControls,These are the controls:~Move Forward: [W]~Look Around: [A][S][D]~Fixed or Free Camera: [C]~Open Start Menu: [E]~Mute Music: [M]~Take Screenshot: [F2]~First Person or Third Person: [F5]
+Littleroot_YourHouse2f_GameControls,These are the controls:~Move: [W][A][S][D]~Look Around: [Left][Right]~Fixed or Free Camera: [C]~Open Start Menu: [E]~Mute Music: [M]~Take Screenshot: [F2]~First Person or Third Person: [F5]
 Littleroot_YourHouse2f_TV,It's a TV.~A Nintendo Gamecube is connected to it.
 Littleroot_YourHouse2f_GameCube,It's a Nintendo Gamecube.*You can connect a Game Boy Advance~to serve as the Controller.
 Littleroot_YourHouse2f_ClockStopped,The clock hasn't been set yet.~Let's do that right now.
 
 Littleroot_BirchsLab_SeriousMachine,It's a serious-looking machine.~The Prof must use this for research.
 Littleroot_BirchsLab_ResearchPC,It's a PC used for research.~Better not mess around with it.
-Littleroot_BirchsLab_Bookshelf_It's crammed with books on Pokémon.
+Littleroot_BirchsLab_Bookshelf,It's crammed with books on Pokémon.
 Littleroot_BirchsLab_BookOnTable,It's a book that's too hard to read.
 
 Littleroot_BirchsHouse2f_RivalsPC,There's an e-mail from Pokémon Trainer~School.*... ... ... ... ... ...*A Pokémon may learn up to four moves.*A Trainer's expertise is tested on the~move sets chosen for Pokémon.*... ... ... ... ... ...
@@ -1772,6 +1772,7 @@ Littleroot_YourHouse2f_Mom_AfterClockSet,Mom: <player.name>, how do you like you
 
 Littleroot_BirchsHouse1f_MsBirch_Introduction_MaleRival,Oh, hello. And you are?*... ... ... ... ... ... ... ... ...~... ... ... ... ... ... ... ... ...*Oh, you're <player.name>, our new next-door~neighbor! Hi!*We have a son about the same~age as you.*Our son was excited about making~a new friend.*Our son is upstairs, I think.
 Littleroot_BirchsHouse1f_MsBirch_Introduction_FemaleRival,Oh, hello. And you are?*... ... ... ... ... ... ... ... ...~... ... ... ... ... ... ... ... ...*Oh, you're <player.name>, our new next-door~neighbor! Hi!*We have a daughter about the same~age as you.*Our daughter was excited about making~a new friend.*Our daughter is upstairs, I think.
+Littleroot_BirchsHouse1f_MsBirch_LikeChildLikeFather,Like child, like father.*My husband is as wild about Pokémon~as our child.*If he's not at his Lab, he's likely~scrabbling about in grassy places.
 
 Littleroot_BirchsHouse1f_RivalsBrother,Hi, neighbor!*Do you already have your~own Pokémon?
 

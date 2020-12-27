@@ -63,27 +63,27 @@
         ''' The sprites of male trainers.
         ''' </summary>
         Public Enum MaleEmblemSprites
-            NNLittleBoy = 0
-			NNYoungster = 1
+            NNLittleBoy1 = 0
+            NNYoungster = 1
 			NNSchoolKid = 2
 			NNCamper = 3
 			NNBackpacker_Male = 4
 			NNGuitarist = 5
-			NNClerk = 6
-			NNWaiter = 7
+            NNClerk_Male = 6
+            NNWaiter = 7
 			NNJuggler = 8
 			NNBreeder_Male = 9
 			NNJogger = 10
-			NNPokeFan_Male = 11
-			NNRichBoy = 12
-			NNRanger_Male = 13
-			NNAceTrainer_Male = 14
-			NNScientist = 15
-			NNDoctor = 16
+            NNRanger_Male = 11
+            NNRichBoy = 12
+            NNCoolTrainer_Male = 13
+            NNPokeFan_Male = 14
+            NNScientist2 = 15
+            NNDoctor = 16
 			NNGentleman = 17
 			NNJanitor = 18
-			NNOldMan = 19
-		End Enum
+            NNExpert_Male = 19
+        End Enum
 
         ''' <summary>
         ''' The sprites of female trainers.
@@ -92,24 +92,24 @@
             NNLittleGirl = 0
 			NNSchoolGirl = 1
 			NNLass = 2
-			NNYoungGirl = 3
-			NNPicknicker = 4
-			NNBackpacker_Female = 5
-			NNWaitress = 6
-			NNBeauty = 7
-			NNIdol = 8
-			NNSmasher = 9
+            NNPicknicker = 3
+            NNClerk_Female = 4
+            NNBackpacker_Female = 5
+            NNWaitress = 6
+            NNBeauty = 7
+            NNArtist = 8
+            NNSmasher = 9
 			NNBattleGirl = 10
 			NNRanger_Female = 11
 			NNLady = 12
-			NNBreeder = 13
-			NNAceTrainer_Female = 14
-			NNPsychic_Female = 15
-			NNNurse = 16
-			NNPokeFan_Female = 17
+            NNBreeder_Female = 13
+            NNCoolTrainer_Female = 14
+            NNPsychic_Female = 15
+            NNNurse1 = 16
+            NNPokeFan_Female = 17
 			NNSocialite = 18
-			NNOldLady = 19
-		End Enum
+            NNExpert_Female = 19
+        End Enum
 
 #End Region
 
@@ -231,7 +231,7 @@
 
             t = t.Clamp(0, 19)
 
-            If gender = "1" Then
+            If gender = "Female" Then
                 Return CType(t, FemaleEmblemSpriteType).ToString()
             End If
             Return CType(t, MaleEmblemSpriteType).ToString()
@@ -248,7 +248,7 @@
 
             t = t.Clamp(0, 19)
             Dim tFile As String = CType(t, MaleEmblemSprites).ToString()
-            If gender = "1" Then
+            If gender = "Female" Then
                 tFile = CType(t, FemaleEmblemSprites).ToString()
             End If
             If tFile.StartsWith("NN") = True Then
@@ -269,7 +269,7 @@
 
             t = t.Clamp(0, 19)
             Dim tFile As String = CType(t, MaleEmblemSprites).ToString()
-            If gender = "1" Then
+            If gender = "Female" Then
                 tFile = CType(t, FemaleEmblemSprites).ToString()
             End If
             If tFile.StartsWith("NN") = True Then
@@ -353,7 +353,7 @@
 
         Public Emblem As String = "trainer"
         Public Points As Integer = 0
-        Public Gender As String = "0"
+        Public Gender As String = "Male"
 
         Public Username As String = ""
         Public GameJoltID As String = ""
@@ -512,7 +512,7 @@
                 loadedInstances += 1
             End If
             If exists(2) = False Then
-                Me.Gender = "0"
+                Me.Gender = "Male"
                 loadedInstances += 1
             End If
         End Sub
@@ -568,7 +568,7 @@
 
                 Gender = data.Replace("\""", """")
             Else
-                Gender = "0"
+                Gender = "Male"
             End If
 
             loadedInstances += 1
@@ -1176,14 +1176,14 @@
                     Case "difficulty"
                         achieved_emblem_difficulty = line.Value
                     Case "image_url"
-                        Dim t As New Threading.Thread(AddressOf DownloadAchievedEmblemTextrure)
+                        Dim t As New Threading.Thread(AddressOf DownloadAchievedEmblemTexture)
                         t.IsBackground = True
                         t.Start(line.Value)
                 End Select
             Next
         End Sub
 
-        Private Shared Sub DownloadAchievedEmblemTextrure(ByVal url As Object)
+        Private Shared Sub DownloadAchievedEmblemTexture(ByVal url As Object)
             Dim t As Texture2D = DownloadTexture2D.n_Remote_Texture2D(Core.GraphicsDevice, url.ToString(), True)
 
             achieved_emblem_Texture = t

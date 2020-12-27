@@ -896,13 +896,13 @@
 	End Sub
 
 	Private Sub ButtonChangeMale()
-		GameJoltSave.Gender = "0"
+		GameJoltSave.Gender = "Male"
 
 		Core.Player.Skin = GameJolt.Emblem.GetPlayerSpriteFile(GameJolt.Emblem.GetPlayerLevel(GameJoltSave.Points), GameJoltSave.GameJoltID, GameJoltSave.Gender)
 		Select Case GameJoltSave.Gender
-			Case "0"
+			Case "Male"
 				Core.Player.Gender = "Male"
-			Case "1"
+			Case "Female"
 				Core.Player.Gender = "Female"
 			Case Else
 				Core.Player.Gender = "Other"
@@ -910,13 +910,13 @@
 	End Sub
 
 	Private Sub ButtonChangeFemale()
-		GameJoltSave.Gender = "1"
+		GameJoltSave.Gender = "Female"
 
 		Core.Player.Skin = GameJolt.Emblem.GetPlayerSpriteFile(GameJolt.Emblem.GetPlayerLevel(GameJoltSave.Points), GameJoltSave.GameJoltID, GameJoltSave.Gender)
 		Select Case GameJoltSave.Gender
-			Case "0"
+			Case "Male"
 				Core.Player.Gender = "Male"
-			Case "1"
+			Case "Female"
 				Core.Player.Gender = "Female"
 			Case Else
 				Core.Player.Gender = "Other"
@@ -924,13 +924,13 @@
 	End Sub
 
 	Private Sub ButtonChangeOther()
-		GameJoltSave.Gender = "2"
+		GameJoltSave.Gender = "Other"
 
 		Core.Player.Skin = GameJolt.Emblem.GetPlayerSpriteFile(GameJolt.Emblem.GetPlayerLevel(GameJoltSave.Points), GameJoltSave.GameJoltID, GameJoltSave.Gender)
 		Select Case GameJoltSave.Gender
-			Case "0"
+			Case "Male"
 				Core.Player.Gender = "Male"
-			Case "1"
+			Case "Female"
 				Core.Player.Gender = "Female"
 			Case Else
 				Core.Player.Gender = "Other"

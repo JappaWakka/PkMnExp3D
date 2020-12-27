@@ -303,7 +303,7 @@ Temporary Items
 
 # ignore /lib/save
 lib/save/
-
+lib/build/*.xnb
 # ignore binaries in p3d project
 p3d/**/*.exe
 p3d/**/*.dll

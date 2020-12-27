@@ -27216,9 +27216,6 @@
     <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\Main_MapScript.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\BirchsHouse\BirchsHouse1f\tv.dat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse1f\Mom.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -27262,6 +27259,18 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\BirchsLab\Assistant.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\BirchsHouse1f\BirchsHouse1f_Mapscript.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\BirchsHouse1f\tv.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\BirchsHouse1f\MsBirch.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\BirchsHouse2f\BirchsHouse2f_Mapscript.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse1f\InFrontOfDoor.dat">

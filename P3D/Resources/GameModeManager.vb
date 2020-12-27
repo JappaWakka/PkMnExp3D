@@ -565,7 +565,7 @@ Public Class GameMode
 	''' Returns the default PkMnExp3D Game Mode.
 	''' </summary>
 	Public Shared Function GetPkMnExp3DGameMode() As GameMode
-		Dim SkinColors As List(Of Color) = {New Color(248, 176, 32), New Color(248, 216, 88), New Color(56, 88, 200), New Color(216, 96, 112), New Color(56, 88, 152), New Color(239, 90, 156)}.ToList()
+        Dim SkinColors As List(Of Color) = {New Color(41, 93, 148), New Color(216, 96, 112), New Color(248, 176, 32), New Color(126, 223, 230)}.ToList()
         Dim SkinFiles As List(Of String) = {"Brendan", "May", "Ethan", "Lyra"}.ToList()
         Dim SkinNames As List(Of String) = {"Brendan", "May", "Ethan", "Lyra"}.ToList()
         Dim SkinGenders As List(Of String) = {"Male", "Female", "Male", "Female"}.ToList()
