@@ -62,7 +62,7 @@
         If Visible = True Then
             Dim OldRasterizerState As RasterizerState = Core.GraphicsDevice.RasterizerState
             Core.GraphicsDevice.RasterizerState = RasterizerState.CullNone
-            If Not _model Is Nothing Then
+            If _model IsNot Nothing Then
                 _model.Draw(Me.World, Screen.Camera.View, Screen.Camera.Projection)
             End If
 

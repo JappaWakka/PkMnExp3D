@@ -39,7 +39,7 @@
 				Case "wearskin"
                     With Screen.Level.OwnPlayer
                         Dim TextureID As String = argument
-                        .SetTexture(TextureID, False)
+                        .SetTexture(TextureID, False, True)
 
                         .UpdateEntity()
                     End With
@@ -112,7 +112,10 @@
                     IsReady = True
                 Case "turnto"
                     If Started = False Then
-                        Dim turns As Integer = int(argument) - Screen.Camera.GetPlayerFacingDirection()
+                        If OverworldCamera._thirdPerson = False Then
+                            Screen.Camera.PlayerFacing = Screen.Camera.GetPlayerFacingDirection()
+                        End If
+                        Dim turns As Integer = int(argument) - Screen.Camera.PlayerFacing
                         If turns < 0 Then
                             turns = turns + 4
                         End If

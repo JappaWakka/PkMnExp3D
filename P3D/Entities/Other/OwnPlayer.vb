@@ -30,9 +30,9 @@
         Me.DropUpdateUnlessDrawn = False
     End Sub
 
-    Public Sub SetTexture(ByVal TextureID As String, ByVal UseGameJoltID As Boolean)
-		lastTexture = Me.SkinName
-		HasPokemonTexture = False
+    Public Sub SetTexture(ByVal TextureID As String, ByVal UseGameJoltID As Boolean, Optional WearSkin As Boolean = False)
+        lastTexture = Me.SkinName
+        HasPokemonTexture = False
 
         Dim texturePath As String = "Textures\OverworldSprites\PlayerSkins\"
         Dim isPokemon As Boolean = False
@@ -48,7 +48,7 @@
             HasPokemonTexture = True
         End If
 
-        If Core.Player.IsGameJoltSave Then
+        If Core.Player.IsGameJoltSave Or WearSkin = True Then
             texturePath = "Textures\OverworldSprites\"
         End If
 
@@ -63,24 +63,24 @@
             End If
         End If
 
-		If UseGameJoltID And Core.Player.IsGameJoltSave And GameJolt.API.LoggedIn AndAlso Not GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID) Is Nothing Then
-			Logger.Debug("Change player texture to the online sprite.")
-			Me.Texture = GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID)
-			UsingGameJoltTexture = True
-		Else
-			If Screen.Level.Biking = True And Screen.Level.CanBike = True And Not TextureID.Contains("_Bike") Then
-				If Not Core.Player.Skin.Contains("_Bike") Then
-					Me.Texture = P3D.TextureManager.GetTexture(texturePath & Core.Player.Skin & "_Bike")
-				Else
-					Me.Texture = P3D.TextureManager.GetTexture(texturePath & Core.Player.Skin)
-				End If
-			Else
-				Logger.Debug("Change player texture to [" & texturePath & TextureID & PokemonAddition & "]")
+        If UseGameJoltID And Core.Player.IsGameJoltSave And GameJolt.API.LoggedIn AndAlso Not GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID) Is Nothing Then
+            Logger.Debug("Change player texture to the online sprite.")
+            Me.Texture = GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID)
+            UsingGameJoltTexture = True
+        Else
+            If Screen.Level.Biking = True And Screen.Level.CanBike = True And Not TextureID.Contains("_Bike") Then
+                If Not Core.Player.Skin.Contains("_Bike") Then
+                    Me.Texture = P3D.TextureManager.GetTexture(texturePath & Core.Player.Skin & "_Bike")
+                Else
+                    Me.Texture = P3D.TextureManager.GetTexture(texturePath & Core.Player.Skin)
+                End If
+            Else
+                Logger.Debug("Change player texture to [" & texturePath & TextureID & PokemonAddition & "]")
 
-				Me.Texture = P3D.TextureManager.GetTexture(texturePath & TextureID & PokemonAddition)
-			End If
-			UsingGameJoltTexture = False
-		End If
+                Me.Texture = P3D.TextureManager.GetTexture(texturePath & TextureID & PokemonAddition)
+            End If
+            UsingGameJoltTexture = False
+        End If
     End Sub
 
     Protected Overrides Function CalculateCameraDistance(CPosition As Vector3) As Single

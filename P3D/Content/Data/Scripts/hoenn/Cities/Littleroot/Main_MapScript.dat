@@ -2,6 +2,9 @@ version=2
 
 :if:<register.value(storyline_progress)>=0
 	#after exiting the moving truck
+	:if:<player.thirdperson>=true
+		@camera.setyaw(0)
+	:endif
 	@sound.play(jump_from_truck)
 	@player.stopmovement
 	@player.move(1)

@@ -317,3 +317,4 @@ p3d/log.dat
 
 # include lib/build
 !lib/build
+lib/build/Content/Models/
