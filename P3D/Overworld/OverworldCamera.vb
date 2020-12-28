@@ -207,7 +207,7 @@ Public Class OverworldCamera
 
         Dim dy As Single = mState.Y - oldY
         If gState.ThumbSticks.Right.Y <> 0.0F And Core.GameOptions.GamePadEnabled = True Then
-            dy = gState.ThumbSticks.Right.Y * 40.0F * -1.0F
+            dy = gState.ThumbSticks.Right.Y * 35.0F * -1.0F
         End If
 
         If _isFixed = False AndAlso (dx <> 0 OrElse dy <> 0) Then
@@ -643,7 +643,7 @@ Public Class OverworldCamera
     Private Sub FirstPersonMovement()
         Dim pressedDirection As Integer = -1
         If YawLocked = False And Turning = False Then
-            If (KeyBoardHandler.KeyDown(KeyBindings.LeftKey) = True Or ControllerHandler.ButtonDown(Buttons.RightThumbstickLeft) = True) And Turning = False Then
+            If (KeyBoardHandler.KeyDown(KeyBindings.LeftKey) = True) And Turning = False Then
                 If _freeCameraMode = True Then
                     Yaw += RotationSpeed * 40.0F
 
@@ -652,8 +652,25 @@ Public Class OverworldCamera
                     pressedDirection = 1
                 End If
             End If
+            If (KeyBoardHandler.KeyDown(KeyBindings.LeftKey) = True) And Turning = False Then
+                If _freeCameraMode = True Then
+                    Yaw += RotationSpeed * 40.0F
 
-            If (KeyBoardHandler.KeyDown(KeyBindings.RightKey) = True Or ControllerHandler.ButtonDown(Buttons.RightThumbstickRight) = True) And Turning = False Then
+                    ClampYaw()
+                Else
+                    pressedDirection = 1
+                End If
+            End If
+            If (KeyBoardHandler.KeyDown(KeyBindings.DownKey) = True Or ControllerHandler.ButtonDown(Buttons.RightStick) = True) And Turning = False Then
+                If _freeCameraMode = True Then
+                    If _moved <= 0F Then
+                        Turn(2)
+                    End If
+                Else
+                    pressedDirection = 2
+                End If
+            End If
+            If (KeyBoardHandler.KeyDown(KeyBindings.RightKey) = True) And Turning = False Then
                 If _freeCameraMode = True Then
                     Yaw -= RotationSpeed * 40.0F
 
@@ -673,7 +690,7 @@ Public Class OverworldCamera
 
             ClampYaw()
 
-            If (KeyBoardHandler.KeyDown(KeyBindings.LeftMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickLeft) = True) And Turning = False Then
+            If (KeyBoardHandler.KeyDown(KeyBindings.LeftMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickLeft) = True Or ControllerHandler.ButtonDown(Buttons.DPadLeft) = True) And Turning = False Then
                 Dim newPlayerFacing As Integer = GetFacingDirection() + 1
                 While newPlayerFacing > 3
                     newPlayerFacing -= 4
@@ -682,7 +699,7 @@ Public Class OverworldCamera
                 MoveForward()
             End If
 
-            If (KeyBoardHandler.KeyDown(KeyBindings.RightMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickRight) = True) And Turning = False Then
+            If (KeyBoardHandler.KeyDown(KeyBindings.RightMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickRight) = True Or ControllerHandler.ButtonDown(Buttons.DPadRight) = True) And Turning = False Then
                 Dim newPlayerFacing As Integer = GetFacingDirection() + 3
                 While newPlayerFacing > 3
                     newPlayerFacing -= 4
@@ -691,12 +708,12 @@ Public Class OverworldCamera
                 MoveForward()
             End If
 
-            If (KeyBoardHandler.KeyDown(KeyBindings.ForwardMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickUp) = True) And Turning = False Then
+            If (KeyBoardHandler.KeyDown(KeyBindings.ForwardMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickUp) = True Or ControllerHandler.ButtonDown(Buttons.DPadUp) = True) And Turning = False Then
                 Me.PlayerFacing = GetFacingDirection()
                 MoveForward()
             End If
 
-            If (KeyBoardHandler.KeyDown(KeyBindings.BackwardMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickDown) = True) And Turning = False Then
+            If (KeyBoardHandler.KeyDown(KeyBindings.BackwardMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickDown) = True Or ControllerHandler.ButtonDown(Buttons.DPadDown) = True) And Turning = False Then
                 Dim newPlayerFacing As Integer = GetFacingDirection() + 2
                 While newPlayerFacing > 3
                     newPlayerFacing -= 4
