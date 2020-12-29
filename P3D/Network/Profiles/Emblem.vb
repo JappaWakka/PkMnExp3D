@@ -312,17 +312,19 @@
             Return TempDownloadedSprites.ContainsKey(GameJoltID)
         End Function
 
-        Public Shared Function GetOnlineSprite(ByVal GameJoltID As String) As Texture2D
+        Public Shared Function GetOnlineSprite(ByVal GameJoltID As String, Optional ByVal SkinSuffix As String = "") As Texture2D
             If LogInScreen.UserBanned(GameJoltID) = True Then
                 Return Nothing
             End If
+
+
 
             If TempDownloadedSprites.ContainsKey(GameJoltID) = True Then
                 Dim tempT As Texture2D = TempDownloadedSprites(GameJoltID)
                 Return tempT
             End If
 
-            Dim t As Texture2D = DownloadTexture2D.n_Remote_Texture2D(Core.GraphicsDevice, "" & GameJoltID & ".png", False) ' CLASSIFIED
+            Dim t As Texture2D = DownloadTexture2D.n_Remote_Texture2D(Core.GraphicsDevice, "" & GameJoltID & SkinSuffix & ".png", False) ' CLASSIFIED
 
             If TempDownloadedSprites.ContainsKey(GameJoltID) = False Then
                 TempDownloadedSprites.Add(GameJoltID, t)

@@ -35,15 +35,12 @@
         HasPokemonTexture = False
 
         Dim texturePath As String = "Textures\OverworldSprites\PlayerSkins\"
-        Dim isPokemon As Boolean = False
         If TextureID.StartsWith("[POKEMON|N]") Or TextureID.StartsWith("[Pokémon|N]") Then
             TextureID = TextureID.Remove(0, 11)
-            isPokemon = True
             texturePath = "Pokemon\Overworld\Normal\"
             HasPokemonTexture = True
         ElseIf TextureID.StartsWith("[POKEMON|S]") Or TextureID.StartsWith("[Pokémon|S]") Then
             TextureID = TextureID.Remove(0, 11)
-            isPokemon = True
             texturePath = "Pokemon\Overworld\Shiny\"
             HasPokemonTexture = True
         End If
@@ -62,12 +59,35 @@
                 UseGameJoltID = True
             End If
         End If
-
-        If UseGameJoltID And Core.Player.IsGameJoltSave And GameJolt.API.LoggedIn AndAlso Not GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID) Is Nothing Then
-            Logger.Debug("Change player texture to the online sprite.")
-            Me.Texture = GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID)
-            UsingGameJoltTexture = True
-        Else
+        Dim IsOnlineTexture As Boolean = False
+        If UseGameJoltID And Core.Player.IsGameJoltSave And GameJolt.API.LoggedIn Then
+            If Screen.Level.Biking = True And Screen.Level.CanBike = True AndAlso GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID, "_Bike") IsNot Nothing Then
+                Logger.Debug("Change player texture to the online Bike sprite.")
+                Me.Texture = GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID, "_Bike")
+                UsingGameJoltTexture = True
+                IsOnlineTexture = True
+            Else
+                If Screen.Level.Surfing = True AndAlso GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID, "_Surf") IsNot Nothing Then
+                    Logger.Debug("Change player texture to the online Surf sprite.")
+                    Me.Texture = GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID, "_Surf")
+                    UsingGameJoltTexture = True
+                    If Screen.Level.Fishing = True AndAlso GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID, "_Fish") IsNot Nothing Then
+                        Logger.Debug("Change player texture to the online Fishing sprite.")
+                        Me.Texture = GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID, "_Fish")
+                        UsingGameJoltTexture = True
+                        IsOnlineTexture = True
+                    Else
+                        If GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID) IsNot Nothing Then
+                            Logger.Debug("Change player texture to the online sprite.")
+                            Me.Texture = GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID)
+                            UsingGameJoltTexture = True
+                            IsOnlineTexture = True
+                        End If
+                    End If
+                End If
+            End If
+        End If
+        If IsOnlineTexture = False Then
             If Screen.Level.Biking = True And Screen.Level.CanBike = True And Not TextureID.Contains("_Bike") Then
                 If Not Core.Player.Skin.Contains("_Bike") Then
                     Me.Texture = P3D.TextureManager.GetTexture(texturePath & Core.Player.Skin & "_Bike")
@@ -81,6 +101,7 @@
             End If
             UsingGameJoltTexture = False
         End If
+        ChangeTexture()
     End Sub
 
     Protected Overrides Function CalculateCameraDistance(CPosition As Vector3) As Single
