@@ -11,16 +11,26 @@ version=2
 	@npc.move(3,2)
 	@npc.turn(3,3)
 	@npc.setspeed(3,2)
-	@npc.moveasync(3,1)
-	@player.turnto(0)
+	:if:<player.thirdperson>=true
+		@player.turnto(0)
+		@npc.move(3,1)
+	:else	
+		@npc.moveasync(3,1)
+		@player.turnto(0)
+	:endif
 	@npc.turn(3,2)
 	@text.show(<token.Littleroot_Main_LittleBoy_DontGoOutside>)
 	@npc.moveasync(3,1)
 	@player.setmovement(0,0,1)
 	@player.move(1)
 	@npc.turn(3,1)
-	@npc.moveasync(3,1)
-	@player.turnto(1)
+	:if:<player.thirdperson>=true
+		@player.turnto(1)
+		@npc.move(3,1)
+	:else
+		@npc.moveasync(3,1)
+		@player.turnto(1)
+	:endif
 	@npc.turn(3,2)
 	@npc.move(3,1)
 	@npc.turn(3,1)
@@ -40,16 +50,26 @@ version=2
 	@npc.move(3,2)
 	@npc.turn(3,3)
 	@npc.setspeed(3,2)
-	@npc.moveasync(3,1)
-	@player.turnto(0)
+	:if:<player.thirdperson>=true
+		@player.turnto(0)
+		@npc.move(3,1)
+	:else	
+		@npc.moveasync(3,1)
+		@player.turnto(0)
+	:endif
 	@npc.turn(3,2)
 	@text.show(<token.Littleroot_Main_LittleBoy_EndOfDemo>)
 	@npc.moveasync(3,1)
 	@player.setmovement(0,0,1)
 	@player.move(1)
 	@npc.turn(3,1)
-	@npc.moveasync(3,1)
-	@player.turnto(1)
+	:if:<player.thirdperson>=true
+		@player.turnto(1)
+		@npc.move(3,1)
+	:else
+		@npc.moveasync(3,1)
+		@player.turnto(1)
+	:endif
 	@npc.turn(3,2)
 	@npc.move(3,1)
 	@npc.turn(3,1)

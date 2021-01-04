@@ -28,12 +28,17 @@ Namespace Items.KeyItems
 
 			Else
 				If Screen.Level.Surfing = False And Screen.Level.Biking = False And Screen.Level.Riding = False And Screen.Camera.IsMoving() = False And Screen.Camera.Turning = False And Screen.Level.CanBike() = True Then
-					Dim BikeSkin As String
+					Dim BikeSkin As String = Core.Player.Skin & "_Bike"
+					Dim IsOnlineSkin As Boolean = False
 					If Core.Player.IsGameJoltSave = True Then
-						If Core.Player.Gender = "Female" Then
-							BikeSkin = "PlayerSkins\Generic_Bike_Female"
+						If GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID, "_Bike") IsNot Nothing Then
+							IsOnlineSkin = True
 						Else
-							BikeSkin = "PlayerSkins\Generic_Bike_Male"
+							If Core.Player.Gender = "Female" Then
+								BikeSkin = "PlayerSkins\Generic_Bike_Female"
+							Else
+								BikeSkin = "PlayerSkins\Generic_Bike_Male"
+							End If
 						End If
 					Else
 						If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Textures\OverworldSprites\PlayerSkins\" & Core.Player.Skin & "_Bike.png") = False Then
@@ -48,7 +53,8 @@ Namespace Items.KeyItems
 					End If
 					Core.Player.TempBikeSkin = Core.Player.Skin
 					Screen.Level.Biking = True
-					Screen.Level.OwnPlayer.SetTexture(BikeSkin, False)
+
+					Screen.Level.OwnPlayer.SetTexture(BikeSkin, IsOnlineSkin)
 					Core.Player.Skin = BikeSkin
 					While Core.CurrentScreen.Identification <> Screen.Identifications.OverworldScreen
 						Core.CurrentScreen = Core.CurrentScreen.PreScreen

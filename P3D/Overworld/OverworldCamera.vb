@@ -349,7 +349,7 @@ Public Class OverworldCamera
                     Core.GameMessage.ShowMessage(Localization.GetString("game_message_third_person_on"), 12, FontManager.MainFontWhite, Color.White)
                 End If
             Else
-                Yaw = GetAimYawFromDirection(Me.PlayerFacing)
+                Yaw = GetAimYawFromDirection(GetFacingDirection())
                 If showMessage = True Then
                     Core.GameMessage.ShowMessage(Localization.GetString("game_message_third_person_off"), 12, FontManager.MainFontWhite, Color.White)
                 End If
@@ -652,15 +652,6 @@ Public Class OverworldCamera
                     pressedDirection = 1
                 End If
             End If
-            If (KeyBoardHandler.KeyDown(KeyBindings.LeftKey) = True) And Turning = False Then
-                If _freeCameraMode = True Then
-                    Yaw += RotationSpeed * 40.0F
-
-                    ClampYaw()
-                Else
-                    pressedDirection = 1
-                End If
-            End If
             If (KeyBoardHandler.KeyDown(KeyBindings.DownKey) = True Or ControllerHandler.ButtonDown(Buttons.RightStick) = True) And Turning = False Then
                 If _freeCameraMode = True Then
                     If _moved <= 0F Then
@@ -708,7 +699,7 @@ Public Class OverworldCamera
                 MoveForward()
             End If
 
-            If (KeyBoardHandler.KeyDown(KeyBindings.ForwardMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickUp) = True Or ControllerHandler.ButtonDown(Buttons.DPadUp) = True) And Turning = False Then
+            If (KeyBoardHandler.KeyDown(KeyBindings.ForwardMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickUp) = True Or ControllerHandler.ButtonDown(Buttons.DPadUp) = True Or KeyBoardHandler.KeyDown(KeyBindings.UpKey) = True) And Turning = False Then
                 Me.PlayerFacing = GetFacingDirection()
                 MoveForward()
             End If

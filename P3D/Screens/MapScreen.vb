@@ -515,12 +515,24 @@
 			Next
 		End If
 
-		Dim PlayerTexture As Texture2D = TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins\" & Core.Player.Skin)
+		Dim PlayerTexture As Texture2D
 
-		If Screen.Level.Surfing Then
-			PlayerTexture = TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins\" & Core.Player.Skin & "_Surf")
-		ElseIf Screen.Level.Biking Then
-			PlayerTexture = TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins\" & Core.Player.Skin & "_Bike")
+		If Core.Player.IsGameJoltSave And GameJolt.API.LoggedIn Then
+			If Screen.Level.Surfing Then
+				PlayerTexture = GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID, "_Surf")
+			ElseIf Screen.Level.Biking Then
+				PlayerTexture = GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID, "_Bike")
+			Else
+				PlayerTexture = GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID)
+			End If
+		Else
+			If Screen.Level.Surfing Then
+				PlayerTexture = TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins\" & Core.Player.Skin & "_Surf")
+			ElseIf Screen.Level.Biking Then
+				PlayerTexture = TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins\" & Core.Player.Skin & "_Bike")
+			Else
+				PlayerTexture = TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins\" & Core.Player.Skin)
+			End If
 		End If
 
 		Dim PlayerTextureRectangle As Rectangle = New Rectangle(0, CInt(PlayerTexture.Height / 4 * 2), CInt(PlayerTexture.Width / 3), CInt(PlayerTexture.Height / 4))

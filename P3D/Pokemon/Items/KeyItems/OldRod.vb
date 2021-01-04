@@ -15,16 +15,26 @@ Namespace Items.KeyItems
         Public Overrides Sub Use()
 
             If IsInfrontOfWater() = True And Screen.Level.Surfing = False And Screen.Level.Riding = False And Screen.Level.Biking = False Then
-				If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Textures\OverworldSprites\PlayerSkins\" & Core.Player.Skin & "_Fish.png") = True Then
-					With Screen.Level.OwnPlayer
-						Core.Player.TempFishSkin = .SkinName
+				Screen.Level.Fishing = True
 
-						Dim SkinName_Fish As String = "[SKIN]"
-						SkinName_Fish = Core.Player.Skin & "_Fish"
-
-						.SetTexture(SkinName_Fish, False)
-					End With
+				If Core.Player.IsGameJoltSave Then
+					If GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID, "_Fish") IsNot Nothing Then
+						With Screen.Level.OwnPlayer
+							Core.Player.TempFishSkin = .SkinName
+							Dim SkinName_Fish As String = Core.Player.Skin & "_Fish"
+							.SetTexture(SkinName_Fish, True)
+						End With
+					End If
+				Else
+					If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Textures\OverworldSprites\PlayerSkins\" & Core.Player.Skin & "_Fish.png") = True Then
+						With Screen.Level.OwnPlayer
+							Core.Player.TempFishSkin = .SkinName
+							Dim SkinName_Fish As String = Core.Player.Skin & "_Fish"
+							.SetTexture(SkinName_Fish, False)
+						End With
+					End If
 				End If
+
 				Dim s As String = "version=2"
 
 				While Core.CurrentScreen.Identification <> Screen.Identifications.OverworldScreen
@@ -90,16 +100,26 @@ Namespace Items.KeyItems
 						"@player.hiderod" & Environment.NewLine &
 						":end"
 				End If
-				If GameModeManager.ContentFileExists(Core.Player.Skin & "_Fish") = True Then
-					With Screen.Level.OwnPlayer
-						.SetTexture(Core.Player.TempFishSkin, False)
-					End With
+
+				Screen.Level.Fishing = False
+				If Core.Player.IsGameJoltSave Then
+					If GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID, "_Fish") IsNot Nothing Then
+						With Screen.Level.OwnPlayer
+							.SetTexture(Core.Player.TempFishSkin, True)
+						End With
+					End If
+				Else
+					If GameModeManager.ContentFileExists(Core.Player.Skin & "_Fish") = True Then
+						With Screen.Level.OwnPlayer
+							.SetTexture(Core.Player.TempFishSkin, False)
+						End With
+					End If
 				End If
 				CType(Core.CurrentScreen, OverworldScreen).ActionScript.StartScript(s, 2)
 			Else
-                    Screen.TextBox.Show("Now is not the time~to use that.", {}, True, True)
-            End If
-        End Sub
+				Screen.TextBox.Show("Now is not the time~to use that.", {}, True, True)
+			End If
+		End Sub
 
         Public Shared Function IsInfrontOfWater() As Boolean
             Dim lookingAtEntities As New List(Of Entity)

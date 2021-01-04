@@ -2076,9 +2076,9 @@
 			HasPhone = False
 			ShowBattleAnimations = 2
 			BoxAmount = 10
-			LastRestPlace = "Johto\Cities\NewBark\YourHousef2.dat"
+			LastRestPlace = "Hoenn\Cities\Littleroot\YourHousef2.dat"
 			LastRestPlacePosition = "1,0.1,3"
-			LastSavePlace = "Johto\Cities\NewBark\YourHousef2.dat"
+			LastSavePlace = "Hoenn\Cities\Littleroot\YourHousef2.dat"
 			LastSavePlacePosition = "1,0.1,3"
 			DiagonalMovement = False
 			RepelSteps = 0
@@ -2100,7 +2100,7 @@
 			startPosition = New Vector3(14, 0.1, 10)
 			startRotation = 0
 			startFreeCameraMode = False
-			startMap = "Johto\Cities\NewBark\Main.dat"
+			startMap = "Hoenn\Cities\Littleroot\Main.dat"
 			startFOV = 45.0F
 			startRotationSpeed = 12
 			startThirdPerson = False

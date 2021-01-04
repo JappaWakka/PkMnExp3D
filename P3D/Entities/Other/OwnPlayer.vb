@@ -71,6 +71,7 @@
                     Logger.Debug("Change player texture to the online Surf sprite.")
                     Me.Texture = GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID, "_Surf")
                     UsingGameJoltTexture = True
+                Else
                     If Screen.Level.Fishing = True AndAlso GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID, "_Fish") IsNot Nothing Then
                         Logger.Debug("Change player texture to the online Fishing sprite.")
                         Me.Texture = GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID, "_Fish")
@@ -196,17 +197,30 @@
     End Sub
 
     Private Function GetAnimationX() As Integer
-        Select Case AnimationX
-            Case 1
-                Return 0
-            Case 2
-                Return 1
-            Case 3
-                Return 0
-            Case 4
-                Return 2
-        End Select
-        Return 1
+        If Me.Texture.Width = Me.Texture.Height / 2 Then
+            Select Case AnimationX
+                Case 1
+                    Return 0
+                Case 2
+                    Return 1
+                Case 3
+                    Return 0
+                Case 4
+                    Return 1
+            End Select
+        Else
+            Select Case AnimationX
+                Case 1
+                    Return 0
+                Case 2
+                    Return 1
+                Case 3
+                    Return 0
+                Case 4
+                    Return 2
+            End Select
+        End If
+        Return 0
     End Function
 
     Public Overrides Sub Render()

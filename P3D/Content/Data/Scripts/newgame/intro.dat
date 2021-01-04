@@ -23,7 +23,6 @@
 
 @screen.skinselection
 
-@player.wearskin(<screen.selectedskin>)
 @npc.wearskin(1,PlayerSkins\<screen.selectedskin>)
 
 :while:<camera.z><11.5

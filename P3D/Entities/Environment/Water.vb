@@ -216,35 +216,46 @@
             Screen.Level.Surfing = True
             Screen.Camera.Move(1)
             PlayerStatistics.Track("Surf used", 1)
-
+            Dim IsGameJoltPlayer As Boolean = False
+            If Core.Player.IsGameJoltSave And GameJolt.API.LoggedIn Then
+                IsGameJoltPlayer = True
+            End If
             With Screen.Level.OwnPlayer
                 Core.Player.TempSurfSkin = .SkinName
-                Dim pokemonNumber As Integer = Core.Player.Pokemons(Core.Player.SurfPokemon).Number
-                Dim SkinName_Human As String = "[SKIN]"
-				If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Textures\OverworldSprites\PlayerSkins\" & Core.Player.Skin & "_Surf.png") = True Then
-					SkinName_Human = Core.Player.Skin & "_Surf"
-				End If
 
-				Dim SkinName_Pokemon As String = "[POKEMON|N]" & pokemonNumber & PokemonForms.GetOverworldAddition(Core.Player.Pokemons(Core.Player.SurfPokemon))
+                Dim SkinName_Human As String = Core.Player.Skin & "_Surf"
+
+                Dim pokemonNumber As Integer = Core.Player.Pokemons(Core.Player.SurfPokemon).Number
+                Dim SkinName_Pokemon As String = "[POKEMON|N]" & pokemonNumber & PokemonForms.GetOverworldAddition(Core.Player.Pokemons(Core.Player.SurfPokemon))
                 If Core.Player.Pokemons(Core.Player.SurfPokemon).IsShiny = True Then
                     SkinName_Pokemon = "[POKEMON|S]" & pokemonNumber & PokemonForms.GetOverworldAddition(Core.Player.Pokemons(Core.Player.SurfPokemon))
                 End If
 
-				If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Textures\OverworldSprites\PlayerSkins\" & Core.Player.Skin & "_Surf.png") = False Then
-					.SetTexture(SkinName_Pokemon, False)
-				Else
-					.SetTexture(SkinName_Human, False)
+                If IsGameJoltPlayer Then
+                    If GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID, "_Surf") Is Nothing Then
+                        .SetTexture(SkinName_Pokemon, False)
+                    Else
+                        .SetTexture(SkinName_Human, True)
+                    End If
+                Else
+                    If GameModeManager.ContentFileExists(Core.Player.Skin & "_Surf") = False Then
+                        .SetTexture(SkinName_Pokemon, False)
+                    Else
+                        .SetTexture(SkinName_Human, False)
+                    End If
                 End If
+
+                .UpdateEntity()
 
                 SoundManager.PlayPokemonCry(pokemonNumber)
 
                 If Screen.Level.IsRadioOn = False OrElse GameJolt.PhoneScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = False Then
-					If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Screen.Level.CurrentRegion & "_Surf.ogg") Then
-						MusicManager.Play(Screen.Level.CurrentRegion & "_Surf")
-					Else
-						MusicManager.Play("Hoenn_Surf")
-					End If
-				End If
+                    If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs\" & Screen.Level.CurrentRegion & "_Surf.ogg") Then
+                        MusicManager.Play(Screen.Level.CurrentRegion & "_Surf")
+                    Else
+                        MusicManager.Play("Hoenn_Surf")
+                    End If
+                End If
             End With
         End If
     End Sub

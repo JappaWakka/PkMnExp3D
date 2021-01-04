@@ -308,16 +308,14 @@
 
         Shared TempDownloadedSprites As New Dictionary(Of String, Texture2D)
 
-        Public Shared Function HasDownloadedSprite(ByVal GameJoltID As String) As Boolean
-            Return TempDownloadedSprites.ContainsKey(GameJoltID)
+        Public Shared Function HasDownloadedSprite(ByVal GameJoltID As String, Optional ByVal SkinSuffix As String = "") As Boolean
+            Return TempDownloadedSprites.ContainsKey(GameJoltID & SkinSuffix)
         End Function
 
         Public Shared Function GetOnlineSprite(ByVal GameJoltID As String, Optional ByVal SkinSuffix As String = "") As Texture2D
             If LogInScreen.UserBanned(GameJoltID) = True Then
                 Return Nothing
             End If
-
-
 
             If TempDownloadedSprites.ContainsKey(GameJoltID) = True Then
                 Dim tempT As Texture2D = TempDownloadedSprites(GameJoltID)
@@ -337,7 +335,7 @@
                     End If
                 End If
             Else
-                Logger.Debug("GetOnlineSprite.vb: Getting sprite for " & GameJoltID & " failed.")
+                Logger.Debug("GetOnlineSprite.vb: Getting sprite for " & GameJoltID & SkinSuffix & " failed.")
             End If
 
             Return Nothing

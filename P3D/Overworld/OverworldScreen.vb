@@ -133,18 +133,18 @@ Public Class OverworldScreen
 
 		'Play music depending on the player state in the level (surfing and riding):
 		If Level.Surfing = True Then
-			If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Level.CurrentRegion & "_Surf.ogg") Then
-				MusicManager.Play(Level.CurrentRegion & "_Surf", True) 'Play surf music when player is surfing.
-			Else
-				MusicManager.Play("Hoenn_Surf", True) 'Play surf music when player is surfing.
+            If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs\" & Level.CurrentRegion & "_Surf.ogg") Then
+                MusicManager.Play(Level.CurrentRegion & "_Surf", True) 'Play surf music when player is surfing.
+            Else
+                MusicManager.Play("Hoenn_Surf", True) 'Play surf music when player is surfing.
 			End If
 
 		Else
 			If Level.Riding = True Or Level.Biking = True Then
-				If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Level.CurrentRegion & "_Surf.ogg") Then
-					MusicManager.Play(Level.CurrentRegion & "_Bike", True) 'Play bicycle music when player is riding.
-				Else
-					MusicManager.Play("Hoenn_Bike", True) 'Play bicycle music when player is riding.
+                If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs\" & Level.CurrentRegion & "_Bike.ogg") Then
+                    MusicManager.Play(Level.CurrentRegion & "_Bike", True) 'Play bicycle music when player is riding.
+                Else
+                    MusicManager.Play("Hoenn_Bike", True) 'Play bicycle music when player is riding.
 				End If
 			Else
 					MusicManager.Play(Level.MusicLoop, True) 'Play default MusicLoop.
@@ -441,18 +441,18 @@ Public Class OverworldScreen
 
             Dim theme As String = Level.MusicLoop
 			If Level.Surfing = True Then
-				If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Level.CurrentRegion & "_Surf.ogg") Then
-					theme = Level.CurrentRegion & "_Surf"
-				Else
-					theme = "Hoenn_Surf"
+                If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs\" & Level.CurrentRegion & "_Surf.ogg") Then
+                    theme = Level.CurrentRegion & "_Surf"
+                Else
+                    theme = "Hoenn_Surf"
 				End If
 
 			Else
 				If Level.Riding = True Or Level.Biking = True Then
-					If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Level.CurrentRegion & "_Surf.ogg") Then
-						theme = Level.CurrentRegion & "_Bike"
-					Else
-						theme = "Hoenn_Bike"
+                    If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs\" & Level.CurrentRegion & "_Surf.ogg") Then
+                        theme = Level.CurrentRegion & "_Bike"
+                    Else
+                        theme = "Hoenn_Bike"
 					End If
 				End If
 			End If

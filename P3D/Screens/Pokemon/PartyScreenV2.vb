@@ -1016,10 +1016,10 @@ Public Class PartyScreenV2
 					PlayerStatistics.Track("Ride used", 1)
 
 					If Screen.Level.IsRadioOn = False OrElse GameJolt.PhoneScreen.StationCanPlay(Screen.Level.SelectedRadioStation) = False Then
-						If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Level.CurrentRegion & "_Surf.ogg") Then
-							MusicManager.Play(Level.CurrentRegion & "_Bike", True) 'Play bicycle music when player is riding.
-						Else
-							MusicManager.Play("Hoenn_Bike", True) 'Play bicycle music when player is riding.
+                        If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs\" & Level.CurrentRegion & "_Surf.ogg") Then
+                            MusicManager.Play(Level.CurrentRegion & "_Bike", True) 'Play bicycle music when player is riding.
+                        Else
+                            MusicManager.Play("Hoenn_Bike", True) 'Play bicycle music when player is riding.
 						End If
 					Else
 						TextBox.Show("You cannot Ride here!", {}, True, False)

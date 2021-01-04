@@ -871,22 +871,26 @@
 			If Controls.Accept(True, True) = True Then
 				If GameInstance.IsMouseVisible = False And loadGameJoltIndex = 0 Or ScaleScreenRec(New Rectangle(CInt(ScreenSize.Width / 2) + 256, 240, 512, 128)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Then
 					LoadGameJoltButton()
+					SoundManager.PlaySound("Select")
 				End If
 
 				Dim r As Rectangle = ScaleScreenRec(New Rectangle(CInt(ScreenSize.Width / 2) + 256, 240, 512, 128))
 				If GameInstance.IsMouseVisible = False And loadGameJoltIndex = 1 Or ScaleScreenRec(New Rectangle(r.X, r.Y + 32 + r.Height, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Then
 					ButtonChangeMale()
+					SoundManager.PlaySound("Select")
 				End If
 				If GameInstance.IsMouseVisible = False And loadGameJoltIndex = 2 Or ScaleScreenRec(New Rectangle(r.X, r.Y + 64 + 16 + r.Height, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Then
 					ButtonChangeFemale()
+					SoundManager.PlaySound("Select")
 				End If
 				If GameInstance.IsMouseVisible = False And loadGameJoltIndex = 3 Or ScaleScreenRec(New Rectangle(r.X, r.Y + 96 + 32 + r.Height, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Then
 					ButtonChangeOther()
+					SoundManager.PlaySound("Select")
 				End If
 				If GameInstance.IsMouseVisible = False And loadGameJoltIndex = 4 Or ScaleScreenRec(New Rectangle(r.X, r.Y + 128 + 48 + r.Height, 32, 32)).Contains(MouseHandler.MousePosition) = True And GameInstance.IsMouseVisible = True Then
 					ButtonResetSave()
+					SoundManager.PlaySound("Select")
 				End If
-				SoundManager.PlaySound("Select")
 			End If
 		End If
 

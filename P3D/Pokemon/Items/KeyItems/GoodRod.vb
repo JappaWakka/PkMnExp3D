@@ -14,18 +14,27 @@ Namespace Items.KeyItems
 
         Public Overrides Sub Use()
             If OldRod.IsInfrontOfWater() = True And Screen.Level.Surfing = False And Screen.Level.Biking = False And Screen.Level.Riding = False Then
-				If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Textures\OverworldSprites\PlayerSkins\" & Core.Player.Skin & "_Fish.png") = True Then
-					With Screen.Level.OwnPlayer
-						Core.Player.TempFishSkin = .SkinName
+                Screen.Level.Fishing = True
 
-						Dim SkinName_Fish As String = "[SKIN]"
-						SkinName_Fish = Core.Player.Skin & "_Fish"
+                If Core.Player.IsGameJoltSave Then
+                    If GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID, "_Fish") IsNot Nothing Then
+                        With Screen.Level.OwnPlayer
+                            Core.Player.TempFishSkin = .SkinName
+                            Dim SkinName_Fish As String = Core.Player.Skin & "_Fish"
+                            .SetTexture(SkinName_Fish, True)
+                        End With
+                    End If
+                Else
+                    If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Textures\OverworldSprites\PlayerSkins\" & Core.Player.Skin & "_Fish.png") = True Then
+                        With Screen.Level.OwnPlayer
+                            Core.Player.TempFishSkin = .SkinName
+                            Dim SkinName_Fish As String = Core.Player.Skin & "_Fish"
+                            .SetTexture(SkinName_Fish, False)
+                        End With
+                    End If
+                End If
 
-						.SetTexture(SkinName_Fish, False)
-					End With
-				End If
-
-				Dim s As String = "version=2"
+                Dim s As String = "version=2"
 
                 While Core.CurrentScreen.Identification <> Screen.Identifications.OverworldScreen
                     Core.CurrentScreen = Core.CurrentScreen.PreScreen
@@ -33,8 +42,8 @@ Namespace Items.KeyItems
 
                 Dim p As Pokemon = Nothing
 
-				Dim pokeFile As String = "System\WildEncounters\" & Screen.Level.LevelFile.Remove(Screen.Level.LevelFile.Length - 4, 4) & ".poke"
-				If GameModeManager.MapFileExists(pokeFile) = True Then
+                Dim pokeFile As String = "System\WildEncounters\" & Screen.Level.LevelFile.Remove(Screen.Level.LevelFile.Length - 4, 4) & ".poke"
+                If GameModeManager.MapFileExists(pokeFile) = True Then
                     p = Spawner.GetPokemon(Screen.Level.LevelFile, Spawner.EncounterMethods.GoodRod, False)
                 End If
 
@@ -90,10 +99,20 @@ Namespace Items.KeyItems
                         "@player.hiderod" & Environment.NewLine &
                         ":end"
                 End If
-                If GameModeManager.ContentFileExists(Core.Player.Skin & "_Fish") = True Then
-                    With Screen.Level.OwnPlayer
-                        .SetTexture(Core.Player.TempFishSkin, False)
-                    End With
+
+                Screen.Level.Fishing = False
+                If Core.Player.IsGameJoltSave Then
+                    If GameJolt.Emblem.GetOnlineSprite(Core.GameJoltSave.GameJoltID, "_Fish") IsNot Nothing Then
+                        With Screen.Level.OwnPlayer
+                            .SetTexture(Core.Player.TempFishSkin, True)
+                        End With
+                    End If
+                Else
+                    If GameModeManager.ContentFileExists(Core.Player.Skin & "_Fish") = True Then
+                        With Screen.Level.OwnPlayer
+                            .SetTexture(Core.Player.TempFishSkin, False)
+                        End With
+                    End If
                 End If
                 CType(Core.CurrentScreen, OverworldScreen).ActionScript.StartScript(s, 2)
             Else

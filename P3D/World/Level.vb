@@ -1024,7 +1024,7 @@ Public Class Level
 
 			' Store skin values:
 			Dim usingGameJoltTexture As Boolean = OwnPlayer.UsingGameJoltTexture
-			Core.Player.Skin = OwnPlayer.SkinName
+			OwnPlayer.SkinName = Core.Player.Skin
 
 			' Load the new level:
 			Dim params As New List(Of Object)
@@ -1074,7 +1074,7 @@ Public Class Level
 			Else
 				IsRadioOn = False
 				If Me.Surfing = True Then
-					If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Me.CurrentRegion & "_Surf.ogg") Then
+					If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs\" & Me.CurrentRegion & "_Surf.ogg") Then
 						MusicManager.Play(Me.CurrentRegion & "_Surf", True) 'Play surf music when player is surfing.
 					Else
 						MusicManager.Play("Hoenn_Surf", True) 'Play surf music when player is surfing.
@@ -1082,7 +1082,7 @@ Public Class Level
 
 				Else
 					If Me.Riding = True Or Me.Biking = True Then
-						If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs" & Me.CurrentRegion & "_Surf.ogg") Then
+						If File.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs\" & Me.CurrentRegion & "_Surf.ogg") Then
 							MusicManager.Play(Me.CurrentRegion & "_Bike", True) 'Play bicycle music when player is riding.
 						Else
 							MusicManager.Play("Hoenn_Bike", True) 'Play bicycle music when player is riding.

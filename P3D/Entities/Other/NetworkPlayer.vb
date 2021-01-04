@@ -19,6 +19,7 @@
     Dim RotatedSprite As Boolean = False
 
     Public TextureID As String
+    Public SkinSuffix As String
     Public Texture As Texture2D
 
     Public moving As Boolean = False
@@ -26,7 +27,6 @@
     Dim AnimationX As Integer = 1
     Const AnimationDelayLength As Single = 1.1F
     Dim AnimationDelay As Single = AnimationDelayLength
-    Public HasPokemonTexture As Boolean = False
 
     Dim NameTexture As Texture2D
 
@@ -64,15 +64,16 @@
         End If
     End Sub
 
-    Public Sub SetTexture(ByVal TextureID As String)
+    Public Sub SetTexture(ByVal TextureID As String, Optional ByVal SkinSuffix As String = "")
         Me.TextureID = TextureID
+        Me.SkinSuffix = SkinSuffix
 
-        Dim texturePath As String = GetTexturePath(TextureID)
+        Dim texturePath As String = GetTexturePath(TextureID & SkinSuffix)
 
         Dim OnlineSprite As Texture2D = Nothing
         If Me.GameJoltID <> "" Then
-            If GameJolt.Emblem.HasDownloadedSprite(Me.GameJoltID) = True Then
-                OnlineSprite = GameJolt.Emblem.GetOnlineSprite(Me.GameJoltID)
+            If GameJolt.Emblem.HasDownloadedSprite(Me.GameJoltID, Me.SkinSuffix) = True Then
+                OnlineSprite = GameJolt.Emblem.GetOnlineSprite(Me.GameJoltID, Me.SkinSuffix)
             Else
                 Dim t As New Threading.Thread(AddressOf DownloadOnlineSprite)
                 t.IsBackground = True
@@ -81,17 +82,11 @@
             End If
         End If
 
-        If Not OnlineSprite Is Nothing Then
+        If OnlineSprite IsNot Nothing Then
             Me.Texture = OnlineSprite
         Else
             If TextureManager.TextureExist(texturePath) = True Then
                 Logger.Debug("Change network texture to [" & texturePath & "]")
-
-                If texturePath.StartsWith("Pokemon\") = True Then
-                    Me.HasPokemonTexture = True
-                Else
-                    Me.HasPokemonTexture = False
-                End If
 
                 Me.Texture = TextureManager.GetTexture(texturePath)
             Else
@@ -102,9 +97,9 @@
     End Sub
 
     Private Sub DownloadOnlineSprite()
-        Dim t As Texture2D = GameJolt.Emblem.GetOnlineSprite(Me.GameJoltID)
+        Dim t As Texture2D = GameJolt.Emblem.GetOnlineSprite(Me.GameJoltID, Me.SkinSuffix)
 
-        If Not t Is Nothing Then
+        If t IsNot Nothing Then
             Me.Texture = t
         End If
     End Sub
@@ -149,6 +144,10 @@
 
             Dim spriteSize As New Size(CInt(Me.Texture.Width / 3), CInt(Me.Texture.Height / 4))
 
+            If Me.Texture.Width = Me.Texture.Height / 2 Then
+                spriteSize = New Size(CInt(Me.Texture.Width / 2), CInt(Me.Texture.Height / 4))
+            End If
+
             Dim x As Integer = 0
             If Me.moving = True Then
                 x = GetAnimationX() * spriteSize.Width
@@ -165,17 +164,30 @@
     End Sub
 
     Private Function GetAnimationX() As Integer
-        Select Case AnimationX
-            Case 1
-                Return 0
-            Case 2
-                Return 1
-            Case 3
-                Return 0
-            Case 4
-                Return 2
-        End Select
-        Return 1
+        If Me.Texture.Width = Me.Texture.Height / 2 Then
+            Select Case AnimationX
+                Case 1
+                    Return 0
+                Case 2
+                    Return 1
+                Case 3
+                    Return 0
+                Case 4
+                    Return 1
+            End Select
+        Else
+            Select Case AnimationX
+                Case 1
+                    Return 0
+                Case 2
+                    Return 1
+                Case 3
+                    Return 0
+                Case 4
+                    Return 2
+            End Select
+        End If
+        Return 0
     End Function
 
     Private Sub Move()
