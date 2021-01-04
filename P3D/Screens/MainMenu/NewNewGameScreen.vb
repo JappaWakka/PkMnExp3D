@@ -211,9 +211,10 @@
 
             Private _fadeIn As Single = 0F
 
-            Private Shared _selectedSkin As String = ""
+			Private Shared _selectedSkin As String = ""
+			Private Shared _selectedGender As String = ""
 
-            Public Shared Property SelectedSkin() As String
+			Public Shared Property SelectedSkin() As String
                 Get
                     Return _selectedSkin
                 End Get
@@ -272,7 +273,9 @@
 
                     If Controls.Accept(False, True, True) Then
 						_selectedSkin = _skins(_index)
+						_selectedGender = _genders(_index)
 						Core.Player.Skin = _selectedSkin
+						Core.Player.Gender = _selectedGender
 						SetScreen(PreScreen)
                     End If
                     If Controls.Accept(True, False, False) Then
@@ -280,7 +283,9 @@
                             If New Rectangle(CInt(windowSize.Width / 2 - 128 + i * 280 - _index * 280 + _offset), CInt(windowSize.Height / 2 - 128), 256, 256).Contains(MouseHandler.MousePosition) Then
                                 If i = _index Then
 									_selectedSkin = _skins(_index)
+									_selectedGender = _genders(_index)
 									Core.Player.Skin = _selectedSkin
+									Core.Player.Gender = _selectedGender
 									SetScreen(PreScreen)
                                 Else
                                     _offset += (i - _index) * 280

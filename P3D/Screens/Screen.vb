@@ -428,15 +428,15 @@ Public MustInherit Class Screen
         Return "Screen state not implemented for screen class: " & Identification.ToString()
     End Function
 
-	''' <summary>
-	''' Returns the minimum size for the screen size to display a large interface before switching to the small size.
-	''' </summary>
-	''' <returns></returns>
-	''' <remarks>The default size is 1152x864 pixels.</remarks>
-	Public Overridable Function GetScreenScaleMinimum() As Size
-		'// Default size: 1152x864 pixels.
-		Return New Size(1152, 864)
-	End Function
+    ''' <summary>
+    ''' Returns the minimum size for the screen size to display a large interface before switching to the small size.
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks>The default size is 1152x864 pixels.</remarks>
+    Public Overridable Function GetScreenScaleHalfSize() As Size
+        '// Default size: 1152x864 pixels.
+        Return New Size(1152, 864)
+    End Function
 
     ''' <summary>
     ''' Returns the spritebatch that should render a font.

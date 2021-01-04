@@ -33,7 +33,7 @@
 
     Public KeyboardInput As KeyboardInput
 
-    Public windowSize As Rectangle = New Rectangle(0, 0, 1200, 680)
+    Public windowSize As Rectangle = New Rectangle(0, 0, 1280, 720)
     Public GameMessage As GameMessage
 
     Public ServersManager As Servers.ServersManager
@@ -64,8 +64,8 @@
         GameOptions.LoadOptions()
 
         GraphicsManager.PreferredBackBufferWidth = CInt(GameOptions.WindowSize.X)
-        GraphicsManager.PreferredBackBufferHeight = CInt(GameOptions.WindowSize.Y)
-        GraphicsDevice.PresentationParameters.BackBufferFormat = SurfaceFormat.Rgba1010102
+		GraphicsManager.PreferredBackBufferHeight = CInt(GameOptions.WindowSize.Y)
+		GraphicsDevice.PresentationParameters.BackBufferFormat = SurfaceFormat.Rgba1010102
         GraphicsDevice.PresentationParameters.DepthStencilFormat = DepthFormat.Depth24Stencil8
 
 

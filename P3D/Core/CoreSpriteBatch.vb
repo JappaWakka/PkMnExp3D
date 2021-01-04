@@ -307,7 +307,7 @@ Public Class CoreSpriteBatch
     ''' </summary>
     Public ReadOnly Property InterfaceScale() As Double
         Get
-            If Core.windowSize.Height < Core.CurrentScreen.GetScreenScaleMinimum().Height Or Core.windowSize.Width < Core.CurrentScreen.GetScreenScaleMinimum().Width Then
+            If Core.windowSize.Height < Core.CurrentScreen.GetScreenScaleHalfSize().Height Or Core.windowSize.Width < Core.CurrentScreen.GetScreenScaleHalfSize().Width Then
                 Return 0.5D
             End If
             Return 1D

@@ -27279,6 +27279,12 @@
     <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\BirchsHouse2f\BirchsHouse2f_Mapscript.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\BirchsHouse2f\Rival.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\BirchsHouse2f\RivalsPokeBall.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse1f\InFrontOfDoor.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

@@ -32,9 +32,10 @@
 					IsReady = True
 					CanContinue = False
 				Case "setrivalskin"
-					Dim RivalTexture As String = Core.Player.RivalSkin
-					Dim NewTexture As String = argument
-					RivalTexture = NewTexture
+					Core.Player.RivalSkin = argument
+					IsReady = True
+				Case "setrivalname"
+					Core.Player.RivalName = argument
 					IsReady = True
 				Case "wearskin"
                     With Screen.Level.OwnPlayer
@@ -303,11 +304,8 @@
                         Case Else
                             Core.Player.Gender = "Other"
                     End Select
-                    IsReady = True
-                Case "setrivalname"
-                    Core.Player.RivalName = argument
-                    IsReady = True
-                Case "setopacity"
+					IsReady = True
+				Case "setopacity"
                     Dim newOpacity As Single = sng(argument.Replace("~", Screen.Level.OwnPlayer.Opacity.ToString().Replace(".", GameController.DecSeparator)))
                     Screen.Level.OwnPlayer.Opacity = newOpacity
                     IsReady = True

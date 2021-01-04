@@ -43,7 +43,7 @@
                 TextureManager.TextureList.Clear()
                 Core.GameMessage.ShowMessage(Localization.GetString("game_message_debug_texture_list_clear", "Texture list have cleared"), 12, FontManager.MainFontWhite, Color.White)
             ElseIf KeyBoardHandler.KeyPressed(Keys.S) Then
-                Core.SetWindowSize(New Vector2(1200, 680))
+                Core.SetWindowSize(New Vector2(1280, 720))
             ElseIf KeyBoardHandler.KeyPressed(Keys.L) Then
                 Logger.DisplayLog = Not Logger.DisplayLog
             ElseIf KeyBoardHandler.KeyPressed(Keys.B) Then
@@ -146,7 +146,7 @@
         Else
             Core.GraphicsManager.PreferredBackBufferWidth = 1200
             Core.GraphicsManager.PreferredBackBufferHeight = 680
-            Core.windowSize = New Rectangle(0, 0, 1200, 680)
+            Core.windowSize = New Rectangle(0, 0, 1280, 720)
 
             System.Windows.Forms.Application.VisualStyleState = System.Windows.Forms.VisualStyles.VisualStyleState.ClientAndNonClientAreasEnabled
 
