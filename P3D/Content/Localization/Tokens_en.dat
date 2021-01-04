@@ -1776,10 +1776,10 @@ Littleroot_BirchsHouse1f_MsBirch_LikeChildLikeFather,Like child, like father.*My
 
 Littleroot_BirchsHouse1f_RivalsBrother,Hi, neighbor!*Do you already have your~own Pokémon?
 
-Littleroot_BirchsHouse2f_FemaleRival_Introduction,Huh?~Who... Who are you?*... ... ... ... ... ... ... ...~... ... ... ... ... ... ... ...*Oh, you're <player.name>.~So your move was today.*Um... I'm <rival.name>.~Glad to meet you!*I...~I have this dream of becoming friends*with Pokémon all over the world.*I... I heard about you, <player.name>, from~my dad, Prof. Birch.*I was hoping that you would be nice,~<player.name>, and that we could be friends.*Oh, this is silly, isn't it?~I... I've just met you, <player.name>.*Eheheh...*Oh, no! I forgot!*I was supposed to go help Dad catch~some wild Pokémon!*<player.name>, I'll catch you later!
+Littleroot_BirchsHouse2f_FemaleRival_Introduction,Huh?~Who... Who are you?*... ... ... ... ... ... ... ...~... ... ... ... ... ... ... ...*Oh, you're <player.name>.~So your move was today.*Um... I'm <rival.name>.~Glad to meet you!*I...~I have this dream of becoming friends~with Pokémon all over the world.*I... I heard about you, <player.name>, from~my dad, Prof. Birch.*I was hoping that you would be nice,~<player.name>, and that we could be friends.*Oh, this is silly, isn't it?~I... I've just met you, <player.name>.*Eheheh...*Oh, no! I forgot!*I was supposed to go help Dad catch~some wild Pokémon!*<player.name>, I'll catch you later!
 Littleroot_BirchsHouse2f_FemaleRival_AfterIntroduction,Pokémon fully restored!~Items ready, and...
 
-Littleroot_BirchsHouse2f_MaleRival_Introduction,Hey!~You...*Who are you?*Oh, you're <player.name>, aren't you?~Moved in next door, right?*Dad, Prof. Birch, said that our new~next-door neighbor is a Gym Leader's kid. That's so cool!*My name's Brendan.~So, hi, neighbor!*Huh? Hey, <player.name>, don't you have~a Pokémon?*Do you want me to help you catch one?*Aw, darn, I forgot...*I'm supposed to go help my dad catch~some wild Pokémon.*Some other time, okay?
+Littleroot_BirchsHouse2f_MaleRival_Introduction,Hey!~You...*Who are you?*Oh, you're <player.name>, aren't you?~Moved in next door, right?*Dad, Prof. Birch, said that our new~next-door neighbor is a Gym Leader's kid.~That's so cool!*My name's Brendan.~So, hi, neighbor!*Huh? Hey, <player.name>, don't you have~a Pokémon?*Do you want me to help you catch one?*Aw, darn, I forgot...~I'm supposed to go help my dad catch~some wild Pokémon.*Some other time, okay?
 Littleroot_BirchsHouse2f_MaleRival_AfterIntroduction,Pokémon fully restored...~Items all packed, and...
 
 Littleroot_Main_Mom_Wait,Mom: Wait, <player.name>!
@@ -1789,6 +1789,7 @@ Littleroot_Main_Mom_FatherWillBeOverjoyed,Your father will be overjoyed to hear 
 Littleroot_Main_FatGuy_Technology,If you use a PC, you can store items~and Pokémon.*The power of technology is staggering!
 
 Littleroot_Main_LittleBoy_DontGoOutside,Um, um, um!*If you go outside and go in the grass,~wild Pokémon will jump out!*It's dangerous if you don't have~your own Pokémon.
+Littleroot_Main_LittleBoy_EndOfDemo,Um, um, um!*My mom said you can't go~to Route 101 yet!*She told me that this is~"the end of the demo".*....whatever that means.*My mom is always right,~so I'm sure it's important!
 Littleroot_Main_LittleBoy_PokemonCries,Um, hi!*There are scary Pokémon outside!~I can hear their cries!*I want to go see what's going on,~but I don't have any Pokémon...*Can you go see what's happening~for me?
 Littleroot_Main_LittleBoy_SavedProfBirch,You saved Prof. Birch!~I'm so glad!
 Littleroot_Main_LittleBoy_GoodLuck,Are you going to catch Pokémon?~Good luck!
