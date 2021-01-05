@@ -6,29 +6,25 @@ Pokémon Exp3D
 	Modifications by the Jasper "JappaWakka" Speelman
 	2019 - 2020
 	
-	Based on the official Kolben GameMode
+	Based on the source code of Pokémon 3D by Kolben Games
 	
 	Textures
 		Apricorn plant
 			spherical-ice
 		Overworld sprites
+			Poffin_Case
+			15avaughn
 			KisiroKitsune
 			Marnic
 			aveontrainer
 			Skeizerr
 			Ulithium_Dragon
-			PurpleZaffre
-			15avaughn
-			sphericalice
 			Mashirosakura
 			Mimi
 			M.vit
 			Kimoras
 			Delta231
-			Brolunite
 			skatefilter5
-			Lagoon-Sadnes
-			UltimaxLugia2020
 			Starsparkless
 			MrDollSteak
 			kalerie
@@ -77,7 +73,7 @@ Pokémon Exp3D
 	Special thanks to
 		Discord users
 			ReconVirus#7856
-			[LGC] Lyra#2416
+			Zel#2615
 			jianmingyong#4964
 			HampstaPig#8406
 

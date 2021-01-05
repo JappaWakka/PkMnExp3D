@@ -29,7 +29,8 @@ Public Class OverworldCamera
     Public YawLocked As Boolean = False
     Public ThirdPersonOffset As Vector3 = New Vector3(0F, 0.3F, 1.5F)
 
-    Private CameraDiffersFromPlayerFacing As Boolean = False
+    Public Shared CameraDiffersFromPlayerFacing As Boolean = False
+    Public Shared WalkOnSlideBlock As Boolean = False
 
     'Debug variables
     Public oldDate As Date = Date.Now
@@ -681,7 +682,7 @@ Public Class OverworldCamera
 
             ClampYaw()
 
-            If (KeyBoardHandler.KeyDown(KeyBindings.LeftMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickLeft) = True Or ControllerHandler.ButtonDown(Buttons.DPadLeft) = True) And Turning = False Then
+            If (KeyBoardHandler.KeyDown(KeyBindings.LeftMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickLeft) = True Or ControllerHandler.ButtonDown(Buttons.DPadLeft) = True) And Turning = False And WalkOnSlideBlock = False Then
                 Dim newPlayerFacing As Integer = GetFacingDirection() + 1
                 While newPlayerFacing > 3
                     newPlayerFacing -= 4
@@ -690,7 +691,7 @@ Public Class OverworldCamera
                 MoveForward()
             End If
 
-            If (KeyBoardHandler.KeyDown(KeyBindings.RightMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickRight) = True Or ControllerHandler.ButtonDown(Buttons.DPadRight) = True) And Turning = False Then
+            If (KeyBoardHandler.KeyDown(KeyBindings.RightMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickRight) = True Or ControllerHandler.ButtonDown(Buttons.DPadRight) = True) And Turning = False And WalkOnSlideBlock = False Then
                 Dim newPlayerFacing As Integer = GetFacingDirection() + 3
                 While newPlayerFacing > 3
                     newPlayerFacing -= 4
@@ -699,12 +700,12 @@ Public Class OverworldCamera
                 MoveForward()
             End If
 
-            If (KeyBoardHandler.KeyDown(KeyBindings.ForwardMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickUp) = True Or ControllerHandler.ButtonDown(Buttons.DPadUp) = True Or KeyBoardHandler.KeyDown(KeyBindings.UpKey) = True) And Turning = False Then
+            If (KeyBoardHandler.KeyDown(KeyBindings.ForwardMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickUp) = True Or ControllerHandler.ButtonDown(Buttons.DPadUp) = True Or KeyBoardHandler.KeyDown(KeyBindings.UpKey) = True) And Turning = False And WalkOnSlideBlock = False Then
                 Me.PlayerFacing = GetFacingDirection()
                 MoveForward()
             End If
 
-            If (KeyBoardHandler.KeyDown(KeyBindings.BackwardMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickDown) = True Or ControllerHandler.ButtonDown(Buttons.DPadDown) = True) And Turning = False Then
+            If (KeyBoardHandler.KeyDown(KeyBindings.BackwardMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickDown) = True Or ControllerHandler.ButtonDown(Buttons.DPadDown) = True) And Turning = False And WalkOnSlideBlock = False Then
                 Dim newPlayerFacing As Integer = GetFacingDirection() + 2
                 While newPlayerFacing > 3
                     newPlayerFacing -= 4
@@ -914,7 +915,6 @@ Public Class OverworldCamera
                         v.X = 1.0F
                     End If
             End Select
-
         Else
             Select Case Me.PlayerFacing
                 Case 0 'North

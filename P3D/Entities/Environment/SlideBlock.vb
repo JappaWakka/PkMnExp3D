@@ -45,8 +45,10 @@
 
             Screen.Level.OverworldPokemon.Visible = False
             Screen.Level.OverworldPokemon.warped = True
+            OverworldCamera.WalkOnSlideBlock = True
 
             Dim s As String = "version=2" & Environment.NewLine &
+                "@player.stopmovement" & Environment.NewLine &
                 "@player.setmovement(" & Screen.Camera.GetMoveDirection().X & ",1," & Screen.Camera.GetMoveDirection().Z & ")" & Environment.NewLine &
                 "@player.move(" & Steps & ")" & Environment.NewLine &
                 "@player.setmovement(" & Screen.Camera.GetMoveDirection().X & ",0," & Screen.Camera.GetMoveDirection().Z & ")" & Environment.NewLine &
@@ -62,6 +64,7 @@
             s &= ":end"
 
             CType(Core.CurrentScreen, OverworldScreen).ActionScript.StartScript(s, 2, False)
+            OverworldCamera.WalkOnSlideBlock = False
             Return True
         End If
 
@@ -130,8 +133,11 @@
 
             Screen.Level.OverworldPokemon.Visible = False
             Screen.Level.OverworldPokemon.warped = True
+            OverworldCamera.WalkOnSlideBlock = True
 
             Dim s As String = "version=2" & Environment.NewLine &
+            "@player.stopmovement" & Environment.NewLine &
+            "@player.setmovement(" & Screen.Camera.GetMoveDirection().X & ",0," & Screen.Camera.GetMoveDirection().Z & ")" & Environment.NewLine &
             "@player.move(1)" & Environment.NewLine &
             "@player.setmovement(" & Screen.Camera.GetMoveDirection().X & ",-1," & Screen.Camera.GetMoveDirection().Z & ")" & Environment.NewLine &
             "@player.move(" & Steps & ")" & Environment.NewLine &
@@ -145,6 +151,8 @@
             s &= ":end"
 
             CType(Core.CurrentScreen, OverworldScreen).ActionScript.StartScript(s, 2, False)
+
+            OverworldCamera.WalkOnSlideBlock = False
         End If
     End Sub
 
