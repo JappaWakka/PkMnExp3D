@@ -59,8 +59,8 @@
         SkyDome = New SkyDome()
         Camera = New MainMenuCamera()
 
-        renderTarget = New RenderTarget2D(Core.GraphicsDevice, Core.windowSize.Width, Core.windowSize.Height, False, Core.GraphicsDevice.PresentationParameters.BackBufferFormat, DepthFormat.Depth24)
-        blurEffect = Core.Content.Load(Of Effect)("Effects\GaussianBlur")
+		renderTarget = New RenderTarget2D(Core.GraphicsDevice, Core.windowSize.Width, Core.windowSize.Height, False, Core.GraphicsDevice.PresentationParameters.BackBufferFormat, DepthFormat.Depth24)
+		blurEffect = Core.Content.Load(Of Effect)("Effects\GaussianBlur")
 
 		Core.Player.Skin = "Ethan"
 		Level = New Level()
@@ -68,7 +68,7 @@
 
 		mainTexture = TextureManager.GetTexture("GUI\Menus\Menu")
 
-		Level.World.Initialize(Level.EnvironmentType, Level.WeatherType, 1)
+		Level.World.Initialize(Level.EnvironmentType, Level.WeatherType)
 
 		If IO.Directory.Exists(GameController.GamePath & "\Save\") = False Then
 			IO.Directory.CreateDirectory(GameController.GamePath & "\Save\")

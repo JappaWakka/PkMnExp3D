@@ -24,11 +24,11 @@
             For z = 0 To Size.Z - 1
                 For Each e As Entity In Entities
                     If StopOnContact = True Then
-                        If CInt(e.Position.X) = x + Position.X And CInt(e.Position.Z) = z + Position.Z And e.Position.Y <= Position.Y Then
+                        If CSng(e.Position.X) >= x + Position.X - 0.5F And CSng(e.Position.X) <= x + Position.X + 0.5F And CSng(e.Position.Z) >= z + Position.Z - 0.5F And CSng(e.Position.Z) <= z + Position.Z + 0.5F And e.Position.Y <= Position.Y + 0.5F And e.Position.Y >= Position.Y - 0.5F Then
                             e.Shaders.Add(Shader)
                         End If
                     Else
-                        If CInt(e.Position.X) = x + Position.X And CInt(e.Position.Z) = z + Position.Z And e.Position.Y <= Position.Y + Size.Y And e.Position.Y >= Position.Y Then
+                        If CSng(e.Position.X) >= x + Position.X - 0.5F And CSng(e.Position.X) <= x + Position.X + 0.5F And CSng(e.Position.Z) >= z + Position.Z - 0.5F And CSng(e.Position.Z) <= z + Position.Z + 0.5F And e.Position.Y <= Position.Y + Size.Y And e.Position.Y >= Position.Y Then
                             e.Shaders.Add(Shader)
                         End If
                     End If

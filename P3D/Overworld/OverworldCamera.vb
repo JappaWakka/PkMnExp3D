@@ -682,38 +682,31 @@ Public Class OverworldCamera
 
             ClampYaw()
 
-            If (KeyBoardHandler.KeyDown(KeyBindings.LeftMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickLeft) = True Or ControllerHandler.ButtonDown(Buttons.DPadLeft) = True) And Turning = False And WalkOnSlideBlock = False Then
-                Dim newPlayerFacing As Integer = GetFacingDirection() + 1
-                While newPlayerFacing > 3
-                    newPlayerFacing -= 4
-                End While
-                Me.PlayerFacing = newPlayerFacing
-                MoveForward()
-            End If
-
-            If (KeyBoardHandler.KeyDown(KeyBindings.RightMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickRight) = True Or ControllerHandler.ButtonDown(Buttons.DPadRight) = True) And Turning = False And WalkOnSlideBlock = False Then
-                Dim newPlayerFacing As Integer = GetFacingDirection() + 3
-                While newPlayerFacing > 3
-                    newPlayerFacing -= 4
-                End While
-                Me.PlayerFacing = newPlayerFacing
-                MoveForward()
-            End If
+            Dim doMove As Boolean = False
+            Dim newPlayerFacing As Integer = -1
 
             If (KeyBoardHandler.KeyDown(KeyBindings.ForwardMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickUp) = True Or ControllerHandler.ButtonDown(Buttons.DPadUp) = True Or KeyBoardHandler.KeyDown(KeyBindings.UpKey) = True) And Turning = False And WalkOnSlideBlock = False Then
-                Me.PlayerFacing = GetFacingDirection()
-                MoveForward()
+                newPlayerFacing = GetFacingDirection() + 0
+                doMove = True
+            ElseIf (KeyBoardHandler.KeyDown(KeyBindings.LeftMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickLeft) = True Or ControllerHandler.ButtonDown(Buttons.DPadLeft) = True) And Turning = False And WalkOnSlideBlock = False Then
+                newPlayerFacing = GetFacingDirection() + 1
+                doMove = True
+            ElseIf (KeyBoardHandler.KeyDown(KeyBindings.BackwardMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickDown) = True Or ControllerHandler.ButtonDown(Buttons.DPadDown) = True) And Turning = False And WalkOnSlideBlock = False Then
+                newPlayerFacing = GetFacingDirection() + 2
+                doMove = True
+            ElseIf (KeyBoardHandler.KeyDown(KeyBindings.RightMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickRight) = True Or ControllerHandler.ButtonDown(Buttons.DPadRight) = True) And Turning = False And WalkOnSlideBlock = False Then
+                newPlayerFacing = GetFacingDirection() + 3
+                doMove = True
             End If
 
-            If (KeyBoardHandler.KeyDown(KeyBindings.BackwardMoveKey) = True Or ControllerHandler.ButtonDown(Buttons.LeftThumbstickDown) = True Or ControllerHandler.ButtonDown(Buttons.DPadDown) = True) And Turning = False And WalkOnSlideBlock = False Then
-                Dim newPlayerFacing As Integer = GetFacingDirection() + 2
-                While newPlayerFacing > 3
-                    newPlayerFacing -= 4
-                End While
+            While newPlayerFacing > 3
+                newPlayerFacing -= 4
+            End While
+
+            If doMove = True Then
                 Me.PlayerFacing = newPlayerFacing
                 MoveForward()
             End If
-
         End If
     End Sub
 

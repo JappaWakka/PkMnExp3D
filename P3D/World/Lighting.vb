@@ -46,17 +46,17 @@ Public Class Lighting
 
             Select Case GetLightingType()
                 Case 0 ' Night
-					refEffect.AmbientLightColor = New Vector3(0.6F)
+                    refEffect.AmbientLightColor = New Vector3(0.8F)
 
-					refEffect.DirectionalLight0.DiffuseColor = New Vector3(0.4F, 0.4F, 0.6F)
+                    refEffect.DirectionalLight0.DiffuseColor = New Vector3(-0.4F, -0.4F, -0.6F)
                     refEffect.DirectionalLight0.Direction = Vector3.Normalize(New Vector3(-1.0F, 0.0F, 1.0F))
                     refEffect.DirectionalLight0.SpecularColor = New Vector3(0.0F)
                     refEffect.DirectionalLight0.Enabled = True
                 Case 1 ' Morning
-					refEffect.AmbientLightColor = New Vector3(1.0F)
+                    refEffect.AmbientLightColor = New Vector3(0.8F)
 
-					refEffect.DirectionalLight0.DiffuseColor = New Vector3(-0.45F)
-					refEffect.DirectionalLight0.Direction = Vector3.Normalize(New Vector3(1.0F, -1.0F, 1.0F))
+                    refEffect.DirectionalLight0.DiffuseColor = New Vector3(-0.45F)
+                    refEffect.DirectionalLight0.Direction = Vector3.Normalize(New Vector3(1.0F, -1.0F, -1.0F))
                     refEffect.DirectionalLight0.SpecularColor = New Vector3(0.0F)
                     refEffect.DirectionalLight0.Enabled = True
                 Case 2 ' Day
@@ -67,10 +67,10 @@ Public Class Lighting
                     refEffect.DirectionalLight0.SpecularColor = New Vector3(0.0F)
                     refEffect.DirectionalLight0.Enabled = True
                 Case 3 ' Evening
-                    refEffect.AmbientLightColor = New Vector3(1.0F)
+                    refEffect.AmbientLightColor = New Vector3(0.8F)
 
                     refEffect.DirectionalLight0.DiffuseColor = New Vector3(-0.45F)
-                    refEffect.DirectionalLight0.Direction = Vector3.Normalize(New Vector3(1.0F, 0.0F, 1.0F))
+                    refEffect.DirectionalLight0.Direction = Vector3.Normalize(New Vector3(-1.0F, 0.0F, 1.0F))
                     refEffect.DirectionalLight0.SpecularColor = New Vector3(0.0F)
                     refEffect.DirectionalLight0.Enabled = True
                 Case Else  'Disable lighting on the effect
@@ -111,10 +111,7 @@ Public Class Lighting
 					LightType = 3
 			End Select
 		End If
-		If World.IsMainMenu Then
-			Return 2
-		End If
-		Return LightType
+        Return LightType
     End Function
 	
 #End Region

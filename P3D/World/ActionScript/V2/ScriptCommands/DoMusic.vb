@@ -25,7 +25,7 @@
 						Screen.Level.MusicLoop = argument
 					End If
 				Case "stop"
-					MusicManager.Stop()
+					MusicManager.Play("silence")
 				Case "mute"
 					MusicManager.Muted() = True
 				Case "unmute"

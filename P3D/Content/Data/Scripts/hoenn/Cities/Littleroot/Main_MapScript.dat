@@ -7,7 +7,12 @@ version=2
 	:endif
 	@sound.play(jump_from_truck)
 	@player.stopmovement
-	@player.move(1)
+	:if:<player.facing>=3
+		@player.move(1)
+	:else
+		@camera.setyaw(4.71)
+		@player.move(1)
+	:endif
 	@level.wait(50)
 	@npc.spawn(8,0,8,0,,Mom,0,2,Mom,4,Still)
 	@sound.play(Warp_RegularDoor)

@@ -65,9 +65,9 @@
 						Screen.Level.WarpData.WarpSound = "Warp_Exit"
 					End If
 					Logger.Debug("Lock Camera")
-						CType(Screen.Camera, OverworldCamera).YawLocked = True
-					Else
-						Screen.Level = New Level()
+					CType(Screen.Camera, OverworldCamera).YawLocked = True
+				Else
+					Screen.Level = New Level()
 					Screen.Level.Load(Me.AdditionalValue.GetSplit(0))
 					Screen.Level.World.Initialize(Screen.Level.EnvironmentType, Screen.Level.WeatherType)
 

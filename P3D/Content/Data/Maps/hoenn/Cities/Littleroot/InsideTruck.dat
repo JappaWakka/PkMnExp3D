@@ -1,4 +1,4 @@
-{"Level"{LEV[{"Name"{str[Inside Truck]}}{"MusicLoop"{str[]}}{"CurrentRegion"{str[Hoenn]}}]}}
+{"Level"{LEV[{"Name"{str[Inside Truck]}}{"MusicLoop"{str[Silence]}}{"CurrentRegion"{str[Hoenn]}}]}}
 {"Actions"{LEV[{"CanTeleport"{bool[0]}}{"CanDig"{bool[0]}}{"CanFly"{bool[0]}}{"EnvironmentType"{int[0]}}{"IsDark"{bool[1]}}{"Weather"{int[1]}}{"MapScript"{str[Hoenn\Cities\Littleroot\MovingTruck_MapScript]}}]}}
 
 Floor:
