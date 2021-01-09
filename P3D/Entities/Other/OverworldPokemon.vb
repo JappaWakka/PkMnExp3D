@@ -181,7 +181,7 @@ Public Class OverworldPokemon
     End Sub
 
     Private Sub ChangePosition()
-        If Screen.Camera.IsMoving() = True Then
+        If Screen.Camera.IsMoving() = True And Core.CurrentScreen.Identification = Screen.Identifications.OverworldScreen Then
             If CInt(Me.Position.X) <> CInt(Screen.Camera.Position.X) Or CInt(Me.Position.Z) <> CInt(Screen.Camera.Position.Z) Then
                 Me.Position += GetMove()
 				Me.AnimationDelayLength = 1.1F
