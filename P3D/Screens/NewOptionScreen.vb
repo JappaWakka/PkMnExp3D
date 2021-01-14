@@ -123,9 +123,9 @@
         SpriteBatch.Draw(_texture, New Rectangle(halfWidth - 140, halfHeight - 232, 16, 16), New Rectangle(80, 0, 16, 16), mainBackgroundColor)
         SpriteBatch.Draw(_texture, New Rectangle(halfWidth - 124, halfHeight - 216, 16, 16), New Rectangle(80, 0, 16, 16), mainBackgroundColor)
 
-		SpriteBatch.DrawString(FontManager.MainFontWhite, "Options", New Vector2(halfWidth - 390, halfHeight - 228), mainBackgroundColor)
+        SpriteBatch.DrawString(FontManager.MainFontWhite, "Options", New Vector2(halfWidth - 390, halfHeight - 228), mainBackgroundColor)
 
-		For y = 0 To CInt(_enrollY) Step 16
+        For y = 0 To CInt(_enrollY) Step 16
             For x = 0 To 800 Step 16
                 SpriteBatch.Draw(_texture, New Rectangle(halfWidth - 400 + x, halfHeight - 200 + y, 16, 16), New Rectangle(64, 0, 4, 4), mainBackgroundColor)
             Next
@@ -489,8 +489,8 @@
 
     Public Overrides Sub ToggledMute()
         If Me.ScreenIndex = 5 Then
-			Me.Muted = CInt(MusicManager.Muted)
-			InitializeControls()
+            Me.Muted = CInt(MusicManager.Muted)
+            InitializeControls()
         End If
     End Sub
 
@@ -787,16 +787,16 @@
                 If P3D.Controls.Accept(True, False, False) = True Then
                     Me._toggled = Not Me._toggled
                     OnToggleTrigger(Me)
-					SoundManager.PlaySound("select")
-				End If
+                    SoundManager.PlaySound("select")
+                End If
             End If
 
             If Controls.Accept(False, True, True) Then
                 If Position = s._cursorDestPosition Then
                     Me._toggled = Not Me._toggled
                     OnToggleTrigger(Me)
-					SoundManager.PlaySound("select")
-				End If
+                    SoundManager.PlaySound("select")
+                End If
             End If
         End Sub
     End Class
@@ -884,9 +884,9 @@
 
             If r.Contains(MouseHandler.MousePosition) = True Then
                 If P3D.Controls.Accept(True, False, False) = True Then
-					OnClickTrigger(Me)
-					SoundManager.PlaySound("Select")
-				End If
+                    OnClickTrigger(Me)
+                    SoundManager.PlaySound("Select")
+                End If
             End If
 
             If Controls.Accept(False, True, True) Then
@@ -1045,7 +1045,7 @@
                     t &= Me._value.ToString()
                 End If
             End If
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, t, New Vector2(Me.Position.X + CSng((Me.Size / 2) - (FontManager.MiniFont.MeasureString(t).X / 2)), Me._position.Y + 6 - 25), TextColor)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, t, New Vector2(Me.Position.X + CSng((Me.Size / 2) - (FontManager.MainFontBlack.MeasureString(t).X / 2)), Me._position.Y + 6 - 25), TextColor)
         End Sub
 
         Public Overrides Sub Update(ByRef s As NewOptionScreen)
