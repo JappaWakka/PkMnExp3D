@@ -113,9 +113,9 @@
 
         Core.SpriteBatch.Draw(Pokemon.GetTexture(True), New Rectangle(80, 100, 128, 128), Color.White)
 
-        Core.SpriteBatch.DrawString(FontManager.MiniFont, Pokemon.GetDisplayName() & Environment.NewLine & "Level: " & Pokemon.Level, New Vector2(80, 260), Color.Black)
+        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Pokemon.GetDisplayName() & Environment.NewLine & "Level: " & Pokemon.Level, New Vector2(80, 260), Color.White)
 
-        Core.SpriteBatch.DrawString(FontManager.MiniFont, "Pokémon's moves:", New Vector2(245, 140), Color.Black)
+        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Pokémon's moves:", New Vector2(245, 140), Color.White)
         For i = 0 To Pokemon.Attacks.Count - 1
             If i <= Pokemon.Attacks.Count - 1 Then
                 DrawAttack(245, i, Pokemon.Attacks(i), False)
@@ -123,9 +123,9 @@
         Next
 
         If Me.MovesList.Count = 0 Then
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "The Pokémon cannot learn" & Environment.NewLine & "a new move here.", New Vector2(580, 140), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "The Pokémon cannot learn" & Environment.NewLine & "a new move here.", New Vector2(580, 140), Color.White)
         Else
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Tutor moves (" & MovesList.Count & "):", New Vector2(580, 140), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Tutor moves (" & MovesList.Count & "):", New Vector2(580, 140), Color.White)
 
             For i = scrollIndex To scrollIndex + 3
                 If i <= MovesList.Count - 1 Then
@@ -158,18 +158,20 @@
         Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(p.X - 18), CInt(p.Y), 256, 64))
 
         With Core.SpriteBatch
-            .DrawString(FontManager.MiniFont, A.Name, New Vector2(p.X, CInt(p.Y + 26)), Color.Black)
-
+            .DrawString(FontManager.MainFontBlack, A.Name, New Vector2(p.X, CInt(p.Y + 26)), Color.White)
+            Dim font As SpriteFont = FontManager.MainFontBlack
             Dim c As Color = Color.Black
             Dim per As Integer = CInt((A.CurrentPP / A.MaxPP) * 100)
 
             If per <= 33 And per > 10 Then
                 c = Color.Orange
+                font = FontManager.MainFontColor
             ElseIf per <= 10 Then
                 c = Color.IndianRed
+                font = FontManager.MainFontColor
             End If
 
-            .DrawString(FontManager.MiniFont, Localization.GetString("PP") & " " & A.CurrentPP & " / " & A.MaxPP, New Vector2(p.X + 130, CInt(p.Y + 58)), c)
+            .DrawString(font, Localization.GetString("PP") & " " & A.CurrentPP & " / " & A.MaxPP, New Vector2(p.X + 130, CInt(p.Y + 58)), c)
 
             .Draw(TextureManager.GetTexture("GUI\Menus\Types", A.Type.GetElementImage(), ""), New Rectangle(CInt(p.X), CInt(p.Y + 54), 48, 16), Color.White)
         End With

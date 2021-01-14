@@ -1278,8 +1278,7 @@ Public Class StorageSystemScreen
 
                 Dim t As String = "Box:  " & box.Name & Environment.NewLine & "Pokémon:  " & box.Pokemon.Count & " / " & maxPokemon & Environment.NewLine & "Level:  " & levelString
 
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, t, New Vector2(667, 417), Color.Black)
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, t, New Vector2(665, 415), Color.White)
+                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(665, 415), Color.White)
             End If
         Else
             Dim p As Pokemon = Nothing
@@ -1335,8 +1334,7 @@ Public Class StorageSystemScreen
                 Canvas.DrawRectangle(New Rectangle(660, 410, 200, 210), c)
 
                 If p.IsEgg() = True Then
-                    Core.SpriteBatch.DrawString(FontManager.MiniFont, "Egg", New Vector2(667, 417), Color.Black)
-                    Core.SpriteBatch.DrawString(FontManager.MiniFont, "Egg", New Vector2(665, 415), Color.White)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Egg", New Vector2(665, 415), Color.White)
                 Else
                     Dim itemString As String = "None"
                     If Not p.Item Is Nothing Then
@@ -1359,8 +1357,7 @@ Public Class StorageSystemScreen
                                                  "SPEED  " & p.Speed & Environment.NewLine &
                                                  "ITEM  " & itemString
 
-                    Core.SpriteBatch.DrawString(FontManager.MiniFont, t, New Vector2(667, 417), Color.Black)
-                    Core.SpriteBatch.DrawString(FontManager.MiniFont, t, New Vector2(665, 415), Color.White)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(665, 415), Color.White)
                 End If
             End If
         End If
@@ -1433,7 +1430,7 @@ Public Class StorageSystemScreen
     Private Sub DrawMenuEntries()
         If Me.MenuHeader <> "" Then
             Canvas.DrawRectangle(New Rectangle(Core.windowSize.Width - 370, 100, 356, 64), New Color(0, 0, 0, 180))
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, MenuHeader, New Vector2(Core.windowSize.Width - 192 - FontManager.MiniFont.MeasureString(MenuHeader).X / 2, 120), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, MenuHeader, New Vector2(Core.windowSize.Width - 192 - FontManager.MainFontWhite.MeasureString(MenuHeader).X / 2, 120), Color.White)
         End If
 
         For Each e As MenuEntry In Me.MenuEntries

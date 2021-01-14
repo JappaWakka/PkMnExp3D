@@ -36,13 +36,14 @@
     Public Overrides Sub Draw()
         Me.PreScreen.Draw()
 
+        Dim BackgroundTexture As Texture2D = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(160, 224, 48, 48), "")
         Dim CanvasTexture As Texture2D = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 0, 48, 48), "")
 
-        Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(60, 100, 800, 480))
+        Canvas.DrawImageBorder(BackgroundTexture, 2, New Rectangle(60, 100, 800, 480))
         Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(60, 100, 480, 64))
         Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("party_screen_choose_a_pokemon"), New Vector2(142, 132), Color.White)
         Core.SpriteBatch.Draw(MainTexture, New Rectangle(78, 124, 48, 48), New Rectangle(96, 16, 18, 18), Color.White)
-        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("party_screen_backadvice"), New Vector2(1200 - FontManager.MainFontBlack.MeasureString(Localization.GetString("party_screen_backadvice")).X - 320, 572), Color.White)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("party_screen_backadvice"), New Vector2(1200 - FontManager.MainFontBlack.MeasureString(Localization.GetString("party_screen_backadvice")).X - 320, 572), Color.White)
 
         For i = 0 To Core.Player.Pokemons.Count - 1
             DrawPokemonTile(i, Core.Player.Pokemons(i))
@@ -289,16 +290,16 @@
     End Sub
 
     Private Sub NavigateMain()
-        If Controls.Right(True, False) Then
+        If Controls.Right(True, True, True) Then
             index += 1
         End If
-        If Controls.Left(True, False) Then
+        If Controls.Left(True, True, True) Then
             index -= 1
         End If
-        If Controls.Down(True, False, False) Then
+        If Controls.Down(True, True) Then
             index += 2
         End If
-        If Controls.Up(True, False, False) Then
+        If Controls.Up(True, True) Then
             index -= 2
         End If
         If KeyBoardHandler.KeyPressed(Keys.End) = True Then
@@ -319,7 +320,7 @@
 
     Private Sub DrawEmptyTile(ByVal i As Integer)
         Dim BorderTexture As Texture2D
-        BorderTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 0, 48, 48), "")
+        BorderTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(208, 224, 48, 48), "")
 
         Dim p As Vector2
         Select Case i
@@ -338,7 +339,7 @@
             Next
             .Draw(BorderTexture, New Rectangle(CInt(p.X) + 320, CInt(p.Y), 32, 96), New Rectangle(32, 0, 16, 48), Color.White)
 
-            .DrawString(FontManager.MainFontBlack, Localization.GetString("party_screen_EMPTY"), New Vector2(CInt(p.X + 72), CInt(p.Y + 18)), Color.White)
+            .DrawString(FontManager.MainFontWhite, Localization.GetString("party_screen_EMPTY"), New Vector2(CInt(p.X + 72), CInt(p.Y + 18)), Color.White)
         End With
     End Sub
 
@@ -347,19 +348,19 @@
         If i = index Then
             TextColor = FontManager.MainFontWhite
             If Pokemon.Status = P3D.Pokemon.StatusProblems.Fainted Then
-                BorderTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 128, 48, 48), "")
+                BorderTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(160, 176, 48, 48), "")
             Else
-                BorderTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 48, 48, 48), "")
+                BorderTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(208, 176, 48, 48), "")
             End If
         Else
-            TextColor = FontManager.MainFontBlack
+            TextColor = FontManager.MainFontWhite
             If switchIndex <> -1 And i = switchIndex Then
-                BorderTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 48, 48, 48), "")
+                BorderTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(208, 176, 48, 48), "")
             Else
                 If Pokemon.Status = P3D.Pokemon.StatusProblems.Fainted Then
-                    BorderTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(48, 48, 48, 48), "")
+                    BorderTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(160, 128, 48, 48), "")
                 Else
-                    BorderTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 0, 48, 48), "")
+                    BorderTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(208, 128, 48, 48), "")
                 End If
             End If
         End If
@@ -387,21 +388,21 @@
                 Dim barPercentage As Integer = CInt((Pokemon.HP / Pokemon.MaxHP.Clamp(1, Integer.MaxValue)) * 100)
 
                 If barPercentage >= 50 Then
-                    barRectangle = New Rectangle(113, 0, 1, 4)
+                    barRectangle = New Rectangle(113, 0, 1, 5)
                 ElseIf barPercentage < 50 And barPercentage > 10 Then
-                    barRectangle = New Rectangle(116, 0, 1, 4)
+                    barRectangle = New Rectangle(116, 0, 1, 5)
                 ElseIf barPercentage <= 10 Then
-                    barRectangle = New Rectangle(115, 0, 1, 4)
+                    barRectangle = New Rectangle(115, 0, 1, 5)
                 End If
                 For x = 0 To barX - 1
-                    .Draw(MainTexture, New Rectangle(CInt(p.X + (x * 2) + 104), CInt(p.Y + 44), 4, 16), barRectangle, Color.White)
+                    .Draw(MainTexture, New Rectangle(CInt(p.X + (x * 2) + 192), CInt(p.Y + 32), 4, 16), barRectangle, Color.White)
                 Next
 
                 For x = barX To 49
-                    .Draw(MainTexture, New Rectangle(CInt(p.X + (x * 2) + 104), CInt(p.Y + 44), 4, 16), New Rectangle(114, 0, 1, 4), Color.White)
+                    .Draw(MainTexture, New Rectangle(CInt(p.X + (x * 2) + 192), CInt(p.Y + 32), 4, 16), New Rectangle(114, 0, 1, 5), Color.White)
                 Next
-                .Draw(MainTexture, New Rectangle(CInt(p.X + 100), CInt(p.Y + 44), 4, 16), New Rectangle(112, 0, 1, 4), Color.White)
-                .Draw(MainTexture, New Rectangle(CInt(p.X + 206), CInt(p.Y + 44), 4, 16), New Rectangle(112, 0, 1, 4), Color.White)
+                .Draw(MainTexture, New Rectangle(CInt(p.X + 188), CInt(p.Y + 32), 4, 16), New Rectangle(112, 0, 1, 5), Color.White)
+                .Draw(MainTexture, New Rectangle(CInt(p.X + 294), CInt(p.Y + 32), 4, 16), New Rectangle(112, 0, 1, 5), Color.White)
 
                 .DrawString(TextColor, Localization.GetString("HP") & " " & Pokemon.HP & " / " & Pokemon.MaxHP, New Vector2(CInt(p.X + 160), CInt(p.Y + 48)), Color.White)
             End If
@@ -421,9 +422,9 @@
                 .Draw(MainTexture, New Rectangle(CInt(p.X + 72), CInt(p.Y + 46), 26, 12), New Rectangle(96, 10, 13, 6), Color.White)
 
                 If Pokemon.Gender = P3D.Pokemon.Genders.Male Then
-                    .Draw(MainTexture, New Rectangle(CInt(p.X + TextColor.MeasureString(Pokemon.GetDisplayName()).X + 80), CInt(p.Y + 18), 12, 20), New Rectangle(96, 0, 6, 10), Color.White)
+                    .Draw(MainTexture, New Rectangle(CInt(p.X + TextColor.MeasureString(Pokemon.GetDisplayName()).X + 80), CInt(p.Y + 20), 12, 20), New Rectangle(96, 0, 6, 10), Color.White)
                 ElseIf Pokemon.Gender = P3D.Pokemon.Genders.Female Then
-                    .Draw(MainTexture, New Rectangle(CInt(p.X + TextColor.MeasureString(Pokemon.GetDisplayName()).X + 80), CInt(p.Y + 18), 12, 20), New Rectangle(102, 0, 6, 10), Color.White)
+                    .Draw(MainTexture, New Rectangle(CInt(p.X + TextColor.MeasureString(Pokemon.GetDisplayName()).X + 80), CInt(p.Y + 20), 12, 20), New Rectangle(102, 0, 6, 10), Color.White)
                 End If
             End If
 
@@ -442,8 +443,7 @@
 
             Dim StatusTexture As Texture2D = BattleStats.GetStatImage(Pokemon.Status)
             If Not StatusTexture Is Nothing Then
-                Canvas.DrawRectangle(New Rectangle(CInt(p.X + 216), CInt(p.Y + 44), 42, 16), Color.Gray)
-                Core.SpriteBatch.Draw(StatusTexture, New Rectangle(CInt(p.X + 218), CInt(p.Y + 46), 38, 12), Color.White)
+                Core.SpriteBatch.Draw(StatusTexture, New Rectangle(CInt(p.X + 240), CInt(p.Y + 30), 38, 12), Color.White)
             End If
         End With
 

@@ -206,7 +206,7 @@
                     Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(80, 176, 32, 32), ""), New Rectangle(CInt(Position.X), CInt(Position.Y), CInt(32 * CSng(Scale / 4)), CInt(32 * CSng(Scale / 4))), Color.White)
                 End If
             Else
-                Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(144, 176, 32, 32), ""), New Rectangle(CInt(Position.X), CInt(Position.Y), CInt(32 * CSng(Scale / 4)), CInt(32 * CSng(Scale / 4))), Color.White)
+                Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(48, 176, 32, 32), ""), New Rectangle(CInt(Position.X), CInt(Position.Y), CInt(32 * CSng(Scale / 4)), CInt(32 * CSng(Scale / 4))), Color.White)
             End If
         End Sub
 

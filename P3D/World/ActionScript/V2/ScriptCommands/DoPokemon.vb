@@ -161,6 +161,32 @@
                             End Select
                         End With
                     End If
+                Case "seteffect"
+                    Dim Index As Integer = int(argument.GetSplit(0, ","))
+                    Dim effect As String = argument.GetSplit(1, ",")
+
+                    If Core.Player.Pokemons.Count - 1 >= Index Then
+                        With Core.Player.Pokemons(Index)
+                            Select Case effect.ToLower()
+                                Case "none", "nothing", "0"
+                                    .Status() = Pokemon.StatusProblems.None
+                                Case "burn", "burned", "brn", "1"
+                                    .Status() = Pokemon.StatusProblems.Burn
+                                Case "freeze", "frozen", "frz", "2"
+                                    .Status() = Pokemon.StatusProblems.Freeze
+                                Case "paralyze", "paralyzed", "prz", "3"
+                                    .Status() = Pokemon.StatusProblems.Paralyzed
+                                Case "poison", "poisoned", "psn", "4"
+                                    .Status() = Pokemon.StatusProblems.Poison
+                                Case "badpoison", "badpoison", "badlypoisoned", "bpsn", "5"
+                                    .Status() = Pokemon.StatusProblems.BadPoison
+                                Case "sleep", "asleep", "slp", "6"
+                                    .Status() = Pokemon.StatusProblems.Sleep
+                                Case "fainted", "fnt", "7"
+                                    .Status() = Pokemon.StatusProblems.Fainted
+                            End Select
+                        End With
+                    End If
                 Case "clear"
                     Core.Player.Pokemons.Clear()
                 Case "removeattack"

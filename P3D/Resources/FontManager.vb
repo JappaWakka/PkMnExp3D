@@ -98,13 +98,7 @@ Public Class FontManager
         End Get
     End Property
 
-    Public Shared ReadOnly Property MiniFont() As SpriteFont
-        Get
-            Return GetFont("minifont")
-        End Get
-    End Property
-
-	Public Shared ReadOnly Property UnownFont() As SpriteFont
+    Public Shared ReadOnly Property UnownFont() As SpriteFont
 		Get
 			Return GetFont("unown")
 		End Get

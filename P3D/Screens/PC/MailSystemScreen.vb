@@ -64,7 +64,7 @@
             End If
 
             Canvas.DrawImageBorder(TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(x, y, 48, 48), ""), 1, New Rectangle(CInt(P.X), CInt(P.Y), 288, 32))
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Write new mail.", New Vector2(CInt(P.X) + 13, CInt(P.Y) + 14), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Write new mail.", New Vector2(CInt(P.X) + 13, CInt(P.Y) + 14), Color.White)
         Else
             Dim item As Item = Item.GetItemByID(mail.MailID)
 
@@ -82,7 +82,7 @@
             Canvas.DrawImageBorder(TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(x, y, 48, 48), ""), 1, New Rectangle(CInt(P.X), CInt(P.Y), 288, 32))
             Core.SpriteBatch.Draw(item.Texture, New Rectangle(CInt(P.X), CInt(P.Y), 48, 48), Color.White)
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, mail.MailHeader, New Vector2(CInt(P.X) + 52, CInt(P.Y) + 14), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, mail.MailHeader, New Vector2(CInt(P.X) + 52, CInt(P.Y) + 14), Color.White)
 
             If mail.MailAttachment > -1 Then
                 Dim t As TrophyInformation = GetTrophyInformation(mail.MailAttachment)
@@ -113,45 +113,45 @@
                 c = Color.Gray
             End If
 
-            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Header: " & mail.MailHeader, New Vector2(480, 92), c)
+            Core.SpriteBatch.DrawString(FontManager.MainFontColor, "Header: " & mail.MailHeader, New Vector2(480, 92), c)
 
             Canvas.DrawRectangle(New Rectangle(420, 140, 660, 2), Color.DarkGray)
 
-            Dim text As String = ("Text: (" & mail.MailText.Length & "/" & 200 & ")" & Environment.NewLine & Environment.NewLine & mail.MailText.Replace("<br>", Environment.NewLine)).CropStringToWidth(FontManager.MiniFont, 600)
+            Dim text As String = ("Text: (" & mail.MailText.Length & "/" & 200 & ")" & Environment.NewLine & Environment.NewLine & mail.MailText.Replace("<br>", Environment.NewLine)).CropStringToWidth(FontManager.MainFontColor, 600)
             If EditMailIndex = 1 Then
                 c = Color.Blue
                 text &= "_"
             Else
                 c = Color.Gray
             End If
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, text, New Vector2(430, 160), c)
+            Core.SpriteBatch.DrawString(FontManager.MainFontColor, text, New Vector2(430, 160), c)
 
-            Dim yPlus As Integer = CInt(FontManager.MiniFont.MeasureString(text).Y)
+            Dim yPlus As Integer = CInt(FontManager.MainFontColor.MeasureString(text).Y)
 
             If EditMailIndex = 2 Then
                 c = Color.Blue
             Else
                 c = Color.Gray
             End If
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Signature: " & mail.MailSignature, New Vector2(430, yPlus + 200), c)
+            Core.SpriteBatch.DrawString(FontManager.MainFontColor, "Signature: " & mail.MailSignature, New Vector2(430, yPlus + 200), c)
 
             Canvas.DrawRectangle(New Rectangle(420, yPlus + 240, 660, 2), Color.DarkGray)
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Mail OT: " & mail.MailSender & " (" & mail.MailOriginalTrainerOT & ")", New Vector2(430, yPlus + 260), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Mail OT: " & mail.MailSender & " (" & mail.MailOriginalTrainerOT & ")", New Vector2(430, yPlus + 260), Color.White)
 
             If EditMailIndex = 3 Then
                 Canvas.DrawImageBorder(TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 48, 48, 48), ""), 1, New Rectangle(440, yPlus + 320, 160, 32))
             Else
                 Canvas.DrawImageBorder(TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 0, 48, 48), ""), 1, New Rectangle(440, yPlus + 320, 160, 32))
             End If
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Attach", New Vector2(496, yPlus + 334), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Attach", New Vector2(496, yPlus + 334), Color.White)
 
             If EditMailIndex = 4 Then
                 Canvas.DrawImageBorder(TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 48, 48, 48), ""), 1, New Rectangle(640, yPlus + 320, 160, 32))
             Else
                 Canvas.DrawImageBorder(TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 0, 48, 48), ""), 1, New Rectangle(640, yPlus + 320, 160, 32))
             End If
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Cancel", New Vector2(696, yPlus + 334), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Cancel", New Vector2(696, yPlus + 334), Color.White)
         Else
             Dim mail As Items.MailItem.MailData = Core.Player.Mails(index - 1)
             Dim item As Item = Item.GetItemByID(mail.MailID)
@@ -162,24 +162,24 @@
 
             Canvas.DrawRectangle(New Rectangle(420, 140, 660, 2), Color.DarkGray)
 
-            Dim text As String = ("Text: " & Environment.NewLine & Environment.NewLine & mail.MailText).CropStringToWidth(FontManager.MiniFont, 600)
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, text, New Vector2(430, 160), Color.Black)
+            Dim text As String = ("Text: " & Environment.NewLine & Environment.NewLine & mail.MailText).CropStringToWidth(FontManager.MainFontBlack, 600)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, text, New Vector2(430, 160), Color.White)
 
-            Dim yPlus As Integer = CInt(FontManager.MiniFont.MeasureString(text).Y)
+            Dim yPlus As Integer = CInt(FontManager.MainFontBlack.MeasureString(text).Y)
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, mail.MailSignature, New Vector2(430, yPlus + 200), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, mail.MailSignature, New Vector2(430, yPlus + 200), Color.White)
 
             Canvas.DrawRectangle(New Rectangle(420, yPlus + 240, 660, 2), Color.DarkGray)
 
-            Core.SpriteBatch.DrawString(FontManager.MiniFont, "Mail OT: " & mail.MailSender & " (" & mail.MailOriginalTrainerOT & ")", New Vector2(430, yPlus + 260), Color.Black)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Mail OT: " & mail.MailSender & " (" & mail.MailOriginalTrainerOT & ")", New Vector2(430, yPlus + 260), Color.White)
 
             If mail.MailAttachment > -1 Then
                 Canvas.DrawRectangle(New Rectangle(420, yPlus + 300, 660, 2), Color.DarkGray)
 
                 Dim t As TrophyInformation = GetTrophyInformation(mail.MailAttachment)
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, "Trophy:", New Vector2(430, yPlus + 320), Color.Black)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Trophy:", New Vector2(430, yPlus + 320), Color.White)
                 Core.SpriteBatch.Draw(t.Texture, New Rectangle(430, yPlus + 340, 64, 64), Color.White)
-                Core.SpriteBatch.DrawString(FontManager.MiniFont, (t.Name & Environment.NewLine & Environment.NewLine & t.Description).CropStringToWidth(FontManager.MiniFont, 500), New Vector2(510, yPlus + 340), Color.Black)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, (t.Name & Environment.NewLine & Environment.NewLine & t.Description).CropStringToWidth(FontManager.MainFontBlack, 500), New Vector2(510, yPlus + 340), Color.White)
             End If
         End If
     End Sub

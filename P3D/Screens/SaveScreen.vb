@@ -49,23 +49,23 @@
 				.DrawString(FontManager.MainFontWhite, Localization.GetString("save_screen_error"), New Vector2(Delta_X + 90, Delta_Y + 50), Color.Red)
 
 				If Core.GameOptions.Extras.Contains("Backup Save Feature") Then
-                    .DrawString(FontManager.MiniFont,
+                    .DrawString(FontManager.MainFontBlack,
                         "Press Dismiss to close this" & Environment.NewLine &
                         "screen and try to save again" & Environment.NewLine &
                         "in order to prevent data" & Environment.NewLine &
                         "corruption." & Environment.NewLine & Environment.NewLine & Environment.NewLine &
                         "Your save has been backed" & Environment.NewLine &
                         "up in the event of the" & Environment.NewLine &
-                        "Gamejolt API being down.", New Vector2(Delta_X + 90, Delta_Y + 100), Color.Black)
-                    .DrawString(FontManager.MiniFont,
+                        "Gamejolt API being down.", New Vector2(Delta_X + 90, Delta_Y + 100), Color.White)
+                    .DrawString(FontManager.MainFontBlack,
                         "You may safely quit the" & Environment.NewLine &
                         "game now or try to save" & Environment.NewLine &
                         "again later." & Environment.NewLine & Environment.NewLine & Environment.NewLine &
                         "The backup save can be" & Environment.NewLine &
                         "found in the Backup Save" & Environment.NewLine &
-                        "folder", New Vector2(Delta_X + 390, Delta_Y + 100), Color.Black)
+                        "folder", New Vector2(Delta_X + 390, Delta_Y + 100), Color.White)
                 Else
-                    .DrawString(FontManager.MiniFont,
+                    .DrawString(FontManager.MainFontBlack,
                         "Press Dismiss to close this" & Environment.NewLine &
                         "screen and try to save again" & Environment.NewLine &
                         "in order to prevent data" & Environment.NewLine &
@@ -73,13 +73,13 @@
                         "If the problem persists, the" & Environment.NewLine &
                         "GameJolt servers could be" & Environment.NewLine &
                         "down for maintenance right" & Environment.NewLine &
-                        "now.", New Vector2(Delta_X + 90, Delta_Y + 100), Color.Black)
-                    .DrawString(FontManager.MiniFont, "Please try again later," & Environment.NewLine &
+                        "now.", New Vector2(Delta_X + 90, Delta_Y + 100), Color.White)
+                    .DrawString(FontManager.MainFontBlack, "Please try again later," & Environment.NewLine &
                         "or contact us here:" & Environment.NewLine & Environment.NewLine &
                         "Discord server" & Environment.NewLine &
                         "www.discord.me/p3d" & Environment.NewLine & Environment.NewLine &
                         "Official Forum" & Environment.NewLine &
-                        "pokemon3d.net/forum/news", New Vector2(Delta_X + 390, Delta_Y + 100), Color.Black)
+                        "pokemon3d.net/forum/news", New Vector2(Delta_X + 390, Delta_Y + 100), Color.White)
                 End If
 
                 Dim text As String = String.Empty
@@ -95,7 +95,7 @@
 																				   Delta_Y + 350 - textSize.Y / 2.0F), Color.White)
 
 				If ControllerHandler.IsConnected() Then
-                    SpriteBatch.Draw(TextureManager.GetTexture("GUI\GamePad\xboxControllerButtonB"), New Rectangle(CInt(Delta_X + 610 - textSize.X / 2 + FontManager.MiniFont.MeasureString("Press ").X),
+                    SpriteBatch.Draw(TextureManager.GetTexture("GUI\GamePad\xboxControllerButtonB"), New Rectangle(CInt(Delta_X + 610 - textSize.X / 2 + FontManager.MainFontBlack.MeasureString("Press ").X),
                                                                                                                CInt(Delta_Y + 350 - textSize.Y / 2), 20, 20), Color.White)
                 End If
 
