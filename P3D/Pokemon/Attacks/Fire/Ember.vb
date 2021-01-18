@@ -50,7 +50,6 @@
             Me.IsOneHitKOMove = False
             Me.IsWonderGuardAffected = True
             '#End
-
             Me.AIField1 = AIField.Damage
             Me.AIField2 = AIField.CanBurn
 
@@ -71,6 +70,57 @@
             End If
         End Sub
 
+        Public Overrides Sub InternalUserPokemonMoveAnimation(ByVal BattleScreen As BattleScreen, ByVal own As Boolean)
+            Dim CurrentEntity As NPC
+            Dim BAFlip As Boolean
+            If own = True Then
+                CurrentEntity = BattleScreen.OwnPokemonNPC
+                BAFlip = False
+            Else
+                CurrentEntity = BattleScreen.OppPokemonNPC
+                BAFlip = True
+            End If
+            Dim MoveAnimation As MoveAnimationQueryObject = New MoveAnimationQueryObject(CurrentEntity, BAFlip)
+            MoveAnimation.AttacksSpawnMovingAnimation(0.0, 0.0, 0.0, "Textures\Battle\Fire\EmberBall", 0.2, 0.2, 0.2, 4.0, 0.0, 0.0, 0.036, False, True, 0.0, 0.0)
+            For i = 0 To 12
+                MoveAnimation.AttacksSpawnOpacityAnimation(CSng(i * 0.2), 0.0, 0.0, "Textures\Battle\Fire\Fire", 0.2, 0.2, 0.2, 0.01, False, 0.0, CSng(i * 0.6), 0.0)
+                i += 1
+            Next
+            BattleScreen.BattleQuery.Add(MoveAnimation)
+        End Sub
+
+        Public Overrides Sub InternalOpponentPokemonMoveAnimation(ByVal BattleScreen As BattleScreen, ByVal own As Boolean)
+            Dim CurrentEntity As NPC
+            Dim BAFlip As Boolean
+            If own = True Then
+                CurrentEntity = BattleScreen.OppPokemonNPC
+                BAFlip = True
+            Else
+                CurrentEntity = BattleScreen.OwnPokemonNPC
+                BAFlip = False
+            End If
+            Dim MoveAnimation As MoveAnimationQueryObject = New MoveAnimationQueryObject(CurrentEntity, BAFlip)
+
+            MoveAnimation.AttacksSpawnMovingAnimation(0.1, 0, 0.0, "Textures\Battle\Fire\Flame_1", 0.45, 0.45, 0.45, 0.1, 0, 0.0, 0.0, False, False, 1.0, 1.0)
+
+            MoveAnimation.AttacksSpawnMovingAnimation(0.1, 0, 0.0, "Textures\Battle\Fire\Flame_2", 0.45, 0.45, 0.45, 0.1, 0, 0.0, 0.0, False, False, 2, 1)
+            MoveAnimation.AttacksSpawnMovingAnimation(0.1, 0, 0.0, "Textures\Battle\Fire\Flame_3", 0.45, 0.45, 0.45, 0.1, 0, 0.0, 0.0, False, False, 3, 1)
+            MoveAnimation.AttacksSpawnMovingAnimation(0.1, 0, 0.0, "Textures\Battle\Fire\Flame_4", 0.45, 0.45, 0.45, 0.1, 0, 0.0, 0.0, False, False, 4, 1)
+
+
+            MoveAnimation.AttacksSpawnMovingAnimation(0.5, 0, 0.5, "Textures\Battle\Fire\Flame_1", 0.45, 0.45, 0.45, 0.5, 0, 0.5, 0.0, False, False, 1.0, 1.0)
+
+            MoveAnimation.AttacksSpawnMovingAnimation(0.5, 0, 0.5, "Textures\Battle\Fire\Flame_2", 0.45, 0.45, 0.45, 0.5, 0, 0.5, 0.0, False, False, 2, 1)
+            MoveAnimation.AttacksSpawnMovingAnimation(0.5, 0, 0.5, "Textures\Battle\Fire\Flame_3", 0.45, 0.45, 0.45, 0.5, 0, 0.5, 0.0, False, False, 3, 1)
+            MoveAnimation.AttacksSpawnMovingAnimation(0.5, 0, 0.5, "Textures\Battle\Fire\Flame_4", 0.45, 0.45, 0.45, 0.5, 0, 0.5, 0.0, False, False, 4, 1)
+
+            MoveAnimation.AttacksSpawnMovingAnimation(-0.5, 0, -0.5, "Textures\Battle\Fire\Flame_1", 0.45, 0.45, 0.45, -0.5, 0, -0.5, 0.0, False, False, 1.0, 1.0)
+
+            MoveAnimation.AttacksSpawnMovingAnimation(-0.5, 0, -0.5, "Textures\Battle\Fire\Flame_2", 0.45, 0.45, 0.45, -0.5, 0, -0.5, 0.0, False, False, 2, 1)
+            MoveAnimation.AttacksSpawnMovingAnimation(-0.5, 0, -0.5, "Textures\Battle\Fire\Flame_3", 0.45, 0.45, 0.45, -0.5, 0, -0.5, 0.0, False, False, 3, 1)
+            MoveAnimation.AttacksSpawnMovingAnimation(-0.5, 0, -0.5, "Textures\Battle\Fire\Flame_4", 0.45, 0.45, 0.45, -0.5, 0, -0.5, 0.0, False, False, 4, 1)
+            BattleScreen.BattleQuery.Add(MoveAnimation)
+        End Sub
     End Class
 
 End Namespace

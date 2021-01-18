@@ -10709,6 +10709,18 @@
     <Content Include="Content\Textures\Battle\Fire\Fire.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Textures\Battle\Fire\Flame_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Fire\Flame_2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Fire\Flame_3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\Battle\Fire\Flame_4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Textures\Battle\Fire\Hand.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -14778,6 +14790,8 @@
     <Content Include="credits.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Compile Include="Battle\BattleAnimations\BABillMove.vb" />
+    <Compile Include="Battle\BattleAnimations\BASound.vb" />
     <Compile Include="Pokemon\Abilities\Aerilate.vb" />
     <Compile Include="Pokemon\Abilities\PsychicSurge.vb" />
     <Compile Include="Pokemon\Abilities\MistySurge.vb" />

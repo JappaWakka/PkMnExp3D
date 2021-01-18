@@ -2163,23 +2163,23 @@
 
 #Region "Animation"
 
-        Public Sub UserPokemonMoveAnimation(ByVal BattleScreen As BattleScreen)
+        Public Sub UserPokemonMoveAnimation(ByVal BattleScreen As BattleScreen, ByVal own As Boolean)
             If Core.Player.ShowBattleAnimations = 1 Then
-                Me.InternalUserPokemonMoveAnimation(BattleScreen)
+                Me.InternalUserPokemonMoveAnimation(BattleScreen, own)
             End If
         End Sub
 
-        Public Overridable Sub InternalUserPokemonMoveAnimation(ByVal BattleScreen As BattleScreen)
+        Public Overridable Sub InternalUserPokemonMoveAnimation(ByVal BattleScreen As BattleScreen, ByVal own As Boolean)
             'Override this method in the attack class to insert the move animation query objects into the queue.
         End Sub
 
-        Public Sub OpponentPokemonMoveAnimation(ByVal BattleScreen As BattleScreen)
+        Public Sub OpponentPokemonMoveAnimation(ByVal BattleScreen As BattleScreen, ByVal own As Boolean)
             If Core.Player.ShowBattleAnimations = 1 Then
-                Me.InternalOpponentPokemonMoveAnimation(BattleScreen)
+                Me.InternalOpponentPokemonMoveAnimation(BattleScreen, own)
             End If
         End Sub
 
-        Public Overridable Sub InternalOpponentPokemonMoveAnimation(ByVal BattleScreen As BattleScreen)
+        Public Overridable Sub InternalOpponentPokemonMoveAnimation(ByVal BattleScreen As BattleScreen, ByVal own As Boolean)
             'Override this method in the attack class to insert the move animation query objects into the queue.
         End Sub
 

@@ -363,9 +363,9 @@
     Public Mails As New List(Of Items.MailItem.MailData)
     Public Trophies As New List(Of Integer)
 
-    'Non-secure fields:
-    Public ShowBattleAnimations As Integer = 2
-    Public BoxAmount As Integer = 10
+	'Non-secure fields:
+	Public ShowBattleAnimations As Integer = 1
+	Public BoxAmount As Integer = 10
     Public DiagonalMovement As Boolean = False
     Public DifficultyMode As Integer = 0
     Public BattleStyle As Integer = 1
@@ -2074,7 +2074,7 @@
 			Coins = 0
 			HasPokedex = False
 			HasPhone = False
-			ShowBattleAnimations = 2
+			ShowBattleAnimations = 1
 			BoxAmount = 10
 			LastRestPlace = "Hoenn\Cities\Littleroot\YourHousef2.dat"
 			LastRestPlacePosition = "1,0.1,3"
