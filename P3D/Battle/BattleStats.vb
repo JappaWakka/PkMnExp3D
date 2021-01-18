@@ -26,7 +26,7 @@
     Public Shared Function GetStatColor(ByVal Status As Pokemon.StatusProblems) As Color
         Select Case Status
             Case Pokemon.StatusProblems.BadPoison, Pokemon.StatusProblems.Poison
-                Return New Color(214, 49, 222)
+                Return New Color(276, 100, 100)
             Case Pokemon.StatusProblems.Burn
                 Return New Color(231, 90, 74)
             Case Pokemon.StatusProblems.Paralyzed

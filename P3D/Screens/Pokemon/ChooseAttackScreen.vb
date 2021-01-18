@@ -86,7 +86,7 @@
                     Dim c As Char = CChar(fullText(i).ToString().Replace("’", "'"))
 
                     If c = CChar(" ") Then
-                        If FontManager.MiniFont.MeasureString(n & c).X > 170 Then
+                        If FontManager.MainFontBlack.MeasureString(n & c).X > 170 Then
                             t &= Environment.NewLine
                             n = ""
                         Else
@@ -109,7 +109,7 @@
                     acc = "-"
                 End If
 
-                .DrawString(FontManager.MiniFont, "Power: " & power & Environment.NewLine & "Accuracy: " & acc & Environment.NewLine & Environment.NewLine & t, New Vector2(CInt(p.X + 432 - 300 + AttackPos), p.Y + 38), Color.Black)
+                .DrawString(FontManager.MainFontBlack, "Power: " & power & Environment.NewLine & "Accuracy: " & acc & Environment.NewLine & Environment.NewLine & t, New Vector2(CInt(p.X + 432 - 300 + AttackPos), p.Y + 38), Color.White)
                 .Draw(A.GetDamageCategoryImage(), New Rectangle(CInt(p.X + 432 - 150 + AttackPos), CInt(p.Y + 42), 56, 28), Color.White)
             End With
 
@@ -137,18 +137,20 @@
         Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(CInt(p.X) + 12, CInt(p.Y), 256, 64))
 
         With Core.SpriteBatch
-            .DrawString(FontManager.MiniFont, A.Name, New Vector2(CInt(p.X) + 30, CInt(p.Y + 26)), Color.Black)
-
-            Dim c As Color = Color.Black
+            .DrawString(FontManager.MainFontBlack, A.Name, New Vector2(CInt(p.X) + 30, CInt(p.Y + 26)), Color.White)
+            Dim font As SpriteFont = FontManager.MainFontBlack
+            Dim c As Color = Color.White
             Dim per As Integer = CInt((A.CurrentPP / A.MaxPP) * 100)
 
             If per <= 33 And per > 10 Then
                 c = Color.Orange
+                font = FontManager.MainFontColor
             ElseIf per <= 10 Then
                 c = Color.IndianRed
+                font = FontManager.MainFontColor
             End If
 
-            .DrawString(FontManager.MiniFont, "PP " & A.CurrentPP & " / " & A.MaxPP, New Vector2(CInt(p.X) + 160, CInt(p.Y + 58)), c)
+            .DrawString(font, "PP " & A.CurrentPP & " / " & A.MaxPP, New Vector2(CInt(p.X) + 160, CInt(p.Y + 58)), c)
 
             .Draw(TextureManager.GetTexture("GUI\Menus\Types", A.Type.GetElementImage(), ""), New Rectangle(CInt(p.X) + 30, CInt(p.Y + 54), 48, 16), Color.White)
         End With

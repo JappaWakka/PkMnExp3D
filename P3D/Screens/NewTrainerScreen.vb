@@ -111,7 +111,7 @@
             Canvas.DrawRectangle(_textBatch, New Rectangle(-10, 300, 190, 30), New Color(0, 0, 0, 150))
 
             Dim emblemName = GameJoltSave.Emblem
-            _textBatch.DrawString(FontManager.MiniFont, emblemName(0).ToString().ToUpper() & emblemName.Substring(1, emblemName.Length - 1), New Vector2(15, 305), Color.White)
+            _textBatch.DrawString(FontManager.MainFontWhite, emblemName(0).ToString().ToUpper() & emblemName.Substring(1, emblemName.Length - 1), New Vector2(15, 305), Color.White)
 
             DrawLevelProgress()
         End If
@@ -161,7 +161,7 @@
     End Sub
 
     Private Sub DrawBadges()
-        _textBatch.DrawString(FontManager.MiniFont, Localization.GetString("trainer_screen_collected_badges") & ": " & Core.Player.Badges.Count, New Vector2(50, 360), Color.Black)
+        _textBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("trainer_screen_collected_badges") & ": " & Core.Player.Badges.Count, New Vector2(50, 360), Color.White)
 
         Dim selectedRegion As String = Badge.GetRegion(_badgeRegionIndex)
         Dim badgesCount As Integer = Badge.GetBadgesCount(selectedRegion)
@@ -185,7 +185,7 @@
             _spriteBatch.Draw(Badge.GetBadgeTexture(badgeID), New Rectangle(16 + (i + 1) * 64, 412, 50, 50), Nothing, c, shake, New Vector2(25, 25), SpriteEffects.None, 0F)
         Next
 
-        _textBatch.DrawString(FontManager.MiniFont, badgeName, New Vector2(555 - FontManager.MiniFont.MeasureString(badgeName).X.ToInteger(), 360), Color.Black)
+        _textBatch.DrawString(FontManager.MainFontBlack, badgeName, New Vector2(555 - FontManager.MainFontBlack.MeasureString(badgeName).X.ToInteger(), 360), Color.White)
     End Sub
 
     Private Sub DrawLevelProgress()
@@ -225,12 +225,12 @@
         End If
         Dim rankStr = "Rank: " & nxtLvl
 
-        _textBatch.DrawString(FontManager.MiniFont, rankStr, New Vector2(600 - FontManager.MiniFont.MeasureString(rankStr).X.ToInteger(), 290), Color.Black)
+        _textBatch.DrawString(FontManager.MainFontBlack, rankStr, New Vector2(600 - FontManager.MainFontBlack.MeasureString(rankStr).X.ToInteger(), 290), Color.White)
 
         If needPoints = 1 Then
-            _textBatch.DrawString(FontManager.MiniFont, "Need " & needPoints & " point", New Vector2(280, 318), Color.Black)
+            _textBatch.DrawString(FontManager.MainFontBlack, "Need " & needPoints & " point", New Vector2(280, 318), Color.White)
         Else
-            _textBatch.DrawString(FontManager.MiniFont, "Need " & needPoints & " points", New Vector2(280, 318), Color.Black)
+            _textBatch.DrawString(FontManager.MainFontBlack, "Need " & needPoints & " points", New Vector2(280, 318), Color.White)
         End If
 
         'If totalNeedPoints > 0 Then
@@ -240,8 +240,8 @@
         '    Canvas.DrawRectangle(New Rectangle(140, 380, 320, 16), Color.Black)
         'End If
 
-        'Core.SpriteBatch.DrawString(FontManager.MiniFont, "Rank: " & currentLevel, New Vector2(100, 400), Color.Black)
-        'Core.SpriteBatch.DrawString(FontManager.MiniFont, "Rank: " & currentLevel + 1, New Vector2(430, 400), Color.Black)
+        'Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Rank: " & currentLevel, New Vector2(100, 400), Color.White)
+        'Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Rank: " & currentLevel + 1, New Vector2(430, 400), Color.White)
 
     End Sub
 

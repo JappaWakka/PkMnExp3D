@@ -161,7 +161,7 @@ Public Class NameObjectScreen
         If t.Length < 20 Then
             t &= "_"
         End If
-        Core.SpriteBatch.DrawString(FontManager.MiniFont, t, TextboxPosition(), Color.Black)
+        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, t, TextboxPosition(), Color.White)
     End Sub
 
     Public Overrides Sub Update()

@@ -215,9 +215,6 @@ Public Class TradeScreen
     Public Overrides Sub Draw()
         Canvas.DrawRectangle(Core.windowSize, New Color(84, 198, 216))
 
-        For y = -64 To Core.windowSize.Height Step 64
-            Core.SpriteBatch.Draw(Me.texture, New Rectangle(Core.windowSize.Width - 128, y + Me.TileOffset, 128, 64), New Rectangle(48, 0, 16, 16), Color.White)
-        Next
 
         Canvas.DrawGradient(New Rectangle(0, 0, CInt(Core.windowSize.Width), 200), New Color(42, 167, 198), New Color(42, 167, 198, 0), False, -1)
         Canvas.DrawGradient(New Rectangle(0, CInt(Core.windowSize.Height - 200), CInt(Core.windowSize.Width), 200), New Color(42, 167, 198, 0), New Color(42, 167, 198), False, -1)
@@ -707,8 +704,8 @@ Public Class TradeScreen
 
             If BuyItemsShowDescription = True Then
                 Canvas.DrawRectangle(New Rectangle(736 + 28, 160 + 28, 200, 200), New Color(0, 0, 0, 200))
-                Dim t As String = selectedItem.GetItem().Description.CropStringToWidth(FontManager.MiniFont, 180)
-                SpriteBatch.DrawString(FontManager.MiniFont, t, New Vector2(736 + 30, 160 + 30), Color.White)
+                Dim t As String = selectedItem.GetItem().Description.CropStringToWidth(FontManager.MainFontWhite, 180)
+                SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(736 + 30, 160 + 30), Color.White)
             End If
 
             ' Amount of the selected item in the player's Bag:
@@ -720,10 +717,10 @@ Public Class TradeScreen
             If selectedItem.Amount > -1 Then
                 bannerText = " | In Stock: " & selectedItem.Amount
             End If
-            Me.DrawBanner(New Vector2(665, 430), 30, "In Inventory: " & amount & bannerText, FontManager.MiniFont, 400)
+            Me.DrawBanner(New Vector2(665, 430), 30, "In Inventory: " & amount & bannerText, FontManager.MainFontWhite, 400)
 
             ' - button:
-            Core.SpriteBatch.Draw(texture, New Rectangle(664, 484, 64, 64), New Rectangle(16, 32, 16, 16), Color.White)
+            Core.SpriteBatch.Draw(texture, New Rectangle(664, 484, 64, 64), New Rectangle(0, 32, 16, 16), Color.White)
             Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "-", New Vector2(664 + 23, 484 + 2), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
 
             ' Amount field:
@@ -737,7 +734,7 @@ Public Class TradeScreen
             Core.SpriteBatch.DrawString(FontManager.MainFontBlack, amountString, New Vector2(792 - FontManager.MainFontWhite.MeasureString(amountString).X / 2.0F, 504), Color.White)
 
             ' + button:
-            Core.SpriteBatch.Draw(texture, New Rectangle(856, 484, 64, 64), New Rectangle(16, 32, 16, 16), Color.White)
+            Core.SpriteBatch.Draw(texture, New Rectangle(856, 484, 64, 64), New Rectangle(0, 32, 16, 16), Color.White)
             Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "+", New Vector2(856 + 19, 484 + 6), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
 
             Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Per Item: " & selectedItem.Price.ToString() & GetCurrencyShort() & Environment.NewLine &
@@ -754,7 +751,7 @@ Public Class TradeScreen
         End If
 
         ' Current balance:
-        Me.DrawBanner(New Vector2(665, 110), 30, "Current balance: " & GetCurrencyDisplay(), FontManager.MiniFont, 400)
+        Me.DrawBanner(New Vector2(665, 110), 30, "Current balance: " & GetCurrencyDisplay(), FontManager.MainFontWhite, 400)
 
         ' Cursor draw:
         Me.DrawMainCursor()
@@ -1048,8 +1045,8 @@ Public Class TradeScreen
 
             If Me.SellItemsShowDescription = True Then
                 Canvas.DrawRectangle(New Rectangle(736 + 28, 160 + 28, 200, 200), New Color(0, 0, 0, 200))
-                Dim t As String = selectedItem.GetItem().Description.CropStringToWidth(FontManager.MiniFont, 180)
-                SpriteBatch.DrawString(FontManager.MiniFont, t, New Vector2(736 + 30, 160 + 30), Color.White)
+                Dim t As String = selectedItem.GetItem().Description.CropStringToWidth(FontManager.MainFontWhite, 180)
+                SpriteBatch.DrawString(FontManager.MainFontWhite, t, New Vector2(736 + 30, 160 + 30), Color.White)
             End If
 
             ' Amount of the selected item in the player's Bag:
@@ -1057,10 +1054,10 @@ Public Class TradeScreen
             While amount.Length < 3
                 amount = "0" & amount
             End While
-            Me.DrawBanner(New Vector2(665, 430), 30, "In Bag " & amount, FontManager.MiniFont, 400)
+            Me.DrawBanner(New Vector2(665, 430), 30, "In Bag " & amount, FontManager.MainFontWhite, 400)
 
             ' - button:
-            Core.SpriteBatch.Draw(texture, New Rectangle(664, 484, 64, 64), New Rectangle(16, 32, 16, 16), Color.White)
+            Core.SpriteBatch.Draw(texture, New Rectangle(664, 484, 64, 64), New Rectangle(0, 32, 16, 16), Color.White)
             Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "-", New Vector2(664 + 23, 484 + 2), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
 
             ' Amount field:
@@ -1071,10 +1068,10 @@ Public Class TradeScreen
                 amountString = "0" & amountString
             End While
             amountString = "x" & amountString
-            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, amountString, New Vector2(792 - FontManager.MainFontWhite.MeasureString(amountString).X / 2.0F, 504), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, amountString, New Vector2(792 - FontManager.MainFontBlack.MeasureString(amountString).X / 2.0F, 504), Color.White)
 
             ' + button:
-            Core.SpriteBatch.Draw(texture, New Rectangle(856, 484, 64, 64), New Rectangle(16, 32, 16, 16), Color.White)
+            Core.SpriteBatch.Draw(texture, New Rectangle(856, 484, 64, 64), New Rectangle(0, 32, 16, 16), Color.White)
             Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "+", New Vector2(856 + 19, 484 + 6), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
 
             Core.SpriteBatch.DrawString(FontManager.MainFontWhite, "Per Item: " & selectedItem.SellPrice().ToString() & GetCurrencyShort() & Environment.NewLine &
@@ -1091,7 +1088,7 @@ Public Class TradeScreen
         End If
 
         ' Current balance:
-        Me.DrawBanner(New Vector2(665, 110), 30, "Current balance: " & GetCurrencyDisplay(), FontManager.MiniFont, 400)
+        Me.DrawBanner(New Vector2(665, 110), 30, "Current balance: " & GetCurrencyDisplay(), FontManager.MainFontWhite, 400)
 
         ' Cursor draw:
         Me.DrawMainCursor()
@@ -1149,9 +1146,9 @@ Public Class TradeScreen
 
         Dim text As String = "Do you want to sell" & Environment.NewLine & Me.SellItemsAmount & " " & tradeItem.GetItem().Name & "?"
 
-        Core.SpriteBatch.DrawString(FontManager.MiniFont,
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite,
                                     text,
-                                    New Vector2(Core.windowSize.Width / 2.0F - FontManager.MiniFont.MeasureString(text).X, Core.windowSize.Height / 2.0F - 170),
+                                    New Vector2(Core.windowSize.Width / 2.0F - FontManager.MainFontWhite.MeasureString(text).X, Core.windowSize.Height / 2.0F - 170),
                                     Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)
 
         DrawButton(New Vector2(Core.windowSize.Width / 2.0F - 192, Core.windowSize.Height / 2.0F - 60), 4, "Sell", 16, Nothing)
@@ -1160,7 +1157,7 @@ Public Class TradeScreen
         ' Cursor:
         Dim cPosition As Vector2 = New Vector2(Core.windowSize.Width / 2.0F - 192 + 280, Core.windowSize.Height / 2.0F - 60 + Me.sellItemsConfirmationCursor * 96 - 42)
 
-        Dim t As Texture2D = TextureManager.GetTexture("GUI\Menus\General", New Rectangle(0, 0, 16, 16), "")
+        Dim t As Texture2D = TextureManager.GetTexture("GUI\Menus\General", New Rectangle(0, 0, 32, 32), "")
         Core.SpriteBatch.Draw(t, New Rectangle(CInt(cPosition.X), CInt(cPosition.Y), 64, 64), Color.White)
     End Sub
 
