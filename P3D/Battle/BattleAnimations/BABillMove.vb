@@ -10,15 +10,15 @@
     Public SpinSpeedX As Single = 0.1F
     Public SpinSpeedZ As Single = 0.1F
 
-    Public Sub New(ByRef entity As Entity, ByVal Destination As Vector3, ByVal Speed As Single, ByVal SpinX As Boolean, ByVal SpinZ As Boolean, ByVal startDelay As Single, ByVal endDelay As Single)
+    Public Sub New(ByRef entity As Entity, ByVal Destination As Vector3, ByVal Speed As Single, ByVal SpinX As Boolean, ByVal SpinZ As Boolean, ByVal startDelay As Single, ByVal endDelay As Single, Optional ByVal SpinXSpeed As Single = 0.1F, Optional ByVal SpinZSpeed As Single = 0.1F)
         MyBase.New(New Vector3(0.0F), TextureManager.DefaultTexture, New Vector3(1.0F), startDelay, endDelay)
         Me.Destination = Destination
         Me.MoveSpeed = Speed
 
         Me.SpinX = SpinX
         Me.SpinZ = SpinZ
-        Me.SpinSpeedX = 0.1F
-        Me.SpinSpeedZ = 0.1F
+        Me.SpinSpeedX = SpinXSpeed
+        Me.SpinSpeedZ = SpinZSpeed
         Me.Visible = False
         Me.Destination = Destination
         Me.MoveSpeed = Speed

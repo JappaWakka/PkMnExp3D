@@ -15,24 +15,24 @@
 
     Dim Trainer As Trainer
 
-    Dim minDelay As Single = 16.0F
+    Dim minDelay As Single = 10.0F
     Dim startTime As Date
     Dim duration As TimeSpan
 
     Public MusicLoop As String = ""
 
     Public Sub New(ByVal OldScreen As Screen, ByVal NewScreen As Screen, ByVal IntroType As Integer)
-		Dim musicLoop As String = Screen.Level.CurrentRegion.Split(CChar(","))(0) & "_wild_StartBattle"
+        Dim musicLoop As String = Screen.Level.CurrentRegion.Split(CChar(","))(0) & "_Wild_StartBattle"
 
-		If BattleSystem.BattleScreen.RoamingBattle = True Then
+        If BattleSystem.BattleScreen.RoamingBattle = True Then
             If BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop <> "" Then
-				musicLoop = BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop & "_StartBattle"
-			End If
+                musicLoop = BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop & "_StartBattle"
+            End If
         End If
 
         If MusicManager.SongExists(musicLoop) = False Then
-			musicLoop = "hoenn_wild_StartBattle"
-		End If
+            musicLoop = "Hoenn_Wild_StartBattle"
+        End If
         musicLoop = musicLoop
 
         Me.Constructor(OldScreen, NewScreen, Nothing, musicLoop, IntroType)
@@ -40,16 +40,16 @@
 
     Public Sub New(ByVal OldScreen As Screen, ByVal NewScreen As Screen, ByVal IntroType As Integer, ByVal MusicLoop As String)
         If MusicLoop = "" Then
-			MusicLoop = Screen.Level.CurrentRegion.Split(CChar(","))(0) & "_wild_StartBattle"
-			If MusicManager.SongExists(MusicLoop) = False Then
+            MusicLoop = Screen.Level.CurrentRegion.Split(CChar(","))(0) & "_Wild_StartBattle"
+            If MusicManager.SongExists(MusicLoop) = False Then
                 If BattleSystem.BattleScreen.RoamingBattle = True Then
                     If BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop <> "" Then
-						MusicLoop = BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop & "_StartBattle"
-					End If
+                        MusicLoop = BattleSystem.BattleScreen.RoamingPokemonStorage.MusicLoop & "_StartBattle"
+                    End If
                 End If
                 If MusicManager.SongExists(MusicLoop) = False Then
-					MusicLoop = "hoenn_wild_StartBattle"
-				End If
+                    MusicLoop = "hoenn_Wild_StartBattle"
+                End If
             End If
             MusicLoop = MusicLoop
         Else
@@ -460,11 +460,11 @@
             Else
                 Dim a As Rectangle = Animations(0)
 
-                a.X -= 7
-                a.Y -= 7
+                a.X -= CInt(Math.Ceiling(Core.windowSize.Width / 300))
+                a.Y -= CInt(Math.Ceiling(Core.windowSize.Height / 300))
 
-                a.Width += 14
-                a.Height += 14
+                a.Width += CInt(Math.Ceiling(Core.windowSize.Width / 150))
+                a.Height += CInt(Math.Ceiling(Core.windowSize.Height / 150))
 
                 Animations.RemoveAt(0)
                 Animations.Add(a)
@@ -507,16 +507,16 @@
 		MusicManager.Play(MusicLoop, False, 0F, False)
 
 		If Not MusicManager.CurrentSong Is Nothing Then
-			Me.duration = MusicManager.CurrentSong.Duration
-		Else
+            Me.duration = MusicManager.CurrentSong.Duration
+        Else
 			Me.duration = New TimeSpan(0)
 		End If
 		Me.startTime = Date.Now
 	End Sub
 
 	Private Function SongOver() As Boolean
-		Return startTime + duration < Date.Now.AddSeconds(0.1)
-	End Function
+        Return startTime + duration < Date.Now.AddSeconds(0.1)
+    End Function
 
 	'Protected Overrides Sub Finalize()
 	'    If blurTexture IsNot Nothing

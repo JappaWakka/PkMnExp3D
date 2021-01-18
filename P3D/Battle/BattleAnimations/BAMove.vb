@@ -10,12 +10,15 @@
     Public SpinSpeedX As Single = 0.1F
     Public SpinSpeedZ As Single = 0.1F
 
-    Public Sub New(ByVal Position As Vector3, ByVal Texture As Texture2D, ByVal Scale As Vector3, ByVal Destination As Vector3, ByVal Speed As Single, ByVal SpinX As Boolean, ByVal SpinZ As Boolean, ByVal startDelay As Single, ByVal endDelay As Single)
+    Public Sub New(ByVal Position As Vector3, ByVal Texture As Texture2D, ByVal Scale As Vector3, ByVal Destination As Vector3, ByVal Speed As Single, ByVal SpinX As Boolean, ByVal SpinZ As Boolean, ByVal startDelay As Single, ByVal endDelay As Single, Optional ByVal SpinXSpeed As Single = 0.1F, Optional ByVal SpinZSpeed As Single = 0.1F)
         MyBase.New(Position, Texture, Scale, startDelay, endDelay)
 
+        Me.Position = Position
         Me.Destination = Destination
         Me.MoveSpeed = Speed
         Me.Scale = Scale
+        Me.SpinSpeedX = SpinXSpeed
+        Me.SpinSpeedZ = SpinZSpeed
 
         Me.SpinX = SpinX
         Me.SpinZ = SpinZ

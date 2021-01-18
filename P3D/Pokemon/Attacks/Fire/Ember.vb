@@ -81,9 +81,10 @@
                 BAFlip = True
             End If
             Dim MoveAnimation As MoveAnimationQueryObject = New MoveAnimationQueryObject(CurrentEntity, BAFlip)
-            MoveAnimation.AttacksSpawnMovingAnimation(0.0, 0.0, 0.0, "Textures\Battle\Fire\EmberBall", 0.2, 0.2, 0.2, 4.0, 0.0, 0.0, 0.036, False, True, 0.0, 0.0)
+            MoveAnimation.PlaySoundAnimation("Battle\Attacks\Ember_Start", 0, 5)
+            MoveAnimation.SpawnMovingEntityAnimation(0.0, 0, 0.0, "Textures\Battle\Fire\FireBall", 0.5, 0.5, 0.5, 3.0, 0.0, 0.0, 0.036, False, True, 0.0, 0.0, 0.1, -0.25)
             For i = 0 To 12
-                MoveAnimation.AttacksSpawnOpacityAnimation(CSng(i * 0.2), 0.0, 0.0, "Textures\Battle\Fire\Fire", 0.2, 0.2, 0.2, 0.01, False, 0.0, CSng(i * 0.6), 0.0)
+                MoveAnimation.SpawnFadingEntityAnimation(CSng(i * 0.2), 0.0, 0.0, "Textures\Battle\Fire\Smoke", 0.2, 0.2, 0.2, 0.02, False, 0.0, CSng(i * 0.6), 0.0)
                 i += 1
             Next
             BattleScreen.BattleQuery.Add(MoveAnimation)
@@ -101,24 +102,27 @@
             End If
             Dim MoveAnimation As MoveAnimationQueryObject = New MoveAnimationQueryObject(CurrentEntity, BAFlip)
 
-            MoveAnimation.AttacksSpawnMovingAnimation(0.1, 0, 0.0, "Textures\Battle\Fire\Flame_1", 0.45, 0.45, 0.45, 0.1, 0, 0.0, 0.0, False, False, 1.0, 1.0)
+            MoveAnimation.PlaySoundAnimation("Battle\Attacks\Ember_Hit", 0, 5)
+            MoveAnimation.SpawnFadingEntityAnimation(-0.25, -0.25, -0.25, "Textures\Battle\Fire\Ember,0,0,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 0, 2)
+            MoveAnimation.SpawnFadingEntityAnimation(0.25, -0.25, 0.25, "Textures\Battle\Fire\Ember,0,0,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 0, 2)
+            MoveAnimation.SpawnFadingEntityAnimation(0.25, -0.25, -0.25, "Textures\Battle\Fire\Ember,0,0,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 0, 2)
 
-            MoveAnimation.AttacksSpawnMovingAnimation(0.1, 0, 0.0, "Textures\Battle\Fire\Flame_2", 0.45, 0.45, 0.45, 0.1, 0, 0.0, 0.0, False, False, 2, 1)
-            MoveAnimation.AttacksSpawnMovingAnimation(0.1, 0, 0.0, "Textures\Battle\Fire\Flame_3", 0.45, 0.45, 0.45, 0.1, 0, 0.0, 0.0, False, False, 3, 1)
-            MoveAnimation.AttacksSpawnMovingAnimation(0.1, 0, 0.0, "Textures\Battle\Fire\Flame_4", 0.45, 0.45, 0.45, 0.1, 0, 0.0, 0.0, False, False, 4, 1)
+            MoveAnimation.SpawnFadingEntityAnimation(-0.25, -0.25, -0.25, "Textures\Battle\Fire\Ember,0,32,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 1, 2)
+            MoveAnimation.SpawnFadingEntityAnimation(0.25, -0.25, 0.25, "Textures\Battle\Fire\Ember,0,32,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 1, 2)
+            MoveAnimation.SpawnFadingEntityAnimation(0.25, -0.25, -0.25, "Textures\Battle\Fire\Ember,0,32,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 1, 2)
 
+            MoveAnimation.SpawnFadingEntityAnimation(-0.25, -0.25, -0.25, "Textures\Battle\Fire\Ember,0,64,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 2, 2)
+            MoveAnimation.SpawnFadingEntityAnimation(0.25, -0.25, 0.25, "Textures\Battle\Fire\Ember,0,64,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 2, 2)
+            MoveAnimation.SpawnFadingEntityAnimation(0.25, -0.25, -0.25, "Textures\Battle\Fire\Ember,0,64,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 2, 2)
 
-            MoveAnimation.AttacksSpawnMovingAnimation(0.5, 0, 0.5, "Textures\Battle\Fire\Flame_1", 0.45, 0.45, 0.45, 0.5, 0, 0.5, 0.0, False, False, 1.0, 1.0)
+            MoveAnimation.SpawnFadingEntityAnimation(-0.25, -0.25, -0.25, "Textures\Battle\Fire\Ember,0,96,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 3, 2)
+            MoveAnimation.SpawnFadingEntityAnimation(0.25, -0.25, 0.25, "Textures\Battle\Fire\Ember,0,96,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 3, 2)
+            MoveAnimation.SpawnFadingEntityAnimation(0.25, -0.25, -0.25, "Textures\Battle\Fire\Ember,0,96,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 3, 2)
 
-            MoveAnimation.AttacksSpawnMovingAnimation(0.5, 0, 0.5, "Textures\Battle\Fire\Flame_2", 0.45, 0.45, 0.45, 0.5, 0, 0.5, 0.0, False, False, 2, 1)
-            MoveAnimation.AttacksSpawnMovingAnimation(0.5, 0, 0.5, "Textures\Battle\Fire\Flame_3", 0.45, 0.45, 0.45, 0.5, 0, 0.5, 0.0, False, False, 3, 1)
-            MoveAnimation.AttacksSpawnMovingAnimation(0.5, 0, 0.5, "Textures\Battle\Fire\Flame_4", 0.45, 0.45, 0.45, 0.5, 0, 0.5, 0.0, False, False, 4, 1)
+            MoveAnimation.SpawnFadingEntityAnimation(-0.25, -0.25, -0.25, "Textures\Battle\Fire\Ember,0,128,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 4, 2)
+            MoveAnimation.SpawnFadingEntityAnimation(0.25, -0.25, 0.25, "Textures\Battle\Fire\Ember,0,128,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 4, 2)
+            MoveAnimation.SpawnFadingEntityAnimation(0.25, -0.25, -0.25, "Textures\Battle\Fire\Ember,0,128,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 4, 2)
 
-            MoveAnimation.AttacksSpawnMovingAnimation(-0.5, 0, -0.5, "Textures\Battle\Fire\Flame_1", 0.45, 0.45, 0.45, -0.5, 0, -0.5, 0.0, False, False, 1.0, 1.0)
-
-            MoveAnimation.AttacksSpawnMovingAnimation(-0.5, 0, -0.5, "Textures\Battle\Fire\Flame_2", 0.45, 0.45, 0.45, -0.5, 0, -0.5, 0.0, False, False, 2, 1)
-            MoveAnimation.AttacksSpawnMovingAnimation(-0.5, 0, -0.5, "Textures\Battle\Fire\Flame_3", 0.45, 0.45, 0.45, -0.5, 0, -0.5, 0.0, False, False, 3, 1)
-            MoveAnimation.AttacksSpawnMovingAnimation(-0.5, 0, -0.5, "Textures\Battle\Fire\Flame_4", 0.45, 0.45, 0.45, -0.5, 0, -0.5, 0.0, False, False, 4, 1)
             BattleScreen.BattleQuery.Add(MoveAnimation)
         End Sub
     End Class
