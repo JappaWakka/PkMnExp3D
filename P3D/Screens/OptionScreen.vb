@@ -446,7 +446,7 @@
 #Region "SettingsBattle"
 
     Private Sub ToggleShowModels(ByVal c As ToggleButton)
-        If Me.ShowModels = 0 Then
+        If Me.ShowModels <> 1 Then
             Me.ShowModels = 1
         Else
             Me.ShowModels = 0
@@ -454,7 +454,7 @@
     End Sub
 
     Private Sub ToggleAnimations(ByVal c As ToggleButton)
-        If Me.ShowBattleAnimations = 0 Then
+        If Me.ShowBattleAnimations <> 1 Then
             Me.ShowBattleAnimations = 1
         Else
             Me.ShowBattleAnimations = 0
@@ -462,7 +462,7 @@
     End Sub
 
     Private Sub ToggleBattleStyle(ByVal c As ToggleButton)
-        If Me.BattleStyle = 0 Then
+        If Me.BattleStyle <> 1 Then
             Me.BattleStyle = 1
         Else
             Me.BattleStyle = 0
@@ -886,8 +886,8 @@
                 End If
                 If clicked = True Then
                     Dim x As Double = MouseHandler.MousePosition.X - Me._position.X
-                    If x < 0 Then
-                        x = 0D
+                    If x <0 Then
+                        x= 0D
                     End If
                     If x > Me.Size + 16 Then
                         x = Me.Size + 16

@@ -75,11 +75,12 @@
         End If
 
         Screen.TextBox.reDelay = 0.0F
-
-        If Me.menuIndex = 0 Then
-            UpdateMain()
-        Else
-            UpdateQuit()
+        If Core.GameInstance.IsActive = True Then
+            If Me.menuIndex = 0 Then
+                UpdateMain()
+            Else
+                UpdateQuit()
+            End If
         End If
     End Sub
 
@@ -120,14 +121,14 @@
                     Me.mainIndex = i
 
                     If Controls.Accept(True, False) = True Then
-						Select Case Me.mainIndex
-							Case 0
-								ClickContinue()
-							Case 1
-								ClickQuit()
-						End Select
-						SoundManager.PlaySound("Select")
-					End If
+                        Select Case Me.mainIndex
+                            Case 0
+                                ClickContinue()
+                            Case 1
+                                ClickQuit()
+                        End Select
+                        SoundManager.PlaySound("Select")
+                    End If
                 End If
             Next
         End If
@@ -135,14 +136,14 @@
         Me.mainIndex = CInt(MathHelper.Clamp(Me.mainIndex, 0, 1))
 
         If Controls.Accept(False, True) = True Then
-			Select Case Me.mainIndex
-				Case 0
-					ClickContinue()
-				Case 1
-					ClickQuit()
-			End Select
-			SoundManager.PlaySound("Select")
-		End If
+            Select Case Me.mainIndex
+                Case 0
+                    ClickContinue()
+                Case 1
+                    ClickQuit()
+            End Select
+            SoundManager.PlaySound("Select")
+        End If
 
         If Controls.Dismiss() = True Or KeyBoardHandler.KeyPressed(KeyBindings.EscapeKey) = True And leftEscapeKey = True Or ControllerHandler.ButtonPressed(Buttons.Start) = True Then
             ClickContinue()
