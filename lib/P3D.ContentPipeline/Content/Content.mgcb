@@ -60,13 +60,6 @@
 /processorParam:TextureFormat=Color
 /build:Fonts/BMP/MainFontWhite.png
 
-#begin Fonts/BMP/miniFont.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:Fonts/BMP/miniFont.spritefont
-
 #begin Fonts/BMP/Unown.png
 /importer:TextureImporter
 /processor:FontTextureProcessor
