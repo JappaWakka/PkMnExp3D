@@ -45,15 +45,15 @@ version=2
 	:if:<npc.exists(2)>=false
 		@npc.spawn(2,0,1,1,Hoenn\Cities\Littleroot\YourHouse1f\Machoke_Walking,[POKEMON|N]67,1,1,Machoke,2,Straight,[[0,1,4,1]])
 	:endif
-	:if:<player.position>=8,0,0 <and> <player.facing>=2
-		@player.stopmovement
-		@player.move(1)
-		@text.show(<token.Littleroot_YourHouse1f_Mom_SetYourClock>)
-		@player.turnto(0)
-		@player.move(1)
-		@player.warp(Hoenn\Cities\Littleroot\YourHouse2f.dat,6,-2.9,1,0,3)
-		@level.update
-	:endif
+	@player.stopmovement
+	@player.setmovement(0,0,1)
+	@player.move(1)
+	@player.turnto(2)
+	@text.show(<token.Littleroot_YourHouse1f_Mom_SetYourClock>)
+	@player.turnto(0)
+	@player.move(1)
+	@player.warp(Hoenn\Cities\Littleroot\YourHouse2f.dat,6,-2.9,1,0,3)
+	@level.update
 	:end
 :endif
 :if:<register.value(storyline_progress)>=4
@@ -61,6 +61,7 @@ version=2
 		@npc.spawn(4,0,3,1,Hoenn\Cities\Littleroot\YourHouse1f\mom,Mom,0,0,Mom,0,Still)
 	:endif
 	@player.stopmovement
+	@player.setmovement(0,0,1)
 	@player.move(1)
 	@player.turnto(1)
 	@npc.turn(0,3)

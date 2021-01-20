@@ -2589,91 +2589,89 @@
 	Public Sub Unload()
 		'This function clears all data from the loaded player and restores the default values.
 
-		If loadedSave = True Then
-			'Clearning lists:
-			Pokemons.Clear()
-			Pokedexes.Clear()
-			Inventory.Clear()
-			Badges.Clear()
-			PokeFiles.Clear()
-			EarnedAchievements.Clear()
-			PhoneModules.Clear()
-			PhoneContacts.Clear()
-			Mails.Clear()
-			Trophies.Clear()
+		'Clearning lists:
+		Pokemons.Clear()
+		Pokedexes.Clear()
+		Inventory.Clear()
+		Badges.Clear()
+		PokeFiles.Clear()
+		EarnedAchievements.Clear()
+		PhoneModules.Clear()
+		PhoneContacts.Clear()
+		Mails.Clear()
+		Trophies.Clear()
 
-			'Restore default values:
-			Name = "<playername>"
-			RivalName = ""
-			RivalSkin = ""
-			Gender = "Male"
-			Money = 0
-			PlayTime = TimeSpan.Zero
-			GameStart = Date.Now
-			OT = "00000"
-			Points = 0
-			BP = 0
-			Coins = 0
-			HasPokedex = False
-			HasPhone = False
-			ShowBattleAnimations = 1
-			BoxAmount = 10
-			LastRestPlace = "Hoenn\Cities\Littleroot\YourHousef2.dat"
-			LastRestPlacePosition = "1,0.1,3"
-			LastSavePlace = "Hoenn\Cities\Littleroot\YourHousef2.dat"
-			LastSavePlacePosition = "1,0.1,3"
-			DiagonalMovement = False
-			RepelSteps = 0
-			DifficultyMode = 0
-			BattleStyle = 1
-			ShowModelsInBattle = True
-			SaveCreated = "Pre 0.21"
-			LastPokemonPosition = New Vector3(999)
-			DaycareSteps = 0
-			GameMode = "PkMnExp3D"
-			VisitedMaps = ""
-			TempSurfSkin = "Ethan"
-			TempFishSkin = "Ethan"
-			TempBikeSkin = "Ethan"
-			TempRideSkin = "Ethan"
-			GTSStars = 8
-			SandBoxMode = False
-			Statistics = ""
-			startPosition = New Vector3(14, 0.1, 10)
-			startRotation = 0
-			startFreeCameraMode = False
-			startMap = "Hoenn\Cities\Littleroot\Main.dat"
-			startFOV = 45.0F
-			startRotationSpeed = 12
-			startThirdPerson = False
-			startSurfing = False
-			startBiking = False
-			startRiding = False
-			Skin = "Ethan"
+		'Restore default values:
+		Name = "<playername>"
+		RivalName = ""
+		RivalSkin = ""
+		Gender = "Male"
+		Money = 0
+		PlayTime = TimeSpan.Zero
+		GameStart = Date.Now
+		OT = "00000"
+		Points = 0
+		BP = 0
+		Coins = 0
+		HasPokedex = False
+		HasPhone = False
+		ShowBattleAnimations = 1
+		BoxAmount = 10
+		LastRestPlace = "Hoenn\Cities\Littleroot\YourHousef2.dat"
+		LastRestPlacePosition = "1,0.1,3"
+		LastSavePlace = "Hoenn\Cities\Littleroot\YourHousef2.dat"
+		LastSavePlacePosition = "1,0.1,3"
+		DiagonalMovement = False
+		RepelSteps = 0
+		DifficultyMode = 0
+		BattleStyle = 1
+		ShowModelsInBattle = True
+		SaveCreated = "Pre 0.21"
+		LastPokemonPosition = New Vector3(999)
+		DaycareSteps = 0
+		GameMode = "PkMnExp3D"
+		VisitedMaps = ""
+		TempSurfSkin = "Ethan"
+		TempFishSkin = "Ethan"
+		TempBikeSkin = "Ethan"
+		TempRideSkin = "Ethan"
+		GTSStars = 8
+		SandBoxMode = False
+		Statistics = ""
+		startPosition = New Vector3(14, 0.1, 10)
+		startRotation = 0
+		startFreeCameraMode = False
+		startMap = "Hoenn\Cities\Littleroot\Main.dat"
+		startFOV = 45.0F
+		startRotationSpeed = 12
+		startThirdPerson = False
+		startSurfing = False
+		startBiking = False
+		startRiding = False
+		Skin = "Ethan"
 
-			'Clear temp save data:
-			RegisterData = ""
-            BerryData = ""
-            PokedexData = ""
-            ItemData = ""
-            BoxData = ""
-            NPCData = ""
-            ApricornData = ""
-            SecretBaseData = ""
-            DaycareData = ""
-            HallOfFameData = ""
-            RoamingPokemonData = ""
+		'Clear temp save data:
+		RegisterData = ""
+		BerryData = ""
+		PokedexData = ""
+		ItemData = ""
+		BoxData = ""
+		NPCData = ""
+		ApricornData = ""
+		SecretBaseData = ""
+		DaycareData = ""
+		HallOfFameData = ""
+		RoamingPokemonData = ""
 
-            filePrefix = "nilllzz"
-            newFilePrefix = ""
-            AutosaveUsed = False
-            loadedSave = False
+		filePrefix = "nilllzz"
+		newFilePrefix = ""
+		AutosaveUsed = False
+		loadedSave = False
 
-            IsGameJoltSave = False
-            EmblemBackground = "standard"
+		IsGameJoltSave = False
+		EmblemBackground = "standard"
 
-            ResetNewLevel()
-        End If
-    End Sub
+		ResetNewLevel()
+	End Sub
 
 End Class

@@ -1877,6 +1877,7 @@
 #End Region
 
 	Public Overrides Sub ChangeTo()
+		Screens.MainMenu.NewNewGameScreen.CharacterSelectionScreen.SelectedSkin = ""
 		Core.Player.Unload()
 		Core.Player.Skin = "Ethan"
 		TextBox.Hide()

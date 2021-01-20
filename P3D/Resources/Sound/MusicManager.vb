@@ -45,7 +45,21 @@ Public Class LoopStream
                     _sourceStream.Position = 0
                 Else
                     If Not _sourceStream.Position = 0 Then
-                        Exit While
+                        If MusicManager._isIntroStarted = True Then
+                            Dim IntroContinueSong As SongContainer = MusicManager.GetSong(MusicManager._introContinueSong)
+                            If IntroContinueSong IsNot Nothing Then
+                                _sourceStream = New VorbisWaveReader(IntroContinueSong.Song)
+                                _enableLooping = True
+                                _sourceStream.Position = 0
+                            Else
+                                _sourceStream = New VorbisWaveReader(MusicManager.GetSong("silence").Song)
+                                _enableLooping = True
+                                _sourceStream.Position = 0
+                            End If
+                            MusicManager._isIntroStarted = False
+                        Else
+                            Exit While
+                        End If
                     End If
                 End If
             End If
@@ -80,9 +94,9 @@ Public Class MusicManager
     ' time until the intro of a song plays
     Private Shared _introMuteTime As Date
     Public Shared _introEndTime As Date
-    Private Shared _isIntroStarted As Boolean = False
+    Public Shared _isIntroStarted As Boolean = False
     ' song that gets played after the intro finished
-    Private Shared _introContinueSong As String
+    Public Shared _introContinueSong As String
 
     ' song that plays after fading is finished
     Private Shared _nextSong As String
@@ -94,10 +108,10 @@ Public Class MusicManager
     Private Shared _isFadingIn As Boolean = False
     ' NAudio properties
     Public Shared outputDevice As WaveOutEvent
-	Public Shared audioFile As VorbisWaveReader
-	Public Shared _stream As WaveChannel32
+    Public Shared audioFile As VorbisWaveReader
+    Public Shared _stream As WaveChannel32
 
-	Public Shared Property MasterVolume As Single = 1.0F
+    Public Shared Property MasterVolume As Single = 1.0F
 	Public Shared ReadOnly Property CurrentSong As SongContainer
 		Get
 			Return _currentSong
@@ -250,18 +264,18 @@ Public Class MusicManager
 				End If
 			End If
 
-			' intro
-			If _isIntroStarted Then
-				If Paused = False Then
-					If Date.Now >= _introEndTime Then
-						Dim song = GetSong(_introContinueSong)
-						_isLooping = True
-						_isIntroStarted = False
-						Play(song)
-					End If
-				End If
-			End If
-		End If
+            ' intro
+            'If _isIntroStarted Then
+            ' If Paused = False Then
+            ' If Date.Now >= _introEndTime Then
+            '    Dim song = GetSong(_introContinueSong)
+            '			_isLooping = True
+            '    _isIntroStarted = False
+            '    Play(song)
+            ' End If
+            '		End If
+            ' End If
+        End If
 
 		If Core.GameInstance.IsActive AndAlso _lastVolume <> (Volume * MasterVolume) Then
 			UpdateVolume()
@@ -309,21 +323,22 @@ Public Class MusicManager
 
 	End Sub
 
-	Private Shared Sub Play(song As SongContainer)
-		If Not song Is Nothing Then
-			Logger.Debug($"Play song [{song.Name}]")
-			If Not outputDevice Is Nothing Then
-				outputDevice.Dispose()
-			End If
-			outputDevice = New WaveOutEvent()
-			audioFile = New VorbisWaveReader(song.Song)
-			_stream = New NAudio.Wave.WaveChannel32(New LoopStream(audioFile, _isLooping))
-			outputDevice.Init(_stream)
-			If Paused = False Then
+    Private Shared Sub Play(song As SongContainer, Optional ByVal introSong As SongContainer = Nothing)
+        If Not song Is Nothing Then
+            Logger.Debug($"Play song [{song.Name}]")
+            If Not outputDevice Is Nothing Then
+                outputDevice.Dispose()
+            End If
+            outputDevice = New WaveOutEvent()
+            audioFile = New VorbisWaveReader(song.Song)
+
+            _stream = New NAudio.Wave.WaveChannel32(New LoopStream(audioFile, _isLooping))
+            outputDevice.Init(_stream)
+            If Paused = False Then
                 outputDevice.Play()
             End If
-			_stream.Volume = Volume * MasterVolume
-			_currentSongExists = True
+            _stream.Volume = Volume * MasterVolume
+            _currentSongExists = True
             _currentSongName = song.Name
             _currentSong = song
         Else
@@ -447,7 +462,7 @@ Public Class MusicManager
         End If
     End Function
 
-    Private Shared Function GetSong(songName As String) As SongContainer
+    Public Shared Function GetSong(songName As String) As SongContainer
         Dim key = GetSongName(songName)
 
         If _songs.ContainsKey(key) = True Then
