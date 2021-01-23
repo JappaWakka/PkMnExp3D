@@ -79,7 +79,7 @@
 			End If
 		End Sub
 
-		Public Sub SpawnFadingEntityAnimation(ByVal PositionX As Single, ByVal PositionY As Single, ByVal PositionZ As Single, ByVal Texture As String, ByVal ScaleX As Single, ByVal ScaleY As Single, ByVal ScaleZ As Single, ByVal TransitionSpeed As Single, ByVal FadeIn As Boolean, ByVal EndState As Single, ByVal startDelay As Single, ByVal endDelay As Single, Optional ByVal startState As Single = 1.0F)
+		Public Sub AnimationSpawnFadingEntity(ByVal PositionX As Single, ByVal PositionY As Single, ByVal PositionZ As Single, ByVal Texture As String, ByVal ScaleX As Single, ByVal ScaleY As Single, ByVal ScaleZ As Single, ByVal TransitionSpeed As Single, ByVal FadeIn As Boolean, ByVal EndState As Single, ByVal startDelay As Single, ByVal endDelay As Single, Optional ByVal startState As Single = 1.0F)
 			If CurrentEntity Is Nothing Then
 				Logger.Log(Logger.LogTypes.Warning, "ATTEMPT TO USE AttackSpawnMovingAnimation OUTSIDE OF ATTACK ANIMATION DELEGATE")
 			ElseIf Not AnimationStarted Then
@@ -108,7 +108,7 @@
 			End If
 		End Sub
 
-		Public Sub SpawnMovingEntityAnimation(ByVal PositionX As Single, ByVal PositionY As Single, ByVal PositionZ As Single, ByVal Texture As String, ByVal ScaleX As Single, ByVal ScaleY As Single, ByVal ScaleZ As Single, ByVal DestinationX As Single, ByVal DestinationY As Single, ByVal DestinationZ As Single, ByVal Speed As Single, ByVal SpinX As Boolean, ByVal SpinZ As Boolean, ByVal startDelay As Single, ByVal endDelay As Single, Optional ByVal SpinXSpeed As Single = 0.1F, Optional ByVal SpinZSpeed As Single = 0.1F)
+		Public Sub AnimationSpawnMovingEntity(ByVal PositionX As Single, ByVal PositionY As Single, ByVal PositionZ As Single, ByVal Texture As String, ByVal ScaleX As Single, ByVal ScaleY As Single, ByVal ScaleZ As Single, ByVal DestinationX As Single, ByVal DestinationY As Single, ByVal DestinationZ As Single, ByVal Speed As Single, ByVal SpinX As Boolean, ByVal SpinZ As Boolean, ByVal startDelay As Single, ByVal endDelay As Single, Optional ByVal SpinXSpeed As Single = 0.1F, Optional ByVal SpinZSpeed As Single = 0.1F, Optional MovementCurve As Integer = 1)
 			If CurrentEntity Is Nothing Then
 				Logger.Log(Logger.LogTypes.Warning, "ATTEMPT TO USE AttackSpawnMovingAnimation OUTSIDE OF ATTACK ANIMATION DELEGATE")
 			ElseIf Not AnimationStarted Then
@@ -137,11 +137,11 @@
 				Dim Scale As Vector3 = New Vector3(ScaleX, ScaleY, ScaleZ)
 				Dim Destination As Vector3 = New Vector3(CurrentEntity.Position.X + DestinationX, CurrentEntity.Position.Y + DestinationY, CurrentEntity.Position.Z + DestinationZ)
 
-				Dim baMove As BAMove = New BAMove(Position, texture2D, Scale, Destination, Speed, SpinX, SpinZ, startDelay, endDelay, SpinXSpeed, SpinZSpeed)
+				Dim baMove As BAMove = New BAMove(Position, texture2D, Scale, Destination, Speed, SpinX, SpinZ, startDelay, endDelay, SpinXSpeed, SpinZSpeed, MovementCurve)
 				AnimationSequence.Add(baMove)
 			End If
 		End Sub
-		Public Sub MovePokemonEntityAnimation(ByVal DestinationX As Single, ByVal DestinationY As Single, ByVal DestinationZ As Single, ByVal Speed As Single, ByVal SpinX As Boolean, ByVal SpinZ As Boolean, ByVal startDelay As Single, ByVal endDelay As Single, Optional ByVal SpinXSpeed As Single = 0.1F, Optional ByVal SpinZSpeed As Single = 0.1F)
+		Public Sub AnimationMovePokemonEntity(ByVal DestinationX As Single, ByVal DestinationY As Single, ByVal DestinationZ As Single, ByVal Speed As Single, ByVal SpinX As Boolean, ByVal SpinZ As Boolean, ByVal startDelay As Single, ByVal endDelay As Single, Optional ByVal SpinXSpeed As Single = 0.1F, Optional ByVal SpinZSpeed As Single = 0.1F, Optional MovementCurve As Integer = 1)
 			If CurrentEntity Is Nothing Then
 				Logger.Log(Logger.LogTypes.Warning, "ATTEMPT TO USE AttackSpawnMovingAnimation OUTSIDE OF ATTACK ANIMATION DELEGATE")
 			ElseIf Not AnimationStarted Then
@@ -153,22 +153,22 @@
 				End If
 
 				Dim Destination As Vector3 = New Vector3(CurrentEntity.Position.X + DestinationX, CurrentEntity.Position.Y + DestinationY, CurrentEntity.Position.Z + DestinationZ)
-				Dim baBillMove As BABillMove = New BABillMove(CurrentEntity, Destination, Speed, SpinX, SpinZ, startDelay, endDelay, SpinXSpeed, SpinZSpeed)
+				Dim baBillMove As BABillMove = New BABillMove(CurrentEntity, Destination, Speed, SpinX, SpinZ, startDelay, endDelay, SpinXSpeed, SpinZSpeed, MovementCurve)
 				AnimationSequence.Add(baBillMove)
 			End If
 		End Sub
-		Public Sub PlaySoundAnimation(ByVal sound As String, ByVal startDelay As Single, ByVal endDelay As Single)
+		Public Sub AnimationPlaySound(ByVal sound As String, ByVal startDelay As Single, ByVal endDelay As Single)
 			If CurrentEntity Is Nothing Then
-				Logger.Log(Logger.LogTypes.Warning, "ATTEMPT TO USE PlaySoundAnimation OUTSIDE OF ATTACK ANIMATION DELEGATE")
+				Logger.Log(Logger.LogTypes.Warning, "ATTEMPT TO USE AnimationPlaySound OUTSIDE OF ATTACK ANIMATION DELEGATE")
 			ElseIf Not AnimationStarted Then
-				Logger.Log(Logger.LogTypes.Warning, "ATTEMPT TO USE PlaySoundAnimation BEFORE CALLING AnimationSequenceBegin")
+				Logger.Log(Logger.LogTypes.Warning, "ATTEMPT TO USE AnimationPlaySound BEFORE CALLING AnimationSequenceBegin")
 			Else
 				Dim baSound As BASound = New BASound(sound, startDelay, endDelay)
 				AnimationSequence.Add(baSound)
 			End If
 		End Sub
 
-		Public Sub SpawnScalingEntityAnimation(ByVal PositionX As Single, ByVal PositionY As Single, ByVal PositionZ As Single, ByVal Texture As String, ByVal ScaleX As Single, ByVal ScaleY As Single, ByVal ScaleZ As Single, ByVal Grow As Boolean, ByVal EndSizeX As Single, ByVal EndSizeY As Single, ByVal EndSizeZ As Single, ByVal SizeSpeed As Single, ByVal startDelay As Single, ByVal endDelay As Single)
+		Public Sub AnimationScalePokemon(ByVal PositionX As Single, ByVal PositionY As Single, ByVal PositionZ As Single, ByVal Texture As String, ByVal ScaleX As Single, ByVal ScaleY As Single, ByVal ScaleZ As Single, ByVal Grow As Boolean, ByVal EndSizeX As Single, ByVal EndSizeY As Single, ByVal EndSizeZ As Single, ByVal SizeSpeed As Single, ByVal startDelay As Single, ByVal endDelay As Single)
 			If CurrentEntity Is Nothing Then
 				Logger.Log(Logger.LogTypes.Warning, "ATTEMPT TO USE AttackSpawnSizeAnimation OUTSIDE OF ATTACK ANIMATION DELEGATE")
 			ElseIf Not AnimationStarted Then

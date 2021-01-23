@@ -130,8 +130,8 @@ Public Class MusicManager
 				If _muted = True Then
 					If outputDevice IsNot Nothing Then
 						Volume = 0.0F
-						Core.GameMessage.ShowMessage(Localization.GetString("game_message_audio_off"), 12, FontManager.MainFontWhite, Color.White)
-					End If
+                        Core.GameMessage.ShowMessage(Localization.GetString("game_message_audio_off") & Localization.GetString("global_off"), 12, FontManager.MainFontWhite, Color.White)
+                    End If
 
 				Else
 					If outputDevice IsNot Nothing Then
@@ -140,8 +140,8 @@ Public Class MusicManager
 							Volume = 0.0F
 						Else
 							Volume = 1.0F
-							Core.GameMessage.ShowMessage(Localization.GetString("game_message_audio_on"), 12, FontManager.MainFontWhite, Color.White)
-						End If
+                            Core.GameMessage.ShowMessage(Localization.GetString("game_message_audio") & Localization.GetString("global_on"), 12, FontManager.MainFontWhite, Color.White)
+                        End If
 					End If
 				End If
 			End If

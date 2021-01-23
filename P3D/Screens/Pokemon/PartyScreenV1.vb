@@ -255,7 +255,7 @@
 
     Private Sub ShowMenu()
         Me.MenuID = 0
-        ChooseBox.Show({Localization.GetString("party_screen_summary"), Localization.GetString("party_screen_switch"), Localization.GetString("party_screen_item"), Localization.GetString("party_screen_back")}, 0, {})
+        ChooseBox.Show({Localization.GetString("global_summary"), Localization.GetString("global_switch"), Localization.GetString("party_screen_item"), Localization.GetString("global_back")}, 0, {})
 
         If (PokemonHasMove(Core.Player.Pokemons(index), Localization.GetString("global_pokemon_move_cut")) = True And Badge.CanUseHMMove(Badge.HMMoves.Cut) = True And Core.Player.Pokemons(index).IsEgg() = False) OrElse GameController.IS_DEBUG_ACTIVE = True OrElse Core.Player.SandBoxMode Then
             Dim options As List(Of String) = ChooseBox.Options.ToList()

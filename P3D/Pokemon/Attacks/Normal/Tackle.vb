@@ -52,6 +52,22 @@
             '#End
         End Sub
 
+        Public Overrides Sub InternalUserPokemonMoveAnimation(ByVal BattleScreen As BattleScreen, ByVal own As Boolean)
+            Dim CurrentEntity As NPC
+            Dim BAFlip As Boolean
+            If own = True Then
+                CurrentEntity = BattleScreen.OwnPokemonNPC
+                BAFlip = False
+            Else
+                CurrentEntity = BattleScreen.OppPokemonNPC
+                BAFlip = True
+            End If
+            Dim MoveAnimation As MoveAnimationQueryObject = New MoveAnimationQueryObject(CurrentEntity, BAFlip)
+            MoveAnimation.AnimationPlaySound("Battle\Attacks\Tackle", 1, 2)
+            MoveAnimation.AnimationMovePokemonEntity(0.5, 0, 0, 0.06, False, False, 0, 0)
+            MoveAnimation.AnimationMovePokemonEntity(-0.5, 0, 0, 0.07, False, False, 1, 0)
+            BattleScreen.BattleQuery.Add(MoveAnimation)
+        End Sub
     End Class
 
 End Namespace

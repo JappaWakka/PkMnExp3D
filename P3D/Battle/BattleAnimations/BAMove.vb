@@ -9,8 +9,9 @@
 
     Public SpinSpeedX As Single = 0.1F
     Public SpinSpeedZ As Single = 0.1F
+    Public MovementCurve As Integer = 0
 
-    Public Sub New(ByVal Position As Vector3, ByVal Texture As Texture2D, ByVal Scale As Vector3, ByVal Destination As Vector3, ByVal Speed As Single, ByVal SpinX As Boolean, ByVal SpinZ As Boolean, ByVal startDelay As Single, ByVal endDelay As Single, Optional ByVal SpinXSpeed As Single = 0.1F, Optional ByVal SpinZSpeed As Single = 0.1F)
+    Public Sub New(ByVal Position As Vector3, ByVal Texture As Texture2D, ByVal Scale As Vector3, ByVal Destination As Vector3, ByVal Speed As Single, ByVal SpinX As Boolean, ByVal SpinZ As Boolean, ByVal startDelay As Single, ByVal endDelay As Single, Optional ByVal SpinXSpeed As Single = 0.1F, Optional ByVal SpinZSpeed As Single = 0.1F, Optional MovementCurve As Integer = 1)
         MyBase.New(Position, Texture, Scale, startDelay, endDelay)
 
         Me.Position = Position
@@ -23,11 +24,12 @@
         Me.SpinX = SpinX
         Me.SpinZ = SpinZ
 
+        Me.MovementCurve = MovementCurve
         Me.AnimationType = AnimationTypes.Move
     End Sub
 
     Public Sub New(ByVal Position As Vector3, ByVal Texture As Texture2D, ByVal Scale As Vector3, ByVal Destination As Vector3, ByVal Speed As Single, ByVal startDelay As Single, ByVal endDelay As Single)
-        Me.New(Position, Texture, Scale, Destination, Speed, False, False, startDelay, endDelay)
+        Me.New(Position, Texture, Scale, Destination, Speed, False, False, startDelay, endDelay, 0.1, 0.1, 1)
     End Sub
 
     Public Overrides Sub DoActionUpdate()
@@ -48,86 +50,71 @@
     End Sub
 
     Private Sub Move()
-        If Me.Position.X < Me.Destination.X Then
-            Me.Position.X += Me.MoveSpeed
+        Select Case MovementCurve
+            Case 0
+                If Me.Position.X < Me.Destination.X Then
+                    Me.Position.X += Me.MoveSpeed
 
-            If Me.Position.X >= Me.Destination.X Then
-                Me.Position.X = Me.Destination.X
-            End If
-        ElseIf Me.Position.X > Me.Destination.X Then
-            Me.Position.X -= Me.MoveSpeed
+                    If Me.Position.X >= Me.Destination.X Then
+                        Me.Position.X = Me.Destination.X
+                    End If
+                ElseIf Me.Position.X > Me.Destination.X Then
+                    Me.Position.X -= Me.MoveSpeed
 
-            If Me.Position.X <= Me.Destination.X Then
-                Me.Position.X = Me.Destination.X
-            End If
-        End If
-        If Me.Position.Y < Me.Destination.Y Then
-            Me.Position.Y += Me.MoveSpeed
+                    If Me.Position.X <= Me.Destination.X Then
+                        Me.Position.X = Me.Destination.X
+                    End If
+                End If
+                If Me.Position.Y < Me.Destination.Y Then
+                    Me.Position.Y += Me.MoveSpeed
 
-            If Me.Position.Y >= Me.Destination.Y Then
-                Me.Position.Y = Me.Destination.Y
-            End If
-        ElseIf Me.Position.Y > Me.Destination.Y Then
-            Me.Position.Y -= Me.MoveSpeed
+                    If Me.Position.Y >= Me.Destination.Y Then
+                        Me.Position.Y = Me.Destination.Y
+                    End If
+                ElseIf Me.Position.Y > Me.Destination.Y Then
+                    Me.Position.Y -= Me.MoveSpeed
 
-            If Me.Position.Y <= Me.Destination.Y Then
-                Me.Position.Y = Me.Destination.Y
-            End If
-        End If
-        If Me.Position.Z < Me.Destination.Z Then
-            Me.Position.Z += Me.MoveSpeed
+                    If Me.Position.Y <= Me.Destination.Y Then
+                        Me.Position.Y = Me.Destination.Y
+                    End If
+                End If
+                If Me.Position.Z < Me.Destination.Z Then
+                    Me.Position.Z += Me.MoveSpeed
 
-            If Me.Position.Z >= Me.Destination.Z Then
-                Me.Position.Z = Me.Destination.Z
-            End If
-        ElseIf Me.Position.Z > Me.Destination.Z Then
-            Me.Position.Z -= Me.MoveSpeed
+                    If Me.Position.Z >= Me.Destination.Z Then
+                        Me.Position.Z = Me.Destination.Z
+                    End If
+                ElseIf Me.Position.Z > Me.Destination.Z Then
+                    Me.Position.Z -= Me.MoveSpeed
 
-            If Me.Position.Z <= Me.Destination.Z Then
-                Me.Position.Z = Me.Destination.Z
-            End If
-        End If
+                    If Me.Position.Z <= Me.Destination.Z Then
+                        Me.Position.Z = Me.Destination.Z
+                    End If
+                End If
+            Case 1
+                If Me.Position.X <> Me.Destination.X Then
+                    Me.Position.X = MathHelper.Lerp(Me.Position.X, Me.Destination.X, Me.MoveSpeed)
 
-        'Dim x As Integer = 0
-        'Dim y As Integer = 0
-        'Dim z As Integer = 0
+                    If Math.Abs(Me.Position.X - Me.Destination.X) < 0.1F Then
+                        Me.Position.X = Me.Destination.X
+                    End If
+                End If
+                If Me.Position.Y <> Me.Destination.Y Then
+                    Me.Position.X = MathHelper.Lerp(Me.Position.Y, Me.Destination.Y, Me.MoveSpeed)
 
-        'If Destination.X < Me.Position.X Then
-        '    x = -1
-        'ElseIf Destination.X > Me.Position.X Then
-        '    x = 1
-        'End If
-        'If Destination.Y < Me.Position.Y Then
-        '    y = -1
-        'ElseIf Destination.X > Me.Position.Y Then
-        '    y = 1
-        'End If
-        'If Destination.Z < Me.Position.Z Then
-        '    z = -1
-        'ElseIf Destination.Z > Me.Position.Z Then
-        '    z = 1
-        'End If
+                    If Math.Abs(Me.Position.Y - Me.Destination.Y) < 0.1F Then
+                        Me.Position.Y = Me.Destination.Y
+                    End If
+                End If
+                If Me.Position.Z < Me.Destination.Z Then
+                    Me.Position.Z = MathHelper.Lerp(Me.Position.Z, Me.Destination.Z, Me.MoveSpeed)
 
-        'Dim v As Vector3 = New Vector3(x, y, z) * Speed
-        'Position.X += v.X
-        'Position.Z += v.Z
-        'Position.Y += v.Y
+                    If Math.Abs(Me.Position.Z - Me.Destination.Z) < 0.1F Then
+                        Me.Position.Z = Me.Destination.Z
+                    End If
+                End If
+        End Select
 
-        'If CInt(Destination.X) = CInt(Me.Position.X) Then
-        '    If Functions.ToPositive(Me.Position.X - Destination.X) <= Me.Speed Then
-        '        Me.Position.X = CInt(Me.Position.X)
-        '    End If
-        'End If
-        'If CInt(Destination.Y) = CInt(Me.Position.Y) Then
-        '    If Functions.ToPositive(Me.Position.Y - Destination.Y) <= Me.Speed + 0.01F Then
-        '        Me.Position.Y = CInt(Me.Position.Y)
-        '    End If
-        'End If
-        'If CInt(Destination.Z) = CInt(Me.Position.Z) Then
-        '    If Functions.ToPositive(Me.Position.Z - Destination.Z) <= Me.Speed Then
-        '        Me.Position.Z = CInt(Me.Position.Z)
-        '    End If
-        'End If
 
         If Me.Position = Destination Then
             Me.Ready = True

@@ -133,7 +133,7 @@
 		End If
 	End Sub
 
-	Private Shared Function GetSoundEffect(ByVal Name As String) As SoundContainer
+	Public Shared Function GetSoundEffect(ByVal Name As String) As SoundContainer
 
 		If _sounds.ContainsKey(Name.ToLower()) = True Then
 			Return _sounds(Name.ToLower())

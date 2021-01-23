@@ -105,7 +105,6 @@
 
     Public Shared Function GetString(ByVal s As String, Optional ByVal DefaultValue As String = "") As String
         Dim resultToken As Token = Nothing
-        s = s.Replace(" ", "_").Replace(".", "").Replace("'", "").ToLower() ' Lets format the string before finding it
         If LocalizationTokens.ContainsKey(s) = True Then
             If LocalizationTokens.TryGetValue(s, resultToken) = False Then
                 Return s
@@ -118,17 +117,67 @@
                     result = result.Replace("<player.name>", Core.Player.RivalName)
                 End If
 
-                Dim tokenSearchBuffer As String() = s.Split(CChar("<button."))
+                Dim tokenSearchBuffer As String() = result.Split("<button.")
                 Dim tokenEndIdx As Integer = 0
                 Dim validToken As String = ""
-                Dim token As Token = Nothing
                 For Each possibleToken As String In tokenSearchBuffer
                     tokenEndIdx = possibleToken.IndexOf(">")
                     If Not tokenEndIdx = -1 Then
+                        Dim key As Keys
                         validToken = possibleToken.Substring(0, tokenEndIdx)
-                        If Localization.LocalizationTokens.ContainsKey(validToken) = True Then
-                            result = result.Replace("<button." & validToken & ">", KeyBindings.GetKeyName(KeyBindings.GetKey(validToken)))
-                        End If
+                        Select Case validToken.ToLower()
+                            Case "forwardmove"
+                                key = KeyBindings.ForwardMoveKey
+                            Case "leftmove"
+                                key = KeyBindings.LeftMoveKey
+                            Case "backwardmove"
+                                key = KeyBindings.BackwardMoveKey
+                            Case "rightmove"
+                                key = KeyBindings.RightMoveKey
+                            Case "openmenu"
+                                key = KeyBindings.OpenMenuKey
+                            Case "chat"
+                                key = KeyBindings.ChatKey
+                            Case "special", "phone"
+                                key = KeyBindings.SpecialKey
+                            Case "mutemusic"
+                                key = KeyBindings.MuteMusicKey
+                            Case "cameraleft"
+                                key = KeyBindings.LeftKey
+                            Case "cameraright"
+                                key = KeyBindings.RightKey
+                            Case "cameraup"
+                                key = KeyBindings.UpKey
+                            Case "cameradown"
+                                key = KeyBindings.DownKey
+                            Case "cameralock"
+                                key = KeyBindings.CameraLockKey
+                            Case "guicontrol"
+                                key = KeyBindings.GUIControlKey
+                            Case "screenshot"
+                                key = KeyBindings.ScreenshotKey
+                            Case "debugcontrol"
+                                key = KeyBindings.DebugKey
+                            Case "perspectiveswitch"
+                                key = KeyBindings.PerspectiveSwitchKey
+                            Case "fullscreen"
+                                key = KeyBindings.FullScreenKey
+                            Case "enter1"
+                                key = KeyBindings.EnterKey1
+                            Case "enter2"
+                                key = KeyBindings.EnterKey2
+                            Case "back1"
+                                key = KeyBindings.BackKey1
+                            Case "back2"
+                                key = KeyBindings.BackKey2
+                            Case "escape", "esc"
+                                key = KeyBindings.EscapeKey
+                            Case "onlinestatus"
+                                key = KeyBindings.OnlineStatusKey
+                            Case "lighting"
+                                key = KeyBindings.LightKey
+                        End Select
+                        result = result.Replace("<button." & validToken & ">", KeyBindings.GetKeyName(key))
                     End If
                 Next
 
