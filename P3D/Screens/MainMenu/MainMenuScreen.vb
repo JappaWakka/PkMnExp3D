@@ -982,9 +982,9 @@
 			Dim Text As String = ""
 			Select Case i
 				Case 0
-					Text = Localization.GetString("language_menu_apply")
+					Text = Localization.GetString("global_apply")
 				Case 1
-					Text = Localization.GetString("language_menu_back")
+					Text = Localization.GetString("global_back")
 			End Select
 			Dim fontColor As SpriteFont = FontManager.MainFontBlack
 			If i = languageMenuIndex(1) Then
@@ -1134,9 +1134,9 @@
 			Dim fontColor As SpriteFont = FontManager.MainFontBlack
 			Select Case i
 				Case 0
-					Text = Localization.GetString("pack_menu_apply")
+					Text = Localization.GetString("global_apply")
 				Case 1
-					Text = Localization.GetString("pack_menu_back")
+					Text = Localization.GetString("global_back")
 			End Select
 
 			If i = packsMenuIndex(1) Then
@@ -1881,10 +1881,10 @@
 		Core.Player.Unload()
 		Core.Player.Skin = "Ethan"
 		TextBox.Hide()
-        TextBox.CanProceed = True
-        OverworldScreen.FadeValue = 0
+		TextBox.CanProceed = True
+		OverworldScreen.FadeValue = 0
 
-        MusicManager.Play("title", True, 0.0F)
-    End Sub
+		MusicManager.Play("title", True, 0.0F)
+	End Sub
 
 End Class

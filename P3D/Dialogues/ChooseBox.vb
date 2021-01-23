@@ -66,9 +66,9 @@
 
     Private Sub SetupOptions()
 		For i = 0 To Options.Count - 1
-			Options(i) = Options(i).Replace("Yes", Localization.GetString("choice_yes", "Yes"))
-			Options(i) = Options(i).Replace("No", Localization.GetString("choice_no", "No"))
-			Options(i) = Options(i).Replace("<playername>", Core.Player.Name)
+            Options(i) = Options(i).Replace("Yes", Localization.GetString("global_yes", "Yes"))
+            Options(i) = Options(i).Replace("No", Localization.GetString("global_no", "No"))
+            Options(i) = Options(i).Replace("<playername>", Core.Player.Name)
 			Options(i) = Options(i).Replace("<player.name>", Core.Player.Name)
 		Next
 	End Sub

@@ -14,7 +14,7 @@
     Dim DiagonalMovement As Boolean = True
     Dim Difficulty As Integer = 0
     Dim BattleStyle As Integer = 0
-    Dim LoadOffsetMaps As Integer = 10
+    Dim LoadOffsetMaps As Integer = 100
     Dim ViewBobbing As Boolean = True
     Dim ShowModels As Integer = 1
     Dim Muted As Boolean = False
@@ -77,7 +77,7 @@
 
         Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Me.CurrentPath, New Vector2(100, 130), Color.White)
         If savedOptions = False Then
-            Core.SpriteBatch.DrawString(FontManager.MainFontColor, Localization.GetString("option_screen_warning"), New Vector2(90 + FontManager.MainFontColor.MeasureString(Localization.GetString("option_screen_title")).X, 138), Color.DarkRed)
+            Core.SpriteBatch.DrawString(FontManager.MainFontColor, Localization.GetString("options_warning"), New Vector2(90 + FontManager.MainFontColor.MeasureString(Localization.GetString("options_title")).X, 138), Color.DarkRed)
         End If
 
         For Each C As Control In ControlList
@@ -209,16 +209,17 @@
 
         Select Case Me.ScreenIndex
             Case 0 ' Main Options menu.
-                Me.ControlList.Add(New CommandButton(New Vector2(120, 200), 6, "Game", AddressOf SwitchToGame))
-                Me.ControlList.Add(New CommandButton(New Vector2(360, 200), 6, "Graphics", AddressOf SwitchToGraphics))
-                Me.ControlList.Add(New CommandButton(New Vector2(600, 200), 6, "Battle", AddressOf SwitchToBattle))
-                Me.ControlList.Add(New CommandButton(New Vector2(240, 320), 6, "Controls", AddressOf SwitchToControls))
-                Me.ControlList.Add(New CommandButton(New Vector2(480, 320), 6, "Volume", AddressOf SwitchToVolume))
+                Me.ControlList.Add(New CommandButton(New Vector2(120, 200), 6, Localization.GetString("options_game"), AddressOf SwitchToGame))
+                Me.ControlList.Add(New CommandButton(New Vector2(360, 200), 6, Localization.GetString("options_graphics"), AddressOf SwitchToGraphics))
+                Me.ControlList.Add(New CommandButton(New Vector2(600, 200), 6, Localization.GetString("options_battle"), AddressOf SwitchToBattle))
+                Me.ControlList.Add(New CommandButton(New Vector2(120, 320), 6, Localization.GetString("options_controls"), AddressOf SwitchToControls))
+                Me.ControlList.Add(New CommandButton(New Vector2(360, 320), 6, Localization.GetString("options_audio"), AddressOf SwitchToVolume))
+                Me.ControlList.Add(New CommandButton(New Vector2(600, 320), 6, Localization.GetString("options_advanced"), AddressOf SwitchToAdvanced))
 
-                Me.ControlList.Add(New CommandButton(New Vector2(120, 480), 6, "Apply", AddressOf Apply))
-                Me.ControlList.Add(New CommandButton(New Vector2(580, 480), 6, "Close", AddressOf Close))
+                Me.ControlList.Add(New CommandButton(New Vector2(120, 480), 6, Localization.GetString("global_apply"), AddressOf Apply))
+                Me.ControlList.Add(New CommandButton(New Vector2(580, 480), 6, Localization.GetString("global_close"), AddressOf Close))
             Case 1 ' "Game" from the Options menu.
-                Me.ControlList.Add(New ScrollBar(New Vector2(120, 200), 400, "Text Speed", Me.TextSpeed, 1, 3, AddressOf ChangeTextspeed))
+                Me.ControlList.Add(New ScrollBar(New Vector2(120, 200), 400, Localization.GetString("options_game_text_speed"), Me.TextSpeed, 1, 3, AddressOf ChangeTextspeed))
 
                 If CBool(GameModeManager.GetGameRuleValue("LockDifficulty", "0")) = False Then
                     Dim d As New Dictionary(Of Integer, String)
@@ -271,7 +272,11 @@
             Case 5 ' "Volume" from the Options menu.
                 Me.ControlList.Add(New ScrollBar(New Vector2(120, 200), 400, "Music Volume", Me.Music, 0, 100, AddressOf ChangeMusicVolume))
                 Me.ControlList.Add(New ScrollBar(New Vector2(120, 250), 400, "Sound Volume", Me.Sound, 0, 100, AddressOf ChangeSoundVolume))
-                Me.ControlList.Add(New ToggleButton(New Vector2(120, 300), 8, "Muted", CBool(Me.Muted), AddressOf ToggleMute, {"No", "Yes"}.ToList()))
+                Me.ControlList.Add(New ToggleButton(New Vector2(120, 300), 8, "Muted", CBool(Me.Muted), AddressOf ToggleMute, {Localization.GetString("global_no"), Localization.GetString("global_yes")}.ToList()))
+
+                Me.ControlList.Add(New CommandButton(New Vector2(120, 480), 6, "Back", AddressOf SwitchToMain))
+            Case 6 ' "Advanced" from the Options menu.
+                Me.ControlList.Add(New CommandButton(New Vector2(120, 300), 9, "Reset Options", AddressOf ResetSettings))
 
                 Me.ControlList.Add(New CommandButton(New Vector2(120, 480), 6, "Back", AddressOf SwitchToMain))
         End Select
@@ -294,13 +299,13 @@
         Me.MouseSpeed = 12
         Me.Music = 50
         Me.Sound = 50
-        Me.RenderDistance = 2
+        Me.RenderDistance = 4
         Me.GraphicStyle = 1
         Me.ShowBattleAnimations = 1
         Me.DiagonalMovement = False
         Me.Difficulty = 0
         Me.BattleStyle = 0
-        Me.LoadOffsetMaps = 10
+        Me.LoadOffsetMaps = 100
         Me.ViewBobbing = True
         Me.ShowModels = 1
         Me.Muted = False
@@ -350,7 +355,7 @@
 #Region "Switch"
 
     Private Sub SwitchToMain()
-        CurrentPath = "Options"
+        CurrentPath = Localization.GetString("options_title")
         Me.ScreenIndex = 0
         CanYScroll = False
         YScrollLimit = 0
@@ -358,7 +363,7 @@
     End Sub
 
     Private Sub SwitchToGame()
-        CurrentPath = "Options > Game"
+        CurrentPath = Localization.GetString("options_title") & " > " & Localization.GetString("options_game")
         Me.ScreenIndex = 1
         CanYScroll = False
         YScrollLimit = 0
@@ -366,7 +371,7 @@
     End Sub
 
     Private Sub SwitchToGraphics()
-        CurrentPath = "Options > Graphics"
+        CurrentPath = Localization.GetString("options_title") & " > " & Localization.GetString("options_graphics")
         Me.ScreenIndex = 2
         CanYScroll = False
         YScrollLimit = 0
@@ -374,7 +379,7 @@
     End Sub
 
     Private Sub SwitchToBattle()
-        CurrentPath = "Options > Battle"
+        CurrentPath = Localization.GetString("options_title") & " > " & Localization.GetString("options_battle")
         Me.ScreenIndex = 3
         CanYScroll = False
         YScrollLimit = 0
@@ -382,7 +387,7 @@
     End Sub
 
     Private Sub SwitchToControls()
-        CurrentPath = "Options > Controls"
+        CurrentPath = Localization.GetString("options_title") & " > " & Localization.GetString("options_controls")
         Me.ScreenIndex = 4
         CanYScroll = False
         YScrollLimit = 0
@@ -390,8 +395,16 @@
     End Sub
 
     Private Sub SwitchToVolume()
-        CurrentPath = "Options > Volume"
+        CurrentPath = Localization.GetString("options_title") & " > " & Localization.GetString("options_audio")
         Me.ScreenIndex = 5
+        CanYScroll = False
+        YScrollLimit = 0
+        InitializeControls()
+    End Sub
+
+    Private Sub SwitchToAdvanced()
+        CurrentPath = Localization.GetString("options_title") & " > " & Localization.GetString("options_advanced")
+        Me.ScreenIndex = 6
         CanYScroll = False
         YScrollLimit = 0
         InitializeControls()
@@ -507,6 +520,10 @@
             Me.Muted = False
         End If
         ApplyMusicChange()
+    End Sub
+
+    Private Sub ResetSettings(ByVal c As CommandButton)
+        Reset()
     End Sub
 
     Private Sub ApplyMusicChange()

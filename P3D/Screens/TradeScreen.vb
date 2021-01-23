@@ -1242,7 +1242,7 @@ Public Class TradeScreen
                 i = 7
         End Select
 
-        Return TextureManager.GetTexture(TextureManager.GetTexture("GUI\Menus\BagPack"), New Rectangle(i * 24, 150, 24, 24))
+        Return TextureManager.GetTexture(TextureManager.GetTexture("GUI\Menus\Bag"), New Rectangle(i * 24, 150, 24, 24))
     End Function
 
     Private Function GetCurrencyAmount() As Integer

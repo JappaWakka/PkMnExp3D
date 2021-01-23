@@ -51,10 +51,10 @@
                             Screen.Camera.PlayerFacing = Screen.Camera.GetPlayerFacingDirection()
                         End If
                         Screen.Camera.Move(sng(argument))
-                            Started = True
-                            Screen.Level.OverworldPokemon.Visible = False
-                        Else
-                            Screen.Level.UpdateEntities()
+                        Started = True
+                        Screen.Level.OverworldPokemon.Visible = False
+                    Else
+                        Screen.Level.UpdateEntities()
                         Screen.Camera.Update()
                         If Screen.Camera.IsMoving() = False Then
                             IsReady = True

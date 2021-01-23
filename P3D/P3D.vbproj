@@ -11,7 +11,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>My Project</AppDesignerFolder>
     <RootNamespace>P3D</RootNamespace>
-    <AssemblyName>Pokemon3D</AssemblyName>
+    <AssemblyName>Pokemon Exp3D</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>Windows</MonoGamePlatform>
     <MonoGameContentBuilderExe>
@@ -201,6 +201,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\GUI\Map\SeviiIslands_map.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\GUI\Menus\Bag.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\GUI\Menus\phone.png">
@@ -12192,9 +12195,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\GUI\Map\map_objects.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\GUI\Menus\BagPack.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\GUI\Menus\General.png">

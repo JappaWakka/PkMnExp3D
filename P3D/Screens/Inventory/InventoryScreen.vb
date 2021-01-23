@@ -243,12 +243,12 @@
         Canvas.DrawImageBorder(TextureManager.GetTexture(mainTexture, New Rectangle(208, 128, 48, 48)), 2, New Rectangle(572, 516, 288, 96))
         Canvas.DrawImageBorder(texture, 2, New Rectangle(620, 420, 192, 64))
 
-        Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\BagPack"), New Rectangle(592, 126, 48, 48), New Rectangle(24 * bagIndex, 150, 24, 24), Color.White)
+        Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\Bag"), New Rectangle(592, 126, 48, 48), New Rectangle(24 * bagIndex, 150, 24, 24), Color.White)
 
-        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("inventory_menu_bag"), New Vector2(646, 134), Color.White)
-        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("inventory_menu_backadvice").Replace("~", Environment.NewLine), New Vector2(FontManager.MainFontBlack.MeasureString(Localization.GetString("inventory_menu_backadvice").Replace("~", Environment.NewLine)).X + 640, 116), Color.White)
-        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("inventory_menu_pocketadvice").Replace("~", Environment.NewLine), New Vector2(FontManager.MainFontWhite.MeasureString(Localization.GetString("inventory_menu_pocketadvice").Replace("~", Environment.NewLine)).X / 2 + 520, 548), Color.White)
-        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("inventory_menu_items") & ":" & Environment.NewLine & Localization.GetString("item_category_" & Me.bagIdentifier.ToString()), New Vector2(640, 436), Color.White)
+        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("inventory_bag"), New Vector2(646, 134), Color.White)
+        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("inventory_backadvice").Replace("~", Environment.NewLine), New Vector2(FontManager.MainFontBlack.MeasureString(Localization.GetString("inventory_backadvice").Replace("~", Environment.NewLine)).X + 640, 116), Color.White)
+        Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("inventory_pocketadvice").Replace("~", Environment.NewLine), New Vector2(FontManager.MainFontWhite.MeasureString(Localization.GetString("inventory_pocketadvice").Replace("~", Environment.NewLine)).X / 2 + 520, 548), Color.White)
+        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("inventory_items") & ":" & Environment.NewLine & Localization.GetString("item_category_" & Me.bagIdentifier.ToString()), New Vector2(640, 436), Color.White)
 
         Canvas.DrawScrollBar(New Vector2(555, 120), cItems.Count, 6, scrollIndex(bagIndex), New Size(4, 390), False, TextureManager.GetTexture(mainTexture, New Rectangle(112, 12, 1, 1)), TextureManager.GetTexture(mainTexture, New Rectangle(113, 12, 1, 1)))
 
@@ -268,20 +268,20 @@
                         FontColor = FontManager.MainFontBlack
                     End If
 
-					Canvas.DrawImageBorder(BorderTexture, 2, New Rectangle(CInt(p.X), CInt(p.Y + (i + scrollIndex(bagIndex)) * 67), 320, 32))
+                    Canvas.DrawImageBorder(BorderTexture, 2, New Rectangle(CInt(p.X), CInt(p.Y + (i + scrollIndex(bagIndex)) * 67), 320, 32))
 
-					.Draw(Item.Texture, New Rectangle(CInt(p.X) + 8, CInt(p.Y + (i + scrollIndex(bagIndex)) * 67) + 8, 48, 48), Color.White)
-					.DrawString(FontColor, Item.Name, New Vector2(CInt(p.X + 74), CInt(p.Y + (i + scrollIndex(bagIndex)) * 67) + 16), Color.White)
+                    .Draw(Item.Texture, New Rectangle(CInt(p.X) + 8, CInt(p.Y + (i + scrollIndex(bagIndex)) * 67) + 8, 48, 48), Color.White)
+                    .DrawString(FontColor, Item.Name, New Vector2(CInt(p.X + 74), CInt(p.Y + (i + scrollIndex(bagIndex)) * 67) + 16), Color.White)
 
-					If Me.bagIndex <> 7 Then
+                    If Me.bagIndex <> 7 Then
                         Dim length As String = ""
                         If cItems.Values(i).ToString().Length < 3 Then
                             For n = 1 To 3 - cItems.Values(i).ToString().Length
                                 length &= " "
                             Next
                         End If
-						.DrawString(FontColor, "x" & length & cItems.Values(i).ToString(), New Vector2(CInt(p.X + 280), CInt(p.Y + (i + scrollIndex(bagIndex)) * 67) + 16), Color.White)
-					End If
+                        .DrawString(FontColor, "x" & length & cItems.Values(i).ToString(), New Vector2(CInt(p.X + 280), CInt(p.Y + (i + scrollIndex(bagIndex)) * 67) + 16), Color.White)
+                    End If
 
                     If i = index(bagIndex) Then
                         .DrawString(FontManager.MainFontBlack, Item.GetDescription().CropStringToWidth(FontManager.MainFontBlack, 450), New Vector2(80, 532), Color.White)
@@ -297,20 +297,20 @@
             x = (bagIndex - 4) * 58
         End If
 
-        Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\BagPack"), New Rectangle(646, 220, 174, 174), New Rectangle(x, y, 58, 58), Color.White)
+        Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\Bag"), New Rectangle(646, 220, 174, 174), New Rectangle(x, y, 58, 58), Color.White)
 
         If sorted = True Then
-            Dim displayMode As String = "Name"
+            Dim displayMode As String = Localization.GetString("inventory_sortmode_name")
             Select Case SortMode
                 Case "Name"
-                    displayMode = "SortValue"
+                    displayMode = Localization.GetString("inventory_sortmode_amount")
                 Case "ID"
-                    displayMode = "Name"
+                    displayMode = Localization.GetString("inventory_sortmode_name")
                 Case "SortValue"
-                    displayMode = "ID"
+                    displayMode = Localization.GetString("inventory_sortmode_id")
             End Select
 
-            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Sortmode: """ & displayMode & """", New Vector2(638, 522), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("inventory_sortmode_sortingmode") & displayMode & "", New Vector2(638, 522), Color.White)
         End If
 
         Canvas.DrawScrollBar(New Vector2(630, 405), 8, 1, bagIndex, New Size(200, 4), True, TextureManager.GetTexture(mainTexture, New Rectangle(112, 12, 1, 1)), TextureManager.GetTexture(mainTexture, New Rectangle(113, 12, 1, 1)))

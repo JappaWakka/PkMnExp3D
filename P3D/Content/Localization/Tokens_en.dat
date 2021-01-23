@@ -1,5 +1,94 @@
 language_name,English
 ---
+---
+---
+Global:
+global_join,Join
+global_play,Play
+global_refresh,Refresh
+global_new,New
+global_add,Add
+global_edit,Edit
+global_remove,Remove
+global_back,Back
+global_please_wait,Please wait
+global_loading,Loading
+global_game,Game
+global_login,Log in
+global_male,Male
+global_female,Female
+global_yes,Yes
+global_no,No
+global_accept,Accept
+global_cancel,Cancel
+global_gamemode,GameMode
+global_clear,Clear
+global_save,Save
+global_close,Close
+global_on,On
+global_off,Off
+global_enabled,Enabled
+global_disabled,Disabled
+global_player_name,Player name
+global_badges,Badges
+global_play_time,Play Time
+global_location,Location
+global_money,Money
+global_points,Points
+global_name,Name
+global_order,Order
+global_filter,Filter
+global_reset,Reset
+global_pokemon_type_normal,Normal
+global_pokemon_type_fire,Fire
+global_pokemon_type_flying,Flying
+global_pokemon_type_fighting,Fighting
+global_pokemon_type_water,Water
+global_pokemon_type_grass,Grass
+global_pokemon_type_poison,Poison
+global_pokemon_type_ground,Ground
+global_pokemon_type_electric,Electric
+global_pokemon_type_psychic,Psychic
+global_pokemon_type_rock,Rock
+global_pokemon_type_ice,Ice
+global_pokemon_type_bug,Bug
+global_pokemon_type_dragon,Dragon
+global_pokemon_type_ghost,Ghost
+global_pokemon_type_dark,Dark
+global_pokemon_type_steel,Steel
+global_pokemon_type_fairy,Fairy
+global_pokemon_type_blank,Blank
+global_true,True
+global_false,False
+global_select,Select
+global_summary,Summary
+global_item,Item
+global_use,Use
+global_give,Give
+global_take,Take
+global_toss,Toss
+global_switch,Switch
+global_pokemon_move_fly,Fly
+global_pokemon_move_ride,Ride
+global_pokemon_move_flash,Flash
+global_pokemon_move_cut,Cut
+global_pokemon_move_teleport,Teleport
+global_pokemon_move_dig,Dig
+global_used,Used
+global_apply,Apply
+global_eggs_cannot_hold,Eggs cannot hold items.
+---
+General:
+HP,HP
+PP,PP
+Lv.,Lv.
+Level,Level
+Attack,Attack
+Defense,Defense
+Special_Attack,Special Attack
+Special_Defense,Special Defense
+Speed,Speed
+---
 MainMenuScreen:
 main_menu_online_game,Online Game
 main_menu_load_game,Load Game
@@ -25,10 +114,6 @@ delete_menu_delete_confirm,Do you really want to delete the save?
 delete_menu_delete,Delete
 delete_menu_cancel,Cancel
 ---
-LanguageMenu:
-language_menu_apply,Apply
-language_menu_back,Back
----
 PacksMenu:
 pack_menu_up,Up
 pack_menu_down,Down
@@ -36,7 +121,6 @@ pack_menu_toggle_on,Enable
 pack_menu_toggle_off,Disable
 pack_menu_information,Information
 pack_menu_enabled,Enabled
-pack_menu_apply,Apply
 pack_menu_back,Back
 pack_menu_songs,Songs
 pack_menu_sounds,Sounds
@@ -56,14 +140,33 @@ gamemode_menu_contentpath,ContentPath
 gamemode_menu_create,Create
 gamemode_menu_back,Back
 ---
+JoinServerScreen:
+server_title,Choose where to play
+server_protocol_version,Protocol version
+server_connecting_to_server,Connecting to server
+server_single_player_name,Local
+server_single_player_message,Single-player: Play on your local computer.
+server_received_error,Cannot reach server.
+server_pinged,Server online
+server_polling,Polling
+server_no_connection,No Connection
+server_full,The server is full.
+server_version_mismatch,Version doesn't match the server's version.
+server_ping,Ping
+server_no_players,No players on the server.
+server_player_list,Player List
+---
+AddServerScreen:
+add_server_title,Add a server
+add_server_name,Server Name
+add_server_address,Server Address
+---
 PauseScreen:
 pause_menu_title,Game menu
 pause_menu_back_to_game,Back to game
 pause_menu_disconnect,Disconnect
 pause_menu_quit_to_menu,Quit to menu
 pause_menu_autosave_fail,Cannot create autosave.
-pause_menu_yes,Yes
-pause_menu_no,No
 pause_menu_confirmation,Do you really want to quit? Unsaved progress will be lost.
 ---
 IngameMenu:
@@ -77,11 +180,15 @@ game_menu_options,Options
 game_menu_exit,Exit Menu
 ---
 InventoryScreen:
-inventory_menu_bag,Bag
-inventory_menu_pocketadvice,PRESS LEFT OR RIGHT~TO SWITCH POCKETS
-inventory_menu_backadvice,PRESS E~TO GO BACK
-inventory_menu_items,Items
-inventory_menu_description,Description
+inventory_bag,Bag
+inventory_pocketadvice,PRESS LEFT OR RIGHT~TO SWITCH POCKETS
+inventory_backadvice,PRESS <button.openmenu>~TO GO BACK
+inventory_items,Items
+inventory_description,Description
+inventory_sortmode_sortingmode,Sorting mode: 
+inventory_sortmode_name,Name
+inventory_sortmode_amount,Amount
+inventory_sortmode_id,Item ID
 ---
 GameInteractions:
 game_interaction_accept,Accept
@@ -106,15 +213,16 @@ PokedexScreen:
 pokedex_screen_seen,Seen
 pokedex_screen_obtained,Obtained
 pokedex_screen_rare,Rare
-pokedex_screen_backadvice,PRESS E TO GO BACK
+pokedex_screen_backadvice,PRESS <button.openmenu> TO GO BACK
 ---
 PartyScreen:
+party_screen_title,Pokémon
 party_screen_choose_a_pokemon,Choose a Pokémon
-party_screen_backadvice,Press the E key to go back.
-party_screen_item_give,Give
-party_screen_item_take,Take
-party_screen_item_back,Back
-party_screen_doesnt_hold_item,~doesn't hold an item.
+party_screen_backadvice,Press the <button.openmenu> key to go back.
+party_screen_field_move,Field Move
+party_screen_able,Able
+party_screen_unable,Unable
+party_screen_mail_taken,The Mail was taken to your inbox on~your PC. You can view~the content there.
 party_screen_take_item_1,Took 
 party_screen_take_item_2, from~
 party_screen_take_item_3,~and put it into the~
@@ -124,17 +232,28 @@ party_screen_give_item_2, to~
 party_screen_give_item_3,
 party_screen_give_item_4,~and put 
 party_screen_give_item_5,~back to the inventory.
-party_screen_summary,Summary
-party_screen_switch,Switch
+party_screen_switched_item_1,Switched
+party_screen_switched_item_2,with a
+party_screen_cannot_choose,You cannot choose~this Pokémon.
+party_screen_cannot_give,cannot be given to a Pokémon.
+party_screen_cannot_fly,You cannot Fly~from here!
+party_screen_cannot_cut,There is nothing~to be Cut!
+party_screen_cannot_ride,You cannot Ride here!
+party_screen_cannot_dig,You cannot use Dig here!
+party_screen_cannot_teleport,You cannot use Teleport here!
+party_screen_cannot_hold, cannot~hold the 
+party_screen_move_used, used~
+party_screen_flash_lit,The area got lit up!
+party_screen_flash_already_lit,The area is already~lit up!
+party_screen_doesnt_hold_item,~doesn't hold an item.
 party_screen_item,Item
-party_screen_back,Back
 party_screen_EMPTY,EMPTY
 ---
 Pokemon Status Screen:
 All pages:
 poke_status_screen_nature,Nature
-poke_status_screen_backadvice,PRESS E TO GO BACK
-poke_status_screen_closeadvice,PRESS E TO CLOSE
+poke_status_screen_backadvice,PRESS <button.openmenu> TO GO BACK
+poke_status_screen_closeadvice,PRESS <button.openmenu> TO CLOSE
 poke_status_screen_number,# 
 Page 1:
 poke_status_screen_all_exp,All Exp
@@ -160,69 +279,127 @@ trainer_screen_pokedex,Pokédex
 trainer_screen_time,Time
 trainer_screen_collected_badges,Collected badges
 trainer_screen_badge, Badge
-trainer_screen_backadvice,PRESS E TO GO BACK
+trainer_screen_backadvice,PRESS <button.openmenu> TO GO BACK
 trainer_screen_empty_badge,???
 ---
 Save Screen:
-save_screen_question1,Would you like to
-save_screen_question2,save the game?
+save_title_1,Would you like to
+save_title_2,save the game?
 save_screen_name,Name
 save_screen_badges,Badges
 save_screen_money,Money
 save_screen_time,Time
 save_screen_yes,Yes
 save_screen_no,No
-save_screen_validating,Validating data
-save_screen_saving,Saving, please wait
-save_screen_success,Saved the game.
-save_screen_error,Saving failed!
+save_validating,Validating data
+save_saving,Saving, please wait
+save_saved_game,Saved the game.
+save_saving_failed,Saving failed!
 ---
 Options Screen:
-option_screen_title,Options
-option_screen_warning,Options aren't saved yet, scroll down and choose "Save options."
-option_screen_backadvice,PRESS E TO GO BACK
-option_screen_description,Description
-option_screen_textspeed,Textspeed
-option_screen_textspeed_description,The speed the textbox shows up and~displays the text
-option_screen_fov,FOV
-option_screen_fov_description,The field of view. The higher the value is,~the more you can see.~Warning: Too large value can cause lags in larger maps.
-option_screen_mousespeed,MouseSpeed
-option_screen_mousespeed_description,The Mousespeed sets the speed on which the~mouse can rotate the view.
-option_screen_volume,Volume
-option_screen_volume_description,The volume of the background music.~This settings is for all save states.
-option_screen_render_distance,RenderDistance
-option_screen_render_distance_tiny,Tiny
-option_screen_render_distance_short,Short
-option_screen_render_distance_normal,Normal
-option_screen_render_distance_far,Far
-option_screen_render_distance_extreme,Extreme
-option_screen_render_distance_description,The renderdistance determines,~how far you can see.~By turning this down, you can improve your FPS.
-option_screen_graphics,Graphics
-option_screen_graphics_fancy,Fancy
-option_screen_graphics_fast,Fast
-option_screen_graphics_description,Affects if some objects are rendered~or not. By turning this down, you can improve your FPS.~This settings is for all save states.
-option_screen_offset_map_quality,Offset map quality
-option_screen_offset_map_off,Off
-option_screen_offset_map_quality_description,Sets the quality of the offset maps.~The details and update frequency of offset maps increase with this value.~Set this value to 0 to prevent the game from loading offset maps.
-option_screen_animations_in_battle,Animations in battle
-option_screen_animations_in_battle_no,No
-option_screen_animations_in_battle_attacks_off,Attacks off
-option_screen_animations_in_battle_yes,Yes
-option_screen_animations_in_battle_description,Determines if the game shows battle animations.
-option_screen_difficulty,Difficulty
-option_screen_difficulty_description,Difficulty mode~Sets the level of difficulty.
-option_screen_battle_style,BattleStyle
-option_screen_battle_style_shift,Shift
-option_screen_battle_style_set,Set
-option_screen_battle_style_description,Battle Style~Set: You are not asked to switch out your Pokémon~Shift: You can switch out your Pokémon after defeating an opponent.
-option_screen_view_bobbing,View bobbing
-option_screen_view_bobbing_description,Turns camera shaking on or off.
-option_screen_reset_options,Reset options.
-option_screen_reset_options_description,Resets all options.
-option_screen_save_options,Save options.
-option_screen_save_options_description,Save the options and close the menu.
-option_screen_close_menu,Close menu.
-option_screen_close_menu_description,Close the menu and do not save~the changes.
+options_title,Options
+options_warning,Options aren't saved yet, don't forget to apply your changes.
+options_game,Game
+options_graphics,Graphics
+options_battle,Battle
+options_controls,Controls
+options_audio,Audio
+options_advanced,Advanced
+options_backadvice,PRESS <button.openmenu> TO GO BACK
+options_game_text_speed,Text Speed
+options_game_difficulty,Difficulty
+options_game_difficulty_easy,Easy
+options_game_difficulty_hard,Hard
+options_game_difficulty_super_hard,Super Hard
+options_game_bobbing,View bobbing
+options_graphics_fov,Field of View
+options_graphics_offset_map_quality,Offset Map quality
+options_graphics_fast,Fast
+options_graphics_fancy,Fancy
+options_graphics_multisampling,Multisampling
+options_battle_3d_models,3D Models
+options_battle_animations,Animations
+options_battle_style,Battle Style
+options_battle_style_shift,Shift
+options_battle_style_set,Set
+options_controls_mouse_speed,Mouse Speed
+options_controls_mouse_speed_slow,Slowpoke
+options_controls_mouse_speed_standard,Standard
+options_controls_mouse_speed_fast,Fast
+options_controls_mouse_speed_super_fast,Super Fast
+options_controls_reset_key_bindings,Reset Key Bindings
+options_controls_xbox_controler,Xbox Controller
+options_audio_music_volume,Music Volume
+options_audio_sound_volume,Sound Volume
+options_audio_muted,Muted
+options_reset,Reset Options
+options_render_distance,Render Distance
+options_render_distance_tiny,Tiny
+options_render_distance_short,Short
+options_render_distance_normal,Normal
+options_render_distance_far,Far
+options_render_distance_extreme,Extreme
+options_render_distance_description,The renderdistance determines,~how far you can see.~By turning this down, you can improve your FPS.
+options_graphics,Graphics
+options_graphics_fancy,Fancy
+options_graphics_fast,Fast
+options_graphics_description,Affects if some objects are rendered~or not. By turning this down, you can improve your FPS.~This settings is for all save states.
+options_offset_map_quality,Offset map quality
+options_offset_map_off,Off
+options_offset_map_quality_description,Sets the quality of the offset maps.~The details and update frequency of offset maps increase with this value.~Set this value to 0 to prevent the game from loading offset maps.
+options_animations_in_battle,Animations in battle
+options_animations_in_battle_no,No
+options_animations_in_battle_attacks_off,Attacks off
+options_animations_in_battle_yes,Yes
+options_animations_in_battle_description,Determines if the game shows battle animations.
+options_difficulty,Difficulty
+options_difficulty_description,Difficulty mode~Sets the level of difficulty.
+options_battle_style,BattleStyle
+options_battle_style_shift,Shift
+options_battle_style_set,Set
+options_battle_style_description,Battle Style~Set: You are not asked to switch out your Pokémon~Shift: You can switch out your Pokémon after defeating an opponent.
+options_view_bobbing,View bobbing
+options_view_bobbing_description,Turns camera shaking on or off.
+options_reset_options,Reset options.
+options_reset_options_description,Resets all options.
+options_save_options,Save options.
+options_save_options_description,Save the options and close the menu.
+options_close_menu,Close menu.
+options_close_menu_description,Close the menu and do not save~the changes.
+---
+NewOptionScreen:
+options_title,Options
+options_game,Game
+options_graphics,Graphics
+options_battle,Battle
+options_controls,Controls
+options_audio,Audio
+options_game_text_speed,Text Speed
+options_game_difficulty_easy,Easy
+options_game_difficulty_hard,Hard
+options_game_difficulty_super_hard,Super Hard
+options_game_bobbing,View bobbing
+options_graphics_fov,Field of View
+options_graphics_offset_map_quality,Offset Map quality
+options_graphics_fast,Fast
+options_graphics_fancy,Fancy
+options_graphics_multisampling,Multisampling
+options_battle_3d_models,3D Models
+options_battle_animations,Animations
+options_battle_style,Battle Style
+options_battle_style_shift,Shift
+options_battle_style_set,Set
+options_controls_mouse_speed,Mouse Speed
+options_controls_mouse_speed_slow,Slowpoke
+options_controls_mouse_speed_standard,Standard
+options_controls_mouse_speed_fast,Fast
+options_controls_mouse_speed_super_fast,Super Fast
+options_controls_reset_key_bindings,Reset Key Bindings
+options_controls_xbox_controler,Xbox Controller
+options_audio_music_volume,Music Volume
+options_audio_sound_volume,Sound Volume
+options_audio_muted,Muted
+options_reset,Reset Options
 ---
 Item Detail Screen:
 item_detail_screen_use,Use
@@ -234,7 +411,7 @@ item_detail_screen_give_item,Give
 Apricorn Screen:
 apricorn_screen_apricorns,Apricorns
 apricorn_screen_producing,I am producing the Balls at the moment.~Come back later.
-apricorn_screen_backadvice,PRESS E TO GO BACK
+apricorn_screen_backadvice,PRESS <button.openmenu> TO GO BACK
 apricorn_screen_choose_apricorns,Please choose the Apricorns I should take to produce Pokéballs.
 apricorn_screen_ok,OK
 apricorn_screen_clear,Clear
@@ -251,12 +428,12 @@ daycare_screen_lv, / Lv.
 daycare_screen_costs, / Costs:
 daycare_screen_pokedollar, PokéDollar
 daycare_screen_withdraw,Withdraw
-daycare_screen_backadvice,PRESS E TO GO BACK
+daycare_screen_backadvice,PRESS <button.openmenu> TO GO BACK
 daycare_screen_pokemon_choose_header,Deposit Pokémon
 Egg,Egg
 ---
 Network Screen:
-network_screen_isonline,You are in a co-op game already! Please close the connection~to open a new game or connect again!~~~Press E to go back!
+network_screen_isonline,You are in a co-op game already! Please close the connection~to open a new game or connect again!~~~Press <button.openmenu> to go back!
 network_screen_header,Co-Op Gameplay
 network_screen_main_header,You can either join a game or host a~new one to play together with a friend.
 network_screen_main_join,Join
@@ -270,8 +447,8 @@ network_screen_host_cancel,Cancel
 network_screen_host_host,Host
 ---
 Donation screen:
-donation_screen_donators,Donators
-donation_screen_backadvice,Press E to close
+donation_donators,Donators
+donation_close,Press <button.openmenu> to close
 ---
 Blackout Screen:
 black_out_screen_line1,You have run out of Pokémon!
@@ -608,15 +785,15 @@ Places_Secret Laboratory,Secret Laboratory
 GameMessages:
 game_message_screenshot,Screenshot saved as 
 game_message_screenshot_failed,Cannot create screenshot
-game_message_fullscreen_on,Fullscreen on
-game_message_fullscreen_off,Fullscreen off
-game_message_third_person_on,Third person mode on
-game_message_third_person_off,Third person mode off
-game_message_free_camera_on,Free camera mode on
-game_message_free_camera_off,Free camera mode off
-game_message_audio_on,Audio on
-game_message_audio_off,Audio off
 game_message_continue_autosave,Continued save state:
+game_message_lighting,Lighting
+game_message_xbox_controller,Xbox Controller support
+game_message_screenshot,Screenshot saved as
+game_message_screenshot_failed,Could not save screenshot
+game_message_fullscreen,Fullscreen
+game_message_third_person,Third person mode
+game_message_free_camera,Free camera mode
+game_message_audio,Audio
 ---
 Online:
 game_message_close_connection,You closed the co-op game.
@@ -632,21 +809,6 @@ game_message_host_session_started,You (host) started a Co-Op session.
 game_message_host_outdated_newer_version,The client has an outdated or newer version of the game!
 game_message_host_client_accept,A client joined the game!
 game_message_host_client_disconnect,The client disconnected! The Co-Op session has been closed.
----
-General:
-HP,HP
-PP,PP
-Lv.,Lv.
-Level,Level
-Attack,Attack
-Defense,Defense
-Special_Attack,Special Attack
-Special_Defense,Special Defense
-Speed,Speed
----
-ChoiceOptions:
-choice_yes:Yes
-choice_no:No
 ----
 Pokemon:
 pokemon_name_Bulbasaur,Bulbasaur
@@ -1686,8 +1848,8 @@ NewBark_Main_Rival_Staring,......*What are you staring at?
 NewBark_YourHouse1f_Mom_ProfElm,Oh, <player.name>! Our neighbor,~Prof. Elm, was looking for you.*He said he wanted you to do~something for him.*Oh! I almost forgot! Your Pokémon~Gear is back from the repair shop.*Here you go!
 NewBark_YourHouse1f_ReceivePokegear,<player.name> received a Pokégear.
 NewBark_YourHouse1f_Mom_Pokegear,Pokémon Gear, or just Pokégear.*It's essential if you want to~be a good trainer.*By the way, do you know how~to use the Phone?
-NewBark_YourHouse1f_Mom_HowToUse_Yes,I'm sure you know that you can~open it by pressing Q.*Phone numbers are stored in memory.*Just choose a name you want to call.*Gee, isn't that convenient?
-NewBark_YourHouse1f_Mom_HowToUse_No,Don't you just turn the Pokégear on by~pressing Q and switch over to Phone?*Phone numbers are stored in memory.*Just choose a name you want to call.*Gee, isn't that convenient?
+NewBark_YourHouse1f_Mom_HowToUse_Yes,I'm sure you know that you can~open it by pressing <button.special>.*Phone numbers are stored in memory.*Just choose a name you want to call.*Gee, isn't that convenient?
+NewBark_YourHouse1f_Mom_HowToUse_No,Don't you just turn the Pokégear on by~pressing <button.special> and switch over to Phone?*Phone numbers are stored in memory.*Just choose a name you want to call.*Gee, isn't that convenient?
 NewBark_YourHouse1f_Mom_GiveNumber,Also, here is my number!
 NewBark_YourHouse1f_Mom_RegisterNumber,<player.name>~registered Mom's number.
 

@@ -25,7 +25,7 @@
 
         Me.mainTexture = TextureManager.GetTexture("GUI\Menus\Menu")
         Me.menuTexture = TextureManager.GetTexture("GUI\Menus\SaveBook")
-        ChooseBox.Show({Localization.GetString("save_screen_yes"), Localization.GetString("save_screen_no")}, 0, {})
+        ChooseBox.Show({Localization.GetString("global_yes"), Localization.GetString("global_no")}, 0, {})
 
         SaveGameHelpers.ResetSaveCounter()
     End Sub
@@ -46,9 +46,9 @@
             .Draw(menuTexture, New Rectangle(Delta_X, Delta_Y, 700, 440), Color.White)
 
             If saveSessionFailed = True Then
-				.DrawString(FontManager.MainFontWhite, Localization.GetString("save_screen_error"), New Vector2(Delta_X + 90, Delta_Y + 50), Color.Red)
+                .DrawString(FontManager.MainFontWhite, Localization.GetString("save_saving_failed"), New Vector2(Delta_X + 90, Delta_Y + 50), Color.Red)
 
-				If Core.GameOptions.Extras.Contains("Backup Save Feature") Then
+                If Core.GameOptions.Extras.Contains("Backup Save Feature") Then
                     .DrawString(FontManager.MainFontBlack,
                         "Press Dismiss to close this" & Environment.NewLine &
                         "screen and try to save again" & Environment.NewLine &
@@ -79,40 +79,39 @@
                         "Discord server" & Environment.NewLine &
                         "www.discord.me/p3d" & Environment.NewLine & Environment.NewLine &
                         "Official Forum" & Environment.NewLine &
-                        "pokemon3d.net/forum/news", New Vector2(Delta_X + 390, Delta_Y + 100), Color.White)
+                        "pokemon3d.net/forum", New Vector2(Delta_X + 390, Delta_Y + 100), Color.White)
                 End If
 
                 Dim text As String = String.Empty
                 If ControllerHandler.IsConnected() Then
-                    text = "Press      to continue"
+                    text = Localization.GetString("save_press_continue_1") & "      " & Localization.GetString("save_press_continue_2")
                 Else
-                    text = "Press " & KeyBindings.BackKey1.ToString() & " to continue"
+                    text = Localization.GetString("save_press_continue_1") & " " & KeyBindings.BackKey1.ToString() & " " & Localization.GetString("save_press_continue_2")
                 End If
 
 				Dim textSize As Vector2 = FontManager.MainFontBlack.MeasureString(text)
 
-				GetFontRenderer().DrawString(FontManager.MainFontBlack, text, New Vector2(Delta_X + 610 - textSize.X / 2.0F,
-																				   Delta_Y + 350 - textSize.Y / 2.0F), Color.White)
+                GetFontRenderer().DrawString(FontManager.MainFontBlack, text, New Vector2(Delta_X + 610 - textSize.X / 2.0F, Delta_Y + 350 - textSize.Y / 2.0F), Color.White)
 
-				If ControllerHandler.IsConnected() Then
-                    SpriteBatch.Draw(TextureManager.GetTexture("GUI\GamePad\xboxControllerButtonB"), New Rectangle(CInt(Delta_X + 610 - textSize.X / 2 + FontManager.MainFontBlack.MeasureString("Press ").X),
+                If ControllerHandler.IsConnected() Then
+                    SpriteBatch.Draw(TextureManager.GetTexture("GUI\GamePad\xboxControllerButtonB"), New Rectangle(CInt(Delta_X + 610 - textSize.X / 2 + FontManager.MainFontBlack.MeasureString(Localization.GetString("save_press_continue_1") & " ").X),
                                                                                                                CInt(Delta_Y + 350 - textSize.Y / 2), 20, 20), Color.White)
                 End If
 
             Else
                 If ready = True Then
-					.DrawString(FontManager.MainFontColor, Localization.GetString("save_screen_success"), New Vector2(Delta_X + 90, Delta_Y + 50), New Color(62, 116, 195))
-				Else
+                    .DrawString(FontManager.MainFontColor, Localization.GetString("save_saved_game"), New Vector2(Delta_X + 90, Delta_Y + 50), New Color(62, 116, 195))
+                Else
                     If SaveGameHelpers.GameJoltSaveDone() = False And savingStarted = True Then
                         If SaveGameHelpers.StartedDownloadCheck = True Then
-							.DrawString(FontManager.MainFontBlack, Localization.GetString("save_screen_validating") & LoadingDots.Dots, New Vector2(Delta_X + 90, Delta_Y + 50), Color.White)
-						Else
-							.DrawString(FontManager.MainFontBlack, Localization.GetString("save_screen_saving") & LoadingDots.Dots, New Vector2(Delta_X + 77, Delta_Y + 50), Color.White)
-						End If
+                            .DrawString(FontManager.MainFontBlack, Localization.GetString("save_validating") & LoadingDots.Dots, New Vector2(Delta_X + 90, Delta_Y + 50), Color.White)
+                        Else
+                            .DrawString(FontManager.MainFontBlack, Localization.GetString("save_saving") & LoadingDots.Dots, New Vector2(Delta_X + 77, Delta_Y + 50), Color.White)
+                        End If
                     Else
-						.DrawString(FontManager.MainFontBlack, Localization.GetString("save_screen_question1"), New Vector2(Delta_X + 90, Delta_Y + 50), Color.White)
-						.DrawString(FontManager.MainFontBlack, Localization.GetString("save_screen_question2"), New Vector2(Delta_X + 90, Delta_Y + 80), Color.White)
-					End If
+                        .DrawString(FontManager.MainFontBlack, Localization.GetString("save_title_1"), New Vector2(Delta_X + 90, Delta_Y + 50), Color.White)
+                        .DrawString(FontManager.MainFontBlack, Localization.GetString("save_title_2"), New Vector2(Delta_X + 90, Delta_Y + 80), Color.White)
+                    End If
                 End If
 
                 For i = 0 To Core.Player.Pokemons.Count - 1
@@ -125,8 +124,8 @@
                     End If
                 Next
 
-				.DrawString(FontManager.MainFontBlack, Localization.GetString("save_screen_name") & ": " & Core.Player.Name & Environment.NewLine & Localization.GetString("save_screen_badges") & ": " & Core.Player.Badges.Count.ToString() & Environment.NewLine & Localization.GetString("save_screen_money") & ": " & Core.Player.Money & Environment.NewLine & Localization.GetString("save_screen_time") & ": " & TimeHelpers.GetDisplayTime(TimeHelpers.GetCurrentPlayTime(), True), New Vector2(Delta_X + 400, Delta_Y + 215), Color.White)
-			End If
+                .DrawString(FontManager.MainFontBlack, Localization.GetString("global_player_name") & ": " & Core.Player.Name & Environment.NewLine & Environment.NewLine & Localization.GetString("global_badges") & ": " & Core.Player.Badges.Count.ToString() & Environment.NewLine & Environment.NewLine & Localization.GetString("global_money") & ": " & Core.Player.Money & Environment.NewLine & Environment.NewLine & Localization.GetString("global_play_time") & ": " & TimeHelpers.GetDisplayTime(TimeHelpers.GetCurrentPlayTime(), True), New Vector2(Delta_X + 400, Delta_Y + 215), Color.White)
+            End If
         End With
         Screen.ChooseBox.Draw(New Vector2(Delta_X + 115, Delta_Y + 155), False, 1.5F)
     End Sub

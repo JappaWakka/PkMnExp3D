@@ -48,7 +48,6 @@
     </None>
     <None Include="Content\Content.mgcb" />
     <None Include="Content\Fonts\BMP\GameJolt.xnb" />
-    <None Include="Content\Fonts\BMP\miniFont.spritefont" />
     <None Include="Content\Models\boat2\Boat.fbx" />
     <None Include="Content\Models\boat\ferry.mtl" />
     <None Include="Content\Models\boat\ferry.obj" />
