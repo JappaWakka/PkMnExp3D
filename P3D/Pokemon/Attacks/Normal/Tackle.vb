@@ -63,7 +63,7 @@
                 BAFlip = True
             End If
             Dim MoveAnimation As MoveAnimationQueryObject = New MoveAnimationQueryObject(CurrentEntity, BAFlip)
-            MoveAnimation.AnimationPlaySound("Battle\Attacks\Tackle", 1, 2)
+            MoveAnimation.AnimationPlaySound("Battle\Attacks\Tackle", 0.5, 2)
             MoveAnimation.AnimationMovePokemonEntity(0.5, 0, 0, 0.06, False, False, 0, 0)
             MoveAnimation.AnimationMovePokemonEntity(-0.5, 0, 0, 0.07, False, False, 1, 0)
             BattleScreen.BattleQuery.Add(MoveAnimation)
