@@ -190,9 +190,9 @@
             End If
 
             Dim cX As Integer = 0
-            If HPpercentage <= 50.0F And HPpercentage > 15.0F Then
+            If HPpercentage <= 50.0F And HPpercentage > 25.0F Then
                 cX = 2
-            ElseIf HPpercentage <= 15.0F Then
+            ElseIf HPpercentage <= 25.0F Then
                 cX = 4
             End If
 

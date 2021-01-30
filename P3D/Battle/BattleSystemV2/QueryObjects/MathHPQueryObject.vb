@@ -92,14 +92,12 @@
         Private Function GetColor() As Color
             Dim percent As Integer = CInt((_amount / 1000) * 100)
 
-            If percent > 75 Then
-                Return New Color(64, 191, 0)
-            ElseIf percent <= 75 And percent > 50 Then
-                Return New Color(157, 191, 0)
+            If percent > 50 Then
+                Return New Color(112, 248, 168)
             ElseIf percent <= 50 And percent > 25 Then
-                Return New Color(222, 191, 0)
+                Return New Color(248, 224, 56)
             Else
-                Return New Color(192, 63, 0)
+                Return New Color(248, 88, 56)
             End If
 
         End Function
