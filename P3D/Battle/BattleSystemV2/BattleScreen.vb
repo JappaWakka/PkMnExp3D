@@ -1103,10 +1103,10 @@ nextIndex:
                     If p.hasLeveledUp = True Then
                         hasLevelUp = True
                     End If
-                    If IsRemoteBattle = False Then
+                    If IsRemoteBattle = True Or IsTrainerBattle = True Then
                         p.Item = P3D.Item.GetItemByID(p.OriginalItem.ID)
                         p.Item.AdditionalData = p.OriginalItem.AdditionalData
-                        Screen.TextBox.Show(Core.Player.Name & " found~" & p.OriginalItem.Name & "*and gave it back to~" & p.GetDisplayName)
+                        Screen.TextBox.Show(Core.Player.Name & " received" & p.OriginalItem.Name & "*and gave it back to~" & p.GetDisplayName)
                     End If
                     p.ResetTemp()
                 Next
@@ -1146,10 +1146,10 @@ nextIndex:
                 Next
             Else
                 For Each p As Pokemon In Core.Player.Pokemons
-                    If IsRemoteBattle = False Then
+                    If IsRemoteBattle = True Or IsTrainerBattle = True Then
                         p.Item = P3D.Item.GetItemByID(p.OriginalItem.ID)
                         p.Item.AdditionalData = p.OriginalItem.AdditionalData
-                        Screen.TextBox.Show(Core.Player.Name & " found~" & p.OriginalItem.Name & "*and gave it back to~" & p.GetDisplayName)
+                        Screen.TextBox.Show(Core.Player.Name & " received" & p.OriginalItem.Name & "*and gave it back to~" & p.GetDisplayName)
                     End If
                     p.ResetTemp()
                 Next
