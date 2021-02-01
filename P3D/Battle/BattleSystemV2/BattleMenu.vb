@@ -101,22 +101,25 @@
             'Draw large stats:
             If largeStatsDisplay = True Then
                 'Background
-                Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Battle\Interface"), New Rectangle(CInt(pos.X) + 14, CInt(pos.Y) + 14, 182, 42), New Rectangle(0, 0, 91, 21), shinyHue)
+                Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Battle\Interface"), New Rectangle(CInt(pos.X), CInt(pos.Y), 416, 160), New Rectangle(0, 0, 104, 40), shinyHue)
 
                 'Name:
-                Dim nameInformation As String = p.GetDisplayName() & " Lv. " & p.Level.ToString()
+                Dim nameInformation As String = p.GetDisplayName()
 
-                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, nameInformation, New Vector2(pos.X, pos.Y), shinyHue)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, nameInformation, New Vector2(CInt(pos.X + 64), CInt(pos.Y + 16)), shinyHue)
 
                 'Gender:
                 If p.Gender = Pokemon.Genders.Male Then
-                    Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Battle\Interface"), New Rectangle(CInt(pos.X + 6 + FontManager.MainFontWhite.MeasureString(nameInformation).X), CInt(pos.Y), 12, 20), New Rectangle(0, 104, 6, 10), New Color(255, 255, 255, _moveMenuAlpha))
+                    Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Battle\Interface"), New Rectangle(CInt(pos.X + 64 + FontManager.MainFontBlack.MeasureString(nameInformation).X) + 12, CInt(pos.Y + 32), 12, 20), New Rectangle(16, 104, 6, 10), New Color(255, 255, 255, _moveMenuAlpha))
                 ElseIf p.Gender = Pokemon.Genders.Female Then
-                    Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Battle\Interface"), New Rectangle(CInt(pos.X + 6 + FontManager.MainFontWhite.MeasureString(nameInformation).X), CInt(pos.Y), 12, 20), New Rectangle(6, 104, 6, 10), New Color(255, 255, 255, _moveMenuAlpha))
+                    Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Battle\Interface"), New Rectangle(CInt(pos.X + 64 + FontManager.MainFontBlack.MeasureString(nameInformation).X) + 12, CInt(pos.Y + 32), 12, 20), New Rectangle(22, 104, 6, 10), New Color(255, 255, 255, _moveMenuAlpha))
                 End If
 
+                'Level:
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Lv. " & p.Level.ToString(), New Vector2(CInt(pos.X + 160 - (FontManager.MainFontBlack.MeasureString("Lv. " & p.Level.ToString()).X / 2)), CInt(pos.Y + 16)), New Color(255, 255, 255, _moveMenuAlpha))
+
                 'HP indicator:
-                Core.SpriteBatch.DrawString(FontManager.MainFontWhite, p.HP & "/" & p.MaxHP, New Vector2(pos.X + 100, pos.Y + 35 + 3), shinyHue)
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, p.HP & "/" & p.MaxHP, New Vector2(CInt(pos.X + 80), CInt(pos.Y + 48)), shinyHue)
 
                 'EXP Bar:
                 If BattleScreen.CanReceiveEXP = True Then
@@ -148,8 +151,8 @@
                             End If
 
                             Dim t = TextureManager.GetTexture("GUI\Battle\Interface")
-                            For dX As Integer = 0 To EXPlength Step 4
-                                Core.SpriteBatch.Draw(t, New Rectangle(CInt(pos.X) + 50 + dX, CInt(pos.Y) + 54, 4, 6), New Rectangle(0, 43, 2, 3), New Color(255, 255, 255, _moveMenuAlpha))
+                            For dX As Integer = 0 To EXPlength Step 8
+                                Core.SpriteBatch.Draw(t, New Rectangle(CInt(pos.X) + 192 + dX, CInt(pos.Y) + 54, 8, 8), New Rectangle(6, 110, 2, 2), New Color(255, 255, 255, _moveMenuAlpha))
                             Next
                         End If
                     End If
@@ -172,7 +175,7 @@
             End If
 
             Dim HPpercentage As Single = (100.0F / p.MaxHP) * p.HP
-            Dim HPlength As Integer = CInt(Math.Ceiling(140 / 100 * HPpercentage.Clamp(1, 999)))
+            Dim HPlength As Integer = CInt(Math.Ceiling(188 / 100 * HPpercentage.Clamp(1, 999)))
 
             If p.HP = 0 Then
                 HPlength = 0
@@ -182,10 +185,10 @@
                 End If
             End If
             If p.HP = p.MaxHP Then
-                HPlength = 140
+                HPlength = 188
             Else
-                If HPlength = 140 Then
-                    HPlength = 139
+                If HPlength = 188 Then
+                    HPlength = 187
                 End If
             End If
 
@@ -197,9 +200,9 @@
             End If
 
             If HPlength > 0 Then
-                Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Battle\Interface"), New Rectangle(CInt(pos.X) + 54, CInt(pos.Y) + 26, 2, 12), New Rectangle(cX, 37, 1, 6), New Color(255, 255, 255, _moveMenuAlpha))
-                Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Battle\Interface"), New Rectangle(CInt(pos.X) + 2 + 54, CInt(pos.Y) + 26, HPlength - 4, 12), New Rectangle(cX + 1, 37, 1, 6), New Color(255, 255, 255, _moveMenuAlpha))
-                Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Battle\Interface"), New Rectangle(CInt(pos.X) + HPlength - 2 + 54, CInt(pos.Y) + 26, 2, 12), New Rectangle(cX, 37, 1, 6), New Color(255, 255, 255, _moveMenuAlpha))
+                For barX As Integer = 0 To HPlength Step 8
+                    Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Battle\Interface"), New Rectangle(CInt(pos.X) + 192 + barX, CInt(pos.Y) + 76, 8, 12), New Rectangle(cX, 109, 2, 3), New Color(255, 255, 255, _moveMenuAlpha))
+                Next
             End If
 
             Dim caughtX As Integer = 0
@@ -280,10 +283,10 @@
 
         Public Sub Draw(ByVal BattleScreen As BattleScreen)
             If BattleScreen.IsCurrentScreen() = True Then
-                DrawPokemonStats(New Vector2(50, 50), BattleScreen.OppPokemon, BattleScreen, False, Not BattleScreen.IsTrainerBattle)
+                DrawPokemonStats(New Vector2(64,64), BattleScreen.OppPokemon, BattleScreen, False, Not BattleScreen.IsTrainerBattle)
 
                 If BattleScreen.BattleMode <> BattleScreen.BattleModes.Safari Then
-                    DrawPokemonStats(New Vector2(Core.windowSize.Width - 280, Core.windowSize.Height - 100), BattleScreen.OwnPokemon, BattleScreen, True, False)
+                    DrawPokemonStats(New Vector2(Core.windowSize.Width - 480, Core.windowSize.Height - 240), BattleScreen.OwnPokemon, BattleScreen, True, False)
                 End If
 
                 DrawPokeBalls(New Vector2(Core.windowSize.Width - 292, Core.windowSize.Height - 112), BattleScreen, Core.Player.Pokemons, False)
