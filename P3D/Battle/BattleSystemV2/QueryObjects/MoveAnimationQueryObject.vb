@@ -36,7 +36,6 @@
 			Next
 		End Sub
 
-
 		Public Overrides Sub Update(BV2Screen As BattleScreen)
 			If AnimationStarted = True Then
 				For i = 0 To AnimationSequence.Count - 1
@@ -48,11 +47,11 @@
 						Else
 							a.Update()
 						End If
-					Else
-						AnimationSequenceEnd()
 					End If
 				Next
-
+				If AnimationSequence.Count <= 0 Then
+					AnimationSequenceEnd()
+				End If
 				For Each Animation As BattleAnimation3D In AnimationSequence
 					Animation.UpdateEntity()
 				Next
@@ -108,7 +107,7 @@
 			End If
 		End Sub
 
-		Public Sub AnimationSpawnMovingEntity(ByVal PositionX As Single, ByVal PositionY As Single, ByVal PositionZ As Single, ByVal Texture As String, ByVal ScaleX As Single, ByVal ScaleY As Single, ByVal ScaleZ As Single, ByVal DestinationX As Single, ByVal DestinationY As Single, ByVal DestinationZ As Single, ByVal Speed As Single, ByVal SpinX As Boolean, ByVal SpinZ As Boolean, ByVal startDelay As Single, ByVal endDelay As Single, Optional ByVal SpinXSpeed As Single = 0.1F, Optional ByVal SpinZSpeed As Single = 0.1F, Optional MovementCurve As Integer = 1)
+		Public Sub AnimationSpawnMovingEntity(ByVal PositionX As Single, ByVal PositionY As Single, ByVal PositionZ As Single, ByVal Texture As String, ByVal ScaleX As Single, ByVal ScaleY As Single, ByVal ScaleZ As Single, ByVal DestinationX As Single, ByVal DestinationY As Single, ByVal DestinationZ As Single, ByVal Speed As Single, ByVal SpinX As Boolean, ByVal SpinZ As Boolean, ByVal startDelay As Single, ByVal endDelay As Single, Optional ByVal SpinXSpeed As Single = 0.1F, Optional ByVal SpinZSpeed As Single = 0.1F, Optional MovementCurve As Integer = 2)
 			If CurrentEntity Is Nothing Then
 				Logger.Log(Logger.LogTypes.Warning, "ATTEMPT TO USE AttackSpawnMovingAnimation OUTSIDE OF ATTACK ANIMATION DELEGATE")
 			ElseIf Not AnimationStarted Then
@@ -141,7 +140,7 @@
 				AnimationSequence.Add(baMove)
 			End If
 		End Sub
-		Public Sub AnimationMovePokemonEntity(ByVal DestinationX As Single, ByVal DestinationY As Single, ByVal DestinationZ As Single, ByVal Speed As Single, ByVal SpinX As Boolean, ByVal SpinZ As Boolean, ByVal startDelay As Single, ByVal endDelay As Single, Optional ByVal SpinXSpeed As Single = 0.1F, Optional ByVal SpinZSpeed As Single = 0.1F, Optional MovementCurve As Integer = 1)
+		Public Sub AnimationMovePokemonEntity(ByVal DestinationX As Single, ByVal DestinationY As Single, ByVal DestinationZ As Single, ByVal Speed As Single, ByVal SpinX As Boolean, ByVal SpinZ As Boolean, ByVal startDelay As Single, ByVal endDelay As Single, Optional ByVal SpinXSpeed As Single = 0.1F, Optional ByVal SpinZSpeed As Single = 0.1F, Optional MovementCurve As Integer = 2)
 			If CurrentEntity Is Nothing Then
 				Logger.Log(Logger.LogTypes.Warning, "ATTEMPT TO USE AttackSpawnMovingAnimation OUTSIDE OF ATTACK ANIMATION DELEGATE")
 			ElseIf Not AnimationStarted Then
@@ -157,13 +156,13 @@
 				AnimationSequence.Add(baBillMove)
 			End If
 		End Sub
-		Public Sub AnimationPlaySound(ByVal sound As String, ByVal startDelay As Single, ByVal endDelay As Single)
+		Public Sub AnimationPlaySound(ByVal sound As String, ByVal startDelay As Single, ByVal endDelay As Single, Optional ByVal stopMusic As Boolean = False, Optional ByVal IsPokemon As Boolean = False)
 			If CurrentEntity Is Nothing Then
 				Logger.Log(Logger.LogTypes.Warning, "ATTEMPT TO USE AnimationPlaySound OUTSIDE OF ATTACK ANIMATION DELEGATE")
 			ElseIf Not AnimationStarted Then
 				Logger.Log(Logger.LogTypes.Warning, "ATTEMPT TO USE AnimationPlaySound BEFORE CALLING AnimationSequenceBegin")
 			Else
-				Dim baSound As BASound = New BASound(sound, startDelay, endDelay)
+				Dim baSound As BASound = New BASound(sound, startDelay, endDelay, stopMusic, IsPokemon)
 				AnimationSequence.Add(baSound)
 			End If
 		End Sub
