@@ -281,34 +281,33 @@
 
     Private Sub DrawPage1()
         Dim CanvasTexture As Texture2D = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 0, 48, 48), "")
+        Dim HPBar As Rectangle = New Rectangle(0, 240, 67, 8)
+        Dim EXPBar As Rectangle = New Rectangle(0, 248, 83, 8)
 
-        Dim p As Vector2 = New Vector2(140, 180)
+        Dim p As Vector2 = New Vector2(144, 176)
 
         With Core.SpriteBatch
             ' Stats:
             Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(220, 196, 320, 352))
-            Dim barX As Integer = CInt((Pokemon.HP / Pokemon.MaxHP) * 150)
+            'HP Bar Background
+            Core.SpriteBatch.Draw(MainTexture, New Rectangle(CInt(p.X + 128), CInt(p.Y + 40), 134, 16), HPBar, Color.White)
+
+            Dim barX As Integer = CInt((Pokemon.HP / Pokemon.MaxHP) * 92)
             Dim barRectangle As Rectangle
             Dim barPercentage As Integer = CInt((Pokemon.HP / Pokemon.MaxHP) * 100).Clamp(0, 100)
 
             If barPercentage >= 50 Then
-                barRectangle = New Rectangle(113, 0, 1, 4)
+                barRectangle = New Rectangle(112, 0, 2, 3)
             ElseIf barPercentage < 50 And barPercentage > 10 Then
-                barRectangle = New Rectangle(116, 0, 1, 4)
+                barRectangle = New Rectangle(114, 0, 2, 3)
             ElseIf barPercentage <= 10 Then
-                barRectangle = New Rectangle(115, 0, 1, 4)
+                barRectangle = New Rectangle(116, 0, 2, 3)
             End If
-            For x = 0 To barX - 1
-                .Draw(MainTexture, New Rectangle(CInt(p.X + (x * 2) + 104), CInt(p.Y + 44), 4, 16), barRectangle, Color.White)
+            For x = 0 To barX Step 4
+                .Draw(MainTexture, New Rectangle(CInt(p.X + 128 + x + 32), CInt(p.Y + 46), 4, 6), barRectangle, Color.White)
             Next
 
-            For x = barX To 149
-                .Draw(MainTexture, New Rectangle(CInt(p.X + (x * 2) + 104), CInt(p.Y + 44), 4, 16), New Rectangle(114, 0, 1, 4), Color.White)
-            Next
-            .Draw(MainTexture, New Rectangle(CInt(p.X + 100), CInt(p.Y + 44), 4, 16), New Rectangle(112, 0, 1, 4), Color.White)
-            .Draw(MainTexture, New Rectangle(CInt(p.X + 406), CInt(p.Y + 44), 4, 16), New Rectangle(112, 0, 1, 4), Color.White)
-
-			Dim redText As String = Environment.NewLine
+            Dim redText As String = Environment.NewLine
 			Dim blueText As String = Environment.NewLine
 			Dim blackText As String = Localization.GetString("HP") & Environment.NewLine
 			For i = 0 To 4
@@ -370,32 +369,24 @@
                     NextLvExp = 0
                 Else
                     barPercentage = CInt((currentExp / NextLvExp) * 100)
-                    barX = CInt((currentExp / NextLvExp) * 150).Clamp(0, 150)
+                    barX = CInt((currentExp / NextLvExp) * 128).Clamp(0, 128)
                 End If
+
+                'EXP Bar Background
+                Core.SpriteBatch.Draw(MainTexture, New Rectangle(CInt(240 + FontManager.MainFontColor.MeasureString(barPercentage & " %").X + 12), 572, 166, 16), EXPBar, Color.White)
 
                 .DrawString(FontManager.MainFontBlack, Localization.GetString("poke_status_screen_all_exp") & ": " & Pokemon.Experience & Environment.NewLine & Localization.GetString("poke_status_screen_nxt_lv") & ": " & NextLvExp - currentExp, New Vector2(240, 504), Color.White)
 
-                Dim i As Integer = 0
-                For x = 0 To barX - 1
-                    .Draw(MainTexture, New Rectangle((x * 2) + 240, 550, 4, 16), New Rectangle(118 + i, 0, 1, 4), Color.White)
-                    i += 1
-                    If i = 2 Then
-                        i = 0
-                    End If
+                For x = 0 To barX Step 4
+                    .Draw(MainTexture, New Rectangle(CInt((x * 2) + 240 + FontManager.MainFontColor.MeasureString(barPercentage & " %").X + 12 + 32), 572 + 8, 4, 6), New Rectangle(118, 0, 2, 3), Color.White)
                 Next
-
-                For x = barX To 149
-                    .Draw(MainTexture, New Rectangle((x * 2) + 240, 550, 4, 16), New Rectangle(114, 0, 1, 4), Color.White)
-                Next
-                .Draw(MainTexture, New Rectangle(236, 550, 4, 16), New Rectangle(112, 0, 1, 4), Color.White)
-                .Draw(MainTexture, New Rectangle(542, 550, 4, 16), New Rectangle(112, 0, 1, 4), Color.White)
 
                 If barPercentage = 100 Then
                     barPercentage -= 1
                 End If
 
-				.DrawString(FontManager.MainFontColor, barPercentage & " %", New Vector2(240, 568), New Color(62, 116, 195))
-			End If
+                .DrawString(FontManager.MainFontColor, barPercentage & " %", New Vector2(240, 568), New Color(80, 160, 232))
+            End If
         End With
 
     End Sub

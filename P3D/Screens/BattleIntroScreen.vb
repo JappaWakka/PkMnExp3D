@@ -397,7 +397,7 @@
 
     Private Sub UpdateHorizontalBars()
         If Animations.Count < 16 Then
-            If Core.Random.Next(0, 4) = 0 Then
+            If Core.Random.Next(0, 5) = 0 Then
                 Dim validPosition As Boolean = False
                 Dim Pos As Vector2
 
@@ -425,7 +425,7 @@
 
     Private Sub UpdateVerticalBars()
         If Animations.Count < 16 Then
-            If Core.Random.Next(0, 4) = 0 Then
+            If Core.Random.Next(0, 5) = 0 Then
                 Dim validPosition As Boolean = False
                 Dim Pos As Vector2
 
@@ -453,18 +453,18 @@
 
     Private Sub UpdateBlockIn()
         If Animations.Count = 0 Then
-            Animations.Add(New Rectangle(CInt(Core.windowSize.Width / 2) - 1, CInt(Core.windowSize.Height / 2) - 1, 2, 2))
+            Animations.Add(New Rectangle(CInt(Core.windowSize.Width / 2 - 1), CInt(Core.windowSize.Height / 2 - 1), 2, 2))
         Else
             If Animations(0).Width >= Core.windowSize.Width Then
                 ready = True
             Else
                 Dim a As Rectangle = Animations(0)
 
-                a.X -= CInt(Math.Ceiling(Core.windowSize.Width / 320))
-                a.Y -= CInt(Math.Ceiling(Core.windowSize.Height / 320))
+                a.X -= CInt(Math.Ceiling(Core.windowSize.Width / 240))
+                a.Y -= CInt(Math.Ceiling(Core.windowSize.Height / 120 / 2))
 
-                a.Width += CInt(Math.Ceiling(Core.windowSize.Width / 180))
-                a.Height += CInt(Math.Ceiling(Core.windowSize.Height / 180))
+                a.Width += CInt(Math.Ceiling(Core.windowSize.Width / 240 * 2))
+                a.Height += CInt(Math.Ceiling(Core.windowSize.Height / 120))
 
                 Animations.RemoveAt(0)
                 Animations.Add(a)

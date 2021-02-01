@@ -10,7 +10,7 @@
     Public LightingEnabled As Boolean = True
     Public GamePadEnabled As Boolean = True
     Public StartedOfflineGame As Boolean = False
-    Public WindowSize As New Vector2(1200, 680)
+    Public WindowSize As New Vector2(1280, 720)
     Public ForceMusic As Boolean = False
     Public MaxOffsetLevel As Integer = 0
     Public UpdateDisabled As Boolean = False
