@@ -51,9 +51,9 @@
                     MusicLoop = "hoenn_Wild_StartBattle"
                 End If
             End If
-            MusicLoop = MusicLoop
+            Me.MusicLoop = MusicLoop
         Else
-            MusicLoop = MusicLoop
+            Me.MusicLoop = MusicLoop
         End If
 
         Me.Constructor(OldScreen, NewScreen, Nothing, MusicLoop, IntroType)
@@ -386,7 +386,7 @@
     End Sub
 
     Private Function GetRectangleSize() As Integer
-        Dim blocksOnScreen As Double = 81.6
+        Dim blocksOnScreen As Double = 64
 
         Dim pixelAmount As Double = Core.windowSize.Width * Core.windowSize.Height
 
@@ -396,13 +396,13 @@
     End Function
 
     Private Sub UpdateHorizontalBars()
-        If Animations.Count < 20 Then
+        If Animations.Count < 16 Then
             If Core.Random.Next(0, 4) = 0 Then
                 Dim validPosition As Boolean = False
                 Dim Pos As Vector2
 
                 While validPosition = False
-                    Pos = New Vector2(0, CInt(Core.windowSize.Height / 20) * Core.Random.Next(0, 20))
+                    Pos = New Vector2(0, CInt(Core.windowSize.Height / 16) * Core.Random.Next(0, 16))
 
                     validPosition = True
 
@@ -416,7 +416,7 @@
                     End If
                 End While
 
-                Animations.Add(New Rectangle(CInt(Pos.X), CInt(Pos.Y), Core.windowSize.Width, CInt(Core.windowSize.Height / 20)))
+                Animations.Add(New Rectangle(CInt(Pos.X), CInt(Pos.Y), Core.windowSize.Width, CInt(Core.windowSize.Height / 16)))
             End If
         Else
             ready = True
@@ -424,13 +424,13 @@
     End Sub
 
     Private Sub UpdateVerticalBars()
-        If Animations.Count < 20 Then
+        If Animations.Count < 16 Then
             If Core.Random.Next(0, 4) = 0 Then
                 Dim validPosition As Boolean = False
                 Dim Pos As Vector2
 
                 While validPosition = False
-                    Pos = New Vector2(CInt(Core.windowSize.Width / 20) * Core.Random.Next(0, 20), 0)
+                    Pos = New Vector2(CInt(Core.windowSize.Width / 16) * Core.Random.Next(0, 16), 0)
 
                     validPosition = True
 
@@ -444,7 +444,7 @@
                     End If
                 End While
 
-                Animations.Add(New Rectangle(CInt(Pos.X), CInt(Pos.Y), CInt(Core.windowSize.Width / 20), Core.windowSize.Height))
+                Animations.Add(New Rectangle(CInt(Pos.X), CInt(Pos.Y), CInt(Core.windowSize.Width / 16), Core.windowSize.Height))
             End If
         Else
             ready = True
@@ -453,18 +453,18 @@
 
     Private Sub UpdateBlockIn()
         If Animations.Count = 0 Then
-            Animations.Add(New Rectangle(CInt(Core.windowSize.Width / 2) - 10, CInt(Core.windowSize.Height / 2) - 10, 20, 20))
+            Animations.Add(New Rectangle(CInt(Core.windowSize.Width / 2) - 1, CInt(Core.windowSize.Height / 2) - 1, 2, 2))
         Else
             If Animations(0).Width >= Core.windowSize.Width Then
                 ready = True
             Else
                 Dim a As Rectangle = Animations(0)
 
-                a.X -= CInt(Math.Ceiling(Core.windowSize.Width / 300))
-                a.Y -= CInt(Math.Ceiling(Core.windowSize.Height / 300))
+                a.X -= CInt(Math.Ceiling(Core.windowSize.Width / 320))
+                a.Y -= CInt(Math.Ceiling(Core.windowSize.Height / 320))
 
-                a.Width += CInt(Math.Ceiling(Core.windowSize.Width / 150))
-                a.Height += CInt(Math.Ceiling(Core.windowSize.Height / 150))
+                a.Width += CInt(Math.Ceiling(Core.windowSize.Width / 180))
+                a.Height += CInt(Math.Ceiling(Core.windowSize.Height / 180))
 
                 Animations.RemoveAt(0)
                 Animations.Add(a)
@@ -479,7 +479,7 @@
             If value >= Core.windowSize.Height / 2 Then
                 ready = True
             Else
-                value += CInt(Math.Ceiling(Core.windowSize.Height / 300))
+                value += CInt(Math.Ceiling(Core.windowSize.Height / 320))
             End If
         End If
     End Sub

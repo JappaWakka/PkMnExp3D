@@ -1514,7 +1514,6 @@
                 End If
                 'ChangeCameraAngle(2, own, BattleScreen)
             End If
-
             Dim DoesNotMiss As Boolean = BattleCalculation.AccuracyCheck(moveUsed, own, BattleScreen)
 
             Dim lockon As Integer = BattleScreen.FieldEffects.OwnLockOn
@@ -3294,6 +3293,10 @@
         Public Function RaiseStat(ByVal own As Boolean, ByVal from As Boolean, ByVal BattleScreen As BattleScreen, ByVal Stat As String, ByVal val As Integer, ByVal message As String, ByVal cause As String) As Boolean
             Dim p As Pokemon = BattleScreen.OwnPokemon
             Dim op As Pokemon = BattleScreen.OppPokemon
+            Dim pNPC As NPC = BattleScreen.OwnPokemonNPC
+            If own = False Then
+                pNPC = BattleScreen.OppPokemonNPC
+            End If
             If own = False Then
                 p = BattleScreen.OppPokemon
                 op = BattleScreen.OwnPokemon
@@ -3384,8 +3387,29 @@
                 End If
             End If
 
-            '***SHOW STAT INCREASE ANIMATION HERE***
+            '***STAT INCREASE ANIMATION***
+            Dim MoveAnimation As MoveAnimationQueryObject = New MoveAnimationQueryObject(pNPC, Not own)
+            Dim maxAmount As Integer = 20 * val
+            Dim currentAmount As Integer = 0
+            While currentAmount <= maxAmount
+                Dim Texture As String = "Textures\Battle\StatChange\statDown"
+                Dim Position As Vector3 = New Vector3(0, -0.4, 0)
+                Dim Destination As Vector3 = New Vector3(0, 0.8, 0)
+                Dim Scale As Vector3 = New Vector3(0.2F)
+                Dim xPos = CSng((Random.NextDouble() - 0.5) * 1.2)
+                Dim zPos = CSng((Random.NextDouble() - 0.5) * 1.2)
+
+                Position.X = xPos
+                Position.Z = zPos
+                Destination.X = xPos
+                Destination.Z = zPos
+                Dim startDelay As Double = 5.0 * Random.NextDouble()
+                MoveAnimation.AnimationSpawnMovingEntity(Position.X, Position.Y, Position.Z, Texture, Scale.X, Scale.Y, Scale.Z, Destination.X, Destination.Y, Destination.Z, 0.05F, False, True, CSng(startDelay), 0.0F)
+                Threading.Interlocked.Increment(currentAmount)
+            End While
             BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\Stat_Raise", False))
+            BattleScreen.BattleQuery.Add(MoveAnimation)
+
             Dim printMessage As String = p.GetDisplayName() & "'s " & statString
             Select Case val
                 Case 2
@@ -3513,6 +3537,10 @@
         Public Function LowerStat(ByVal own As Boolean, ByVal from As Boolean, ByVal BattleScreen As BattleScreen, ByVal Stat As String, ByVal val As Integer, ByVal message As String, ByVal cause As String) As Boolean
             Dim p As Pokemon = BattleScreen.OwnPokemon
             Dim op As Pokemon = BattleScreen.OppPokemon
+            Dim pNPC As NPC = BattleScreen.OwnPokemonNPC
+            If own = False Then
+                pNPC = BattleScreen.OppPokemonNPC
+            End If
             If own = False Then
                 p = BattleScreen.OppPokemon
                 op = BattleScreen.OwnPokemon
@@ -3566,8 +3594,6 @@
                     End If
                 End If
             End If
-
-
 
             Dim statString As String = Stat.ToLower()
 
@@ -3643,9 +3669,29 @@
                     val = 6 + statC
                 End If
             End If
+            '***STAT DECREASE ANIMATION***
+            Dim MoveAnimation As MoveAnimationQueryObject = New MoveAnimationQueryObject(pNPC, Not own)
+            Dim maxAmount As Integer = 20 * val
+            Dim currentAmount As Integer = 0
+            While currentAmount <= maxAmount
+                Dim Texture As String = "Textures\Battle\StatChange\statDown"
+                Dim Position As Vector3 = New Vector3(0, 0.8, 0)
+                Dim Destination As Vector3 = New Vector3(0, -0.4, 0)
+                Dim Scale As Vector3 = New Vector3(0.2F)
+                Dim xPos = CSng((Random.NextDouble() - 0.5) * 1.2)
+                Dim zPos = CSng((Random.NextDouble() - 0.5) * 1.2)
 
-            '***SHOW STAT DECREASE ANIMATION HERE***
-            BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\Stat_Lower", False))
+                Position.X = xPos
+                Position.Z = zPos
+                Destination.X = xPos
+                Destination.Z = zPos
+                Dim startDelay As Double = 5.0 * Random.NextDouble()
+                MoveAnimation.AnimationSpawnMovingEntity(Position.X, Position.Y, Position.Z, Texture, Scale.X, Scale.Y, Scale.Z, Destination.X, Destination.Y, Destination.Z, 0.05F, False, True, CSng(startDelay), 0.0F)
+                Threading.Interlocked.Increment(currentAmount)
+            End While
+            MoveAnimation.AnimationPlaySound("Battle\Effects\Stat_Lower", 0.0F, 10.0F)
+            BattleScreen.BattleQuery.Add(MoveAnimation)
+
             Dim printMessage As String = p.GetDisplayName() & "'s " & statString
             Select Case val
                 Case 2

@@ -82,7 +82,9 @@
 
     Public Overrides Sub Render()
         If Me.startDelay <= 0.0F Then
-            Draw(Me.Model, Me.Textures, True)
+            If CanRemove = False Then
+                Draw(Me.Model, Me.Textures, True)
+            End If
         End If
     End Sub
 
