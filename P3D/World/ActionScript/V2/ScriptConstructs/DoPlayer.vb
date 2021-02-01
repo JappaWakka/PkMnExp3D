@@ -50,6 +50,8 @@
                     Return 0F
                 Case "ismoving"
                     Return ReturnBoolean(Screen.Camera.IsMoving())
+                Case "speed"
+                    Return Screen.Camera.Speed / 0.04F
                 Case "facing"
                     Return Screen.Camera.GetPlayerFacingDirection().ToString()
                 Case "compass"

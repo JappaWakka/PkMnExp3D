@@ -3,7 +3,7 @@ Public Class OverworldCamera
     Inherits Camera
 
 #Region "Fields"
-
+    Public CameraSpeed As Single = 0.04F
     Public oldX, oldY As Single
 
     Public Shared _thirdPerson As Boolean = False
@@ -147,7 +147,7 @@ Public Class OverworldCamera
 
     Public Sub New()
         MyBase.New("Overworld")
-
+        Speed = CameraSpeed
         Position = Core.Player.startPosition
         _thirdPerson = Core.Player.startThirdPerson
         RotationSpeed = CSng(Core.Player.startRotationSpeed / 10000)
@@ -165,7 +165,6 @@ Public Class OverworldCamera
     Private Sub CreateProjectionMatrix()
         Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(FOV), GraphicsDevice.Viewport.AspectRatio, 0.01, FarPlane)
     End Sub
-
 
 #Region "Update"
 
@@ -185,9 +184,11 @@ Public Class OverworldCamera
         ControlCamera()
 
         UpdateThirdPersonCamera()
-
-        SetSpeed()
-
+        Dim SpeedValue As Single = Me.Speed
+        If Me.Speed <> CameraSpeed Then
+            SpeedValue = CameraSpeed
+        End If
+        SetSpeed(SpeedValue)
         ControlThirdPersonCamera()
 
         UpdateViewMatrix()
@@ -408,21 +409,21 @@ Public Class OverworldCamera
 
 #Region "CameraMethods"
 
-    Private Sub SetSpeed()
+    Public Sub SetSpeed(Optional speed As Single = 0.04F)
         If CurrentScreen.Identification = Screen.Identifications.OverworldScreen AndAlso CType(CurrentScreen, OverworldScreen).ActionScript.IsReady = False Then
-            Speed = 0.04F
+            Me.Speed = speed
         Else
             If Screen.Level.Riding = True Or Screen.Level.Biking = True Then
-                Speed = 0.08F
+                Me.Speed = speed * 2
             Else
                 If Core.Player.IsRunning() = True Then
-                    Speed = 0.06F
+                    Me.Speed = speed * 1.5F
                 Else
-                    Speed = 0.04F
+                    Me.Speed = speed
                 End If
             End If
         End If
-        Screen.Level.OverworldPokemon.MoveSpeed = Speed
+        Screen.Level.OverworldPokemon.MoveSpeed = Me.Speed
     End Sub
 
     Private Function CreateRay() As Ray

@@ -204,6 +204,7 @@ Namespace ScriptVersion2
             r(New ScriptCommand("level", "waitforsave", "Makes the level idle until the current saving of an GameJolt save is done."))
             r(New ScriptCommand("level", "reload", "Reloads the current map."))
             r(New ScriptCommand("level", "setsafari", {New ScriptArgument("safari", ScriptArgument.ArgumentTypes.Bool)}.ToList(), "Sets if the current map is a Safari Zone (influences battle style)."))
+            r(New ScriptCommand("level", "setdaytime", {New ScriptArgument("daytime", ScriptArgument.ArgumentTypes.Int)}.ToList(), "Sets the daytime of the current map."))
             ' Constructs:
             r(New ScriptCommand("level", "mapfile", "str", "Returns the mapfile of the currently loaded map.", ",", True))
             r(New ScriptCommand("level", "levelfile", "str", "Returns the mapfile of the currently loaded map.", ",", True))
@@ -211,6 +212,7 @@ Namespace ScriptVersion2
             r(New ScriptCommand("level", "riding", "bool", "Returns if the player is Riding a Pokémon right now.", ",", True))
             r(New ScriptCommand("level", "biking", "bool", "Returns if the player is riding a Bicycle right now.", ",", True))
             r(New ScriptCommand("level", "surfing", "bool", "Returns if the player is Suring on a Pokémon right now.", ",", True))
+            r(New ScriptCommand("level", "daytime", "int", "Returns the daytime of the current map.", ",", True))
         End Sub
 
         Private Shared Sub DoEntity()
@@ -462,6 +464,8 @@ Namespace ScriptVersion2
                                                       New ScriptArgument("y", ScriptArgument.ArgumentTypes.Int),
                                                       New ScriptArgument("z", ScriptArgument.ArgumentTypes.Int)}.ToList(), "Sets the direction the player will move next regardless of facing."))
             r(New ScriptCommand("player", "resetmovement", "Resets the player movement to the default movement directions."))
+            r(New ScriptCommand("player", "setspeed", {New ScriptArgument("speed", ScriptArgument.ArgumentTypes.Sng)}.ToList(), "Sets the speed of the player's next movement command."))
+            r(New ScriptCommand("player", "resetspeed", "Resets the speed of the player to its default value."))
             r(New ScriptCommand("player", "getbadge", {New ScriptArgument("badgeID", ScriptArgument.ArgumentTypes.Int)}.ToList(), "Adds the given Badge to the player's Badges and displays a message."))
             r(New ScriptCommand("player", "removebadge", {New ScriptArgument("badgeID", ScriptArgument.ArgumentTypes.Int)}.ToList(), "Removes the given Badge from the player's Badges."))
             r(New ScriptCommand("player", "addbadge", {New ScriptArgument("badgeID", ScriptArgument.ArgumentTypes.Int)}.ToList(), "Adds the given Badge from the player's Badges."))
@@ -482,6 +486,7 @@ Namespace ScriptVersion2
             r(New ScriptCommand("player", "skin", "str", "Returns the current skin the player wears.", ",", True))
             r(New ScriptCommand("player", "velocity", "sng", "Returns the player's velocity (steps until the player movement ends).", ",", True))
             r(New ScriptCommand("player", "ismoving", "bool", "Returns if the player moves.", ",", True))
+            r(New ScriptCommand("player", "speed", "sng", "Returns the player's current speed.", ",", True))
             r(New ScriptCommand("player", "facing", "int", "Returns the direction the player is facing.", ",", True))
             r(New ScriptCommand("player", "compass", "str", "Returns ""north"", ""east"", ""south"" or ""east"" depending on the direction the player is facing.", ",", True))
             r(New ScriptCommand("player", "money", "int", "Returns the player's money.", ",", True))

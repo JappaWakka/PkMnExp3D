@@ -57,6 +57,7 @@
                         Screen.Level.UpdateEntities()
                         Screen.Camera.Update()
                         If Screen.Camera.IsMoving() = False Then
+                            Screen.Level.OwnPlayer.AnimationX = 1
                             IsReady = True
                             Screen.Level.OverworldPokemon.Visible = False
                         End If
@@ -67,6 +68,9 @@
                     End If
                     Screen.Camera.Move(sng(argument))
                     IsReady = True
+                    If Screen.Camera.IsMoving() = False Then
+                        Screen.Level.OwnPlayer.AnimationX = 1
+                    End If
                     Screen.Level.OverworldPokemon.Visible = False
                 Case "turn"
                     If Started = False Then
@@ -218,6 +222,12 @@
                 Case "resetmovement"
                     Screen.Camera.PlannedMovement = Vector3.Zero
 
+                    IsReady = True
+                Case "setspeed"
+                    CType(Screen.Camera, OverworldCamera).CameraSpeed = sng(argument.Replace(".", GameController.DecSeparator)) * 0.04F
+                    IsReady = True
+                Case "resetspeed"
+                    CType(Screen.Camera, OverworldCamera).CameraSpeed = 0.04F
                     IsReady = True
                 Case "getbadge"
                     If StringHelper.IsNumeric(argument) Then

@@ -47,14 +47,21 @@
             Screen.Level.OverworldPokemon.warped = True
             OverworldCamera.WalkOnSlideBlock = True
 
+            Dim walkSpeed As Single = 1.0F
+            If Screen.Camera.Speed <> 0.04F Then
+                walkSpeed = Screen.Camera.Speed / 0.04F
+            End If
+
             Dim s As String = "version=2" & Environment.NewLine &
                 "@player.stopmovement" & Environment.NewLine &
                 "@player.setmovement(" & Screen.Camera.GetMoveDirection().X & ",1," & Screen.Camera.GetMoveDirection().Z & ")" & Environment.NewLine &
+                "@player.setspeed(" & walkSpeed & ")" & Environment.NewLine &
                 "@player.move(" & Steps & ")" & Environment.NewLine &
                 "@player.setmovement(" & Screen.Camera.GetMoveDirection().X & ",0," & Screen.Camera.GetMoveDirection().Z & ")" & Environment.NewLine &
                 "@pokemon.hide" & Environment.NewLine &
                 "@player.move(1)" & Environment.NewLine &
-                "@pokemon.hide" & Environment.NewLine
+                "@pokemon.hide" & Environment.NewLine &
+                "@player.resetspeed" & Environment.NewLine
 
             If Not Me.TempScriptEntity Is Nothing Then
                 s &= GetScriptStartLine(Me.TempScriptEntity) & Environment.NewLine
@@ -135,13 +142,20 @@
             Screen.Level.OverworldPokemon.warped = True
             OverworldCamera.WalkOnSlideBlock = True
 
+            Dim walkSpeed As Single = 1.0F
+            If Screen.Camera.Speed <> 0.04F Then
+                walkSpeed = Screen.Camera.Speed / 0.04F
+            End If
+
             Dim s As String = "version=2" & Environment.NewLine &
             "@player.stopmovement" & Environment.NewLine &
             "@player.setmovement(" & Screen.Camera.GetMoveDirection().X & ",0," & Screen.Camera.GetMoveDirection().Z & ")" & Environment.NewLine &
+            "@player.setspeed(" & walkSpeed & ")" & Environment.NewLine &
             "@player.move(1)" & Environment.NewLine &
             "@player.setmovement(" & Screen.Camera.GetMoveDirection().X & ",-1," & Screen.Camera.GetMoveDirection().Z & ")" & Environment.NewLine &
             "@player.move(" & Steps & ")" & Environment.NewLine &
-            "@pokemon.hide" & Environment.NewLine
+            "@pokemon.hide" & Environment.NewLine &
+            "@player.resetspeed" & Environment.NewLine
 
             If Not Me.TempScriptEntity Is Nothing Then
                 s &= GetScriptStartLine(Me.TempScriptEntity) & Environment.NewLine

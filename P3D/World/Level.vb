@@ -398,7 +398,7 @@ Public Class Level
 				Case World.DayTime.Evening
 					Return 4
 			End Select
-			Return 0
+			Return World.GetTime
 		End Get
 		Set(value As Integer)
 			Select Case value

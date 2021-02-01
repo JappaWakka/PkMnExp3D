@@ -12,7 +12,7 @@
     Dim lastRectangle As New Rectangle(0, 0, 0, 0)
     Dim lastTexture As String = ""
 
-    Dim AnimationX As Integer = 1
+    Public AnimationX As Integer = 1
     Const AnimationDelayLength As Single = 1.1F
     Dim AnimationDelay As Single = AnimationDelayLength
     Public DoAnimation As Boolean = True
@@ -111,24 +111,22 @@
 
     Public Overrides Sub UpdateEntity()
         If Not Core.CurrentScreen Is Nothing Then
-            If Core.CurrentScreen.Identification = Screen.Identifications.OverworldScreen Then
-                If Screen.Camera.Name = "Overworld" Then
-                    Dim c As OverworldCamera = CType(Screen.Camera, OverworldCamera)
-                    Me.Position = New Vector3(c.Position.X, c.Position.Y - 0.1F, c.Position.Z)
-                End If
-            End If
             If Me.Rotation.Y <> Screen.Camera.Yaw Then
                 Me.Rotation.Y = Screen.Camera.Yaw
             End If
         End If
-
         Move()
         ChangeTexture()
-
         MyBase.UpdateEntity()
     End Sub
 
     Private Sub Move()
+        If Core.CurrentScreen.Identification = Screen.Identifications.OverworldScreen Then
+            If Screen.Camera.Name = "Overworld" Then
+                Dim c As OverworldCamera = CType(Screen.Camera, OverworldCamera)
+                Me.Position = New Vector3(c.Position.X, c.Position.Y - 0.1F, c.Position.Z)
+            End If
+        End If
         If (Screen.Camera.IsMoving() = True And Me.DoAnimation = True) OrElse (Screen.Level.OwnPlayer IsNot Nothing AndAlso Screen.Level.OwnPlayer.isDancing) Then
             Me.AnimationDelay -= 0.13F
             If AnimationDelay <= 0.0F Then

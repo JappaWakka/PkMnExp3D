@@ -64,9 +64,9 @@
                 If World.GetWeatherFromWeatherType(Screen.Level.WeatherType) <> World.Weathers.Fog Then ' Don't render the sky if the weather is set to Fog.
 					RenderHalf(FOV, Yaw, 0.0F, True, GetSkyTexture(), 16, 1.0F) ' Draw the sky
 					RenderHalf(FOV, MathHelper.TwoPi, 0.0F, True, TextureSun, 12, GetSunAlpha()) ' Draw the Sun.
-					RenderHalf(FOV, MathHelper.TwoPi, 0.0F, True, TextureMoon, 12, GetStarsAlpha()) ' Draw the Moon.
-					RenderHalf(FOV, MathHelper.TwoPi, 0.0F, True, TextureDown, 14, GetStarsAlpha()) ' Draw the stars.
-					RenderHalf(FOV, MathHelper.TwoPi - Yaw, 0.0F, True, GetCloudsTexture(), 8, GetCloudAlpha) ' Draw the clouds.
+                    RenderHalf(FOV, MathHelper.TwoPi, 0.0F, True, TextureMoon, 12, GetMoonAlpha()) ' Draw the Moon.
+                    RenderHalf(FOV, MathHelper.TwoPi, 0.0F, True, TextureDown, 10, GetStarsAlpha()) ' Draw the stars.
+                    RenderHalf(FOV, MathHelper.TwoPi - Yaw, 0.0F, True, GetCloudsTexture(), 8, GetCloudAlpha) ' Draw the clouds.
 				End If
             Else
 
@@ -78,8 +78,8 @@
 					RenderHalf(FOV, MathHelper.TwoPi - Yaw, 0.0F, True, TextureManager.GetTexture("SkyDomeResource\Clouds_Day"), 8, GetCloudAlpha()) ' Draw the clouds.
 				End If
 				If Not TextureDown Is Nothing Then
-					RenderHalf(FOV, Yaw, 0.0F, False, TextureDown, 8.0F, 1.0F)
-				End If
+                    RenderHalf(FOV, Yaw, 0.0F, False, TextureDown, 16, 1.0F)
+                End If
 			End If
         End If
     End Sub
@@ -95,7 +95,7 @@
 
         For Each ModelMesh As ModelMesh In SkydomeModel.Meshes
             For Each BasicEffect As BasicEffect In ModelMesh.Effects
-                BasicEffect.World = Matrix.CreateScale(scale) * Matrix.CreateTranslation(New Vector3(Screen.Camera.Position.X, -5, Screen.Camera.Position.Z)) * Matrix.CreateFromYawPitchRoll(useYaw, usePitch, Roll)
+                BasicEffect.World = Matrix.CreateScale(scale) * Matrix.CreateTranslation(New Vector3(Screen.Camera.Position.X, -2, Screen.Camera.Position.Z)) * Matrix.CreateFromYawPitchRoll(useYaw, usePitch, Roll)
 
                 BasicEffect.View = Screen.Camera.View
                 BasicEffect.Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(FOV), Core.GraphicsDevice.Viewport.AspectRatio, 0.01, 10000)
@@ -183,74 +183,64 @@
 
 	End Function
 
-    Private Function GetStarsAlpha() As Single
-		Select Case Screen.Level.DayTime
-			Case 1
-				Return 0.0F
-			Case 2
-				Return 1.0F
-			Case 3
-				Return 0.0F
-			Case 4
-				Return 1.0F
-		End Select
-		Dim progress As Integer = GetTimeValue()
-
-		If progress < 360 Or progress > 1080 Then
-            Dim dP As Integer = progress
-            If dP < 360 Then
-                dP = 720 - dP * 2
-            ElseIf dP > 1080 Then
-                dP = 720 - (1440 - dP) * 2
-            End If
-
-			Dim alpha As Single = CDec(dP / 720) * 1.0F
-			Return alpha
+    Private Function GetMoonAlpha() As Single
+        If Screen.Level.World.EnvironmentType = World.EnvironmentTypes.Outside Then
+            Select Case Screen.Level.DayTime
+                Case 1
+                    Return 0.0F
+                Case 2
+                    Return 1.0F
+                Case 3
+                    Return 0.0F
+                Case 4
+                    Return 1.0F
+                Case Else
+                    Return 0.0F
+            End Select
         Else
             Return 0.0F
         End If
     End Function
 
-	Private Function GetSunAlpha() As Single
-		If Screen.Level.World.EnvironmentType = World.EnvironmentTypes.Outside Then
-			Select Case Screen.Level.DayTime
-				Case 1
-					Return 1.0F
-				Case 2
-					Return 0.0F
-				Case 3
-					Return 1.0F
-				Case 4
-					Return 0.0F
-			End Select
+    Private Function GetStarsAlpha() As Single
+        If Screen.Level.World.EnvironmentType = World.EnvironmentTypes.Outside Then
+            Select Case Screen.Level.DayTime
+                Case 1
+                    Return 0.0F
+                Case 2
+                    Return 1.0F
+                Case 3
+                    Return 0.0F
+                Case 4
+                    Return 1.0F
+                Case Else
+                    Return 0.0F
+            End Select
+        Else
+            Return 0.0F
+        End If
+    End Function
 
-			Dim progress As Integer = GetTimeValue()
+   Private Function GetSunAlpha() As Single
+        If Screen.Level.World.EnvironmentType = World.EnvironmentTypes.Outside Then
+            Select Case Screen.Level.DayTime
+                Case 1
+                    Return 1.0F
+                Case 2
+                    Return 0.0F
+                Case 3
+                    Return 1.0F
+                Case 4
+                    Return 0.0F
+                Case Else
+                    Return 0.0F
+            End Select
+        Else
+            Return 0.0F
+        End If
+    End Function
 
-			If progress >= 1080 And progress < 1140 Then
-				' Between 6:00:00 PM and 7:00:00 PM, the Sun will fade away with 60 stages:
-				Dim i As Single = progress - 1080
-				Dim percent As Single = i / 60 * 100
-
-				Return 1.0F - percent / 100.0F
-			ElseIf progress >= 300 And progress < 360 Then
-				' Between 5:00:00 AM and 6:00:00 Am, the Sun will fade in with 60 stages:
-				Dim i As Single = progress - 300
-				Dim percent As Single = i / 60 * 100
-
-				Return percent / 100.0F
-			ElseIf progress >= 1140 Or progress < 300 Then
-				' Between 7:00:00 PM and 5:00:00 AM, the Sun will be invisible:
-				Return 0.0F
-			Else
-				' Between 6:00:00 AM and 6:00:00 PM, the Sun will be fully visible:
-				Return 1.0F
-			End If
-		Else
-			Return 0.0F
-		End If
-	End Function
-
-	Private Function GetCloudsTexture() As Texture2D
+    Private Function GetCloudsTexture() As Texture2D
 
 		Dim time As World.DayTime = World.GetTime
 

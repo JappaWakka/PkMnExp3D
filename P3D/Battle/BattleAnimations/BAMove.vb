@@ -106,7 +106,7 @@
                         Me.Position.Y = Me.Destination.Y
                     End If
                 End If
-                If Me.Position.Z < Me.Destination.Z Then
+                If Me.Position.Z <> Me.Destination.Z Then
                     Me.Position.Z = MathHelper.Lerp(Me.Position.Z, Me.Destination.Z, Me.MoveSpeed)
 
                     If Math.Abs(Me.Position.Z - Me.Destination.Z) < 0.1F Then

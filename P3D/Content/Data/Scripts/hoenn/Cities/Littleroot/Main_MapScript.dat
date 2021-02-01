@@ -6,9 +6,9 @@ version=2
 		@camera.setyaw(0)
 	:endif
 	@player.stopmovement
+	@sound.play(jump_from_truck)
 	@player.setmovement(1,0,0)
 	@player.move(1)
-	@sound.play(jump_from_truck)
 	@player.turnto(3)
 	@level.wait(50)
 	@npc.spawn(8,0,8,0,,Mom,0,2,Mom,4,Still)
