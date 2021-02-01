@@ -76,7 +76,7 @@
 			Case Curves.EaseIn
 				If EasedIn = False Then
 					If InterpolationSpeed < MoveSpeed Then
-						InterpolationSpeed += 0.05F
+						InterpolationSpeed += MoveSpeed / 10
 					Else
 						EasedIn = True
 						InterpolationSpeed = MoveSpeed
@@ -85,7 +85,7 @@
 			Case Curves.EaseOut
 				If EasedOut = False Then
 					If InterpolationSpeed > 0 Then
-						InterpolationSpeed -= 0.05F
+						InterpolationSpeed -= MoveSpeed / 10
 					Else
 						EasedOut = True
 						InterpolationSpeed = 0
@@ -94,7 +94,7 @@
 			Case Curves.EaseInAndOut
 				If EasedIn = False Then
 					If InterpolationSpeed < MoveSpeed Then
-						InterpolationSpeed += 0.05F
+						InterpolationSpeed += MoveSpeed / 10
 					Else
 						EasedIn = True
 						InterpolationSpeed = MoveSpeed
@@ -102,7 +102,7 @@
 				Else
 					If EasedOut = False Then
 						If InterpolationSpeed > 0 Then
-							InterpolationSpeed -= 0.05F
+							InterpolationSpeed -= MoveSpeed / 10
 						Else
 							EasedOut = True
 							InterpolationSpeed = 0
