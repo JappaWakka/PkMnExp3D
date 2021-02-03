@@ -429,7 +429,7 @@
             End If
 
             If Not Pokemon.Item Is Nothing And Pokemon.IsEgg() = False Then
-                .Draw(Pokemon.Item.Texture, New Rectangle(CInt(p.X + 40), CInt(p.Y + 42), 24, 24), Color.White)
+                .Draw(Pokemon.Item.Texture, New Rectangle(CInt(p.X + 40), CInt(p.Y + 42), 32, 32), Color.White)
             End If
 
             Dim space As String = ""

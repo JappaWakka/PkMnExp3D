@@ -163,30 +163,30 @@
     End Sub
 
     Private Sub CreateOptions()
-		Dim s As String = "Music|50" & Environment.NewLine &
-			"Sound|50" & Environment.NewLine &
-			"Muted|0" & Environment.NewLine &
-			"RenderDistance|2" & Environment.NewLine &
-			"ShowDebug|0" & Environment.NewLine &
-			"ShowBoundingBoxes|0" & Environment.NewLine &
-			"ShowDebugConsole|0" & Environment.NewLine &
-			"ShowGUI|1" & Environment.NewLine &
-			"GraphicStyle|1" & Environment.NewLine &
-			"LoadOffsetMaps|10" & Environment.NewLine &
-			"Language|en" & Environment.NewLine &
-			"ViewBobbing|1" & Environment.NewLine &
-			"GamePadEnabled|1" & Environment.NewLine &
-			"LightingEnabled|1" & Environment.NewLine &
-			"StartedOfflineGame|0" & Environment.NewLine &
-			"PreferMultiSampling|1" & Environment.NewLine &
-			"ContentPacks|" & Environment.NewLine &
-			"WindowSize|1200,680" & Environment.NewLine &
-			"ForceMusic|0" & Environment.NewLine &
-			"MaxOffsetLevel|0" & Environment.NewLine &
-			"UpdateDisabled|0" & Environment.NewLine &
-			"Extras|"
+        Dim s As String = "Music|50" & Environment.NewLine &
+            "Sound|50" & Environment.NewLine &
+            "Muted|0" & Environment.NewLine &
+            "RenderDistance|3" & Environment.NewLine &
+            "ShowDebug|0" & Environment.NewLine &
+            "ShowBoundingBoxes|0" & Environment.NewLine &
+            "ShowDebugConsole|0" & Environment.NewLine &
+            "ShowGUI|1" & Environment.NewLine &
+            "GraphicStyle|1" & Environment.NewLine &
+            "LoadOffsetMaps|10" & Environment.NewLine &
+            "Language|en" & Environment.NewLine &
+            "ViewBobbing|1" & Environment.NewLine &
+            "GamePadEnabled|1" & Environment.NewLine &
+            "LightingEnabled|1" & Environment.NewLine &
+            "StartedOfflineGame|0" & Environment.NewLine &
+            "PreferMultiSampling|1" & Environment.NewLine &
+            "ContentPacks|" & Environment.NewLine &
+            "WindowSize|1280,720" & Environment.NewLine &
+            "ForceMusic|0" & Environment.NewLine &
+            "MaxOffsetLevel|0" & Environment.NewLine &
+            "UpdateDisabled|0" & Environment.NewLine &
+            "Extras|Backup Save"
 
-		File.WriteAllText(GameController.GamePath & "\Save\options.dat", s)
+        File.WriteAllText(GameController.GamePath & "\Save\options.dat", s)
     End Sub
 
 End Class
