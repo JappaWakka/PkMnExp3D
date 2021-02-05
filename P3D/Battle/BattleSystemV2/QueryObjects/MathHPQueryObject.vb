@@ -43,7 +43,7 @@
                 If _amount < _target Then
                     _amount = _target
                 End If
-                Particles.Add(New Particle(New Vector2(CSng((_amount / 1000) * 300 + _position.X), _position.Y + Core.Random.Next(0, 34)), GetColor()))
+                Particles.Add(New Particle(New Vector2(CSng((_amount / 1000) * 496 + 128 + _position.X), _position.Y + Core.Random.Next(0, 34)), GetColor()))
 
                 Shake = New Vector2(Shake.X + (Core.Random.Next(0, 3) - 1), Shake.Y + (Core.Random.Next(0, 3) - 1))
             End If
@@ -70,12 +70,41 @@
         Private Shake As Vector2 = New Vector2(0, 0)
 
         Public Overrides Sub Draw(BV2Screen As BattleScreen)
-            Canvas.DrawRectangle(New Rectangle(CInt(_position.X + Shake.X), CInt(_position.Y + Shake.Y), 300, 30), Color.White)
-            If _amount >= _target Then
-                Canvas.DrawScrollBar(New Vector2(_position.X + Shake.X, _position.Y + Shake.Y), 1000, _startamount, 0, New Size(300, 30), True, New Color(0, 0, 0, 0), Color.DarkGray)
+            Dim MainTexture As Texture2D = TextureManager.GetTexture("GUI\Battle\Interface")
+
+            Core.SpriteBatch.Draw(MainTexture, New Rectangle(CInt(_position.X + Shake.X), CInt(_position.Y + Shake.Y), 704, 64), New Rectangle(0, 48, 88, 8), Color.White)
+            Dim barX As Integer = CInt((_amount / 1000) * 496)
+            Dim startBarX As Single = CInt((_startamount / 1000) * 496)
+
+            Dim barRectangle As Rectangle
+            Dim barPercentage As Integer = CInt((_amount / 1000) * 100).Clamp(0, 100)
+
+            If barPercentage >= 50 Then
+                barRectangle = New Rectangle(0, 113, 2, 3)
+            ElseIf barPercentage < 50 And barPercentage > 10 Then
+                barRectangle = New Rectangle(2, 113, 2, 3)
+            ElseIf barPercentage <= 10 Then
+                barRectangle = New Rectangle(4, 113, 2, 3)
             End If
-            Canvas.DrawScrollBar(New Vector2(_position.X + Shake.X, _position.Y + Shake.Y), 1000, _amount, 0, New Size(300, 30), True, New Color(0, 0, 0, 0), GetColor())
-            Canvas.DrawBorder(4, New Rectangle(CInt(_position.X - 2 + Shake.X), CInt(_position.Y - 2 + Shake.Y), 304, 34), Color.Gray)
+
+            If _amount = _target Then
+                While startBarX > 0
+                    startBarX -= 0.02F
+                End While
+            End If
+
+            If startBarX > 0 Then
+                For x = 0 To startBarX Step 16
+                    Core.SpriteBatch.Draw(MainTexture, New Rectangle(CInt(_position.X + Shake.X + 128 + x), CInt(_position.Y + Shake.Y + 24), 16, 24), New Rectangle(8, 113, 2, 3), Color.White)
+                Next
+            End If
+
+            If barPercentage > 0 Then
+                For x = 0 To barX Step 16
+                    Core.SpriteBatch.Draw(MainTexture, New Rectangle(CInt(_position.X + Shake.X + 128 + x), CInt(_position.Y + Shake.Y + 24), 16, 24), barRectangle, Color.White)
+                Next
+            End If
+
 
             For i = 0 To Particles.Count - 1
                 If i <= Particles.Count - 1 Then
@@ -92,9 +121,9 @@
         Private Function GetColor() As Color
             Dim percent As Integer = CInt((_amount / 1000) * 100)
 
-            If percent > 50 Then
+            If percent >= 50 Then
                 Return New Color(112, 248, 168)
-            ElseIf percent <= 50 And percent > 25 Then
+            ElseIf percent < 50 And percent > 25 Then
                 Return New Color(248, 224, 56)
             Else
                 Return New Color(248, 88, 56)

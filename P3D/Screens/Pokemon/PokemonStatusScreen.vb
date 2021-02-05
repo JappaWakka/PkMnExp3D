@@ -293,7 +293,7 @@
         With Core.SpriteBatch
             ' Stats:
             Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(220, 196, 416, 256))
-            'HP Bar Background
+            ' HP Bar:
             Core.SpriteBatch.Draw(MainTexture, New Rectangle(CInt(p.X + 128), CInt(p.Y + 32), 134, 16), HPBar, Color.White)
 
             Dim barX As Integer = CInt((Pokemon.HP / Pokemon.MaxHP) * 92)
@@ -373,16 +373,16 @@
                     NextLvExp = 0
                 Else
                     barPercentage = CInt((currentExp / NextLvExp) * 100)
-                    barX = CInt((currentExp / NextLvExp) * 128).Clamp(0, 128)
+                    barX = CInt(128 / 100 * barPercentage)
                 End If
 
-                'EXP Bar Background
+                ' EXP Bar
                 Core.SpriteBatch.Draw(MainTexture, New Rectangle(CInt(240 + FontManager.MainFontColor.MeasureString(barPercentage & " %").X + 12), 572, 166, 16), EXPBar, Color.White)
 
                 .DrawString(FontManager.MainFontBlack, Localization.GetString("poke_status_screen_all_exp") & ": " & Pokemon.Experience & Environment.NewLine & Localization.GetString("poke_status_screen_nxt_lv") & ": " & NextLvExp - currentExp, New Vector2(p.X + 100, 504), Color.White)
 
                 For x = 0 To barX Step 4
-                    .Draw(MainTexture, New Rectangle(CInt((x * 2) + 240 + FontManager.MainFontColor.MeasureString(barPercentage & " %").X + 20 + 24), 572 + 6, 4, 6), New Rectangle(118, 0, 2, 3), Color.White)
+                    .Draw(MainTexture, New Rectangle(CInt(x + 240 + FontManager.MainFontColor.MeasureString(barPercentage & " %").X + 20 + 24), 572 + 6, 4, 6), New Rectangle(118, 0, 2, 3), Color.White)
                 Next
 
                 If barPercentage = 100 Then
