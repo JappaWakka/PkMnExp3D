@@ -1069,7 +1069,7 @@ Public Class GameModeSelectionScreen
         CanChat = False
         CanDrawDebug = True
         CanGoFullscreen = True
-        CanMuteMusic = True
+        CanMuteAudio = True
         CanTakeScreenshot = True
 
         PreScreen = currentScreen

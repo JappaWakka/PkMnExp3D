@@ -23,8 +23,8 @@
             End If
         ElseIf KeyBoardHandler.KeyPressed(KeyBindings.FullScreenKey) AndAlso Core.CurrentScreen.CanGoFullscreen Then
             ToggleFullScreen()
-        ElseIf KeyBoardHandler.KeyPressed(KeyBindings.MuteMusicKey) AndAlso Core.CurrentScreen.CanMuteMusic Then
-			If MusicManager.Muted Then
+        ElseIf KeyBoardHandler.KeyPressed(KeyBindings.MuteAudioKey) AndAlso Core.CurrentScreen.CanMuteAudio Then
+            If MusicManager.Muted Then
 				MusicManager.Muted = False
 			Else
 				MusicManager.Muted = True

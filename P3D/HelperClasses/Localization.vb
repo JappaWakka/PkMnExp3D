@@ -126,13 +126,13 @@
                         Dim key As Keys
                         validToken = possibleToken.Substring(0, tokenEndIdx)
                         Select Case validToken.ToLower()
-                            Case "forwardmove"
+                            Case "moveforward"
                                 key = KeyBindings.ForwardMoveKey
-                            Case "leftmove"
+                            Case "moveleft"
                                 key = KeyBindings.LeftMoveKey
-                            Case "backwardmove"
+                            Case "movebackward"
                                 key = KeyBindings.BackwardMoveKey
-                            Case "rightmove"
+                            Case "moveright"
                                 key = KeyBindings.RightMoveKey
                             Case "openmenu"
                                 key = KeyBindings.OpenMenuKey
@@ -140,8 +140,8 @@
                                 key = KeyBindings.ChatKey
                             Case "special", "phone"
                                 key = KeyBindings.SpecialKey
-                            Case "mutemusic"
-                                key = KeyBindings.MuteMusicKey
+                            Case "muteaudio"
+                                key = KeyBindings.MuteAudioKey
                             Case "cameraleft"
                                 key = KeyBindings.LeftKey
                             Case "cameraright"

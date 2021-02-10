@@ -51,7 +51,7 @@
         Me.Identification = Identifications.InputScreen
         Me.CanBePaused = True
         Me.CanChat = False
-        Me.CanMuteMusic = False
+        Me.CanMuteAudio = False
         Me.MouseVisible = True
 
         If Me.MaxChars < 0 Then
@@ -278,7 +278,12 @@
             t = Me.DefaultName
         End If
         LastInput = t
-
+        If LastInput.StartsWith(" ") Then
+            LastInput.Remove(0, 1)
+        End If
+        If LastInput.EndsWith(" ") Then
+            LastInput.Remove(LastInput.Length - 1, 1)
+        End If
         If Not Me.ConfirmSub Is Nothing Then
             Me.ConfirmSub(LastInput)
         End If

@@ -75,7 +75,7 @@
                 CurrentPokemon = BattleScreen.OppPokemon
                 BAFlip = True
             End If
-            Dim MoveAnimation As MoveAnimationQueryObject = New MoveAnimationQueryObject(CurrentEntity, BAFlip)
+            Dim MoveAnimation As AnimationQueryObject = New AnimationQueryObject(CurrentEntity, BAFlip)
             MoveAnimation.AnimationPlaySound(CStr(CurrentPokemon.Number), 0, 0,, True)
             MoveAnimation.AnimationSpawnFadingEntity(0.25, -0.25, -0.25, "Textures\Battle\Normal\Growl,0,0,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 0, 1)
             MoveAnimation.AnimationSpawnFadingEntity(0.25, -0.25, -0.25, "Textures\Battle\Normal\Growl,0,32,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 1, 1)

@@ -151,34 +151,34 @@
 		Else
 			If TargetEntity.Position.X < Me.Destination.X Then
 				TargetEntity.Position.X = MathHelper.Lerp(TargetEntity.Position.X, Me.Destination.X, Me.InterpolationSpeed)
-				If TargetEntity.Position.X > Me.Destination.X - 0.1 Then
+				If TargetEntity.Position.X > Me.Destination.X - 0.05 Then
 					TargetEntity.Position.X = Me.Destination.X
 				End If
 			ElseIf TargetEntity.Position.X > Me.Destination.X Then
 				TargetEntity.Position.X = MathHelper.Lerp(TargetEntity.Position.X, Me.Destination.X, Me.InterpolationSpeed)
-				If TargetEntity.Position.X < Me.Destination.X + 0.1 Then
+				If TargetEntity.Position.X < Me.Destination.X + 0.05 Then
 					TargetEntity.Position.X = Me.Destination.X
 				End If
 			End If
 			If TargetEntity.Position.Y < Me.Destination.Y Then
 				TargetEntity.Position.Y = MathHelper.Lerp(TargetEntity.Position.Y, Me.Destination.Y, Me.InterpolationSpeed)
-				If TargetEntity.Position.Y > Me.Destination.Y - 0.1 Then
+				If TargetEntity.Position.Y > Me.Destination.Y - 0.05 Then
 					TargetEntity.Position.Y = Me.Destination.Y
 				End If
 			ElseIf TargetEntity.Position.Y > Me.Destination.Y Then
 				TargetEntity.Position.Y = MathHelper.Lerp(TargetEntity.Position.Y, Me.Destination.Y, Me.InterpolationSpeed)
-				If TargetEntity.Position.Y < Me.Destination.Y + 0.1 Then
+				If TargetEntity.Position.Y < Me.Destination.Y + 0.05 Then
 					TargetEntity.Position.Y = Me.Destination.Y
 				End If
 			End If
 			If TargetEntity.Position.Z < Me.Destination.Z Then
 				TargetEntity.Position.Z = MathHelper.Lerp(TargetEntity.Position.Z, Me.Destination.Z, Me.InterpolationSpeed)
-				If TargetEntity.Position.Z > Me.Destination.Z - 0.1 Then
+				If TargetEntity.Position.Z > Me.Destination.Z - 0.05 Then
 					TargetEntity.Position.Z = Me.Destination.Z
 				End If
 			ElseIf TargetEntity.Position.Z > Me.Destination.Z Then
 				TargetEntity.Position.Z = MathHelper.Lerp(TargetEntity.Position.Z, Me.Destination.Z, Me.InterpolationSpeed)
-				If TargetEntity.Position.Z < Me.Destination.Z + 0.1 Then
+				If TargetEntity.Position.Z < Me.Destination.Z + 0.05 Then
 					TargetEntity.Position.Z = Me.Destination.Z
 				End If
 			End If

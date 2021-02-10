@@ -10,7 +10,6 @@
 
     Public index As Integer = 0
     Dim MainTexture As Texture2D
-    Dim Texture As Texture2D
     Dim yOffset As Single = 0
 
     Dim Item As Item
@@ -47,7 +46,6 @@
         Me.CanChooseFainted = canChooseFainted
 
         MainTexture = TextureManager.GetTexture("GUI\Menus\Menu")
-        Texture = TextureManager.GetTexture(MainTexture, New Rectangle(0, 0, 48, 48), ContentPackManager.GetTextureResolution("GUI\Menus\Menu"))
 
 
         Me.index = Player.Temp.PokemonScreenIndex
@@ -187,13 +185,16 @@
     Public Overrides Sub Draw()
         Me.PreScreen.Draw()
 
-        Canvas.DrawImageBorder(Texture, 2, New Rectangle(60, 100, 800, 480))
-        Canvas.DrawImageBorder(Texture, 2, New Rectangle(60, 100, 480, 64))
+        Dim BackgroundTexture As Texture2D = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(160, 224, 48, 48), "")
+        Dim CanvasTexture As Texture2D = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 0, 48, 48), "")
+
+        Canvas.DrawImageBorder(BackgroundTexture, 2, New Rectangle(60, 100, 800, 480))
+        Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(60, 100, 480, 64))
         Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Me.Title, New Vector2(142, 132), Color.White)
-        Core.SpriteBatch.Draw(Item.Texture, New Rectangle(78, 124, 48, 48), Color.White)
+        Core.SpriteBatch.Draw(Item.Texture, New Rectangle(78, 124, 32, 32), Color.White)
 
         If Me.canExit = True Then
-            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("party_screen_backadvice"), New Vector2(1200 - FontManager.MainFontBlack.MeasureString(Localization.GetString("party_screen_backadvice")).X - 320, 572), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("party_screen_backadvice"), New Vector2(1200 - FontManager.MainFontBlack.MeasureString(Localization.GetString("party_screen_backadvice")).X - 320, 572), Color.White)
         End If
 
         For i = 0 To Me.PokemonList.Count - 1
@@ -220,6 +221,9 @@
     End Sub
 
     Private Sub DrawEmptyTile(ByVal i As Integer)
+        Dim BorderTexture As Texture2D
+        BorderTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(208, 224, 48, 48), "")
+
         Dim p As Vector2
         Select Case i
             Case 0, 2, 4
@@ -231,13 +235,13 @@
         p.Y += 180
 
         With Core.SpriteBatch
-            .Draw(Texture, New Rectangle(CInt(p.X), CInt(p.Y), 32, 96), New Rectangle(0, 0, 16, 48), Color.White)
+            .Draw(BorderTexture, New Rectangle(CInt(p.X), CInt(p.Y), 32, 96), New Rectangle(0, 0, 16, 48), Color.White)
             For x = p.X + 32 To p.X + 288 Step 32
-                .Draw(Texture, New Rectangle(CInt(x), CInt(p.Y), 32, 96), New Rectangle(16, 0, 16, 48), Color.White)
+                .Draw(BorderTexture, New Rectangle(CInt(x), CInt(p.Y), 32, 96), New Rectangle(16, 0, 16, 48), Color.White)
             Next
-            .Draw(Texture, New Rectangle(CInt(p.X) + 320, CInt(p.Y), 32, 96), New Rectangle(32, 0, 16, 48), Color.White)
+            .Draw(BorderTexture, New Rectangle(CInt(p.X) + 320, CInt(p.Y), 32, 96), New Rectangle(32, 0, 16, 48), Color.White)
 
-            .DrawString(FontManager.MainFontBlack, "EMPTY", New Vector2(CInt(p.X + 72), CInt(p.Y + 18)), Color.White)
+            .DrawString(FontManager.MainFontWhite, Localization.GetString("party_screen_EMPTY"), New Vector2(CInt(p.X + 72), CInt(p.Y + 18)), Color.White)
         End With
     End Sub
 
@@ -246,16 +250,16 @@
         If i = index Then
             TextColor = FontManager.MainFontWhite
             If Pokemon.Status = P3D.Pokemon.StatusProblems.Fainted Then
-                BorderTexture = TextureManager.GetTexture(MainTexture, New Rectangle(0, 128, 48, 48), ContentPackManager.GetTextureResolution("GUI\Menus\Menu"))
+                BorderTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(160, 176, 48, 48), "")
             Else
-                BorderTexture = TextureManager.GetTexture(MainTexture, New Rectangle(0, 48, 48, 48), ContentPackManager.GetTextureResolution("GUI\Menus\Menu"))
+                BorderTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(208, 176, 48, 48), "")
             End If
         Else
-            TextColor = FontManager.MainFontBlack
+            TextColor = FontManager.MainFontWhite
             If Pokemon.Status = P3D.Pokemon.StatusProblems.Fainted Then
-                BorderTexture = TextureManager.GetTexture(MainTexture, New Rectangle(48, 48, 48, 48), ContentPackManager.GetTextureResolution("GUI\Menus\Menu"))
+                BorderTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(160, 128, 48, 48), "")
             Else
-                BorderTexture = TextureManager.GetTexture(MainTexture, New Rectangle(0, 0, 48, 48), ContentPackManager.GetTextureResolution("GUI\Menus\Menu"))
+                BorderTexture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(208, 128, 48, 48), "")
             End If
         End If
 
@@ -277,28 +281,23 @@
             .Draw(BorderTexture, New Rectangle(CInt(p.X) + 320, CInt(p.Y), 32, 96), New Rectangle(32, 0, 16, 48), Color.White)
 
             If Pokemon.IsEgg() = False Then
-                Dim barX As Integer = CInt((Pokemon.HP / Pokemon.MaxHP) * 50)
+                Core.SpriteBatch.Draw(MainTexture, New Rectangle(CInt(p.X + 192 - 32), CInt(p.Y + 32), 134, 16), New Rectangle(0, 240, 67, 8), Color.White)
+                Dim barX As Integer = CInt((Pokemon.HP / Pokemon.MaxHP.Clamp(1, Integer.MaxValue)) * 50)
                 Dim barRectangle As Rectangle
-                Dim barPercentage As Integer = CInt((Pokemon.HP / Pokemon.MaxHP) * 100)
+                Dim barPercentage As Integer = CInt((Pokemon.HP / Pokemon.MaxHP.Clamp(1, Integer.MaxValue)) * 100)
 
-                If barPercentage >= 50 Then
-                    barRectangle = New Rectangle(113, 0, 1, 4)
-                ElseIf barPercentage < 50 And barPercentage > 10 Then
-                    barRectangle = New Rectangle(116, 0, 1, 4)
-                ElseIf barPercentage <= 10 Then
-                    barRectangle = New Rectangle(115, 0, 1, 4)
+                If barPercentage > 50 Then
+                    barRectangle = New Rectangle(112, 0, 2, 3)
+                ElseIf barPercentage <= 50 And barPercentage > 25 Then
+                    barRectangle = New Rectangle(114, 0, 2, 3)
+                ElseIf barPercentage <= 25 Then
+                    barRectangle = New Rectangle(116, 0, 2, 3)
                 End If
-                For x = 0 To barX - 1
-                    .Draw(MainTexture, New Rectangle(CInt(p.X + (x * 2) + 104), CInt(p.Y + 44), 4, 16), barRectangle, Color.White)
+                For x = 0 To barX
+                    .Draw(MainTexture, New Rectangle(CInt(p.X + 192 + x), CInt(p.Y + 38), 4, 6), barRectangle, Color.White)
                 Next
 
-                For x = barX To 49
-                    .Draw(MainTexture, New Rectangle(CInt(p.X + (x * 2) + 104), CInt(p.Y + 44), 4, 16), New Rectangle(114, 0, 1, 4), Color.White)
-                Next
-                .Draw(MainTexture, New Rectangle(CInt(p.X + 100), CInt(p.Y + 44), 4, 16), New Rectangle(112, 0, 1, 4), Color.White)
-                .Draw(MainTexture, New Rectangle(CInt(p.X + 206), CInt(p.Y + 44), 4, 16), New Rectangle(112, 0, 1, 4), Color.White)
-
-                .DrawString(FontManager.MainFontBlack, Pokemon.HP & " / " & Pokemon.MaxHP, New Vector2(CInt(p.X + 160), CInt(p.Y + 48)), Color.White)
+                .DrawString(TextColor, Localization.GetString("HP") & " " & Pokemon.HP & " / " & Pokemon.MaxHP, New Vector2(CInt(p.X + 160), CInt(p.Y + 48)), Color.White)
             End If
 
             Dim offset As Single = CSng(Math.Sin(yOffset))
@@ -310,20 +309,20 @@
             End If
 
             .Draw(Pokemon.GetMenuTexture(), New Rectangle(CInt(p.X + 5), CInt(p.Y + offset + 10), 64, 64), BattleStats.GetStatColor(Pokemon.Status))
-            .DrawString(FontManager.MainFontBlack, Pokemon.GetDisplayName(), New Vector2(CInt(p.X + 72), CInt(p.Y + 18)), Color.White)
+            .DrawString(TextColor, Pokemon.GetDisplayName(), New Vector2(CInt(p.X + 72), CInt(p.Y + 18)), Color.White)
 
             If Pokemon.IsEgg() = False Then
                 .Draw(MainTexture, New Rectangle(CInt(p.X + 72), CInt(p.Y + 46), 26, 12), New Rectangle(96, 10, 13, 6), Color.White)
-
+                
                 If Pokemon.Gender = P3D.Pokemon.Genders.Male Then
-                    .Draw(MainTexture, New Rectangle(CInt(p.X + FontManager.MainFontBlack.MeasureString(Pokemon.GetDisplayName()).X + 80), CInt(p.Y + 18), 12, 20), New Rectangle(96, 0, 6, 10), Color.White)
+                    .Draw(MainTexture, New Rectangle(CInt(p.X + TextColor.MeasureString(Pokemon.GetDisplayName()).X + 80), CInt(p.Y + 20), 12, 20), New Rectangle(96, 0, 6, 10), Color.White)
                 ElseIf Pokemon.Gender = P3D.Pokemon.Genders.Female Then
-                    .Draw(MainTexture, New Rectangle(CInt(p.X + FontManager.MainFontBlack.MeasureString(Pokemon.GetDisplayName()).X + 80), CInt(p.Y + 18), 12, 20), New Rectangle(102, 0, 6, 10), Color.White)
+                    .Draw(MainTexture, New Rectangle(CInt(p.X + TextColor.MeasureString(Pokemon.GetDisplayName()).X + 80), CInt(p.Y + 20), 12, 20), New Rectangle(102, 0, 6, 10), Color.White)
                 End If
             End If
 
             If Not Pokemon.Item Is Nothing And Pokemon.IsEgg() = False Then
-                .Draw(Pokemon.Item.Texture, New Rectangle(CInt(p.X + 40), CInt(p.Y + 42), 24, 24), Color.White)
+                .Draw(Pokemon.Item.Texture, New Rectangle(CInt(p.X + 40), CInt(p.Y + 42), 32, 32), Color.White)
             End If
 
             Dim space As String = ""
@@ -343,14 +342,13 @@
             End If
 
             If Pokemon.IsEgg() = False Then
-                .DrawString(FontManager.MainFontBlack, "Lv." & space & Pokemon.Level, New Vector2(CInt(p.X + 74), CInt(p.Y + 48)), Color.White)
-                .DrawString(FontManager.MainFontBlack, AttackLable, New Vector2(CInt(p.X + 230), CInt(p.Y + 18)), Color.White)
+                .DrawString(TextColor, Localization.GetString("Lv.") & space & Pokemon.Level, New Vector2(CInt(p.X + 72), CInt(p.Y + 48)), Color.White)
+                .DrawString(TextColor, AttackLable, New Vector2(CInt(p.X + 230), CInt(p.Y + 18)), Color.White)
             End If
 
             Dim StatusTexture As Texture2D = BattleStats.GetStatImage(Pokemon.Status)
             If Not StatusTexture Is Nothing Then
-                Canvas.DrawRectangle(New Rectangle(CInt(p.X + 216), CInt(p.Y + 44), 42, 16), Color.Gray)
-                Core.SpriteBatch.Draw(StatusTexture, New Rectangle(CInt(p.X + 218), CInt(p.Y + 46), 38, 12), Color.White)
+                Core.SpriteBatch.Draw(StatusTexture, New Rectangle(CInt(p.X + 240), CInt(p.Y + 30), 38, 12), Color.White)
             End If
         End With
     End Sub

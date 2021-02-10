@@ -56,8 +56,8 @@
         DrawContent()
         DrawBadges()
 
-		Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("trainer_screen_backadvice"), New Vector2(1200 - FontManager.MainFontBlack.MeasureString(Localization.GetString("trainer_screen_backadvice")).X - 330, 580), Color.White)
-	End Sub
+        Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("trainer_screen_backadvice"), New Vector2(860 - FontManager.MainFontBlack.MeasureString(Localization.GetString("trainer_screen_backadvice")).X, 572), Color.White)
+    End Sub
 
     Private Sub DrawHeader()
         Canvas.DrawImageBorder(TextureManager.GetTexture(mainTexture, New Rectangle(0, 0, 48, 48)), 2, New Rectangle(60, 100, 480, 64))
@@ -108,23 +108,23 @@
             Dim EmblemName As String = Core.GameJoltSave.Emblem
 			Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Current Emblem: """ & EmblemName(0).ToString().ToUpper() & EmblemName.Substring(1, EmblemName.Length - 1) & """ (" & CStr(Core.GameJoltSave.AchievedEmblems.IndexOf(EmblemName) + 1) & "/" & Core.GameJoltSave.AchievedEmblems.Count & ") - use arrow keys to change.", New Vector2(80, 333), Color.White)
 
-			Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("trainer_screen_money") & ": " & Environment.NewLine & Localization.GetString("trainer_screen_pokedex") & ": " & Environment.NewLine & Localization.GetString("trainer_screen_time") & ": ", New Vector2(610, 220), Color.White)
-			With Core.Player
-				Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "$" & .Money & Environment.NewLine & Pokedex.CountEntries(Core.Player.PokedexData, {2, 3}) & " /" & Pokedex.CountEntries(Core.Player.PokedexData, {1, 2, 3}) & Environment.NewLine & TimeHelpers.GetDisplayTime(TimeHelpers.GetCurrentPlayTime(), True), New Vector2(700, 220), Color.White)
-			End With
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("trainer_screen_money") & ": " & Environment.NewLine & Localization.GetString("trainer_screen_time") & ": ", New Vector2(610, 220), Color.White)
+            With Core.Player
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "$" & .Money & Environment.NewLine & Environment.NewLine & TimeHelpers.GetDisplayTime(TimeHelpers.GetCurrentPlayTime(), True), New Vector2(700, 220), Color.White)
+            End With
 		Else
 			Canvas.DrawImageBorder(TextureManager.GetTexture(mainTexture, New Rectangle(0, 0, 48, 48)), 2, New Rectangle(572, 100, 288, 288))
 
-			Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("trainer_screen_name") & ": " & Environment.NewLine & Localization.GetString("trainer_screen_points") & ": " & Environment.NewLine & Localization.GetString("trainer_screen_money") & ": " & Environment.NewLine & Localization.GetString("trainer_screen_pokedex") & ": " & Environment.NewLine & Localization.GetString("trainer_screen_time") & ": ", New Vector2(108, 220), Color.White)
+            Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("trainer_screen_name") & ": " & Environment.NewLine & Localization.GetString("trainer_screen_points") & ": " & Environment.NewLine & Localization.GetString("trainer_screen_money") & ": " & Environment.NewLine & Localization.GetString("trainer_screen_time") & ": ", New Vector2(108, 220), Color.White)
 
-			Dim displayPoints As Integer = Core.Player.Points
+            Dim displayPoints As Integer = Core.Player.Points
 			If Core.Player.IsGameJoltSave = True Then
 				displayPoints = Core.GameJoltSave.Points
 			End If
 
 			With Core.Player
-				Core.SpriteBatch.DrawString(FontManager.MainFontBlack, .Name & " /" & .OT & Environment.NewLine & displayPoints.ToString() & Environment.NewLine & "$" & .Money & Environment.NewLine & Pokedex.CountEntries(Core.Player.PokedexData, {2, 3}) & " /" & Pokedex.CountEntries(Core.Player.PokedexData, {1, 2, 3}) & Environment.NewLine & TimeHelpers.GetDisplayTime(TimeHelpers.GetCurrentPlayTime(), True), New Vector2(258, 220), Color.White, 0.0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0.0F)
-			End With
+                Core.SpriteBatch.DrawString(FontManager.MainFontBlack, .Name & " /" & .OT & Environment.NewLine & displayPoints.ToString() & Environment.NewLine & "$" & .Money & Environment.NewLine & TimeHelpers.GetDisplayTime(TimeHelpers.GetCurrentPlayTime(), True), New Vector2(258, 220), Color.White, 0.0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0.0F)
+            End With
             Core.SpriteBatch.Draw(charTexture, New Rectangle(601, 126, 256, 256), Color.White)
         End If
 

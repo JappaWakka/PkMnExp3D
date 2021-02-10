@@ -44,7 +44,7 @@
 
         Me.MouseVisible = False
         Me.CanBePaused = True
-        Me.CanMuteMusic = True
+        Me.CanMuteAudio = True
 
         LearnedMove = False
 
@@ -100,7 +100,7 @@
 
         Me.MouseVisible = False
         Me.CanBePaused = True
-        Me.CanMuteMusic = True
+        Me.CanMuteAudio = True
 
         LearnedMove = False
 

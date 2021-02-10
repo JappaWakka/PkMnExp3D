@@ -15,7 +15,7 @@ Public Class KeyBindings
 	Public Shared LeftKey As Keys = Keys.Left
 
 	Public Shared CameraLockKey As Keys = Keys.C
-	Public Shared MuteMusicKey As Keys = Keys.M
+	Public Shared MuteAudioKey As Keys = Keys.M
 	Public Shared OnlineStatusKey As Keys = Keys.Tab
 
 	Public Shared GUIControlKey As Keys = Keys.F1
@@ -61,7 +61,7 @@ Public Class KeyBindings
 						Case "special", "phone"
 							SpecialKey = binding
 						Case "mutemusic"
-							MuteMusicKey = binding
+							MuteAudioKey = binding
 						Case "cameraleft"
 							LeftKey = binding
 						Case "cameraright"
@@ -273,7 +273,7 @@ Public Class KeyBindings
 				"[Inventory]=" & GetKeyName(OpenMenuKey) & Environment.NewLine &
 				"[Chat]=" & GetKeyName(ChatKey) & Environment.NewLine &
 				"[Special]=" & GetKeyName(SpecialKey) & Environment.NewLine &
-				"[MuteMusic]=" & GetKeyName(MuteMusicKey) & Environment.NewLine &
+				"[MuteMusic]=" & GetKeyName(MuteAudioKey) & Environment.NewLine &
 				"[Up]=" & GetKeyName(UpKey) & Environment.NewLine &
 				"[Down]=" & GetKeyName(DownKey) & Environment.NewLine &
 				"[Left]=" & GetKeyName(LeftKey) & Environment.NewLine &

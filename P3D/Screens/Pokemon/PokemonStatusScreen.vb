@@ -300,11 +300,11 @@
             Dim barRectangle As Rectangle
             Dim barPercentage As Integer = CInt((Pokemon.HP / Pokemon.MaxHP) * 100).Clamp(0, 100)
 
-            If barPercentage >= 50 Then
+            If barPercentage > 50 Then
                 barRectangle = New Rectangle(112, 0, 2, 3)
-            ElseIf barPercentage < 50 And barPercentage > 10 Then
+            ElseIf barPercentage <= 50 And barPercentage > 25 Then
                 barRectangle = New Rectangle(114, 0, 2, 3)
-            ElseIf barPercentage <= 10 Then
+            ElseIf barPercentage <= 25 Then
                 barRectangle = New Rectangle(116, 0, 2, 3)
             End If
             For x = 0 To barX Step 4

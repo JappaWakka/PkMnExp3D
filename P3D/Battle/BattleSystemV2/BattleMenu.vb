@@ -998,7 +998,6 @@
                                     TempBattleScreen.SendClientCommand("SWITCH|" & PokeIndex.ToString())
                                 Else
                                     TempBattleScreen.BattleQuery.Clear()
-                                    TempBattleScreen.BattleQuery.Add(TempBattleScreen.FocusBattle())
                                     TempBattleScreen.BattleQuery.Insert(0, New ToggleMenuQueryObject(True))
                                     TempBattleScreen.Battle.InitializeRound(TempBattleScreen, New Battle.RoundConst With {.StepType = Battle.RoundConst.StepTypes.Switch, .Argument = PokeIndex.ToString()})
                                 End If

@@ -153,34 +153,34 @@
 		Else
 			If Me.Position.X < Me.Destination.X Then
 				Me.Position.X = MathHelper.Lerp(Me.Position.X, Me.Destination.X, Me.InterpolationSpeed)
-				If Me.Position.X > Me.Destination.X - 0.1 Then
+				If Me.Position.X > Me.Destination.X - 0.05 Then
 					Me.Position.X = Me.Destination.X
 				End If
 			ElseIf Me.Position.X > Me.Destination.X Then
 				Me.Position.X = MathHelper.Lerp(Me.Position.X, Me.Destination.X, Me.InterpolationSpeed)
-				If Me.Position.X < Me.Destination.X + 0.1 Then
+				If Me.Position.X < Me.Destination.X + 0.05 Then
 					Me.Position.X = Me.Destination.X
 				End If
 			End If
 			If Me.Position.Y < Me.Destination.Y Then
 				Me.Position.Y = MathHelper.Lerp(Me.Position.Y, Me.Destination.Y, Me.InterpolationSpeed)
-				If Me.Position.Y > Me.Destination.Y - 0.1 Then
+				If Me.Position.Y > Me.Destination.Y - 0.05 Then
 					Me.Position.Y = Me.Destination.Y
 				End If
 			ElseIf Me.Position.Y > Me.Destination.Y Then
 				Me.Position.Y = MathHelper.Lerp(Me.Position.Y, Me.Destination.Y, Me.InterpolationSpeed)
-				If Me.Position.Y < Me.Destination.Y + 0.1 Then
+				If Me.Position.Y < Me.Destination.Y + 0.05 Then
 					Me.Position.Y = Me.Destination.Y
 				End If
 			End If
 			If Me.Position.Z < Me.Destination.Z Then
 				Me.Position.Z = MathHelper.Lerp(Me.Position.Z, Me.Destination.Z, Me.InterpolationSpeed)
-				If Me.Position.Z > Me.Destination.Z - 0.1 Then
+				If Me.Position.Z > Me.Destination.Z - 0.05 Then
 					Me.Position.Z = Me.Destination.Z
 				End If
 			ElseIf Me.Position.Z > Me.Destination.Z Then
 				Me.Position.Z = MathHelper.Lerp(Me.Position.Z, Me.Destination.Z, Me.InterpolationSpeed)
-				If Me.Position.Z < Me.Destination.Z + 0.1 Then
+				If Me.Position.Z < Me.Destination.Z + 0.05 Then
 					Me.Position.Z = Me.Destination.Z
 				End If
 			End If

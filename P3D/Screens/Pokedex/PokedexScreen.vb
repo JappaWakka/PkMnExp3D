@@ -13,7 +13,7 @@
         Me.texture = TextureManager.GetTexture("GUI\Menus\General")
 
         Me.MouseVisible = True
-        Me.CanMuteMusic = True
+        Me.CanMuteAudio = True
         Me.CanBePaused = True
 
         For Each p As Pokedex In Core.Player.Pokedexes
@@ -170,7 +170,7 @@ Public Class PokedexHabitatScreen
         Me.texture = TextureManager.GetTexture("GUI\Menus\General")
 
         Me.MouseVisible = True
-        Me.CanMuteMusic = True
+        Me.CanMuteAudio = True
         Me.CanBePaused = True
 
         For Each file As String In System.IO.Directory.GetFiles(GameController.GamePath & GameModeManager.ActiveGameMode.PokeFilePath, "*.*", IO.SearchOption.AllDirectories)
@@ -354,7 +354,7 @@ Public Class PokedexScreen
         Me.CHabitat = Habitat
 
         Me.MouseVisible = True
-        Me.CanMuteMusic = True
+        Me.CanMuteAudio = True
         Me.CanBePaused = True
 
         TempPokemonStorage.Clear()
@@ -1282,7 +1282,7 @@ Public Class PokedexViewScreen
         Me.texture = TextureManager.GetTexture("GUI\Menus\General")
 
         Me.MouseVisible = True
-        Me.CanMuteMusic = True
+        Me.CanMuteAudio = True
         Me.CanBePaused = True
         Me._transitionOut = transitionOut
 

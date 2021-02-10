@@ -65,7 +65,7 @@
                 CurrentEntity = BattleScreen.OwnPokemonNPC
                 BAFlip = False
             End If
-            Dim MoveAnimation As MoveAnimationQueryObject = New MoveAnimationQueryObject(CurrentEntity, BAFlip)
+            Dim MoveAnimation As AnimationQueryObject = New AnimationQueryObject(CurrentEntity, BAFlip)
             MoveAnimation.AnimationPlaySound("Battle\Attacks\Pound", 0.5, 2.5)
             MoveAnimation.AnimationSpawnFadingEntity(0, -0.25, 0, "Textures\Battle\Normal\Pound", 0.5, 0.5, 0.5, 0.02, False, 1.0, 0, 3)
             BattleScreen.BattleQuery.Add(MoveAnimation)

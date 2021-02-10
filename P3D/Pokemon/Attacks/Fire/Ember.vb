@@ -80,7 +80,7 @@
                 CurrentEntity = BattleScreen.OppPokemonNPC
                 BAFlip = True
             End If
-            Dim MoveAnimation As MoveAnimationQueryObject = New MoveAnimationQueryObject(CurrentEntity, BAFlip)
+            Dim MoveAnimation As AnimationQueryObject = New AnimationQueryObject(CurrentEntity, BAFlip)
             MoveAnimation.AnimationSpawnMovingEntity(0.0, 0, 0.0, "Textures\Battle\Fire\FireBall", 0.5, 0.5, 0.5, 2.0, 0.0, 0.0, 0.05, False, True, 0.0, 0.0,, -0.5, 0)
             MoveAnimation.AnimationPlaySound("Battle\Attacks\Ember_Start", 0, 0)
             For i = 0 To 12
@@ -100,7 +100,7 @@
                 CurrentEntity = BattleScreen.OwnPokemonNPC
                 BAFlip = False
             End If
-            Dim MoveAnimation As MoveAnimationQueryObject = New MoveAnimationQueryObject(CurrentEntity, BAFlip)
+            Dim MoveAnimation As AnimationQueryObject = New AnimationQueryObject(CurrentEntity, BAFlip)
 
             MoveAnimation.AnimationSpawnMovingEntity(2.0, 0, 0.0, "Textures\Battle\Fire\FireBall", 0.5, 0.5, 0.5, 0.0, 0.0, 0.0, 0.05, False, True, 0.0, 0.0, 0.1, 0.5, 0)
             For i = 0 To 12

@@ -11,7 +11,7 @@ Public Class Badge
         Fly
         Whirlpool
         Waterfall
-        Ride
+        RockSmash
         Dive
         RockClimb
     End Enum
@@ -29,7 +29,7 @@ Public Class Badge
         Public HMs As New List(Of HMMoves)
         Public TextureRectangle As Rectangle = New Rectangle(0, 0, 50, 50)
         Public TexturePath As String = "GUI\Badges"
-        Public Region As String = "Johto"
+        Public Region As String = "Hoenn"
 
         Public Sub New(ByVal inputData As String)
             Dim data() As String = inputData.Split(CChar("|"))
@@ -64,8 +64,8 @@ Public Class Badge
                                         Me.HMs.Add(HMMoves.Whirlpool)
                                     Case "waterfall"
                                         Me.HMs.Add(HMMoves.Waterfall)
-                                    Case "ride"
-                                        Me.HMs.Add(HMMoves.Ride)
+                                    Case "rocksmash"
+                                        Me.HMs.Add(HMMoves.RockSmash)
                                     Case "dive"
                                         Me.HMs.Add(HMMoves.Dive)
                                     Case "rockclimb"

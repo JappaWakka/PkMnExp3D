@@ -144,7 +144,7 @@
             Me.MouseVisible = True
             Me.CanChat = True
             Me.CanDrawDebug = True
-            Me.CanMuteMusic = True
+            Me.CanMuteAudio = True
             Me.CanTakeScreenshot = True
 
             Screen.TextBox.Showing = False
@@ -239,12 +239,15 @@
             Dim oppModel As String = GetModelName(False)
 
             If ownModel = "" Then
-                OwnPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(12, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", True, New Vector3(1), 1, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(OwnPokemon), 3, WildPokemon.GetDisplayName(), 0, True, "Still", New List(Of Rectangle)}), NPC)
-                OwnPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(12, -0.5F, 13) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 0.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 0, "Models\Bulbasaur\Normal", False, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
+                OwnPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(12, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel,0, "", True, New Vector3(1), 1, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(OwnPokemon), 3, WildPokemon.GetDisplayName(), 0, True, "Still", New List(Of Rectangle)}, 0), NPC)
+                OwnPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(12, -0.5F, 13) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 0.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 0, "Models\Bulbasaur\Normal", False, New Vector3(1), 0, "", "", New Vector3(0), Nothing, 0), ModelEntity)
             Else
-                OwnPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(12, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", False, New Vector3(1), 0, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(OwnPokemon), 3, WildPokemon.GetDisplayName(), 0, True, "Still", New List(Of Rectangle)}), NPC)
-                OwnPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(12, -0.5F, 13) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 0.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 1, ownModel, True, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
+                OwnPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(12, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", False, New Vector3(1), 0, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(OwnPokemon), 3, WildPokemon.GetDisplayName(), 0, True, "Still", New List(Of Rectangle)}, 0), NPC)
+                OwnPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(12, -0.5F, 13) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 0.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 1, ownModel, True, New Vector3(1), 0, "", "", New Vector3(0), Nothing, 0), ModelEntity)
             End If
+
+            OwnPokemonNPC.Position.Y = 0.5
+            OwnPokemonModel.Position.Y = 0
 
             Screen.Level.Entities.Add(OwnPokemonNPC)
             Screen.Level.Entities.Add(OwnPokemonModel)
@@ -256,11 +259,11 @@
                 OppPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(15, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", False, New Vector3(1), 0, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(WildPokemon), 1, WildPokemon.GetDisplayName(), 1, True, "Still", New List(Of Rectangle)}), NPC)
                 OppPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(15, -0.5F, 13) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 1.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 1, oppModel, True, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
             End If
-
             Screen.Level.Entities.Add(OppPokemonNPC)
             Screen.Level.Entities.Add(OppPokemonModel)
 
-			Dim ownSkin As String = "\PlayerSkins\" & Core.Player.Skin
+
+            Dim ownSkin As String = "\PlayerSkins\" & Core.Player.Skin
 			If SavedOverworld.Level.Biking = True Then
 				ownSkin = "\PlayerSkins\" & Core.Player.TempBikeSkin
 			End If
@@ -295,8 +298,39 @@
             Dim q3 As CameraQueryObject = New CameraQueryObject(New Vector3(14, 0, 11), New Vector3(14, 0, 15), 0.01F, 0.01F, MathHelper.PiOver2, MathHelper.PiOver2, 0.0F, 0.0F)
             q3.PassThis = True
 
-            Dim q31 As New PlaySoundQueryObject(OwnPokemon.Number.ToString(), True, 3.0F)
             Dim q4 As TextQueryObject = New TextQueryObject("Go, " & Me.OwnPokemon.GetDisplayName() & "!")
+
+            Me.BattleQuery.AddRange({cq, q1, q, q2, q22, q3, q4})
+
+            ' Ball is thrown
+            Dim BallThrow As AnimationQueryObject = New AnimationQueryObject(OwnPokemonNPC, False, OwnPokemonModel)
+            BallThrow.AnimationPlaySound("Battle\Pokeball\Throw", 0, 0)
+            BallThrow.AnimationSpawnMovingEntity(-2, -0.65, 0, OwnPokemon.CatchBall.TextureSource, 0.3F, 0.3F, 0.3F, 0, 0, 0, 0.1, False, True, 0F, 0F,, 0.3)
+
+            ' Ball Opens
+            BallThrow.AnimationPlaySound("Battle\Pokeball\Open", 3, 0)
+            Dim SmokeSpawned As Integer = 0
+            Do
+                Dim SmokePosition = New Vector3(0, 0, 0)
+                Dim SmokeDestination = New Vector3(CSng(Random.Next(-10, 10) / 10), CSng(Random.Next(-10, 10) / 10), CSng(Random.Next(-10, 10) / 10))
+
+                Dim SmokeTexture As String = "Textures\Battle\Cloud"
+
+                Dim SmokeScale = New Vector3(CSng(Random.Next(2, 6) / 10))
+                Dim SmokeSpeed = CSng(Random.Next(1, 3) / 10.0F)
+
+                BallThrow.AnimationSpawnMovingEntity(SmokePosition.X, SmokePosition.Y, SmokePosition.Z, SmokeTexture, SmokeScale.X, SmokeScale.Y, SmokeScale.Z, SmokeDestination.X, SmokeDestination.Y, SmokeDestination.Z, SmokeSpeed, False, False, 3.0F, 0.0F)
+                Threading.Interlocked.Increment(SmokeSpawned)
+            Loop While SmokeSpawned <= 38
+
+            ' Pokemon appears
+            BallThrow.AnimationFadePokemonEntity(1, True, 1, 4, 0, 0)
+            BallThrow.AnimationPlaySound(CStr(OwnPokemon.Number), 4, 0,, True)
+
+            '  Pokémon falls down
+            BallThrow.AnimationMovePokemonEntity(0, -0.5, 0, 0.05F, False, False, 4, 0,,, 4)
+
+            Me.BattleQuery.Add(BallThrow)
 
             Dim q5 As ToggleMenuQueryObject = New ToggleMenuQueryObject(Me.BattleMenu.Visible)
 
@@ -304,8 +338,6 @@
             Dim cq2 As ScreenFadeQueryObject = New ScreenFadeQueryObject(ScreenFadeQueryObject.FadeTypes.Vertical, Color.Black, False, 16)
 
             cq2.PassThis = True
-
-            Me.BattleQuery.AddRange({cq, q1, q, q2, q22, q3, q31, q4})
 
             Battle.SwitchInOwn(Me, meIndex, True, -1)
             Battle.SwitchInOpp(Me, True, 0)
@@ -445,8 +477,39 @@
             Dim q3 As CameraQueryObject = New CameraQueryObject(New Vector3(14, 0, 11), New Vector3(14, 0, 15), 0.01F, 0.01F, MathHelper.PiOver2, MathHelper.PiOver2, 0.0F, 0.0F)
             q3.PassThis = True
 
-            Dim q31 As New PlaySoundQueryObject(OwnPokemon.Number.ToString(), True, 3.0F)
             Dim q4 As TextQueryObject = New TextQueryObject("Go, " & Me.OwnPokemon.GetDisplayName() & "!")
+
+            Me.BattleQuery.AddRange({cq, q, q1, q2, q22, q3, q4})
+
+            ' Ball is thrown
+            Dim BallThrow As AnimationQueryObject = New AnimationQueryObject(OwnPokemonNPC, False, OwnPokemonModel)
+            BallThrow.AnimationPlaySound("Battle\Pokeball\Throw", 0, 0)
+            BallThrow.AnimationSpawnMovingEntity(-2, -0.65, 0, OwnPokemon.CatchBall.TextureSource, 0.3F, 0.3F, 0.3F, 0, 0, 0, 0.1, False, True, 0F, 0F,, 0.3)
+
+            ' Ball Opens
+            BallThrow.AnimationPlaySound("Battle\Pokeball\Open", 3, 0)
+            Dim SmokeSpawned As Integer = 0
+            Do
+                Dim SmokePosition = New Vector3(0, 0, 0)
+                Dim SmokeDestination = New Vector3(CSng(Random.Next(-10, 10) / 10), CSng(Random.Next(-10, 10) / 10), CSng(Random.Next(-10, 10) / 10))
+
+                Dim SmokeTexture As String = "Textures\Battle\Cloud"
+
+                Dim SmokeScale = New Vector3(CSng(Random.Next(2, 6) / 10))
+                Dim SmokeSpeed = CSng(Random.Next(1, 3) / 10.0F)
+
+                BallThrow.AnimationSpawnMovingEntity(SmokePosition.X, SmokePosition.Y, SmokePosition.Z, SmokeTexture, SmokeScale.X, SmokeScale.Y, SmokeScale.Z, SmokeDestination.X, SmokeDestination.Y, SmokeDestination.Z, SmokeSpeed, False, False, 3.0F, 0.0F)
+                Threading.Interlocked.Increment(SmokeSpawned)
+            Loop While SmokeSpawned <= 38
+
+            ' Pokemon appears
+            BallThrow.AnimationFadePokemonEntity(1, True, 1, 4, 0, 0)
+            BallThrow.AnimationPlaySound(CStr(OwnPokemon.Number), 4, 0,, True)
+
+            '  Pokémon falls down
+            BallThrow.AnimationMovePokemonEntity(0, -0.5, 0, 0.05F, False, False, 4, 0,,, 4)
+
+            Me.BattleQuery.Add(BallThrow)
 
             Dim q5 As ToggleMenuQueryObject = New ToggleMenuQueryObject(Me.BattleMenu.Visible)
 
@@ -454,8 +517,6 @@
             Dim cq2 As ScreenFadeQueryObject = New ScreenFadeQueryObject(ScreenFadeQueryObject.FadeTypes.Vertical, Color.Black, False, 16)
 
             cq2.PassThis = True
-
-            Me.BattleQuery.AddRange({cq, q, q1, q2, q22, q3, q31, q4})
 
             Battle.SwitchInOwn(Me, meIndex, True, OwnPokemonIndex)
             Battle.SwitchInOpp(Me, True, OppPokemonIndex)
@@ -709,8 +770,40 @@
             Dim q3 As CameraQueryObject = New CameraQueryObject(New Vector3(14, 0, 11), New Vector3(14, 0, 15), 0.01F, 0.01F, MathHelper.PiOver2, MathHelper.PiOver2, 0.0F, 0.0F)
             q3.PassThis = True
 
-            Dim q31 As New PlaySoundQueryObject(OwnPokemon.Number.ToString(), True, 3.0F)
             Dim q4 As TextQueryObject = New TextQueryObject("Go, " & Me.OwnPokemon.GetDisplayName() & "!")
+
+            Me.BattleQuery.AddRange({cq, q, q1, q2, q22, q3, q4})
+
+            ' Ball is thrown
+            Dim BallThrow As AnimationQueryObject = New AnimationQueryObject(OwnPokemonNPC, False, OwnPokemonModel)
+            BallThrow.AnimationPlaySound("Battle\Pokeball\Throw", 0, 0)
+            BallThrow.AnimationSpawnMovingEntity(-2, -0.65, 0, OwnPokemon.CatchBall.TextureSource, 0.3F, 0.3F, 0.3F, 0, 0, 0, 0.1, False, True, 0F, 0F,, 0.3)
+
+            ' Ball Opens
+            BallThrow.AnimationPlaySound("Battle\Pokeball\Open", 3, 0)
+            Dim SmokeSpawned As Integer = 0
+            Do
+                Dim SmokePosition = New Vector3(0, 0, 0)
+                Dim SmokeDestination = New Vector3(CSng(Random.Next(-10, 10) / 10), CSng(Random.Next(-10, 10) / 10), CSng(Random.Next(-10, 10) / 10))
+
+                Dim SmokeTexture As String = "Textures\Battle\Cloud"
+
+                Dim SmokeScale = New Vector3(CSng(Random.Next(2, 6) / 10))
+                Dim SmokeSpeed = CSng(Random.Next(1, 3) / 10.0F)
+
+                BallThrow.AnimationSpawnMovingEntity(SmokePosition.X, SmokePosition.Y, SmokePosition.Z, SmokeTexture, SmokeScale.X, SmokeScale.Y, SmokeScale.Z, SmokeDestination.X, SmokeDestination.Y, SmokeDestination.Z, SmokeSpeed, False, False, 3.0F, 0.0F)
+                Threading.Interlocked.Increment(SmokeSpawned)
+            Loop While SmokeSpawned <= 38
+
+            ' Pokemon appears
+            BallThrow.AnimationFadePokemonEntity(1, True, 1, 4, 0, 0)
+            BallThrow.AnimationPlaySound(CStr(OwnPokemon.Number), 4, 0,, True)
+
+            '  Pokémon falls down
+            BallThrow.AnimationMovePokemonEntity(0, -0.5, 0, 0.05F, False, False, 4, 0,,, 4)
+
+            Me.BattleQuery.Add(BallThrow)
+
 
             Dim q5 As ToggleMenuQueryObject = New ToggleMenuQueryObject(Me.BattleMenu.Visible)
 
@@ -719,7 +812,6 @@
 
             cq2.PassThis = True
 
-            Me.BattleQuery.AddRange({cq, q, q1, q2, q22, q3, q31, q4})
 
             Battle.SwitchInOwn(Me, meIndex, True, -1)
             Battle.SwitchInOpp(Me, True, 0)

@@ -10740,9 +10740,6 @@
     <Content Include="Content\Textures\Battle\Fire\Smoke.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Textures\Battle\Fire\Smoke_Big.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Textures\Battle\Normal\Growl.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -14810,6 +14807,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Compile Include="Battle\BattleAnimations\BABillMove.vb" />
+    <Compile Include="Battle\BattleAnimations\BABillOpacity.vb" />
     <Compile Include="Battle\BattleAnimations\BASound.vb" />
     <Compile Include="Pokemon\Abilities\Aerilate.vb" />
     <Compile Include="Pokemon\Abilities\PsychicSurge.vb" />
@@ -27292,7 +27290,7 @@
     <Compile Include="Battle\BattleSystemV2\QueryObjects\EndBattleQueryObject.vb" />
     <Compile Include="Battle\BattleSystemV2\QueryObjects\LearnMovesQueryObject.vb" />
     <Compile Include="Battle\BattleSystemV2\QueryObjects\MathHPQueryObject.vb" />
-    <Compile Include="Battle\BattleSystemV2\QueryObjects\MoveAnimationQueryObject.vb" />
+    <Compile Include="Battle\BattleSystemV2\QueryObjects\AnimationQueryObject.vb" />
     <Compile Include="Battle\BattleSystemV2\QueryObjects\PlayMusicQueryObject.vb" />
     <Compile Include="Battle\BattleSystemV2\QueryObjects\PlaySoundQueryObject.vb" />
     <Compile Include="Battle\BattleSystemV2\QueryObjects\QueryObject.vb" />

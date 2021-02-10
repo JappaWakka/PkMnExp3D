@@ -9,6 +9,12 @@ Public MustInherit Class Item
     Protected _textureRectangle As Rectangle
     Private _texture As Texture2D
 
+    Public ReadOnly Property TextureSource As String
+        Get
+            Return _textureSource & "," & _textureRectangle.X & "," & _textureRectangle.Y & "," & _textureRectangle.Width & "," & _textureRectangle.Height
+        End Get
+    End Property
+
     Public Function GetDescription() As String
         If Localization.TokenExists("item_desc_" & GetAttribute().Id) = True Then
             Return Localization.GetString("item_desc_" & GetAttribute().Id)

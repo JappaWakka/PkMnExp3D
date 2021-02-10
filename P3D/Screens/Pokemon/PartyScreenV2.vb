@@ -605,7 +605,7 @@ Public Class PartyScreenV2
 
         If p.IsEgg() = False Then
             If CanUseMove(p, "Fly", Badge.HMMoves.Fly) Or
-            CanUseMove(p, "Ride", Badge.HMMoves.Ride) Or
+            CanUseMove(p, "Ride", -1) Or
             CanUseMove(p, "Flash", Badge.HMMoves.Flash) Or
             CanUseMove(p, "Cut", Badge.HMMoves.Cut) Or
             CanUseMove(p, "Teleport", -1) Or
@@ -633,7 +633,7 @@ Public Class PartyScreenV2
         If CanUseMove(p, "Fly", Badge.HMMoves.Fly) Then
             items.Add("Fly")
         End If
-        If CanUseMove(p, "Ride", Badge.HMMoves.Ride) Then
+        If CanUseMove(p, "Ride", -1) Then
             items.Add("Ride")
         End If
         If CanUseMove(p, "Flash", Badge.HMMoves.Flash) Then

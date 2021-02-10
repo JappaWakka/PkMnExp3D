@@ -1,6 +1,6 @@
 ﻿Namespace BattleSystem
 
-	Public Class MoveAnimationQueryObject
+	Public Class AnimationQueryObject
 		Inherits QueryObject
 
 		Public AnimationStarted As Boolean = False
@@ -8,6 +8,7 @@
 		Public BAFlipped As Boolean
 		Public AnimationSequence As List(Of BattleAnimation3D)
 		Public CurrentEntity As Entity
+		Public CurrentModel As ModelEntity
 
 		Public Overrides ReadOnly Property IsReady As Boolean
 			Get
@@ -15,11 +16,12 @@
 			End Get
 		End Property
 
-		Public Sub New(ByVal entity As NPC, ByVal BAFlipped As Boolean)
+		Public Sub New(ByVal entity As NPC, ByVal BAFlipped As Boolean, Optional ByVal model As ModelEntity = Nothing)
 			MyBase.New(QueryTypes.MoveAnimation)
 			Me.AnimationSequence = New List(Of BattleAnimation3D)
 			Me.BAFlipped = BAFlipped
 			Me.CurrentEntity = entity
+			Me.CurrentModel = model
 			AnimationSequenceBegin()
 		End Sub
 		Public Overrides Sub Draw(ByVal BV2Screen As BattleScreen)
@@ -152,8 +154,30 @@
 				End If
 
 				Dim Destination As Vector3 = New Vector3(CurrentEntity.Position.X + DestinationX, CurrentEntity.Position.Y + DestinationY, CurrentEntity.Position.Z + DestinationZ)
+
 				Dim baBillMove As BABillMove = New BABillMove(CurrentEntity, Destination, Speed, SpinX, SpinZ, startDelay, endDelay, SpinXSpeed, SpinZSpeed, MovementCurve)
 				AnimationSequence.Add(baBillMove)
+
+				If Me.CurrentModel IsNot Nothing Then
+					Dim baModelMove As BABillMove = New BABillMove(CType(CurrentModel, Entity), Destination, Speed, SpinX, SpinZ, startDelay, endDelay, SpinXSpeed, SpinZSpeed, MovementCurve)
+					AnimationSequence.Add(baModelMove)
+				End If
+			End If
+		End Sub
+		Public Sub AnimationFadePokemonEntity(ByVal TransitionSpeed As Single, ByVal FadeIn As Boolean, ByVal EndState As Single, ByVal startDelay As Single, ByVal endDelay As Single, Optional ByVal startState As Single = -1.0F)
+			If CurrentEntity Is Nothing Then
+				Logger.Log(Logger.LogTypes.Warning, "ATTEMPT TO USE AttackSpawnMovingAnimation OUTSIDE OF ATTACK ANIMATION DELEGATE")
+			ElseIf Not AnimationStarted Then
+				Logger.Log(Logger.LogTypes.Warning, "ATTEMPT TO USE AttackSpawnMovingAnimation BEFORE CALLING AnimationSequenceBegin")
+			Else
+				If startState = -1.0F Then startState = CurrentEntity.Opacity
+				Dim baBillOpacity As BABillOpacity = New BABillOpacity(CurrentEntity, TransitionSpeed, FadeIn, EndState, startDelay, endDelay, startState)
+				AnimationSequence.Add(baBillOpacity)
+
+				If Me.CurrentModel IsNot Nothing Then
+					Dim baModelOpacity As BABillOpacity = New BABillOpacity(CType(CurrentModel, Entity), TransitionSpeed, FadeIn, EndState, startDelay, endDelay, startState)
+					AnimationSequence.Add(baModelOpacity)
+				End If
 			End If
 		End Sub
 		Public Sub AnimationPlaySound(ByVal sound As String, ByVal startDelay As Single, ByVal endDelay As Single, Optional ByVal stopMusic As Boolean = False, Optional ByVal IsPokemon As Boolean = False)
@@ -167,7 +191,7 @@
 			End If
 		End Sub
 
-		Public Sub AnimationScalePokemon(ByVal PositionX As Single, ByVal PositionY As Single, ByVal PositionZ As Single, ByVal Texture As String, ByVal ScaleX As Single, ByVal ScaleY As Single, ByVal ScaleZ As Single, ByVal Grow As Boolean, ByVal EndSizeX As Single, ByVal EndSizeY As Single, ByVal EndSizeZ As Single, ByVal SizeSpeed As Single, ByVal startDelay As Single, ByVal endDelay As Single)
+		Public Sub AnimationSpawnScalingEntity(ByVal PositionX As Single, ByVal PositionY As Single, ByVal PositionZ As Single, ByVal Texture As String, ByVal ScaleX As Single, ByVal ScaleY As Single, ByVal ScaleZ As Single, ByVal Grow As Boolean, ByVal EndSizeX As Single, ByVal EndSizeY As Single, ByVal EndSizeZ As Single, ByVal SizeSpeed As Single, ByVal startDelay As Single, ByVal endDelay As Single)
 			If CurrentEntity Is Nothing Then
 				Logger.Log(Logger.LogTypes.Warning, "ATTEMPT TO USE AttackSpawnSizeAnimation OUTSIDE OF ATTACK ANIMATION DELEGATE")
 			ElseIf Not AnimationStarted Then

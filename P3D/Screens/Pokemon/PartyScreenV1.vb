@@ -267,9 +267,14 @@
             options.Insert(1, Localization.GetString("global_pokemon_move_flash"))
             ChooseBox.Options = options.ToArray()
         End If
-        If (PokemonHasMove(Core.Player.Pokemons(index), Localization.GetString("global_pokemon_move_ride")) = True And Badge.CanUseHMMove(Badge.HMMoves.Ride) = True And Core.Player.Pokemons(index).IsEgg() = False) OrElse GameController.IS_DEBUG_ACTIVE = True OrElse Core.Player.SandBoxMode Then
+        If (PokemonHasMove(Core.Player.Pokemons(index), Localization.GetString("global_pokemon_move_ride")) = True And Core.Player.Pokemons(index).IsEgg() = False) OrElse GameController.IS_DEBUG_ACTIVE = True OrElse Core.Player.SandBoxMode Then
             Dim options As List(Of String) = ChooseBox.Options.ToList()
             options.Insert(1, Localization.GetString("global_pokemon_move_ride"))
+            ChooseBox.Options = options.ToArray()
+        End If
+        If (PokemonHasMove(Core.Player.Pokemons(index), Localization.GetString("global_pokemon_move_rocksmash")) = True And Badge.CanUseHMMove(Badge.HMMoves.RockSmash) = True And Core.Player.Pokemons(index).IsEgg() = False) OrElse GameController.IS_DEBUG_ACTIVE = True OrElse Core.Player.SandBoxMode Then
+            Dim options As List(Of String) = ChooseBox.Options.ToList()
+            options.Insert(1, Localization.GetString("global_pokemon_move_rocksmash"))
             ChooseBox.Options = options.ToArray()
         End If
         If (PokemonHasMove(Core.Player.Pokemons(index), Localization.GetString("global_pokemon_move_dig")) = True And Core.Player.Pokemons(index).IsEgg() = False) OrElse GameController.IS_DEBUG_ACTIVE = True OrElse Core.Player.SandBoxMode Then
@@ -383,28 +388,23 @@
             .Draw(BorderTexture, New Rectangle(CInt(p.X) + 320, CInt(p.Y), 32, 96), New Rectangle(32, 0, 16, 48), Color.White)
 
             If Pokemon.IsEgg() = False Then
+                Core.SpriteBatch.Draw(MainTexture, New Rectangle(CInt(p.X + 192), CInt(p.Y + 24), 134, 16), New Rectangle(0, 240, 67, 8), Color.White)
                 Dim barX As Integer = CInt((Pokemon.HP / Pokemon.MaxHP.Clamp(1, Integer.MaxValue)) * 50)
                 Dim barRectangle As Rectangle
                 Dim barPercentage As Integer = CInt((Pokemon.HP / Pokemon.MaxHP.Clamp(1, Integer.MaxValue)) * 100)
 
-                If barPercentage >= 50 Then
-                    barRectangle = New Rectangle(113, 0, 1, 5)
-                ElseIf barPercentage < 50 And barPercentage > 10 Then
-                    barRectangle = New Rectangle(116, 0, 1, 5)
-                ElseIf barPercentage <= 10 Then
-                    barRectangle = New Rectangle(115, 0, 1, 5)
+                If barPercentage > 50 Then
+                    barRectangle = New Rectangle(112, 0, 2, 3)
+                ElseIf barPercentage <= 50 And barPercentage > 25 Then
+                    barRectangle = New Rectangle(114, 0, 2, 3)
+                ElseIf barPercentage <= 25 Then
+                    barRectangle = New Rectangle(116, 0, 2, 3)
                 End If
-                For x = 0 To barX - 1
-                    .Draw(MainTexture, New Rectangle(CInt(p.X + (x * 2) + 192), CInt(p.Y + 32), 4, 16), barRectangle, Color.White)
+                For x = 0 To barX
+                    .Draw(MainTexture, New Rectangle(CInt(p.X + 192 + x + 32), CInt(p.Y + 30), 4, 6), barRectangle, Color.White)
                 Next
 
-                For x = barX To 49
-                    .Draw(MainTexture, New Rectangle(CInt(p.X + (x * 2) + 192), CInt(p.Y + 32), 4, 16), New Rectangle(114, 0, 1, 5), Color.White)
-                Next
-                .Draw(MainTexture, New Rectangle(CInt(p.X + 188), CInt(p.Y + 32), 4, 16), New Rectangle(112, 0, 1, 5), Color.White)
-                .Draw(MainTexture, New Rectangle(CInt(p.X + 294), CInt(p.Y + 32), 4, 16), New Rectangle(112, 0, 1, 5), Color.White)
-
-                .DrawString(TextColor, Localization.GetString("HP") & " " & Pokemon.HP & " / " & Pokemon.MaxHP, New Vector2(CInt(p.X + 160), CInt(p.Y + 48)), Color.White)
+                .DrawString(TextColor, Localization.GetString("HP") & " " & Pokemon.HP & " / " & Pokemon.MaxHP, New Vector2(CInt(p.X + 192), CInt(p.Y + 48)), Color.White)
             End If
 
             Dim offset As Single = CSng(Math.Sin(yOffset))
@@ -443,7 +443,7 @@
 
             Dim StatusTexture As Texture2D = BattleStats.GetStatImage(Pokemon.Status)
             If Not StatusTexture Is Nothing Then
-                Core.SpriteBatch.Draw(StatusTexture, New Rectangle(CInt(p.X + 240), CInt(p.Y + 30), 38, 12), Color.White)
+                Core.SpriteBatch.Draw(StatusTexture, New Rectangle(CInt(p.X + 240), CInt(p.Y + 16), 38, 12), Color.White)
             End If
         End With
 

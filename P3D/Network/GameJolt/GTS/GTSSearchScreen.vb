@@ -22,7 +22,7 @@
             Me.CanBePaused = False
             Me.CanChat = False
             Me.CanDrawDebug = True
-            Me.CanMuteMusic = True
+            Me.CanMuteAudio = True
             Me.CanTakeScreenshot = True
             Me.MouseVisible = True
         End Sub
@@ -452,7 +452,7 @@
 				Me.CanBePaused = False
 				Me.CanChat = False
 				Me.CanDrawDebug = True
-				Me.CanMuteMusic = True
+				Me.CanMuteAudio = True
 				Me.CanTakeScreenshot = True
 				Me.MouseVisible = True
 			End Sub
@@ -576,7 +576,7 @@
 				Me.CanBePaused = False
 				Me.CanChat = False
 				Me.CanDrawDebug = True
-				Me.CanMuteMusic = True
+				Me.CanMuteAudio = True
 				Me.CanTakeScreenshot = True
 				Me.MouseVisible = True
 
@@ -776,7 +776,7 @@
 				Me.CanBePaused = False
 				Me.CanChat = False
 				Me.CanDrawDebug = True
-				Me.CanMuteMusic = True
+				Me.CanMuteAudio = True
 				Me.CanTakeScreenshot = True
 				Me.MouseVisible = True
 			End Sub
@@ -870,7 +870,7 @@
 				Me.CanBePaused = False
 				Me.CanChat = False
 				Me.CanDrawDebug = True
-				Me.CanMuteMusic = True
+				Me.CanMuteAudio = True
 				Me.CanTakeScreenshot = True
 				Me.MouseVisible = True
 			End Sub
