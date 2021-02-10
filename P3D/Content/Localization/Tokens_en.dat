@@ -69,6 +69,7 @@ global_take,Take
 global_toss,Toss
 global_switch,Switch
 global_pokemon_move_fly,Fly
+global_pokemon_move_rocksmash,Rock Smash
 global_pokemon_move_ride,Ride
 global_pokemon_move_flash,Flash
 global_pokemon_move_cut,Cut
@@ -1892,7 +1893,7 @@ Littleroot_Main_Sign_BirchsLab,Prof. Birch's Pokémon Lab
 
 Objects:
 Littleroot_YourHouse2f_NoteBook,It's a note book showing the controls.*Do you want to read it?
-Littleroot_YourHouse2f_GameControls,These are the controls:~Move: [W][A][S][D] & [UP] ~Look Around: [Left][Down][Right]~Fixed or Free Camera: [C]~Open Start Menu: [E]~Mute Audio: [M]~Take Screenshot: [F2]~First Person or Third Person: [F5]
+Littleroot_YourHouse2f_GameControls,These are the controls:~Move: [<button.moveforward>][<button.moveleft>][<button.movebackward>][<button.moveright>] & [<button.cameraup>] ~Look Around: [<button.cameraleft>][<button.cameradown>][<button.cameraright>]~Fixed or Free Camera: [<button.cameralock>]~Open Start Menu: [<button.openmenu>]~Mute Audio: [<button.muteaudio>]~Take Screenshot: [<button.screenshot>]~First Person or Third Person: [<button.perspectiveswitch>]~Interact/Accept: [<button.enter1>][<button.enter2>]~Cancel/Exit: [<button.back1>][<button.back2]
 Littleroot_YourHouse2f_TV,It's a TV.~A Nintendo Gamecube is connected to it.
 Littleroot_YourHouse2f_GameCube,It's a Nintendo Gamecube.*You can connect a Game Boy Advance~to serve as the Controller.
 Littleroot_YourHouse2f_ClockStopped,The clock hasn't been set yet.~Let's do that right now.
