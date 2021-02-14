@@ -241,10 +241,10 @@
 
         Dim t1 As Texture2D = TextureManager.GetTexture("GUI\Intro\VSIntro", New Rectangle(CInt(barPosition.X), CInt(barPosition.Y), 128, 64), "")
         Dim t2 As Texture2D = TextureManager.GetTexture("GUI\Intro\VSIntro", New Rectangle(CInt(VSPosition.X), CInt(VSPosition.Y), 61, 54), "")
-        Dim t3 As Texture2D = TextureManager.GetTexture("NPC\" & Trainer.SpriteName, New Rectangle(0, 64, 32, 32))
+        Dim t3 As Texture2D = TextureManager.GetTexture("OverworldSprites\" & Trainer.SpriteName, New Rectangle(0, 64, 32, 32))
         Dim t4 As Texture2D = Nothing
         If Trainer.DoubleTrainer = True Then
-            t4 = TextureManager.GetTexture("NPC\" & Trainer.SpriteName2, New Rectangle(0, 64, 32, 32))
+            t4 = TextureManager.GetTexture("OverworldSprites\" & Trainer.SpriteName2, New Rectangle(0, 64, 32, 32))
         End If
 
         If Trainer.GameJoltID <> "" Then
@@ -461,10 +461,10 @@
                 Dim a As Rectangle = Animations(0)
 
                 a.X -= CInt(Math.Ceiling(Core.windowSize.Width / 240))
-                a.Y -= CInt(Math.Ceiling(Core.windowSize.Height / 120 / 2))
+                a.Y -= CInt(Math.Ceiling(Core.windowSize.Height / 135 / 2))
 
                 a.Width += CInt(Math.Ceiling(Core.windowSize.Width / 240 * 2))
-                a.Height += CInt(Math.Ceiling(Core.windowSize.Height / 120))
+                a.Height += CInt(Math.Ceiling(Core.windowSize.Height / 135))
 
                 Animations.RemoveAt(0)
                 Animations.Add(a)

@@ -768,7 +768,7 @@ Public Class ChatScreen
 			Core.SpriteBatch.Draw(texture, New Rectangle(xPosition, Core.windowSize.Height - 114, 12, 12), New Rectangle(22, 0, 12, 12), Color.White)
 		End If
 
-		Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Text, New Vector2(xPosition + 30, Core.windowSize.Height - 114 + 4), Color.White, 0F, Vector2.Zero, 0.75F, SpriteEffects.None, 0F)
+		Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Text, New Vector2(xPosition + 30, Core.windowSize.Height - 114), Color.White, 0F, Vector2.Zero, 1.0F, SpriteEffects.None, 0F)
 
 		Return drawWidth
 	End Function

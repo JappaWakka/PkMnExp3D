@@ -7001,9 +7001,8 @@
 					If BattleScreen.OppPokemon.HP <= 0 Or BattleScreen.OppPokemon.Status = Pokemon.StatusProblems.Fainted Then
 						GainEXP(BattleScreen)
 					End If
-					BattleScreen.BattleQuery.Add(New ToggleEntityQueryObject(True, ToggleEntityQueryObject.BattleEntities.OppPokemon, 2, -1, -1, -1, -1))
 
-					If BattleScreen.IsRemoteBattle And BattleScreen.OppFaint Then
+                    If BattleScreen.IsRemoteBattle And BattleScreen.OppFaint Then
 						'Next pokemon is selected by the opponent.
 					Else
 						SwitchInOpp(BattleScreen, False, index)
@@ -7011,16 +7010,41 @@
 				Else
 					GainEXP(BattleScreen)
 
-					ChangeCameraAngle(1, False, BattleScreen)
-					BattleScreen.BattleQuery.Add(New ToggleEntityQueryObject(True, ToggleEntityQueryObject.BattleEntities.OppPokemon, 2, -1, -1, -1, -1))
-
-					If message = "" Then
+                    If message = "" Then
 						message = BattleScreen.Trainer.Name & ": ""Come back, " & BattleScreen.OppPokemon.GetDisplayName() & "!"""
 					End If
 
 					BattleScreen.BattleQuery.Add(New TextQueryObject(message))
 
-					EndBattle(EndBattleReasons.WinTrainer, BattleScreen, False)
+                    Dim BallReturn As AnimationQueryObject = New AnimationQueryObject(BattleScreen.OppPokemonNPC, True, BattleScreen.OppPokemonModel)
+
+                    ' Ball Closes
+                    BallReturn.AnimationPlaySound("Battle\Pokeball\Open", 0, 0)
+                    Dim SmokeReturned As Integer = 0
+                    Do
+                        Dim SmokePosition = New Vector3(CSng(Random.Next(-10, 10) / 10), CSng(Random.Next(-10, 10) / 10), CSng(Random.Next(-10, 10) / 10))
+                        Dim SmokeDestination = New Vector3(0, 0, 0)
+
+                        Dim SmokeTexture As String = "Textures\Battle\Cloud"
+
+                        Dim SmokeScale = New Vector3(CSng(Random.Next(2, 6) / 10))
+                        Dim SmokeSpeed = CSng(Random.Next(1, 3) / 10.0F)
+
+                        BallReturn.AnimationSpawnMovingEntity(SmokePosition.X, SmokePosition.Y, SmokePosition.Z, SmokeTexture, SmokeScale.X, SmokeScale.Y, SmokeScale.Z, SmokeDestination.X, SmokeDestination.Y, SmokeDestination.Z, SmokeSpeed, False, False, 0.0F, 0.0F)
+                        Threading.Interlocked.Increment(SmokeReturned)
+                    Loop While SmokeReturned <= 38
+
+                    ' Pokemon disappears
+                    BallReturn.AnimationFadePokemonEntity(1, False, 0, 1, 0)
+                    BallReturn.AnimationMovePokemonEntity(0, 0.5, 0, 0.5, False, False, 2, 0,,, 4)
+
+                    ' Ball returns
+                    BallReturn.AnimationPlaySound("Battle\Pokeball\Throw", 1, 0)
+                    BallReturn.AnimationSpawnMovingEntity(0, 0, 0, BattleScreen.OppPokemon.CatchBall.TextureSource, 0.3F, 0.3F, 0.3F, -2, 0, 0, 0.1, False, True, 1, 0,, 0.3)
+
+                    BattleScreen.BattleQuery.Add(BallReturn)
+
+                    EndBattle(EndBattleReasons.WinTrainer, BattleScreen, False)
 					If BattleScreen.IsRemoteBattle = True Then
 						EndBattle(EndBattleReasons.WinTrainer, BattleScreen, True)
 					End If
@@ -7051,10 +7075,37 @@
 
 			If FirstTime = False Then
 				HasSwitchedInOpp = True
-				ChangeCameraAngle(1, False, BattleScreen)
-				BattleScreen.BattleQuery.Add(New TextQueryObject(BattleScreen.Trainer.Name & ": ""Come back, " & BattleScreen.OppPokemon.GetDisplayName() & "!"""))
+                BattleScreen.BattleQuery.Add(New TextQueryObject(BattleScreen.Trainer.Name & ": ""Come back, " & BattleScreen.OppPokemon.GetDisplayName() & "!"""))
 
-				BattleScreen.SendInNewTrainerPokemon(index)
+                Dim BallReturn As AnimationQueryObject = New AnimationQueryObject(BattleScreen.OppPokemonNPC, True, BattleScreen.OppPokemonModel)
+
+                ' Ball Closes
+                BallReturn.AnimationPlaySound("Battle\Pokeball\Open", 0, 0)
+                Dim SmokeReturned As Integer = 0
+                Do
+                    Dim SmokePosition = New Vector3(CSng(Random.Next(-10, 10) / 10), CSng(Random.Next(-10, 10) / 10), CSng(Random.Next(-10, 10) / 10))
+                    Dim SmokeDestination = New Vector3(0, 0, 0)
+
+                    Dim SmokeTexture As String = "Textures\Battle\Cloud"
+
+                    Dim SmokeScale = New Vector3(CSng(Random.Next(2, 6) / 10))
+                    Dim SmokeSpeed = CSng(Random.Next(1, 3) / 10.0F)
+
+                    BallReturn.AnimationSpawnMovingEntity(SmokePosition.X, SmokePosition.Y, SmokePosition.Z, SmokeTexture, SmokeScale.X, SmokeScale.Y, SmokeScale.Z, SmokeDestination.X, SmokeDestination.Y, SmokeDestination.Z, SmokeSpeed, False, False, 0.0F, 0.0F)
+                    Threading.Interlocked.Increment(SmokeReturned)
+                Loop While SmokeReturned <= 38
+
+                ' Pokemon disappears
+                BallReturn.AnimationFadePokemonEntity(1, False, 0, 1, 0)
+                BallReturn.AnimationMovePokemonEntity(0, 0.5, 0, 0.5, False, False, 2, 0,,, 4)
+
+                ' Ball returns
+                BallReturn.AnimationPlaySound("Battle\Pokeball\Throw", 1, 0)
+                BallReturn.AnimationSpawnMovingEntity(0, 0, 0, BattleScreen.OppPokemon.CatchBall.TextureSource, 0.3F, 0.3F, 0.3F, -2, 0, 0, 0.1, False, True, 1, 0,, 0.3)
+
+                BattleScreen.BattleQuery.Add(BallReturn)
+
+                BattleScreen.SendInNewTrainerPokemon(index)
 				Me.ApplyOppBatonPass(BattleScreen)
 
 				If BattleScreen.ParticipatedPokemon.Contains(BattleScreen.OwnPokemonIndex) = False Then
@@ -7075,9 +7126,39 @@
 				End If
 
 				BattleScreen.BattleQuery.Add(New ToggleEntityQueryObject(True, ToggleEntityQueryObject.BattleEntities.OppPokemon, 1, -1, -1, -1, -1))
-				BattleScreen.BattleQuery.Add(New PlaySoundQueryObject(BattleScreen.OppPokemon.Number.ToString(), True))
-				BattleScreen.BattleQuery.Add(New TextQueryObject(BattleScreen.Trainer.Name & ": ""Go, " & BattleScreen.OppPokemon.GetDisplayName() & "!"""))
-			End If
+                BattleScreen.BattleQuery.Add(New TextQueryObject(BattleScreen.Trainer.Name & ": ""Go, " & BattleScreen.OppPokemon.GetDisplayName() & "!"""))
+
+                ' Ball is thrown
+                Dim BallThrow As AnimationQueryObject = New AnimationQueryObject(BattleScreen.OppPokemonNPC, True, BattleScreen.OppPokemonModel)
+
+                BallThrow.AnimationPlaySound("Battle\Pokeball\Throw", 0, 0)
+                BallThrow.AnimationSpawnMovingEntity(-2, -0.15, 0, BattleScreen.OwnPokemon.CatchBall.TextureSource, 0.3F, 0.3F, 0.3F, 0, 0.35, 0, 0.1, False, True, 0F, 0F,, 0.3)
+
+                ' Ball Opens
+                BallThrow.AnimationPlaySound("Battle\Pokeball\Open", 3, 0)
+                Dim SmokeSpawned As Integer = 0
+                Do
+                    Dim SmokePosition = New Vector3(0, 0.35, 0)
+                    Dim SmokeDestination = New Vector3(CSng(Random.Next(-10, 10) / 10), CSng(Random.Next(-10, 10) / 10), CSng(Random.Next(-10, 10) / 10))
+
+                    Dim SmokeTexture As String = "Textures\Battle\Cloud"
+
+                    Dim SmokeScale = New Vector3(CSng(Random.Next(2, 6) / 10))
+                    Dim SmokeSpeed = CSng(Random.Next(1, 3) / 10.0F)
+
+                    BallThrow.AnimationSpawnMovingEntity(SmokePosition.X, SmokePosition.Y, SmokePosition.Z, SmokeTexture, SmokeScale.X, SmokeScale.Y, SmokeScale.Z, SmokeDestination.X, SmokeDestination.Y, SmokeDestination.Z, SmokeSpeed, False, False, 3.0F, 0.0F)
+                    Threading.Interlocked.Increment(SmokeSpawned)
+                Loop While SmokeSpawned <= 38
+
+                ' Pokemon appears
+                BallThrow.AnimationFadePokemonEntity(1, True, 1, 4, 0)
+                BallThrow.AnimationPlaySound(CStr(BattleScreen.OppPokemon.Number), 4, 0,, True)
+
+                '  Pokémon falls down
+                BallThrow.AnimationMovePokemonEntity(0, 0, 0, 0.05F, False, False, 4, 0,,, 4)
+
+                BattleScreen.BattleQuery.Add(BallThrow)
+            End If
 
 			With BattleScreen
 				Dim p As Pokemon = .OppPokemon

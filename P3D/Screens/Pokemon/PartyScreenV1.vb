@@ -388,8 +388,8 @@
             .Draw(BorderTexture, New Rectangle(CInt(p.X) + 320, CInt(p.Y), 32, 96), New Rectangle(32, 0, 16, 48), Color.White)
 
             If Pokemon.IsEgg() = False Then
-                Core.SpriteBatch.Draw(MainTexture, New Rectangle(CInt(p.X + 192), CInt(p.Y + 24), 134, 16), New Rectangle(0, 240, 67, 8), Color.White)
-                Dim barX As Integer = CInt((Pokemon.HP / Pokemon.MaxHP.Clamp(1, Integer.MaxValue)) * 50)
+                Core.SpriteBatch.Draw(MainTexture, New Rectangle(CInt(p.X + 200), CInt(p.Y + 24), 134, 16), New Rectangle(0, 240, 67, 8), Color.White)
+                Dim barX As Integer = CInt((Pokemon.HP / Pokemon.MaxHP.Clamp(1, Integer.MaxValue)) * 94)
                 Dim barRectangle As Rectangle
                 Dim barPercentage As Integer = CInt((Pokemon.HP / Pokemon.MaxHP.Clamp(1, Integer.MaxValue)) * 100)
 
@@ -400,10 +400,11 @@
                 ElseIf barPercentage <= 25 Then
                     barRectangle = New Rectangle(116, 0, 2, 3)
                 End If
-                For x = 0 To barX
-                    .Draw(MainTexture, New Rectangle(CInt(p.X + 192 + x + 32), CInt(p.Y + 30), 4, 6), barRectangle, Color.White)
-                Next
-
+                If barPercentage > 0 Then
+                    For x = 0 To barX Step 4
+                        .Draw(MainTexture, New Rectangle(CInt(p.X + 200 + x + 32), CInt(p.Y + 30), 4, 6), barRectangle, Color.White)
+                    Next
+                End If
                 .DrawString(TextColor, Localization.GetString("HP") & " " & Pokemon.HP & " / " & Pokemon.MaxHP, New Vector2(CInt(p.X + 192), CInt(p.Y + 48)), Color.White)
             End If
 

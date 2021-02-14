@@ -417,39 +417,45 @@
             Dim oppModel As String = GetModelName(False)
 
             If ownModel = "" Then
-                OwnPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(12, 0, 12.5F) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", True, New Vector3(1), 1, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(OwnPokemon), 3, OwnPokemon.GetDisplayName(), 0, True, "Still", New List(Of Rectangle)}), NPC)
-                OwnPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(12, -0.5F, 12.5F) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 0.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 0, "Models\Bulbasaur\Normal", False, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
+                OwnPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(12, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", True, New Vector3(1), 1, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(OwnPokemon), 3, OwnPokemon.GetDisplayName(), 0, True, "Still", New List(Of Rectangle)}, 0), NPC)
+                OwnPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(12, -0.5F, 13) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 0.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 0, "Models\Bulbasaur\Normal", False, New Vector3(1), 0, "", "", New Vector3(0), Nothing, 0), ModelEntity)
             Else
-                OwnPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(12, 0, 12.5F) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", False, New Vector3(1), 0, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(OwnPokemon), 3, OwnPokemon.GetDisplayName(), 0, True, "Still", New List(Of Rectangle)}), NPC)
-                OwnPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(12, -0.5F, 12.5F) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 0.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 1, ownModel, True, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
+                OwnPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(12, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", False, New Vector3(1), 0, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(OwnPokemon), 3, OwnPokemon.GetDisplayName(), 0, True, "Still", New List(Of Rectangle)}, 0), NPC)
+                OwnPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(12, -0.5F, 13) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 0.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 1, ownModel, True, New Vector3(1), 0, "", "", New Vector3(0), Nothing, 0), ModelEntity)
             End If
+
+            OwnPokemonNPC.Position.Y = 0.5
+            OwnPokemonModel.Position.Y = 0
 
             Screen.Level.Entities.Add(OwnPokemonNPC)
             Screen.Level.Entities.Add(OwnPokemonModel)
 
             If oppModel = "" Then
-                OppPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(15, 0, 12.5F) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", True, New Vector3(1), 1, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(OppPokemon), 1, OppPokemon.GetDisplayName(), 1, True, "Still", New List(Of Rectangle)}), NPC)
-                OppPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(15, -0.5F, 12.5F) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 1.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 0, "Models\Bulbasaur\Normal", False, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
+                OppPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(15, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", True, New Vector3(1), 1, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(OppPokemon), 1, OppPokemon.GetDisplayName(), 1, True, "Still", New List(Of Rectangle)}, 0), NPC)
+                OppPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(15, -0.5F, 13) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 1.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 0, "Models\Bulbasaur\Normal", False, New Vector3(1), 0, "", "", New Vector3(0), Nothing, 0), ModelEntity)
             Else
-                OppPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(15, 0, 12.5F) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", False, New Vector3(1), 0, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(OppPokemon), 1, OppPokemon.GetDisplayName(), 1, True, "Still", New List(Of Rectangle)}), NPC)
-                OppPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(15, -0.5F, 12.5F) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 1.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 1, oppModel, True, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
+                OppPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(15, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", False, New Vector3(1), 0, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(OppPokemon), 1, OppPokemon.GetDisplayName(), 1, True, "Still", New List(Of Rectangle)}, 0), NPC)
+                OppPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(15, -0.5F, 13) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 1.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 1, oppModel, True, New Vector3(1), 0, "", "", New Vector3(0), Nothing, 0), ModelEntity)
             End If
+
+            OppPokemonNPC.Position.Y = 0.5
+            OppPokemonModel.Position.Y = 0
 
             Screen.Level.Entities.Add(OppPokemonNPC)
             Screen.Level.Entities.Add(OppPokemonModel)
 
-            Dim ownSkin As String = Core.Player.Skin
-            If SavedOverworld.Level.Surfing = True Then
-                ownSkin = Core.Player.TempSurfSkin
-            End If
-            If SavedOverworld.Level.Riding = True Then
-                ownSkin = Core.Player.TempRideSkin
-            End If
+            Dim ownSkin As String = "\PlayerSkins\" & Core.Player.Skin
             If SavedOverworld.Level.Biking = True Then
-                ownSkin = Core.Player.TempBikeSkin
+                ownSkin = "\PlayerSkins\" & Core.Player.TempBikeSkin
             End If
             If SavedOverworld.Level.Fishing = True Then
-                ownSkin = Core.Player.TempFishSkin
+                ownSkin = "\PlayerSkins\" & Core.Player.TempFishSkin
+            End If
+            If SavedOverworld.Level.Surfing = True Then
+                ownSkin = "\PlayerSkins\" & Core.Player.TempSurfSkin
+            End If
+            If SavedOverworld.Level.Riding = True Then
+                ownSkin = "\PlayerSkins\" & Core.Player.TempRideSkin
             End If
 
             OwnTrainerNPC = CType(Entity.GetNewEntity("NPC", New Vector3(10, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", True, New Vector3(1), 0, "", "", New Vector3(0), {ownSkin, 3, "Player", 2, False, "Still", New List(Of Rectangle)}), NPC)
@@ -469,25 +475,53 @@
                 hisher = "her"
             End If
 
-            Dim q1 As New PlaySoundQueryObject(OppPokemon.Number.ToString(), True, 5.0F)
-            Dim q2 As TextQueryObject = New TextQueryObject(Trainer.Name & " and " & hisher & " " & Me.OppPokemon.GetDisplayName() & " want to battle!")
+            Dim q1 As TextQueryObject = New TextQueryObject(Trainer.Name & " wants to battle!")
 
-            Dim q22 As CameraQueryObject = New CameraQueryObject(New Vector3(14, 0, 15), New Vector3(13, 0, 15), 0.05F, 0.05F, MathHelper.PiOver2, -0.8F, 0.0F, 0.0F, 0.05F, 0.05F)
+            ' Ball is thrown
+            Dim BallThrowOpp As AnimationQueryObject = New AnimationQueryObject(OppPokemonNPC, True, OppPokemonModel)
+
+            BallThrowOpp.AnimationPlaySound("Battle\Pokeball\Throw", 0, 0)
+            BallThrowOpp.AnimationSpawnMovingEntity(-2, -0.15, 0, Me.OppPokemon.CatchBall.TextureSource, 0.3F, 0.3F, 0.3F, 0, 0.35, 0, 0.1, False, True, 0F, 0F,, 0.3)
+
+            ' Ball Opens
+            BallThrowOpp.AnimationPlaySound("Battle\Pokeball\Open", 3, 0)
+            Dim SmokeSpawnedOpp As Integer = 0
+            Do
+                Dim SmokePosition = New Vector3(0, 0.35, 0)
+                Dim SmokeDestination = New Vector3(CSng(Random.Next(-10, 10) / 10), CSng(Random.Next(-10, 10) / 10), CSng(Random.Next(-10, 10) / 10))
+
+                Dim SmokeTexture As String = "Textures\Battle\Cloud"
+
+                Dim SmokeScale = New Vector3(CSng(Random.Next(2, 6) / 10))
+                Dim SmokeSpeed = CSng(Random.Next(1, 3) / 10.0F)
+
+                BallThrowOpp.AnimationSpawnMovingEntity(SmokePosition.X, SmokePosition.Y, SmokePosition.Z, SmokeTexture, SmokeScale.X, SmokeScale.Y, SmokeScale.Z, SmokeDestination.X, SmokeDestination.Y, SmokeDestination.Z, SmokeSpeed, False, False, 3.0F, 0.0F)
+                Threading.Interlocked.Increment(SmokeSpawnedOpp)
+            Loop While SmokeSpawnedOpp <= 38
+
+            ' Pokemon appears
+            BallThrowOpp.AnimationFadePokemonEntity(1, True, 1, 4, 0)
+            BallThrowOpp.AnimationPlaySound(CStr(Me.OppPokemon.Number), 4, 0,, True)
+
+            '  Pokémon falls down
+            BallThrowOpp.AnimationMovePokemonEntity(0, -0.5, 0, 0.05F, False, False, 4, 0,,, 4)
+
+            Dim q2 As CameraQueryObject = New CameraQueryObject(New Vector3(14, 0, 15), New Vector3(13, 0, 15), 0.05F, 0.05F, MathHelper.PiOver2, -0.8F, 0.0F, 0.0F, 0.05F, 0.05F)
 
             Dim q3 As CameraQueryObject = New CameraQueryObject(New Vector3(14, 0, 11), New Vector3(14, 0, 15), 0.01F, 0.01F, MathHelper.PiOver2, MathHelper.PiOver2, 0.0F, 0.0F)
             q3.PassThis = True
 
             Dim q4 As TextQueryObject = New TextQueryObject("Go, " & Me.OwnPokemon.GetDisplayName() & "!")
 
-            Me.BattleQuery.AddRange({cq, q, q1, q2, q22, q3, q4})
+            Me.BattleQuery.AddRange({cq, q, q1, BallThrowOpp, q2, q3, q4})
 
             ' Ball is thrown
-            Dim BallThrow As AnimationQueryObject = New AnimationQueryObject(OwnPokemonNPC, False, OwnPokemonModel)
-            BallThrow.AnimationPlaySound("Battle\Pokeball\Throw", 0, 0)
-            BallThrow.AnimationSpawnMovingEntity(-2, -0.65, 0, OwnPokemon.CatchBall.TextureSource, 0.3F, 0.3F, 0.3F, 0, 0, 0, 0.1, False, True, 0F, 0F,, 0.3)
+            Dim BallThrowOwn As AnimationQueryObject = New AnimationQueryObject(OwnPokemonNPC, False, OwnPokemonModel)
+            BallThrowOwn.AnimationPlaySound("Battle\Pokeball\Throw", 0, 0)
+            BallThrowOwn.AnimationSpawnMovingEntity(-2, -0.65, 0, OwnPokemon.CatchBall.TextureSource, 0.3F, 0.3F, 0.3F, 0, 0, 0, 0.1, False, True, 0F, 0F,, 0.3)
 
             ' Ball Opens
-            BallThrow.AnimationPlaySound("Battle\Pokeball\Open", 3, 0)
+            BallThrowOwn.AnimationPlaySound("Battle\Pokeball\Open", 3, 0)
             Dim SmokeSpawned As Integer = 0
             Do
                 Dim SmokePosition = New Vector3(0, 0, 0)
@@ -498,18 +532,18 @@
                 Dim SmokeScale = New Vector3(CSng(Random.Next(2, 6) / 10))
                 Dim SmokeSpeed = CSng(Random.Next(1, 3) / 10.0F)
 
-                BallThrow.AnimationSpawnMovingEntity(SmokePosition.X, SmokePosition.Y, SmokePosition.Z, SmokeTexture, SmokeScale.X, SmokeScale.Y, SmokeScale.Z, SmokeDestination.X, SmokeDestination.Y, SmokeDestination.Z, SmokeSpeed, False, False, 3.0F, 0.0F)
+                BallThrowOwn.AnimationSpawnMovingEntity(SmokePosition.X, SmokePosition.Y, SmokePosition.Z, SmokeTexture, SmokeScale.X, SmokeScale.Y, SmokeScale.Z, SmokeDestination.X, SmokeDestination.Y, SmokeDestination.Z, SmokeSpeed, False, False, 3.0F, 0.0F)
                 Threading.Interlocked.Increment(SmokeSpawned)
             Loop While SmokeSpawned <= 38
 
             ' Pokemon appears
-            BallThrow.AnimationFadePokemonEntity(1, True, 1, 4, 0, 0)
-            BallThrow.AnimationPlaySound(CStr(OwnPokemon.Number), 4, 0,, True)
+            BallThrowOwn.AnimationFadePokemonEntity(1, True, 1, 4, 0, 0)
+            BallThrowOwn.AnimationPlaySound(CStr(OwnPokemon.Number), 4, 0,, True)
 
             '  Pokémon falls down
-            BallThrow.AnimationMovePokemonEntity(0, -0.5, 0, 0.05F, False, False, 4, 0,,, 4)
+            BallThrowOwn.AnimationMovePokemonEntity(0, -0.5, 0, 0.05F, False, False, 4, 0,,, 4)
 
-            Me.BattleQuery.Add(BallThrow)
+            Me.BattleQuery.Add(BallThrowOwn)
 
             Dim q5 As ToggleMenuQueryObject = New ToggleMenuQueryObject(Me.BattleMenu.Visible)
 
@@ -554,8 +588,8 @@
             If MusicManager.SongExists(SavedOverworld.Level.CurrentRegion.Split(CChar(","))(0) & "_wild") = True Then
                 MusicManager.Play(SavedOverworld.Level.CurrentRegion.Split(CChar(","))(0) & "_wild", True, 0.0F)
             Else
-				MusicManager.Play("hoenn_wild", True, 0.0F)
-			End If
+                MusicManager.Play("hoenn_wild", True, 0.0F)
+            End If
 
             Me.defaultMapType = defaultMapType
 
@@ -594,39 +628,39 @@
             Dim oppModel As String = GetModelName(False)
 
             If ownModel = "" Then
-                OwnPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(12, 0, 12.5F) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", False, New Vector3(1), 1, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(OwnPokemon), 3, WildPokemon.GetDisplayName(), 0, True, "Still", New List(Of Rectangle)}), NPC)
-                OwnPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(12, -0.5F, 12.5F) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 0.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 0, "Models\Bulbasaur\Normal", False, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
+                OwnPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(12, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", False, New Vector3(1), 1, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(OwnPokemon), 3, WildPokemon.GetDisplayName(), 0, True, "Still", New List(Of Rectangle)}), NPC)
+                OwnPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(12, -0.5F, 13) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 0.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 0, "Models\Bulbasaur\Normal", False, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
             Else
-                OwnPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(12, 0, 12.5F) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", False, New Vector3(1), 0, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(OwnPokemon), 3, WildPokemon.GetDisplayName(), 0, True, "Still", New List(Of Rectangle)}), NPC)
-                OwnPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(12, -0.5F, 12.5F) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 0.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 1, ownModel, False, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
+                OwnPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(12, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", False, New Vector3(1), 0, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(OwnPokemon), 3, WildPokemon.GetDisplayName(), 0, True, "Still", New List(Of Rectangle)}), NPC)
+                OwnPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(12, -0.5F, 13) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 0.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 1, ownModel, False, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
             End If
 
             Screen.Level.Entities.Add(OwnPokemonNPC)
             Screen.Level.Entities.Add(OwnPokemonModel)
 
             If oppModel = "" Then
-                OppPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(15, 0, 12.5F) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", True, New Vector3(1), 1, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(WildPokemon), 1, WildPokemon.GetDisplayName(), 1, True, "Still", New List(Of Rectangle)}), NPC)
-                OppPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(15, -0.5F, 12.5F) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 1.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 0, "Models\Bulbasaur\Normal", False, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
+                OppPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(15, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", True, New Vector3(1), 1, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(WildPokemon), 1, WildPokemon.GetDisplayName(), 1, True, "Still", New List(Of Rectangle)}), NPC)
+                OppPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(15, -0.5F, 13) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 1.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 0, "Models\Bulbasaur\Normal", False, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
             Else
-                OppPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(15, 0, 12.5F) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", False, New Vector3(1), 0, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(WildPokemon), 1, WildPokemon.GetDisplayName(), 1, True, "Still", New List(Of Rectangle)}), NPC)
-                OppPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(15, -0.5F, 12.5F) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 1.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 1, oppModel, True, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
+                OppPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(15, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", False, New Vector3(1), 0, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(WildPokemon), 1, WildPokemon.GetDisplayName(), 1, True, "Still", New List(Of Rectangle)}), NPC)
+                OppPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(15, -0.5F, 13) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 1.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 1, oppModel, True, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
             End If
 
             Screen.Level.Entities.Add(OppPokemonNPC)
             Screen.Level.Entities.Add(OppPokemonModel)
 
-            Dim ownSkin As String = Core.Player.Skin
-            If SavedOverworld.Level.Surfing = True Then
-                ownSkin = Core.Player.TempSurfSkin
-            End If
-            If SavedOverworld.Level.Riding = True Then
-                ownSkin = Core.Player.TempRideSkin
+            Dim ownSkin As String = "\PlayerSkins\" & Core.Player.Skin
+            If SavedOverworld.Level.Biking = True Then
+                ownSkin = "\PlayerSkins\" & Core.Player.TempBikeSkin
             End If
             If SavedOverworld.Level.Fishing = True Then
-                ownSkin = Core.Player.TempFishSkin
+                ownSkin = "\PlayerSkins\" & Core.Player.TempFishSkin
             End If
-            If SavedOverworld.Level.Biking = True Then
-                ownSkin = Core.Player.TempBikeSkin
+            If SavedOverworld.Level.Surfing = True Then
+                ownSkin = "\PlayerSkins\" & Core.Player.TempSurfSkin
+            End If
+            If SavedOverworld.Level.Riding = True Then
+                ownSkin = "\PlayerSkins\" & Core.Player.TempRideSkin
             End If
 
             OwnTrainerNPC = CType(Entity.GetNewEntity("NPC", New Vector3(10, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", True, New Vector3(1), 0, "", "", New Vector3(0), {ownSkin, 3, "Player", 2, False, "Still", New List(Of Rectangle)}), NPC)
@@ -677,8 +711,8 @@
             If MusicManager.SongExists(SavedOverworld.Level.CurrentRegion.Split(CChar(","))(0) & "_wild") = True Then
                 MusicManager.Play(SavedOverworld.Level.CurrentRegion.Split(CChar(","))(0) & "_wild", True, 0.0F)
             Else
-				MusicManager.Play("hoenn_wild", True, 0.0F)
-			End If
+                MusicManager.Play("hoenn_wild", True, 0.0F)
+            End If
 
             Me.defaultMapType = defaultMapType
 
@@ -718,22 +752,22 @@
             Dim oppModel As String = GetModelName(False)
 
             If ownModel = "" Then
-                OwnPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(12, 0, 12.5F) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", True, New Vector3(1), 1, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(OwnPokemon), 3, WildPokemon.GetDisplayName(), 0, True, "Still", New List(Of Rectangle)}), NPC)
-                OwnPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(12, -0.5F, 12.5F) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 0.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 0, "Models\Bulbasaur\Normal", False, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
+                OwnPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(12, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", True, New Vector3(1), 1, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(OwnPokemon), 3, WildPokemon.GetDisplayName(), 0, True, "Still", New List(Of Rectangle)}), NPC)
+                OwnPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(12, -0.5F, 13) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 0.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 0, "Models\Bulbasaur\Normal", False, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
             Else
-                OwnPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(12, 0, 12.5F) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", False, New Vector3(1), 0, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(OwnPokemon), 3, WildPokemon.GetDisplayName(), 0, True, "Still", New List(Of Rectangle)}), NPC)
-                OwnPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(12, -0.5F, 12.5F) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 0.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 1, ownModel, True, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
+                OwnPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(12, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", False, New Vector3(1), 0, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(OwnPokemon), 3, WildPokemon.GetDisplayName(), 0, True, "Still", New List(Of Rectangle)}), NPC)
+                OwnPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(12, -0.5F, 13) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 0.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 1, ownModel, True, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
             End If
 
             Screen.Level.Entities.Add(OwnPokemonNPC)
             Screen.Level.Entities.Add(OwnPokemonModel)
 
             If oppModel = "" Then
-                OppPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(15, 0, 12.5F) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", True, New Vector3(1), 1, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(WildPokemon), 1, WildPokemon.GetDisplayName(), 1, True, "Still", New List(Of Rectangle)}), NPC)
-                OppPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(15, -0.5F, 12.5F) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 1.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 0, "Models\Bulbasaur\Normal", False, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
+                OppPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(15, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", True, New Vector3(1), 1, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(WildPokemon), 1, WildPokemon.GetDisplayName(), 1, True, "Still", New List(Of Rectangle)}), NPC)
+                OppPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(15, -0.5F, 13) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 1.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 0, "Models\Bulbasaur\Normal", False, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
             Else
-                OppPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(15, 0, 12.5F) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", False, New Vector3(1), 0, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(WildPokemon), 1, WildPokemon.GetDisplayName(), 1, True, "Still", New List(Of Rectangle)}), NPC)
-                OppPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(15, -0.5F, 12.5F) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 1.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 1, oppModel, True, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
+                OppPokemonNPC = CType(Entity.GetNewEntity("NPC", New Vector3(15, 0, 13) + BattleMapOffset, {Nothing}, {0, 0}, False, New Vector3(0), New Vector3(1), BaseModel.BillModel, 0, "", False, New Vector3(1), 0, "", "", New Vector3(0), {PokemonForms.GetOverworldSpriteName(WildPokemon), 1, WildPokemon.GetDisplayName(), 1, True, "Still", New List(Of Rectangle)}), NPC)
+                OppPokemonModel = CType(Entity.GetNewEntity("ModelEntity", New Vector3(15, -0.5F, 13) + BattleMapOffset, {}, {}, False, New Vector3(MathHelper.Pi * 0.5F, MathHelper.Pi * 1.5F, 0), New Vector3(0.07F), BaseModel.BlockModel, 1, oppModel, True, New Vector3(1), 0, "", "", New Vector3(0), Nothing), ModelEntity)
             End If
 
             Screen.Level.Entities.Add(OppPokemonNPC)
@@ -830,10 +864,10 @@
         Public Sub InitializePVP(ByVal PVPTrainer As Trainer, ByVal OverworldScreen As Screen)
             Me.IsPVPBattle = True
             Me.BattleMode = BattleModes.PVP
-            BattleScreen.CanReceiveEXP = False
-            BattleScreen.CanBlackout = False
-            BattleScreen.CanRun = False
-            BattleScreen.CanUseItems = False
+            Me.CanReceiveEXP = False
+            Me.CanBlackout = False
+            Me.CanRun = False
+            Me.CanUseItems = False
             PVPLobbyScreen.StoppedBattle = True
             PVPLobbyScreen.DisconnectMessage = "The battle has ended." & Environment.NewLine & Environment.NewLine & "Press any key to exit."
             PVPLobbyScreen.ScreenState = PVPLobbyScreen.ScreenStates.Stopped

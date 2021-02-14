@@ -289,7 +289,7 @@
 
                 DrawPokeBalls(New Vector2(Core.windowSize.Width - 480, Core.windowSize.Height - 240 - 64), BattleScreen, Core.Player.Pokemons, False)
                 If BattleScreen.IsTrainerBattle = True Then
-                    DrawPokeBalls(New Vector2(96, 64), BattleScreen, BattleScreen.Trainer.Pokemons, True)
+                    DrawPokeBalls(New Vector2(96, 32), BattleScreen, BattleScreen.Trainer.Pokemons, True)
                 End If
 
                 Select Case MenuState
