@@ -135,7 +135,7 @@
                     Else
                         Dim barPercentage As Integer = CInt((currentExp / NextLvExp) * 100)
                         If barPercentage > 0 Then
-                            Dim EXPlength As Integer = CInt(Math.Ceiling(144 / 100 * barPercentage))
+                            Dim EXPlength As Integer = CInt(Math.Ceiling(256 / 100 * barPercentage))
 
                             If currentExp = 0 Then
                                 EXPlength = 0
@@ -150,7 +150,7 @@
 
                             Dim t = TextureManager.GetTexture("GUI\Battle\Interface")
                             For dX As Integer = 0 To EXPlength Step 8
-                                Core.SpriteBatch.Draw(t, New Rectangle(CInt(pos.X) + 192 + dX, CInt(pos.Y) + 54, 8, 8), New Rectangle(6, 114, 2, 2), New Color(255, 255, 255, _moveMenuAlpha))
+                                Core.SpriteBatch.Draw(t, New Rectangle(CInt(pos.X) + 128 + dX, CInt(pos.Y) + 140, 8, 8), New Rectangle(6, 114, 2, 2), New Color(255, 255, 255, _moveMenuAlpha))
                             Next
                         End If
                     End If
@@ -206,7 +206,7 @@
             Dim caughtX As Integer = 0
             Dim StatusTexture As Texture2D = BattleStats.GetStatImage(p.Status)
             If Not StatusTexture Is Nothing Then
-                Core.SpriteBatch.Draw(StatusTexture, New Rectangle(CInt(pos.X) + 12, CInt(pos.Y) + 26, 38, 12), New Color(255, 255, 255, _moveMenuAlpha))
+                Core.SpriteBatch.Draw(StatusTexture, New Rectangle(CInt(pos.X + 64 + FontManager.MainFontBlack.MeasureString(p.GetDisplayName() & " " & Localization.GetString("Lv.") & " " & p.Level.ToString()).X + 32), CInt(pos.Y) + 32, 80, 32), New Color(255, 255, 255, _moveMenuAlpha))
                 caughtX = -16
             End If
 
@@ -364,7 +364,7 @@
                 Me.Text = Text
                 Me.Index = Index
 
-                Me.Texture = TextureManager.GetTexture("GUI\Menus\General")
+                Me.Texture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 0, 48, 48), "")
 
                 Me.ClickAction = ClickAction
             End Sub
@@ -372,20 +372,18 @@
             Public Sub Draw(ByVal AllExtended As Integer, ByVal SelExtended As Integer, ByVal isSelected As Boolean)
                 Dim extraExtended As Integer = 0
                 If isSelected = True Then
-                    Canvas.DrawGradient(New Rectangle(Core.ScreenSize.Width - 255, 100 + Index * 96, 255, 112), New Color(42, 167, 198, 0), New Color(42, 167, 198, (SelExtended + AllExtended)), True, -1)
 
                     extraExtended = SelExtended
                 End If
-                Core.SpriteBatch.Draw(Me.Texture, New Rectangle(Core.ScreenSize.Width - (AllExtended + extraExtended), 116 + Index * 96, 80, 80), New Rectangle(16, 16, 16, 16), Color.White)
-                Core.SpriteBatch.Draw(Me.Texture, New Rectangle(Core.ScreenSize.Width - (AllExtended + extraExtended) + 80, 116 + Index * 96, AllExtended + extraExtended - 80, 80), New Rectangle(32, 16, 16, 16), Color.White)
+                Canvas.DrawImageBorder(Me.Texture, 3, New Rectangle(Core.ScreenSize.Width - (AllExtended + extraExtended), 116 + Index * 96, 288, 48))
 
-                Core.SpriteBatch.Draw(Me.IconUnselected, New Rectangle(Core.ScreenSize.Width - (AllExtended + extraExtended) + 28, 132 + Index * 96, 48, 48), Color.White)
+                Core.SpriteBatch.Draw(Me.IconUnselected, New Rectangle(Core.ScreenSize.Width - (AllExtended + extraExtended) + 28, 140 + Index * 96, 48, 48), Color.White)
                 If isSelected = True Then
-                    Core.SpriteBatch.Draw(Me.IconSelected, New Rectangle(Core.ScreenSize.Width - (AllExtended + extraExtended) + 28, 132 + Index * 96, 48, 48), New Color(255, 255, 255, (SelExtended + AllExtended)))
-					Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Me.Text, New Vector2(Core.ScreenSize.Width - (AllExtended + extraExtended) + 86, 144 + Index * 96), New Color(255, 255, 255, (SelExtended + AllExtended)))
-				Else
+                    Core.SpriteBatch.Draw(Me.IconSelected, New Rectangle(Core.ScreenSize.Width - (AllExtended + extraExtended) + 28, 140 + Index * 96, 48, 48), New Color(255, 255, 255, (SelExtended + AllExtended)))
+                    Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Me.Text, New Vector2(Core.ScreenSize.Width - (AllExtended + extraExtended) + 86, 148 + Index * 96), New Color(255, 255, 255, (SelExtended + AllExtended)))
+                Else
                     If IconFading > 0 Then
-                        Core.SpriteBatch.Draw(Me.IconSelected, New Rectangle(Core.ScreenSize.Width - (AllExtended) + 28, 132 + Index * 96, 48, 48), New Color(255, 255, 255, IconFading))
+                        Core.SpriteBatch.Draw(Me.IconSelected, New Rectangle(Core.ScreenSize.Width - (AllExtended) + 28, 140 + Index * 96, 48, 48), New Color(255, 255, 255, IconFading))
                     End If
                 End If
             End Sub
@@ -446,7 +444,7 @@
                 Me.Index = Index
                 Me.Move = Move
                 Me.ClickAction = ClickAction
-                Me.Texture = TextureManager.GetTexture("GUI\Menus\General")
+                Me.Texture = TextureManager.GetTexture("GUI\Menus\Menu", New Rectangle(0, 0, 48, 48), "")
             End Sub
 
             Public Sub Draw(ByVal AllExtended As Integer, ByVal SelExtended As Integer, ByVal isSelected As Boolean, ByVal BattleScreen As BattleScreen)
@@ -454,25 +452,22 @@
 
                 Dim extraExtended As Integer = 0
                 If isSelected = True Then
-                    Canvas.DrawGradient(New Rectangle(Core.ScreenSize.Width - 255, 100 + Index * 96, 255, 112), New Color(42, 167, 198, 0), New Color(42, 167, 198, (SelExtended + AllExtended) - deductAlpha), True, -1)
-
                     extraExtended = SelExtended
                 End If
-                Core.SpriteBatch.Draw(Me.Texture, New Rectangle(Core.ScreenSize.Width - (AllExtended + extraExtended), 116 + Index * 96, 80, 80), New Rectangle(16, 16, 16, 16), New Color(255, 255, 255, 255 - deductAlpha))
-                Core.SpriteBatch.Draw(Me.Texture, New Rectangle(Core.ScreenSize.Width - (AllExtended + extraExtended) + 80, 116 + Index * 96, AllExtended + extraExtended - 80, 80), New Rectangle(32, 16, 16, 16), New Color(255, 255, 255, 255 - deductAlpha))
+                Canvas.DrawImageBorder(Me.Texture, 3, New Rectangle(Core.ScreenSize.Width - (AllExtended + extraExtended), 116 + Index * 96, 288, 48))
 
-                Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\Types", Me.Move.Type.GetElementImage(), ""), New Rectangle(Core.ScreenSize.Width - (AllExtended + extraExtended) + 28, 132 + Index * 96, 48, 16), New Color(255, 255, 255, 255 - deductAlpha))
+                Core.SpriteBatch.Draw(TextureManager.GetTexture("GUI\Menus\Types", Me.Move.Type.GetElementImage(), ""), New Rectangle(Core.ScreenSize.Width - (AllExtended + extraExtended) + 28, 136 + Index * 96, 48, 16), New Color(255, 255, 255, 255 - deductAlpha))
 
                 If isSelected = True Then
 					Dim ppColor As Color = GetPPColor()
 					Dim ppFont As SpriteFont = GetPPFont()
 					ppColor.A = CByte((extraExtended + AllExtended - deductAlpha).Clamp(0, 255))
 
-					Core.SpriteBatch.DrawString(ppFont, Me.Move.CurrentPP & "/" & Me.Move.MaxPP, New Vector2(Core.ScreenSize.Width - (AllExtended + extraExtended) + 28, 150 + Index * 96), ppColor)
-					Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Me.Move.Name, New Vector2(Core.ScreenSize.Width - (AllExtended + extraExtended) + 86, 144 + Index * 96), New Color(255, 255, 255, (SelExtended + AllExtended) - deductAlpha))
-				Else
-					Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Me.Move.Name, New Vector2(Core.ScreenSize.Width - (AllExtended + extraExtended) + 28, 150 + Index * 96), New Color(255, 255, 255, 255 - (extraExtended + AllExtended) - deductAlpha))
-				End If
+                    Core.SpriteBatch.DrawString(ppFont, Me.Move.CurrentPP & "/" & Me.Move.MaxPP, New Vector2(Core.ScreenSize.Width - (AllExtended + extraExtended) + 28, 154 + Index * 96), ppColor)
+                    Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Me.Move.Name, New Vector2(Core.ScreenSize.Width - (AllExtended + extraExtended) + ppFont.MeasureString(Me.Move.CurrentPP & "/" & Me.Move.MaxPP).X + 48, 154 + Index * 96), New Color(255, 255, 255, (SelExtended + AllExtended) - deductAlpha))
+                Else
+                    Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Me.Move.Name, New Vector2(Core.ScreenSize.Width - (AllExtended + extraExtended) + 28, 154 + Index * 96), New Color(255, 255, 255, 255 - (extraExtended + AllExtended) - deductAlpha))
+                End If
             End Sub
 
             Private Function GetPPColor() As Color

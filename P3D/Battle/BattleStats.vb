@@ -4,18 +4,18 @@
         Dim r As Rectangle = New Rectangle(0, 0, 0, 0)
 
         Select Case status
-            Case Pokemon.StatusProblems.BadPoison, Pokemon.StatusProblems.Poison
-                r = New Rectangle(96, 18, 19, 6)
             Case Pokemon.StatusProblems.Burn
-                r = New Rectangle(96, 0, 19, 6)
-            Case Pokemon.StatusProblems.Fainted
-                r = New Rectangle(96, 30, 19, 6)
-            Case Pokemon.StatusProblems.Freeze
-                r = New Rectangle(96, 12, 19, 6)
+                r = New Rectangle(124, 80, 20, 8)
             Case Pokemon.StatusProblems.Paralyzed
-                r = New Rectangle(96, 6, 19, 6)
+                r = New Rectangle(124, 88, 20, 8)
+            Case Pokemon.StatusProblems.Freeze
+                r = New Rectangle(124, 96, 20, 8)
+            Case Pokemon.StatusProblems.BadPoison, Pokemon.StatusProblems.Poison
+                r = New Rectangle(124, 104, 20, 8)
             Case Pokemon.StatusProblems.Sleep
-                r = New Rectangle(96, 24, 19, 6)
+                r = New Rectangle(124, 112, 20, 8)
+            Case Pokemon.StatusProblems.Fainted
+                r = New Rectangle(124, 120, 20, 8)
             Case Pokemon.StatusProblems.None
                 Return Nothing
         End Select

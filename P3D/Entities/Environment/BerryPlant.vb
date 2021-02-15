@@ -114,11 +114,11 @@
             Dim r As Rectangle
             Select Case Me.Phase
                 Case 0
-                    r = New Rectangle(448, 480, 32, 32)
+                    r = New Rectangle(0, 0, 32, 32)
                 Case 1
-                    r = New Rectangle(480, 480, 32, 32)
+                    r = New Rectangle(32, 0, 32, 32)
             End Select
-            t = P3D.TextureManager.GetTexture("Items\ItemSheet", r, "")
+            t = P3D.TextureManager.GetTexture("Textures\BerrySapling", r, "")
         End If
 
         Me.Textures(0) = t

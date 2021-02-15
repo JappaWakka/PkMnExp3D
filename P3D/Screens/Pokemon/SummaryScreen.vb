@@ -227,7 +227,7 @@
 			'Draw status condition
 			Dim StatusTexture As Texture2D = BattleStats.GetStatImage(GetPokemon().Status)
             If Not StatusTexture Is Nothing Then
-                Core.SpriteBatch.Draw(StatusTexture, New Rectangle(DeltaX + 180, DeltaY + 48 + 3, 59, 18), New Color(255, 255, 255, CInt(255 * _fadeIn)))
+                Core.SpriteBatch.Draw(StatusTexture, New Rectangle(CInt(DeltaX + 180), CInt(DeltaY + 48 + 3), 40, 16), New Color(255, 255, 255, CInt(255 * _fadeIn)))
             End If
 
             'Draw shiny star:

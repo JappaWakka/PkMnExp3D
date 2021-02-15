@@ -388,7 +388,7 @@
             .Draw(BorderTexture, New Rectangle(CInt(p.X) + 320, CInt(p.Y), 32, 96), New Rectangle(32, 0, 16, 48), Color.White)
 
             If Pokemon.IsEgg() = False Then
-                Core.SpriteBatch.Draw(MainTexture, New Rectangle(CInt(p.X + 200), CInt(p.Y + 24), 134, 16), New Rectangle(0, 240, 67, 8), Color.White)
+                Core.SpriteBatch.Draw(MainTexture, New Rectangle(CInt(p.X + 200), CInt(p.Y + 32), 134, 16), New Rectangle(0, 240, 67, 8), Color.White)
                 Dim barX As Integer = CInt((Pokemon.HP / Pokemon.MaxHP.Clamp(1, Integer.MaxValue)) * 94)
                 Dim barRectangle As Rectangle
                 Dim barPercentage As Integer = CInt((Pokemon.HP / Pokemon.MaxHP.Clamp(1, Integer.MaxValue)) * 100)
@@ -402,10 +402,10 @@
                 End If
                 If barPercentage > 0 Then
                     For x = 0 To barX Step 4
-                        .Draw(MainTexture, New Rectangle(CInt(p.X + 200 + x + 32), CInt(p.Y + 30), 4, 6), barRectangle, Color.White)
+                        .Draw(MainTexture, New Rectangle(CInt(p.X + 200 + x + 32), CInt(p.Y + 38), 4, 6), barRectangle, Color.White)
                     Next
                 End If
-                .DrawString(TextColor, Localization.GetString("HP") & " " & Pokemon.HP & " / " & Pokemon.MaxHP, New Vector2(CInt(p.X + 192), CInt(p.Y + 48)), Color.White)
+                .DrawString(TextColor, Localization.GetString("HP") & " " & Pokemon.HP & " / " & Pokemon.MaxHP, New Vector2(CInt(p.X + 200), CInt(p.Y + 48)), Color.White)
             End If
 
             Dim offset As Single = CSng(Math.Sin(yOffset))
@@ -430,7 +430,7 @@
             End If
 
             If Not Pokemon.Item Is Nothing And Pokemon.IsEgg() = False Then
-                .Draw(Pokemon.Item.Texture, New Rectangle(CInt(p.X + 40), CInt(p.Y + 42), 32, 32), Color.White)
+                .Draw(Pokemon.Item.Texture, New Rectangle(CInt(p.X + 40), CInt(p.Y + 42), 24, 24), Color.White)
             End If
 
             Dim space As String = ""
@@ -444,7 +444,7 @@
 
             Dim StatusTexture As Texture2D = BattleStats.GetStatImage(Pokemon.Status)
             If Not StatusTexture Is Nothing Then
-                Core.SpriteBatch.Draw(StatusTexture, New Rectangle(CInt(p.X + 240), CInt(p.Y + 16), 38, 12), Color.White)
+                Core.SpriteBatch.Draw(StatusTexture, New Rectangle(CInt(p.X + 256), CInt(p.Y + 16), 40, 16), Color.White)
             End If
         End With
 

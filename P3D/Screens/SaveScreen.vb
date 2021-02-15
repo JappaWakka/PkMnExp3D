@@ -120,11 +120,11 @@
                     .Draw(pokeTexture, New Rectangle(CInt(Pos.X) - CInt(pokeTexture.Width - 32), CInt(Pos.Y), pokeTexture.Width * 2, 64), Color.White)
 
                     If Not Core.Player.Pokemons(i).Item Is Nothing And Core.Player.Pokemons(i).IsEgg() = False Then
-                        .Draw(Core.Player.Pokemons(i).Item.Texture, New Rectangle(CInt(Pos.X) + 36, CInt(Pos.Y) + 36, 32, 32), Color.White)
+                        .Draw(Core.Player.Pokemons(i).Item.Texture, New Rectangle(CInt(Pos.X) + 36, CInt(Pos.Y) + 36, 48, 48), Color.White)
                     End If
                 Next
 
-                .DrawString(FontManager.MainFontBlack, Localization.GetString("global_player_name") & ": " & Core.Player.Name & Environment.NewLine & Environment.NewLine & Localization.GetString("global_badges") & ": " & Core.Player.Badges.Count.ToString() & Environment.NewLine & Environment.NewLine & Localization.GetString("global_money") & ": " & Core.Player.Money & Environment.NewLine & Environment.NewLine & Localization.GetString("global_play_time") & ": " & TimeHelpers.GetDisplayTime(TimeHelpers.GetCurrentPlayTime(), True), New Vector2(Delta_X + 400, Delta_Y + 50), Color.White)
+                .DrawString(FontManager.MainFontBlack, Localization.GetString("global_player_name") & ": " & Core.Player.Name & Environment.NewLine & Localization.GetString("global_badges") & ": " & Core.Player.Badges.Count.ToString() & Environment.NewLine & Localization.GetString("global_money") & ": " & Core.Player.Money & Environment.NewLine & Localization.GetString("global_play_time") & ": " & TimeHelpers.GetDisplayTime(TimeHelpers.GetCurrentPlayTime(), True), New Vector2(Delta_X + 400, Delta_Y + 50 + 128), Color.White)
             End If
         End With
         Screen.ChooseBox.Draw(New Vector2(Delta_X + 115, Delta_Y + 155), False, 1.5F)

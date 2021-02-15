@@ -442,7 +442,7 @@
         Me.Sound = 50
         Me.RenderDistance = 2
         Me.GraphicStyle = 1
-        Me.ShowBattleAnimations = 2
+        Me.ShowBattleAnimations = 1
         Me.DiagonalMovement = False
         Me.Difficulty = 0
         Me.BattleStyle = 1

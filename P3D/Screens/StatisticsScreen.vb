@@ -71,7 +71,7 @@
 
             If ItemID <> "" Then
                 Dim Item As Item = Item.GetItemByID(CInt(ItemID))
-                Core.SpriteBatch.Draw(Item.Texture, New Rectangle(150, 192 + i * 64 + Scroll, 32, 32), Color.White)
+                Core.SpriteBatch.Draw(Item.Texture, New Rectangle(150, 192 + i * 64 + Scroll, 48, 48), Color.White)
             End If
 
             Core.SpriteBatch.DrawString(FontManager.MainFontWhite, name, New Vector2(150 + ItemIDX, 200 + i * 64 + Scroll), Color.White, 0.0F, Vector2.Zero, 2.0F, SpriteEffects.None, 0.0F)

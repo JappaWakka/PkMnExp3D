@@ -12,7 +12,7 @@
     Dim AttackToggle As Boolean = False
     Dim AttackPos As Single = 0
     Dim SwitchIndex As Integer = -1
-    Dim dummyPokeIndex As Integer = 0
+    Dim dummyPokeIndex As Integer = -1
 
     Dim viewParty As Boolean = True
 
@@ -41,12 +41,12 @@
                 End If
             End If
 
-            If Controls.Down(True, False, False) Then
+            If Controls.Down(True, True, False) Then
                 Me.PokeIndex += 1
                 FrontView = True
                 AttackIndex = 0
             End If
-            If Controls.Up(True, False, False) Then
+            If Controls.Up(True, True, False) Then
                 Me.PokeIndex -= 1
                 FrontView = True
                 AttackIndex = 0
@@ -242,7 +242,7 @@
         End If
         Core.SpriteBatch.Draw(Pokemon.GetMenuTexture(), New Rectangle(70, 110, 64, 64), BattleStats.GetStatColor(Pokemon.Status))
         If Not Pokemon.Item Is Nothing And Pokemon.EggSteps = 0 Then
-            Core.SpriteBatch.Draw(Pokemon.Item.Texture, New Rectangle(118, 150, 32, 32), Color.White)
+            Core.SpriteBatch.Draw(Pokemon.Item.Texture, New Rectangle(118, 150, 48, 48), Color.White)
         End If
 
         ' Portrait:
@@ -277,8 +277,7 @@
                 If Pokemon.GetDisplayName() <> Pokemon.GetName() Then
                     Y = 127
                 End If
-                Canvas.DrawRectangle(New Rectangle(CInt(170 + FontManager.MainFontWhite.MeasureString(Pokemon.GetDisplayName()).X), Y, 61, 22), Color.Gray)
-                Core.SpriteBatch.Draw(StatusTexture, New Rectangle(CInt(172 + FontManager.MainFontWhite.MeasureString(Pokemon.GetDisplayName()).X), Y + 2, 57, 18), Color.White)
+                Core.SpriteBatch.Draw(StatusTexture, New Rectangle(CInt(172 + FontManager.MainFontWhite.MeasureString(Pokemon.GetDisplayName()).X), Y + 2, 40, 16), Color.White)
             End If
         End If
     End Sub
@@ -409,7 +408,7 @@
         Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(220, 324, 416, 128))
         If Me.Pokemon.EggSteps = 0 Then
             If Not Pokemon.Item Is Nothing Then
-                Core.SpriteBatch.Draw(Pokemon.Item.Texture, New Rectangle(240, 348, 32, 32), Color.White)
+                Core.SpriteBatch.Draw(Pokemon.Item.Texture, New Rectangle(240, 348, 48, 48), Color.White)
                 Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Localization.GetString("poke_status_screen_Item") & ": " & Pokemon.Item.Name, New Vector2(p.X + 100 + 32, 340), Color.White)
                 Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Pokemon.Item.GetDescription().CropStringToWidth(FontManager.MainFontBlack, 392), New Vector2(p.X + 100, 376), Color.White)
             Else

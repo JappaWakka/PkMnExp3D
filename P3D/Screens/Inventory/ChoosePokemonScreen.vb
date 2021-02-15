@@ -100,16 +100,16 @@
 						SoundManager.PlaySound("Select")
 					End If
 
-                    If Controls.Right(True, False) Then
+                    If Controls.Right(True, True, True) Then
                         index += 1
                     End If
-                    If Controls.Left(True, False) Then
+                    If Controls.Left(True, True, True) Then
                         index -= 1
                     End If
-                    If Controls.Down(True, False, False) Then
+                    If Controls.Down(True, True, False) Then
                         index += 2
                     End If
-                    If Controls.Up(True, False, False) Then
+                    If Controls.Up(True, True, False) Then
                         index -= 2
                     End If
 
@@ -179,7 +179,7 @@
     Dim mPressed As Boolean = False
     Private Sub ShowMenu()
         Me.MenuID = 0
-        ChooseBox.Show({"Select", Localization.GetString("party_screen_summary"), Localization.GetString("party_screen_back")}, 0, {})
+        ChooseBox.Show({"Select", Localization.GetString("global_summary"), Localization.GetString("global_back")}, 0, {})
     End Sub
 
     Public Overrides Sub Draw()
@@ -191,7 +191,7 @@
         Canvas.DrawImageBorder(BackgroundTexture, 2, New Rectangle(60, 100, 800, 480))
         Canvas.DrawImageBorder(CanvasTexture, 2, New Rectangle(60, 100, 480, 64))
         Core.SpriteBatch.DrawString(FontManager.MainFontBlack, Me.Title, New Vector2(142, 132), Color.White)
-        Core.SpriteBatch.Draw(Item.Texture, New Rectangle(78, 124, 32, 32), Color.White)
+        Core.SpriteBatch.Draw(Item.Texture, New Rectangle(78, 124, 48, 48), Color.White)
 
         If Me.canExit = True Then
             Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("party_screen_backadvice"), New Vector2(1200 - FontManager.MainFontBlack.MeasureString(Localization.GetString("party_screen_backadvice")).X - 320, 572), Color.White)
@@ -323,7 +323,7 @@
             End If
 
             If Not Pokemon.Item Is Nothing And Pokemon.IsEgg() = False Then
-                .Draw(Pokemon.Item.Texture, New Rectangle(CInt(p.X + 40), CInt(p.Y + 42), 32, 32), Color.White)
+                .Draw(Pokemon.Item.Texture, New Rectangle(CInt(p.X + 40), CInt(p.Y + 42), 24, 24), Color.White)
             End If
 
             Dim space As String = ""
@@ -349,7 +349,7 @@
 
             Dim StatusTexture As Texture2D = BattleStats.GetStatImage(Pokemon.Status)
             If Not StatusTexture Is Nothing Then
-                Core.SpriteBatch.Draw(StatusTexture, New Rectangle(CInt(p.X + 240), CInt(p.Y + 30), 38, 12), Color.White)
+                Core.SpriteBatch.Draw(StatusTexture, New Rectangle(CInt(p.X + 240), CInt(p.Y + 30), 40, 16), Color.White)
             End If
         End With
     End Sub

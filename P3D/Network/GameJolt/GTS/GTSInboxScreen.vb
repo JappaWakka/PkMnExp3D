@@ -252,7 +252,7 @@
                 Dim ItemString As String = "None"
                 If Not D.Pokemon.Item Is Nothing Then
                     ItemString = "   " & D.Pokemon.Item.Name
-                    Core.SpriteBatch.Draw(D.Pokemon.Item.Texture, New Rectangle(882, 314, 24, 24), Color.White)
+                    Core.SpriteBatch.Draw(D.Pokemon.Item.Texture, New Rectangle(882, 314, 48, 48), Color.White)
                 End If
 
                 Core.SpriteBatch.DrawString(FontManager.MainFontBlack, "Level: " & D.Pokemon.Level & Environment.NewLine & Environment.NewLine &
