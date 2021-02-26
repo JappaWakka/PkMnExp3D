@@ -1851,7 +1851,7 @@ Public Class Pokemon
 
             'ShinyCharm
             If Core.Player.Inventory.GetItemAmount(242) > 0 Then
-                shinyRate = CInt(shinyRate * 0.75F)
+                shinyRate = CInt(shinyRate * 0.33F)
             End If
 
             If Core.Random.Next(0, shinyRate) = 0 And Pokemon.Legendaries.Contains(Me.Number) = False Then

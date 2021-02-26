@@ -6992,8 +6992,13 @@
 			BattleScreen.OppPokemon.Ability.SwitchOut(BattleScreen.OppPokemon)
 
 			If BattleScreen.IsTrainerBattle = False Then
-				ChangeCameraAngle(1, False, BattleScreen)
-				BattleScreen.BattleQuery.Add(New ToggleEntityQueryObject(True, ToggleEntityQueryObject.BattleEntities.OppPokemon, 2, -1, -1, -1, -1))
+                ChangeCameraAngle(1, False, BattleScreen)
+                Dim Faint As AnimationQueryObject = New AnimationQueryObject(BattleScreen.OppPokemonNPC, True, BattleScreen.OppPokemonModel)
+                Faint.AnimationPlaySound(CStr(BattleScreen.OppPokemon.Number), 0, 2, False, True)
+                Faint.AnimationMovePokemonEntity(0, -1, 0, 0.1, False, False, 2, 0,,, 4)
+                BattleScreen.BattleQuery.Add(Faint)
+
+                BattleScreen.BattleQuery.Add(New ToggleEntityQueryObject(True, ToggleEntityQueryObject.BattleEntities.OppPokemon, 2, -1, -1, -1, -1))
 
 				EndBattle(EndBattleReasons.WinWild, BattleScreen, False)
 			Else
