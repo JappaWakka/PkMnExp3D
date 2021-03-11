@@ -1,0 +1,5 @@
+version=2
+:if:<register.value(storyline_progress)>=7
+	@register.change(storyline_progress,8)
+:endif
+:end
