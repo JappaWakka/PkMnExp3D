@@ -864,10 +864,10 @@
         Public Sub InitializePVP(ByVal PVPTrainer As Trainer, ByVal OverworldScreen As Screen)
             Me.IsPVPBattle = True
             Me.BattleMode = BattleModes.PVP
-            Me.CanReceiveEXP = False
-            Me.CanBlackout = False
-            Me.CanRun = False
-            Me.CanUseItems = False
+            CanReceiveEXP = False
+            CanBlackout = False
+            CanRun = False
+            CanUseItems = False
             PVPLobbyScreen.StoppedBattle = True
             PVPLobbyScreen.DisconnectMessage = "The battle has ended." & Environment.NewLine & Environment.NewLine & "Press any key to exit."
             PVPLobbyScreen.ScreenState = PVPLobbyScreen.ScreenStates.Stopped
