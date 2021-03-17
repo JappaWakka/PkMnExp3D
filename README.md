@@ -1,9 +1,14 @@
-The game is not in active development by nilllzz anymore, but few people from the community are maintaining the game and porting it to MonoGame platform. You are free to fork and redistribute the code under the [GNU GPLv3 license](http://choosealicense.com/licenses/gpl-3.0/).
+Pokémon Exp3D is a modified version of the Pokémon 3D engine, currently developed by JappaWakka#7735 on Discord, which aims to add various features to enhance gameplay and to allow the development of the GameMode PkMnExp3D, featuring a 3D recreation of Hoenn!
 
-Build instructions (game)
+You are free to fork and redistribute the code under the [GNU GPLv3 license](http://choosealicense.com/licenses/gpl-3.0/).
+
+You can see what's being worked on in this Trello board:
+https://trello.com/b/f0zd0fIs/pok%C3%A9mon-exp3d
+
+Build instructions (Game)
 =========================
 
-The game is written in Visual Basic and was compiled targeting the .Net Framework 4.7.2 for my public builds.
+The game is written in Visual Basic (VB.NET) and was compiled targeting the .Net Framework 4.7.2 for my public builds.
 
 It is built using the MonoGame framework as graphics middleware.
 
@@ -15,12 +20,6 @@ In order to build the game's solution, you need the following:
 To run the game after a successful build, you also need an applicable graphics card that supports DirectX (version 9 minimum).
 
 The first build of the game will take a little longer due to the MonoGame Content Pipeline building all assets for the first time.
-
-Running the game
-================
-
-In order to run the game, you will need the following:
-* [OpenAL](https://www.openal.org/downloads/oalinst.zip)
 
 Classified information
 ----------------------
@@ -48,11 +47,11 @@ To generate a valid meta file for the current state of the files in the game, go
 
         Const RUNVALIDATION As Boolean = True ' Instead of False
 
-Also, be sure to turn off the *IS_DEBUG_ACTIVE* in the *Core/GameController.vb" file:
+Be sure to check that the Solution Configuration is set to **Debug** instead of **Release**.
 
 Then build and debug-run the game. The console output of during the game's launch will output an expected size and metahash value.
 
-It will also produce an updated "meta" file.
+It will also produce an updated "meta" file in the debug build folder, which you need to copy to the main P3D project folder.
 
 Stop the debugging of the game and copy these two values into the correct places at the top of the FileValidation code:
 
@@ -66,7 +65,7 @@ Development
 
 The game includes a switch to enable debug mode that makes map development or general dicking around easier.
 
-Locate the file *Core/GameController.vb* and set the *IS_DEBUG_ACTIVE* const to *True*, then rebuild the game.
+Be sure to check that the Solution Configuration is set to **Debug** instead of **Release**, then rebuild the game.
 
 This is basically the SandboxMode that can be enabled in the game's save files plus these features:
 
