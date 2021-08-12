@@ -1064,6 +1064,9 @@ Public Class Level
 
 			' If any turns after the warp are defined, apply them:
 			Screen.Camera.InstantTurn(WarpData.WarpRotations)
+			If OverworldCamera._thirdPerson = False Then
+				Screen.Camera.PlayerFacing = Screen.Camera.GetPlayerFacingDirection()
+			End If
 
 			' Make the RouteSign appear:
 			Me._routeSign.Setup(MapName)

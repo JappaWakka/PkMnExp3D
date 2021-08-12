@@ -190,7 +190,7 @@
 
 	Private Sub ChangeLevel()
 		Dim levelCount As Integer = 0
-		For Each levelPath As String In System.IO.Directory.GetFiles(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Data\Maps\MainMenu\")
+		For Each levelPath As String In System.IO.Directory.GetFiles(GameController.GamePath & GameModeManager.ActiveGameMode.MapPath & "MainMenu\")
 			Dim levelFile As String = System.IO.Path.GetFileName(levelPath)
 			If levelFile.StartsWith("mainmenu") = True And levelFile.EndsWith(".dat") = True Then
 				levelCount += 1
@@ -647,6 +647,8 @@
 					Logo = "GUI\Logos\PkMnExp3D"
 				End If
 				Localization.ReloadGameModeTokens()
+				MusicManager.LoadMusic(True)
+				SoundManager.LoadSounds(True)
 			End If
 			tempLoadDisplay = Localization.GetString("load_menu_name") & ": " & dispName & Environment.NewLine &
 				Localization.GetString("load_menu_gamemode") & ": " & dispGameMode & Environment.NewLine &

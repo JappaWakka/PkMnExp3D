@@ -318,3 +318,7 @@ p3d/log.dat
 # include lib/build
 !lib/build
 lib/build/Content/Models/
+P3D/GameModes/Kolben/
+lib/build/ContentPacks/Pokémon Universal 3D/
+lib/build/GameModes/Pokémon Universal 3D/
+P3D/Content/Sounds/Battle/Attacks/wav/

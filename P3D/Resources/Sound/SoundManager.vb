@@ -112,7 +112,7 @@
 
 	Public Shared Sub LoadSounds(ByVal forceReplace As Boolean)
 		For Each soundfile As String In System.IO.Directory.GetFiles(GameController.GamePath & "\Content\Sounds\")
-			If soundfile.EndsWith(".wav") = True Then
+			If soundfile.EndsWith(".wav") Or soundfile.EndsWith(".xnb") Then
 				soundfile = System.IO.Path.GetFileNameWithoutExtension(soundfile)
 				AddSound(soundfile, forceReplace)
 			End If
@@ -123,7 +123,7 @@
 
 				If System.IO.Directory.Exists(path) = True Then
 					For Each soundfile As String In System.IO.Directory.GetFiles(path, "*.*", IO.SearchOption.AllDirectories)
-						If soundfile.EndsWith(".wav") = True Then
+						If soundfile.EndsWith(".wav") Or soundfile.EndsWith(".xnb") Then
 							soundfile = System.IO.Path.GetFileNameWithoutExtension(soundfile)
 							AddSound(soundfile, forceReplace)
 						End If
@@ -148,12 +148,12 @@
 	End Function
 
 	Private Shared Function TryAddGameModeSound(ByVal Name As String) As Boolean
-		Dim defaultSoundFilePath As String = GameController.GamePath & "\Content\" & "Sounds\" & Name & ".wav"
-		Dim soundFilePath As String = GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Sounds\" & Name & ".wav"
-		If System.IO.File.Exists(soundFilePath) = True Then
+		Dim defaultSoundFilePath As String = GameController.GamePath & "\Content\" & "Sounds\" & Name
+		Dim soundFilePath As String = GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Sounds\" & Name
+		If System.IO.File.Exists(soundFilePath & ".wav") Or System.IO.File.Exists(soundFilePath & ".xnb") Then
 			Return AddSound(Name, False)
 		Else
-			If System.IO.File.Exists(defaultSoundFilePath) = True Then
+			If System.IO.File.Exists(defaultSoundFilePath & ".wav") Or System.IO.File.Exists(defaultSoundFilePath & ".xnb") Then
 				Return AddSound(Name, False)
 			End If
 		End If

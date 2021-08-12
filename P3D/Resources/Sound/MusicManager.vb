@@ -535,22 +535,41 @@ Public Class MusicManager
     End Function
 
     Public Shared Sub LoadMusic(ByVal forceReplace As Boolean)
-        For Each musicFile As String In System.IO.Directory.GetFiles(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs\", "*.*", IO.SearchOption.AllDirectories)
-            If musicFile.EndsWith(".ogg") = True Then
-                Dim isIntro As Boolean = False
-                If musicFile.Contains("\Songs\intro\") = True Then
-                    isIntro = True
-                End If
+        If System.IO.Directory.Exists(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs\") Then
+            For Each musicFile As String In System.IO.Directory.GetFiles(GameController.GamePath & GameModeManager.ActiveGameMode.ContentPath & "Songs\", "*.*", IO.SearchOption.AllDirectories)
+                If musicFile.EndsWith(".ogg") = True Then
+                    Dim isIntro As Boolean = False
+                    If musicFile.Contains("\Songs\intro\") = True Then
+                        isIntro = True
+                    End If
 
-                If isIntro = False Then
-                    musicFile = System.IO.Path.GetFileNameWithoutExtension(musicFile)
-                Else
-                    musicFile = "intro\" & System.IO.Path.GetFileNameWithoutExtension(musicFile)
-                End If
+                    If isIntro = False Then
+                        musicFile = System.IO.Path.GetFileNameWithoutExtension(musicFile)
+                    Else
+                        musicFile = "intro\" & System.IO.Path.GetFileNameWithoutExtension(musicFile)
+                    End If
 
-                AddSong(musicFile, forceReplace)
-            End If
-        Next
+                    AddSong(musicFile, forceReplace)
+                End If
+            Next
+        Else
+            For Each musicFile As String In System.IO.Directory.GetFiles(GameController.GamePath & "\Content\Songs\", "*.*", IO.SearchOption.AllDirectories)
+                If musicFile.EndsWith(".ogg") = True Then
+                    Dim isIntro As Boolean = False
+                    If musicFile.Contains("\Songs\intro\") = True Then
+                        isIntro = True
+                    End If
+
+                    If isIntro = False Then
+                        musicFile = System.IO.Path.GetFileNameWithoutExtension(musicFile)
+                    Else
+                        musicFile = "intro\" & System.IO.Path.GetFileNameWithoutExtension(musicFile)
+                    End If
+
+                    AddSong(musicFile, forceReplace)
+                End If
+            Next
+        End If
         If Core.GameOptions.ContentPackNames.Count > 0 Then
             For Each c As String In Core.GameOptions.ContentPackNames
                 Dim path As String = GameController.GamePath & "\ContentPacks\" & c & "\Songs\"

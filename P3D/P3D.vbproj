@@ -8284,9 +8284,10 @@
     <Content Include="Content\Sounds\Battle\Attacks\Ember_Start.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sounds\Battle\Attacks\Fly.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Content\Sounds\Battle\Attacks\Fly_Hit.wav" />
+    <Content Include="Content\Sounds\Battle\Attacks\Fly_Start.wav" />
+    <Content Include="Content\Sounds\Battle\Attacks\PoisonSting_Hit.wav" />
+    <Content Include="Content\Sounds\Battle\Attacks\PoisonSting_Start.wav" />
     <Content Include="Content\Sounds\Battle\Attacks\Pound.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -17366,6 +17367,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\BirchsHouse2f\RivalsPokeBall.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\BirchsHouse2f\WentUpstairs.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Content\Data\Scripts\Hoenn\Cities\Littleroot\YourHouse1f\InFrontOfDoor.dat">

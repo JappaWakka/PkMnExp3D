@@ -51,11 +51,6 @@
 		BattleSystem.GameModeAttackLoader.Load()
 
 		Localization.ReloadGameModeTokens()
-
-		If GameModeManager.ActiveGameMode.IsDefaultGamemode = False Then
-			'MusicManager.LoadMusic(True)
-			'SoundManager.LoadSounds(True)
-		End If
 		SmashRock.Load()
 		Badge.Load()
 		Pokedex.Load()
@@ -79,7 +74,9 @@
 		TextBox.Showing = False
 		Me.Index = 0
 		TextBox.reDelay = 0
-		skinTexture = TextureManager.GetTexture(TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins\" & skinFiles(SkinIndex)), New Rectangle(0, 56, 28, 28))
+		Dim skinTexture2D = TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins\" & skinFiles(SkinIndex))
+		Dim skinRectangle As New Rectangle(0, CInt(skinTexture2D.Height / 4 * 2), CInt(skinTexture2D.Width / 3), CInt(skinTexture2D.Height / 4))
+		skinTexture = TextureManager.GetTexture(skinTexture2D, skinRectangle)
 
 		MusicManager.Play("nomusic")
 	End Sub
@@ -106,10 +103,11 @@
 				Dim Splits() As String = GameMode.StartDialogue.Split(CChar("|"))
 				Me.Dialogues.AddRange(Splits)
 			End If
-		End If
-		If Me.Dialogues.Count < 3 Then
-			Me.Dialogues.Clear()
-			Me.Dialogues.AddRange({Localization.GetString("new_game_intro_1"), Localization.GetString("new_game_intro_2"), Localization.GetString("new_game_intro_3")})
+		Else
+			If Me.Dialogues.Count < 3 Then
+				Me.Dialogues.Clear()
+				Me.Dialogues.AddRange({Localization.GetString("new_game_intro_1"), Localization.GetString("new_game_intro_2"), Localization.GetString("new_game_intro_3")})
+			End If
 		End If
 	End Sub
 
@@ -230,11 +228,11 @@
 
 		Select Case Index
 			Case 5
-				Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("new_game_your_name") & ": ", New Vector2(TextboxPosition.X, TextboxPosition.Y - 24), Color.White)
+				Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("new_game_your_name") & ": ", New Vector2(TextboxPosition.X, TextboxPosition.Y - 32), Color.White)
 				DrawTextBox()
 
 				If enterCorrectName = True Then
-					Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("new_game_name_too_short"), New Vector2(TextboxPosition.X, TextboxPosition.Y + 30), Color.DarkRed)
+					Core.SpriteBatch.DrawString(FontManager.MainFontWhite, Localization.GetString("new_game_name_too_short"), New Vector2(TextboxPosition.X, TextboxPosition.Y + 48), Color.DarkRed)
 				End If
 			Case 4
 				Canvas.DrawRectangle(New Rectangle(CInt(TextboxPosition.X - 5), CInt(TextboxPosition.Y - 24), 138, 42), New Color(0, 0, 0, 80))
@@ -246,8 +244,8 @@
 	End Sub
 
 	Private Sub DrawTextBox()
-		Canvas.DrawRectangle(New Rectangle(CInt(Core.windowSize.Width / 2) - 74, CInt(Core.windowSize.Height / 2) + 124, 148, 32), New Color(101, 142, 255))
-		Canvas.DrawRectangle(New Rectangle(CInt(Core.windowSize.Width / 2) - 70, CInt(Core.windowSize.Height / 2) + 128, 140, 24), Color.White)
+		Canvas.DrawRectangle(New Rectangle(CInt(Core.windowSize.Width / 2) - 74, CInt(Core.windowSize.Height / 2) + 138, 148, 32), New Color(101, 142, 255))
+		Canvas.DrawRectangle(New Rectangle(CInt(Core.windowSize.Width / 2) - 70, CInt(Core.windowSize.Height / 2) + 142, 140, 24), Color.White)
 
 		Dim t As String = Me.CurrentText
 		If t.Length < 14 Then
@@ -262,7 +260,7 @@
 	End Sub
 
 	Private Function TextboxPosition() As Vector2
-		Return New Vector2(CInt(Core.windowSize.Width / 2) - 70, CInt(Core.windowSize.Height / 2) + 128)
+		Return New Vector2(CInt(Core.windowSize.Width / 2) - 70, CInt(Core.windowSize.Height / 2) + 138)
 	End Function
 
 	Private Sub UpdatePokemon()
@@ -349,9 +347,10 @@
 		End If
 
 		SkinIndex = CInt(MathHelper.Clamp(SkinIndex, 0, skinFiles.Count - 1))
-
+		Dim skinTexture2D = TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins\" & skinFiles(SkinIndex))
+		Dim skinRectangle As New Rectangle(0, CInt(skinTexture2D.Height / 4 * 2), CInt(skinTexture2D.Width / 3), CInt(skinTexture2D.Height / 4))
 		If sIndex <> SkinIndex Then
-			skinTexture = TextureManager.GetTexture(TextureManager.GetTexture("Textures\NPC\" & skinFiles(SkinIndex)), New Rectangle(0, 64, 32, 32))
+			skinTexture = TextureManager.GetTexture(skinTexture2D, skinRectangle)
 		End If
 
 		If Controls.Accept() = True Then
@@ -363,7 +362,7 @@
 		CanMuteAudio = False
 
 		If ControllerHandler.ButtonPressed(Buttons.X) = True Then
-			Core.SetScreen(New InputScreen(Core.CurrentScreen, "Player", InputScreen.InputModes.Name, Me.CurrentText, 14, {TextureManager.GetTexture(TextureManager.GetTexture("Textures\NPC\" & skinFiles(SkinIndex)), New Rectangle(0, 64, 32, 32))}.ToList(), AddressOf Me.ConfirmInput))
+			Core.SetScreen(New InputScreen(Core.CurrentScreen, "Player", InputScreen.InputModes.Name, Me.CurrentText, 14, {TextureManager.GetTexture(TextureManager.GetTexture("Textures\OverworldSprites\PlayerSkins\" & skinFiles(SkinIndex)), New Rectangle(0, 64, 32, 32))}.ToList(), AddressOf Me.ConfirmInput))
 		Else
 			KeyBindings.GetNameInput(Me.CurrentText, 14)
 
