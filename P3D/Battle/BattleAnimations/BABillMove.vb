@@ -47,7 +47,7 @@
 				InterpolationSpeed = MoveSpeed
 		End Select
 
-		Me.AnimationType = AnimationTypes.BillMove
+		Me.AnimationType = AnimationTypes.Move
 	End Sub
 
 	Public Overrides Sub DoActionUpdate()

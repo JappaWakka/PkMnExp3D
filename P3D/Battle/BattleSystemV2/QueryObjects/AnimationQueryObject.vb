@@ -191,7 +191,7 @@
 			End If
 		End Sub
 
-		Public Sub AnimationSpawnScalingEntity(ByVal PositionX As Single, ByVal PositionY As Single, ByVal PositionZ As Single, ByVal Texture As String, ByVal ScaleX As Single, ByVal ScaleY As Single, ByVal ScaleZ As Single, ByVal Grow As Boolean, ByVal EndSizeX As Single, ByVal EndSizeY As Single, ByVal EndSizeZ As Single, ByVal SizeSpeed As Single, ByVal startDelay As Single, ByVal endDelay As Single)
+		Public Sub AnimationSpawnScalingEntity(ByVal PositionX As Single, ByVal PositionY As Single, ByVal PositionZ As Single, ByVal Texture As String, ByVal ScaleX As Single, ByVal ScaleY As Single, ByVal ScaleZ As Single, ByVal Grow As Boolean, ByVal EndSizeX As Single, ByVal EndSizeY As Single, ByVal EndSizeZ As Single, ByVal SizeSpeed As Single, ByVal startDelay As Single, ByVal endDelay As Single, Optional ByVal Anchors As String = "1")
 			If CurrentEntity Is Nothing Then
 				Logger.Log(Logger.LogTypes.Warning, "ATTEMPT TO USE AttackSpawnSizeAnimation OUTSIDE OF ATTACK ANIMATION DELEGATE")
 			ElseIf Not AnimationStarted Then
@@ -211,12 +211,31 @@
 					PositionX -= PositionX * 2.0F
 					PositionZ -= PositionZ * 2.0F
 				End If
-
 				Dim Position As Vector3 = New Vector3(CurrentEntity.Position.X + PositionX, CurrentEntity.Position.Y + PositionY, CurrentEntity.Position.Z + PositionZ)
 				Dim Scale As Vector3 = New Vector3(ScaleX, ScaleY, ScaleZ)
 				Dim EndSize As Vector3 = New Vector3(EndSizeX, EndSizeY, EndSizeZ)
-				Dim baSize As BASize = New BASize(Position, texture2D, Scale, Grow, EndSize, SizeSpeed, startDelay, endDelay)
+				Dim baSize As BASize = New BASize(Position, texture2D, Scale, Grow, EndSize, SizeSpeed, startDelay, endDelay, Anchors)
 				AnimationSequence.Add(baSize)
+			End If
+		End Sub
+		Public Sub AnimationScalePokemonEntity(ByVal entity As Entity, ByVal PositionX As Single, ByVal PositionY As Single, ByVal PositionZ As Single, ByVal Texture As String, ByVal ScaleX As Single, ByVal ScaleY As Single, ByVal ScaleZ As Single, ByVal Grow As Boolean, ByVal EndSizeX As Single, ByVal EndSizeY As Single, ByVal EndSizeZ As Single, ByVal SizeSpeed As Single, ByVal startDelay As Single, ByVal endDelay As Single, Optional ByVal Anchors As String = "1")
+			If CurrentEntity Is Nothing Then
+				Logger.Log(Logger.LogTypes.Warning, "ATTEMPT TO USE AttackSpawnSizeAnimation OUTSIDE OF ATTACK ANIMATION DELEGATE")
+			ElseIf Not AnimationStarted Then
+				Logger.Log(Logger.LogTypes.Warning, "ATTEMPT TO USE AttackSpawnSizeAnimation BEFORE CALLING AnimationSequenceBegin")
+			Else
+				Dim stringArray = Texture.Split(","c)
+
+
+				If BAFlipped Then
+					PositionX -= PositionX * 2.0F
+					PositionZ -= PositionZ * 2.0F
+				End If
+				Dim Position As Vector3 = New Vector3(CurrentEntity.Position.X + PositionX, CurrentEntity.Position.Y + PositionY, CurrentEntity.Position.Z + PositionZ)
+				Dim Scale As Vector3 = New Vector3(ScaleX, ScaleY, ScaleZ)
+				Dim EndSize As Vector3 = New Vector3(EndSizeX, EndSizeY, EndSizeZ)
+				Dim baBillSize As BABillSize = New BABillSize(entity, Scale, Grow, EndSize, SizeSpeed, startDelay, endDelay, Anchors)
+				AnimationSequence.Add(baBillSize)
 			End If
 		End Sub
 	End Class

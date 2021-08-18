@@ -57,30 +57,14 @@
         End Sub
 
         Public Overrides Sub MoveHits(own As Boolean, BattleScreen As BattleScreen)
-            Dim p As Pokemon = BattleScreen.OwnPokemon
-            Dim op As Pokemon = BattleScreen.OppPokemon
-            If own = False Then
-                p = BattleScreen.OppPokemon
-                op = BattleScreen.OwnPokemon
-            End If
-
             Dim chance As Integer = GetEffectChance(0, own, BattleScreen)
             If Core.Random.Next(0, 100) < chance Then
                 BattleScreen.Battle.InflictBurn(Not own, own, BattleScreen, "", "move:ember")
             End If
         End Sub
 
-        Public Overrides Sub InternalUserPokemonMoveAnimation(ByVal BattleScreen As BattleScreen, ByVal own As Boolean)
-            Dim CurrentEntity As NPC
-            Dim BAFlip As Boolean
-            If own = True Then
-                CurrentEntity = BattleScreen.OwnPokemonNPC
-                BAFlip = False
-            Else
-                CurrentEntity = BattleScreen.OppPokemonNPC
-                BAFlip = True
-            End If
-            Dim MoveAnimation As AnimationQueryObject = New AnimationQueryObject(CurrentEntity, BAFlip)
+        Public Overrides Sub InternalUserPokemonMoveAnimation(ByVal BattleScreen As BattleScreen, ByVal own As Boolean, ByVal CurrentPokemon As Pokemon, ByVal CurrentEntity As NPC, ByVal CurrentModel As ModelEntity)
+            Dim MoveAnimation As AnimationQueryObject = New AnimationQueryObject(CurrentEntity, own)
             MoveAnimation.AnimationSpawnMovingEntity(0.0, 0, 0.0, "Textures\Battle\Fire\FireBall", 0.5, 0.5, 0.5, 2.0, 0.0, 0.0, 0.05, False, True, 0.0, 0.0,, -0.5, 0)
             MoveAnimation.AnimationPlaySound("Battle\Attacks\Ember_Start", 0, 0)
             For i = 0 To 12
@@ -90,17 +74,8 @@
             BattleScreen.BattleQuery.Add(MoveAnimation)
         End Sub
 
-        Public Overrides Sub InternalOpponentPokemonMoveAnimation(ByVal BattleScreen As BattleScreen, ByVal own As Boolean)
-            Dim CurrentEntity As NPC
-            Dim BAFlip As Boolean
-            If own = True Then
-                CurrentEntity = BattleScreen.OppPokemonNPC
-                BAFlip = True
-            Else
-                CurrentEntity = BattleScreen.OwnPokemonNPC
-                BAFlip = False
-            End If
-            Dim MoveAnimation As AnimationQueryObject = New AnimationQueryObject(CurrentEntity, BAFlip)
+        Public Overrides Sub InternalOpponentPokemonMoveAnimation(ByVal BattleScreen As BattleScreen, ByVal own As Boolean, ByVal CurrentPokemon As Pokemon, ByVal CurrentEntity As NPC, ByVal CurrentModel As ModelEntity)
+            Dim MoveAnimation As AnimationQueryObject = New AnimationQueryObject(CurrentEntity, own)
 
             MoveAnimation.AnimationSpawnMovingEntity(2.0, 0, 0.0, "Textures\Battle\Fire\FireBall", 0.5, 0.5, 0.5, 0.0, 0.0, 0.0, 0.05, False, True, 0.0, 0.0, 0.1, 0.5, 0)
             For i = 0 To 12

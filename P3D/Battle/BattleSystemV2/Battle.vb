@@ -5324,7 +5324,24 @@
                     Else
                         If .OwnPokemon.Ability.Name.ToLower() <> "magic guard" Then
                             If .OwnPokemon.Status = Pokemon.StatusProblems.Poison Then 'Own Poison
-                                BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\Poisoned", False))
+                                'Poison animation
+                                Dim MoveAnimation As AnimationQueryObject = New AnimationQueryObject(BattleScreen.OwnPokemonNPC, True)
+                                MoveAnimation.AnimationPlaySound("Battle\Effects\Poisoned", 0, 0)
+                                MoveAnimation.AnimationSpawnFadingEntity(-0.25, -0.25, -0.25, "Textures\Battle\Poison\Bubble,0,0,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 0, 1)
+
+                                MoveAnimation.AnimationSpawnFadingEntity(-0.25, -0.25, -0.25, "Textures\Battle\Poison\Bubble,0,32,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 1, 1)
+                                MoveAnimation.AnimationSpawnFadingEntity(0.25, -0.25, 0.25, "Textures\Battle\Poison\Bubble,0,0,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 1, 1)
+
+                                MoveAnimation.AnimationSpawnFadingEntity(-0.25, -0.25, -0.25, "Textures\Battle\Poison\Bubble,0,64,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 2, 1)
+                                MoveAnimation.AnimationSpawnFadingEntity(0.25, -0.25, 0.25, "Textures\Battle\Poison\Bubble,0,32,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 2, 1)
+                                MoveAnimation.AnimationSpawnFadingEntity(0.25, -0.25, -0.25, "Textures\Battle\Poison\Bubble,0,0,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 2, 1)
+
+                                MoveAnimation.AnimationSpawnFadingEntity(0.25, -0.25, 0.25, "Textures\Battle\Poison\Bubble,0,64,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 3, 1)
+                                MoveAnimation.AnimationSpawnFadingEntity(0.25, -0.25, -0.25, "Textures\Battle\Poison\Bubble,0,32,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 3, 1)
+
+                                MoveAnimation.AnimationSpawnFadingEntity(0.25, -0.25, -0.25, "Textures\Battle\Poison\Bubble,0,64,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 4, 2)
+                                BattleScreen.BattleQuery.Add(MoveAnimation)
+                                'Actual damage
                                 ReduceHP(CInt(.OwnPokemon.MaxHP / 8), True, True, BattleScreen, "The poison hurt " & .OwnPokemon.GetDisplayName() & ".", "poison")
                             End If
 
@@ -6073,7 +6090,24 @@
                     Else
                         If .OppPokemon.Ability.Name.ToLower() <> "magic guard" Then
                             If .OppPokemon.Status = Pokemon.StatusProblems.Poison Then 'Opp Poison
-                                BattleScreen.BattleQuery.Add(New PlaySoundQueryObject("Battle\Effects\Poisoned", False))
+                                'Poison animation
+                                Dim MoveAnimation As AnimationQueryObject = New AnimationQueryObject(BattleScreen.OwnPokemonNPC, False)
+                                MoveAnimation.AnimationPlaySound("Battle\Effects\Poisoned", 0, 0)
+                                MoveAnimation.AnimationSpawnFadingEntity(-0.25, -0.25, -0.25, "Textures\Battle\Poison\Bubble,0,0,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 0, 1)
+
+                                MoveAnimation.AnimationSpawnFadingEntity(-0.25, -0.25, -0.25, "Textures\Battle\Poison\Bubble,0,32,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 1, 1)
+                                MoveAnimation.AnimationSpawnFadingEntity(0.25, -0.25, 0.25, "Textures\Battle\Poison\Bubble,0,0,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 1, 1)
+
+                                MoveAnimation.AnimationSpawnFadingEntity(-0.25, -0.25, -0.25, "Textures\Battle\Poison\Bubble,0,64,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 2, 1)
+                                MoveAnimation.AnimationSpawnFadingEntity(0.25, -0.25, 0.25, "Textures\Battle\Poison\Bubble,0,32,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 2, 1)
+                                MoveAnimation.AnimationSpawnFadingEntity(0.25, -0.25, -0.25, "Textures\Battle\Poison\Bubble,0,0,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 2, 1)
+
+                                MoveAnimation.AnimationSpawnFadingEntity(0.25, -0.25, 0.25, "Textures\Battle\Poison\Bubble,0,64,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 3, 1)
+                                MoveAnimation.AnimationSpawnFadingEntity(0.25, -0.25, -0.25, "Textures\Battle\Poison\Bubble,0,32,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 3, 1)
+
+                                MoveAnimation.AnimationSpawnFadingEntity(0.25, -0.25, -0.25, "Textures\Battle\Poison\Bubble,0,64,32,32", 0.5, 0.5, 0.5, 0.02, False, 1.0, 4, 2)
+                                BattleScreen.BattleQuery.Add(MoveAnimation)
+                                'Actual damage
                                 ReduceHP(CInt(.OppPokemon.MaxHP / 8), False, False, BattleScreen, "The poison hurt " & .OppPokemon.GetDisplayName() & ".", "poison")
                             End If
 

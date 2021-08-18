@@ -14644,6 +14644,7 @@
     </Content>
     <Compile Include="Battle\BattleAnimations\BABillMove.vb" />
     <Compile Include="Battle\BattleAnimations\BABillOpacity.vb" />
+    <Compile Include="Battle\BattleAnimations\BABillSize.vb" />
     <Compile Include="Battle\BattleAnimations\BASound.vb" />
     <Compile Include="Pokemon\Abilities\Aerilate.vb" />
     <Compile Include="Pokemon\Abilities\PsychicSurge.vb" />

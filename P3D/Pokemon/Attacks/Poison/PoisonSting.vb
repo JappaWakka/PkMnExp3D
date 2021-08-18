@@ -65,33 +65,15 @@
             End If
         End Sub
 
-        Public Overrides Sub InternalUserPokemonMoveAnimation(ByVal BattleScreen As BattleScreen, ByVal own As Boolean)
-            Dim CurrentEntity As NPC
-            Dim BAFlip As Boolean
-            If own = True Then
-                CurrentEntity = BattleScreen.OwnPokemonNPC
-                BAFlip = False
-            Else
-                CurrentEntity = BattleScreen.OppPokemonNPC
-                BAFlip = True
-            End If
-            Dim MoveAnimation As AnimationQueryObject = New AnimationQueryObject(CurrentEntity, BAFlip)
+        Public Overrides Sub InternalUserPokemonMoveAnimation(ByVal BattleScreen As BattleScreen, ByVal own As Boolean, ByVal CurrentPokemon As Pokemon, ByVal CurrentEntity As NPC, ByVal CurrentModel As ModelEntity)
+            Dim MoveAnimation As AnimationQueryObject = New AnimationQueryObject(CurrentEntity, own)
             MoveAnimation.AnimationSpawnMovingEntity(0.0, 0, 0.0, "Textures\Battle\Poison\Stinger", 0.5, 0.5, 0.5, 2.0, 0.0, 0.0, 0.05, False, False, 0.0, 0.0,,, 0)
             MoveAnimation.AnimationPlaySound("Battle\Attacks\PoisonSting_Start", 0, 0)
             BattleScreen.BattleQuery.Add(MoveAnimation)
         End Sub
 
-        Public Overrides Sub InternalOpponentPokemonMoveAnimation(ByVal BattleScreen As BattleScreen, ByVal own As Boolean)
-            Dim CurrentEntity As NPC
-            Dim BAFlip As Boolean
-            If own = True Then
-                CurrentEntity = BattleScreen.OppPokemonNPC
-                BAFlip = True
-            Else
-                CurrentEntity = BattleScreen.OwnPokemonNPC
-                BAFlip = False
-            End If
-            Dim MoveAnimation As AnimationQueryObject = New AnimationQueryObject(CurrentEntity, BAFlip)
+        Public Overrides Sub InternalOpponentPokemonMoveAnimation(ByVal BattleScreen As BattleScreen, ByVal own As Boolean, ByVal CurrentPokemon As Pokemon, ByVal CurrentEntity As NPC, ByVal CurrentModel As ModelEntity)
+            Dim MoveAnimation As AnimationQueryObject = New AnimationQueryObject(CurrentEntity, own)
 
             MoveAnimation.AnimationSpawnMovingEntity(2.0, 0, 0.0, "Textures\Battle\Poison\Stinger", 0.5, 0.5, 0.5, 0.0, 0.0, 0.0, 0.05, False, False, 0.0, 0.0,,, 0)
 

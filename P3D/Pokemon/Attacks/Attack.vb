@@ -2165,21 +2165,35 @@
 
         Public Sub UserPokemonMoveAnimation(ByVal BattleScreen As BattleScreen, ByVal own As Boolean)
             If Core.Player.ShowBattleAnimations = 1 Then
-                Me.InternalUserPokemonMoveAnimation(BattleScreen, own)
+                Dim CurrentPokemon As Pokemon = BattleScreen.OwnPokemon
+                Dim CurrentEntity As NPC = BattleScreen.OwnPokemonNPC
+                Dim CurrentModel As ModelEntity = BattleScreen.OwnPokemonModel
+                If own = False Then
+                    CurrentEntity = BattleScreen.OppPokemonNPC
+                    CurrentModel = BattleScreen.OppPokemonModel
+                End If
+                Me.InternalUserPokemonMoveAnimation(BattleScreen, own, CurrentPokemon, CurrentEntity, CurrentModel)
             End If
         End Sub
 
-        Public Overridable Sub InternalUserPokemonMoveAnimation(ByVal BattleScreen As BattleScreen, ByVal own As Boolean)
+        Public Overridable Sub InternalUserPokemonMoveAnimation(ByVal BattleScreen As BattleScreen, ByVal own As Boolean, ByVal CurrentPokemon As Pokemon, ByVal CurrentEntity As NPC, ByVal CurrentModel As ModelEntity)
             'Override this method in the attack class to insert the move animation query objects into the queue.
         End Sub
 
         Public Sub OpponentPokemonMoveAnimation(ByVal BattleScreen As BattleScreen, ByVal own As Boolean)
             If Core.Player.ShowBattleAnimations = 1 Then
-                Me.InternalOpponentPokemonMoveAnimation(BattleScreen, own)
+                Dim CurrentPokemon As Pokemon = BattleScreen.OwnPokemon
+                Dim CurrentEntity As NPC = BattleScreen.OwnPokemonNPC
+                Dim CurrentModel As ModelEntity = BattleScreen.OwnPokemonModel
+                If own = False Then
+                    CurrentEntity = BattleScreen.OppPokemonNPC
+                    CurrentModel = BattleScreen.OppPokemonModel
+                End If
+                Me.InternalOpponentPokemonMoveAnimation(BattleScreen, own, CurrentPokemon, CurrentEntity, CurrentModel)
             End If
         End Sub
 
-        Public Overridable Sub InternalOpponentPokemonMoveAnimation(ByVal BattleScreen As BattleScreen, ByVal own As Boolean)
+        Public Overridable Sub InternalOpponentPokemonMoveAnimation(ByVal BattleScreen As BattleScreen, ByVal own As Boolean, ByVal CurrentPokemon As Pokemon, ByVal CurrentEntity As NPC, ByVal CurrentModel As ModelEntity)
             'Override this method in the attack class to insert the move animation query objects into the queue.
         End Sub
 

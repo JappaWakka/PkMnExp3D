@@ -164,7 +164,7 @@
 
     Private Sub CreateOptions()
         Dim s As String = "Music|50" & Environment.NewLine &
-            "Sound|50" & Environment.NewLine &
+            "Sound|100" & Environment.NewLine &
             "Muted|0" & Environment.NewLine &
             "RenderDistance|3" & Environment.NewLine &
             "ShowDebug|0" & Environment.NewLine &

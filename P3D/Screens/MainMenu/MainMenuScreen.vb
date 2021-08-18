@@ -46,8 +46,8 @@
 
 		Identification = Identifications.MainMenuScreen
         CanBePaused = False
-        MouseVisible = True
-        CanChat = False
+		Me.MouseVisible = True
+		CanChat = False
         currentLanguage = Localization.LanguageSuffix
 
         TextBox.Showing = False
@@ -1251,15 +1251,17 @@
 					End If
 				End If
 			Next
+
+			For i = 0 To 3
+				If ScaleScreenRec(New Rectangle(CInt(ScreenSize.Width / 2) - 258, 240 + i * 50, 480, 48)).Contains(MouseHandler.MousePosition) = True Then
+					If MouseHandler.ButtonPressed(MouseHandler.MouseButtons.LeftButton) = True Then
+						packsMenuIndex(0) = i + packsMenuIndex(2)
+					End If
+				End If
+			Next
 		End If
 
-		For i = 0 To 3
-			If ScaleScreenRec(New Rectangle(CInt(ScreenSize.Width / 2) - 258, 240 + i * 50, 480, 48)).Contains(MouseHandler.MousePosition) = True Then
-				If MouseHandler.ButtonPressed(MouseHandler.MouseButtons.LeftButton) = True Then
-					packsMenuIndex(0) = i + packsMenuIndex(2)
-				End If
-			End If
-		Next
+
 
 		packsMenuIndex(0) = CInt(MathHelper.Clamp(packsMenuIndex(0), 0, PackNames.Count - 1))
 		packsMenuIndex(2) = CInt(MathHelper.Clamp(packsMenuIndex(2), 0, PackNames.Count - 4))
